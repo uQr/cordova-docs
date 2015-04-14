@@ -46,21 +46,25 @@ Otherwise you can manually install only those dependencies that are needed for b
 
 2.  Install the platform specific dependencies on the server and make them available to this same user. See the following guides for details:
 
-    -   [Android Platform Guide](http://cordova.apache.org/docs/en/edge/guide_platforms_android_index.md.html#Android%20Platform%20Guide)
+    1.   [Android Platform Guide](http://cordova.apache.org/docs/en/edge/guide_platforms_android_index.md.html#Android%20Platform%20Guide)
 
         1.  You do not need to install Android Studio or Eclipse
 
         2.  Instead you may download and install one of the [“SDK Tools Only” packages](http://developer.android.com/sdk/index.html#Other).
 
-        3.  When building, you encounter an error telling you that you need to install specific SDK versions or tools depending on the version of Cordova you are using.
-            a.  You can install these using [the Android SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
-            b.  The only thing for a specific SDK required to build is the “SDK Platform” so you may uncheck other options. Android system images in particular are large and are not needed.
-            c.  Be sure to also install the “platform tools”.
-            d.  Projects created using Visual Studio will typically use either the SDK from API 19 (4.4.2) or API 21 (5.0.1).
+        3.  When building, you encounter an error telling you that you need to install specific SDK versions or tools depending on the version of Cordova you are using. Note that these messages are talking about the *tools and SDK* versions *not* the device target versions.
+        
+        	1.  You can install additional SDKs using [the Android SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
+        
+        	2. The only thing for a specific SDK required to build is the “SDK Platform” so you may uncheck other options. Android system images in particular are large and are not needed.
+        
+        	3.  Be sure to also install the “platform tools”
+        
+        	4.  Projects created using Visual Studio will typically use either the API SDK 19, 21, or API 22.
 
-    -   OSX only: [iOS Platform Guide](http://cordova.apache.org/docs/en/edge/guide_platforms_ios_index.md.html#iOS%20Platform%20Guide)
+    2.   OSX only: [iOS Platform Guide](http://cordova.apache.org/docs/en/edge/guide_platforms_ios_index.md.html#iOS%20Platform%20Guide)
 
-    -   Windows only:
+    3.   Windows only:
         1.  [Windows and Windows Phone 8.1+ Platfrom Guide](http://cordova.apache.org/docs/en/edge/guide_platforms_win8_index.md.html#Windows%20Platform%20Guide)
         2.  [Windows Phone 8.0 Platform Guide](http://cordova.apache.org/docs/en/edge/guide_platforms_wp8_index.md.html#Windows%20Phone%208%20Platform%20Guide)
 
@@ -84,7 +88,7 @@ If you are looking for a quick solution you may want to check out the [Gulp](htt
 
 4.  **Visual Studio Specific Features**
 	1.  **Supporting res/native.** The “res/native” folder in Visual Studio projects provides a useful way to update native project build artifacts without having to check in the platforms folder. It is not currently a base Cordova CLI feature.
-    2.  **Supporting the Task Explorer.** Visual Studio now has a convenient Task Explorer that allows you to attach Gulp tasks to build events.
+	2.  **Supporting the Task Explorer.** Visual Studio now has a convenient Task Explorer that allows you to attach Gulp tasks to build events.
 
 ###Building with Multiple Versions of the Cordova CLI
 The Cordova CLI is a standard node.js module and thus can be installed either [globally or locally](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/). The trick, then, is to use a local installation of the Cordova CLI rather than a global one. There are two different methods that you can use to install Cordova locally: at the project level and in a global
