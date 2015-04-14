@@ -137,7 +137,7 @@ Now you can go back to the distribution certificate section still active in your
 ![ios: Distribution profile](<media/ios-proDis.png>)
 
 5. Select the correct App ID and choose **Continue**.
-![ios: Distribution profile, Selecting App Id](<media/ios-proappId.png>)
+![ios: Distribution profile, Selecting App Id](<media/ios-proappid.png>)
 
 6. Select the certificates you wish to include in this provisioning profile. Choose **Continue** after you have selected the certificates.
 ![ios: Distribution profile, Choosing certificates](<media/ios-proCertChoice.png>)
@@ -164,7 +164,8 @@ This kicks of a build on the remote agent and uses the distribution certificate 
 
 Once you've built your iPhone Application (.ipa) file, you'll need to fill out the required forms on the iTunes Connect site to submit the application to Apple. In filling out the information, be as transparent as possible to Apple, including any demo accounts that might be needed to run your app. Because the Apple reviewers must be able to verify your application, providing the information required ahead of time will help your application get through the review process more quickly. Note that Apple's policy stipulates that your app's keywords cannot contain your app's name.
 
-To **submit** the app:
+To **submit** your application to the store
+
 1. Navigate to the iTunes Connect area of the [iOS Dev Center](http://developer.apple.com/devcenter/ios/).
 1. Go to the Manage Your Apps page and click Add New App.
 1. Fill out the forms describing your company and application.
