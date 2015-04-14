@@ -81,8 +81,9 @@ If you are looking for a quick way to add in support for firing Grunt tasks for 
 Hooks can be implemented in a number of different ways: shell scripts, Node.js scripts, or Node modules. Fortunately, the code to call a Gulp task from a hook is trivial. In this example we’ll use a Node.js module since it can run on both Windows and OSX and has less overhead than starting up a shell script.
 
 1.  Run the following commands in the command line from the root of your  project. We’ll automate this away next.
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    npm install gulp
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	npm install gulp
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2.  Create a file called “hook-gulp.js” in a new “hooks” folder in your Cordova     project (or any other location you would prefer)
 3.  Place the following code in it:
@@ -111,11 +112,13 @@ Hooks can be implemented in a number of different ways: shell scripts, Node.js s
 
     This code simply looks at the “context” object that is passed into Cordova hook modules for the name of the hook event currently firing and then invokes a Gulp task of that same name via by “[forking](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options)” the Gulp node module. Since this is done asynchronously, a promise is returned to Cordova.
 4.  Add the following XML element to config.xml in your Cordova project. In Visual Studio you can do this using Right-Click \> View Code.
+
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     <hook type="before_prepare" src="hooks/hook-gulp.js" />
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	You can wire Gulp tasks to any number of valid Cordova [hook events](http://aka.ms/cordovahooks) by simply adding additional hook elements to config.xml and replacing “before\_prepare” with the event you want to wire into.
 5.  Create a file called “gulpfile.js” and put it in the root of your Cordova project with the following in it:
+
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     var gulp = require('gulp');
     gulp.task('before_prepare', function() {
@@ -128,15 +131,16 @@ Hooks can be implemented in a number of different ways: shell scripts, Node.js s
 
 ##### Automating Dependency Installation for our Task Runner Cordova Hook
 At this point, anything you add to the “before\_prepare” Gulp task will be fired off on each build. It is really common to want to use other node modules in a Gulp task particularly in the form of plugins. You can install these manually, but let’s take the next step and automate installation of Gulp and any other node modules you may want to use.
+
 1.  Create a “package.json” file in the root of your project and place the following in it:
 
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    {
-      "devDependencies": {
-        "gulp": "latest"
-      }
-    }
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	{
+	    "devDependencies": {
+	        "gulp": "latest"
+	    }
+	}
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2.  Update “hook-gulp.js” as follows:
 
