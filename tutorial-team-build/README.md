@@ -262,9 +262,11 @@ xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/devi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ###Visual Studio Specific Features
-A quick way to get you project working with Visual Studio specific features outside of Cordova is to add the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://aka.ms/vstacoplugin) to your project.
+A quick way to get you project working with Visual Studio specific features outside of Cordova is to add the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://aka.ms/vstacoplugin) to your project. It adds in support for three things:
 
-To support the Task Explorer, the plugin takes advantage of the technique illustrated in the [Gulp tutorial](http://aka.ms/cordovagulp) for wiring in Gulp tasks to Cordova build events. To support res/native, the plugin uses a similar approach and we will briefly cover how this works behind the scenes.
+1. To support the Task Explorer, the plugin takes advantage of the technique illustrated in the [Gulp tutorial](http://aka.ms/cordovagulp) for wiring in Gulp tasks to Cordova build events. 
+2. To support res/native, the plugin uses a similar approach and we will briefly cover how this works behind the scenes.
+3. The plugin also adds in support for the VS specific Windows packaging elements in config.xml.
 
 ##### Behind the Scenes: res/native Hook
 If you are using Tools for Apache Cordova in Visual Studio, you may be taking advantage of the “res/native” folder in your project. This provides a useful way to update native project build artifacts without having to check in the platforms folder but is not currently a base Cordova CLI feature.
