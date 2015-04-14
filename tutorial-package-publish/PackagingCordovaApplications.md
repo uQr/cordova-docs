@@ -6,10 +6,13 @@ Here is step by step tutorial on how to go about it.
 ### Windows:
 Once you are ready to package your application, using the solution platforms dropdown, change the platform to the specific Windows platform that matches the platform you are targeting as shown in the figure below:
 ![Windows: Debug targets](<media/windows_target.png>)
+
 Once you select the target platform, use the ‘Create App Packages’ menu from the Project  Store menu as shown below, to start the packaging wizard.
 ![Windows: Create Appx Packages](<media/windows_createPackage.png>)
+
 The wizard guides you through a workflow that is similar to the workflow for creating Windows desktop and Windows phone APPX packages. It asks you to first log into your developer account, then associate your package with a new or existing name and finally builds a release version of the package generating the Package.StoreAssociation.xml in the res\native\windows folder:
 ![Windows: Resources](<media/windows_assets.png>)
+
 **Note:**
 - Cordova generates a XAP package for Windows Phone 8 platform and hence ‘Create App Packages’ option is disabled if you choose Windows Phone 8 as target platform.
 - Visual Studio creates a test certificate under the res\native\windows folder when the project is created, but you can also use an existing certificate to sign your package by replacing the default certificate with yours.
@@ -18,8 +21,10 @@ The wizard guides you through a workflow that is similar to the workflow for cre
 ### Android:
 Once you are ready to package your application for android, change the platform to the android platform, the build configuration to release and select ‘device’ as debug target as shown in the figure below:
 ![Android: Debug Target](<media/android_debug.png>)
+
 If you initiate a build with this configuration, VS builds an unsigned release package that can be deployed to a machine but cannot be published to store. In order to create a release signed package, you need to provide keystore information to the build in the ant.properties file under res\native\android. A keystore is a binary file that contains a set of private keys. You must keep your keystore in a safe and secure place.
 ![Android: Build assets](<media/android_assets.png>)
+
 You can either provide information about existing key-store or create a new one. Here I am going to explain how you can create a new key-store using standard tools from the Android SDK and the JDK:
 1. Open a new admin command prompt.
 
@@ -91,8 +96,10 @@ You need developer certificate and a developer provisioning profile to install, 
 
 6. The next screen explains the process of creating a **Certificate Signing Request (CSR)**. Click **Continue** at the bottom of the page.
 ![ios: CSR](<media/ios-csr.png>)
+
 7. Navigate to the CSR file & choose that file.
 ![ios: Using CSR](<media/ios-choosecsr.png>)
+
 8. Choose **Generate**. Once you refresh your browser, you can download the developer certificate by choosing **Download**.
 
 The certificate will download into your **downloads** folder & double-clicking this will install this file into Keychain.  This is what the Development Certificate looks like in Keychain Access.
@@ -103,10 +110,13 @@ The certificate will download into your **downloads** folder & double-clicking t
 In order for you to generate a certificate you must request a certificate using keychain access.
 - Launch **Keychain Access**. Keychain Access is located in Macintosh HD/Applications/Utilities -
 ![ios: KeyChain](<media/ios-keyChain.png>)
+
 - Once Keychain Access is launched, choose Keychain Access > Certificate Assistant >Request a Certificate from a Certificate Authority.
 ![ios: Request CSR](<media/ios-reqcsr.png>)
+
 - Enter your Apple Developer Account email address, Common Name (your name),CA (Certificate Assistant) [optional] & Choose: Request is **Saved to disk**.
 ![ios: Request CSR Information](<media/ios-csrInfo.png>)
+
 - Choose **Continue**, save the file to your hard drive and choose **Done**.
 
 Now you can go back to the developer certificate section still active in your browser [step 7, above] and choose **Choose File**.
