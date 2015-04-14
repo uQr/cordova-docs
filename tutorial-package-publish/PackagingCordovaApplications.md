@@ -8,9 +8,11 @@ Once you are ready to package your application, using the solution platforms dro
 ![Windows: Debug targets](<media/windows_target.png>)
 
 Once you select the target platform, use the ‘Create App Packages’ menu from the Project  Store menu as shown below, to start the packaging wizard.
+
 ![Windows: Create Appx Packages](<media/windows_createPackage.png>)
 
 The wizard guides you through a workflow that is similar to the workflow for creating Windows desktop and Windows phone APPX packages. It asks you to first log into your developer account, then associate your package with a new or existing name and finally builds a release version of the package generating the Package.StoreAssociation.xml in the res\native\windows folder:
+
 ![Windows: Resources](<media/windows_assets.png>)
 
 **Note:**
@@ -119,7 +121,8 @@ In order for you to generate a certificate you must request a certificate using 
 
 - Choose **Continue**, save the file to your hard drive and choose **Done**.
 
-Now you can go back to the developer certificate section still active in your browser [step 7, above] and choose **Choose File**.
+Now you can go back to the distribution certificate section still active in your browser [step 7, above] and choose **Choose File**.
+
 ![ios: Using CSR](<media/ios-usecsr.png>)
 
 #### Generating distribution provisioning profile:
@@ -134,7 +137,7 @@ Now you can go back to the developer certificate section still active in your br
 ![ios: Distribution profile](<media/ios-proDis.png>)
 
 5. Select the correct App ID and choose **Continue**.
-![ios: Distribution profile, Selecting App Id](<media/ios-proAppId.png>)
+![ios: Distribution profile, Selecting App Id](<media/ios-proappId.png>)
 
 6. Select the certificates you wish to include in this provisioning profile. Choose **Continue** after you have selected the certificates.
 ![ios: Distribution profile, Choosing certificates](<media/ios-proCertChoice.png>)
@@ -162,13 +165,13 @@ This kicks of a build on the remote agent and uses the distribution certificate 
 Once you've built your iPhone Application (.ipa) file, you'll need to fill out the required forms on the iTunes Connect site to submit the application to Apple. In filling out the information, be as transparent as possible to Apple, including any demo accounts that might be needed to run your app. Because the Apple reviewers must be able to verify your application, providing the information required ahead of time will help your application get through the review process more quickly. Note that Apple's policy stipulates that your app's keywords cannot contain your app's name.
 
 To **submit** the app:
-1.	Navigate to the iTunes Connect area of the [iOS Dev Center](http://developer.apple.com/devcenter/ios/).
-2.	Go to the Manage Your Apps page and click Add New App.
-3.	Fill out the forms describing your company and application.
-4.	On the appropriate form, upload the 512 × 512 pixel icon and your application screenshots.
-5.	Save the app description.
-6.	Back on the Manage Your Apps page, select the app description you just created and click the Ready to Upload Binary button.
-7.	Fill out the Export compliance form.
+1. Navigate to the iTunes Connect area of the [iOS Dev Center](http://developer.apple.com/devcenter/ios/).
+1. Go to the Manage Your Apps page and click Add New App.
+1. Fill out the forms describing your company and application.
+1. On the appropriate form, upload the 512 × 512 pixel icon and your application screenshots.
+1. Save the app description.
+1. Back on the Manage Your Apps page, select the app description you just created and click the Ready to Upload Binary button.
+1. Fill out the Export compliance form.
 
 Your app should now be in a *Waiting for upload* state. Complete the rest of the process with the Application Loader utility.  **Note:** The Application Loader utility is available only for Mac OS X 10.5.3 or later. In Windows, you can run Mac OS X inside a virtual machine. Here's how you use it:
 - Unzip the app IPA file (change the extension to .zip).
