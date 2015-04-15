@@ -1,9 +1,9 @@
-#<a name="ts"></a>Compiling TypeScript
-If you’re using TypeScript in your project, you’ll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with Gulp.
+#<a name="ts"></a>Using Gulp to Compile TypeScript
+This tutorial is part of a series on [using Gulp with Tools for Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767).
 
-1.  Add “gulp-typescript” as a devDependency in a package.json file in the root
-    of you project. If you already have a package.json file, type the following
-    from the command line in your project folder:
+If you’re using TypeScript in your project, you’ll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with [Gulp](http://go.microsoft.com/fwlink/?LinkID=533750).
+
+1.  Add [gulp-typescript](http://go.microsoft.com/fwlink/?LinkID=533748) as a devDependency in a [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file in the root of you project. If you already have a package.json file, type the following from the command line in your project folder:
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     npm install --save-dev gulp-typescript
@@ -71,4 +71,4 @@ You then can start up the watcher by simply typing the following from the comman
 gulp watch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the [sample Git Repo](http://aka.ms/tacoteambuild) for a gulpfile with TypeScript already configured for use.
+See the [sample Git Repo](http://go.microsoft.com/fwlink/?LinkID=533736) for a gulpfile with TypeScript already configured for use.

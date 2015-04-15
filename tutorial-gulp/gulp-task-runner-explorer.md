@@ -1,5 +1,7 @@
 #<a name="invoke"></a>Invoking Gulp Tasks in a Cordova Build
-When using a gulp task to do some pre-processing of code for languages like [TypeScript](https://www.npmjs.com/package/typescript), [LESS](https://www.npmjs.com/package/gulp-less), or [SASS](https://www.npmjs.com/package/gulp-sass) or to minify your JavaScript code, you may find it useful to fire off this task every time you do something that results in a build operation in Cordova. Fortunately, this is quite easy to do via a “before prepare” “hook.” When using the Apache Cordova Command Line Interface (CLI), you may use [hooks](http://aka.ms/cordovahooks) to fire off shell or node.js scripts at any number of different points in the build lifecycle. They cover everything from platform or plugin add to compilation and emulation.
+This tutorial is part of a series on [using Gulp with Tools for Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767).
+
+When using a Gulp task to do some pre-processing of code for languages like [TypeScript](http://go.microsoft.com/fwlink/?LinkID=533748), [LESS](http://go.microsoft.com/fwlink/?LinkID=533791), or [SASS](http://go.microsoft.com/fwlink/?LinkID=533792) or to minify your JavaScript code, you may find it useful to fire off this task every time you do something that results in a build operation in Cordova. Fortunately, this is quite easy to do via a “before prepare” “hook.” When using the Apache Cordova Command Line Interface (CLI), you may use [hooks](http://go.microsoft.com/fwlink/?LinkID=533744) to fire off shell or node.js scripts at any number of different points in the build lifecycle. They cover everything from platform or plugin add to compilation and emulation.
 
 The “prepare” step in Cordova is in charge of transforming all of your content in www, plugins, and merges and preparing a native project for a given platform for compilation. The “build” command in Cordova does a “prepare” before moving on to compilation and as a result it is useful to use the “before prepare” hook to wire in pre-build tasks.
 
@@ -10,7 +12,7 @@ The Visual Studio Task Explorer provides a convenient way to run Gulp tasks righ
 npm install -g gulp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, create a “package.json” file in your project. This will be the location you will use to reference Gulp or any [Gulp plugins](http://gulpjs.com/plugins/) you want to use.
+Next, create a “package.json” file in your project. This will be the location you will use to reference Gulp or any [Gulp plugins](http://go.microsoft.com/fwlink/?LinkID=533790) you want to use.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {
@@ -26,7 +28,7 @@ Visual Studio will **automatically** execute the following command for you on sa
 npm install
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If editing from the command line you can then update package.json with additional dependencies by hand or use the npm “—save-dev” flag. For example, this will both install the [uglify Gulp plugin](https://www.npmjs.com/package/gulp-uglify) and add it as a dependency:
+If editing from the command line you can then update package.json with additional dependencies by hand or use the npm “—save-dev” flag. For example, this will both install the [uglify Gulp plugin](http://go.microsoft.com/fwlink/?LinkID=533793) and add it as a dependency:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 npm install --save-dev gulp-uglify
@@ -56,7 +58,7 @@ Now to attach this to the “Before Build” event, right click and select Bindi
 The next time you run a build this task will automatically fire!
 
 ###Supporting the Gulp Task Runner Explorer from Command Line Builds
-If you want to be able to use the “Before Build” and “After Build” event bindings **outside** of Visual Studio (say from the Cordova CLI itself) you may install the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://aka.ms/vstacoplugin). This plugin works by wiring the “Before Build” event to “Before Prepare” in Cordova and “After Build” to “After Compile” when building outside of Visual Studio. **Note that currently this plugin only supports bindings in gulpfile.js in the root of your project.**
+If you want to be able to use the “Before Build” and “After Build” event bindings **outside** of Visual Studio (say from the Cordova CLI itself) you may install the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753). This plugin works by wiring the “Before Build” event to “Before Prepare” in Cordova and “After Build” to “After Compile” when building outside of Visual Studio. **Note that currently this plugin only supports bindings in gulpfile.js in the root of your project.**
 
 1.  Open your project in Visual Studio
 2.  Double click on config.xml in your project
@@ -65,10 +67,10 @@ If you want to be able to use the “Before Build” and “After Build” event
 5.  Enter the following URI: https://github.com/Chuxel/taco-cordova-support-plugin.git
 6.  Click “Add”
 
-See the [GitHub repo](http://aka.ms/vstacoplugin) for additional information. We will detail what the plugin does behind the scenes in the next section.
+See the [GitHub repo](http://go.microsoft.com/fwlink/?LinkID=533753) for additional information. We will detail what the plugin does behind the scenes in the next section.
 
 ###Behind the Scenes: Task Runner Cordova Explorer Cordova Hook
-If you are looking for a quick way to add in support for firing Grunt tasks for Cordova build events outside of Visual Studio, consider using the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://aka.ms/vstacoplugin). However, if you do not like the way this plugin works, you can easily wire in your own Cordova hook.
+If you are looking for a quick way to add in support for firing Grunt tasks for Cordova build events outside of Visual Studio, consider using the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753). However, if you do not like the way this plugin works, you can easily wire in your own Cordova hook.
 
 Hooks can be implemented in a number of different ways: shell scripts, Node.js scripts, or Node modules. Fortunately, the code to call a Gulp task from a hook is trivial. In this example we’ll use a Node.js module since it can run on both Windows and OSX and has less overhead than starting up a shell script.
 
@@ -103,13 +105,13 @@ Hooks can be implemented in a number of different ways: shell scripts, Node.js s
     }
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    This code simply looks at the “context” object that is passed into Cordova hook modules for the name of the hook event currently firing and then invokes a Gulp task of that same name via by “[forking](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options)” the Gulp node module. Since this is done asynchronously, a promise is returned to Cordova.
+    This code simply looks at the “context” object that is passed into Cordova hook modules for the name of the hook event currently firing and then invokes a Gulp task of that same name via by “[forking](http://go.microsoft.com/fwlink/?LinkID=533804)” the Gulp node module. Since this is done asynchronously, a promise is returned to Cordova.
 4.  Add the following XML element to config.xml in your Cordova project. In Visual Studio you can do this using Right-Click \> View Code.
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     <hook type="before_prepare" src="hooks/hook-gulp.js" />
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	You can wire Gulp tasks to any number of valid Cordova [hook events](http://aka.ms/cordovahooks) by simply adding additional hook elements to config.xml and replacing “before\_prepare” with the event you want to wire into.
+	You can wire Gulp tasks to any number of valid Cordova [hook events](http://go.microsoft.com/fwlink/?LinkID=533744) by simply adding additional hook elements to config.xml and replacing “before\_prepare” with the event you want to wire into.
 5.  Create a file called “gulpfile.js” and put it in the root of your Cordova project with the following in it:
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -183,7 +185,7 @@ At this point, anything you add to the “before\_prepare” Gulp task will be f
 3.  Now run a Cordova build and try it out!
 
 #### Adding Other Dependencies
-While building your Gulp script you can install any additional dependencies via the command line and use the “--save-dev” flag to update package.json. For example, this will add the [“gulp-typescript” module](https://www.npmjs.com/package/gulp-typescript) as a dependency:
+While building your Gulp script you can install any additional dependencies via the command line and use the “--save-dev” flag to update package.json. For example, this will add the [“gulp-typescript” module](http://go.microsoft.com/fwlink/?LinkID=533748) as a dependency:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 npm install gulp-typescript --save-dev
