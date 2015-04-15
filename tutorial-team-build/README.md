@@ -9,7 +9,7 @@ For specific abridged tutorials for specific build systems, you may find this sa
 
 This article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the taco-team-build node module effectivley does behind the scenes.
 
-**Note that Team Foundation Services 2013 cannot easily take advantage of the workflow described here (though 2015 can) as it is MSBuild based. See the [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770) tutorial for details.**
+*Note that Team Foundation Services 2013 cannot easily take advantage of the workflow described here (though 2015 can) as it is MSBuild based. See the [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770) tutorial for details.*
 
 
 ##Basic Workflow
