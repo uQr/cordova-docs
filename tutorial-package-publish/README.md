@@ -140,6 +140,7 @@ Now you can go back to the distribution certificate section still active in your
 ![ios: Distribution profile, Selecting App Id](<media/ios-proappid.png>)
 
 6. Select the certificates you wish to include in this provisioning profile. Choose **Continue** after you have selected the certificates.
+
 ![ios: Distribution profile, Choosing certificates](<media/ios-proCertChoice.png>)
 
 7. Name the profile and choose “Generate” and download the provisioning profile.
