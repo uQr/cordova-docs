@@ -71,7 +71,7 @@ If you want to be able to use the “Before Build” and “After Build” event
 
 See the [GitHub repo](http://go.microsoft.com/fwlink/?LinkID=533753) for additional information. We will detail what the plugin does behind the scenes in the next section.
 
-###Behind the Scenes: Task Runner Cordova Explorer Cordova Hook
+###Behind the Scenes: VS Task Runner Explorer Cordova Hook
 If you are looking for a quick way to add in support for firing Grunt tasks for Cordova build events outside of Visual Studio, consider using the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753). However, if you do not like the way this plugin works, you can easily wire in your own Cordova hook.
 
 Hooks can be implemented in a number of different ways: shell scripts, Node.js scripts, or Node modules. Fortunately, the code to call a Gulp task from a hook is trivial. In this example we’ll use a Node.js module since it can run on both Windows and OSX and has less overhead than starting up a shell script.
