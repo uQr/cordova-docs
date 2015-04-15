@@ -229,7 +229,7 @@ Future versions of the Cordova CLI will likely support generating these archives
 xcrun -v -sdk iphoneos PackageApplication source.app -o dest.ipa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In Cordova projects, the source “.app” package can be found in the platforms/ios/build/device folder in your project after a successful Cordova “device” build. As an important detail, \<source\> and \<dest\> above should be **absolute paths** and the name of the package is taken from the “Display Name” (widget/\@name) in config.xml which may not match your project folder name. Ex:
+In Cordova projects, the source “.app” package can be found in the platforms/ios/build/device folder in your project after a successful Cordova “device” build. As an important detail, \<source\> and \<dest\> above should be **absolute paths** and the name of the package is taken from the “Display Name” (widget/@name) in config.xml which may not match your project folder name. Ex:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 xcrun -v -sdk iphoneos PackageApplication "/Users/cdvusr/Documents/cordova/myapp/platforms/ios/build/device/My Cordova App.app" -o "/Users/cordova/Documents/cordova/myapp/platforms/ios/build/device/My Cordova App.ipa"
@@ -276,7 +276,7 @@ A quick way to get you project working with Visual Studio specific features outs
 ##### Behind the Scenes: res/native Hook
 If you are using Tools for Apache Cordova in Visual Studio, you may be taking advantage of the “res/native” folder in your project. This provides a useful way to update native project build artifacts without having to check in the platforms folder but is not currently a base Cordova CLI feature.
 
-You can take a look at the sample sample [Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) for a quick way to add in support. The plugin takes advantage of something called a [Cordova hook](http://go.microsoft.com/fwlink/?LinkID=533744) that allows you to wire in build steps in the Cordova CLI build process. A Cordova hook can be implemented using either shell scripts (batch, bash, or node.js based) or as a node.js module.
+You can take a look at the sample [Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) for a quick way to add in support. The plugin takes advantage of something called a [Cordova hook](http://go.microsoft.com/fwlink/?LinkID=533744) that allows you to wire in build steps in the Cordova CLI build process. A Cordova hook can be implemented using either shell scripts (batch, bash, or node.js based) or as a node.js module.
 
 For this behind the scenes tutorial, we’ll use a node.js shell script for simplicity sake. All that needs to happen is the following script should be placed in the “hooks/before\_prepare” folder. We will call the file “hook-res-native.js” but the filename itself does not matter.
 
