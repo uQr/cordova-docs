@@ -24,7 +24,7 @@ gulp.task('default', function () {
 However, there are a number of considerations to bear in mind when doing a team build that are covered broadly [in this tutorial](http://go.microsoft.com/fwlink/?LinkID=533743). Rather than focusing on these details, we’ll go over how to use Gulp to build a number of different platforms at once using a fairly simple helper node module. You can find the module along with a sample gulpfile.js and package.json in [this Git repo](http://go.microsoft.com/fwlink/?LinkID=533736).
 
 ##The taco-team-build Node Module
-The [taco-team-build](http://go.microsoft.com/fwlink/?LinkID=533736) node module is a sample module designed to help alleviate [common problems](http://go.microsoft.com/fwlink/?LinkID=533743) when building Cordova projects in a team or CI environment. It can be used with any number of build systems including Jake, Grunt, and Gulp or even a command line tool. Here we will focus on how to set it up and use it with Gulp. You can see documentation on the module’s methods in the Git repo.
+The [taco-team-build](http://go.microsoft.com/fwlink/?LinkID=533736) node module is designed to help alleviate [common problems](http://go.microsoft.com/fwlink/?LinkID=533743) when building Cordova projects in a team or CI environment. It can be used with any number of build systems including Jake, Grunt, and Gulp or even a command line tool. Here we will focus on how to set it up and use it with Gulp. You can see documentation on the module’s methods in [the Git repo](http://go.microsoft.com/fwlink/?LinkID=533736).
 
 The easiest way to get started is to simply place the contents of the “samples/gulp” folder in the Git repo to the root of your project. Otherwise you can you should do the following:
 
@@ -68,7 +68,7 @@ This script will do the following:
 2.  It checks to see if that version has already been installed at a location set in the **CORDOVA\_CACHE** environment variable. This will default to \_cordova in the project folder if the environment variable is missing. You can also set this location programmatically using the module’s configure method. If Cordova isn’t installed yet, it installs it in the cache.
 
 3.  It then does the following:
-    1.  Adds a [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) to the project if it is not already present.
+    1.  Adds the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) to the project if it is not already present.
 	2.  Adds the specified platform to the project
     3.  Builds the project
     4.  Packages the project (which is really only useful for iOS currently)
