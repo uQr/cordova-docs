@@ -1,7 +1,9 @@
 #<a name="ts"></a>Using Gulp to Compile TypeScript
 This tutorial is part of a series on [using Gulp with Tools for Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767).
 
-If you’re using TypeScript in your project, you’ll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with [Gulp](http://go.microsoft.com/fwlink/?LinkID=533750).
+[Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around.
+
+If you’re using TypeScript in your Cordova app project, you’ll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with a Gulp plugin.
 
 1.  Add [gulp-typescript](http://go.microsoft.com/fwlink/?LinkID=533748) as a devDependency in a [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file in the root of you project. If you already have a package.json file, type the following from the command line in your project folder:
 
