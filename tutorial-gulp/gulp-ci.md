@@ -24,7 +24,7 @@ gulp.task('default', function () {
 However, there are a number of considerations to bear in mind when doing a team build that are covered broadly [in this tutorial](http://go.microsoft.com/fwlink/?LinkID=533743). Rather than focusing on these details, we’ll go over how to use Gulp to build a number of different platforms at once using a fairly simple helper node module. You can find the module along with a sample gulpfile.js and package.json in [this Git repo](http://go.microsoft.com/fwlink/?LinkID=533736).
 
 ##The taco-team-build Node Module
-The taco-team-build node module is a sample general module designed to help alleviate [common problems](http://go.microsoft.com/fwlink/?LinkID=533743) when building Cordova projects automatically. It can be used with any number of build systems including Jake, Grunt, and Gulp or even a command line tool. Here we will focus on how to set it up and use it with Gulp. You can see documentation on the module’s methods in the Git repo.
+The [taco-team-build](http://go.microsoft.com/fwlink/?LinkID=533736) node module is a sample module designed to help alleviate [common problems](http://go.microsoft.com/fwlink/?LinkID=533743) when building Cordova projects in a team or CI environment. It can be used with any number of build systems including Jake, Grunt, and Gulp or even a command line tool. Here we will focus on how to set it up and use it with Gulp. You can see documentation on the module’s methods in the Git repo.
 
 The easiest way to get started is to simply place the contents of the “samples/gulp” folder in the Git repo to the root of your project. Otherwise you can you should do the following:
 
@@ -40,7 +40,7 @@ The easiest way to get started is to simply place the contents of the “samples
     }
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	Note that you may also opt to use node module from inside your project so you can modify it. To do this, you can simply add taco-team-build.js to the root of your project and require “./taco-team-build” instead of “taco-team-build”.
+	Note that you may also opt to use the node module from inside your project so you can modify it. To do this, you can simply add taco-team-build.js to the root of your project and require “./taco-team-build” instead of “taco-team-build”.
 
 2.  Create a gulpfile.js file in the root of your project if you do not already have one. We’ll cover what goes in it in the next section.
 
@@ -63,12 +63,12 @@ gulp.task('default', function () {
 
 This script will do the following:
 
-1.  Check “taco.json” to see if a Cordova version is specified. If not, it assumes you want Cordova 4.3.0.
+1.  Check **taco.json** to see if a Cordova version is specified. If not, it assumes you want Cordova 4.3.0.
 
-2.  It checks to see if that version has already been installed at a location set in the CORDOVA\_CACHE environment variable. This will default to \_cordova in the project folder if the environment variable is missing. You can also set this location programmatically using the module’s configure method. If Cordova isn’t installed yet, it installs it in the cache.
+2.  It checks to see if that version has already been installed at a location set in the **CORDOVA\_CACHE** environment variable. This will default to \_cordova in the project folder if the environment variable is missing. You can also set this location programmatically using the module’s configure method. If Cordova isn’t installed yet, it installs it in the cache.
 
 3.  It then does the following:
-    1.  Adds the [Visual Studio Tools for Apache Cordova Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) to the project if it is not already present.
+    1.  Adds a [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) to the project if it is not already present.
 	2.  Adds the specified platform to the project
     3.  Builds the project
     4.  Packages the project (which is really only useful for iOS currently)
@@ -110,7 +110,7 @@ gulp.task('package', ['build'], function () {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ##Configuring Your Build Server
-If you haven’t already, you’ll need to set up your build server with all of the necessary native dependencies. See “Installing Dependencies” in the [Building Cordova Apps in a Team / Continuous Integration Environment](http://go.microsoft.com/fwlink/?LinkID=533743) tutorial for details.
+If you haven’t already, you’ll need to set up your build server with all of the necessary native dependencies for the platforms you intend to build. See “Installing Dependencies” in the [Building Cordova Apps in a Team / Continuous Integration Environment](http://go.microsoft.com/fwlink/?LinkID=533743) tutorial for details.
 
 While each build server is slightly different in terms of how you configure tasks, all you will need to do is run the following two commands:
 
@@ -118,6 +118,8 @@ While each build server is slightly different in terms of how you configure task
 npm install
 ./node_modules/.bin/gulp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You should then set an environment variable called **CORDOVA_CACHE** that points to the location on your build server that you would like to use to cache multiple versions of cordova-lib and Cordova platforms.
 
 See the [Team Foundation Services 2015](http://go.microsoft.com/fwlink/?LinkID=533771) tutorial for a specific example.
 
