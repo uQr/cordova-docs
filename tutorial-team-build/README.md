@@ -91,6 +91,8 @@ If you are looking for a quick solution you may want to check out the [Gulp](htt
 	2.  **Supporting Visual Studio specific Windows packaging settings.** Currently the Cordova CLI does not have a standard locaiton for storing platform specific packaging information. While this is something activley being pursued by the community, Visual Studio uses a set of non-standard config.xml elements to store manditory fields for store submission.
 	3.  **Supporting the Task Runner Explorer.** Visual Studio now has a convenient Task Runner Explorer that allows you to attach Gulp and Grunt tasks to build events.
 
+5. **OSX Gotchas.** If you are used to primarily developing in the Windows environment, there are a few issues that can pop up when you start trying to build your project on OSX.
+
 ###Building with Multiple Versions of the Cordova CLI
 The Cordova CLI is a standard node.js module and thus can be installed either [globally or locally](http://go.microsoft.com/fwlink/?LinkID=533780). The trick, then, is to use a local installation of the Cordova CLI rather than a global one. There are two different methods that you can use to install Cordova locally: at the project level and in a global
 cache.
@@ -321,7 +323,7 @@ function copyFiles(srcPath, destPath) {
 
 You can place this into a "hooks\before_prepare" folder Visual Studio Cordova project and check it into source control and it will automatically be used.
 
-### Troubleshooting Tips for Building on OSX
+### OSX Gotchas: Troubleshooting Tips for Building on OSX
 There are a few relativley common issues when building a Cordova app on OSX related to permissions that are worth noting.
 
 1.  **You are seeing permission errors from “npm”:** If you are seeing permission errors from "npm," you may be running into a situation where the build agent user's cache folder (~/.npm) is inaccssible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo). Fortunatley this is easy to resolve:
