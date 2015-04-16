@@ -123,7 +123,7 @@ var platformsToBuild = process.platform == "darwin" ? osxPlatforms : winPlatform
 
 gulp.task('default', ['package'], function () {
 	// Copy results to bin folder
-	gulp.src("platforms/android/ant-b	uild/*.apk").pipe(gulp.dest("bin/release/android"));
+	gulp.src("platforms/android/ant-build/*.apk").pipe(gulp.dest("bin/release/android"));
 	gulp.src("platforms/android/build/*.apk").pipe(gulp.dest("bin/release/android"));
 	gulp.src("platforms/windows/AppPackages/**/*").pipe(gulp.dest("bin/release/windows/AppPackages"));
 	gulp.src("platforms/wp8/bin/Release/*.xap").pipe(gulp.dest("bin/release/wp8"));
