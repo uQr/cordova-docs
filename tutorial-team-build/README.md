@@ -320,3 +320,46 @@ function copyFiles(srcPath, destPath) {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can place this into a "hooks\before_prepare" folder Visual Studio Cordova project and check it into source control and it will automatically be used.
+
+### Troubleshooting Tips for Building on OSX
+There are a few relativley common issues when building a Cordova app on OSX related to permissions that are worth noting.
+
+1.  **You are seeing permission errors from “npm”:** If you are seeing permission errors from "npm," you may be running into a situation where the build agent user's cache folder (~/.npm) is inaccssible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo). Fortunatley this is easy to resolve:
+
+    1.  Log into OSX with the user that installed and set up the cross-platform agent
+    2.  Open the Terminal app and type:
+
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        sudo npm cache clear
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    3.  Next, type:
+
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        sudo chown -R `whoami` ~/.npm
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.  **You checked in the platforms/android or platforms/ios folder from Windows and are seeing permission errors:** If you are seeing errors that are originating from files in your project's “platforms” folder, the root cause may be that you checked in shell scripts under the "platforms/android/cordova" or "platforms/ios/cordova" folders from Windows. This is because the NTFS filesystem has no concept of an "execute bit" that is required to run these from OSX. (The contents of the platforms is generally not intended for checked in and by default are excluded from Cordova projects in Visual Studio as a result.)
+
+    For example, this error is saying the “version” script is not executable:
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   [17:41:57] Error:
+   /Users/vsoagent/vsoagent/agent/work/build/b424d56537be4854de825289f019285698609afddf826d5d1a185eb60b806e47/repo/tfs-vnext test/platforms/android/cordova/version:
+   Command failed with exit code EACCES
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   To resolve this problem you have two options:
+	1.  Don’t check in the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
+	2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process.
+	    1.  Create a shell script called “set-execute.sh” with the following contents:
+
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            #!/bin/sh
+            find -E platforms/ios/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+            find -E platforms/android/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    	2.  Add this file to your project in Visual Studio and check it into source control
+
+    	3.  Add a "shell script" build step at the very beginning of your build definition that runs the above script.
