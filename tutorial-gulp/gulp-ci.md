@@ -1,30 +1,60 @@
-#<a name="ci"></a>Using Gulp to Build Cordova in a Team / CI Environment
+#<a name="ci"></a>Using Gulp to Build Cordova Projects
 This tutorial is part of a series on [using Gulp with Tools for Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767).
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and the [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) are Node.js based which makes the two highly complementary technologies.
 
-Because it can run on Windows or OSX, Gulp can be extremely useful as a unified cross-platform build language for automating and testing your builds in a team / continuous integration (CI) environment such as Team Foundation Services 2015 or Visual Studio Online.
+Because it can run on Windows or OSX, Gulp can be extremely useful as a unified cross-platform build language for automating and testing your builds in a team / continuous integration (CI) environment such as Team Foundation Services 2015 or Visual Studio Online. You may also prefer to use a Gulp based workflow rather than using the Cordova CLI itself.
 
-For specifics on using TFS 2015, see the  [abridged tutorial on specifics building Cordova apps using Gulp and TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771). Be aware that [TFS 2013 requires a different approach](http://go.microsoft.com/fwlink/?LinkID=533770) because MSBuild must be the primary build language.
+For specifics on using Gulp with TFS 2015, see the  [abridged tutorial on specifics building Cordova apps using Gulp and TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771). Be aware that [TFS 2013 requires a different approach](http://go.microsoft.com/fwlink/?LinkID=533770) because MSBuild must be the primary build language.
 
-The Cordova CLI internally uses a node module called cordova-lib. It is therefore relatively straight forward to use cordova-lib directly from a Gulp script in concept. For example:
+##Using cordova-lib from Gulp
 
+The Cordova CLI internally uses a node module called cordova-lib that encapsulates all of the CLI's core funtionality in a series of JavaScript APis. This module is also released as an npm package at the same time the Cordova CLI is released. It is therefore relatively straight forward to use cordova-lib directly from a Gulp script.
+
+For example, this is a sample gulpefile.js that you can place in the root of your Cordova project that will build a release version of the Android platform:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var gulp = require('gulp'),
     cordova = require('cordova-lib').cordova;
 
-gulp.task('default', function () {
-	return cordova.raw.build({
+gulp.task('default', function (callback) {
+	cordova.build({
     	"platforms": ["android"],
     	"options": ["--release"]
-    });
+    }, callback);
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-However, there are a number of considerations to bear in mind when doing a team build that are covered broadly [in this tutorial](http://go.microsoft.com/fwlink/?LinkID=533743). Rather than focusing on these details, we’ll go over how to use Gulp to build a number of different platforms at once using a fairly simple helper node module. You can find the module along with a sample gulpfile.js and package.json in [this Git repo](http://go.microsoft.com/fwlink/?LinkID=533736).
+Note that cordova-lib functions **are asychronus** and so you need to pass in the Gulp callback function passed into your task to your last API call. You can also get a version of these functions that returns a promise by using "cordova.raw" instead of "cordova."
+
+To get the example above to work, you will want to create a simple package.json file with the following in it that is also in the root of your Cordova project:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{
+    "devDependencies": {
+        "gulp": "latest",
+        "cordova-lib": "4.3.0"
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Then from the command line at the root of your project type:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+npm install -g gulp
+npm install
+gulp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note that the **"cordova" and "cordova-lib" npm package version numbers do not match for CLI 3.6.3 or earlier**. If you need to target these older Cordova versions, you can instead reference the "cordova" npm package in your package.json file and edit the require statement in the above Gulp script as follows:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+var gulp = require('gulp'),
+    cordova = require('cordova');
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is important to note that there are a number of considerations to bear in mind when trying to create a complete automated build script particularly in a team / CI environment that are covered broadly [in this tutorial](http://go.microsoft.com/fwlink/?LinkID=533743). Rather than focusing on these details, we’ll go over how to use Gulp to build a number of different platforms at once using a fairly simple helper node module. You can find the module along with a sample gulpfile.js and package.json in [this Git repo](http://go.microsoft.com/fwlink/?LinkID=533736).
 
 ##The taco-team-build Node Module
-The [taco-team-build](http://go.microsoft.com/fwlink/?LinkID=533736) node module is designed to help alleviate [common problems](http://go.microsoft.com/fwlink/?LinkID=533743) when building Cordova projects in a team or CI environment. It can be used with any number of build systems including Jake, Grunt, and Gulp or even a command line tool. Here we will focus on how to set it up and use it with Gulp. You can see documentation on the module’s methods in [the Git repo](http://go.microsoft.com/fwlink/?LinkID=533736).
+The [taco-team-build](http://go.microsoft.com/fwlink/?LinkID=533736) node module is designed to help alleviate [common problems](http://go.microsoft.com/fwlink/?LinkID=533743) when building Cordova projects from the command line particularly in a team or CI environment. It can be used with any number of build systems including Jake, Grunt, and Gulp or even a command line tool. Here we will focus on how to set it up and use it with Gulp. You can see documentation on the module’s methods in [the Git repo](http://go.microsoft.com/fwlink/?LinkID=533736).
 
 The easiest way to get started is to simply place the contents of the “samples/gulp” folder in the Git repo to the root of your project. Otherwise you can you should do the following:
 
@@ -48,7 +78,7 @@ The easiest way to get started is to simply place the contents of the “samples
 
 4.  If Gulp is installed on your system (npm install -g gulp), you simply need to type “gulp” from your project root to use the script.
 
-##The Gulp Script
+###The Gulp Script
 As in the previous section, you will need to include a “gulpfile.js” file in your project. At its simplest, this is all you need to do to use Gulp to build using this module.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
