@@ -187,9 +187,10 @@ At this point, anything you add to the “before\_prepare” Gulp task will be f
 3.  Now run a Cordova build and try it out!
 
 #### Adding Other Dependencies
-While building your Gulp script you can install any additional dependencies via the command line and use the “--save-dev” flag to update package.json. For example, this will add the [“gulp-typescript” module](http://go.microsoft.com/fwlink/?LinkID=533748) as a dependency:
+Adding additional dependencies is simple from Visual Studio. VS will also **automaticlly** install any package added to the "devDependencies" list in package.json when you save the file.
+
+You can also install any additional dependencies and update package.json using the “--save” flag when calling "npm install" from the command line. For example, this command will add the [uglify Gulp plugin](http://go.microsoft.com/fwlink/?LinkID=533793) as a dependency:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-npm install gulp-typescript --save-dev
+npm install --save-dev gulp-uglify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
