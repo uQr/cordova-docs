@@ -31,7 +31,7 @@ The basic flow for building a Cordova app is simple on the surface:
     cordova build android --release
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Cordova CLI is node.js based, so these exact same steps can be run from an OSX machine or from a cloud hosted VM like [MacInCloud](http://go.microsoft.com/fwlink/?LinkID=533746) or from Windows. See the [Cordova CLI documentation](http://go.microsoft.com/fwlink/?LinkID=533773) for additional details.
+The Cordova CLI is node.js based, so these exact same steps can be run from Windows or an OSX machine or from a cloud hosted VM like [MacInCloud](http://go.microsoft.com/fwlink/?LinkID=533746). See the [Cordova CLI documentation](http://go.microsoft.com/fwlink/?LinkID=533773) for additional details.
 
 Exactly how these steps are executed will vary depending on your build server. However, there are a few challenges that may not be immediately obvious when setting up an automated build environment. This are article will describe some techniques for dealing with these common problems.
 
@@ -52,11 +52,11 @@ Otherwise you can manually install only those dependencies that are needed for b
 
         2.  Instead you may download and install one of the ["SDK Tools Only" packages](http://go.microsoft.com/fwlink/?LinkID=533747).
 
-        3.  When building, you encounter an error telling you that you need to install specific SDK versions or tools depending on the version of Cordova you are using. Note that these messages are talking about the *tools and SDK* versions *not* the device target versions.
+        3.  When building, you may encounter an error telling you that you need to install specific SDK versions or tools depending on the version of Cordova you are using. Note that these messages are talking about the *tools and SDK* versions *not* the device target versions.
         
         	1.  You can install additional SDKs using [the Android SDK Manager](http://go.microsoft.com/fwlink/?LinkID=533775).
         
-        	2. The only thing for a specific SDK required to build is the "SDK Platform" so you may uncheck other options. Android system images in particular are large and are not needed.
+        	2. Noe that only the "SDK Platform" is required for a given API level so you may uncheck other options. Android system images in particular are large and are not needed.
         
         	3.  Be sure to also install the "platform tools"
         
@@ -69,7 +69,7 @@ Otherwise you can manually install only those dependencies that are needed for b
         2.  [Windows Phone 8.0 Platform Guide](http://go.microsoft.com/fwlink/?LinkID=533778)
 
 ###A Note on TypeScript
-Unlike Visual Studio, it’s important to note that the base Cordova CLI does not itself automatically compile TypeScript code. If you are using a build language like Gulp or Grunt, there are convenient plugins that you can use to compile your TypeScript code. Otherwise there is also a node.js based command line utility that works both on Windows and OSX. See the following links for additional details:
+Unlike Visual Studio, it's important to note that the base Cordova CLI does not itself automatically compile TypeScript code. If you are using a build language like Gulp or Grunt, there are convenient plugins that you can use to compile your TypeScript code. Otherwise there is also a node.js based command line utility that works both on Windows and OSX. See the following links for additional details:
 
 -   [Compiling TypeScript from the command line](http://go.microsoft.com/fwlink/?LinkID=533802)
 -   [gulp-typescript](http://go.microsoft.com/fwlink/?LinkID=533748)
@@ -78,24 +78,25 @@ Unlike Visual Studio, it’s important to note that the base Cordova CLI does no
 ##Cordova Challenges
 When building Cordova projects in a server environment, there are a number of challenges you may encounter. This tutorial will describe simple ways to handle these problems without going into specifics on particular CI servers so that this information can be adapted to your favorite build technology.
 
-If you are looking for a quick solution you may want to check out the [Gulp](http://go.microsoft.com/fwlink/?LinkID=533742) tutorial and this [GitHub repo](http://go.microsoft.com/fwlink/?LinkID=533736) with the sample taco-team-build node module designed to help resolve these problems regardless of build system.
+If you are looking for a quick solution you may want to read the [Gulp](http://go.microsoft.com/fwlink/?LinkID=533742) tutorial and [this Git repository](http://go.microsoft.com/fwlink/?LinkID=533736) with a sample taco-team-build node module designed to help resolve these problems regardless of build system.  
+
+The challenges are as follows:
 
 1.  **Building with Multiple Versions of the Cordova CLI.** While in an ideal world everyone would use the edge version of the Cordova CLI and associated platforms, the reality is that for a given build server you will want to use multiple versions of the Cordova CLI. This means that the common practice of installing Cordova [globally](http://go.microsoft.com/fwlink/?LinkID=533780) will not work.
 
-2.  **Adding Cordova Platforms.** As of Cordova 4.2.0, the "cordova platform add" CLI command still needs to be explicitly fired unless you opted to check in the contents of the "platforms" folder which is not recommended.
+2.  **Adding Cordova Platforms.** As of Cordova 4.3.0, the "cordova platform add" CLI command still needs to be explicitly run to build a platform unless you opted to check in the contents of the "platforms" folder which is not recommended. However, using the platform command can cause your build to fail under certain circumstances.
 
-3.  **Generating an iOS App Store Package.** By default, the iOS build in Cordova generates an app rather than an ".ipa" for device deployment. An ipa can be generated from the command line quite easily but build servers like Jenkins require an extra step.
+3.  **Generating an iOS App Store Package.** By default, the iOS build in Cordova generates an ".app" structure rather than an ".ipa" for device deployment. An ipa can be generated from the command line quite easily but build servers like Jenkins require an extra step.
 
 4.  **Visual Studio Specific Features**
 	1.  **Supporting res/native.** The "res/native" folder in Visual Studio projects provides a useful way to update native project build artifacts without having to check in the platforms folder. It is not currently a base Cordova CLI feature.
 	2.  **Supporting Visual Studio specific Windows packaging settings.** Currently the Cordova CLI does not have a standard locaiton for storing platform specific packaging information. While this is something activley being pursued by the community, Visual Studio uses a set of non-standard config.xml elements to store manditory fields for store submission.
 	3.  **Supporting the Task Runner Explorer.** Visual Studio now has a convenient Task Runner Explorer that allows you to attach Gulp and Grunt tasks to build events.
 
-5. **OSX Gotchas.** If you are used to primarily developing in the Windows environment, there are a few issues that can pop up when you start trying to build your project on OSX.
+5. **OSX Gotchas.** If you spend most of your time developing in the Windows environment, there are a few common, easily resolved issues that can pop up when you start trying to build your project on OSX.
 
 ###Building with Multiple Versions of the Cordova CLI
-The Cordova CLI is a standard node.js module and thus can be installed either [globally or locally](http://go.microsoft.com/fwlink/?LinkID=533780). The trick, then, is to use a local installation of the Cordova CLI rather than a global one. There are two different methods that you can use to install Cordova locally: at the project level and in a global
-cache.
+The Cordova CLI is a standard Node.js npm package and thus can be installed either [globally or locally](http://go.microsoft.com/fwlink/?LinkID=533780). The trick, then, is to use a local installation of the Cordova CLI rather than a global one. There are two different methods that you can use to install Cordova locally: at the project level or in a global cache.
 
 #### Project Level
 Installing and using the correct version of the Cordova CLI at the project level is simple thanks to something called [package.json](http://go.microsoft.com/fwlink/?LinkID=533781). Here is the general approach:
@@ -119,14 +120,13 @@ Installing and using the correct version of the Cordova CLI at the project level
     npm install
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-5.  When executing a Cordova CLI command for your build task, you can then use the following.
+5.  When executing a Cordova CLI command for your build task, you can then use the following commands:
 
 	Windows:
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	node_modules\cordova\bin\cordova
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 	OSX:
 
@@ -140,12 +140,12 @@ Installing and using the correct version of the Cordova CLI at the project level
     ./node_modules/cordova/bin/cordova platform add android
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The downside of this method is that you will end up installing the Cordova CLI each time you execute a "clean" build which will slow down your build times particularly on Windows as the CLI consists of around 25mb of content.
+The downside of this method is that you will end up installing the Cordova CLI each time you execute a "clean" build which will slow down your build times particularly on Windows as the CLI consists of around 25mb of small files.
 
 ### Global Cache
-To avoid re-installing each time, you can take advantage of Visual Studio’s **taco.json** file and a node.js script to do the installation in a specific location that you then use to execute Cordova commands.
+To avoid re-installing each time, you can take advantage of Visual Studio's **taco.json** file and a Node.js script to perfom the installation in a specific location that you then use to execute Cordova commands.
 
-1.  Add an environment variable to your system (or build) called **CORDOVA\_CACHE** pointing to where you a "cache" of the different versions of the Cordova CLI used to build your projects.
+1.  Add an environment variable to your system (or build) called **CORDOVA\_CACHE** pointing to where you want to create "cache" of the different versions of the Cordova CLI used to build your projects.
 
 2.  Add this node.js script to your project and call it "setup-cordova.js":
 
@@ -195,7 +195,7 @@ To avoid re-installing each time, you can take advantage of Visual Studio’s **
 
 4.  Use "./cordova.sh" (OSX) or "cordova.cmd" (Windows) to run additional Cordova commands
 
-Note that this same script can be easily adapted to a [Gulp build task](http://go.microsoft.com/fwlink/?LinkID=533750). See the [Gulp](http://go.microsoft.com/fwlink/?LinkID=533742) tutorial and the samples [GitHub repo](http://go.microsoft.com/fwlink/?LinkID=533736) for additional information.
+Note that this same script can be easily adapted to a [Gulp build task](http://go.microsoft.com/fwlink/?LinkID=533750). See the [Gulp](http://go.microsoft.com/fwlink/?LinkID=533742) tutorial for additional information.
 
 ###Adding Platforms
 Adding platforms in Cordova is quite simple using the "cordova platform" command. Ex:
@@ -207,14 +207,14 @@ cordova platform add android
 However, there are a couple of common problems when executing this command that you could run into.
 
 
-1. **Platform Download Messages Result in Build Failures.** Where things can get a bit tricky is that node.js emits warnings to "Standard Error."  The issue is that "platform add" command can result in warnings being reported when the CLI is downloading a version of a given Cordova platform for the first time. This is not an error, but some build systems will assume anything sent to standard error means a build failure occurred.
+1. **Platform Download Messages Result in Build Failures.** Where things can get a bit tricky is that Node.js emits warnings to "Standard Error."  The issue is that "platform add" command can result in warnings being reported when the CLI is downloading a version of a given Cordova platform for the first time. This is not an error, but some build systems will assume anything sent to standard error means a build failure occurred.
 
     Many CI systems provide a "continue on error" option that you can select to get around this particular problem or you can pipe standard error to standard out if you'd prefer.
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	cordova platform add ios 2>&1
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2. **Errors During Incremental Builds.** If you are doing an incremental build and the platform you are build has already been added, the resulting exit code will be non-zero and may be interpreted as a build failure. If your build system supports a "continue on error" option for a given task, you can simply select that.
+2. **Errors During Incremental Builds.** If you are doing an incremental build and the platform you are building has already been added, the resulting exit code will be non-zero and may be interpreted as a build failure. If your build system supports a "continue on error" option for a given task, you can simply select that.
 
 	However, a more robust solution is to simply conditionally call "platform add" if the appropriate folder in the platforms folder in your project is not found. In the scripts below replace "cordova" with the appropriate command from the "Building with Multiple Versions of the Cordova CLI" section above.
 
@@ -240,7 +240,7 @@ Future versions of the Cordova CLI will likely support generating these archives
 xcrun -v -sdk iphoneos PackageApplication source.app -o dest.ipa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In Cordova projects, the source ".app" package can be found in the platforms/ios/build/device folder in your project after a successful Cordova "device" build. As an important detail, \<source\> and \<dest\> above should be **absolute paths** and the name of the package is taken from the "Display Name" (widget/@name) in config.xml which may not match your project folder name. Ex:
+In Cordova projects, the source ".app" package can be found in the platforms/ios/build/device folder in your project after a successful Cordova "device" build. As an important detail, "source.app" and "dest.ipa" above should be **absolute paths** and the name of the package is taken from the "Display Name" (widget/@name) in config.xml which may not match your project folder name. Ex:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 xcrun -v -sdk iphoneos PackageApplication "/Users/cdvusr/Documents/cordova/myapp/platforms/ios/build/device/My Cordova App.app" -o "/Users/cordova/Documents/cordova/myapp/platforms/ios/build/device/My Cordova App.ipa"
@@ -252,7 +252,7 @@ Each build system has a different mechanisms in place for passing the absolute p
 xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/device/My Cordova App.app" -o "${WORKSPACE}/platforms/ios/build/device/My Cordova App.ipa"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This command will automatically match a developer a developer (when building Debug) or distribution (when building Release) signing identity based on the app’s package name. When you are using res/native, you can place a custom [build-debug.xcconfig](http://go.microsoft.com/fwlink/?LinkID=533752) or [build-release.xcconfig](http://go.microsoft.com/fwlink/?LinkID=533782) file in res/native/ios/cordova in your Cordova project to override signing identities and other [build settings](http://go.microsoft.com/fwlink/?LinkID=533783) for these configurations.
+This command will automatically match a developer signing identitiy (when building Debug) or distribution (when building Release) signing identity based on the app's package name. When you are using res/native, you can place a custom [build-debug.xcconfig](http://go.microsoft.com/fwlink/?LinkID=533752) or [build-release.xcconfig](http://go.microsoft.com/fwlink/?LinkID=533782) file in res/native/ios/cordova in your Cordova project to override signing identities and other [build settings](http://go.microsoft.com/fwlink/?LinkID=533783) for these configurations.
 
 However, additional command line arguments can also be passed such as "--sign" to resign the app using a specific signing identity or a path to a .p12 file and "--embed" to specify the path to a provisioning profile. Ex:
 
@@ -261,7 +261,7 @@ xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/devi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #### Solving Keychain Permission Errors
-When auto-matching, you may hit permissions issues when using a build server like [Jenkins](http://go.microsoft.com/fwlink/?LinkID=533784) because the agent does not have permissions to access the login keychain. To solve this problem, you’ll need to unlock the keychain before you build and package your Cordova app.
+When auto-matching, you may hit permissions issues when using a build server like [Jenkins](http://go.microsoft.com/fwlink/?LinkID=533784) because the build agent does not have permissions to access the login keychain. To solve this problem, you'll need to unlock the keychain before you build and package your Cordova app.
 
 Most build servers provide a way to inject secure environment variables before executing build tasks. In Jenkins this is accomplished by using the "Environment Injector Plugin." By then setting a KEYCHAIN\_PWD environment variable you can add the following command to your build.
 
@@ -287,9 +287,9 @@ A quick way to get you project working with Visual Studio specific features outs
 ##### Behind the Scenes: res/native Hook
 If you are using Tools for Apache Cordova in Visual Studio, you may be taking advantage of the "res/native" folder in your project. This provides a useful way to update native project build artifacts without having to check in the platforms folder but is not currently a base Cordova CLI feature.
 
-You can take a look at the sample [Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) for a quick way to add in support. The plugin takes advantage of something called a [Cordova hook](http://go.microsoft.com/fwlink/?LinkID=533744) that allows you to wire in build steps in the Cordova CLI build process. A Cordova hook can be implemented using either shell scripts (batch, bash, or node.js based) or as a node.js module.
+You can take a look at the sample [Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) for a quick way to add in support. The plugin takes advantage of something called a [Cordova hook](http://go.microsoft.com/fwlink/?LinkID=533744) that allows you to wire in build steps in the Cordova CLI build process. A Cordova hook can be implemented using either shell scripts (batch, bash, or Node.js based) or as a node.js module.
 
-For this behind the scenes tutorial, we’ll use a node.js shell script for simplicity sake. All that needs to happen is the following script should be placed in the "hooks/before\_prepare" folder. We will call the file "hook-res-native.js" but the filename itself does not matter.
+For this behind the scenes tutorial, we'll use a Node.js based shell script for simplicity sake. All that needs to happen is the following script should be placed in the "hooks/before\_prepare" folder. We will call the file "hook-res-native.js" but the filename itself does not matter.
 
 Add the following to the file:
 
@@ -352,7 +352,7 @@ There are a few relativley common issues when building a Cordova app on OSX rela
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    To resolve this problem you have two options:
-	1.  Don’t check in the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
+	1.  Don't check in the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
 	2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process.
 	    1.  Create a shell script called "set-execute.sh" with the following contents:
 
