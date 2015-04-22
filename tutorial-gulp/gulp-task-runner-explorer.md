@@ -14,7 +14,7 @@ The Visual Studio Task Explorer provides a convenient way to run Gulp tasks righ
 npm install -g gulp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, create a “package.json” file in your project. This will be the location you will use to reference Gulp or any [Gulp plugins](http://go.microsoft.com/fwlink/?LinkID=533790) you want to use.
+Next, create a [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file in your project. This will be the location you will use to reference Gulp or any [Gulp plugins](http://go.microsoft.com/fwlink/?LinkID=533790) you want to use.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {
