@@ -26,7 +26,7 @@ gulp.task("default", function (callback) {
 
 Note that cordova-lib functions **are asychronus** and so you need to include the Gulp callback function passed into your task as an argument to your last API call. 
 
-To see the example above in action you will need to install some other npm pacakges. Create a simple package.json file with a minimum of the following in it that is also in the root of your Cordova project:
+To see the example above in action you will need to install some other npm pacakges. Create a simple [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file with a minimum of the following in it that is also in the root of your Cordova project:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {
