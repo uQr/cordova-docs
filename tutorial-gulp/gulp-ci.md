@@ -45,9 +45,9 @@ npm install
 gulp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The "npm install -g gulp" will make the Gulp command line interface available globally while the "npm install" command will install the "devDepenencies" above locally in a node_modules folder for use in your gulp script.
+The "npm install -g gulp" command will install the Gulp command line interface and add it to your path while the "npm install" command will install the "devDepenencies" listed above in a node_modules folder for use in your gulp script. These two commands are only required if you need to install new dependencies you've added to package.json by hand or are installing Gulp globally for the first time.
 
-Note that you can also quickly execute Gulp tasks from the Task Runner Explorer right from Visual Studio. Simply go to View \> Other Windows \> Task Runner Explorer to bring it up for use. Even better, any dependencies you add to package.json will automatically be installed locally for use when you save the file.
+You can also quickly execute Gulp tasks from the Task Runner Explorer right from Visual Studio. Simply go to View \> Other Windows \> Task Runner Explorer to bring it up for use. Even better, any dependencies you add to package.json will automatically be installed locally for use when you save the file.
 
 ![View Menu](<media/gulp-1.png>)
 
