@@ -8,7 +8,7 @@ Because it can run on Windows or OSX, Gulp can be extremely useful as a unified 
 For specifics on using Gulp with TFS 2015, see the  [abridged tutorial on specifics building Cordova apps using Gulp and TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771). Be aware that [TFS 2013 requires a different approach](http://go.microsoft.com/fwlink/?LinkID=533770) because MSBuild must be the primary build language.
 
 ##Using cordova-lib from Gulp
-The Cordova CLI internally uses a node module called cordova-lib that encapsulates all of the CLI's core funtionality in a series of JavaScript APis. This module is also released as an npm package at the same time the Cordova CLI is released. It is therefore relatively straight forward to use cordova-lib directly from a Gulp script.
+The Cordova CLI internally uses a node module called cordova-lib that encapsulates all of the CLI's core functionality in a series of JavaScript APIs. This module is also released as an npm package at the same time the Cordova CLI is released. It is therefore relatively straight forward to use cordova-lib directly from a Gulp script.
 
 For example, this is a sample **gulpefile.js** that you can place in the root of your Cordova project that will build a release version of the Android platform:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,9 +23,9 @@ gulp.task("default", function (callback) {
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note that cordova-lib functions **are asychronus** and so you need to include the Gulp callback function passed into your task as an argument to your last API call. 
+Note that cordova-lib functions **are asynchronous** and so you need to include the Gulp callback function passed into your task as an argument to your last API call. 
 
-To see the example above in action you will need to install some additional npm pacakges. Create a simple [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file with a minimum of the following in it that is in the root of your Cordova project:
+To see the example above in action you will need to install some additional npm packages. Create a simple [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file with a minimum of the following in it that is in the root of your Cordova project:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {

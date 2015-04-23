@@ -7,7 +7,7 @@ For specific abridged tutorials for specific build systems, you may find this sa
 -   [Team Foundation Services 2015 and Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771)
 -   [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770)
 
-This article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the taco-team-build node module effectivley does behind the scenes.
+This article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the taco-team-build node module effectively does behind the scenes.
 
 *Note that Team Foundation Services 2013 cannot easily take advantage of the workflow described here (though 2015 can) as it is MSBuild based. See the [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770) tutorial for details.*
 
@@ -56,7 +56,7 @@ Otherwise you can manually install only those dependencies that are needed for b
         
         	1.  You can install additional SDKs using [the Android SDK Manager](http://go.microsoft.com/fwlink/?LinkID=533775).
         
-        	2. Noe that only the "SDK Platform" is required for a given API level so you may uncheck other options. Android system images in particular are large and are not needed.
+        	2. Note that only the "SDK Platform" is required for a given API level so you may uncheck other options. Android system images in particular are large and are not needed.
         
         	3.  Be sure to also install the "platform tools"
         
@@ -90,7 +90,7 @@ The challenges are as follows:
 
 4.  **Visual Studio Specific Features**
 	1.  **Supporting res/native.** The "res/native" folder in Visual Studio projects provides a useful way to update native project build artifacts without having to check in the platforms folder. It is not currently a base Cordova CLI feature.
-	2.  **Supporting Visual Studio specific Windows packaging settings.** Currently the Cordova CLI does not have a standard locaiton for storing platform specific packaging information. While this is something activley being pursued by the community, Visual Studio uses a set of non-standard config.xml elements to store manditory fields for store submission.
+	2.  **Supporting Visual Studio specific Windows packaging settings.** Currently the Cordova CLI does not have a standard location for storing platform specific packaging information. While this is something actively being pursued by the community, Visual Studio uses a set of non-standard config.xml elements to store mandatory fields for store submission.
 	3.  **Supporting the Task Runner Explorer.** Visual Studio now has a convenient Task Runner Explorer that allows you to attach Gulp and Grunt tasks to build events.
 
 5. **OSX Gotchas.** If you spend most of your time developing in the Windows environment, there are a few common, easily resolved issues that can pop up when you start trying to build your project on OSX.
@@ -143,7 +143,7 @@ Installing and using the correct version of the Cordova CLI at the project level
 The downside of this method is that you will end up installing the Cordova CLI each time you execute a "clean" build which will slow down your build times particularly on Windows as the CLI consists of around 25mb of small files.
 
 ### Global Cache
-To avoid re-installing each time, you can take advantage of Visual Studio's **taco.json** file and a Node.js script to perfom the installation in a specific location that you then use to execute Cordova commands.
+To avoid re-installing each time, you can take advantage of Visual Studio's **taco.json** file and a Node.js script to perform the installation in a specific location that you then use to execute Cordova commands.
 
 1.  Add an environment variable to your system (or build) called **CORDOVA\_CACHE** pointing to where you want to create "cache" of the different versions of the Cordova CLI used to build your projects.
 
@@ -326,7 +326,7 @@ You can place this into a "hooks\before_prepare" folder Visual Studio Cordova pr
 ### OSX Gotchas: Troubleshooting Tips for Building on OSX
 There are a few relativley common issues when building a Cordova app on OSX related to permissions that are worth noting.
 
-1.  **You are seeing permission errors from "npm":** If you are seeing permission errors from "npm," you may be running into a situation where the build agent user's cache folder (~/.npm) is inaccssible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo). Fortunatley this is easy to resolve:
+1.  **You are seeing permission errors from "npm":** If you are seeing permission errors from "npm," you may be running into a situation where the build agent user's cache folder (~/.npm) is inaccessible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo). Fortunately this is easy to resolve:
 
     1.  Log into OSX with the user that installed and set up the cross-platform agent
     2.  Open the Terminal app and type:
@@ -341,7 +341,7 @@ There are a few relativley common issues when building a Cordova app on OSX rela
         sudo chown -R `whoami` ~/.npm
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3.  **You checked in the platforms/android or platforms/ios folder from Windows and are seeing permission errors:** If you are seeing errors that are originating from files in your project's "platforms" folder, the root cause may be that you checked in shell scripts under the "platforms/android/cordova" or "platforms/ios/cordova" folders from Windows. This is because the NTFS filesystem has no concept of an "execute bit" that is required to run these from OSX. (The contents of the platforms is generally not intended for checked in and by default are excluded from Cordova projects in Visual Studio as a result.)
+3.  **You checked in the platforms/android or platforms/ios folder from Windows and are seeing permission errors:** If you are seeing errors that are originating from files in your project's "platforms" folder, the root cause may be that you checked in shell scripts under the "platforms/android/cordova" or "platforms/ios/cordova" folders from Windows. This is because the NTFS file system has no concept of an "execute bit" that is required to run these from OSX. (The contents of the platforms is generally not intended for checked in and by default are excluded from Cordova projects in Visual Studio as a result.)
 
     For example, this error is saying the "version" script is not executable:
 
