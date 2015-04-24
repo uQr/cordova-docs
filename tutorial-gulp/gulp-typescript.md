@@ -45,11 +45,7 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     });
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD
 	This will compile anything in the “scripts” folder in the root of your Cordova project and copy them as a single JavaScript file called “appBundle.js” under the “www/scripts” folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
-=======
-	This will compile anything in the "scripts" folder in the root of your Cordova project and into a single JavaScript file called "appBuilde.js" under the "www/scripts" folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
->>>>>>> origin/master
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	gulp.src(["scripts/**/*.ts","www/typescript/**/*.ts"])
