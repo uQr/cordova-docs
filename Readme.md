@@ -9,7 +9,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
 
 ## Tips & Workarounds
-1. [iOS, Android from OSX](./tips-and-workarounds/ios)
+1. [iOS and OSX](./tips-and-workarounds/ios)
 
 ### Help us improve our documentation
 Help us improve out docuementaiton by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
