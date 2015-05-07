@@ -5,7 +5,7 @@ It covers the following issues:
 
 1. [Errors about missing header or library files after adding a 3rd party Cordova plugin when building for iOS](#symlink) 
 2. [Permission errors from "npm" when trying to build in vs-mda-remote, a CI server, or the command line](#npm-cache)
-3. [Permission errors when building or executing a cordova command (plugin add) on OSX after checking in or copying the platforms/android or platforms/ios folder from Windows](#osx-set-execute)
+3. [Permission errors when building or executing a cordova command (plugin add) on OSX after checking in or copying the "platforms" folder from Windows](#osx-set-execute)
 
 <a name="symlink"></a>
 ##Errors About Missing Header or Library Files in Plugins
@@ -33,7 +33,7 @@ sudo chown -R `whoami` ~/.npm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <a name="osx-set-execute"></a>
-###Permission errors when building or executing a cordova command (plugin add) on OSX after checking in or copying the platforms/android or platforms/ios folder from Windows
+###Permission errors when building or executing a cordova command (plugin add) on OSX after checking in or copying the "platforms" folder from Windows
 If you are seeing errors that are originating from files in your project's "platforms" folder when building either Android or iOS on OSX, the root cause may be that you checked in shell scripts under the "platforms/android/cordova" or "platforms/ios/cordova" folders from Windows. This is because the NTFS file system has no concept of an "execute bit" that is required to run these from OSX. (The contents of the platforms is generally not intended for checked in and by default are excluded from Cordova projects in Visual Studio as a result.)
 
 For example, this error is saying the "version" script is not executable:
