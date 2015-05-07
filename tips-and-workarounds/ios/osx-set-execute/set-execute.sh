@@ -5,3 +5,5 @@
 #
 find -E platforms/ios/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
 find -E platforms/android/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+find -E platforms/windows/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+find -E platforms/wp8/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
