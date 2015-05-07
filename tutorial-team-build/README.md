@@ -362,6 +362,8 @@ There are a few relativley common issues when building a Cordova app on OSX rela
             #!/bin/sh
             find -E platforms/ios/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
             find -E platforms/android/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+            find -E platforms/windows/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+            find -E platforms/wp8/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     	2.  Add this file to your project in Visual Studio and check it into source control
