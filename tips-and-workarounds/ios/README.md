@@ -3,8 +3,8 @@ This document covers tips, tricks, and known workarounds for problems with the C
 
 It covers the following issues:
 
-1. [You are seeing errors about missing header or library files after adding a 3rd party Cordova plugin when building for iOS](#symlink) 
-2. [You are seeing permission errors from "npm" when trying to build in vs-mda-remote, a CI server, or the command line](#npm-cache)
+1. [Errors about missing header or library files after adding a 3rd party Cordova plugin when building for iOS](#symlink) 
+2. [Permission errors from "npm" when trying to build in vs-mda-remote, a CI server, or the command line](#npm-cache)
 3. [You checked in the platforms/android or platforms/ios folder from Windows and are seeing permission errors when building on OSX](#osx-set-execute)
 
 <a name="symlink"></a>
