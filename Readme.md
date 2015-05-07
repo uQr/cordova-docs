@@ -1,5 +1,5 @@
 # Visual Studio Tools for Apache Cordova
-This repository contains a set of documents and tutorials for the **Visual Studio 2015 RC** release of **Tools for Apache Cordova.**
+This repository contains a set of documents and tutorials for the **Visual Studio 2015 RC** release of **[Tools for Apache Cordova](http://aka.ms/cordova).**
 
 **Note that this documentation does not apply to Visual Studio 2013 CTPs.**
 
@@ -15,6 +15,6 @@ Help us improve out docuementaiton by sending us a pull-request or opening a [Gi
 ## More Information
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=397716)
+* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto://multidevicehybridapp@microsoft.com)
