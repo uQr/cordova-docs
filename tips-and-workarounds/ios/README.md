@@ -25,7 +25,7 @@ To install it:
 ##Permission Issues (EACCES Errors)
 <a name="npm-cache"></a>
 ###Permission errors from "npm" when trying to build in vs-mda-remote, a CI server, or the command line
-If you are seeing permission errors from "npm," you may be running into a situation where the your user's cache folder (~/.npm) is inaccessible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo). Fortunately this is easy to resolve. Open the Terminal app and type:
+If you are seeing permission errors from "npm," you may be running into a situation where the your user's cache folder (~/.npm) is inaccessible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo) when using older versions of Node.js and npm (though recent versions do not exhibit this behavior). Fortunately this is easy to resolve. Open the Terminal app and type:
     
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sudo npm cache clear
