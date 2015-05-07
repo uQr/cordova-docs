@@ -13,7 +13,7 @@ There are a small number of Cordova plugins that contain "custom framework" file
 
 To install it:
 
-1. Download [this hook-symlink-fix.js file](ios-plugin-symlink-fix/hook-symlink-fix.js) and drop it a "hooks" folder in your project root
+1. Download [this hook-symlink-fix.js file](ios-plugin-symlink-fix) and drop it a "hooks" folder in your project root
 2. Update config.xml with the following (using Right-Click > View Code):
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,7 +48,7 @@ To resolve this problem you have two options:
 1.  Don't check in the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance.
 
 2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process.
-	1. Download [this set-execute.sh](osx-set-execute/set-execute.sh) shell script.
+	1. Download [this set-execute.sh shell script](osx-set-execute).
     
 	2. Add this file to your solution in Visual Studio in a solution folder and commit / check it into source control.
     
