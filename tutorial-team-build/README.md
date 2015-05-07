@@ -343,7 +343,7 @@ There are a few relativley common issues when building a Cordova app on OSX rela
         sudo chown -R `whoami` ~/.npm
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3.  **You checked in the platforms/android or platforms/ios folder from Windows and are seeing permission errors:** If you are seeing errors that are originating from files in your project's "platforms" folder, the root cause may be that you checked in shell scripts under the "platforms/android/cordova" or "platforms/ios/cordova" folders from Windows. This is because the NTFS file system has no concept of an "execute bit" that is required to run these from OSX. (The contents of the platforms is generally not intended for checked in and by default are excluded from Cordova projects in Visual Studio as a result.)
+3.  **You checked in the "platforms" folder from Windows and are seeing permission errors:** If you are seeing errors that are originating from files in your project's "platforms" folder, the root cause may be that you checked in shell scripts under the "platforms/android/cordova" or "platforms/ios/cordova" folders from Windows. This is because the NTFS file system has no concept of an "execute bit" that is required to run these from OSX. (The contents of the platforms is generally not intended for checked in and by default are excluded from Cordova projects in Visual Studio as a result.)
 
     For example, this error is saying the "version" script is not executable:
 
@@ -354,7 +354,7 @@ There are a few relativley common issues when building a Cordova app on OSX rela
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    To resolve this problem you have two options:
-	1.  Don't check in the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
+	1.  Don't check in the contents of the "platforms" folder into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
 	2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process.
 	    1.  Create a shell script called "set-execute.sh" with the following contents:
 
