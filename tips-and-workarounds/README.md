@@ -1,7 +1,7 @@
 # Visual Studio Tools for Apache Cordova Tips & Workarounds
 This repository contains a set tips and workarounds for [Apache Cordova](http://cordova.apache.org) generally in addition to the **Visual Studio 2015 RC** release of **[Tools for Apache Cordova](http://aka.ms/cordova)**.
 
-*Note that this documentation does not apply to Visual Studio 2013 CTPs.*
+**Note that this documentation does not apply to Visual Studio 2013 CTPs.**
 
 ## Tips & Workaround Categories
 1. General
