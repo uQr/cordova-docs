@@ -3,7 +3,7 @@ This repository contains a set tips and workarounds for [Apache Cordova](http://
 
 **Note that this documentation does not apply to Visual Studio 2013 CTPs.**
 
-## Tips & Workaround Categories
+##Categories
 1. General
 1. Android
 1. [iOS, Android from OSX](./ios)
