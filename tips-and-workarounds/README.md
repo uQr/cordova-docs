@@ -6,7 +6,7 @@ This repository contains a set tips and workarounds for [Apache Cordova](http://
 ##Categories
 1. General
 1. Android
-1. [iOS, Android from OSX](./ios)
+1. [iOS and OSX](./ios)
 1. Windows
 1. Windows Phone 8 (Silverlight)
 
