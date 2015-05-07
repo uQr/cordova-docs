@@ -1,4 +1,4 @@
-#osx-set-execute.sh
+#Cordova set-execute.sh
 
 License: MIT
 
@@ -13,6 +13,7 @@ Command failed with exit code EACCES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To resolve this problem you have two options:
+
 1.  Don't check in the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance.
 
 2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process.
