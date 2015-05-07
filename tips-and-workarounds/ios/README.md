@@ -46,13 +46,14 @@ Command failed with exit code EACCES
 
 To resolve this problem you have two options:
 1.  Don't check in the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance.
+
 2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process.
-    1. Download [this set-execute.sh](osx-set-execute/set-execute.sh) shell script.
+	1. Download [this set-execute.sh](osx-set-execute/set-execute.sh) shell script.
     
 	2. Add this file to your solution in Visual Studio in a solution folder and commit / check it into source control.
     
-    3. Run this script in the Terminal app from your Cordova project folder whenever you are building on OSX after pulling down the project locally. Ex:
+	3. Run this script in the Terminal app from your Cordova project folder whenever you are building on OSX after pulling down the project locally. Ex:
  
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-       sh ../set-execute.sh
-       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	sh ../set-execute.sh
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
