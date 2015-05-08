@@ -20,4 +20,4 @@ To install it:
 
 Plugins should now be fixed.
 
-You can also easily adapt this to be contained in a plugin by moving the above XML into plugin.xml.
+Alternativley you can install the [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) which encapsulates this functionality.

@@ -17,12 +17,19 @@ To resolve this problem you have two options:
 1.  Don't check in or copy the contents of the platforms/android or platforms/ios folders into source control. This is by far the path of least resistance.
 
 2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process.
-	1. Download [this set-execute.sh shell script](osx-set-execute).
+	1. Download [this hook-execute-bit-fix.js file](osx-set-execute) and drop it in a "hooks" folder in your project root.
     
-	2. Add this file to your solution in Visual Studio in a solution folder and commit / check it into source control.
+	2. Update config.xml with the following (using Right-Click > View Code):
+
+	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	  <hook type="before_plugin_add" src="hooks/hook-execute-bit-fix.js" />
+	  <hook type="after_platform_add" src="hooks/hook-execute-bit-fix.js" />
+	  <hook type="before_prepare" src="hooks/hook-execute-bit-fix.js" />
+	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+	
+	2. Commit / check these into source control.
     
-	3. Run this script in the Terminal app from your Cordova project folder whenever you are building on OSX after pulling down the project locally. Ex:
- 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	sh ../set-execute.sh
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	3. Next time you build / run / add a plugin, the problem should be resolved.
+	
+You could also opt to encapsulate this functionality inside a Cordova plugin by placing the same XML elements above in plugin.xml.  Finally, there is also a simple set-execute.sh script from the command line that can be used instead.
+
