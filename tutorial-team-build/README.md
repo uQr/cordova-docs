@@ -8,6 +8,7 @@ For abridged informaiton on specific build systems, you may find this sample [ta
 -   [Gulp - Using Gulp to Build Cordova in a Team / CI Environment](http://go.microsoft.com/fwlink/?LinkID=533742)
 -   [Team Foundation Services 2015 and Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771)
 -   [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770)
+-   [Jenkins CI]()
 
 This article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the taco-team-build node module effectively does behind the scenes.
 
