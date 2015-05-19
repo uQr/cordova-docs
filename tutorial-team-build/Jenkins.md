@@ -49,7 +49,7 @@ We're going to use the [Jenkins NodeJS Plugin](https://wiki.jenkins-ci.org/displ
 
 
 ###Additional Setup for iOS Builds
-For iOS, we will be taking advantage of an [Environment Variable Injector plugin](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin) and a [slave agent](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) on OSX to build iOS. Here's a basic walkthrough for configuring these.  
+For iOS, we will be taking advantage of an [Environment Variable Injector plugin](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin) and a [slave agent](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) on OSX. Here's a basic walkthrough for configuring these.  
 
 1. Go to the Jenkins Dashboard again (click on "Jenkins" in the upper left hand corner)
 
