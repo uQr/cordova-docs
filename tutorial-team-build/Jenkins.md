@@ -12,6 +12,8 @@ Since the build process we will describe here is not directly dependent on MSBui
 
 2.  Manually install only the pre-requisites needed for the specific platforms you intend to build. For example, you do not need to install Visual Studio at all if you only intend to target Android. See "Installing Dependencies" in the [Building Cordova Apps in a Team / Continuous Integration Environment](http://go.microsoft.com/fwlink/?LinkID=533743) tutorial for details.
 
+**Troubleshooting Tip:** See ["Internet Access & Proxy Setup" in the general CI tutorial](http://go.microsoft.com/fwlink/?LinkID=533743) if your build servers have limited Internet connectivity or require routing traffic through a proxy.
+
 For OSX, the pre-requisites will need to be installed manually, but mirror [the requirements for the Visual Studio remote build agent](http://go.microsoft.com/fwlink/?LinkID=533745). However, unlike with TFS 2013, you do not need to install the remote build agent itself if your OSX machine will only be used for team / CI builds.
 
 For the purposes of this tutorial, we will assume your primary Jenkins build server is installed on Windows. However, it is relatively straight forward to tweak these instructions to have your primary build server be on Linux or OSX. However, be aware that you will need to have a Windows [slave agent](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) if you intend to build for the Windows (Windows or Windows Phone 8.1 or Windows 10) or Windows Phone 8 (WP8) Cordova platforms. 
@@ -46,7 +48,6 @@ We're going to use the [Jenkins NodeJS Plugin](https://wiki.jenkins-ci.org/displ
 	4. Click "Save"
 
 	![NodeJS Plugin](<media/jenkins-0-1.png>)
-
 
 ###Additional Setup for iOS Builds
 For iOS, we will be taking advantage of an [Environment Variable Injector plugin](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin) and a [slave agent](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) on OSX. Here's a basic walkthrough for configuring these.  

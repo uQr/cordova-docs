@@ -71,6 +71,23 @@ Otherwise you can manually install only those dependencies that are needed for b
         1.  [Windows and Windows Phone 8.1+ Platfrom Guide](http://go.microsoft.com/fwlink/?LinkID=533777)
         2.  [Windows Phone 8.0 Platform Guide](http://go.microsoft.com/fwlink/?LinkID=533778)
 
+###Internet Access & Proxy Setup
+If your build server is running in a datacenter, it may be very locked down and not have unrestricted access to the Internet. Due to dynamic acquistion requirements, you will need to allow the build servers to access the following domains:
+
+- npm: http://registry.npmjs.org
+- GitHub: https://github.com
+- Apache ASF Git: https://git-wip-us.apache.org
+
+If you need to use a proxy, you will need to configure both npm and Git command line tools to use them. Open a command prompt on Windows or the Terminal app on OSX and type the following:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+npm config set proxy http://<username>:<password>@<host>
+npm config set https-proxy http://<username>:<password>@<host>
+git config --global http.proxy http://<username>:<password>@<host>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+...where "&lt;username&gt;:&lt;password&gt;@" is optional and should contain the appopriate user name and password for proxy access while &lt;host&gt; is the correct proxy host and port (ex: myproxy.mycompany.com:8080).
+
 ###A Note on TypeScript
 Unlike Visual Studio, it's important to note that the base Cordova CLI does not itself automatically compile TypeScript code. If you are using a build language like Gulp or Grunt, there are convenient plugins that you can use to compile your TypeScript code. Otherwise there is also a node.js based command line utility that works both on Windows and OSX. See the following links for additional details:
 
