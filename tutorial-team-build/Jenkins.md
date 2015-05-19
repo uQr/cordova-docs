@@ -122,12 +122,10 @@ Next you will need to set the following environment variables if they have not a
 
 | **Variable**       | **Required For**                         | **Purpose**                              | **Default Location (Visual Studio 2015)** |
 |:-------------------|:-----------------------------------------|:-----------------------------------------|:------------------------------------------|
-| **ANDROID\_HOME**  | Android                                  | Location of the Android SDK              | C:\\Program Files (x86)\\Android\\android-sdk |
-|**JAVA\_HOME**     | Android                                  | Location of Java                         | C:\\Program Files  (x86)\\Java\\jdk1.7.0\_55 |
-| **ANT\_HOME**      | Android when building using Ant (not Gradle) | Location of Ant                          | C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Apps\\apache-ant-1.9.3 |
+| **ANDROID\_HOME**  | Android                                  | Location of the Android SDK              | %PROGRAMFILES(x86)%\\Android\\android-sdk |
+|**JAVA\_HOME**     | Android                                  | Location of Java                         | %PROGRAMFILES(x86)%\\Java\\jdk1.7.0\_55 |
+| **ANT\_HOME**      | Android when building using Ant (not Gradle) | Location of Ant                          | %PROGRAMFILES(x86)%\\Microsoft Visual Studio 14.0\\Apps\\apache-ant-1.9.3 |
 | **CORDOVA\_CACHE** | Optional                                 | Improves build performance on Windows. Used by the [sample build script](http://go.microsoft.com/fwlink/?LinkID=533736) to cache multiple versions of Cordova rather than installing local to the project. | |
-
-Git command line tools should also be in the path if you intend to use plugins that require git (which is uncommon).
 
 ##Project Setup & Configuring Jenkins to Build Your Project
 ###Adding Gulp to Your Project
