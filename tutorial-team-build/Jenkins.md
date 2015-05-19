@@ -1,7 +1,7 @@
 #Using Tools for Apache Cordova with the Jenkins CI System
 **This tutorial is part of a [series of tutorials](http://go.microsoft.com/fwlink/?LinkID=533743) on building Visual Studio 2015 Tools for Apache Cordova projects in a Team / CI environment and does not apply to Visual Studio 2013 CTPs.**
 
-[Jenkins](http://jenkins-ci.org/) is a hugely popular CI server with a large install base and developers may wish to use it to build their Cordova projects. Tools for Apache Cordova is designed to work with a number of different team build systems since the projects it creates are standard [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects. 
+[Jenkins](http://jenkins-ci.org/) is a hugely popular CI server with a large install base so using it to build your Cordova project may be the way to go if you already have it installed and running in your environment. Fortunatley Tools for Apache Cordova is designed to work with a number of different team build systems since the projects it creates are standard [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects. 
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and Cordova CLI are Node.js based which makes the two highly complementary technologies. For these reasons, this tutorial will focus on the use Gulp rather than MSBuild as the primary build language for Cordova apps when using Jenkins.
 
@@ -14,14 +14,12 @@ Since the build process we will describe here is not directly dependent on MSBui
 
 For OSX, the pre-requisites will need to be installed manually, but mirror [the requirements for the Visual Studio remote build agent](http://go.microsoft.com/fwlink/?LinkID=533745). However, unlike with TFS 2013, you do not need to install the remote build agent itself if your OSX machine will only be used for team / CI builds.
 
-For the purposes of this tutorial, we will assume your primary Jenkins build server is installed on Windows. However, it is relativley straight forward to tweak these instructions to have your primary build server be on Linux or OSX. However, be aware that you will need to have a Windows slave agent if you intend to build for the Windows (Windows or Windows Phone 8.1 or Windows 10) or Windows Phone 8 (WP8) Cordova platforms. 
+For the purposes of this tutorial, we will assume your primary Jenkins build server is installed on Windows. However, it is relatively straight forward to tweak these instructions to have your primary build server be on Linux or OSX. However, be aware that you will need to have a Windows [slave agent](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) if you intend to build for the Windows (Windows or Windows Phone 8.1 or Windows 10) or Windows Phone 8 (WP8) Cordova platforms. 
 
-If you have not already, start out by setting up Jenkins itself. See the [Jenkins website for details](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins). 
-
-Note that you may want to install other [Jenkins plugins](https://wiki.jenkins-ci.org/display/JENKINS/Plugins) such as the [**Jenkins Git Plugin**](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin) support depending on your environment.
+If you have not already, start out by installing and setting up up Jenkins itself. See the [Jenkins website for details](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins). Note that you may want to install other [Jenkins plugins](https://wiki.jenkins-ci.org/display/JENKINS/Plugins) such as the [Jenkins Git Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin) depending on your environment.
 
 ###Install the NodeJS Plugin
-We're going to use the [Jenkins NodeJS Plugin](https://wiki.jenkins-ci.org/display/JENKINS/NodeJS+Plugin) to help manage our NodeJS environment. Here's a quick summary of how to install it.
+We're going to use the [Jenkins NodeJS Plugin](https://wiki.jenkins-ci.org/display/JENKINS/NodeJS+Plugin) to help manage our Node.js environment. Here's a quick summary of how to install it.
 
 1. Start up Jenkins CI. If you installed it as a service on Windows, it is likely already running.
 
@@ -34,7 +32,7 @@ We're going to use the [Jenkins NodeJS Plugin](https://wiki.jenkins-ci.org/displ
 	
 	3. Filter to "NodeJS". Note that if you do not see it, it may already be installed.
 	
-	4. Check "Install" checkbox and click "Install without restart" checkbox
+	4. Check "Install" checkbox and click "Install without restart"
 	
 	![NodeJS Plugin](<media/jenkins-0.png>)
 
@@ -55,23 +53,24 @@ For iOS, we will be taking advantage of an [Environment Variable Injector plugin
 
 1. Go to the Jenkins Dashboard again (click on "Jenkins" in the upper left hand corner)
 
-3. Install the EnvInjector Plugin
+3. Install the EnvInject Plugin
 	1. Click Manage Jenkins > Manage Plugins
 	
 	3. Click the "Available" tab
 	
 	3. Filter to "EnvInject". Note that if you do not see it, it may already be installed.
 	
-	4. Check "Install" checkbox and click "Install without restart" checkbox
+	4. Check "Install" checkbox and click "Install without restart"
 	
 	![EnvInject Plugin](<media/jenkins-1.png>)
+	
+	We will use the EnvInject plugin in our Jenkins project build config for OSX later in this tutorial.
 
 4. Prep OSX for Use with a Slave Agent
-Next we need to setup our OSX Slave agent. The following is a quick summary. See [here](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) for detailed instructions.
 
-	1. First, if you have not already, [install the Java JDK for OSX](https://oracle.com/technetwork/java/javase/downloads/index.html) as the agent will use it. (JRE is not sufficient.)
+	1. First, if you have not already, [install the Java SE JDK](https://oracle.com/technetwork/java/javase/downloads/index.html) on your OSX build server as the agent will use it. (The JRE alone is not sufficient.)
 
-	2. Next we need to enable SSH. 
+	2. Next we need to enable SSH. On your OSX Machine:
 
 		1. Go to Settings > Sharing.
 
@@ -81,7 +80,10 @@ Next we need to setup our OSX Slave agent. The following is a quick summary. See
 	
 	![Enable SSH](<media/jenkins-2.png>)
 	
-5. Configure an OSX Slave Node
+5. Configure an OSX Slave Agent
+
+	Next we need to setup our OSX Slave agent. The following is a brief summary. See [here](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) for detailed instructions.
+
 	1. Go to the Jenkins Dashboard again
 	
 	2. Click Manage Jenkins > Manage Nodes > New Node
@@ -90,13 +92,18 @@ Next we need to setup our OSX Slave agent. The following is a quick summary. See
 	
 	6. For "Launch Method," choose "Launch slave agents on Unix machines via SSH" and enter the login information based on your Remote Login settings above.	
 	
-	7. Add two Labels of "cordova" and "ios" since we will use this to mark builds for iOS on OSX.
+	7. Add two Labels of "cordova" and "ios". We will use these labels to route builds to the correct server later in this tutorial.
 	
 	8. Click "Save" when done.
 	
 	![Slave Agent Config](<media/jenkins-3.png>)
 	
-6. (Optional) Add Label to Windows Build Node(s) - You can also add label to any build nodes (including Master) if you do not intend to install all of the Cordova dependencies on each of your build servers.
+	Jenkins will now use SSH to start up the slave agent on OSX as needed. 
+	
+6. (Optional) Add Label to Windows Build Node(s)
+	
+	You should also add labels to any build nodes (including Master) if you do not intend to install all of the Cordova dependencies on each of your build servers.
+	
 	1. Go to the Jenkins Dashboard again
 	
 	2. Click Manage Jenkins > Manage Nodes
@@ -107,12 +114,10 @@ Next we need to setup our OSX Slave agent. The following is a quick summary. See
 	
 	4. Enter a label of "cordova" and "windows" and click "Save."
 	
-	![Slave Agent Label Config](<media/jenkins-5.png>)
-	
-Jenkins will now use SSH to start up the slave agent on OSX as needed. We will use the EnvInjector plugin in our Jenkins project build config for OSX later in this tutorial.
+	![Slave Agent Label Config](<media/jenkins-5.png>)	
 
 ##Environment Variables
-You should set the following environment variables if they have not already been configured. These can either be set as system variables on your build server, by checking the "Environment variables" option when [managing your build nodes](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines), or using the [Environment Variable Injector plugin](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin) and checking the "Inject environment variables to the build process" option in your project build config. 
+Next you will need to set the following environment variables if they have not already been configured in your build server environment. These can either be set as system variables on your build server, by checking the "Environment variables" option when [managing your build nodes](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines), or using the [Environment Variable Injector plugin](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin) and checking the "Inject environment variables to the build process" option in your project build config. 
 
 | **Variable**       | **Required For**                         | **Purpose**                              | **Default Location (Visual Studio 2015)** |
 |:-------------------|:-----------------------------------------|:-----------------------------------------|:------------------------------------------|
@@ -127,17 +132,17 @@ Git command line tools should also be in the path if you intend to use plugins t
 ###Adding Gulp to Your Project
 Using Gulp in a team environment is fairly straight forward as you can see in the detailed [Gulp tutorial](http://go.microsoft.com/fwlink/?LinkID=533742). However, to streamline setup, follow these steps:
 
-1.  Take the sample "gulpfile.js" and "package.json" file from the "samples/gulp" folder of the [from this GitHub repo](http://go.microsoft.com/fwlink/?LinkID=533736) and place them in the root of your project
+1.  Take the sample "gulpfile.js" and "package.json" file from the "samples/gulp" folder [from this GitHub repo](http://go.microsoft.com/fwlink/?LinkID=533736) and place them in the root of your project
 
 2.  Check these two files into source control with your project
 
 From here you can modify gulpfile.js and add other gulp plugins. The [Gulp tutorial](http://go.microsoft.com/fwlink/?LinkID=533742) provides additional detail on what the gulpfile does and how to wire Gulp tasks as "hooks" into Cordova build events.
 
 ###Project Build Settings
-We'll assume for the purposes of this tutorial that we want to build our Cordova app for Android, iOS, and Windows. The Windows Cordova platform can only be built on Windows and iOS can only be built on OSX. As a result, we'll need the ability to be able to queue a build that can target one of these two operating systems. To keep things simple, we will create a separate "Freestyle" build project for Windows and iOS. A more complex configuration could be to instead use a "Multi-configuration project" but the different filesystems and conventions between Windows and OSX can get out of hand quickly.
+We'll assume for the purposes of this tutorial that we want to build our Cordova app for Android, iOS, and Windows. The Windows Cordova platform can only be built on Windows and iOS can only be built on OSX. As a result, we'll need the ability to be able to queue a build that can target one of these two operating systems. To keep things simple, we will create a separate "Freestyle" project build configs for Windows and iOS. A more complex configuration can be achieved through a "Multi-configuration project" but the different filesystems and conventions between Windows and OSX can get out of hand quickly.
 
 ####Windows Project Build Settings
-Detailed instructions on configuring projects in Jenkins can be found here, but here's a walk through for configuring your project:
+Detailed instructions on configuring projects in Jenkins can be found [here](https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project), but here is a walkthrough of the settings needed to build your project:
 
 1. Open the Jenkins Dashboard in a web browser (typically at http://localhost:8080/ if running locally)
 
@@ -149,7 +154,7 @@ Detailed instructions on configuring projects in Jenkins can be found here, but 
 
 3. (Optional) Check "Restrict where this project can be run" and enter a label expression of "**cordova && windows**". This will prevent the build from attempting to run on Windows machines without Cordova or its dependencies installed.
 
-4. Configure "Source Code Managment" to connect to your project source code repository along with the "Build Triggers" you want to use.
+4. Configure "Source Code Management" to connect to your project source code repository along with the "Build Triggers" you want to use.
 
 5. Under "Build Environment", check "Provide Node & npm bin/ folder to PATH" and select the Windows location.
 
@@ -167,7 +172,7 @@ Detailed instructions on configuring projects in Jenkins can be found here, but 
 	 
 	This will install any dependencies in package.json including Gulp itself and then execute the Gulp build.
 
-7. Finally, under "Post-build Actions," add an "Archive Artifcats" action with a "Files to archive" pattern of "&#42;/bin/&#42;&#42;/&#42;"
+7. Finally, under "Post-build Actions," add an "Archive Artifacts" action with a "Files to archive" pattern of "&#42;/bin/&#42;&#42;/&#42;"
 
 	![Build script](<media/jenkins-8.png>)
 
@@ -180,7 +185,7 @@ Detailed instructions on configuring projects in Jenkins can be found here, but 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ####OSX Project Build Settings
-The OSX version of the build is similar but adds one additional requirement: Unlocking the keychain. For iOS to build, you will need to [configure your signing certificates on the OSX machine]() as you would normally using the same user you are using to start up the slave agent via SSH. Since the agent does not run interactivley, you will then need to unlock the keychain for Jenkins to access the signing certificates.
+The OSX version of the build is similar but adds one additional requirement: Unlocking the keychain. For iOS to build, you will need to [configure your signing certificates on the OSX machine](https://github.com/Microsoft/cordova-docs/tree/master/tutorial-package-publish) as you would normally using with user Jenkins uses to start up the slave agent via SSH. Since the agent does not run interactively, you will then need to unlock the keychain for Jenkins to access the signing certificates. Here is a walkthrough of how to make this happen:
 
 1. Go to the Jenkins Dashboard again (click on "Jenkins" in the upper left hand corner)
 
@@ -195,14 +200,14 @@ The OSX version of the build is similar but adds one additional requirement: Unl
 5.  Under "Build Environment":
 	1. Check "Inject passwords to the build as environment variables"
 	2. Add a Job password
-	3. Give it a name of **KEYCHAIN_PWD** and enter the password of the user you are using to start up the OSX agent via SSH.
-	4. Update the location for  "Provide Node & npm bin/ folder to PATH" and to the **OSX install location**.
+	3. Give it a name of **KEYCHAIN_PWD** and enter the password of the user Jenkins uses to start up the OSX agent via SSH.
+	4. Update the "Installation" for "Provide Node & npm bin/ folder to PATH" and to the **OSX install location**.
 
 	![Build script](<media/jenkins-10.png>)
 
 6.  Delete the existing "Execute Windows batch command" build step
 
-6. Now under "Build" we need to add a "Execute shell" build step with the following contents:
+6. Now under "Build" we need to add an "Execute shell" build step with the following contents:
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	cd <your project path>
@@ -219,4 +224,4 @@ The OSX version of the build is similar but adds one additional requirement: Unl
 
 8. Click "Save" and then "Build Now" to verify everything is working!
 
-	**Trobule Shooting Tip:** See ["Troubleshooting Tips for Building on OSX" in the general CI tutorial](http://go.microsoft.com/fwlink/?LinkID=533743) for tips on resolving common build errors that can occur when building Cordova projects on that operating system.
+	**Trouble Shooting Tip:** See ["Troubleshooting Tips for Building on OSX" in the general CI tutorial](http://go.microsoft.com/fwlink/?LinkID=533743) for tips on resolving common build errors that can occur when building Cordova projects on that operating system.
