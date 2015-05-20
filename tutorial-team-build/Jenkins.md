@@ -43,7 +43,7 @@ We're going to use the [Jenkins NodeJS Plugin](https://wiki.jenkins-ci.org/displ
 	
 	2. Click on Manage Jenkins > Configure System
 	
-	3. Under NodeJS, add installation locations for Windows and OSX. By default Windows will install node in "C:\Program Files (x86)\nodejs" while OSX keeps it under "/usr/local/bin". Ignore the warning that appears about "\usr\local\bin" not existing on Windows.
+	3. Under NodeJS, add installation locations for Windows and OSX. By default Windows will install node in "C:\Program Files (x86)\nodejs" while OSX keeps it under "/usr/local" (technically /usr/local/bin). You can ignore the warning that appears about "\usr\local" not existing on Windows. Set these based on your server's configuration.
 	
 	4. Click "Save"
 
