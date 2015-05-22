@@ -77,6 +77,8 @@ If your build server is running in a datacenter, it may be very locked down and 
 - npm: http://registry.npmjs.org
 - GitHub: https://github.com
 - Apache ASF Git: https://git-wip-us.apache.org
+- gradle.org: http://services.gradle.org
+- maven.org: https://*.maven.org
 
 If you need to use a proxy, you will need to configure both npm and Git command line tools to use them. Open a command prompt on Windows or the Terminal app on OSX and type the following:
 
