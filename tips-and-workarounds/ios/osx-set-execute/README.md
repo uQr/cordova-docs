@@ -1,4 +1,4 @@
-#Cordova set-execute.sh
+#Workaround for Missing Execute Bit for Builds on OSX After Checking in Platforms Folder from Windows
 
 License: MIT
 
