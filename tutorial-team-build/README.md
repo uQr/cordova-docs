@@ -88,7 +88,13 @@ npm config set https-proxy http://<username>:<password>@<host>
 git config --global http.proxy http://<username>:<password>@<host>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-...where "&lt;username&gt;:&lt;password&gt;@" is optional and should contain the appopriate user name and password for proxy access while &lt;host&gt; is the correct proxy host and port (ex: myproxy.mycompany.com:8080).
+...where "&lt;username&gt;:&lt;password&gt;@" is optional and should contain the appropriate user name and password for proxy access while &lt;host&gt; is the correct proxy host and port (ex: myproxy.mycompany.com:8080).
+
+You may also need to configure proxy settings for Java. This can be [accomplished via the Java control panel (reccomended)](http://java.com/en/download/help/proxy_setup.xml) or by setting an environment variable as the follows:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JAVA_OPTS=-Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port> -Dhttp.proxyHost=<host> -Dhttp.proxyPort=<port> -DproxySet=true
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ###A Note on TypeScript
 Unlike Visual Studio, it's important to note that the base Cordova CLI does not itself automatically compile TypeScript code. If you are using a build language like Gulp or Grunt, there are convenient plugins that you can use to compile your TypeScript code. Otherwise there is also a node.js based command line utility that works both on Windows and OSX. See the following links for additional details:
