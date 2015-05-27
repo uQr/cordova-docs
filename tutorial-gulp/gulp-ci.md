@@ -106,7 +106,7 @@ Underneath the covers, the script will do the following:
 
 1.  First, it check **taco.json** to see if a Cordova version is specified. If not, it assumes you want Cordova 4.3.0.
 
-2.  Next, it checks to see if this version of cordova-lib has already been installed at a location set in the **CORDOVA\_CACHE** environment variable. If no CORDOVA_CACHE environment variable is set, the cache location will default to \_cordova in the project folder. You can also set this location programmatically using the module's configure method. 
+2.  Next, it checks to see if this version of cordova-lib has already been installed at a location set in the **CORDOVA\_CACHE** environment variable. If no CORDOVA_CACHE environment variable is set, the cache location will default to %APPDATA%\\cordova-cache on Windows and ~/.cordova-cache on OSX. You can also set this location programmatically using the module's configure method. 
 
 3.  If the correct version of cordova-lib is not present in the cache location, it download and installs it.
 

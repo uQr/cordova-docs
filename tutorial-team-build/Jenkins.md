@@ -125,7 +125,8 @@ Next you will need to set the following environment variables if they have not a
 | **ANDROID\_HOME**  | Android                                  | Location of the Android SDK              | %PROGRAMFILES(x86)%\\Android\\android-sdk |
 |**JAVA\_HOME**     | Android                                  | Location of Java                         | %PROGRAMFILES(x86)%\\Java\\jdk1.7.0\_55 |
 | **ANT\_HOME**      | Android when building using Ant (not Gradle) | Location of Ant                          | %PROGRAMFILES(x86)%\\Microsoft Visual Studio 14.0\\Apps\\apache-ant-1.9.3 |
-| **CORDOVA\_CACHE** | Optional                                 | Improves build performance on Windows. Used by the [sample build script](http://go.microsoft.com/fwlink/?LinkID=533736) to cache multiple versions of Cordova rather than installing local to the project. | |
+| **GRADLE\_USER\_HOME**      | Optional | Overrides the default location Gradle build system dependencies should be installed when building Android using Cordova 5.0.0+ | If not specified, uses %HOME%\\.gradle on Windows or ~/.gradle on OSX |
+| **CORDOVA\_CACHE** | Optional                                 | Overrides the default location used by the [sample build script](http://go.microsoft.com/fwlink/?LinkID=533736) to cache installs of multiple versions of Cordova. | If not specified, uses %APPDATA%\\cordova-cache on Windows and ~/.cordova-cache on OSX |
 
 ##Project Setup & Configuring Jenkins to Build Your Project
 ###Adding Gulp to Your Project
