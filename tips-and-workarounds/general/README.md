@@ -2,6 +2,7 @@
 This document covers tips, tricks, and known workarounds for general issues with Cordova or Tools for Apache Cordova
 
 It covers the following issues:
+
 1. ["TypeError: Request path contains unescaped characters" during a build or when installing a plugin](#cordovaproxy) 
 
 <a name="cordovaproxy"></a>
