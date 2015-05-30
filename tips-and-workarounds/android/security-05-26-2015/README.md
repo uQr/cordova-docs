@@ -8,7 +8,7 @@ While we are working with the community on a “tools release” for Cordova to 
 First, you need to add one XML element into config.xml in your project.
 
 1. In Visual Studio, right click on config.xml and select “View Code”
-2. When using the default version of Cordova 4.3.0, add the following to your project under the root \<widget\> element:
+2. When using the default version of Cordova 4.3.0, add the following under the root \<widget\> element in config.xml:
 
     ~~~~~~~~~~~~~~~~~~~~~~~
     <engine name="android" version="3.7.2" />
