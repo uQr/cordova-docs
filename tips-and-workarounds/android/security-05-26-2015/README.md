@@ -45,4 +45,4 @@ An upcoming “tools releases” of Cordova will use the patched versions of the
 
 From this point forward you will be on the updated version of Cordova and its associated platforms. As a result, you can use these steps to update your project once the tools release has occurred. 
 
-Further updates on the upcoming Cordova tools release can be found in the "News" section of the Apache Cordova site.  
+Further updates on the upcoming Cordova tools release can be found in the "News" section of the [Apache Cordova site](http://cordova.apache.org).  
