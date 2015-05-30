@@ -37,7 +37,7 @@ To make this simple, [you can find updated version of the VS template config.xml
 
 ##Long Term
 
-An upcoming “tools releases” of Cordova will use the patched versions of the Cordova Android platform by default. We will be updating the default templates in Visual Studio to use these newer versions of Cordova, but it is also worth noting that we’ve taken steps in Visual Studio 2015 RC to make updating the Cordova version itself simple as well. To do so, follow these steps:
+An upcoming “tools releases” of Cordova will use the patched versions of the Cordova Android platform by default. We will be updating the default templates in Visual Studio to use these newer versions of Cordova, but it is also worth noting that we’ve made changes in Visual Studio 2015 RC to make updating the Cordova version itself simple. To do so, follow these steps:
 
 1.	Double click on config.xml in your project
 2.	Click the “Platforms” tab
