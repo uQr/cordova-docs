@@ -28,7 +28,7 @@ For projects you have **already built at least once for Android locally**, youâ€
 
 	~~~~~~~~~~~~~~~~~~~~~~~~
 	npm install -g cordova
-	cordova platform remove android --save
+	cordova platform remove android
 	~~~~~~~~~~~~~~~~~~~~~~~~
 
 The next time you build you will now be on the patched version of the Android platform.
