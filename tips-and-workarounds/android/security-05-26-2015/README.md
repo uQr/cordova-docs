@@ -8,7 +8,7 @@ While we are working with the community on a “tools release” for Cordova to 
 For projects where you have **not yet built for Android locally** (like new ones) you simply need to add one XML element into config.xml.
 
 1. In Visual Studio, right click on config.xml and select “View Code”
-2. Add the following XML to your project when using the default version of Cordova 4.3.0 under the <widget> element:
+2. Add the following XML to your project when using the default version of Cordova 4.3.0 under the \<widget\> element:
 
     ~~~~~~~~~~~~~~~~~~~~~~~
     <engine name="android" version="3.7.2" />
