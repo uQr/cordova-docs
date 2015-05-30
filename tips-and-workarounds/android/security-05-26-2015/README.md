@@ -1,7 +1,7 @@
 #May 26th, 2015 Android Cordova Platform Security Issue
-Recently Trend Micro uncovered a security flaw in the Cordova Android platform that affects all versions of Cordova and as a result the Cordova [community has taken steps to resolve the issue](http://cordova.apache.org/announcements/2015/05/26/android-402.html). 
+Recently Trend Micro uncovered a security flaw in the Cordova Android “platform” that affects all versions of Cordova. As a result the [Cordova community has taken swift action steps to resolve the issue by releasing a patched version of the platform](http://cordova.apache.org/announcements/2015/05/26/android-402.html).  
 
-While we are working with the community on a “tools release” for Cordova to update the default version of the Android “platform” to include this patch, you can immediately update your project to a patched version of the Android platform for Cordova 4.3.0 or 5.0.0 when using with Tools for Apache Cordova 2015 RC or the Cordova CLI by following the steps in this article.
+While we are working with the community on a “tools release” for Cordova to update the default version of the Android platform to include this patch, you can immediately update your project to the patched version of the Android platform when using Cordova 4.3.0 or 5.0.0 with Tools for Apache Cordova 2015 RC by following the steps in this article.
 
 ##Updating Your Project
 
@@ -20,7 +20,7 @@ First, you need to add one XML element into config.xml in your project.
 	<engine name="android" spec="4.0.2" />
     ~~~~~~~~~~~~~~~~~~~~~~~~
 
-For projects you have **already built at least once for Android locally**, you’ll also need to remove the old version of the Cordova Android platform. Follow these steps:
+For projects where you have **already executed a build for Android on your system**, you’ll also need to remove the old version of the Cordova Android platform. Follow these steps:
 
 1.	Open a command prompt and go to your Cordova project root (not the solution root). 
 
@@ -43,4 +43,6 @@ An upcoming “tools releases” of Cordova will use the patched versions of the
 2.	Click the “Platforms” tab
 3.	Enter the updated version of the Cordova CLI
 
-From this point forward you will be on the updated version of Cordova and its associated platforms.
+From this point forward you will be on the updated version of Cordova and its associated platforms. As a result, you can use these steps to update your project once the tools release has occurred. 
+
+Further updates on the upcoming Cordova tools release can be found in the "News" section of the Apache Cordova site.  
