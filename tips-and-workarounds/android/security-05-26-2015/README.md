@@ -33,7 +33,7 @@ For projects you have **already built at least once for Android locally**, youâ€
 
 The next time you build you will now be on the patched version of the Android platform.
 
-To make this simple, [you can find updated version of the VS template config.xml files here](https://github.com/Microsoft/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015) along with a batch file that will remove the old version of the Android platform when executed from your project folder.
+To make this simple, [you can find an updated version of the config.xml file in the VS template  here](https://github.com/Microsoft/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015) along with a batch file that will remove the old version of the Android platform when executed from your project folder.
 
 ##Long Term
 
