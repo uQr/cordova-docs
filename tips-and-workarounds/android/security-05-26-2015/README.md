@@ -6,12 +6,13 @@ While we are working with the community on a “tools release” for Cordova to 
 ##Updating Your Project
 
 For projects where you have **not yet built for Android locally** (like new ones) you simply need to add one XML element into config.xml.
-1.	In Visual Studio, right click on config.xml and select “View Code”
-2.	Add the following XML to your project when using the default version of Cordova 4.3.0 under the <widget> element:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~
-	<engine name="android" version="3.7.2" />
-	~~~~~~~~~~~~~~~~~~~~~~~~
+1. In Visual Studio, right click on config.xml and select “View Code”
+2. Add the following XML to your project when using the default version of Cordova 4.3.0 under the <widget> element:
+
+    ~~~~~~~~~~~~~~~~~~~~~~~
+    <engine name="android" version="3.7.2" />
+    ~~~~~~~~~~~~~~~~~~~~~~~~
 
     …or if you opted to update to Cordova 5.0.0:
 
@@ -20,6 +21,7 @@ For projects where you have **not yet built for Android locally** (like new ones
     ~~~~~~~~~~~~~~~~~~~~~~~~
 
 For projects you have **already built at least once for Android locally**, you’ll also need to remove the old version of the Cordova Android platform. Follow these steps:
+
 1.	Open a command prompt and go to your Cordova project root (not the solution root). 
 
 2.	Type the following commands:
