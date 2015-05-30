@@ -5,7 +5,7 @@ While we are working with the community on a “tools release” for Cordova to 
 
 ##Updating Your Project
 
-For projects where you have **not yet built for Android locally** (like new ones) you simply need to add one XML element into config.xml.
+First, you need to add one XML element into config.xml in your project.
 
 1. In Visual Studio, right click on config.xml and select “View Code”
 2. When using the default version of Cordova 4.3.0, add the following to your project under the root \<widget\> element:
