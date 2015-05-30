@@ -17,7 +17,7 @@ For projects where you have **not yet built for Android locally** (like new ones
     …or if you opted to update to Cordova 5.0.0:
 
     ~~~~~~~~~~~~~~~~~~~~~~~~
-	<engine name="android" version="4.0.2" />
+	<engine name="android" spec="4.0.2" />
     ~~~~~~~~~~~~~~~~~~~~~~~~
 
 For projects you have **already built at least once for Android locally**, you’ll also need to remove the old version of the Cordova Android platform. Follow these steps:
