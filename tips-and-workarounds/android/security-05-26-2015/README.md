@@ -1,7 +1,9 @@
 #May 26th, 2015 Android Cordova Platform Security Issue
-Recently Trend Micro uncovered a security flaw in the Cordova Android “platform” that affects all versions of Cordova. As a result the [Cordova community has taken swift action steps to resolve the issue by releasing a patched version of the platform](http://cordova.apache.org/announcements/2015/05/26/android-402.html).  
+Recently [Trend Micro uncovered a security flaw](http://blog.trendmicro.com/trendlabs-security-intelligence/trend-micro-discovers-apache-vulnerability-that-allows-one-click-modification-of-android-apps/) in the Cordova Android “platform” that affects all versions of Cordova. As a result the [Cordova community has taken swift action steps to resolve the issue by releasing a patched version of the platform](http://cordova.apache.org/announcements/2015/05/26/android-402.html).  
 
-While we are working with the community on a “tools release” for Cordova to update the default version of the Android platform to include this patch, you can immediately update your project to the patched version of the Android platform when using Cordova 4.3.0 or 5.0.0 with Tools for Apache Cordova 2015 RC by following the steps in this article.
+While we are working with the community on a “tools release” for Cordova to update the default version of the Android platform to include this patch, you can immediately update your project to the patched version of the Android platform when using Cordova 4.3.0 or 5.0.0 with Tools for Apache Cordova 2015 RC or later by following the steps in this article.
+
+We recommend all users of VS 2013 CTPs or earlier VS 2015 CTPs upgrade to VS 2015 RC or later so that they can take advantage of features described in this article to mitigate the security issue.
 
 ##Updating Your Project
 
