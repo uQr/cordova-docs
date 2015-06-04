@@ -14,14 +14,14 @@ This article will summarize the changes in Cordova 5 and how you can take advant
 ##Security Model Changes for Android and iOS
 One of the more confusing changes about Cordova 5 is that the updated version of the Android platform (also called Cordova Android 4.x) and iOS now follow a different, but more powerful security model designed to provide developers with the tools needed to prevent cross-site scripting attacks among other issues. A critical aspec of this security model is that **absolutley no network access of any kind is allowed without the installation of a Cordova plugin**.
 
-###The Cordova Whitelist Plugin
+###Cordova Whitelists
 The new [Cordova Whitelist plugin (cordova-plugin-whitelist)](https://github.com/apache/cordova-plugin-whitelist) is the reccomended base security plugin to use for managing network security access. Historically there was one "access" element used to control all access to network resources. For example, adding the following to config.xml resulted in the app not only being able to make XHR calls, access images, or reference remote scripts but also allowed Cordova to navigate to any URI. 
 
 ~~~~~~~~~~~~~~~~~~~~~~~
 <access origin="*" />
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The problem with this model is you may want to be able to make an XHR to a service like Azure Mobile Services without actually allowing your app to navigate to an Azure web page in the same domain. The reason this is a concern is that challenge this remote web page is then given access to all Cordova and plugin APIs.  Further, for Android, the fact the access element controls intents [led to another security issue in Cordova 3.5.0 and below](http://cordova.apache.org/announcements/2014/08/04/android-351.html).
+The problem with this model is you may want to be able to make an XHR to a service like Azure Mobile Services without actually allowing your app to navigate to an Azure web page in the same domain. The reason this is a concern is that challenge this remote web page is then given access to all Cordova and plugin APIs. Further, for Android, the access element has been overloaded to controls intents in the wake of a discovered [security issue in Cordova 3.5.0 and below](http://cordova.apache.org/announcements/2014/08/04/android-351.html) which has led to a syntax that strayed away from the original [W3C Widget spec](http://www.w3.org/TR/widgets/) that config.xml's structure is based on. Some restructuring and improvments were therefore appropriate for the Cordova 5.0.0 release.
 
 ###cordova-plugin-whitelist
 As a result, the new whitelist plugin actually introduces three separate elements designed to enable more discrete control. The **access** element returns but only controls where your app can make XHR requests or access other external content from a web page. It no longer controls whether you can navigate to a different domain. A new **allows-navigation** element has been added that then allows you to specify where the app can navigate instead. Finally, a new **allows-intent** element has been introduced specifically designed to control Android intents.
@@ -130,7 +130,7 @@ You can find a [great tutorial on using the CSP in detail here](http://www.html5
 		
 	This statment says that content originating from the same domain ('self'), data URIs (data:), Cordova internal APIs (gap:), https://ssl.gstatic.com, and eval statments are allowed, but all others are denied.
 
-####Using CSP with an Existing Project
+####Using a CSP with an Existing Project
 Due to the significant security benifits associated with using a CSP policy, we strongly reccomend taking the Cordova template CSP metatag and add it to the header of any page the app will navigate to in your app. Note that **you can use a CSP policy from hosted content too.**
 
 ~~~~~~~~~~~~~~~~~~~~~~~
