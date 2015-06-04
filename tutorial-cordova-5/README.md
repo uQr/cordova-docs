@@ -103,8 +103,8 @@ The only problem with the CSP is this: It's pretty confusing to read at first an
 
 You can find a [great tutorial on using the CSP in detail here](http://www.html5rocks.com/en/tutorials/security/content-security-policy/), but here are some common "gotcahas" for those new to the concepts:
 
-1. By default, applying a CSP policy **disables both eval() and inline script** but the CSP policy in the **Cordova template enables eva()**. 
-	- That means no script tags with JavaScript in it, no "on" event handler attributes on HTML elements, no eval(), no new Function(), etc. Disabling these features effectivley makes it impossible to do cross-site scripting because there is no way to inject JavaScript anywhere that does not originate from a file. If you're propertly manging your whitelists, you're very secure.
+1. By default, applying a CSP policy **disables both eval() and inline script** while the CSP policy in the **Cordova template leave inline disabled but enables eval()**. 
+	- Disabling both eval and inline script means no script tags with JavaScript in it, no "on" event handler attributes on HTML elements, no eval(), no new Function(), etc. Disabling these features effectivley makes it impossible to do cross-site scripting because there is no way to inject JavaScript anywhere that does not originate from a file. If you're propertly manging your whitelists, you're very secure.
 
 	- The problem is that disabling eval() in particular can break quite a few web frameworks.
 
@@ -118,17 +118,17 @@ You can find a [great tutorial on using the CSP in detail here](http://www.html5
 
 	- If you really need inline script, you can add the 'unsafe-inline' declaration. Note that the 'unsafe-inline' declaration in the Cordova template applies to style-src which enables inline CSS declarations not JavaScript.
 
-1. The default CSP policy in the Cordova template only allows access to JavaScript and CSS files inside the app or the same domain, not a different domain. **As a result, typically CDN hosted content cannot be referenced.**
+1. The default CSP policy in the Cordova template only allows access to JavaScript and CSS files inside the app or the same domain, not a different domain. **As a result, CDN hosted content typically cannot be referenced.**
 
 	- This is another technique to reduce risk by stating that a given web page can only reference content from **'self'**. The end result is that cross-site scripting vulnerabilities are further reduced by preventing your web page from being hijacked to include content from an external, untrusted sourced.
 	
-	- You can loosen this restriction by listing other trusted domains. In fact, the default Cordova template lists "https://ssl.gstatic.com" as a trusted domain since s required only on Android and is needed for TalkBack to function properly.
+	- You can loosen this restriction by listing other trusted domains. In fact, the default Cordova template lists "https://ssl.gstatic.com" as a trusted domain since Android needs it for TalkBack to function properly.
 
 		~~~~~~~~~~~~~~~~~~~~~~~
 		default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
 		~~~~~~~~~~~~~~~~~~~~~~~
 		
-	This statment says that content originating from the same domain ('self'), data URIs (data:), Cordova internal APIs (gap:), https://ssl.gstatic.com, and eval statments are allowed, but all others are denied.
+	This above CSP policy says that content originating from the same domain ('self'), data URIs (data:), Cordova internal APIs (gap:), https://ssl.gstatic.com, and eval statments are allowed, but all others are denied.
 
 ####Using a CSP with an Existing Project
 Due to the significant security benifits associated with using a CSP policy, we strongly reccomend taking the Cordova template CSP metatag and add it to the header of any page the app will navigate to in your app. Note that **you can use a CSP policy from hosted content too.**
@@ -142,6 +142,8 @@ Due to the significant security benifits associated with using a CSP policy, we 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Start with the most locked down security policy you can and back away as needed. That way you'll ensure you're using the most securre practices you can from the start.
+
+To reiterate, **CSP support is only available on Android 4.4+ devices or Android 4.0+ when using Crosswalk.** More on Crosswalk in a bit.
 
 <a name="npm"></a>
 ##Primary Cordova Plugin Repository is Now Npm
