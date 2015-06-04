@@ -1,4 +1,4 @@
-#Apache Cordova 5 and Tools for Apache Cordova
+#Summary of Major Changes in Apache Cordova 5
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 Tools for Apache Cordova supports cordova 4.3.1 along with the newly released Cordova 5.2.0 **TODO: Final RTM version** version of cordova. As the major version number increase implies, Cordova 5 is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from reccomending its use includign an [Android security issue](https://github.com/Chuxel/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015). As a result, we strongly reccomend the use of **Cordova 5.2.0** **TODO: Final RTM version** with **Visual Studio 2015 RTM** and up.
@@ -6,10 +6,9 @@ Tools for Apache Cordova supports cordova 4.3.1 along with the newly released Co
 This article will summarize the changes in Cordova 5 and how you can take advantage of the new features and adapt existing apps. Specifically it will cover:
 
 1. [Security model changes to the Android and iOS platforms](#security)
-1. [Cordova plugins originating from npm](#npm)
+1. [Primary Cordova plugin repository switching to npm](#npm)
 1. [Gradle build instead of Ant for Android](#gradle)
 1. [The Crosswalk WebView for Android](#crosswalk)
-1. [Windows 10 support and improvments](#win10)
 
 ##Security Model Changes for Android and iOS<a name="security"></a>
 One of the more confusing changes about Cordova 5 is that the updated version of the Android platform (also called Cordova Android 4.x) and iOS now follow a different, but more powerful security model designed to provide developers with the tools needed to prevent cross-site scripting attacks among other issues. A critical aspec of this security model is that **absolutley no network access of any kind is allowed without the installation of a Cordova plugin**.
@@ -57,29 +56,33 @@ This takes advantage of a new feature in Cordova 5.0.0+ to ensure the Cordova Wh
 
 Note that this capability can be used with any Cordova plugin and is conceptually similar to the Visual Studio specific "vs:plugin" element. We worked with the community to get it added into the core and over time we will discontinue the use of the "vs" prefix but we have left the feature in place for backwards compatibility (as Cordova 4.3.0 does not have this feature).
 
-####Adapting an Existing Project
-If you have opted to upgrade an existing project from Cordova 4.3.0 (or below) to 5.0.0+, you can start by adding the following into config.xml in your project to open things up:
+####Migrating an Existing Project
+If you have opted to upgrade an existing project from Cordova 4.3.0 (or below) to 5.0.0+, you can start by adding the following into config.xml in your project to open things up.
 
-~~~~~~~~~~~~~~~~~~~~~~~
-<plugin name="cordova-plugin-whitelist" version="1" />
-<access origin="*" />
-<allow-intent href="http://*/*" />
-<allow-intent href="https://*/*" />
-<allow-intent href="tel:*" />
-<allow-intent href="sms:*" />
-<allow-intent href="mailto:*" />
-<allow-intent href="geo:*" />
-~~~~~~~~~~~~~~~~~~~~~~~
+1. Right-click on config.xml and select "View Code"
 
-If your app is using hosted content, or you'd prefer not to restrict where the WebView can navigate during development, you can also add the following elements:
+2. Add the following XML under the &lt;widget&gt; element:
 
-~~~~~~~~~~~~~~~~~~~~~~~
-<allow-navigation href="http://*/*" />
-<allow-navigation href="https://*/*" />
-<allow-navigation href="data:*" />
-~~~~~~~~~~~~~~~~~~~~~~~
+	~~~~~~~~~~~~~~~~~~~~~~~
+	<plugin name="cordova-plugin-whitelist" version="1" />
+	<access origin="*" />
+	<allow-intent href="http://*/*" />
+	<allow-intent href="https://*/*" />
+	<allow-intent href="tel:*" />
+	<allow-intent href="sms:*" />
+	<allow-intent href="mailto:*" />
+	<allow-intent href="geo:*" />
+	~~~~~~~~~~~~~~~~~~~~~~~
 
-However, we strongly reccomend narrowing down your access before relasing your app as many app stores will not accept apps that are completely open without filing for an exception and having a very good reason to do so.
+3. Optionally, if your app is using hosted content, or you'd prefer not to restrict where the WebView can navigate during development, you can also add the following elements:
+
+	~~~~~~~~~~~~~~~~~~~~~~~
+	<allow-navigation href="http://*/*" />
+	<allow-navigation href="https://*/*" />
+	<allow-navigation href="data:*" />
+	~~~~~~~~~~~~~~~~~~~~~~~
+
+	However, we strongly reccomend narrowing down your access before relasing your app as many app stores will not accept apps that are completely open without filing for an exception and having a very good reason to do so.
 
 ###The W3C Content Security Policy (CSP)
 A topic of frequent conversation for security focused developers on the web is the [W3C Content Security Policy (CSP)](http://www.w3.org/TR/CSP/) feature that is available in Chrome, Safari, and Internet Explorer Edge. CSP support is available nativley to Cordova apps targeting iOS, Windows 10, and Android 4.4 and up. However, you can support back to Android 4.0 by using something called the Crosswalk WevView. We will cover the Crosswalk Webview later in this document.
@@ -139,10 +142,56 @@ Due to the significant security benifits associated with using a CSP policy, we 
 
 Start with the most locked down security policy you can and back away as needed. That way you'll ensure you're using the most securre practices you can from the start.
 
-##Cordova Plugins Originating from Npm<a name="npm"></a>
-Another significant departure in Cordova 5 and the community as a whole is the migration of the primary source of Cordova plugins from the GitHub backed model that exists in Cordova 3.x and 4.x to an npm based one. 
+##Primary Cordova Plugin Repository is Now Npm<a name="npm"></a>
+Another significant departure in Cordova 5 and the community as a whole is the migration of the primary source of Cordova plugins from the GitHub backed model that exists in Cordova 3.x and 4.x to the "Node Pacakge Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natrual next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
 
-###Gradle Build Instead of Ant for Android
+However, unfortunatley this switch over is not transparent. For a few very specific reasons, this change over can be a bit confusing and we're working with the community to make the transition a big more seamless going forward.
+
+###Cordova 3.x and 4.x Do Not Support npm as a Plugin Source
+An early source of confusion can lead from the fact that Cordova 3.x and 4.x cannot use plugins sourced from npm. The Cordova CLI in these versions simply does not have the capability. A specific issue that can come up here is that updates to plugins will now generally be going to npm **not** the older GitHub sourced method used by these earlier versionf of Cordova plugins.
+
+As a result, if you need to access updated versions of plugins when using these older versions of Cordova, you'll need to take the following steps:
+
+1. Go to the GitHub repository for the plugin. Ex: https://github.com/wildabeast/BarcodeScanner
+
+2. Click on the "Releases" tab
+
+3. Click on the .zip link of the version of the plugin you want to access
+
+	![Release Zip](<media/cordova-5-3.png>)
+
+4. Unzip this plugin on your local filesystem
+
+5. Add the plugin to your project from this local location by using the "Local" option in the "Custom" tab of the config.xml designer.
+
+	![Custom Local Plugin](<media/cordova-5-2.png>)
+
+###Plugin ID Changes
+A significant change to be aware of is that the IDs used to refer to many Cordova plugins have changed. This was done for two reasons. First, the different ID helps to re-enforce that older versions of Cordova will not get plugin updates. Rather than having an arbitrary version number where the updates stop, using a different ID makes this change over explicit. Second, the old reverse domain style for Cordova plugin IDs does not conform to community best practices for package names.
+
+As a result, core plugins like Camera have changed from [org.apache.cordova.camera](http://plugins.cordova.io/#/package/org.apache.cordova.camera) in version 0.3.6 of the plugin to [cordova-plugin-camera](https://www.npmjs.com/package/cordova-plugin-camera) in versions 1.0.0 and higher. 
+
+![Custom Local Plugin](<media/cordova-5-4.png>)
+
+![Custom Local Plugin](<media/cordova-5-5.png>)
+
+You can find running list of [old verses new plugin IDs in this location](https://github.com/stevengill/cordova-registry-mapper/blob/master/index.js). You will be informed of the new ID whenever you add a plugin from this list when either using the command line or the config.xml designer. The config.xml designer will automatically add these new IDs for Cordova 5.0.0+ and the old IDs for older versions of Cordova that do not support them. **TODO: Verify this makes RTM**
+
+###Cordova Plugin Registry
+Unfortunatley the community is in a state of flux when it comes to a "source of truth" for all available Cordova plugins. 
+
+- For the time being, [plugins.cordova.io](http://plugins.cordova.io) **does not contain npm sourced plugins.** 
+- For npm sourced plugins, you should instead search Npm using the [ecosystem:cordova](https://www.npmjs.com/search?q=ecosystem%3Acordova) tag.
+
+	![Custom Local Plugin](<media/cordova-5-6.png>)
+
+Both sets of plugins can be used with Cordova 5.0.0+ so in the short term you should search in both locations for plugins. Plugins found in npm are the most likely to work without issue with Cordova 5.0.0 and higher and may or may not work with earleir versions of Cordova. Npm will be the eventual source of truth, but things are a bit messy during this transition period.
+
+
+
+We are activley working with the community on the best way to merge some of the functionality of the existing plugins.cordova.io site with the reliability and improvements npm provides.
+
+##Gradle Build Instead of Ant for Android
 On the surface, this seems like a fairly inncous change but we've continued to hear about unexpected issues in some 3rd party Cordova plugins because of this change so it is worth a mention.
 
 Up until Cordova 5.0.0 (Cordova Android platform version 4.0.0), Cordova used  [Apache Ant](http://ant.apache.org/) as the primary build system to build an Android version of an app. This has now changed to [Gradle](http://gradle.org/) as the default though developers can force an Ant build using the Cordova CLI as follows:
@@ -151,12 +200,39 @@ Up until Cordova 5.0.0 (Cordova Android platform version 4.0.0), Cordova used  [
 cordova build android -- --ant
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+There are two major ways that switching to Gradle can affect your project:
 
+1. The way you specify signing information is different. See the [Packaging & Publishing tutorial for details](../tutorial-package-publish).
+1. Some 3rd party plugins may either require Gradle be used or not yet support it. In particular, plugins that modify Android build artifacts in a non-standard way can run into issues.
+
+A good example of a plugin that requires Gradle is the [Crosswalk plugin](https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview) we will cover a bit in this article. While at one point it also worked with Ant builds, it now errors out if you are not building with Gradle. As a result, Visual Studio 2015 now uses Gradle to build Android in Cordova 5.0.0+ instead of Ant (2015 RC still used Ant). The end result is you could hit compatibility issues with lesser known 3rd party plugins particularly if you have not updated them.
+
+###Migrating an Existing Project
+Because of these differences you should take the following steps:
+
+1. If you encounter an unexpected build error, see if the error references Cordova plugin source code. If so, update it by removing the plugin using the "Installed" tab of the config.xml designer and re-add the plugin. If you cannot determine which plugin is causing the issue, you can opt to proactivley upgrade all of them.
+2. If you've already added release signing information into ant.properties in your project, you'll need to place this information in a new file in your project.  See the [Packaging & Publishing tutorial for details](../tutorial-package-publish) for details.
 
 ##The Crosswalk WebView for Android<a name="crosswalk"></a>
+An exciting new development in the Cordova Android platform is the support for what are called "pluggable WebViews." What this feature allows you to do is swap out the built in Android WebView with a completely different WebView implementation. This is a significant improvment as the Android browser and thus the WebView has been locked at a specific version without the ability to update unless you update the version of the OS on the device. This has changed in Android 5.0, but unlike iOS or Windows where devices can opt to upgrade and developers need only concern themselves with a few major versions of the browser, older Android devices are locked at a paritcular sub-revision of Android and thus the browser with no ability to upgrade the device in many cases. The end result has been a vast array of small differences between Android devices.
 
+[Crosswalk](https://crosswalk-project.org/) is a project that is designed to allow developers to take embed a very recent and specific version of the Chromium WebView inside their Android app. The Crosswalk WebView can be embedded in apps running on Android 4.0 and up and brings with it the significant advantage of a consistant webview implementation across all Android device versions it supports.
 
+There is now a [Cordova Crosswalk plugin](https://www.npmjs.com/package/cordova-plugin-crosswalk-webview/) that takes advantage of the new pluggable WebView features in Cordova 5.0.0+ (and the Cordova Android 4.0.0 platform it uses).
 
-##Windows 10 Support and Improvments<a name="win10"></a>
+**TODO: Debugging support make it? In our core list of plugins?**
+
+Because using the Crosswalk plugin does slow down build times fairly signficantly given it's size, we reccomend developers start out building apps with the stock Android WebView on a recent device or emulator (Android 4.4+). You can then add the Crosswalk plugin later in your development cycle and make the necissary adjustments.
+
+###The Base Android Emulator and Crosswalk
+One very important thing to note when using the Crosswalk WebView in the base Android emulator is that Crosswalk requires OpenGL support and that you've selected the "Use Host GPU" option in your Android Virtual Device configuration. Failing to do this will cause the app to crash. To use it:
+
+1. Be sure your graphics drivers are up to date on your machine
+
+2. Follow the [instructions for configuring a high speed Androud emulator](https://msdn.microsoft.com/en-us/library/dn757059(v=vs.140).aspx)
+
+3. Check the **Use Host CPU** option in the AVD you create
+
+	![Use Host GPU](<media/cordova-5-1.png>)
 
 
