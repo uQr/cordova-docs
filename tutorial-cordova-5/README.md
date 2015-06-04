@@ -229,20 +229,20 @@ Because of these differences you should take the following steps:
 	1. Create a fresh project and see if the problem reproduces.
 	2. To eliminate Visual Studio as a potential culprit, you can test using a standard Cordova CLI project by entering the following in a command prompt:
 	
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	npm install -g cordova@5.1.0
-	cordova create testProj
-	cd testProj
-	cordova platform add android
-	cordova plugin add cordova-plugin-in-question
-	cordova build android
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		npm install -g cordova@5.1.0
+		cordova create testProj
+		cd testProj
+		cordova platform add android
+		cordova plugin add cordova-plugin-in-question
+		cordova build android
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
-	... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI in place of the plugin name.
+		... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI in place of the plugin name.
 	
 	2. If the problem reproduces, you may  want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
 
-2. If you've already added release signing information into ant.properties in your project, you'll need to place this information in a new file in your project.  See the [Packaging & Publishing tutorial for details](../tutorial-package-publish) for details.
+3. If you've already added release signing information into ant.properties in your project, you'll need to place this information in a new file in your project.  See the [Packaging & Publishing tutorial for details](../tutorial-package-publish) for details.
 
 <a name="crosswalk"></a>
 ##Pluggable WebViews and the Crosswalk WebView for Android
