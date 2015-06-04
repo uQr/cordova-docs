@@ -10,7 +10,7 @@ The reason all of these frameworks are available to you is that they all integra
 
 This tutorial will not reccomend specific test frameworks for use, but instead illustrate two primary ways to run tests in TFS 2015 and pull the results into your TFS/VSO instance. The tutorial assumes you have already setup TFS 2015 / VSO to build your app. If you have **not** followed these steps already, see the [Team Foundation Services 2015 and Visual Studio Online team build tutorial](http://go.microsoft.com/fwlink/?LinkID=533771) for details.
 
-##Approach 1: Running Your Test Framework Directly Using Node
+##Part 1: Running Your Test Framework Directly Using Node
 At its most basic, you will need to execute the following steps to run your tests using the framework of your choice:
 
 1. Install the framework (if not installed globally)
@@ -95,8 +95,22 @@ Now, let's create a build definition to run the Mocha command line utility and p
 	
 	Selecting "Always Run" is critical as it will ensure the test results are published even if the command line utility returned a non-zero exit code.
 	
-##Approach 2: Using Gulp
-Approach #1 gets the job done, it can be a bit awkward to set up and configure. If you are using Gulp to facilitate your build as described in the [team build tutorial](http://go.microsoft.com/fwlink/?LinkID=533771) you can simplify your configuration and take advantage of a whole host of test related Gulp plugins. While we could use the "[gulp-mocha](https://www.npmjs.com/package/gulp-mocha)" plugin to redo our previous example, let's get a bit fancier this time and illustrate automating device testing using Mocha and [Appium](http://appium.io/).
+##Part 2: Using Gulp
+Now that you've seen the basics, you can see that the first approach gets the job done but it can be bit awkward to set up and configure. If you are using Gulp to facilitate your build as described in the [team build tutorial](http://go.microsoft.com/fwlink/?LinkID=533771) you can simplify your configuration and take advantage of a whole host of test related Gulp plugins. While we could use the "[gulp-mocha](https://www.npmjs.com/package/gulp-mocha)" plugin to redo our previous example, let's get a bit fancier this time and illustrate automating device testing using Mocha and [Appium](http://appium.io/).
 
 If you would prefer to test in the cloud, you can check out [SauceLabs](https://saucelabs.com/) and their [saucelabs-runner](https://www.npmjs.com/package/saucelabs-runner) node module along with [PerfectoMobile](http://www.perfectomobile.com/)
+
+**Q: Using appium too much to add in here?**
+
+###Install and Configure Appium
+Appium runs as a server on your machine, so you will need to install and configure it for use. 
+
+1. By far the easiest way to get going is to download the Appium app by clicking the [Download button on the Appium home page](http://appium.io/).
+
+2. From there, unzip it on the machine running the VSO agent (Windows or cross-platform) where you will be running the tests.
+
+3. Start up Appium by double clicking on the Appium executable / app.
+
+1. Open a command prompt on the machine running the VSO agent (Windows or cross-platform) where you will be running the tests. Use the Terminal app for OSX.
+
 
