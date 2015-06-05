@@ -272,5 +272,5 @@ As the major version number increase implies, there are some breaking changes to
 
 As with Gradle, if you encounter an unexpected build error specifically for Android, see if the error references Cordova plugin source code. If so, update it by removing the plugin using the "Installed" tab of the config.xml designer and re-add the plugin. If you cannot determine which plugin is causing the issue, you can opt to proactively upgrade all of them.
 
-If the problem persists, see the recommendations under "[Migrating an Existing Project to Use Gradle](#gradle-migrate)" for additional troubleshooting tips.
+If the problem persists, see the recommendations under "[Migrating an Existing Project to Use Gradle](gradle-migrate)" for additional troubleshooting tips.
 
