@@ -1,7 +1,7 @@
-#Summary of Major Changes in Apache Cordova 5
+#Using Apache Cordova 5
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
-Tools for Apache Cordova supports cordova 4.3.1 along with the newly released Cordova 5.2.0 **TODO: Final RTM version** version of cordova. As the major version number increase implies, Cordova 5 is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](https://github.com/Chuxel/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015). As a result, we strongly reccomend the use of **Cordova 5.2.0** **TODO: Final RTM version** with **Visual Studio 2015 RTM** and up.
+Tools for Apache Cordova supports Cordova 4.3.1 along with the newly released Cordova 5.2.0 **TODO: Final RTM version** version of Cordova. As the major version number increase implies, Cordova 5 is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](https://github.com/Chuxel/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015). As a result, we strongly recommend the use of **Cordova 5.2.0** **TODO: Final RTM version** with **Visual Studio 2015 RTM** and up.
 
 This article will summarize the changes in Cordova 5 and how you can take advantage of the new features and adapt existing apps. Specifically it will cover:
 
@@ -9,6 +9,20 @@ This article will summarize the changes in Cordova 5 and how you can take advant
 1. [Primary Cordova plugin repository switching to npm](#npm)
 1. [Gradle build instead of Ant for Android](#gradle)
 1. [Pluggable WebViews and the Crosswalk WebView for Android](#crosswalk)
+
+New projects created using Tools for Apache Cordova will automatically use Cordova 5.2.0 **TODO: Final RTM version**. For existing projects, you can switch to this version of Cordova by following these steps:
+
+1. Double click on config.xml
+
+2. Select the "Platforms" left navigation tab
+
+3. Change the version number to 5.2.0 and save config.xml
+
+	![Select Cordova Version](<media/cordova-5-0.png>)
+
+Note that when you build this will **automatically remove any existing contents in the platforms folder in the filesystem**. If you have opted to customize the native project, you should consider migrating your custom assets to the **res/native** folder (ex: res/native/android) which will automatically add the files to the project before preparing the Cordova project to build. However, you will want to exercise care here since Android in particular has undergone significant revisions in Cordova 5.
+
+The remainder of this article will highlight these updates and cover tips for adapting your existing apps to these changes.
 
 <a name="security"></a>
 ##Security Model Changes for Android and iOS

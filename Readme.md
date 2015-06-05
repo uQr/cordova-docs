@@ -4,6 +4,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 **Note that this documentation does not apply to Visual Studio 2013 CTPs.**
 
 ## Tutorials
+1. [Using Apache Cordova 5](./tutorial-cordova-5)
 1. [Using Gulp with your Cordova projects](./tutorial-gulp)
 1. [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
