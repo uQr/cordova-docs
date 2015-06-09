@@ -10,7 +10,7 @@ For specifics on using Gulp with TFS 2015, see the  [abridged tutorial on specif
 ##Using cordova-lib from Gulp
 The Cordova CLI internally uses a node module called cordova-lib that encapsulates all of the CLI's core functionality in a series of JavaScript APIs. This module is also released as an npm package at the same time the Cordova CLI is released. It is therefore relatively straight forward to use cordova-lib directly from a Gulp script.
 
-For example, this is a sample **gulpefile.js** that you can place in the root of your Cordova project that will build a release version of the Android platform:
+For example, this is a sample **gulpfile.js** that you can place in the root of your Cordova project that will build a release version of the Android platform:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var gulp = require("gulp"),
     cordova = require("cordova-lib").cordova;
