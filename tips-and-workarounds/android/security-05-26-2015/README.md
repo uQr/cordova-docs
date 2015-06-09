@@ -33,6 +33,7 @@ For projects where you have **already executed a build for Android on your syste
 	~~~~~~~~~~~~~~~~~~~~~~~~
 	npm install -g cordova
 	cordova platform remove android
+	cordova platform add android
 	~~~~~~~~~~~~~~~~~~~~~~~~
 
 The next time you build you will now be on the patched version of the Android platform.
