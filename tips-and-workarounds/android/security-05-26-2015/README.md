@@ -3,7 +3,7 @@ Recently [Trend Micro uncovered a security flaw](http://blog.trendmicro.com/tren
 
 While we are working with the community on a “tools release” for the Apache Cordova Command Line Interface (CLI) to update the default version of the Android platform to include this patch, you can immediately update your project to the patched version of the Cordova Android platform when using Cordova 4.3.0 or 5.0.0 with Tools for Apache Cordova 2015 RC or later. 
 
-Developers using the Cordova CLI without Visual Studio can [follow the steps covered in this article](http://cordova.apache.org/announcements/2015/05/26/android-402.html). However, we reccomend also adding the &lt;engine&gt; element to your config.xml file as described below to prevent you from going back to the unpatched version of the Android platform particularly when not checking in the platforms folder into source control.
+Developers using the Cordova CLI without Visual Studio can [follow the steps covered in this Apache blog post on the issue](http://cordova.apache.org/announcements/2015/05/26/android-402.html). However, we recommend also adding the &lt;engine&gt; element to your config.xml file as described below to prevent you from accidently going back to the unpatched version of the Android platform (particularly if you do not check in the platforms folder to source control).
 
 We recommend all users of VS 2013 CTPs or earlier VS 2015 CTPs upgrade to VS 2015 RC or later so that they can take advantage of features described in this article to mitigate the security issue.
 
