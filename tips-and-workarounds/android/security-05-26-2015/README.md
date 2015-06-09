@@ -42,7 +42,7 @@ To make this simple, [you can find an updated version of the config.xml file in 
 
 ##Long Term
 
-An upcoming “tools releases” of the Apache Cordova CLI will use the patched version of the Cordova Android platform by default. We will be updating the default templates in Visual Studio Tools for Apache Cordova to use this updated version of Cordova for new projects, but it is also worth noting that we’ve made changes as of Visual Studio 2015 RC to make updating the Cordova version in existing projects simple as well. To do so, follow these steps:
+An upcoming “tools release” of the Apache Cordova CLI will use the patched version of the Cordova Android platform by default. We will be updating the default templates in Visual Studio Tools for Apache Cordova to use this updated version of Cordova for new projects, but it is also worth noting that we’ve made changes as of Visual Studio 2015 RC to make updating the Cordova version in existing projects simple as well. To do so, follow these steps:
 
 1.	Double click on config.xml in your project
 2.	Click the “Platforms” tab
