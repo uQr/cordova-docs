@@ -1,5 +1,5 @@
 #**Known Issues - iOS Build**
-This article covers [known issues](http://github.com/Microsoft/cordova-docs/README.md#knownissues) related to Tools for Apache Cordova when building or deploying to iOS. 
+This article covers [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to iOS devices or simulators. 
 
 ----------
 **CordovaModuleLoadError from vs-mda-remote:** This error can occur if your ~/.npm folder or some of its contents were created while running as an administrator (sudo). To resolve, run the following commands after installing the latest version of the [vs-mda-remote package](https://www.npmjs.com/package/vs-mda-remote). These commands ensure your user has permissions to the contents of the npm package cache in your home directory when using older versions of Node.js and npm. Newer versions of Node.js and npm will do this for you automatically.
@@ -20,7 +20,7 @@ This article covers [known issues](http://github.com/Microsoft/cordova-docs/READ
 
 ----------
 ## More Information
-* [Read up on additional known issues, tips, tricks, and tutorials](http://github.com/Microsoft/cordova-docs)
+* [Read up on additional known issues, tips, tricks, and tutorials](../Readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
