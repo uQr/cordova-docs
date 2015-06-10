@@ -13,6 +13,15 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. [Android](./tips-and-workarounds/android)
 1. [iOS and OSX](./tips-and-workarounds/ios)
 
+## Known Issues
+1. [General](./known-issues/known-issues-general.md)
+1. [Visual Studio 2015](./known-issues/known-issues-vs2015.md)
+1. [Debugger](./known-issues/known-issues-debugger.md)
+1. [Apache Cordova 5.0](./known-issues/known-issues-cordova5.md)
+1. [iOS Build](./known-issues/known-issues-ios.md)
+1. [Ripple](./known-issues/known-issues-ripple-cordova.md)
+1. [CTP 3.1 / Visual Studio 2013](./known-issues/known-issues-vs2013.md)
+
 ## Help us improve our documentation
 Help us improve out docuementaiton by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
 
