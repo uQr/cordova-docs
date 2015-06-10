@@ -3,8 +3,33 @@ This document covers tips, tricks, and known workarounds for general issues with
 
 It covers the following issues and tips:
 
+1. [Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run](#missingexclude)
 1. ["TypeError: Request path contains unescaped characters" during a build or when installing a plugin](#cordovaproxy) 
 1. [Using a Specific Version of a GitHub Sourced Plugin](#plugin-github) 
+
+<a name="missingexclude"></a>
+##Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run
+Due to a bug in the VS templates in VS 2015 RC, four json files that can cause issues if added to source control are missing from the default source code exclusion list: 
+
+- plugins/android.json
+- plugins/windows.json
+- plugins/remote_ios.json
+- plugins/wp8.json. 
+
+Adding these files to source control can result in a build that appears to succeed but is missing plugin native code. They should only be included if the "platforms" folder is also checked in which is not recommended. 
+
+A telltale sign that you are encountering this issue is that the build appears to succeed and the app starts up properly but Cordova plugin APIs do not appear to function and no error can be found in the JavaScript console. On further inspection in the **Output Window** you may see an exception similar to the following when debugging an Android version of your app:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+W/System.err( 1425): java.lang.ClassNotFoundException: org.apache.cordova.camera.CameraLauncher
+W/System.err( 1425):  at java.lang.Class.classForName(Native Method)
+W/System.err( 1425):  at java.lang.Class.forName(Class.java:251)
+W/System.err( 1425):  at java.lang.Class.forName(Class.java:216)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The missing class would be recognizable as a Cordova plugin class such as "org.apache.cordova.camera.CameraLauncher" from the camera plugin.
+
+Remediation is fortunately simple: Remove these files (plugins/android.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control check the project out again.
 
 <a name="cordovaproxy"></a>
 ##"TypeError: Request path contains unescaped characters" during a build or when installing a plugin
