@@ -1,7 +1,7 @@
 #Summary of Major Changes in Apache Cordova 5
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
-Tools for Apache Cordova supports cordova 4.3.1 along with the newly released Cordova 5.2.0 **TODO: Final RTM version** version of cordova. As the major version number increase implies, Cordova 5 is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](https://github.com/Chuxel/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015). As a result, we strongly reccomend the use of **Cordova 5.2.0** **TODO: Final RTM version** with **Visual Studio 2015 RTM** and up.
+Tools for Apache Cordova supports cordova 4.3.1 along with the newly released Cordova 5.1.1 version of cordova. As the major version number increase implies, Cordova 5 is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](https://github.com/Chuxel/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015). As a result, we strongly reccomend the use of **Cordova 5.1.1** with **Visual Studio 2015 RTM** and up.
 
 This article will summarize the changes in Cordova 5 and how you can take advantage of the new features and adapt existing apps. Specifically it will cover:
 
@@ -161,6 +161,7 @@ Another significant departure in Cordova 5 and the community as a whole is the m
 
 However, unfortunately this switch over is not transparent. For a few very specific reasons, this change over can be a bit confusing and we're working with the community to determine some ways to make the transition a bit more seamless going forward.
 
+<a name="no-npm-3.x"></a>
 ###Cordova 3.x and 4.x Don't Support Npm as a Plugin Source
 An early source of confusion can lead from the fact that Cordova 3.x and 4.x cannot use plugins sourced from npm. The Cordova CLI in these versions simply does not have the capability. A specific issue that can come up here is that updates to plugins will now generally be going to npm **not** the older GitHub sourced method used by these earlier version of Cordova plugins.
 
@@ -230,7 +231,7 @@ Because of these differences you should take the following steps:
 	2. To eliminate Visual Studio as a potential culprit, you can test using a standard Cordova CLI project by entering the following in a command prompt:
 	
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		npm install -g cordova@5.1.0
+		npm install -g cordova@5.1.1
 		cordova create testProj
 		cd testProj
 		cordova platform add android
@@ -246,15 +247,28 @@ Because of these differences you should take the following steps:
 
 <a name="crosswalk"></a>
 ##Pluggable WebViews and the Crosswalk WebView for Android
-An exciting new development in the Cordova Android platform is the support for what are called "pluggable WebViews." What this feature allows you to do is swap out the built in Android WebView with a completely different WebView implementation. This is a significant improvement as the Android browser and thus the WebView has been locked at a specific version without the ability to update unless you update the version of the OS on the device. This has changed in Android 5.0, but unlike iOS or Windows where devices can opt to upgrade and developers need only concern themselves with a few major versions of the browser, older Android devices are locked at a particular sub-revision of Android and thus the browser with no ability to upgrade the device in many cases. The end result has been a vast array of small differences between Android devices.
+An exciting new development in the Cordova Android platform is the support for what are called "pluggable WebViews." What this feature allows you to do is swap out the built in Android WebView with a completely different WebView implementation. This is a significant improvement as the Android browser and thus the WebView has been locked at a specific version without the ability to update unless you update the version of the OS on the device. This has changed in the Android OS as of 5.0 (API 22), but unlike iOS or Windows where devices can opt to upgrade and developers need only concern themselves with a few major versions of the browser, older Android devices are locked at a particular sub-revision of Android and thus the browser with no ability to upgrade the device in many cases. The end result has been a vast array of small differences between Android devices.
 
 [Crosswalk](https://crosswalk-project.org/) is a project that is designed to allow developers to take embed a very recent and specific version of the Chromium WebView inside their Android app. The Crosswalk WebView can be embedded in apps running on Android 4.0 and up and brings with it the significant advantage of a consistent WebView implementation across all Android device versions it supports.
 
-There is now a [Cordova Crosswalk plugin](https://www.npmjs.com/package/cordova-plugin-crosswalk-webview/) that takes advantage of the new pluggable WebView features in Cordova 5.0.0+ (and the Cordova Android 4.0.0 platform it uses).
+There is now a [Cordova Crosswalk plugin](https://www.npmjs.com/package/cordova-plugin-crosswalk-webview/) that takes advantage of the new pluggable WebView features in Cordova 5.0.0+ (and the Cordova Android 4.0.0 platform it uses) and makes it simple to add into your project.
+
+*Note: Because using the Crosswalk plugin does slow down build times fairly significantly given its size, we recommend developers start out building apps with the stock Android WebView on a recent device or emulator (Android 4.4+). You can then add the Crosswalk plugin later in your development cycle and make the necessary adjustments.*
+
+###Installing the Crosswalk Plugin from VS
+To use it from Visual Studio, follow these steps:
+
+1. Install VS 2015 RTM or later (not RC)
+2. Open the config.xml designer by double clicking on config.xml
+3. Verify you have set the Cordova version to 5.1.1 or higher under the "Platforms" tab.
+3. Go to "Plugins > Custom"
+4. Select the "Git" radio button
+5. Enter "https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview.git" as the URI and click the arrow. Note that you may also download a specific version of this plugin using the proceedure outlined under [Cordova 3.x and 4.x Don't Support Npm as a Plugin Source](#no-npm-3.x) above.
+6. Click "Add"
+
+The next time you build, your app will be running in the Crosswalk WebView. Note that the first build in particular will take a bit given the plugin does some dynamic acquisition.
 
 **TODO: Debugging support make it? In our core list of plugins? Git URI?**
-
-Because using the Crosswalk plugin does slow down build times fairly significantly given its size, we recommend developers start out building apps with the stock Android WebView on a recent device or emulator (Android 4.4+). You can then add the Crosswalk plugin later in your development cycle and make the necessary adjustments.
 
 ###The Base Android Emulator and Crosswalk
 One very important thing to note when using the Crosswalk WebView in the base Android emulator is that Crosswalk requires OpenGL support and that you've selected the "Use Host GPU" option in your Android Virtual Device configuration. Failing to do this will cause the app to crash. To use it:
