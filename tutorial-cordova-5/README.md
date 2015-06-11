@@ -25,19 +25,17 @@ Note that when you build this will **automatically remove any existing contents 
 The remainder of this article will highlight these updates and cover tips for adapting your existing apps to these changes.
 
 ###A Note on Cordova Version Numbers
-Historically Cordova and all its components have used one unified version number. This is particularly true with Cordova versions prior to 3.0.0. Underneath the hood this changed when Cordova 4.0.0 was released but most end users are never exposed to this difference. With the release of Cordova 5.0.0 you may also see reference to the release of "Cordova Android 4.0.0." It's important to note that this does not refer to the top level Cordova version but instead the **platform** version. You can think of a platform in many ways as a native project generator combined with a set of scripts designed to build the app.
+Historically Cordova and all its components have used one unified version number. This was particularly true with Cordova versions prior to 3.0.0. Underneath the hood this changed when Cordova 4.0.0 was released but most end users were never exposed to this difference. With the release of Cordova 5.0.0 you may also see reference to the release of "Cordova Android 4.0.0." It's important to note that this does not refer to the top level Cordova version but instead the **platform** version. You can think of a platform in many ways as a native project generator combined with a set of scripts designed to build the app.
 
-Here is how these versions are typically described:
+Understanding these differences can be important when reading blog posts or updates on the Cordova web site. Here is how these different components are typically described:
 
 - **Cordova 5.1.1** refers to version 5.1.1 of the [Cordova CLI](http://cordova.apache.org/docs/en/5.0.0/guide_cli_index.md.html#The%20Command-Line%20Interface) (and an underlying core library called [cordova-lib](https://www.npmjs.com/package/cordova-lib)). [Documentation](http://cordova.apache.org/docs/en/5.0.0/guide_overview_index.md.html#Overview) on the Cordova web site will also refer to this version number.
 
 - **Cordova CLI 5.1.1** is largely equivalent to Cordova 5.1.1 but is specifically referring to the [Cordova CLI npm package](https://www.npmjs.com/package/cordova).
 
-- **Platform Versions** follow a different numbering scheme. A given Cordova version "pins" a set of platform versions by default. This combination of CLI and platform versions has been validated as a group so it is the path of least resistance to use. 
-
-	However, developers can actually install different platform versions through the use of some XML elements or command line options. See the [May 26th, 2015 Android Cordova Platform Security Issue](../tips-and-workarounds/android/security-05-26-2015) article for a specific example of how this works. You will typically see these platform versions in the form "Cordova Android 4.0.0" which inherits its name from the [cordova-android](https://www.npmjs.com/package/cordova-android) npm package that is installed when the platform is added to your project. 
-
-	The following Cordova platform versions  supported by Tools for Apache Cordova are pinned in **Cordova CLI 5.1.1** (or [see here](http://cordova.apache.org/news/2015/06/10/tools-release.html) for a complete list):
+- **Platform versions** follow a different numbering scheme. A given Cordova CLI version "pins" a set of platform versions by default since all testing for the release was done using this specific combination of components. The Cordova OSS project does not typically back-test earlier versions of the CLI with newer platforms unless specifically noted in the release notes. You will typically see these platform versions mentioned in a form similar to "Cordova Android 4.0.0". This naming scheme inherits its name from the [cordova-android](https://www.npmjs.com/package/cordova-android) and other similarly named npm packages that are installed when the platform is added to your project. Visual Studio will automatically perfom this "platform add" operation on your behalf but you may notice a version number like this in the Output Window when you build.
+	
+	The following Cordova platform versions supported by Tools for Apache Cordova are pinned in **Cordova CLI 5.1.1** (or [see here](http://cordova.apache.org/news/2015/06/10/tools-release.html) for a complete list):
 	
 	- Cordova Android 4.0.2
 	- Cordova iOS 3.8.0
@@ -45,6 +43,8 @@ Here is how these versions are typically described:
 	- Cordova WP8 3.8.1
 
 Other components are also versioned independantly, but typically you will not be directly exposed to them. It is the release of Cordova Android 4.0.0 that triggered the major version increase for Cordova as a whole given it had a number of breaking changes. Windows 4.0.0 is also a major release that includes Windows 10 support but was designed to not have breaking changes when building for Windows or Windows Phone 8.1.
+
+Note that you can actually add different platform versions to your project for a given CLI version through the use of some XML elements or command line options for edge case scenarios. See the [May 26th, 2015 Android Cordova Platform Security Issue](../tips-and-workarounds/android/security-05-26-2015) article for a specific example of how this works. 
 	
 <a name="security"></a>
 ##Security Model Changes for Android and iOS
