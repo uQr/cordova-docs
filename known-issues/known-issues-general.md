@@ -8,6 +8,16 @@ This article covers general [known issues](../Readme.md#knownissues) related to 
 **Missing Platform Dropdown:** The “Solution Platform” dropdown may not appear in the toolbar when upgrading Visual Studio 2013 from a previous version to Update 4. You can add using the “Standard Toolbar Options” dropdown as described in [Microsoft Support article 2954109](http://support.microsoft.com/kb/2954109).
 
 ----------
+**Building a Cordova project from source control results in Cordova plugin APIs not returning results:** The following four json files that can cause this to occur if added to source control.
+
+- plugins/android.json
+- plugins/windows.json
+- plugins/remote_ios.json
+- plugins/wp8.json.
+
+Remove these files from source control and remove tese files along with any platforms found in the "platforms" folder locally to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
+
+----------
 **Missing Intellisense:**
 - No IntelliSense is provided for Cordova plugins in JavaScript files in Apache Cordova projects. As a workaround, developers can enable IntelliSense for Cordova plugins by explicitly adding “/// &lt;reference group="Implicit (Multi-Device Apps)” /&gt;” to the JavaScript file.
 - No IntelliSense is provided within JavaScript files for other JavaScript files included via a script tag in a referring HTML page. As a workaround, developers can enable IntelliSense for other referenced JavaScript files by explicitly adding “/// &lt;reference path=”referencedFile.js” /&gt;” to the JavaScript file.
