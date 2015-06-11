@@ -1,5 +1,8 @@
 #**General Known Issues**
-This article covers general [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova. 
+This article covers general [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova. For version specific issues, see:
+
+- [Known issues for Visual Studio 2015](known-issues-vs2015.md)
+- [Known issues for Tools for Apache Cordova CTP 3/3.1](known-issues-vs2013.md)
 
 ----------
 **Missing Platform Dropdown:** The “Solution Platform” dropdown may not appear in the toolbar when upgrading Visual Studio 2013 from a previous version to Update 4. You can add using the “Standard Toolbar Options” dropdown as described in [Microsoft Support article 2954109](http://support.microsoft.com/kb/2954109).
