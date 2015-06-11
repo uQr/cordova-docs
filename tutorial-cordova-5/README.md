@@ -323,3 +323,11 @@ As with Gradle, if you encounter an unexpected build error specifically for Andr
 
 If the problem persists, see the recommendations under "[Migrating an Existing Project to Use Gradle](#gradle-migrate)" for additional troubleshooting tips.
 
+## More Information
+* [Read tutorials and learn about tips, tricks, and known issues](../Readme.md)
+* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
+* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
+* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
+* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
+* [Email us your questions](mailto:/vscordovatools@microsoft.com)
