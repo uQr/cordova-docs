@@ -10,13 +10,13 @@ This article will summarize the changes in Cordova 5 and how you can take advant
 1. [Gradle build instead of Ant for Android](#gradle)
 1. [Pluggable WebViews and the Crosswalk WebView for Android](#crosswalk)
 
-New projects created using Tools for Apache Cordova will automatically use Cordova 5.2.0 **TODO: Final RTM version**. For existing projects, you can switch to this version of Cordova by following these steps:
+New projects created using Tools for Apache Cordova will automatically use Cordova 5.1.1. For existing projects, you can switch to this version of Cordova by following these steps:
 
 1. Double click on config.xml
 
 2. Select the "Platforms" left navigation tab
 
-3. Change the version number to 5.2.0 and save config.xml
+3. Change the version number to 5.1.1 and save config.xml
 
 	![Select Cordova Version](<media/cordova-5-0.png>)
 

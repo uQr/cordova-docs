@@ -5,6 +5,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 
 <a name="tutorials"></a>
 ## Tutorials
+1. [Using Apache Cordova 5](./tutorial-cordova-5)
 1. [Using Gulp with your Cordova projects](./tutorial-gulp)
 1. [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
