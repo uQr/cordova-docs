@@ -61,3 +61,13 @@ From time to time you may try to use a Cordova plugin from GitHub but find that 
 5. Add the plugin to your project from this local location by using the "Local" option in the "Custom" tab of the config.xml designer.
 
 	![Custom Local Plugin](<media/git-local-1.png>)
+	
+## More Information
+* [Read tutorials and learn about tips, tricks, and known issues](../../Readme.md)
+* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
+* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
+* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
+* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
+* [Email us your questions](mailto:/vscordovatools@microsoft.com)
+
