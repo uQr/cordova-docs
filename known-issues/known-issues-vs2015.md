@@ -2,7 +2,7 @@
 This article covers [known issues](../Readme.md#knownissues) specific to Visual Studio Tools for Apache Cordova 2015. 
 
 ----------
-**Project Structure Change from CTP3/3.1:** Projects created in an earlier version of Visual Studio will need to be migrated to support the new project structure that is more interoperable with 3rd party tools and CLIs. 
+**Project structure change from CTP3/3.1:** Projects created in an earlier version of Visual Studio will need to be migrated to support the new Cordova CLI based project structure in VS 2015 that is more interoperable with 3rd party tools and CLIs. 
 
 To migrate your previous projects to the new structure:
 
@@ -103,7 +103,7 @@ Lastly, you should add the following XML elements to your config.xml to ensure y
 
 ##Visual Studio 2015 RC
 ----------
-**VS 2015 RC and Cordova 5.x.x / Cordova Android 4.x.x: ** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Android related issues that are specific to Cordova 5.0.0 and up.
+**VS 2015 RC and Cordova 5.x.x / Cordova Android 4.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Android related issues that are specific to Cordova 5.0.0 and up.
 
 ----------
 **Plugin Variables not working:** Due to a Cordova issue with Cordova 4.3.0, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.0.0 which you can use with VS 2015 RC. To update to 5.0.0 and use plugin variables, you will need to update your VS project and use the command line.
