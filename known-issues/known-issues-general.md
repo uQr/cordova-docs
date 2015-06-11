@@ -15,7 +15,7 @@ This article covers general [known issues](../Readme.md#knownissues) related to 
 - plugins/remote_ios.json
 - plugins/wp8.json.
 
-Remove these files from source control. For local copies, you can eather fetch a fresh copy from source control or remove these files along with any platforms found in the "platforms" folder locally to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
+Remove these files from source control. For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
 
 ----------
 **Missing Intellisense:**
