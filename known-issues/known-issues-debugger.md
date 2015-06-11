@@ -1,4 +1,5 @@
 #**VS Debugger Known Issues and Limitations**
+This article covers [known issues and limitations](../Readme.md#knownissues) related to Visual Studio Debugger in Tools for Apache Cordova 2015. 
 
 ----------
 There is currently no Visual Studio debugger support for Windows Phone 8. Developers can use the Weinre (Web Inspector Remote) project as described in this [blog post](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/) from MS OpenTech as an alternative.
@@ -12,15 +13,7 @@ You cannot use the VS Debugger for apps deployed to Android emulators or devices
 ----------
 Due to an issue with the InAppBrowser plugin, we currently do not support debugging on iOS applications that utilize it. The Azure Mobile Services plugin depends on InAppBrowser and is affected by this issue.
 
-**When using the VS Debugger with Android < 4.4 emulators, devices, or Apache Ripple™:**
-
-----------
-You cannot use the VS Debugger for apps deployed to emulators or devices running Android versions prior to 4.4. JavaScript console output is, however, captured in the Output window.
-
-----------
-While debugging to devices with Android versions <4.4, an error popup shows up “Unable to start program” citing “adb.exe” as the cause. The app should still load and work on your device, without debugger support.
-
-**When using the VS Debugger with Android 4.4 emulators, devices, or Apache Ripple™:**
+##When using the VS Debugger with Android 4.4+ emulators, devices, or Apache Ripple
 
 ----------
 The VS Debugger will not stop at breakpoints that occur prior to the first page load in Ripple or Android emulators or devices. However, these breakpoints will be hit after refreshing the browser (Ripple) or executing “window.location.reload()” from the JavaScript Console.
@@ -46,7 +39,15 @@ Not all JavaScript Console APIs are available.
 ----------
 DOM Explorer Events and Changes panes are not available.
 
-**When using jsHybugger for debugging Android <4.4:**
+##When using the VS Debugger with Android < 4.4 emulators or devices
+
+----------
+You cannot use the VS Debugger for apps deployed to emulators or devices running Android versions prior to 4.4 without the use of a 3rd party plugin like jsHybugger. JavaScript console output is, however, captured in the Output window.
+
+----------
+While debugging to devices with Android versions < 4.4, an error popup may appear stating “Unable to start program” citing “adb.exe” as the cause. The app should still load and work on your device, without debugger support.
+
+##When using the jsHybugger plugin for debugging Android <4.4
 
 ----------
 While using the JS Debugger with jsHybugger, there is no support for Source Maps.
@@ -65,3 +66,13 @@ While using the DOM explorer with jsHybugger, there is no support for:
 
 ----------
 While using the JavaScript Console with the jsHybugger, the JS Console works as output only – messages are logged but we do not execute commands.  We also do not support source locations of messages, clearing messages on navigation, and expanding objects and properties of the logged messages.
+
+----------
+## More Information
+* [Read up on additional known issues, tips, tricks, and tutorials](../Readme.md)
+* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
+* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
+* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
+* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
+* [Email us your questions](mailto://multidevicehybridapp@microsoft.com)

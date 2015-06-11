@@ -20,11 +20,13 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 ## Known Issues
 1. [General](./known-issues/known-issues-general.md)
 1. [Debugger](./known-issues/known-issues-debugger.md)
-1. [Ripple](./known-issues/known-issues-ripple-cordova.md)
-1. Apache Cordova Version Specific
-	1. [Apache Cordova 5.0.0](./known-issues/known-issues-cordova5.md)
+1. Apache Cordova & Ripple
+	1. [Apache Cordova & Ripple General](./known-issues/known-issues-cordova-ripple.md)
+	1. [Apache Cordova 5.x.x](./known-issues/known-issues-cordova5.md)
 1. Platform Specific
-	1. [iOS Build](./known-issues/known-issues-ios.md)
+	1. [Android](./known-issues/known-issues-android.md)
+	1. [iOS](./known-issues/known-issues-ios.md)
+	1. [Windows, Windows Phone 8.1](./known-issues/known-issues-windows.md)
 1. Visual Studio Release Specific
 	1. [Visual Studio 2015](./known-issues/known-issues-vs2015.md)
 	1. [CTP 3.1 / Visual Studio 2013](./known-issues/known-issues-vs2013.md)
