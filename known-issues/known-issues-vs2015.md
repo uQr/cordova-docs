@@ -1,7 +1,8 @@
-#**Known Issues: Visual Studio 2015 RC**
+#**Known Issues - Visual Studio 2015**
+This article covers [known issues](../Readme.md#knownissues) specific to Visual Studio Tools for Apache Cordova 2015. 
 
 ----------
-Projects created in an earlier version of Visual Studio will need to be migrated to support the new project structure that is more interoperable with 3rd party tools and CLIs. 
+**Project structure change from CTP3/3.1:** Projects created in an earlier version of Visual Studio will need to be migrated to support the new Cordova CLI based project structure in VS 2015 that is more interoperable with 3rd party tools and CLIs. 
 
 To migrate your previous projects to the new structure:
 
@@ -100,21 +101,48 @@ Lastly, you should add the following XML elements to your config.xml to ensure y
         <splashsrc="res/screens/wp8/SplashScreenImage.jpg"width="480"height="800" />
       </platform>
 
+##Visual Studio 2015 RC
 ----------
-When you upgrade from VS2015 CTP5 to CTP6, Apache Ant gets uninstalled. The workaround is to reinstall Ant. You can find manual instructions for installing and configuring Ant at [this location](https://msdn.microsoft.com/en-us/library/dn757054.aspx#InstallTools).
+**VS 2015 RC and Cordova 5.x.x / Cordova Android 4.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Android related issues that are specific to Cordova 5.0.0 and up.
 
 ----------
-Due to a Cordova issue with Cordova 4.3.0, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.0.0 which you can use with VS 2015 RC. To update to 5.0.0 and use plugin variables, you will need to update your VS project and use the command line.
+**Building a Cordova project from source control results in Cordova plugin APIs not returning results:** The following four json files that can cause this to occur if added to source control.
+
+- plugins/android.json
+- plugins/windows.json
+- plugins/remote_ios.json
+- plugins/wp8.json.
+
+These files are missing from the default source code exclusion list in VS 2015 RC. Remove these files from source control. For local copies, you can either fetch a fresh copy from source control or remove the files above along with any platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
+
+----------
+**Plugin Variables not working:** Due to a Cordova issue with Cordova 4.3.0, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.0.0 which you can use with VS 2015 RC. To update to 5.0.0 and use plugin variables, you will need to update your VS project and use the command line.
 
  1. Remove the plugins with the variables via the config designer.
- 2. Update to Cordova 5.0.0 via the config designer (Platforms > Cordova
-    CLI)
+
+ 2. Update to Cordova 5.0.0 via the config designer (Platforms > Cordova CLI)
+
  3. From the command line:
 	 1. Go to your project directory.
 	 2. Type the following substituting the plugin name for the plugin you
 	    wish to add:
-	    
-		> npm install -g cordova cordova plugin add
-		> nl.x-services.plugins.launchmyapp --variable URL_SCHEME=myscheme
+        
+	    ~~~~~~~~~~~~~~
+		npm install -g cordova cordova plugin add
+		nl.x-services.plugins.launchmyapp --variable URL_SCHEME=myscheme
+	    ~~~~~~~~~~~~~~
 
-This issue is actively being worked so things should improve in the future. You will also want to take note of the additional known issues pertaining to 5.0.0 when using it.
+
+##Visual Studio 2015 CTP6
+----------
+**Ant uninstalled when upgrading from CTP5 to CTP6:** When you upgrade from VS2015 CTP5 to CTP6, Apache Ant gets uninstalled. The workaround is to reinstall Ant. You can find manual instructions for installing and configuring Ant at [this location](https://msdn.microsoft.com/en-us/library/dn757054.aspx#InstallTools).
+
+----------
+## More Information
+* [Read up on additional known issues, tips, tricks, and tutorials](../Readme.md)
+* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
+* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
+* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
+* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
+* [Email us your questions](mailto://multidevicehybridapp@microsoft.com)
