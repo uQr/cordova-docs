@@ -10,7 +10,7 @@ This article covers [known issues](../Readme.md#knownissues) related to Visual S
 You can read more about the issue on the [MS Open Tech blog](http://go.microsoft.com/fwlink/?linkid=518810).
 
 ----------
-**Incorrect Application Id & Publisher Name after creating app packages in VS 2013:** While trying to associate a Cordova app with Windows store using Visual Studio 13 and CTP3.1, the AppxManifest.xml doesn’t get updated with the appropriate Application Id & publisher name. This has been fixed in VS 2015 R andC. To fix this issue in VS 2013, install the workaround plugin from https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix and try building your application again.
+**Incorrect Application Id & Publisher Name after creating app packages in VS 2013:** While trying to associate a Cordova app with Windows store using Visual Studio 13 and CTP3.1, the AppxManifest.xml doesn’t get updated with the appropriate Application Id & publisher name. This has been fixed as of VS 2015 RC. To fix this issue in VS 2013, install the workaround plugin from https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix and try building your application again.
 
 ----------
 ## More Information
