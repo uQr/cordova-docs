@@ -2,7 +2,7 @@
 #**Apache Cordova 5.x.x Related Known Issues**
 This article covers [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying using Apache Cordova 5.0.0+. 
 
-In general we reccomend **using Cordova 5.1.1 or above** instead of 5.0.0 as there are a number of issues including a security hole with Cordova 5.0.0.
+In general we recommend **using Cordova 5.1.1 or above** instead of 5.0.0 as there are a number of issues including a security hole with Cordova 5.0.0.
 
 ##Apache Cordova 5.x.x General Issues
 ----------
