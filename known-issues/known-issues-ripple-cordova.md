@@ -1,8 +1,8 @@
-#**Apache Cordova and Ripple Related Issues**
+#**Known Issues - Apache Cordova and Apache Ripple**
 This article covers general [known issues](../Readme.md#knownissues) related to Apache Cordova or Ripple. 
 
 ----------
-**Cordova 5.x.x: ** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Cordova and Ripple related issues that are specific to Cordova 5.0.0 and up.
+**Cordova 5.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Cordova and Ripple related issues that are specific to Cordova 5.0.0 and up.
 
 ----------
 **Ripple - Camera plugin does not work when using DATA_URL:** When using the Camera plugin with Ripple and the DATA_URL option, a file reference is returned instead.
