@@ -415,3 +415,12 @@ There are a few relativley common issues when building a Cordova app on OSX rela
     	2.  Add this file to your project in Visual Studio and check it into source control
 
     	3.  Add a "shell script" build step at the very beginning of your build definition that runs the above script.
+
+## More Information
+* [Read tutorials and learn about tips, tricks, and known issues](../Readme.md)
+* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
+* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
+* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
+* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
+* [Email us your questions](mailto:/vscordovatools@microsoft.com)
