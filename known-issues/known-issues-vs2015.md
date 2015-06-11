@@ -113,7 +113,7 @@ Lastly, you should add the following XML elements to your config.xml to ensure y
 - plugins/remote_ios.json
 - plugins/wp8.json.
 
-These files are missing from the default source code exclusion list in VS 2015 RC. Remove these files from source control and remove tese files along with any platforms found in the "platforms" folder locally to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
+These files are missing from the default source code exclusion list in VS 2015 RC. Remove these files from source control. For local copies, you can eather fetch a fresh copy from source control or remove these files along with any platforms found in the "platforms" folder locally to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
 
 ----------
 **Plugin Variables not working:** Due to a Cordova issue with Cordova 4.3.0, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.0.0 which you can use with VS 2015 RC. To update to 5.0.0 and use plugin variables, you will need to update your VS project and use the command line.
