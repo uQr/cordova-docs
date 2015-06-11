@@ -21,7 +21,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. [General](./known-issues/known-issues-general.md)
 1. [Debugger](./known-issues/known-issues-debugger.md)
 1. Apache Cordova & Ripple
-	1. [Apache Cordova & Ripple General](./known-issues/known-issues-cordova-ripple.md)
+	1. [Apache Cordova & Ripple General](./known-issues/known-issues-ripple-cordova.md)
 	1. [Apache Cordova 5.x.x](./known-issues/known-issues-cordova5.md)
 1. Platform Specific
 	1. [Android](./known-issues/known-issues-android.md)
