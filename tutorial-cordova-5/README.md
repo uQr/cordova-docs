@@ -24,6 +24,28 @@ Note that when you build this will **automatically remove any existing contents 
 
 The remainder of this article will highlight these updates and cover tips for adapting your existing apps to these changes.
 
+###A Note on Cordova Version Numbers
+Historically Cordova and all its components have used one unified version number. This is particularly true with Cordova versions prior to 3.0.0. Underneath the hood this changed when Cordova 4.0.0 was released but most end users are never exposed to this difference. With the release of Cordova 5.0.0 you may also see reference to the release of "Cordova Android 4.0.0." It's important to note that this does not refer to the top level Cordova version but instead the **platform** version. You can think of a platform in many ways as a native project generator combined with a set of scripts designed to build the app.
+
+Here is how these versions are typically described:
+
+- **Cordova 5.1.1** refers to version 5.1.1 of the [Cordova CLI](http://cordova.apache.org/docs/en/5.0.0/guide_cli_index.md.html#The%20Command-Line%20Interface) (and an underlying core library called [cordova-lib](https://www.npmjs.com/package/cordova-lib)). [Documentation](http://cordova.apache.org/docs/en/5.0.0/guide_overview_index.md.html#Overview) on the Cordova web site will also refer to this version number.
+
+- **Cordova CLI 5.1.1** is largely equivalent to Cordova 5.1.1 but is specifically referring to the [Cordova CLI npm package](https://www.npmjs.com/package/cordova).
+
+- **Platform Versions** follow a different numbering scheme. A given Cordova version "pins" a set of platform versions by default. This combination of CLI and platform versions has been validated as a group so it is the path of least resistance to use. 
+
+	However, developers can actually install different platform versions through the use of some XML elements or command line options. See the [May 26th, 2015 Android Cordova Platform Security Issue](../tips-and-workarounds/android/security-05-26-2015) article for a specific example of how this works. You will typically see these platform versions in the form "Cordova Android 4.0.0" which inherits its name from the [cordova-android](https://www.npmjs.com/package/cordova-android) npm package that is installed when the platform is added to your project. 
+
+	The following Cordova platform versions  supported by Tools for Apache Cordova are pinned in **Cordova CLI 5.1.1** (or [see here](http://cordova.apache.org/news/2015/06/10/tools-release.html) for a complete list):
+	
+	- Cordova Android 4.0.2
+	- Cordova iOS 3.8.0
+	- Cordova Windows 4.0.0
+	- Cordova WP8 3.8.1
+
+Other components are also versioned independantly, but typically you will not be directly exposed to them. It is the release of Cordova Android 4.0.0 that triggered the major version increase for Cordova as a whole given it had a number of breaking changes. Windows 4.0.0 is also a major release that includes Windows 10 support but was designed to not have breaking changes when building for Windows or Windows Phone 8.1.
+	
 <a name="security"></a>
 ##Security Model Changes for Android and iOS
 One of the more confusing changes about Cordova 5 is that the updated version of the Android platform (also called Cordova Android 4.x) and iOS now follow a different, but more powerful security model designed to provide developers with the tools needed to prevent cross-site scripting attacks among other issues. A critical aspect of this security model is that **absolutely no network access of any kind is allowed without the installation of a Cordova plugin**.
@@ -227,10 +249,11 @@ Up until Cordova 5.0.0 (Cordova Android platform version 4.0.0), Cordova used  [
 cordova build android -- --ant
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-There are two major ways that switching to Gradle can affect your project:
+There are three major ways that switching to Gradle can affect your project:
 
 1. The way you specify signing information is different. See the [Packaging & Publishing tutorial for details](../tutorial-package-publish).
-1. Some 3rd party plugins may either require Gradle be used or not yet support it. In particular, plugins that modify Android build artifacts in a non-standard way can run into issues.
+1. Some 3rd party plugins may now require Gradle and thus typically only work on Cordova 5.0.0 and up. In particular, plugins that modify Android build artifacts in a non-standard way can run into issues.
+1. Other 3rd party plugins may not have updated to support Gradle yet and still require Ant to be used. Generally these plugins are designed for Cordova versions < 5.0.0.
 
 A good example of a plugin that requires Gradle is the [Crosswalk plugin](https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview) we will cover a bit in this article. While at one point it also worked with Ant builds, it now errors out if you are not building with Gradle. As a result, Visual Studio 2015 now uses Gradle to build Android in Cordova 5.0.0+ instead of Ant (2015 RC still used Ant). The end result is you could hit compatibility issues with lesser known 3rd party plugins particularly if you have not updated them.
 
