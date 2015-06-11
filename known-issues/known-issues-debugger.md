@@ -5,7 +5,7 @@ This article covers [known issues and limitations](../Readme.md#knownissues) rel
 **No debugger support for Windows Phone 8 (WP8):** There is currently no Visual Studio debugger support for Windows Phone 8. Developers can use the Weinre (Web Inspector Remote) project as described in this [blog post](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/) from MS OpenTech as an alternative.
 
 ----------
-**Debugger does not stop at breakpoints when the app is first starting up:** Due to a race condition, the VS Debugger will not consistantly stop at breakpoints that occur prior to the first page load in Ripple or Android emulators or devices. However, these breakpoints will be hit after refreshing the browser (Ripple) or executing “window.location.reload()” from the JavaScript Console.
+**Debugger does not stop at breakpoints when the app is initally starting:** Due to a race condition, the VS Debugger will not consistantly stop at breakpoints that occur prior to the first page load in Ripple or Android emulators or devices. However, these breakpoints will be hit after refreshing the browser (Ripple) or executing “window.location.reload()” from the JavaScript Console.
 
 ----------
 **DOM explorer shows Ripple HTML in addition to app HTML:** When debugging an application deployed to the Ripple emulator, the JavaScript Console's default execution target is the Ripple top-level, instead of the application frame. To switch to the execution target of the user’s application, change the execution target of the JavaScript Console to the "frame: &lt;application html page%gt;" target using the target selector in the upper right of the JavaScript Console window.
