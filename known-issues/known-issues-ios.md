@@ -1,5 +1,5 @@
-#**Known Issues - Android**
-This article covers [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to Android devices or simulators. 
+#**Known Issues - iOS**
+This article covers [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to iOS devices or simulators. 
 
 ----------
 **CordovaModuleLoadError from vs-mda-remote:** This error can occur if your ~/.npm folder or some of its contents were created while running as an administrator (sudo). To resolve, run the following commands after installing the latest version of the [vs-mda-remote package](https://www.npmjs.com/package/vs-mda-remote). These commands ensure your user has permissions to the contents of the npm package cache in your home directory when using older versions of Node.js and npm. Newer versions of Node.js and npm will do this for you automatically.
