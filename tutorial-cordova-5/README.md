@@ -1,4 +1,4 @@
-#Summary of Major Changes in Apache Cordova 5
+#Using Apache Cordova 5
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 Tools for Apache Cordova supports cordova 4.3.1 along with the newly released Cordova 5.1.1 version of cordova. As the major version number increase implies, Cordova 5 is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](https://github.com/Chuxel/cordova-docs/tree/master/tips-and-workarounds/android/security-05-26-2015). As a result, we strongly reccomend the use of **Cordova 5.1.1** with **Visual Studio 2015 RTM** and up.
@@ -9,6 +9,20 @@ This article will summarize the changes in Cordova 5 and how you can take advant
 1. [Primary Cordova plugin repository switching to npm](#npm)
 1. [Gradle build instead of Ant for Android](#gradle)
 1. [Pluggable WebViews and the Crosswalk WebView for Android](#crosswalk)
+
+New projects created using Tools for Apache Cordova will automatically use Cordova 5.2.0 **TODO: Final RTM version**. For existing projects, you can switch to this version of Cordova by following these steps:
+
+1. Double click on config.xml
+
+2. Select the "Platforms" left navigation tab
+
+3. Change the version number to 5.2.0 and save config.xml
+
+	![Select Cordova Version](<media/cordova-5-0.png>)
+
+Note that when you build this will **automatically remove any existing contents in the platforms folder in the filesystem**. If you have opted to customize the native project, you should consider migrating your custom assets to the **res/native** folder (ex: res/native/android) which will automatically add the files to the project before preparing the Cordova project to build. However, you will want to exercise care here since Android in particular has undergone significant revisions in Cordova 5.
+
+The remainder of this article will highlight these updates and cover tips for adapting your existing apps to these changes.
 
 <a name="security"></a>
 ##Security Model Changes for Android and iOS
@@ -241,7 +255,7 @@ Because of these differences you should take the following steps:
 	
 		... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI in place of the plugin name.
 	
-	2. If the problem reproduces, you may  want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
+	2. If the problem reproduces, you may  want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
 
 3. If you've already added release signing information into ant.properties in your project, you'll need to place this information in a new file in your project.  See the [Packaging & Publishing tutorial for details](../tutorial-package-publish) for details.
 
@@ -267,8 +281,6 @@ To use it from Visual Studio, follow these steps:
 6. Click "Add"
 
 The next time you build, your app will be running in the Crosswalk WebView. Note that the first build in particular will take a bit given the plugin does some dynamic acquisition.
-
-**TODO: Debugging support make it? In our core list of plugins? Git URI?**
 
 ###The Base Android Emulator and Crosswalk
 One very important thing to note when using the Crosswalk WebView in the base Android emulator is that Crosswalk requires OpenGL support and that you've selected the "Use Host GPU" option in your Android Virtual Device configuration. Failing to do this will cause the app to crash. To use it:

@@ -14,6 +14,26 @@ This article will go through the general approach for tackling a number challeng
 
 *Note that Team Foundation Services 2013 cannot easily take advantage of the workflow described here (though 2015 can) as it is MSBuild based. See the [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770) tutorial for details.*
 
+##What to Add to Source Control
+On the surface, this seems like all files in a given Cordova project should be added to source control. However, to avoid unexpected issues, we recommend excluding the following files and folders from source control.
+
+- The following folders should be excluded:
+	- platforms
+	- bld
+	- .vs
+- The following files should be excluded: 
+	- plugins/android.json
+	- plugins/windows.json
+	- plugins/wp8.json
+	- plugins/ios.json
+	- plugins/remote_ios.json
+	- changeList.json
+	- *.suo
+	- *.jsproj.user
+
+**Troubleshooting Tip: Be aware that a bug in VS templates in VS 2015 RC included four json files that can cause issues if added to source control: plugins/android.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json.** Adding these files to source control can result in a build that appears to succeed but is missing plugin native code. They should only be included if the "platforms" folder is also checked in which is not recommended. Simply remove these files from source control to resolve the issue.
+
+Note that you **can** add "plugins/fetch.json" to source control along with the rest of the contents of the plugins folder. See [our Issues, Tips, and Workarounds documentation](../tips-and-workarounds) for additional tips on addressing common build issues. 
 
 ##Basic Workflow
 Each build server technology is a bit different and in this article we will focus on the general steps required to build a Cordova app regardless of technology using the Cordova Command Line Interface.

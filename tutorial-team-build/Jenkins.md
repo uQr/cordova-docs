@@ -5,6 +5,8 @@
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and Cordova CLI are Node.js based which makes the two highly complementary technologies. For these reasons, this tutorial will focus on the use Gulp rather than MSBuild as the primary build language for Cordova apps when using Jenkins.
 
+**Troubleshooting Tip:** Be aware that a bug in VS templates in VS 2015 RC included four json files that can cause issues if added to source control: plugins/android.json, plugins/remote_ios.json, plugins/windows.json, and plugins/wp8.json. The taco-team-build node module referenced in this tutorial will resolve this problem for you. However, if you opt not to use the module note that adding these files to source control can result in a build that appears to succeed but is missing plugin native code. They should only be included if the "platforms" folder is also checked in which is not recommended. Simply remove these files from source control to resolve the issue.
+
 ##Initial Setup
 Since the build process we will describe here is not directly dependent on MSBuild or Visual Studio, you have two options for installing pre-requisites on Windows:
 
