@@ -18,6 +18,15 @@ This article covers general [known issues](../Readme.md#knownissues) related to 
 Remove these files from source control. For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
 
 ----------
+**Slow first build:** The first build for a given version of Cordova will be slower than subsequent builds as VS must first dynamically acquire Cordova. See the Output Window for more detail on progress. Further, the first remote iOS build will exhibit the same behavior as the agent downloads Cordova on your OSX machine. If you encounter a CordovaModuleLoadError with the first iOS build for a given Cordova version you can follow [these instructions](../tips-and-workarounds/ios/README.md#npm-cache) to resolve the problem.
+
+----------
+**Git sourced plugins will not install:** Git sourced plugins will not install properly if you have not installed the [Git command line tools](http://www.git-scm.com/downloads) and have them in your system path. During installation of the Git tools, select the "Use Git from the Windows Command Prompt" option or add the "bin" folder from the Git install location to your path and restart VS. (Usually "C:\Program Files (x86)\Git\bin").
+
+----------
+**TypeError: Request path contains unescaped characters:** When building or installing a plugin you may encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade Node.js to 0.10.29. This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/README.md#cordovaproxy) for additional details.
+
+----------
 **Missing Intellisense:**
 - No IntelliSense is provided for Cordova plugins in JavaScript files in Apache Cordova projects. As a workaround, developers can enable IntelliSense for Cordova plugins by explicitly adding “/// &lt;reference group="Implicit (Multi-Device Apps)” /&gt;” to the JavaScript file.
 - No IntelliSense is provided within JavaScript files for other JavaScript files included via a script tag in a referring HTML page. As a workaround, developers can enable IntelliSense for other referenced JavaScript files by explicitly adding “/// &lt;reference path=”referencedFile.js” /&gt;” to the JavaScript file.
