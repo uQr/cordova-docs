@@ -24,7 +24,10 @@ Remove these files from source control. For local copies, you can either fetch a
 **Git sourced plugins will not install:** Git sourced plugins will not install properly if you have not installed the [Git command line tools](http://www.git-scm.com/downloads) and have them in your system path. During installation of the Git tools, select the "Use Git from the Windows Command Prompt" option or add the "bin" folder from the Git install location to your path and restart VS. (Usually "C:\Program Files (x86)\Git\bin").
 
 ----------
-**TypeError: Request path contains unescaped characters:** When building or installing a plugin you may encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade Node.js to 0.10.29. This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/README.md#cordovaproxy) for additional details.
+**TypeError: Request path contains unescaped characters:** When building or installing a plugin you may encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/README.md#cordovaproxy) for additional details.
+
+----------
+**FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - process out of memory:** This error can occur if you are using a recent version of Node.js (ex: 0.12.4) due to a [known npm issue](https://github.com/npm/npm/issues/8019). The simplest solution is to downgrade to [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/).
 
 ----------
 **Missing Intellisense:**
