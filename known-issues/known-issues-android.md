@@ -5,7 +5,7 @@ This article covers [known issues](../Readme.md#knownissues) related to Visual S
 **Cordova 5.x.x / Cordova Android 4.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Android related issues that are specific to Cordova 5.0.0 and up.
 
 ----------
-**Build failures after installing Android SDK Tools 24.3.2:** When building for Android, you may encounter after upgraiding the SDK tools to 24.3.2 in the Android SDK manager. This version of the Android SDK Tools can cause problems when building an Android app using Ant. If this occurs, you will need to downgrade to a previous release as follows:
+**Build failures after installing Android SDK Tools 24.3.2:** When building for Android, you may encounter after upgraiding the SDK tools to 24.3.2 in the Android SDK manager because of [an Android SDK bug](https://code.google.com/p/android/issues/detail?id=176488). This version of the Android SDK Tools can cause problems when building an Android app using Ant. If this occurs, you will need to downgrade to a previous release as follows:
 
 1. Locate the tools folder for the Android SDK. (By default it is in "C:\Program Files (x86)\Android\android-sdk" or "C:\Users\\&lt;YOUR USER NAME HERE&gt;\AppData\Local\Android\android-sdk")
 2. Rename the tools folder tools-24.3.2
