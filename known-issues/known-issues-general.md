@@ -38,6 +38,9 @@ Remove these files from source control. For local copies, you can either fetch a
 **TypeScript code incorrectly identified as external, cannot read user configuration file:** When using TypeScript, there are known issues that will incorrectly identify project items as external code or will fail to read in a user configuration file. To avoid unexpected behavior when working with a Cordova TypeScript project, turn off Just My Code (Options > Debugger > General > uncheck Enable Just My Code).
 
 ----------
+**Globally installed npm packages not available from command line:** If you have installed Visual Studio or Node.js with a different user than you are logging into Windows, you may need to update your path to access globally installed (npm install -g) npm packages from the command line. Specifically, ensure **%APPDATA%\npm** is either in your user or system PATH. By default the installation of Node.js will set the PATH as a user environment variable rather than system which is why you can encounter this behavior.
+
+----------
 **"res" folder contents cannot be referenced from web content:** By design, the contents of the “res” folder cannot be accessed by web content as they are copied into platform-specific native project locations.
 
 ----------
