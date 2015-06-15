@@ -8,7 +8,7 @@ This article covers [known issues](../Readme.md#knownissues) related to Visual S
 **Build failures after installing Android SDK Tools 24.3.2:** When building for Android, you may encounter after upgraiding the SDK tools to 24.3.2 in the Android SDK manager because of [an Android SDK bug](https://code.google.com/p/android/issues/detail?id=176488). This version of the Android SDK Tools can cause problems when building an Android app using Ant. If this occurs, you will need to downgrade to a previous release as follows:
 
 1. Locate the tools folder for the Android SDK. (By default it is in "C:\Program Files (x86)\Android\android-sdk" or "C:\Users\\&lt;YOUR USER NAME HERE&gt;\AppData\Local\Android\android-sdk")
-2. Rename the tools folder tools-24.3.2
+2. Rename the tools folder to "tools-24.3.2"
 3. Download [version 24.2 of the Android SDK Tools](http://dl-ssl.google.com/android/repository/tools_r24.2-windows.zip)
 4. Unzip the "tools" folder in this archive and place it in the root of your Android SDK installation
 
