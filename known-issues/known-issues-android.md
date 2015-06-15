@@ -33,6 +33,9 @@ If this does not resolve the issue, you can upgrade to a 64-bit version of the J
 **Missing Android SDK Versions:** If you already had the Android SDK installed, you may also need to update and install the SDK for Android 4.4.2 (API level 19), Android 5.0.1 (API Level 21), or Android 5.1.1 (API Level 22) . You may need to restart Visual Studio if it is open while updating the Android SDK through the SDK Manager to be able to build for Android after the update is complete. See [Manually Installing Dependencies](https://msdn.microsoft.com/en-us/library/dn757054.aspx#ThirdParty) for details.
 
 ----------
+**Deployment failure to Android emulator or device when switching to or from a "Release" build:** If you encounter a failed deployment to an Andorid device or emulator with the error "**Failure [INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES]**" in the Output Window, simply delete the existing application on the device or emulator and redeploy. Debug builds will use a debug certificate while Release builds will use your configured certificate. This error is simply informing you that the certificate of the app installed on the device is different than the one you are attempting to install which can be indicator of a corrupted or otherwise modified app not safe to install on the device when it occurs in non-development (app store) scenarios.
+
+----------
 **Unicode Characters in Path or App Name:** Projects with non-Western characters in their project names or in the project path may not build for Android due to an Android SDK issue on older versions of Cordova. You can workaround this by simply changing the project name and path to use western characters. In recent versions of Cordova (ex: 4.3.0), unicode characters may be used without restriction if you your system locale is set to the appropriate locale for the characters in use.
 
 ----------
