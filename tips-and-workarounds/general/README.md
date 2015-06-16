@@ -123,7 +123,7 @@ One of the advantages associated with Apache Cordova is its active plugin commun
 
 1. Verify the plugin supports the platform you are currently testing by looking at the plugin's documentation. Android and iOS support is provided by most (but not all) plugins but Windows and Windows Phone 8 are not always supported by 3rd party plugins.
 
-2. If you are specifically running into problems with the plugin after checking the project out of source control or copying from another machine, be sure you are not encountering the issue described above [with copying or adding certain json files to source control from plugins folder](missingexclude).
+2. If you are specifically running into problems with the plugin after checking the project out of source control or copying from another machine, be sure you are not encountering the issue described above [with copying or adding certain json files to source control from plugins folder](#missingexclude).
 
 3. If you encounter an unexpected build error, see if the error references Cordova plugin source code. If so, the problem is likely with the plugin not Cordova or Tools for Apache Cordova.
 
