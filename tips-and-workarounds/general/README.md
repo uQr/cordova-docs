@@ -7,6 +7,7 @@ It covers the following issues and tips:
 1. ["TypeError: Request path contains unescaped characters" during a build or when installing a plugin](#cordovaproxy) 
 1. [Using a Specific Version of a GitHub Sourced Plugin](#plugin-github) 
 1. [Using a npm sourced plugin with Cordova < 5.0.0 or Visual Studio 2015 RC](#plugin-npm) 
+1. [Tips for troubleshooting 3rd party Cordova plugins](#plugin-troubleshoot) 
 
 <a name="missingexclude"></a>
 ##Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run
@@ -115,6 +116,43 @@ To install a plugin with one of these updated IDs or that only exists in npm whe
 		4. Repeat until all plugins in the node_modules folder have been added
 	
 	1. If any of these plugins were added to your project with an older ID, remove them using the "Installed" tab in the config.xml designer.
+
+<a name="plugin-troubleshoot"></a>
+##Tips for Troubleshooting 3rd party Cordova Plugins
+One of the advantages associated with Apache Cordova is its active plugin community. However, not all plugins are well maintained or updated the moment a new version of Cordova comes out and you may run into problems even with popular plugins. Here are some tips to see where the problem may exist and how to contact a plugin author about making fixes.
+
+1. Verify the plugin supports the platform you are currently testing by looking at the plugin's documentation. Android and iOS support is provided by most (but not all) plugins but Windows and Windows Phone 8 are not always supported by 3rd party plugins.
+
+2. If you are specifically running into problems with the plugin after checking the project out of source control or copying from another machine, be sure you are not encountering the issue described above [with copying or adding certain json files to source control from plugins folder](missingexclude).
+
+3. If you encounter an unexpected build error, see if the error references Cordova plugin source code. If so, the problem is likely with the plugin not Cordova or Tools for Apache Cordova.
+
+4. See if there is an update to the plugin and install it by removing the plugin using the "Installed" tab of the config.xml designer and re-add the plugin. 
+
+5. Certain plugins can encounter problems when building for iOS due to their use of symlinks which are not well supported on the Windows NTFS filesystem. See [this article](../ios/README.md#symlink) for specific symptoms and a workaround.
+
+6. See if the plugin causing problems has transitioned to npm as a part of the Cordova [repository transition](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html) and therefore has a new ID. You could have multiple copies of the same plugin installed (ex: both org.apache.cordova.camera and cordova-plugin-camera) or an outdated version of the plugin with bugs. Check the "Installed" tab of the config.xml designer for duplicates and consult [this article for information](#plugin-npm) on why the plugin ID may have changed and how to get an updated version of the plugin.
+
+7. When using a plugin from GitHub, check the "Installed" tab of the config.xml designer to see if the version number ends in "-dev". If so, this may not be a stable version of the plugin. You can follow [this proceedure](#plugin-github) to download an earlier release of the plugin to see if the problem goes away. Even if the plugin version does not end in "-dev" it may be worth trying a previous release to see if the problem you are encountering is new.
+
+8. If a plugin update doesn't solve the issue, try these steps to eliminate other factors:
+	1. Create a fresh project and see if the problem reproduces.
+	2. To eliminate Visual Studio as a potential culprit, you can test using a standard Cordova CLI project by entering the following in a command prompt:
+	
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		npm install -g cordova@5.1.1
+		cordova create testProj
+		cd testProj
+		cordova platform add android
+		cordova plugin add cordova-plugin-in-question
+		cordova build android
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+		... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI or filesystem path in place of the plugin name.
+	
+9. If none of these steps help and the problem reproduces outside of Visual Studio, you may want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
+
+One last tip: Note that modifying the contents of the "plugins" folder does not automatically cause these changes to be applied to your app. Removing and re-adding the plugin is the safest option.
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../../Readme.md)

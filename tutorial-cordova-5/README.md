@@ -206,7 +206,7 @@ As a result, core plugins like Camera have changed from [org.apache.cordova.came
 
 ![Custom Local Plugin](<media/cordova-5-5.png>)
 
-You can find running list of [old verses new plugin IDs in this location](https://github.com/stevengill/cordova-registry-mapper/blob/master/index.js). You will be informed of the new ID whenever you add a plugin from this list when either using the command line or the config.xml designer. The config.xml designer will automatically add these new IDs for Cordova 5.0.0+ and the old IDs for older versions of Cordova that do not support them. **TODO: Verify this makes RTM**
+You can find running list of [old verses new plugin IDs in this location](https://github.com/stevengill/cordova-registry-mapper/blob/master/index.js). You will be informed of the new ID whenever you add a plugin from this list when either using the command line or the config.xml designer. The config.xml designer will automatically add these new IDs for Cordova 5.0.0+ and the old IDs for older versions of Cordova that do not support them.
 
 ###Cordova Plugin Registry
 Unfortunately the community is in a state of flux when it comes to a "source of truth" for all available Cordova plugins. 
@@ -224,7 +224,7 @@ We are actively working with the community on the best way to merge some of the 
 ###Cordova 3.x and 4.x Don't Support Npm as a Plugin Source
 An early source of confusion can lead from the fact that Cordova 3.x and 4.x cannot use plugins sourced from npm. The Cordova CLI in these versions simply does not have the capability. A specific issue that can come up here is that updates to plugins will now generally be going to npm **not** the older plugin registry sourced method used by these earlier version of Cordova plugins.
 
-###Workaround for Cordova 3.x and 4.x
+####Workaround for Cordova 3.x and 4.x
 To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below, follow this proceedure. *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
 1. From the command prompt:
@@ -292,7 +292,7 @@ Because of these differences you should take the following steps:
 		cordova build android
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
-		... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI in place of the plugin name.
+		... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI or filesystem path in place of the plugin name.
 	
 	2. If the problem reproduces, you may  want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
 
@@ -316,10 +316,11 @@ To use it from Visual Studio, follow these steps:
 3. Verify you have set the Cordova version to 5.1.1 or higher under the "Platforms" tab.
 3. Go to "Plugins > Custom"
 4. Select the "Git" radio button
-5. Enter "https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview.git" as the URI and click the arrow. Note that you may also download a specific version of this plugin using the proceedure outlined under [Cordova 3.x and 4.x Don't Support Npm as a Plugin Source](#no-npm-3.x) above.
-6. Click "Add"
+5. Enter "https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview.git" as the URI and click the arrow. 
+6. Note that you may also download and add a specific version of this plugin using the proceedure outlined in the "[Using a Specific Version of a GitHub Sourced Plugin](../tips-and-workarounds/general/README.md#plugin-github)" section of general tips and workarounds.
+7. Click "Add"
 
-The next time you build, your app will be running in the Crosswalk WebView. Note that the first build in particular will take a bit given the plugin does some dynamic acquisition.
+The next time you build, your app will be running in the Crosswalk WebView. Note that the first build for Android in particular will take a bit given the plugin does some dynamic acquisition.
 
 ###The Base Android Emulator and Crosswalk
 One very important thing to note when using the Crosswalk WebView in the base Android emulator is that Crosswalk requires OpenGL support and that you've selected the "Use Host GPU" option in your Android Virtual Device configuration. Failing to do this will cause the app to crash. To use it:
