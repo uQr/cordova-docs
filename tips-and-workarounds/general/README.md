@@ -68,9 +68,9 @@ From time to time you may try to use a Cordova plugin from GitHub but find that 
 <a name="plugin-npm"></a>
 ##Using a Npm Sourced Plugin with Cordova < 5.0.0 or Visual Studio 2015 RC
 ###Background
-A significant departure in Cordova 5.0.0 and the community as a whole is the migration of the primary source of Cordova plugins from the GitHub backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
+A significant departure in Cordova 5.0.0 and the community as a whole is the migration of the primary source of Cordova plugins from the custom repoistory backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
 
-A significant change tied to this switch over and the release of Cordova 5.0.0 that the IDs used to refer to many Cordova plugins have changed. This was done for two reasons. First, the different ID helps to re-enforce that older versions of Cordova will not get plugin updates. Rather than having an arbitrary version number where the updates stop, using a different ID makes this change over explicit. Second, the old reverse domain style for Cordova plugin IDs do not conform to community best practices for package names.
+A significant change tied to this switch over and the release of Cordova 5.0.0 that the IDs used to refer to many Cordova plugins have changed. This was done for two reasons. First, the different ID helps to re-enforce that older versions of Cordova will not get plugin updates. Rather than having an arbitrary version number where the updates stop, using a different ID makes this change over explicit. Second, the old reverse domain style for Cordova plugin IDs do not conform to community best practices for package names in npm.
 
 As a result, core plugins like Camera have changed from [org.apache.cordova.camera](http://plugins.cordova.io/#/package/org.apache.cordova.camera) in version 0.3.6 of the plugin to [cordova-plugin-camera](https://www.npmjs.com/package/cordova-plugin-camera) in versions 1.0.0 and higher geared for Cordova 5.0.0 and up.
 
@@ -80,10 +80,10 @@ As a result, core plugins like Camera have changed from [org.apache.cordova.came
 
 You can find running list of [old verses new plugin IDs in this location](https://github.com/stevengill/cordova-registry-mapper/blob/master/index.js).
 
-**Visual Studio 2015 RC** currently uses the old IDs since the default template in VS **uses Cordova 4.3.0 which does not support npm sourced plugins**. As a result, if you want to get the latest version of a given plugin you can either use a Git URI or install the npm version from your local filesystem.
+In addition to the challenge of older versions of Cordova not supporting npm sourced plugins, **Visual Studio 2015 RC** currently uses the old IDs since the default template in VS uses Cordova 4.3.0 which does not support npm sourced plugins. (This has been **resolved in Visual Studio 2015 RTM** when using Cordova 5.0.0+.) As a result, if you want to get the latest version of a given plugin in either case you will need to install the npm version from your local filesystem using the workaround described below.
 
 ###Workaround
- *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
+*Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
 To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below or when Visual Studio 2015 RC, follow this proceedure:
 

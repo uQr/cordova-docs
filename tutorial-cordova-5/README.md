@@ -193,32 +193,12 @@ To reiterate, **CSP support is only available on Android 4.4+ devices or Android
 
 <a name="npm"></a>
 ##Primary Cordova Plugin Repository is Now Npm
-Another significant departure in Cordova 5 and the community as a whole is the migration of the primary source of Cordova plugins from the GitHub backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
+Another significant departure in Cordova 5 and the community as a whole is the migration of the primary source of Cordova plugins from the custom repository backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
 
 However, unfortunately this switch over is not transparent. For a few very specific reasons, this change over can be a bit confusing and we're working with the community to determine some ways to make the transition a bit more seamless going forward.
 
-<a name="no-npm-3.x"></a>
-###Cordova 3.x and 4.x Don't Support Npm as a Plugin Source
-An early source of confusion can lead from the fact that Cordova 3.x and 4.x cannot use plugins sourced from npm. The Cordova CLI in these versions simply does not have the capability. A specific issue that can come up here is that updates to plugins will now generally be going to npm **not** the older GitHub sourced method used by these earlier version of Cordova plugins.
-
-As a result, if you need to access updated versions of plugins when using these older versions of Cordova, you'll need to take the following steps:
-
-1. Go to the GitHub repository for the plugin. Ex: https://github.com/wildabeast/BarcodeScanner
-
-2. Click on the "Releases" tab
-
-3. Click on the .zip link of the version of the plugin you want to access
-
-	![Release Zip](<media/cordova-5-3.png>)
-
-4. Unzip this plugin on your local filesystem
-
-5. Add the plugin to your project from this local location by using the "Local" option in the "Custom" tab of the config.xml designer.
-
-	![Custom Local Plugin](<media/cordova-5-2.png>)
-
 ###Plugin ID Changes
-A significant change to be aware of is that the IDs used to refer to many Cordova plugins have changed. This was done for two reasons. First, the different ID helps to re-enforce that older versions of Cordova will not get plugin updates. Rather than having an arbitrary version number where the updates stop, using a different ID makes this change over explicit. Second, the old reverse domain style for Cordova plugin IDs does not conform to community best practices for package names.
+A significant change to be aware of is that the IDs used to refer to many Cordova plugins have changed. This was done for two reasons. First, the different ID helps to re-enforce that older versions of Cordova will not get plugin updates. Rather than having an arbitrary version number where the updates stop, using a different ID makes this change over explicit. Second, the old reverse domain style for Cordova plugin IDs does not conform to community best practices for package names in npm.
 
 As a result, core plugins like Camera have changed from [org.apache.cordova.camera](http://plugins.cordova.io/#/package/org.apache.cordova.camera) in version 0.3.6 of the plugin to [cordova-plugin-camera](https://www.npmjs.com/package/cordova-plugin-camera) in versions 1.0.0 and higher. 
 
@@ -239,6 +219,42 @@ Unfortunately the community is in a state of flux when it comes to a "source of 
 Both sets of plugins can be used with Cordova 5.0.0+ so in the short term you should search in both locations for plugins. Plugins found in npm are the most likely to work without issue with Cordova 5.0.0 and higher and may or may not work with earlier versions of Cordova. Npm will be the eventual source of truth, but things are a bit messy during this transition period.
 
 We are actively working with the community on the best way to merge some of the functionality of the existing plugins.cordova.io site with the reliability and improvements npm provides.
+
+<a name="no-npm-3.x"></a>
+###Cordova 3.x and 4.x Don't Support Npm as a Plugin Source
+An early source of confusion can lead from the fact that Cordova 3.x and 4.x cannot use plugins sourced from npm. The Cordova CLI in these versions simply does not have the capability. A specific issue that can come up here is that updates to plugins will now generally be going to npm **not** the older plugin registry sourced method used by these earlier version of Cordova plugins.
+
+###Workaround for Cordova 3.x and 4.x
+To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below, follow this proceedure. *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
+
+1. From the command prompt:
+	1. Create a folder where you want to place the npm version of your Cordova plugins. (Ex: C:\cordova-plugins)
+
+	2. Change to this folder
+
+	3. Type the following:
+	
+		~~~~~~~~~~~~
+		npm install cordova-plugin-camera
+		~~~~~~~~~~~~
+		
+		...replacing cordova-plugin-camera with the ID of the plugin you want to use. Be sure to omit "-g".
+		
+	4. After the command completes, inside a "node_modules" folder you will find **one or more folders** containing all the plugins you need to add to the project. (Note there may be more than one.) For example, you will see both "cordova-plugin-camera" and "cordova-plugin-file" present in the example above since the Camera plugin depends on the File plugin.
+
+2. From Visual Studio:
+
+	1. Add **all of the plugins** the "npm install" command above placed in the "node_modules" folder. In the example above, both cordova-plugin-camera and cordova-plugin-file should be installed.
+
+		1. Go to the "Custom" tab in the config.xml designer
+		
+		2. Select "Local" and select the folder where npm installed the plugin on your system. The will be in a "node_modules" sub-folder where you executed the "npm install" command.  (Ex: C:\cordova-plugins\node_modules)
+		
+		3. Click "Add"
+
+		4. Repeat until all plugins in the node_modules folder have been added
+	
+	1. If any of these plugins were added to your project with an older ID, remove them using the "Installed" tab in the config.xml designer.
 
 ##Gradle Build Instead of Ant for Android
 On the surface, this seems like a fairly innocuous change but we've continued to hear about unexpected issues in some 3rd party Cordova plugins because of this change so it is worth a mention.
