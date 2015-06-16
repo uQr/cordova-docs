@@ -22,6 +22,13 @@ In general we recommend **using Cordova 5.1.1 or above** instead of 5.0.0 as the
 
 ##Apache Cordova 5.x.x and Visual Studio 2015 RC
 ----------
+**Old versions of Cordova plugins due to Cordova plugin ID changes:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 RC config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) because Cordova 4.3.1 and below cannot access plugins using these new IDs and the default template uses 4.3.0. 
+
+To install updated plugins, follow [this proceedure to install a npm sourced plugin](../tips-and-workarounds/general/README.md#plugin-npm). 
+
+*Note that these updated plugins were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.* We advise against updating your plugins when using older versions of Cordova unless you are attempting to solve a specific problem.
+ 
+----------
 **Visual Studio 2015 RC uses Ant to build Android with Cordova 5.x.x:** Visual Studio 2015 RC uses Ant to build Android while the command line has switched to Gradle by default in version 5.0.0 of the CLI. When switching between Visual Studio and the command line with the version of Android in Cordova 5.0.0, you may want to specify that the platform should be built with Ant instead if you are running into unexpected issues.
 
 Ex:
