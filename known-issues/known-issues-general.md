@@ -8,14 +8,14 @@ This article covers general [known issues](../Readme.md#knownissues) related to 
 **Missing Platform Dropdown:** The “Solution Platform” dropdown may not appear in the toolbar when upgrading Visual Studio 2013 from a previous version to Update 4. You can add using the “Standard Toolbar Options” dropdown as described in [Microsoft Support article 2954109](http://support.microsoft.com/kb/2954109).
 
 ----------
-**Building a Cordova project from source control results in Cordova plugin APIs not returning results:** The following four json files that can cause this to occur if added to source control.
+**Building a Cordova project from source control results in Cordova plugin APIs not returning results:** The following four json files can cause this to occur if added to source control.
 
 - plugins/android.json
 - plugins/windows.json
 - plugins/remote_ios.json
 - plugins/wp8.json.
 
-Remove these files from source control. For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
+Remove these files from source control if you are not checking in the "platforms" folder (reccomended). For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
 
 ----------
 **Slow first build or first plugin add:** The first build or plugin add for a given version of Cordova will be slower than subsequent builds as VS must first dynamically acquire Cordova. See the Output Window for more detail on progress. Further, the first remote iOS build will exhibit the same behavior as the agent downloads Cordova on your OSX machine. If you encounter a CordovaModuleLoadError with the first iOS build for a given Cordova version you can follow [these instructions](../tips-and-workarounds/ios/README.md#npm-cache) to resolve the problem.
