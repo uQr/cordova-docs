@@ -7,6 +7,7 @@ It covers the following issues and tips:
 1. ["TypeError: Request path contains unescaped characters" during a build or when installing a plugin](#cordovaproxy) 
 1. [Using a Specific Version of a GitHub Sourced Plugin](#plugin-github) 
 1. [Using a npm sourced plugin with Cordova < 5.0.0 or Visual Studio 2015 RC](#plugin-npm) 
+1. [Tips for troubleshooting 3rd party Cordova plugins](#plugin-troubleshoot) 
 
 <a name="missingexclude"></a>
 ##Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run
@@ -30,7 +31,9 @@ W/System.err( 1425):  at java.lang.Class.forName(Class.java:216)
 
 The missing class would be recognizable as a Cordova plugin class such as "org.apache.cordova.camera.CameraLauncher" from the camera plugin.
 
-Remediation is fortunately simple: Remove these files (plugins/android.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control check the project out again.
+Remediation is fortunately simple: Remove these files (plugins/android.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control check the project out again.  
+
+For existing local copies, you can either fetch a fresh copy from source control or remove the above files along with any platforms found in the "platforms" folder to resolve the issue.
 
 <a name="cordovaproxy"></a>
 ##"TypeError: Request path contains unescaped characters" during a build or when installing a plugin
@@ -66,9 +69,9 @@ From time to time you may try to use a Cordova plugin from GitHub but find that 
 <a name="plugin-npm"></a>
 ##Using a Npm Sourced Plugin with Cordova < 5.0.0 or Visual Studio 2015 RC
 ###Background
-A significant departure in Cordova 5.0.0 and the community as a whole is the migration of the primary source of Cordova plugins from the GitHub backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
+A significant departure in Cordova 5.0.0 and the community as a whole is the migration of the primary source of Cordova plugins from the custom repoistory backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
 
-A significant change tied to this switch over and the release of Cordova 5.0.0 that the IDs used to refer to many Cordova plugins have changed. This was done for two reasons. First, the different ID helps to re-enforce that older versions of Cordova will not get plugin updates. Rather than having an arbitrary version number where the updates stop, using a different ID makes this change over explicit. Second, the old reverse domain style for Cordova plugin IDs do not conform to community best practices for package names.
+A significant change tied to this switch over and the release of Cordova 5.0.0 that the IDs used to refer to many Cordova plugins have changed. This was done for two reasons. First, the different ID helps to re-enforce that older versions of Cordova will not get plugin updates. Rather than having an arbitrary version number where the updates stop, using a different ID makes this change over explicit. Second, the old reverse domain style for Cordova plugin IDs do not conform to community best practices for package names in npm.
 
 As a result, core plugins like Camera have changed from [org.apache.cordova.camera](http://plugins.cordova.io/#/package/org.apache.cordova.camera) in version 0.3.6 of the plugin to [cordova-plugin-camera](https://www.npmjs.com/package/cordova-plugin-camera) in versions 1.0.0 and higher geared for Cordova 5.0.0 and up.
 
@@ -78,10 +81,10 @@ As a result, core plugins like Camera have changed from [org.apache.cordova.came
 
 You can find running list of [old verses new plugin IDs in this location](https://github.com/stevengill/cordova-registry-mapper/blob/master/index.js).
 
-**Visual Studio 2015 RC** currently uses the old IDs since the default template in VS **uses Cordova 4.3.0 which does not support npm sourced plugins**. As a result, if you want to get the latest version of a given plugin you can either use a Git URI or install the npm version from your local filesystem.
+In addition to the challenge of older versions of Cordova not supporting npm sourced plugins, **Visual Studio 2015 RC** currently uses the old IDs since the default template in VS uses Cordova 4.3.0 which does not support npm sourced plugins. (This has been **resolved in Visual Studio 2015 RTM** when using Cordova 5.0.0+.) As a result, if you want to get the latest version of a given plugin in either case you will need to install the npm version from your local filesystem using the workaround described below.
 
 ###Workaround
- *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
+*Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
 To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below or when Visual Studio 2015 RC, follow this proceedure:
 
@@ -113,6 +116,43 @@ To install a plugin with one of these updated IDs or that only exists in npm whe
 		4. Repeat until all plugins in the node_modules folder have been added
 	
 	1. If any of these plugins were added to your project with an older ID, remove them using the "Installed" tab in the config.xml designer.
+
+<a name="plugin-troubleshoot"></a>
+##Tips for Troubleshooting 3rd party Cordova Plugins
+One of the advantages associated with Apache Cordova is its active plugin community. However, not all plugins are well maintained or updated the moment a new version of Cordova comes out and you may run into problems even with popular plugins. Here are some tips to see where the problem may exist and how to contact a plugin author about making fixes.
+
+1. Verify the plugin supports the platform you are currently testing by looking at the plugin's documentation. Android and iOS support is provided by most (but not all) plugins but Windows and Windows Phone 8 are not always supported by 3rd party plugins.
+
+2. If you are specifically running into problems with the plugin after checking the project out of source control or copying from another machine, be sure you are not encountering the issue described above [with copying or adding certain json files to source control from plugins folder](#missingexclude).
+
+3. If you encounter an unexpected build error, see if the error references Cordova plugin source code. If so, the problem is likely with the plugin not Cordova or Tools for Apache Cordova.
+
+4. See if there is an update to the plugin and install it by removing the plugin using the "Installed" tab of the config.xml designer and re-add the plugin. 
+
+5. Certain plugins can encounter problems when building for iOS due to their use of symlinks which are not well supported on the Windows NTFS filesystem. See [this article](../ios/README.md#symlink) for specific symptoms and a workaround.
+
+6. See if the plugin causing problems has transitioned to npm as a part of the Cordova [repository transition](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html) and therefore has a new ID. You could have multiple copies of the same plugin installed (ex: both org.apache.cordova.camera and cordova-plugin-camera) or an outdated version of the plugin with bugs. Check the "Installed" tab of the config.xml designer for duplicates and consult [this article for information](#plugin-npm) on why the plugin ID may have changed and how to get an updated version of the plugin.
+
+7. When using a plugin from GitHub, check the "Installed" tab of the config.xml designer to see if the version number ends in "-dev". If so, this may not be a stable version of the plugin. You can follow [this proceedure](#plugin-github) to download an earlier release of the plugin to see if the problem goes away. Even if the plugin version does not end in "-dev" it may be worth trying a previous release to see if the problem you are encountering is new.
+
+8. If a plugin update doesn't solve the issue, try these steps to eliminate other factors:
+	1. Create a fresh project and see if the problem reproduces.
+	2. To eliminate Visual Studio as a potential culprit, you can test using a standard Cordova CLI project by entering the following in a command prompt:
+	
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		npm install -g cordova@5.1.1
+		cordova create testProj
+		cd testProj
+		cordova platform add android
+		cordova plugin add cordova-plugin-in-question
+		cordova build android
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+		... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI or filesystem path in place of the plugin name.
+	
+9. If none of these steps help and the problem reproduces outside of Visual Studio, you may want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
+
+One last tip: Note that modifying the contents of the "plugins" folder does not automatically cause these changes to be applied to your app. Removing and re-adding the plugin is the safest option.
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../../Readme.md)
