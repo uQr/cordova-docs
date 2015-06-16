@@ -8,6 +8,7 @@ It covers the following issues and tips:
 1. [Using a Specific Version of a GitHub Sourced Plugin](#plugin-github) 
 1. [Using a npm sourced plugin with Cordova < 5.0.0 or Visual Studio 2015 RC](#plugin-npm) 
 1. [Tips for troubleshooting 3rd party Cordova plugins](#plugin-troubleshoot) 
+1. [Build errors caused by long path and file names](#build-errors-long-path)
 
 <a name="missingexclude"></a>
 ##Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run
@@ -153,6 +154,10 @@ One of the advantages associated with Apache Cordova is its active plugin commun
 9. If none of these steps help and the problem reproduces outside of Visual Studio, you may want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
 
 One last tip: Note that modifying the contents of the "plugins" folder does not automatically cause these changes to be applied to your app. Removing and re-adding the plugin is the safest option.
+
+<a name="build-errors-long-path"></a>
+##Build errors caused by long path and file names
+If your project is located inside a deeply nested directory in your file system, you may receive build errors when building your project using Visual Studio. The underlying reason has to do with many factors that touch upon how Windows and Visual Studio handle long paths. If you are running into this issue, the most effective workaround is to copy your projects to a location closer to the root of your drive (ie, C:\Projects\).
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../../Readme.md)
