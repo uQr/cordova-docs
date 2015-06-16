@@ -81,7 +81,7 @@ You can find running list of [old verses new plugin IDs in this location](https:
 **Visual Studio 2015 RC** currently uses the old IDs since the default template in VS **uses Cordova 4.3.0 which does not support npm sourced plugins**. As a result, if you want to get the latest version of a given plugin you can either use a Git URI or install the npm version from your local filesystem.
 
 ###Workaround
- *Note that versions of plugins present in npm **were tested on Cordova 5.0.0 or later** and therefore may or may not work on earlier versions of Cordova.*
+ *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
 To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below or when Visual Studio 2015 RC, follow this proceedure:
 
