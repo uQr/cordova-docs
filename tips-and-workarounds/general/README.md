@@ -87,7 +87,27 @@ In addition to the challenge of older versions of Cordova not supporting npm sou
 ###Workaround
 *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
-To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below or when Visual Studio 2015 RC, follow this proceedure:
+There are two primary methods to install a plugin from npm when using Cordova 4.3.1 or below or Visual Studio 2015 RC: using a recent version of the Cordova CLI or the "npm" command.
+
+####Using Cordova CLI 5.0.0+
+The simplest method to install a plugin from npm is to take advantage of Visual Studio's command line interoperability and simply use a recent version of the Cordova CLI. To do so, follow these steps:
+
+1. If any of plugins you intend to install were already added to your project with an older ID, remove them using the "Installed" tab in the config.xml designer in Visual Studio.
+
+2. Next, execute the following commands from the developer command prompt:
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~
+	cd path-to-project
+	npm install -g cordova@5.1.1
+	cordova plugin add cordova-plugin-camera 
+	~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+	...replacing "path-to-project" with the path to the Cordova project inside your Visual Studio solution (not the solution root) and "cordova-plugin-camera" with the plugin you wish to install. You may also replace "cordova@5.1.1" with the version of Cordova you are using in your project so long as it is 5.0.0 or later.
+
+Note that with this method **you may not see these plugins listed in the "Installed" tab of the config.xml designer** but they will be present in the project and included in build or source control operations.
+
+####Using the npm Command
+Adding a Cordova plugin using Cordova CLI 5.0.0+ when your project is using an earlier version of Cordova (like 4.3.0) could in concept cause unexpected results. This second proceedure is more involved but avoids risks with potential Cordova CLI incompatibilities.
 
 1. From the command prompt:
 	1. Create a folder where you want to place the npm version of your Cordova plugins. (Ex: C:\cordova-plugins)
