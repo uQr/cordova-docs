@@ -8,6 +8,7 @@ It covers the following issues and tips:
 1. [Using a Specific Version of a GitHub Sourced Plugin](#plugin-github) 
 1. [Using a npm sourced plugin with Cordova < 5.0.0 or Visual Studio 2015 RC](#plugin-npm) 
 1. [Tips for troubleshooting 3rd party Cordova plugins](#plugin-troubleshoot) 
+1. [Build errors caused by long path and file names](#build-errors-long-path)
 
 <a name="missingexclude"></a>
 ##Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run
@@ -86,7 +87,27 @@ In addition to the challenge of older versions of Cordova not supporting npm sou
 ###Workaround
 *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
-To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below or when Visual Studio 2015 RC, follow this proceedure:
+There are two primary methods to install a plugin from npm when using Cordova 4.3.1 or below or Visual Studio 2015 RC: using a recent version of the Cordova CLI or the "npm" command.
+
+####Using Cordova CLI 5.0.0+
+The simplest method to install a plugin from npm is to take advantage of Visual Studio's command line interoperability and simply use a recent version of the Cordova CLI. To do so, follow these steps:
+
+1. If any of plugins you intend to install were already added to your project with an older ID, remove them using the "Installed" tab in the config.xml designer in Visual Studio.
+
+2. Next, execute the following commands from the developer command prompt:
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~
+	cd path-to-project
+	npm install -g cordova@5.1.1
+	cordova plugin add cordova-plugin-camera 
+	~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+	...replacing "path-to-project" with the path to the Cordova project inside your Visual Studio solution (not the solution root) and "cordova-plugin-camera" with the plugin you wish to install. You may also replace "cordova@5.1.1" with the version of Cordova you are using in your project so long as it is 5.0.0 or later.
+
+Note that with this method **you may not see these plugins listed in the "Installed" tab of the config.xml designer** but they will be present in the project and included in build or source control operations.
+
+####Using the npm Command
+Adding a Cordova plugin using Cordova CLI 5.0.0+ when your project is using an earlier version of Cordova (like 4.3.0) could in concept cause unexpected results. This second proceedure is more involved but avoids risks with potential Cordova CLI incompatibilities.
 
 1. From the command prompt:
 	1. Create a folder where you want to place the npm version of your Cordova plugins. (Ex: C:\cordova-plugins)
@@ -153,6 +174,10 @@ One of the advantages associated with Apache Cordova is its active plugin commun
 9. If none of these steps help and the problem reproduces outside of Visual Studio, you may want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
 
 One last tip: Note that modifying the contents of the "plugins" folder does not automatically cause these changes to be applied to your app. Removing and re-adding the plugin is the safest option.
+
+<a name="build-errors-long-path"></a>
+##Build errors caused by long path and file names
+If your project is located inside a deeply nested directory in your file system, you may receive build errors when building your project using Visual Studio. The underlying reason has to do with many factors that touch upon how Windows and Visual Studio handle long paths. If you are running into this issue, the most effective workaround is to copy your projects to a location closer to the root of your drive (ie, C:\Projects\).
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../../Readme.md)
