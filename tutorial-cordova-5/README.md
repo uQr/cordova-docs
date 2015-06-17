@@ -224,38 +224,9 @@ We are actively working with the community on the best way to merge some of the 
 ###Cordova 3.x and 4.x Don't Support Npm as a Plugin Source
 An early source of confusion can lead from the fact that Cordova 3.x and 4.x cannot use plugins sourced from npm. The Cordova CLI in these versions simply does not have the capability. A specific issue that can come up here is that updates to plugins will now generally be going to npm **not** the older plugin registry sourced method used by these earlier version of Cordova plugins.
 
-####Workaround for Cordova 3.x and 4.x
-To install a plugin with one of these updated IDs or that only exists in npm when using Cordova 4.3.1 or below, follow this proceedure. *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
+Generally your best course of action if you need an updated plugin is to also update to Cordova 5.1.1 or later. See the [tips and workarounds](../tips-and-workarounds/general#README.md#plugin-npm) section if you absolutley must get an updated plugin for a project that uses an earlier version of Cordova for potential options.
 
-1. From the command prompt:
-	1. Create a folder where you want to place the npm version of your Cordova plugins. (Ex: C:\cordova-plugins)
-
-	2. Change to this folder
-
-	3. Type the following:
-	
-		~~~~~~~~~~~~
-		npm install cordova-plugin-camera
-		~~~~~~~~~~~~
-		
-		...replacing cordova-plugin-camera with the ID of the plugin you want to use. Be sure to omit "-g".
-		
-	4. After the command completes, inside a "node_modules" folder you will find **one or more folders** containing all the plugins you need to add to the project. (Note there may be more than one.) For example, you will see both "cordova-plugin-camera" and "cordova-plugin-file" present in the example above since the Camera plugin depends on the File plugin.
-
-2. From Visual Studio:
-
-	1. Add **all of the plugins** the "npm install" command above placed in the "node_modules" folder. In the example above, both cordova-plugin-camera and cordova-plugin-file should be installed.
-
-		1. Go to the "Custom" tab in the config.xml designer
-		
-		2. Select "Local" and select the folder where npm installed the plugin on your system. The will be in a "node_modules" sub-folder where you executed the "npm install" command.  (Ex: C:\cordova-plugins\node_modules)
-		
-		3. Click "Add"
-
-		4. Repeat until all plugins in the node_modules folder have been added
-	
-	1. If any of these plugins were added to your project with an older ID, remove them using the "Installed" tab in the config.xml designer.
-
+<a name="gradle"></a>
 ##Gradle Build Instead of Ant for Android
 On the surface, this seems like a fairly innocuous change but we've continued to hear about unexpected issues in some 3rd party Cordova plugins because of this change so it is worth a mention.
 
@@ -294,7 +265,7 @@ Because of these differences you should take the following steps:
 	
 		... replacing the Cordova version and plugin name for those that apply to your situation. You can also specify a fully qualified Git URI or filesystem path in place of the plugin name.
 	
-	2. If the problem reproduces, you may  want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit.
+	2. If the problem reproduces, you may  want to contact the plugin author and let them know about the problem. Before doing so, be sure to check for existing open issue as more than likely there's already one on the plugin author's GitHub site that you can use to provide additional information. Mention that you encountered issues when using Tools for Apache Cordova but include the Cordova CLI repro for the plugin author's benefit. See the [tips and workarounds](../tips-and-workarounds/general/README.md#plugin-troubleshoot) section of our docs for additional troubleshooting tips.
 
 3. If you've already added release signing information into ant.properties in your project, you'll need to place this information in a new file in your project.  See the [Packaging & Publishing tutorial for details](../tutorial-package-publish) for details.
 
@@ -338,7 +309,7 @@ As the major version number increase implies, there are some breaking changes to
 
 As with Gradle, if you encounter an unexpected build error specifically for Android, see if the error references Cordova plugin source code. If so, update it by removing the plugin using the "Installed" tab of the config.xml designer and re-add the plugin. If you cannot determine which plugin is causing the issue, you can opt to proactively upgrade all of them.
 
-If the problem persists, see the recommendations under "[Migrating an Existing Project to Use Gradle](#gradle-migrate)" for additional troubleshooting tips.
+If the problem persists, see the recommendations in the [tips and workarounds](../tips-and-workarounds/general/README.md#plugin-troubleshoot) section of our docs for additional troubleshooting tips.
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../Readme.md)
