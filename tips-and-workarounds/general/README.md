@@ -82,7 +82,7 @@ As a result, core plugins like Camera have changed from [org.apache.cordova.came
 
 You can find running list of [old verses new plugin IDs in this location](https://github.com/stevengill/cordova-registry-mapper/blob/master/index.js).
 
-In addition to the challenge of older versions of Cordova not supporting npm sourced plugins, **Visual Studio 2015 RC** currently uses the old IDs since the default template in VS uses Cordova 4.3.0 which does not support npm sourced plugins. (This has been **resolved in Visual Studio 2015 RTM** when using Cordova 5.0.0+.) As a result, if you want to get the latest version of a given plugin in either case you will need to install the npm version from your local filesystem using the workaround described below.
+In addition to the challenge of older versions of Cordova not supporting npm sourced plugins, **Visual Studio 2015 RC** currently uses the old IDs since the default template in VS uses Cordova 4.3.0 which does not support npm sourced plugins. As a result, if you want to get the latest version of a given plugin in either case you will need to install the npm version from your local filesystem using the workaround described below.
 
 ###Workaround
 *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
