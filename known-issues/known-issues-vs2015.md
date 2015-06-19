@@ -123,22 +123,21 @@ To install updated plugins, follow [this proceedure to install a npm sourced plu
 Remove these files from source control if you are not checking in the "platforms" folder (reccomended). For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
 
 ----------
-**Plugin Variables not working:** Due to a Cordova issue with Cordova 4.3.0, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.0.0 which you can use with VS 2015 RC. To update to 5.0.0 and use plugin variables, you will need to update your VS project and use the command line.
+**Plugin with variables not working:** Due to a Cordova issue with Cordova 4.3.0 and a bug in VS 2015 RC, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.1.1 which you can use with VS 2015 RC. To update to 5.1.1 and use plugin variables, you will need to update your VS project and use the command line.
 
  1. Remove the plugins with the variables via the config designer.
 
- 2. Update to Cordova 5.0.0 via the config designer (Platforms > Cordova CLI)
+ 2. Update to Cordova 5.1.1 via the config designer (Platforms > Cordova CLI)
 
  3. From the command line:
 	 1. Go to your project directory.
-	 2. Type the following substituting the plugin name for the plugin you
-	    wish to add:
+	 2. Type the following from substituting project path, plugin name, and variables for those that apply to you:
         
 	    ~~~~~~~~~~~~~~
-		npm install -g cordova cordova plugin add
-		nl.x-services.plugins.launchmyapp --variable URL_SCHEME=myscheme
+        cd <project path>
+		npm install -g cordova@5.1.1 
+        cordova plugin add nl.x-services.plugins.launchmyapp --variable URL_SCHEME=myscheme
 	    ~~~~~~~~~~~~~~
-
 
 ##Visual Studio 2015 CTP6
 ----------
