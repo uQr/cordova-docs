@@ -5,15 +5,32 @@ With the release of Visual Studio 2015, you now have a number of options for how
 
 For abridged informaiton on specific build systems, you may find this sample [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) useful along with the following tutorials:
 
--   [Gulp - Using Gulp to Build Cordova in a Team / CI Environment](http://go.microsoft.com/fwlink/?LinkID=533742)
--   [Team Foundation Services 2015 and Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771)
--   [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770)
--   [Jenkins CI](http://go.microsoft.com/fwlink/?LinkID=613703)
+-  **[Getting Started with Cordova & TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771)**
+-  **[Getting Started with Cordova & TFS 2013](http://go.microsoft.com/fwlink/?LinkID=533770)**
+-  **[Getting Started with Cordova & Gulp - Using Gulp to Build Cordova in a Team / CI Environment](http://go.microsoft.com/fwlink/?LinkID=533742)**
+-  **[Getting Started with Cordova & Jenkins CI](http://go.microsoft.com/fwlink/?LinkID=613703)**
 
-This article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the taco-team-build node module effectively does behind the scenes.
+Read these articles to get up and running quickly!
+
+This remaineder of this article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) effectively does behind the scenes. 
+
+It has the following sections:
+
+- [What to Add to Source Control](#whattoadd)
+- [Basic Workflow using the Cordova CLI](#basic)
+- [Installing Dependencies](#depends)
+- [Internet Access & Proxy Setup](#proxy)
+- [Cordova Challenges](#challenges)
+    - [Building with Multiple Versions of the Cordova CLI](#multicli)
+    - [Adding Platforms](#platforms)
+    - [Generating an iOS App Store Package](#ipa)
+    - [Visual Studio Specific Features](#vsspecific)
+- [OSX Gotchas: Troubleshooting Tips for Building on OSX](#osxgotcha)
+
 
 *Note that Team Foundation Services 2013 cannot easily take advantage of the workflow described here (though 2015 can) as it is MSBuild based. See the [Team Foundation Services 2013](http://go.microsoft.com/fwlink/?LinkID=533770) tutorial for details.*
 
+<a name="whattoadd"></a>
 ##What to Add to Source Control
 On the surface, this seems like all files in a given Cordova project should be added to source control. However, to avoid unexpected issues, we recommend excluding the following files and folders from source control.
 
@@ -31,10 +48,11 @@ On the surface, this seems like all files in a given Cordova project should be a
 	- *.suo
 	- *.jsproj.user
 
-**Troubleshooting Tip: Be aware that a bug in VS templates in VS 2015 RC included four json files that can cause issues if added to source control: plugins/android.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json.** Adding these files to source control can result in a build that appears to succeed but is missing plugin native code. They should only be included if the "platforms" folder is also checked in which is not recommended. Simply remove these files from source control to resolve the issue.
+**Troubleshooting Tip:** Adding plugins/android.json, plugins/ios.json, plugins/remote_ios.json, plugins/windows.json, or plugins/wp8.json adding these files to source control can result in a build that **appears to succeed but is missing plugin native code.** They should only be included if the "platforms" folder is also checked in which is not recommended. Simply remove these files from source control to resolve the issue.
 
 Note that you **can** add "plugins/fetch.json" to source control along with the rest of the contents of the plugins folder. See [our Issues, Tips, and Workarounds documentation](../tips-and-workarounds) for additional tips on addressing common build issues. 
 
+<a name="basic"></a>
 ##Basic Workflow
 Each build server technology is a bit different and in this article we will focus on the general steps required to build a Cordova app regardless of technology using the Cordova Command Line Interface.
 
@@ -56,8 +74,16 @@ The basic flow for building a Cordova app is simple on the surface:
 
 The Cordova CLI is node.js based, so these exact same steps can be run from Windows or an OSX machine or from a cloud hosted VM like [MacInCloud](http://go.microsoft.com/fwlink/?LinkID=533746). See the [Cordova CLI documentation](http://go.microsoft.com/fwlink/?LinkID=533773) for additional details.
 
-Exactly how these steps are executed will vary depending on your build server. However, there are a few challenges that may not be immediately obvious when setting up an automated build environment. This are article will describe some techniques for dealing with these common problems.
+Exactly how these steps are executed will vary depending on your build server. However, there are a **number of challenges that may not be immediately obvious** when setting up an automated build environment. This are article will describe some techniques for dealing with these common problems.
 
+###A Note on TypeScript
+Unlike Visual Studio, it's important to note that the base Cordova CLI does not itself automatically compile TypeScript code. If you are using a build language like Gulp or Grunt, there are convenient plugins that you can use to compile your TypeScript code. Otherwise there is also a node.js based command line utility that works both on Windows and OSX. See the following links for additional details:
+
+-   [Compiling TypeScript from the command line](http://go.microsoft.com/fwlink/?LinkID=533802)
+-   [gulp-typescript](http://go.microsoft.com/fwlink/?LinkID=533748)
+-   [grunt-typescript](http://go.microsoft.com/fwlink/?LinkID=533779)
+
+<a name="depends"></a>
 ##Installing Dependencies
 Cordova builds require that a number of dependencies be properly installed and configured on the system. However, exactly which dependencies are required varies based on the Cordova "platform" (Android, iOS, Windows 8.0/8.1 and Phone 8.1, Windows Phone 8.0) you want to build.
 
@@ -91,7 +117,8 @@ Otherwise you can manually install only those dependencies that are needed for b
         1.  [Windows and Windows Phone 8.1+ Platfrom Guide](http://go.microsoft.com/fwlink/?LinkID=533777)
         2.  [Windows Phone 8.0 Platform Guide](http://go.microsoft.com/fwlink/?LinkID=533778)
 
-###Internet Access & Proxy Setup
+<a name="proxy"></a>
+##Internet Access & Proxy Setup
 If your build server is running in a datacenter, it may be very locked down and not have unrestricted access to the Internet. Due to dynamic acquistion requirements, you will need to allow the build servers to access the following domains:
 
 - npm: http://registry.npmjs.org
@@ -116,13 +143,9 @@ You may also need to configure proxy settings for Java. This can be [accomplishe
 JAVA_OPTS=-Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port> -Dhttp.proxyHost=<host> -Dhttp.proxyPort=<port> -DproxySet=true
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-###A Note on TypeScript
-Unlike Visual Studio, it's important to note that the base Cordova CLI does not itself automatically compile TypeScript code. If you are using a build language like Gulp or Grunt, there are convenient plugins that you can use to compile your TypeScript code. Otherwise there is also a node.js based command line utility that works both on Windows and OSX. See the following links for additional details:
+Finally, if you see the error "**TypeError: Request path contains unescaped characters**" when building or installing a plugin you may need to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). See [tips and workarounds](../tips-and-workarounds/general/README.md#cordovaproxy) for additional details. 
 
--   [Compiling TypeScript from the command line](http://go.microsoft.com/fwlink/?LinkID=533802)
--   [gulp-typescript](http://go.microsoft.com/fwlink/?LinkID=533748)
--   [grunt-typescript](http://go.microsoft.com/fwlink/?LinkID=533779)
-
+<a name="challenges"></a>
 ##Cordova Challenges
 When building Cordova projects in a server environment, there are a number of challenges you may encounter. This tutorial will describe simple ways to handle these problems without going into specifics on particular CI servers so that this information can be adapted to your favorite build technology.
 
@@ -143,6 +166,7 @@ The challenges are as follows:
 
 5. **OSX Gotchas.** If you spend most of your time developing in the Windows environment, there are a few common, easily resolved issues that can pop up when you start trying to build your project on OSX.
 
+<a name="multicli"></a>
 ###Building with Multiple Versions of the Cordova CLI
 The Cordova CLI is a standard Node.js npm package and thus can be installed either [globally or locally](http://go.microsoft.com/fwlink/?LinkID=533780). The trick, then, is to use a local installation of the Cordova CLI rather than a global one. There are two different methods that you can use to install Cordova locally: at the project level or in a global cache.
 
@@ -245,6 +269,7 @@ To avoid re-installing each time, you can take advantage of Visual Studio's **ta
 
 Note that this same script can be easily adapted to a [Gulp build task](http://go.microsoft.com/fwlink/?LinkID=533750). See the [Gulp](http://go.microsoft.com/fwlink/?LinkID=533742) tutorial for additional information.
 
+<a name="platforms"></a>
 ###Adding Platforms
 Adding platforms in Cordova is quite simple using the "cordova platform" command. Ex:
 
@@ -278,6 +303,7 @@ However, there are a couple of common problems when executing this command that 
     if [ ! -d "platforms/android" ]; then cordova platform add android; fi;
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<a name="ipa"></a>
 ###Generating an iOS App Store Package
 In order to distribute your iOS application you will need to generate an "iOS App Store Package" or "ipa" file. These files can be imported into iTunes or enterprise app stores in addition to being distributed to the Apple App Store via the [Application Loader](http://go.microsoft.com/fwlink/?LinkID=533751).
 
@@ -325,6 +351,7 @@ cordova build ios --device --release
 xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/device/My Cordova App.app" -o "${WORKSPACE}/platforms/ios/build/device/My Cordova App.ipa"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<a name="vsspecific"></a>
 ###Visual Studio Specific Features
 A quick way to get you project working with Visual Studio specific features outside of Cordova is to add the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) to your project. It adds in support for three things:
 
@@ -371,6 +398,7 @@ function copyFiles(srcPath, destPath) {
 
 You can place this into a "hooks\before_prepare" folder Visual Studio Cordova project and check it into source control and it will automatically be used.
 
+<a name="osxgotcha"></a>
 ### OSX Gotchas: Troubleshooting Tips for Building on OSX
 There are a few relativley common issues when building a Cordova app on OSX related to permissions that are worth noting.
 

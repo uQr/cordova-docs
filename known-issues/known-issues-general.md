@@ -18,22 +18,14 @@ This article covers general [known issues](../Readme.md#knownissues) related to 
 Remove these files from source control if you are not checking in the "platforms" folder (reccomended). For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/README.md#l#missingexclude) for additional details.
 
 ----------
-**Plugin with variables not working:** Due to a Cordova issue with Cordova 4.3.0, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.1.1 which you can use with VS 2015. To update to 5.1.1 and use plugin variables, you will need to update your VS project and use the command line.
+**Plugin with variables not working:** Due to a Cordova issue with Cordova 4.3.0 and 4.3.1, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.1.1 which you can use with VS 2015. Follow these steps to use a plugin with variables:
 
  1. Remove the plugins with the variables via the config designer.
 
  2. Update to Cordova 5.1.1 via the config designer (Platforms > Cordova CLI)
 
- 3. From the command line:
-	 1. Go to your project directory.
-	 2. Type the following from substituting project path, plugin name, and variables for those that apply to you:
-        
-	    ~~~~~~~~~~~~~~
-        cd <project path>
-		npm install -g cordova@5.1.1 
-        cordova plugin add nl.x-services.plugins.launchmyapp --variable URL_SCHEME=myscheme
-	    ~~~~~~~~~~~~~~
-
+ 3. Re-add your plugin via "Plugins" tab in the config.xml designer
+ 
 ----------
 **Slow first build or first plugin add:** The first build or plugin add for a given version of Cordova will be slower than subsequent builds as VS must first dynamically acquire Cordova. See the Output Window for more detail on progress. Further, the first remote iOS build will exhibit the same behavior as the agent downloads Cordova on your OSX machine. If you encounter a CordovaModuleLoadError with the first iOS build for a given Cordova version you can follow [these instructions](../tips-and-workarounds/ios/README.md#npm-cache) to resolve the problem.
 
