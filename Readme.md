@@ -6,8 +6,13 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 <a name="tutorials"></a>
 ## Tutorials
 1. [Using Apache Cordova 5](./tutorial-cordova-5)
+	1. [An Introduction to Cordova 5 Security](./tutorial-cordova-5/cordova-5-security.md)
+	1. [Using Crosswalk to Reduce Android Fragmentation](./tutorial-cordova-5/cordova-5-crosswalk.md)
 1. [Using Gulp with your Cordova projects](./tutorial-gulp)
 1. [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build)
+	1. [Getting Start with Cordova & TFS 2015 or Visual Studio Online](./tutorial-team-build/TFS2015.md)
+	1. [Getting Start with Cordova & TFS 2013](./tutorial-team-build/TFS2013.md)
+	1. [Getting Start with Cordova & Jenkins CI](./tutorial-team-build/Jenkins.md)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
 
 <a name="tips"></a>
