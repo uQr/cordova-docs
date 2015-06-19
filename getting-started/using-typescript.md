@@ -63,7 +63,7 @@ module BlankCordovaApp {
 ```
 This is the same source as the [JavaScript Blank App template](https://msdn.microsoft.com/en-us/library/dn757057(v=vs.140).aspx#Create), implemented in TypeScript. This code sets up Cordova event handlers for the application.
 
-When you build this project, the TypeScript source will be compiled into a JavaScript file named appBundle.js located in the www/scripts/ folder (this is configured in the tsconfig.json file mentioned earlier). By doing this, you reduce the size of your final packaged application, because the TypeScript files in the /scripts folder will not be included.
+When you build this project, the TypeScript source will be compiled into a JavaScript file named appBundle.js located in the www/scripts/ folder (this is configured in the tsconfig.json file mentioned earlier). By doing this, you reduce the size of your final packaged application, because the TypeScript files in the /scripts folder will not be included in the application package.
 
 **Note** For the current version of the Tools for Apache Cordova, you can only save TypeScript files in the /scripts folder. Ideally, you're free to arrange files into any folder. This is a known issue being worked on for a later update.
 
@@ -74,6 +74,7 @@ In the current release, if you want TypeScript files to compile by default you m
 
 ##<a name="configTypeScript"></a>How do I customize the TypeScript compiler settings?
 To customize the compiler settings for TypeScript in your projects:
+
 1. Add a new tsconfig.json file to the /scripts folder at the top level of your project.
 2. Define your settings using the JSON schema documented on the [TypeScript project wiki](https://github.com/microsoft/typescript/wiki/tsconfig.json).
 
