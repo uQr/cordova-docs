@@ -20,7 +20,7 @@ Visual Studio provides a blank app template using TypeScript. To use it:
 
 Here's what the new project looks like:
 
-![Solution folder | Project Folder | Folders: merges, res, scripts, www](media/ts-file-structure.png)
+![Solution folder | Project Folder | Folders: merges, res, scripts, www](media/ts-file-structure.PNG)
 
 In the scripts folder you see typings, index.ts, and tsconfig.json files. These files are used by TypeScript:
 * typings - a collection of [typing definition files](http://www.typescriptlang.org/Handbook#writing-dts-files) that define the APIs for common Cordova plugins.
@@ -29,7 +29,7 @@ In the scripts folder you see typings, index.ts, and tsconfig.json files. These 
 
 If you open the index.ts file, you'll see the TypeScript source with the default behavior for this application.
 
-```
+```TypeScript
 module BlankCordovaApp {
     "use strict";
 
