@@ -15,12 +15,12 @@ The Visual Studio Tools for Apache Cordova provide templates to help you get sta
 Visual Studio provides a blank app template using TypeScript. To use it:
 
 1. In Visual Studio, use the File > New > Project... menu.
-2. Select the Templates > TypeScript > Apache Cordova Apps category and click on the Blank App (Apache Cordova) template.![New TypeScript project template](media\ts-project-template.PNG)
+2. Select the Templates > TypeScript > Apache Cordova Apps category and click on the Blank App (Apache Cordova) template.![New TypeScript project template](media/ts-project-template.PNG)
 3.  Enter a name and file location for your project, then click OK.
 
 Here's what the new project looks like:
 
-![Solution folder | Project Folder | Folders: merges, res, scripts, www](media\ts-file-structure.png)
+![Solution folder | Project Folder | Folders: merges, res, scripts, www](media/ts-file-structure.png)
 
 In the scripts folder you see typings, index.ts, and tsconfig.json files. These files are used by TypeScript:
 * typings - a collection of [typing definition files](http://www.typescriptlang.org/Handbook#writing-dts-files) that define the APIs for common Cordova plugins.
