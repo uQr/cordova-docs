@@ -5,10 +5,10 @@ With the release of Visual Studio 2015, you now have a number of options for how
 
 For abridged informaiton on specific build systems, you may find this sample [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) useful along with the following tutorials:
 
--  **[Getting Started with Cordova & TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771)**
--  **[Getting Started with Cordova & TFS 2013](http://go.microsoft.com/fwlink/?LinkID=533770)**
--  **[Getting Started with Cordova & Gulp - Using Gulp to Build Cordova in a Team / CI Environment](http://go.microsoft.com/fwlink/?LinkID=533742)**
--  **[Getting Started with Cordova & Jenkins CI](http://go.microsoft.com/fwlink/?LinkID=613703)**
+-  **[Getting Started with Cordova & TFS 2015 or Visual Studio Online](./TFS2015.md)**
+-  **[Getting Started with Cordova & TFS 2013](./TFS2013.md)**
+-  **[Getting Started with Cordova & Jenkins CI](./Jenkins.md)**
+-  **[Getting Started with Cordova & Automating Builds with Gulp](../tutorial-gulp/gulp-ci.md)**
 
 Read these articles to get up and running quickly!
 
@@ -87,7 +87,7 @@ Unlike Visual Studio, it's important to note that the base Cordova CLI does not 
 ##Installing Dependencies
 Cordova builds require that a number of dependencies be properly installed and configured on the system. However, exactly which dependencies are required varies based on the Cordova "platform" (Android, iOS, Windows 8.0/8.1 and Phone 8.1, Windows Phone 8.0) you want to build.
 
-Installing Visual Studio 2015 with the Tools for Apache Cordova option will automatically install these dependencies but you will still need to configure some of the environment variables by hand for Android. See [Team Foundation Services 2015 and Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=533771) for a summary of these variables.
+Installing Visual Studio 2015 with the Tools for Apache Cordova option will automatically install these dependencies but you will still need to configure some of the environment variables by hand for Android. See [Team Foundation Services 2015 and Visual Studio Online](./TFS2015.md) for a summary of these variables.
 
 Otherwise you can manually install only those dependencies that are needed for building the platforms you are interested in.
 
@@ -149,7 +149,7 @@ Finally, if you see the error "**TypeError: Request path contains unescaped char
 ##Cordova Challenges
 When building Cordova projects in a server environment, there are a number of challenges you may encounter. This tutorial will describe simple ways to handle these problems without going into specifics on particular CI servers so that this information can be adapted to your favorite build technology.
 
-If you are looking for a quick solution you may want to read the [Gulp](http://go.microsoft.com/fwlink/?LinkID=533742) tutorial and [this Git repository](http://go.microsoft.com/fwlink/?LinkID=533736) with a sample taco-team-build node module designed to help resolve these problems regardless of build system.  
+If you are looking for a quick solution you may want to read the [Gulp](../tutorial-gulp/gulp-ci.md) tutorial and [this Git repository](http://go.microsoft.com/fwlink/?LinkID=533736) with a sample taco-team-build node module designed to help resolve these problems regardless of build system.  
 
 The challenges are as follows:
 
@@ -267,7 +267,7 @@ To avoid re-installing each time, you can take advantage of Visual Studio's **ta
 
 4.  Use "./cordova.sh" (OSX) or "cordova.cmd" (Windows) to run additional Cordova commands
 
-Note that this same script can be easily adapted to a [Gulp build task](http://go.microsoft.com/fwlink/?LinkID=533750). See the [Gulp](http://go.microsoft.com/fwlink/?LinkID=533742) tutorial for additional information.
+Note that this same script can be easily adapted to a [Gulp build task](http://go.microsoft.com/fwlink/?LinkID=533750). See the [Gulp](../tutorial-gulp/gulp-ci.md) tutorial for additional information.
 
 <a name="platforms"></a>
 ###Adding Platforms
@@ -355,7 +355,7 @@ xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/devi
 ###Visual Studio Specific Features
 A quick way to get you project working with Visual Studio specific features outside of Cordova is to add the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) to your project. It adds in support for three things:
 
-1. To support the Task Explorer, the plugin takes advantage of the technique illustrated in the [Gulp tutorial](http://go.microsoft.com/fwlink/?LinkID=533742) for wiring in Gulp tasks to Cordova build events. 
+1. To support the Task Explorer, the plugin takes advantage of the technique illustrated in the [Gulp tutorial](../tutorial-gulp/gulp-ci.md) for wiring in Gulp tasks to Cordova build events. 
 2. To support res/native, the plugin uses a similar approach and we will briefly cover how this works behind the scenes.
 3. The plugin also adds in support for the VS specific Windows packaging elements in config.xml.
 
@@ -449,6 +449,6 @@ There are a few relativley common issues when building a Cordova app on OSX rela
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)

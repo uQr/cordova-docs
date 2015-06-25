@@ -116,6 +116,7 @@ To install updated plugins, follow [this proceedure to install a npm sourced plu
 **Building a Cordova project from source control results in Cordova plugin APIs not returning results:** The following four json files can cause this to occur if added to source control.
 
 - plugins/android.json
+- plugins/ios.json
 - plugins/windows.json
 - plugins/remote_ios.json
 - plugins/wp8.json.
