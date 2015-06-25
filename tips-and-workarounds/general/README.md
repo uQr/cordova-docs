@@ -15,6 +15,7 @@ It covers the following issues and tips:
 Due to a bug in the VS templates in VS 2015 RC, four json files that can cause issues if added to source control are missing from the default source code exclusion list: 
 
 - plugins/android.json
+- plugins/ios.json
 - plugins/windows.json
 - plugins/remote_ios.json
 - plugins/wp8.json. 
