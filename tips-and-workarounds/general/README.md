@@ -33,9 +33,11 @@ W/System.err( 1425):  at java.lang.Class.forName(Class.java:216)
 
 The missing class would be recognizable as a Cordova plugin class such as "org.apache.cordova.camera.CameraLauncher" from the camera plugin.
 
-Remediation is fortunately simple: Remove these files (plugins/android.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control check the project out again.  
+Remediation is fortunately simple: 
+- Remove these files (plugins/android.json, plugins/ios.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control. 
+- Leave plugins/fetch.json.
 
-For existing local copies, you can either fetch a fresh copy from source control or remove the above files along with any platforms found in the "platforms" folder to resolve the issue.
+For **existing local copies**, you can either fetch a fresh copy from source control or delete the above files along with the entire contents of the "platforms" folder in the filesystem (which is not visible by default in the Solution Explorer) to resolve the issue.
 
 <a name="cordovaproxy"></a>
 ##"TypeError: Request path contains unescaped characters" during a build or when installing a plugin
