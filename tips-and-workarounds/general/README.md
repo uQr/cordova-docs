@@ -5,8 +5,9 @@ It covers the following issues and tips:
 
 1. [Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run](#missingexclude)
 1. ["TypeError: Request path contains unescaped characters" during a build or when installing a plugin](#cordovaproxy) 
-1. [Using a Specific Version of a GitHub Sourced Plugin](#plugin-github) 
-1. [Using a npm sourced plugin with Cordova < 5.0.0 or Visual Studio 2015 RC](#plugin-npm) 
+1. [Using plugins not listed in the config.xml designer](#plugin-xml) 
+1. [Using a specific version of a GitHub sourced plugin](#plugin-github) 
+1. [Using a npm sourced plugins not listed in the config.xml designer or with Cordova < 5.0.0](#plugin-npm) 
 1. [Tips for troubleshooting 3rd party Cordova plugins](#plugin-troubleshoot) 
 1. [Build errors caused by long path and file names](#build-errors-long-path)
 
@@ -52,9 +53,47 @@ The root cause of this error is certain versions of Cordova reference an older v
 
 The simplest workaround is to **downgrade Node.js to 0.10.29**. This will be resolved in a future version of Cordova.
 
+<a name="plugin-xml"></a>
+##Using Plugins Not Listed in the Config Designer
+Occasionally you may need to install a specific version of a Cordova plugin not listed in the config.xml designer. If this plugin is availabe in plugins.cordova.io when using any version of Cordova or npm when using Cordova 5.0.0+, you can simply add the following element to config.xml and the plugin will be installed on next build:
+
+1. If any of plugins you intend to install were already added to your project (particularly with an older ID), remove them using the "Installed" tab of the "Plugins" section of the config.xml designer in Visual Studio.
+
+2. Next, right click on config.xml in the Solution Explorer and select "View Code"
+
+3. Add the following element to config.xml under the root widget element: 
+
+	~~~~~~~~~~~~~~~~~
+  	<vs:plugin name="org.apache.cordova.camera" version="0.3.6" />
+	~~~~~~~~~~~~~~~~~
+
+	...substituting org.apache.cordova.camera for the correct ID and 0.3.6 with the version of the plugin you want to install. 
+
+4. The next time you build the plugin will be installed for you.
+
+You can add plugins using a Git URI or the local filesystem by using the "Custom" tab of the "Plugins" section in the config.xml designer. Using a Git URI can cause you to get a "dev" version of a plugin. See [these instructions](#plugin-github) for how you can use a specific version of a GitHub sourced plugin.
+
 <a name="plugin-github"></a>
 ##Using a Specific Version of a GitHub Sourced Plugin
-From time to time you may try to use a Cordova plugin from GitHub but find that specifying the Git URI to the plugin gives you a development version rather than a release version. If the plugin author is using GitHub's release features, you can fairly easily access and use older versions of the plugin. Here's how:
+From time to time you may try to use a Cordova plugin from GitHub but find that specifying the Git URI to the plugin gives you a development version rather than a release version. You can deal with this problem in one of two ways:
+
+1. If the plugin is in plugins.cordova.io or npm (Cordova 5.0.0+), you can simply add an element to config.xml to install on next build. 
+
+2. If the plugin author is using GitHub's release features, you can access and use older versions of the plugin and install from the filesystem.
+
+###Add the Plugin to Config.xml
+First, if this plugin is availabe in plugins.cordova.io when using any version of Cordova or npm when using Cordova 5.0.0+, you can simply add the following element to config.xml and the plugin will be installed on next build. See [this section](#plugin-xml) for details.
+
+Ex:
+
+~~~~~~~~~~~~~~~~~
+<vs:plugin name="org.apache.cordova.camera" version="0.3.6" />
+~~~~~~~~~~~~~~~~~
+
+...substituting org.apache.cordova.camera for the correct ID and 0.3.6 with the version of the plugin you want to install. 
+
+###Install from a Local Copy
+However, if the plugin is only available through GitHub, you can follow these steps to install a specific version:
 
 1. Go to the GitHub repository for the plugin. Ex: https://github.com/wildabeast/BarcodeScanner
 
@@ -71,7 +110,7 @@ From time to time you may try to use a Cordova plugin from GitHub but find that 
 	![Custom Local Plugin](<media/git-local-1.png>)
 	
 <a name="plugin-npm"></a>
-##Using a Npm Sourced Plugin with Cordova < 5.0.0 or Visual Studio 2015 RC
+##Using a Npm Sourced Plugins Not Listed in the Config Designer or with Cordova < 5.0.0
 ###Background
 A significant departure in Cordova 5.0.0 and the community as a whole is the migration of the primary source of Cordova plugins from the custom repoistory backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
 
@@ -85,17 +124,29 @@ As a result, core plugins like Camera have changed from [org.apache.cordova.came
 
 You can find running list of [old verses new plugin IDs in this location](https://github.com/stevengill/cordova-registry-mapper/blob/master/index.js).
 
-In addition to the challenge of older versions of Cordova not supporting npm sourced plugins, **Visual Studio 2015 RC** currently uses the old IDs since the default template in VS uses Cordova 4.3.0 which does not support npm sourced plugins. As a result, if you want to get the latest version of a given plugin in either case you will need to install the npm version from your local filesystem using the workaround described below.
+In addition to the challenge of older versions of Cordova not supporting npm sourced plugins, Visual Studio 2015 currently uses the old IDs in the config.xml designer since the default template in VS uses Cordova 4.3.0 which does not support npm sourced plugins. As a result, if you want to get the latest version of a given plugin in either case you will need to install the npm version using one of the approaches below.
 
-###Workaround
+###Installing Npm Source Plugins via Config.xml When Using Cordova 5.0.0+
+If you are using Cordova 5.0.0+ (5.1.1+ is recommended) in your project, you can simply add an element to config.xml and the npm sourced plugin will be installed on next build in Visual Studio. Note that this will not work with Cordova versions < 5.0.0. See [this section](#plugin-xml) for details. 
+
+Ex:
+
+~~~~~~~~~~~~~~~~~
+<vs:plugin name="cordova-plugin-camera" version="1.2.0" />
+~~~~~~~~~~~~~~~~~
+
+...substituting cordova-plugin-camera for the correct ID and 1.2.0 with the version of the plugin you want to install. Be sure to remove any old versions of the plugin before adding a new one.
+
+
+###Installing Npm Sourced Plugins When Using Cordova < 5.0.0 
 *Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
-There are two primary methods to install a plugin from npm when using Cordova 4.3.1 or below or Visual Studio 2015 RC: using a recent version of the Cordova CLI or the "npm" command.
+There are two primary methods to install a plugin from npm when using Cordova 4.3.1 or below: using a recent version of the Cordova CLI or the "npm" command.
 
 ####Using Cordova CLI 5.0.0+
 The simplest method to install a plugin from npm is to take advantage of Visual Studio's command line interoperability and simply use a recent version of the Cordova CLI. To do so, follow these steps:
 
-1. If any of plugins you intend to install were already added to your project with an older ID, remove them using the "Installed" tab in the config.xml designer in Visual Studio.
+1. If any of plugins you intend to install were already added to your project with an older ID, remove them using the "Installed" tab in the "Plugins" section of the config.xml designer in Visual Studio.
 
 2. Next, execute the following commands from the developer command prompt:
 
@@ -157,7 +208,7 @@ One of the advantages associated with Apache Cordova is its active plugin commun
 
 6. See if the plugin causing problems has transitioned to npm as a part of the Cordova [repository transition](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html) and therefore has a new ID. You could have multiple copies of the same plugin installed (ex: both org.apache.cordova.camera and cordova-plugin-camera) or an outdated version of the plugin with bugs. Check the "Installed" tab of the config.xml designer for duplicates and consult [this article for information](#plugin-npm) on why the plugin ID may have changed and how to get an updated version of the plugin.
 
-7. When using a plugin from GitHub, check the "Installed" tab of the config.xml designer to see if the version number ends in "-dev". If so, this may not be a stable version of the plugin. You can follow [this proceedure](#plugin-github) to download an earlier release of the plugin to see if the problem goes away. Even if the plugin version does not end in "-dev" it may be worth trying a previous release to see if the problem you are encountering is new.
+7. When using a plugin from GitHub, check the "Installed" tab of the config.xml designer to see if the version number ends in "-dev". If so, this may not be a stable version of the plugin. You can follow [this procedure](#plugin-github) to download an earlier release of the plugin to see if the problem goes away. Even if the plugin version does not end in "-dev" it may be worth trying a previous release to see if the problem you are encountering is new.
 
 8. If a plugin update doesn't solve the issue, try these steps to eliminate other factors:
 	1. Create a fresh project and see if the problem reproduces.
@@ -187,6 +238,6 @@ If your project is located inside a deeply nested directory in your file system,
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
