@@ -55,7 +55,7 @@ This takes advantage of a new feature in Cordova 5.0.0+ to ensure the Cordova Wh
 Note that this capability can be used with any Cordova plugin and is conceptually similar to the Visual Studio specific "vs:plugin" element. We worked with the community to get it added into the core and over time we will discontinue the use of the "vs" prefix but we have left the feature in place for backwards compatibility (as Cordova 4.3.0 does not have this feature). Near term most VS documentation will recommend the use of "vs:plugin" instead. Ex:
 
 ~~~~~~~~~~~~~~~~~~~~~~~
-<vs:plugin name="cordova-plugin-whitelist" version="1.2.0" />
+<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -114,7 +114,7 @@ When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below in Visu
 	2. Add the following XML elements under the &lt;widget&gt; element:
 
 	~~~~~~~~~~~~~~~~~~~~~~~
-	<vs:plugin name="cordova-plugin-whitelist" version="1.1.0" />
+	<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
 	~~~~~~~~~~~~~~~~~~~~~~~
 	
 	The next time you build in Visual Studio, VS will install this version of the whitelist plugin. You can update the version number as needed.
@@ -166,6 +166,6 @@ When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below in Visu
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)

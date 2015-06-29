@@ -79,7 +79,7 @@ When you upgrade a project to Cordova 5.0.0+, you will want to take the followin
 	2. Add the following XML elements under the &lt;widget&gt; element:
 
 	~~~~~~~~~~~~~~~~~~~~~~~
-	<vs:plugin name="cordova-plugin-whitelist" version="1.1.0" />
+	<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
 	~~~~~~~~~~~~~~~~~~~~~~~
 	
 	The next time you build in Visual Studio, VS will install this version of the whitelist plugin. You can update the version number as needed.
