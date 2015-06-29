@@ -8,11 +8,18 @@ In general we recommend **using Cordova 5.1.1 or above** instead of 5.0.0 as the
 ----------
 **Cannot access any network resources from Android app:** The Android platform contained within Cordova 5.0.0+ does not have a "whitelist" plugin installed by default and therefore blocks network access by default. There are now two whitelist plugins that can be installed:
 
- - Installing “cordova-plugin-legacy-whitelist” will cause the platform to behave the way it did in 4.x and enables the "Domain Access" list in the configuration designer. You can install it from the command
-   line or using https://github.com/apache/cordova-plugin-legacy-whitelist.git from the Custom tab of the configuration designer.
-    
- - Installing “cordova-plugin-whitelist” results in some new behaviors and introduces new config.xml elements that can be added manually by right clicking on config.xml and selecting "View Code." You can install it from the command line or using
-  https://github.com/apache/cordova-plugin-whitelist.git from the Custom tab of the configuration designer.
+- Installing “cordova-plugin-whitelist” is the recommended whitelist plugin and results in some new behaviors and introduces new config.xml elements that can be added manually by right clicking on config.xml and selecting "View Code." You can install it from the command line or by adding this XML element to config.xml (see [this article for more details](../tips-and-workarounds/general/README.md#plugin-xml)):
+
+    ~~~~~~~~~~~~~~~~~
+    <vs:plugin name="cordova-plugin-whitelist" version="1.1.0" />
+    ~~~~~~~~~~~~~~~~~
+
+- Installing “cordova-plugin-legacy-whitelist” will cause the platform to behave the way it did in 4.x and enables the "Domain Access" list in the configuration designer. You can install it from the command
+line or by adding this XML element to config.xml (see [this article for more details](../tips-and-workarounds/general/README.md#plugin-xml)):
+
+    ~~~~~~~~~~~~~~~~~
+    <vs:plugin name="cordova-plugin-legacy-whitelist" version="1.1.0" />
+    ~~~~~~~~~~~~~~~~~    
 
 ----------
 **Ripple throws error when starting up Cordova:** Ripple does not function properly in Cordova 5.0.0 due to a newly introduced validation check. This problem was fixed in Cordova 5.1.1.
