@@ -205,7 +205,7 @@ An exciting new development in the Cordova Android platform is the support for w
 
 There is now a [Cordova Crosswalk plugin](https://www.npmjs.com/package/cordova-plugin-crosswalk-webview/) that takes advantage of the new pluggable WebView features in Cordova 5.0.0+ (and the Cordova Android 4.0.0 platform it uses) and makes it simple to add into your project.
 
-*Note: Because using the Crosswalk plugin does slow down build times fairly significantly given its size, **we recommend developers start out building apps with the stock Android WebView** on a recent device or emulator (Android 4.4+). You can then add the Crosswalk plugin later in your development cycle and make the necessary adjustments.*
+*Note: Because using the Crosswalk plugin does slow down build times given its size, we recommend developers start out building apps with the stock Android WebView on a recent device or emulator (Android 4.4+). You can then add the Crosswalk plugin later in your development cycle and make the necessary adjustments.*
 
 ###Installing the Crosswalk Plugin from VS
 To use the Crosswalk WebView plugin from Visual Studio, follow these steps:
