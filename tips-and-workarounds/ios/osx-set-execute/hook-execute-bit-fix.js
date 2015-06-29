@@ -8,9 +8,14 @@ var exec = require("child_process").exec;
 var Q;
 
 module.exports = function(context) {
-  // Only bother if we're on OSX
-  if(process.platform =="darwin" && context.opts && context.opts.cordova && context.opts.cordova.platforms) {
+  // Only bother if we're on OSX and are after platform add for iOS itself (still need to run for other platforms)
+  if(process.platform =="darwin" && 
+      context.opts && 
+      context.opts.cordova && 
+      context.opts.cordova.platforms && 
+      !(context.hook == "before_platform_add" && context.opts.platforms.indexOf("ios") >= 0)) {
 
+    console.log("here")
     // Grab the Q, glob node modules from cordova
     Q=context.requireCordovaModule("q");
     // Need to return a promise since glob is async
