@@ -7,7 +7,6 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 ## Tutorials
 1. [Using Apache Cordova 5](./tutorial-cordova-5)
 	1. [An Introduction to Cordova 5 Security](./tutorial-cordova-5/cordova-5-security.md)
-	1. [Using Crosswalk to Reduce Android Fragmentation](./tutorial-cordova-5/cordova-5-crosswalk.md)
 1. [Using Gulp with your Cordova projects](./tutorial-gulp)
 	1. [Using Gulp to Build Cordova Projects](./tutorial-gulp/gulp-ci.md)
 	1. [Invoking Gulp Tasks During a Cordova Build and the VS Task Runner Explorer](./tutorial-gulp/gulp-task-runner-explorer.md)
