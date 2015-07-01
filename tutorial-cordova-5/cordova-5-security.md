@@ -52,10 +52,15 @@ You will also notice this default template contains the following in config.xml:
 
 This takes advantage of a new feature in Cordova 5.0.0+ to ensure the Cordova Whitelist plugin (whose ID is cordova-plugin-whitelist) is automatically installed if it is not present when the project is prepared for building any platform. It will automatically add the latest version of the plugin whose version number starts with 1 (1.x.x). You can also update this to be a specific version or remove this element and install the plugin yourself. 
 
-Note that this capability can be used with any Cordova plugin and is conceptually similar to the Visual Studio specific "vs:plugin" element. We worked with the community to get it added into the core and over time we will discontinue the use of the "vs" prefix but we have left the feature in place for backwards compatibility (as Cordova 4.3.0 does not have this feature).
+Note that this capability can be used with any Cordova plugin and is conceptually similar to the Visual Studio specific "vs:plugin" element. We worked with the community to get it added into the core and over time we will discontinue the use of the "vs" prefix but we have left the feature in place for backwards compatibility (as Cordova 4.3.0 does not have this feature). Near term most VS documentation will recommend the use of "vs:plugin" instead. Ex:
+
+~~~~~~~~~~~~~~~~~~~~~~~
+<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
+~~~~~~~~~~~~~~~~~~~~~~~
+
 
 ##The W3C Content Security Policy (CSP)
-A topic of frequent conversation for security focused developers on the web is the [W3C Content Security Policy (CSP)](http://www.w3.org/TR/CSP/) feature that is available in Chrome, Safari, and Internet Explorer Edge. CSP support is available natively to Cordova apps targeting iOS, Windows 10 and up, and Android 4.4 and up. However, you can get support back to Android 4.0 by using something called the Crosswalk WebView. See [Using Crosswalk to Reduce Android Fragmentation](./cordova-5-crosswalk.md)for information adding Crosswalk to your project.
+A topic of frequent conversation for security focused developers on the web is the [W3C Content Security Policy (CSP)](http://www.w3.org/TR/CSP/) feature that is available in Chrome, Safari, and Internet Explorer Edge. CSP support is available natively to Cordova apps targeting iOS, Windows 10 and up, and Android 4.4 and up. However, you can get support back to Android 4.0 by using something called the Crosswalk WebView. See [Using Apache Cordova 5](./README.md#crosswalk) for information adding Crosswalk to your project.
 
 ###The CSP in Cordova 5
 The CSP is a native browser capability that allows you to control exactly what content your app can access and at a very granular level. In fact, when using the CSP, you can generally keep the access origin to "*" as you'll be able to more tightly control security using the policy.
@@ -100,23 +105,24 @@ You can find a [great tutorial on using the CSP in detail here](http://www.html5
 	This above CSP policy says that content originating from the same domain ('self'), data URIs (data:), Cordova internal APIs (gap:), https://ssl.gstatic.com, and eval statments are allowed, but all others are denied.
 	
 ##Migrating an Existing Project
-When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below, you will want to take the following steps to ensure your app functions as you would expect.
+When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below in Visual Studio, you will want to take the following steps to ensure your app functions as you would expect.
 
-1. Add the whitelist plugin to your project:
+1. Add the whitelist plugin to your project via config.xml:
 
-	1. Open the config.xml designer by double clicking on config.xml in your project
-
-	2. Go to the Plugins tab
-
-	3. Click on the Cordova Whitelist plugin
-
-	4. Click "Add"
-
-	![cordova-plugin-whitelist](<media/cordova-5-7.png>)	
-
-2. Update config.xml:
 	1. Right-click on config.xml and select "View Code"
 
+	2. Add the following XML elements under the &lt;widget&gt; element:
+
+	~~~~~~~~~~~~~~~~~~~~~~~
+	<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
+	~~~~~~~~~~~~~~~~~~~~~~~
+	
+	The next time you build in Visual Studio, VS will install this version of the whitelist plugin. You can update the version number as needed.
+
+2. Update config.xml with the allow-intent or allow-navigation elements as needed:
+	
+	1. If you have not already, right-click on config.xml and select "View Code"
+	
 	2. Add the following XML elements under the &lt;widget&gt; element:
 	
 		~~~~~~~~~~~~~~~~~~~~~~~
@@ -152,15 +158,14 @@ When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below, you wi
 	
 	Start with the most locked down security policy you can and back away as needed. That way you'll ensure you're using the most secure practices you can from the start.
 	
-	To reiterate, **CSP support is only available on Android 4.4+ devices or Android 4.0+ when using Crosswalk.** See [Using Crosswalk to Reduce Android Fragmentation](./cordova-5-crosswalk.md) for information adding Crosswalk to your project.
+	To reiterate, **CSP support is only available on Android 4.4+ devices or Android 4.0+ when using Crosswalk.** See [Using Apache Cordova 5](./README.md#crosswalk) for information adding Crosswalk to your project.
 
 ## More Information
 * [Read more about Apache Cordova 5](./README.md)
-* [Learn about the Crosswalk WebView](./cordova-5-crosswalk.md)
 * [Read tutorials and learn about tips, tricks, and known issues](../Readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)

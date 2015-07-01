@@ -11,7 +11,7 @@ This article will summarize the changes in Cordova 5 and how you can take advant
 1. [Pluggable WebViews and the Crosswalk WebView for Android](#crosswalk)
 1. [Windows 10 support and improved Cordova interoperability](#win10)
 
-New projects created using Tools for Apache Cordova will automatically use Cordova 5.1.1. For existing projects, you can switch to this version of Cordova by following these steps:
+New projects created using Tools for Apache Cordova will automatically use Cordova 4.3.1. You can switch to this version of Cordova by following these steps:
 
 1. Double click on config.xml
 
@@ -56,36 +56,36 @@ There are a whole host of new security features available and we **strongly recc
 ###The New Whitelist Plugin
 The new [Cordova Whitelist plugin (cordova-plugin-whitelist)](https://github.com/apache/cordova-plugin-whitelist) is the recommended base security plugin to use for managing network security access. Historically there was one **access** element in config.xml element used to control all access to network resources. For example, adding the following to config.xml resulted in the app not only being able to make XHR calls, access images, or reference remote scripts but also allowed Cordova to navigate to any URI. 
 
-The problem with this model is you may want to be able to make an XHR to a service like Azure Mobile Services without actually allowing your app to navigate to an Azure web page in the same domain. The reason this is a concern is that this remote web page is then given access to all Cordova and plugin APIs. Further, for Android, the access element has been overloaded to control "intents" in the wake of a discovered [security issue in Cordova 3.5.0 and below](http://cordova.apache.org/announcements/2014/08/04/android-351.html) which has led to a syntax that strayed away from the original [W3C Widget spec](http://www.w3.org/TR/widgets/) that config.xml's structure is based on. Some restructuring and improvements were therefore appropriate for the Cordova 5.0.0 release.
+The problem with this model is you may want to be able to make an XHR request to a service like Azure Mobile Services without actually allowing your app to navigate to an Azure web page in the same domain. The reason this is a concern is that this remote web page is then given access to all Cordova and plugin APIs. Further, for Android, the access element has been overloaded to control "intents" in the wake of a discovered [security issue in Cordova 3.5.0 and below](http://cordova.apache.org/announcements/2014/08/04/android-351.html) which has led to a syntax that strayed away from the original [W3C Widget spec](http://www.w3.org/TR/widgets/) that config.xml's structure is based on. Some restructuring and improvements were therefore appropriate for the Cordova 5.0.0 release.
 	
 As a result, the new whitelist plugin actually introduces three separate elements designed to enable more discrete control. The **access** element returns but only controls where your app can make XHR requests or access other external content from a web page for Android and iOS. It no longer controls whether you can navigate to a different domain. A new **allows-navigation** element has been added that then enables you to specify where the app can navigate instead. Finally, a new **allows-intent** element has been introduced specifically designed to control Android intents.
 
-New Cordova projects in Visual Studio are set up to mirror the secure defaults used for standard Cordova CLI projects. Specifically it:
+Projects created using the Cordova CLI contain fairly restrictive rules that are intended to represent a reasonable starting point for most projects. Specifically it:
 
 1. Allows XHR and images to originate from any URL
 2. Disallows navigation to external URLs (hosted content)
-3. Disallows inline script (Meaning no &lt;script&gt; tags or "on" attributes on HTML elements) on recent versions of Android, iOS, or Windows
+3. Disallows inline script (Meaning no &lt;script&gt; tags or "on" attributes on HTML elements) on recent versions of Android, iOS, or Windows via a W3C Content Security Policy (CSP) in index.html  
 4. Allows the "tel:", "sms:", "mailto:", and "geo:" intents
 
-See the [Introduction to Cordova 5 Security](./cordova-5-security.md) document for details on why these defaults are in palce and how to change them.
+You'll want to start your project with roughly these same defaults and alter as needed. See below for how to add these defaults to your porject and the [Introduction to Cordova 5 Security](./cordova-5-security.md) document for details on why these defaults are in palce and how to change them.
 
-###Migrating an Existing Project
-When you upgrade a project to Cordova 5.0.0+, you will want to take the following steps to if you wish to mirror the base security policy listed above.
+###Configuring Security Settings from a VS Project
+When you upgrade a project to Cordova 5.0.0+, you will want to take the following steps to if you wish to mirror the base security policy listed above. You can then customize as needed to meet your needs. 
 
-1. Add the whitelist plugin to your project:
+1. Add the whitelist plugin to your project via config.xml:
 
-	1. Open the config.xml designer by double clicking on config.xml in your project
-
-	2. Go to the Plugins tab
-
-	3. Click on the Cordova Whitelist plugin
-
-	4. Click "Add"
-
-	![cordova-plugin-whitelist](<media/cordova-5-7.png>)	
-
-2. Update config.xml:
 	1. Right-click on config.xml and select "View Code"
+
+	2. Add the following XML elements under the &lt;widget&gt; element:
+
+	~~~~~~~~~~~~~~~~~~~~~~~
+	<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
+	~~~~~~~~~~~~~~~~~~~~~~~
+	
+	The next time you build in Visual Studio, VS will install this version of the whitelist plugin. You can update the version number as needed.
+
+2. Update config.xml with the allow-intent or allow-navigation elements as needed:
+	1. If you have not already, right-click on config.xml and select "View Code"
 
 	2. Add the following XML elements under the &lt;widget&gt; element:
 	
@@ -117,7 +117,7 @@ When you upgrade a project to Cordova 5.0.0+, you will want to take the followin
 		
 	2. Customize the CSP policy to meet your needs. See [Introduction to Cordova 5 Security](./cordova-5-security.md) for details.
 	
-	3. You may wish to use the Crosswalk WebView plugin when targeting earlier versions of Android as CSP support was not introduced until Android 4.4. See [Using Crosswalk to Reduce Android Fragmentation](./cordova-5-crosswalk.md) for additional tips on using Crosswalk.
+	3. You may wish to use the Crosswalk WebView plugin when targeting earlier versions of Android as CSP support was not introduced until Android 4.4. See [the section on Crosswalk later in this article](#crosswalk) for additional tips on using Crosswalk.
 	
 <a name="npm"></a>
 ##Primary Cordova Plugin Repository is Now Npm
@@ -205,27 +205,38 @@ An exciting new development in the Cordova Android platform is the support for w
 
 There is now a [Cordova Crosswalk plugin](https://www.npmjs.com/package/cordova-plugin-crosswalk-webview/) that takes advantage of the new pluggable WebView features in Cordova 5.0.0+ (and the Cordova Android 4.0.0 platform it uses) and makes it simple to add into your project.
 
-*Note: Because using the Crosswalk plugin does slow down build times fairly significantly given its size, we recommend developers start out building apps with the stock Android WebView on a recent device or emulator (Android 4.4+). You can then add the Crosswalk plugin later in your development cycle and make the necessary adjustments.*
+*Note: Because using the Crosswalk plugin does slow down build times given its size, we recommend developers start out building apps with the stock Android WebView on a recent device or emulator (Android 4.4+). You can then add the Crosswalk plugin later in your development cycle and make the necessary adjustments.*
 
 ###Installing the Crosswalk Plugin from VS
-To use it from Visual Studio, follow these steps:
+To use the Crosswalk WebView plugin from Visual Studio, follow these steps:
+	
+1. Right-click on config.xml and select "View Code"
+	
+2. Add the following XML elements under the &lt;widget&gt; element:
 
-1. Install VS 2015 RTM or later (not RC)
-2. Open the config.xml designer by double clicking on config.xml
-3. Verify you have set the Cordova version to 5.1.1 or higher under the "Platforms" tab.
-4. Go to "Plugins" tab
-5. Select "Crosswalk"
-6. Click "Add"
+	~~~~~~~~~~~~~~~~~~~~~~
+	<vs:plugin name="cordova-plugin-crosswalk-webview" version="1.2.0" />
+	~~~~~~~~~~~~~~~~~~~~~~
 
 The next time you build, your app will be running in the Crosswalk WebView. Note that the first build for Android in particular will take a bit given the plugin does some dynamic acquisition.
 
-See [Using Crosswalk to Reduce Android Fragmentation](./cordova-5-crosswalk.md) for additional tips on using Crosswalk.
+###Tips on Using the Crosswalk
+If you are using the standard Android Emulator, be sure to check the **Use Host CPU** option in the AVD you create and have up to date graphics drivers installed on your system or the app will crash due to Crosswalk's support of WebGL.
+
+![Use Host GPU](<media/cordova-5-1.png>)
+
+Finally, if you encounter a "Could not create the Java Virtual Machine" error, add the following environment variable to your system and restart VS to bump up Java's heap memory:
+
+~~~~~~~~~~~~~~~~~~~~~~
+_JAVA_OPTIONS=-Xmx512M
+~~~~~~~~~~~~~~~~~~~~~~
 
 <a name="win10"></a>
 ##Windows 10 Support
 Historically, Windows and Windows Phone 8.1 have had a number of compatibility challenges with Cordova apps due to underlying platform differences around security rules. A [JavaScript compatibility](https://github.com/MsopenTech/winstore-jscompat) framework was released to help alleviate some of these issues on 8.1, but starting with **Cordova 5.1.1**, you can now build Windows 10 apps. In addition to supporting the new Windows Universal platform that allows a single code base and app package to be used across a number of different devices, Windows 10 also brings a number of significant improvments to Apache Cordova users.  
 
 In particular:
+
 1. Elimination of the existing dynamic content restrictions in Windows 8.0 and 8.1.
 2. Cordova plugin support for external hosted content through the use of the same &lt;allow-navigation&gt; element used by Android and iOS.
 3. Support for the powerful Content Security Policy (CSP) that is also now reccomended for use with the Android and iOS Cordova platforms.  See [this article for more details](./cordova-5-security.md).
@@ -233,13 +244,11 @@ In particular:
 	1. Remote mode: The default, flexible security mode that only has a hand full of store submission restrictions
 	2. Local mode: A more secure mode that adds additional protections but disables hosted content and inline script
 
-These improvements mean that 
+These improvements mean that the Windows platform now has a flexible model compatible with Cordova platforms like Android and iOS while still providing you the tools you need to secure your app. Check out the [Cordova Windows 10](http://go.microsoft.com/fwlink/?LinkID=617471) documentation for more information on new features.
 
-Check out the [Cordova Windows 10](http://cordova.apache.org/docs/en/5.1.1/guide_platforms_win8_win10-support.md.html#Cordova%20for%20Windows%2010) documentation for more information on new features.
+You can follow these steps to use Cordova Windows 10 with Visual Studio:
 
-Follow these steps to use Cordova Windows 10 with Visual Studio:
-
-1. Install the [Windows 10 Tools for Visual Studio](http://www.microsoft.com) if you have not already.
+1. Install the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkID=617471) if you have not already.
 
 2. In your project, open the config.xml designer by double clicking on config.xml
 
@@ -253,11 +262,10 @@ That's it! Underneath the convers Cordova will switch from an 8.1 project to a n
 
 ## More Information
 * [Learn about security features in Apache Cordova 5](./cordova-5-security.md)
-* [Learn about the Crosswalk WebView](./cordova-5-crosswalk.md)
 * [Read tutorials and learn about tips, tricks, and known issues](../Readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
