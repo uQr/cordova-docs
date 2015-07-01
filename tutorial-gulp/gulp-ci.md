@@ -31,7 +31,7 @@ To see the example above in action you will need to install some additional npm 
 {
     "devDependencies": {
         "gulp": "latest",
-        "cordova-lib": "4.3.0"
+        "cordova-lib": "4.3.1"
     }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +104,7 @@ gulp.task("default", function () {
 
 Underneath the covers, the script will do the following:
 
-1.  First, it check **taco.json** to see if a Cordova version is specified. If not, it assumes you want Cordova 4.3.0.
+1.  First, it check **taco.json** to see if a Cordova version is specified. If not, it assumes you want Cordova 5.1.1.
 
 2.  Next, it checks to see if this version of cordova-lib has already been installed at a location set in the **CORDOVA\_CACHE** environment variable. If no CORDOVA_CACHE environment variable is set, the cache location will default to %APPDATA%\\cordova-cache on Windows and ~/.cordova-cache on OSX. You can also set this location programmatically using the module's configure method. 
 
@@ -129,10 +129,10 @@ var gulp = require("gulp"),
 var winPlatforms = ["android", "windows", "wp8"],
 	osxPlatforms = ["ios"],
 	buildArgs = {
-		android: ["--release", "--ant"],
+		android: ["--release", "--device"],
 		ios: ["--release", "--device"],
-		windows: ["--release"],
-		wp8: ["--release"]
+		windows: ["--release", "--device"],
+		wp8: ["--release", "--device"]
 	}
 
 // "Darwin" is the platform name returned for OSX.
@@ -141,7 +141,7 @@ var platformsToBuild = process.platform == "darwin" ? osxPlatforms : winPlatform
 gulp.task("default", ["package"], function () {
 	// Copy results to bin folder
 	gulp.src("platforms/android/ant-build/*.apk").pipe(gulp.dest("bin/release/android"));
-	gulp.src("platforms/android/build/*.apk").pipe(gulp.dest("bin/release/android"));
+	gulp.src("platforms/android/bin/*.apk").pipe(gulp.dest("bin/release/android"));
 	gulp.src("platforms/windows/AppPackages/**/*").pipe(gulp.dest("bin/release/windows/AppPackages"));
 	gulp.src("platforms/wp8/bin/Release/*.xap").pipe(gulp.dest("bin/release/wp8"));
 	gulp.src("platforms/ios/build/device/*.ipa").pipe(gulp.dest("bin/release/ios"));
