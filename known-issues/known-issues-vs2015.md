@@ -103,6 +103,18 @@ Lastly, you should add the following XML elements to your config.xml to ensure y
   </platform>
   ~~~~~~~~~~~~~~~~~~~~~~
 
+##Visual Studio 2015 RTM
+----------
+**vs-ms-remote reports a 404 error when using VS 2015 RTM or later:** VS 2015 RTM and up uses a new "remotebuild" agent instead of vs-mda-remote. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
+
+----------
+**iOS Simulator does not work when using the remotebuild agent and VS 2015 RTM:** You need to install version 3.1.1 of the ios-sim node module. Run "npm install -g ios-sim@3.1.1" from the Terminal app in OSX to install. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
+
+----------
+**iPhone 4S Simulator appears when selecting iPad or other device when using the remotebuild agent and VS 2015 RTM:** You need to install version 3.1.1 of the ios-sim node module. Run "npm install -g ios-sim@3.1.1" from the Terminal app in OSX to install. See [remotebuild installation instructions ](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
+
+**Existing vs-mda-remote settings in Visual Studio do not work with the remotebuild agent:** You will need to generate and use a new PIN when setting up Visual Studio to connect to the remotebuild agent for the first time. If you are not using secure mode, turn secure mode on and then off again to cause VS to reinitalize. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
+
 ##Visual Studio 2015 RC
 ----------
 **VS 2015 RC and Cordova 5.x.x / Cordova Android 4.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Android related issues that are specific to Cordova 5.0.0 and up.
@@ -118,6 +130,7 @@ To install updated plugins, follow [this proceedure to install a npm sourced plu
 **Building a Cordova project from source control results in Cordova plugin APIs not returning results:** The following four json files can cause this to occur if added to source control.
 
 - plugins/android.json
+- plugins/ios.json
 - plugins/windows.json
 - plugins/remote_ios.json
 - plugins/wp8.json.

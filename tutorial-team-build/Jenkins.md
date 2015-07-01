@@ -1,11 +1,12 @@
 #Using Tools for Apache Cordova with the Jenkins CI System
-**This tutorial is part of a [series of tutorials](http://go.microsoft.com/fwlink/?LinkID=533743) on building Visual Studio 2015 Tools for Apache Cordova projects in a Team / CI environment and does not apply to Visual Studio 2013 CTPs.**
+This tutorial is part of a [series of tutorials](./README.md) on building Visual Studio 2015 Tools for Apache Cordova projects in a Team / CI environment.
 
+##Background
 [Jenkins](http://go.microsoft.com/fwlink/?LinkID=613695) is a hugely popular CI server with a large install base so using it to build your Cordova project may be the way to go if you already have it installed and running in your environment. Fortunatley Tools for Apache Cordova is designed to work with a number of different team build systems since the projects it creates are standard [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects. 
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and Cordova CLI are Node.js based which makes the two highly complementary technologies. For these reasons, this tutorial will focus on the use Gulp rather than MSBuild as the primary build language for Cordova apps when using Jenkins.
 
-**Troubleshooting Tip: Be aware that a bug in VS templates in VS 2015 RC included four json files that can cause issues if added to source control: plugins/android.json, plugins/remote_ios.json, plugins/windows.json, and plugins/wp8.json.** Adding these files to source control can result in a build that appears to succeed but is missing plugin native code. They should only be included if the "platforms" folder is also checked in which is not recommended. Simply remove these files from source control to resolve the issue.
+**Troubleshooting Tip:** Be aware that we recommend against adding the "platforms" folder or the following json files in the "plugins" folder into source control: android.json, ios.json, remote_ios.json, windows.json, and wp8.json. See "What to Add to Source Control" in the [general team build tutorial](./README.md) for additional details.
 
 ##Initial Setup
 Since the build process we will describe here is not directly dependent on MSBuild or Visual Studio, you have two options for installing pre-requisites on Windows:
@@ -124,9 +125,9 @@ Next you will need to set the following environment variables if they have not a
 
 | **Variable**       | **Required For**                         | **Purpose**                              | **Default Location (Visual Studio 2015)** |
 |:-------------------|:-----------------------------------------|:-----------------------------------------|:------------------------------------------|
-| **ANDROID\_HOME**  | Android                                  | Location of the Android SDK              | %PROGRAMFILES(x86)%\\Android\\android-sdk |
-|**JAVA\_HOME**     | Android                                  | Location of Java                         | %PROGRAMFILES(x86)%\\Java\\jdk1.7.0\_55 |
-| **ANT\_HOME**      | Android when building using Ant (not Gradle) | Location of Ant                          | %PROGRAMFILES(x86)%\\Microsoft Visual Studio 14.0\\Apps\\apache-ant-1.9.3 |
+| **ANDROID\_HOME**  | Android                                  | Location of the Android SDK              | C:\\Program Files (x86)\\Android\\android-sdk |
+|**JAVA\_HOME**     | Android                                  | Location of Java                         | C:\\Program Files (x86)\\Java\\jdk1.7.0\_55 |
+| **ANT\_HOME**      | Android when building using Ant (not Gradle) | Location of Ant                          | C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Apps\\apache-ant-1.9.3 |
 | **GRADLE\_USER\_HOME**      | Optional | Overrides the default location Gradle build system dependencies should be installed when building Android using Cordova 5.0.0+ | If not specified, uses %HOME%\\.gradle on Windows or ~/.gradle on OSX |
 | **CORDOVA\_CACHE** | Optional                                 | Overrides the default location used by the [sample build script](http://go.microsoft.com/fwlink/?LinkID=533736) to cache installs of multiple versions of Cordova. | If not specified, uses %APPDATA%\\cordova-cache on Windows and ~/.cordova-cache on OSX |
 

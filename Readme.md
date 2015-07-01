@@ -1,12 +1,20 @@
 # Visual Studio Tools for Apache Cordova
-This repository contains a set of documents and tutorials for the **Visual Studio 2015 RC** release of **[Tools for Apache Cordova](http://aka.ms/cordova).**
+This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).**
 
-**Note that this documentation does not apply to Visual Studio 2013 CTPs.**
+**Note that, with the exception of known issues, this documentation does not apply to Visual Studio 2013 CTPs.**
 
 <a name="tutorials"></a>
 ## Tutorials
+1. [Using Apache Cordova 5](./tutorial-cordova-5)
+	1. [An Introduction to Cordova 5 Security](./tutorial-cordova-5/cordova-5-security.md)
 1. [Using Gulp with your Cordova projects](./tutorial-gulp)
+	1. [Using Gulp to Build Cordova Projects](./tutorial-gulp/gulp-ci.md)
+	1. [Invoking Gulp Tasks During a Cordova Build and the VS Task Runner Explorer](./tutorial-gulp/gulp-task-runner-explorer.md)
+	1. [Compiling TypeScript wit Gulp](./tutorial-gulp/gulp-typescript.md)
 1. [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build)
+	1. [Getting Start with Cordova & TFS 2015 or Visual Studio Online](./tutorial-team-build/TFS2015.md)
+	1. [Getting Start with Cordova & TFS 2013](./tutorial-team-build/TFS2013.md)
+	1. [Getting Start with Cordova & Jenkins CI](./tutorial-team-build/Jenkins.md)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
 
 <a name="tips"></a>
@@ -29,7 +37,6 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. Visual Studio Release Specific
 	1. [Visual Studio 2015](./known-issues/known-issues-vs2015.md)
 	1. [CTP 3.1 / Visual Studio 2013](./known-issues/known-issues-vs2013.md)
-
 
 ## Help us improve our documentation
 Help us improve out docuementaiton by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
