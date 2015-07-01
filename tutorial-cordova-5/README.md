@@ -220,15 +220,23 @@ To use the Crosswalk WebView plugin from Visual Studio, follow these steps:
 
 The next time you build, your app will be running in the Crosswalk WebView. Note that the first build for Android in particular will take a bit given the plugin does some dynamic acquisition.
 
+###Tips on Using the Crosswalk
 If you are using the standard Android Emulator, be sure to check the **Use Host CPU** option in the AVD you create and have up to date graphics drivers installed on your system or the app will crash due to Crosswalk's support of WebGL.
 
 ![Use Host GPU](<media/cordova-5-1.png>)
+
+Finally, if you encounter a "Could not create the Java Virtual Machine" error, add the following environment variable to your system and restart VS to bump up Java's heap memory:
+
+~~~~~~~~~~~~~~~~~~~~~~
+_JAVA_OPTIONS=-Xmx512M
+~~~~~~~~~~~~~~~~~~~~~~
 
 <a name="win10"></a>
 ##Windows 10 Support
 Historically, Windows and Windows Phone 8.1 have had a number of compatibility challenges with Cordova apps due to underlying platform differences around security rules. A [JavaScript compatibility](https://github.com/MsopenTech/winstore-jscompat) framework was released to help alleviate some of these issues on 8.1, but starting with **Cordova 5.1.1**, you can now build Windows 10 apps. In addition to supporting the new Windows Universal platform that allows a single code base and app package to be used across a number of different devices, Windows 10 also brings a number of significant improvments to Apache Cordova users.  
 
 In particular:
+
 1. Elimination of the existing dynamic content restrictions in Windows 8.0 and 8.1.
 2. Cordova plugin support for external hosted content through the use of the same &lt;allow-navigation&gt; element used by Android and iOS.
 3. Support for the powerful Content Security Policy (CSP) that is also now reccomended for use with the Android and iOS Cordova platforms.  See [this article for more details](./cordova-5-security.md).
@@ -236,13 +244,11 @@ In particular:
 	1. Remote mode: The default, flexible security mode that only has a hand full of store submission restrictions
 	2. Local mode: A more secure mode that adds additional protections but disables hosted content and inline script
 
-These improvements mean that Windows 10 apps provide you with a flexible, yet secure platform that is more compatible with their Android and iOS counterparts in Cordova than ever before.
+These improvements mean that the Windows platform now has a flexible model compatible with Cordova platforms like Android and iOS while still providing you the tools you need to secure your app. Check out the [Cordova Windows 10](http://go.microsoft.com/fwlink/?LinkID=617471) documentation for more information on new features.
 
-Check out the [Cordova Windows 10](http://cordova.apache.org/docs/en/5.1.1/guide_platforms_win8_win10-support.md.html#Cordova%20for%20Windows%2010) documentation for more information on new features.
+You can follow these steps to use Cordova Windows 10 with Visual Studio:
 
-Follow these steps to use Cordova Windows 10 with Visual Studio:
-
-1. Install the [Windows 10 Tools for Visual Studio](http://www.microsoft.com) if you have not already.
+1. Install the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkID=617471) if you have not already.
 
 2. In your project, open the config.xml designer by double clicking on config.xml
 
