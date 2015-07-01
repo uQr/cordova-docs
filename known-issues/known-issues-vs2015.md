@@ -30,76 +30,78 @@ If you have errors, you may need to update file references to reflect the new fo
 
 Lastly, you should add the following XML elements to your config.xml to ensure your icons and splash screens are picked up by right clicking on the file and selecting "View Code":
 
-    <platformname="android">
-        <iconsrc="res/icons/android/icon-36-ldpi.png"density="ldpi" />
-        <iconsrc="res/icons/android/icon-48-mdpi.png"density="mdpi" />
-        <iconsrc="res/icons/android/icon-72-hdpi.png"density="hdpi" />
-        <iconsrc="res/icons/android/icon-96-xhdpi.png"density="xhdpi" />
-      </platform>
-      <platformname="ios">
-        <iconsrc="res/icons/ios/icon-60-3x.png"width="180"height="180" />
-        <iconsrc="res/icons/ios/icon-60.png"width="60"height="60" />
-        <iconsrc="res/icons/ios/icon-60-2x.png"width="120"height="120" />
-        <iconsrc="res/icons/ios/icon-76.png"width="76"height="76" />
-        <iconsrc="res/icons/ios/icon-76-2x.png"width="152"height="152" />
-        <iconsrc="res/icons/ios/icon-40.png"width="40"height="40" />
-        <iconsrc="res/icons/ios/icon-40-2x.png"width="80"height="80" />
-        <iconsrc="res/icons/ios/icon-57.png"width="57"height="57" />
-        <iconsrc="res/icons/ios/icon-57-2x.png"width="114"height="114" />
-        <iconsrc="res/icons/ios/icon-72.png"width="72"height="72" />
-        <iconsrc="res/icons/ios/icon-72-2x.png"width="144"height="144" />
-        <iconsrc="res/icons/ios/icon-small.png"width="29"height="29" />
-        <iconsrc="res/icons/ios/icon-small-2x.png"width="58"height="58" />
-        <iconsrc="res/icons/ios/icon-50.png"width="50"height="50" />
-        <iconsrc="res/icons/ios/icon-50-2x.png"width="100"height="100" />
-      </platform>
-      <platformname="windows">
-        <iconsrc="res/icons/windows/Square150x150Logo.scale-100.png"width="150"height="150" />
-        <iconsrc="res/icons/windows/Square150x150Logo.scale-240.png"width="360"height="360" />
-        <iconsrc="res/icons/windows/Square30x30Logo.scale-100.png"width="30"height="30" />
-        <iconsrc="res/icons/windows/Square310x310Logo.scale-100.png"width=""height="" />
-        <iconsrc="res/icons/windows/Square44x44Logo.scale-240.png"width="106"height="106" />
-        <iconsrc="res/icons/windows/Square70x70Logo.scale-100.png"width="70"height="70" />
-        <iconsrc="res/icons/windows/Square71x71Logo.scale-240.png"width="170"height="170" />
-        <iconsrc="res/icons/windows/StoreLogo.scale-100.png"width="50"height="50" />
-        <iconsrc="res/icons/windows/StoreLogo.scale-240.png"width="120"height="120" />
-        <iconsrc="res/icons/windows/Wide310x150Logo.scale-100.png"width="310"height="150" />
-        <iconsrc="res/icons/windows/Wide310x150Logo.scale-240.png"width="744"height="360" />
-      </platform>
-      <platformname="wp8">
-        <iconsrc="res/icons/wp8/ApplicationIcon.png"width="62"height="62" />
-        <iconsrc="res/icons/wp8/Background.png"width="173"height="173" />
-      </platform>
-      <platformname="android">
-        <splashsrc="res/screens/android/screen-hdpi-landscape.png"density="land-hdpi" />
-        <splashsrc="res/screens/android/screen-ldpi-landscape.png"density="land-ldpi" />
-        <splashsrc="res/screens/android/screen-mdpi-landscape.png"density="land-mdpi" />
-        <splashsrc="res/screens/android/screen-xhdpi-landscape.png"density="land-xhdpi" />
-        <splashsrc="res/screens/android/screen-hdpi-portrait.png"density="port-hdpi" />
-        <splashsrc="res/screens/android/screen-ldpi-portrait.png"density="port-ldpi" />
-        <splashsrc="res/screens/android/screen-mdpi-portrait.png"density="port-mdpi" />
-        <splashsrc="res/screens/android/screen-xhdpi-portrait.png"density="port-xhdpi" />
-      </platform>
-      <platformname="ios">
-        <splashsrc="res/screens/ios/screen-iphone-portrait.png"width="320"height="480" />
-        <splashsrc="res/screens/ios/screen-iphone-portrait-2x.png"width="640"height="960" />
-        <splashsrc="res/screens/ios/screen-ipad-portrait.png"width="768"height="1024" />
-        <splashsrc="res/screens/ios/screen-ipad-portrait-2x.png"width="1536"height="2048" />
-        <splashsrc="res/screens/ios/screen-ipad-landscape.png"width="1024"height="768" />
-        <splashsrc="res/screens/ios/screen-ipad-landscape-2x.png"width="2048"height="1536" />
-        <splashsrc="res/screens/ios/screen-iphone-568h-2x.png"width="640"height="1136" />
-        <splashsrc="res/screens/ios/screen-iphone-portrait-667h.png"width="750"height="1334" />
-        <splashsrc="res/screens/ios/screen-iphone-portrait-736h.png"width="1242"height="2208" />
-        <splashsrc="res/screens/ios/screen-iphone-landscape-736h.png"width="2208"height="1242" />
-      </platform>
-      <platformname="windows">
-        <splashsrc="res/screens/windows/SplashScreen.scale-100.png"width="620"height="300" />
-        <splashsrc="res/screens/windows/SplashScreen.scale-240.png"width="1152"height="1920" />
-        <splashsrc="res/screens/windows/SplashScreenPhone.scale-240.png"width="1152"height="1920" />
-      </platform>
-      <platformname="wp8">
-        <splashsrc="res/screens/wp8/SplashScreenImage.jpg"width="480"height="800" />
-      </platform>
+  ~~~~~~~~~~~~~~~~~~~~~~
+  <platform name="android">
+    <icon src="res/icons/android/icon-36-ldpi.png" density="ldpi" />
+    <icon src="res/icons/android/icon-48-mdpi.png" density="mdpi" />
+    <icon src="res/icons/android/icon-72-hdpi.png" density="hdpi" />
+    <icon src="res/icons/android/icon-96-xhdpi.png" density="xhdpi" />
+  </platform>
+  <platform name="ios">
+    <icon src="res/icons/ios/icon-60-3x.png" width="180" height="180" />
+    <icon src="res/icons/ios/icon-60.png" width="60" height="60" />
+    <icon src="res/icons/ios/icon-60-2x.png" width="120" height="120" />
+    <icon src="res/icons/ios/icon-76.png" width="76" height="76" />
+    <icon src="res/icons/ios/icon-76-2x.png" width="152" height="152" />
+    <icon src="res/icons/ios/icon-40.png" width="40" height="40" />
+    <icon src="res/icons/ios/icon-40-2x.png" width="80" height="80" />
+    <icon src="res/icons/ios/icon-57.png" width="57" height="57" />
+    <icon src="res/icons/ios/icon-57-2x.png" width="114" height="114" />
+    <icon src="res/icons/ios/icon-72.png" width="72" height="72" />
+    <icon src="res/icons/ios/icon-72-2x.png" width="144" height="144" />
+    <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
+    <icon src="res/icons/ios/icon-small-2x.png" width="58" height="58" />
+    <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
+    <icon src="res/icons/ios/icon-50-2x.png" width="100" height="100" />
+  </platform>
+  <platform name="windows">
+    <icon src="res/icons/windows/Square150x150Logo.scale-100.png" width="150" height="150" />
+    <icon src="res/icons/windows/Square150x150Logo.scale-240.png" width="360" height="360" />
+    <icon src="res/icons/windows/Square30x30Logo.scale-100.png" width="30" height="30" />
+    <icon src="res/icons/windows/Square310x310Logo.scale-100.png" width="310" height="310" />
+    <icon src="res/icons/windows/Square44x44Logo.scale-240.png" width="106" height="106" />
+    <icon src="res/icons/windows/Square70x70Logo.scale-100.png" width="70" height="70" />
+    <icon src="res/icons/windows/Square71x71Logo.scale-240.png" width="170" height="170" />
+    <icon src="res/icons/windows/StoreLogo.scale-100.png" width="50" height="50" />
+    <icon src="res/icons/windows/StoreLogo.scale-240.png" width="120" height="120" />
+    <icon src="res/icons/windows/Wide310x150Logo.scale-100.png" width="310" height="150" />
+    <icon src="res/icons/windows/Wide310x150Logo.scale-240.png" width="744" height="360" />
+  </platform>
+  <platform name="wp8">
+    <icon src="res/icons/wp8/ApplicationIcon.png" width="62" height="62" />
+    <icon src="res/icons/wp8/Background.png" width="173" height="173" />
+  </platform>
+  <platform name="android">
+    <splash src="res/screens/android/screen-hdpi-landscape.png" density="land-hdpi"/>
+    <splash src="res/screens/android/screen-ldpi-landscape.png" density="land-ldpi"/>
+    <splash src="res/screens/android/screen-mdpi-landscape.png" density="land-mdpi"/>
+    <splash src="res/screens/android/screen-xhdpi-landscape.png" density="land-xhdpi"/>
+    <splash src="res/screens/android/screen-hdpi-portrait.png" density="port-hdpi"/>
+    <splash src="res/screens/android/screen-ldpi-portrait.png" density="port-ldpi"/>
+    <splash src="res/screens/android/screen-mdpi-portrait.png" density="port-mdpi"/>
+    <splash src="res/screens/android/screen-xhdpi-portrait.png" density="port-xhdpi"/>
+  </platform>
+  <platform name="ios">
+    <splash src="res/screens/ios/screen-iphone-portrait.png" width="320" height="480"/>
+    <splash src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" height="960"/>
+    <splash src="res/screens/ios/screen-ipad-portrait.png" width="768" height="1024"/>
+    <splash src="res/screens/ios/screen-ipad-portrait-2x.png" width="1536" height="2048"/>
+    <splash src="res/screens/ios/screen-ipad-landscape.png" width="1024" height="768"/>
+    <splash src="res/screens/ios/screen-ipad-landscape-2x.png" width="2048" height="1536"/>
+    <splash src="res/screens/ios/screen-iphone-568h-2x.png" width="640" height="1136"/>
+    <splash src="res/screens/ios/screen-iphone-portrait-667h.png" width="750" height="1334"/>
+    <splash src="res/screens/ios/screen-iphone-portrait-736h.png" width="1242" height="2208"/>
+    <splash src="res/screens/ios/screen-iphone-landscape-736h.png" width="2208" height="1242"/>
+  </platform>
+  <platform name="windows">
+    <splash src="res/screens/windows/SplashScreen.scale-100.png" width="620" height="300"/>
+    <splash src="res/screens/windows/SplashScreen.scale-240.png" width="1152" height="1920"/>
+    <splash src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" height="1920"/>
+  </platform>
+  <platform name="wp8">
+    <splash src="res/screens/wp8/SplashScreenImage.jpg" width="480" height="800"/>
+  </platform>
+  ~~~~~~~~~~~~~~~~~~~~~~
 
 ##Visual Studio 2015 RC
 ----------
