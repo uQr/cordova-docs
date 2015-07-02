@@ -230,7 +230,7 @@ The OSX version of the build is similar but adds one additional requirement: Unl
 	**Trouble Shooting Tip:** See ["Troubleshooting Tips for Building on OSX" in the general CI tutorial](http://go.microsoft.com/fwlink/?LinkID=533743) for tips on resolving common build errors that can occur when building Cordova projects on that operating system.
 
 ## More Information
-* [Learn about other Team Build / CI options](README.md)
+* [Learn about other Team Build / CI options](./README.md)
 * [Read tutorials and learn about tips, tricks, and known issues](../Readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)

@@ -11,10 +11,10 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 	1. [Using Gulp to Build Cordova Projects](./tutorial-gulp/gulp-ci.md)
 	1. [Invoking Gulp Tasks During a Cordova Build and the VS Task Runner Explorer](./tutorial-gulp/gulp-task-runner-explorer.md)
 	1. [Compiling TypeScript wit Gulp](./tutorial-gulp/gulp-typescript.md)
-1. [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build)
-	1. [Getting Start with Cordova & TFS 2015 or Visual Studio Online](./tutorial-team-build/TFS2015.md)
-	1. [Getting Start with Cordova & TFS 2013](./tutorial-team-build/TFS2013.md)
-	1. [Getting Start with Cordova & Jenkins CI](./tutorial-team-build/Jenkins.md)
+1. [Building Cordova Apps in a Team / Continuous Integration (CI) Environment](./tutorial-team-build)
+	1. [Getting Started with Cordova & TFS 2015 or Visual Studio Online](./tutorial-team-build/TFS2015.md)
+	1. [Getting Started with Cordova & TFS 2013](./tutorial-team-build/TFS2013.md)
+	1. [Getting Started with Cordova & Jenkins CI](./tutorial-team-build/Jenkins.md)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
 
 <a name="tips"></a>
