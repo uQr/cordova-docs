@@ -1,4 +1,4 @@
-#Building Cordova Apps in a Team / Continuous Integration Environment
+#Building Cordova Apps in a Team / Continuous Integration (CI) Environment
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 With the release of Visual Studio 2015, you now have a number of options for how you can integrate Cordova apps with your favorite team / continous integration (CI) server thanks to the fact that projects created in Visual Studio are standard [Apache Cordova Command Line Interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects. In this tutorial, we will cover a few different approaches for building Cordova projects outside of Visual Studio.
@@ -429,7 +429,7 @@ There are a few relativley common issues when building a Cordova app on OSX rela
 
    To resolve this problem you have two options:
 	1.  Don't check in the contents of the "platforms" folder into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
-	2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process. There is also a [**Cordova hook based version of this script**](https://github.com/Microsoft/cordova-docs/tree/master/tips-and-workarounds/ios/osx-set-execute) available in the tips and workarounds section.
+	2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process. There is also a [**Cordova hook based version of this script**](../tips-and-workarounds/ios/osx-set-execute) available in the tips and workarounds section.
 	    1.  Create a shell script called "set-execute.sh" with the following contents:
 
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
