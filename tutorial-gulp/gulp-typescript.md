@@ -45,7 +45,7 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     });
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
-    You could also instead use a tsconfig.json file (like the default VS template) and add the following instead:
+    You could also use a tsconfig.json file (like the default VS template) and add the following instead:
     
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     var ts = require("gulp-typescript"),
