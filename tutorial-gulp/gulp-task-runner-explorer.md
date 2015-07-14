@@ -24,7 +24,11 @@ Next, create a [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) fil
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Visual Studio will **automatically** execute the following command for you on save if you're editing package.json in VS, but if you're updating package.json outside of VS, type the following to install whatever you have added to package.json:
+You can install these dependencies in Visual Studio by right-clicking on the Dependencies node in the Solution Explorer and selecting "Restore Packages".
+
+![Restore Packages](<media/gulp-4.png>)
+
+If you're updating package.json outside of VS, type the following to install whatever you have added to package.json:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 npm install
