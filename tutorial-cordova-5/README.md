@@ -137,16 +137,14 @@ As a result, core plugins like Camera have changed from [org.apache.cordova.came
 You can find running list of [old verses new plugin IDs in this location](http://go.microsoft.com/fwlink/?LinkID=617674). You will be informed of the new ID whenever you add a plugin from this list when either using the command line or the config.xml designer. The config.xml designer will automatically add these new IDs for Cordova 5.0.0+ and the old IDs for older versions of Cordova that do not support them.
 
 ###Cordova Plugin Registry
-Unfortunately the community is in a state of flux when it comes to a "source of truth" for all available Cordova plugins. 
+As of 7/14/2015, plugins.cordova.io now has two registry sections:
 
-- For the time being, [plugins.cordova.io](http://plugins.cordova.io) **does not contain npm sourced plugins.** 
-- For npm sourced plugins, you should instead search npm using the [ecosystem:cordova](http://go.microsoft.com/fwlink/?LinkID=617675) tag.
+- For the time being, the landing page of [plugins.cordova.io](http://go.microsoft.com/fwlink/?LinkID=618599) **does not contain npm sourced plugins** since these will work with any version of Cordova. 
+- However, npm sourced plugins can be found on the **new [npm registry section of plugins.cordova.io](http://go.microsoft.com/fwlink/?LinkID=618600)** or you can search npm iself using the [ecosystem:cordova](http://go.microsoft.com/fwlink/?LinkID=617675) tag.
 
-	![Custom Local Plugin](<media/cordova-5-6.png>)
+	![Npm Plugin Registry](<media/cordova-5-9.png>)
 
-Both sets of plugins can be used with Cordova 5.0.0+ so in the short term you should search in both locations for plugins. Plugins found in npm are the most likely to work without issue with Cordova 5.0.0 and higher and may or may not work with earlier versions of Cordova. Npm will be the eventual source of truth, but things are a bit messy during this transition period.
-
-We are actively working with the community on the best way to merge some of the functionality of the existing plugins.cordova.io site with the reliability and improvements npm provides.
+Both sets of plugins can be used with Cordova 5.0.0+ so in the short term you may need to search in both locations for plugins. Plugins found in npm are the most likely to work without issue with Cordova 5.0.0 and higher and may or may not work with earlier versions of Cordova. Npm will be the eventual source of truth, but things are still in a transition period.
 
 <a name="no-npm-3.x"></a>
 ###Cordova 3.x and 4.x Don't Support Npm as a Plugin Source
