@@ -10,12 +10,16 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. [Using Gulp with your Cordova projects](./tutorial-gulp)
 	1. [Using Gulp to Build Cordova Projects](./tutorial-gulp/gulp-ci.md)
 	1. [Invoking Gulp Tasks During a Cordova Build and the VS Task Runner Explorer](./tutorial-gulp/gulp-task-runner-explorer.md)
-	1. [Compiling TypeScript wit Gulp](./tutorial-gulp/gulp-typescript.md)
+	1. [Compiling TypeScript with Gulp](./tutorial-gulp/gulp-typescript.md)
 1. [Building Cordova Apps in a Team / Continuous Integration (CI) Environment](./tutorial-team-build)
 	1. [Getting Started with Cordova & TFS 2015 or Visual Studio Online](./tutorial-team-build/TFS2015.md)
 	1. [Getting Started with Cordova & TFS 2013](./tutorial-team-build/TFS2013.md)
 	1. [Getting Started with Cordova & Jenkins CI](./tutorial-team-build/Jenkins.md)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
+1. [Build and Simulate iOS in the Cloud](http://go.microsoft.com/fwlink/?LinkID=618476) (MSDN)
+1. [Build a Cordova app for iOS using Parallels](http://go.microsoft.com/fwlink/?LinkID=618477) (MSDN)
+1. [Run the Android Emulator on OSX when using Windows in Parallels](http://go.microsoft.com/fwlink/?LinkID=618478) (MSDN)
+1. [Convert a Cordova Project to a PhoneGap Project](http://go.microsoft.com/fwlink/?LinkID=618479) (MSDN)
 
 <a name="tips"></a>
 ## Tips & Workarounds

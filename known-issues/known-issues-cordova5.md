@@ -22,10 +22,15 @@ line or by adding this XML element to config.xml (see [this article for more det
     ~~~~~~~~~~~~~~~~~    
 
 ----------
-**Ripple throws error when starting up Cordova:** Ripple does not function properly in Cordova 5.0.0 due to a newly introduced validation check. This problem was fixed in Cordova 5.1.1.
+**Error when adding plugin using Git URI with Cordova 5.1.1:** Cordova 5.1.1 has a bug that can cause plugins installed from a Git repo to fail with the error **Error: EXDEV, cross-device link not permitted** if the project is on a different drive than your temp folder. 
+
+See [tips and workarounds](../tips-and-workarounds/general/README.md#plugin-xml) for information on adding plugins not in the config designer from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when installing or you can instead download a copy, unzip it, and add the plugin from the filesystem. 
 
 ----------
-**Missing Android SDK 22:** The Android platform in Cordova 5.0.0 requires Android SDK API Level 22 which is not pre-installed by Visual Studio. Install the SDK using the Android SDK manager.
+**Missing Android SDK 22:** The Android platform in Cordova 5.0.0 requires Android SDK API Level 22 which may not be installed on your system. Install the SDK using the Android SDK manager.
+
+----------
+**Ripple throws error when starting up Cordova 5.0.0:** Ripple does not function properly in Cordova 5.0.0 due to a newly introduced validation check. This problem was fixed in Cordova 5.1.1.
 
 ##Apache Cordova 5.x.x and Visual Studio 2015 RC
 ----------
