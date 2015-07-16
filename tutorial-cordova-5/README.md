@@ -246,13 +246,17 @@ These improvements mean that the Windows platform now has a flexible model compa
 
 You can follow these steps to use Cordova Windows 10 with Visual Studio:
 
-1. Install the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkID=617471) if you have not already.
+1. First, install the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkID=617471) if you have not already.
 
-2. In your project, open the config.xml designer by double clicking on config.xml
+2. Update your project to Cordova 5.1.1 as described above if you have not already
 
-3. Click on the "Windows" tab
+3. Now, **build once for Windows** (we're working to eliminate this step in future)
 
-4. Change the "Windows Target Version" to "Windows 10.0"
+4. Next, open the config.xml designer by double clicking on config.xml
+
+5. Click on the "Windows" tab
+
+6. Change the "Windows Target Version" to "Windows 10.0"
 
 	![Select Cordova Version](<media/cordova-5-8.png>)
 
