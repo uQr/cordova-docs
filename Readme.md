@@ -8,6 +8,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. [Using Gulp with your Cordova projects](./tutorial-gulp)
 1. [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
+1. [Using TypeScript with your Cordova projects](./tutorial-typescript)
 
 <a name="tips"></a>
 ## Tips & Workarounds
