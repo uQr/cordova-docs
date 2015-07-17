@@ -4,7 +4,7 @@ This document covers tips, tricks, and known workarounds for problems with the C
 It covers the following issues:
 
 1. [Errors about missing header or library files after adding a 3rd party Cordova plugin when building for iOS](#symlink) 
-2. [Permission errors from "npm" when trying to build in vs-mda-remote, a CI server, or the command line](#npm-cache)
+2. [Permission errors from "npm" when trying to build on the remote agent, a CI server, or the command line](#npm-cache)
 3. [Permission errors when building or executing a cordova command (plugin add) on OSX after checking in or copying the "platforms" folder from Windows](#osx-set-execute)
 
 <a name="symlink"></a>
@@ -26,11 +26,10 @@ Alternativley you can install the [Visual Studio Tools for Apache Cordova CLI Su
 
 ##Permission Issues (EACCES Errors)
 <a name="npm-cache"></a>
-###Permission errors from "npm" when trying to build in vs-mda-remote, a CI server, or the command line
+###Permission errors from "npm" when trying to build on the remote agent, a CI server, or the command line
 If you are seeing permission errors from "npm," you may be running into a situation where the your user's cache folder (~/.npm) is inaccessible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo) when using older versions of Node.js and npm (though recent versions do not exhibit this behavior). Fortunately this is easy to resolve. Open the Terminal app and type:
     
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sudo npm cache clear
 sudo chown -R `whoami` ~/.npm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
