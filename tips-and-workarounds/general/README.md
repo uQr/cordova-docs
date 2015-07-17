@@ -231,7 +231,17 @@ One last tip: Note that modifying the contents of the "plugins" folder does not 
 
 <a name="build-errors-long-path"></a>
 ##Build errors caused by long path and file names
-If your project is located inside a deeply nested directory in your file system, you may receive build errors when building your project using Visual Studio. The underlying reason has to do with many factors that touch upon how Windows and Visual Studio handle long paths. If you are running into this issue, the most effective workaround is to copy your projects to a location closer to the root of your drive (ie, C:\Projects\).
+If your project is located inside a deeply nested directory in your file system or you have a particularly long user name, you may receive build errors when building your project using Visual Studio (Ex: "The filename or extension is too long"). The underlying reason has to do with NTFS filesystem limitations in Windows and how the npm packaging system for Node.js works. To resolve:
+
+1. First, the most effective workaround is to move your projects to a location closer to the root of your drive (ie, C:\Projects\).
+
+2. Second, if moving the project to an alternate location does not resolve your issue, it is possible you are running into an issue with the location of the "npm cache" folder particularly if you have a long user name (as it lives in %APPDATA%\npm-cache by default). You can resolve this issue if encountered by updating the cache location using the following command from the command prompt:
+
+	~~~~~~~~~~~~~~~~~~~
+	npm config set cache c:\npm\cache
+	~~~~~~~~~~~~~~~~~~~
+
+	...replacing "c:\npm\cache" with your desired folder.
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../../Readme.md)
