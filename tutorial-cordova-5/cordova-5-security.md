@@ -35,8 +35,8 @@ Note that if you simply wanted to display www.microsoft.com without giving it ac
 
 There is still some variation in behavior by platform for these whitelist features based on the concerns and capabilities of the underlying native technology.
 
-1. **Android** supports the use of access, allow-navigation, and allows-intent. Intents are an Android specific concept.
-2. **iOS** supports the use of access, and allow-navigation.
+1. **Android** supports the use of access, allow-navigation, and allow-intent. Intents are an Android specific concept.
+2. **iOS** supports the use of access and allow-navigation.
 3. **Windows 10** via the Windows platform supports the allow-navigation element exactly like iOS and Android. The access element is also supported but behaves a bit differently in that navigation is allowed to these URIs but Cordova and plugin APIs are disabled thereby reducing risk. In Windows 10, XHR, CSS, and image access rules are intended to be controlled by a Content Security Policy (CSP) via connect-src rather than specific whitelists. We'll cover more details on how to use CSPs later in this document.
 4. **Windows 8.0, 8.1, and Windows Phone 8.1** via the Windows platform does not support navigating to external URIs outside of the InAppBrowser plugin due to fundamental platform limitations. XHR calls are always allowed to any domain.
 5. The **Windows Phone 8 (WP8)** platform still uses the old definition of the access element and does not support allow-navigation or allow-intent. 
@@ -44,7 +44,7 @@ There is still some variation in behavior by platform for these whitelist featur
 Note that if you would prefer to retain the old behavior of the access element for Android and iOS, you can install [cordova-plugin-legacy-whitelist](http://go.microsoft.com/fwlink/?LinkID=617695) though this is intended only to be used for backwards compatibility and new apps should generally move towards using cordova-plugin-whitelist.
 
 ###Automatically Adding the Plugin
-A new feature in Cordova 5.0.0+ allows you specify plugins in config.xml that are then automatically added at build time. This capability can be used with any Cordova plugin and is conceptually similar to the Visual Studio specific "vs:plugin" element. We worked with the community to get it added into the core and over time we will discontinue the use of the "vs" prefix but we have left the feature in place for backwards compatibility (as Cordova 4.3.0 does not have this feature). Near term most VS documentation will recommend the use of "vs:plugin" instead. 
+A new feature in Cordova 5.0.0+ allows you specify plugins in config.xml that are then automatically added at build time. This capability can be used with any Cordova plugin and is conceptually similar to the Visual Studio specific "vs:plugin" element. We worked with the community to get it added into the core and over time we will discontinue the use of the "vs" prefix but we have left the feature in place for backwards compatibility (as Cordova 4.3.1 does not have this feature). Near term most VS documentation will recommend the use of "vs:plugin" instead. 
 
 Cordova 5.0.0+:
 
@@ -77,7 +77,7 @@ The only problem with the CSP is this: It's pretty confusing to read at first an
 
 You can find a [great tutorial on using the CSP in detail here](http://go.microsoft.com/fwlink/?LinkID=617697), but here are some common "gotchas" for those new to the concepts:
 
-1. By default, applying a CSP **disables both eval() and inline script** while the CSP policy in the **Cordova CLI template (cordova create command) disables inline but allows eval()**. 
+1. By default, applying a CSP **disables both eval() and inline script** while the CSP in the **Cordova CLI template (cordova create command) disables inline but allows eval()**. 
 	- Disabling both eval and inline script means no script tags with JavaScript in it, no "on" event handler attributes on HTML elements, no eval(), no new Function(), etc. Disabling these features effectively makes it impossible to do cross-site scripting because there is no way to inject JavaScript anywhere that does not originate from a file. If you're property managing your whitelists, you're very secure.
 
 	- The problem is that disabling eval() in particular can break quite a few web frameworks.
@@ -94,7 +94,7 @@ You can find a [great tutorial on using the CSP in detail here](http://go.micros
 
 1. The default CSP policy in the Cordova CLI template only allows access to JavaScript and CSS files inside the app or the same domain, not a different domain. **As a result, CDN hosted content typically cannot be referenced.**
 
-	- This is another technique to reduce risk by stating that a given web page can only reference content from **'self'**. The end result is that cross-site scripting vulnerabilities are further reduced by preventing your web page from being hijacked to include content from an external, untrusted sourced.
+	- This is another technique to reduce risk by stating that a given web page can only reference content from **'self'**. The end result is that cross-site scripting vulnerabilities are further reduced by preventing your web page from being hijacked to include content from an external, untrusted sources.
 	
 	- You can loosen this restriction by listing other trusted domains. In fact, the default Cordova CLI template lists "https://ssl.gstatic.com" as a trusted domain since Android needs it for TalkBack to function properly.
 
@@ -107,21 +107,21 @@ You can find a [great tutorial on using the CSP in detail here](http://go.micros
 ##Migrating an Existing Project
 When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below in Visual Studio, you will want to take the following steps to ensure your app functions as you would expect.
 
-1. Add the whitelist plugin to your project via config.xml:
+1. Add the whitelist plugin to your project:
 
 	1. Right-click on config.xml and select "View Code"
 
-	2. Add the following XML element under the &lt;widget&gt; element:
+	2. Add the following XML elements under the &lt;widget&gt; element:
 
 	~~~~~~~~~~~~~~~~~~~~~~~
 	<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
 	~~~~~~~~~~~~~~~~~~~~~~~
 	
 	The next time you build in Visual Studio, VS will install this version of the whitelist plugin. You can update the version number as needed.
-
+	
 2. Update config.xml with allow-intent or allow-navigation elements as needed:
 	
-	1. If you have not already, right-click on config.xml and select "View Code"
+	1. Right-click on config.xml and select "View Code" if you have not already
 	
 	2. Add the following XML elements under the &lt;widget&gt; element:
 	

@@ -25,6 +25,10 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     }
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    You can also manually edit package.json from Visual Studio and then install the dependency by right-clicking on the Dependency node in the Solution Explorer and selecting "Restore Packages."
+    
+    ![Restore Packages](<media/gulp-4.png>)
+
 2.  Add the following task to gulpfile.js:
 
  	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +49,7 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     });
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
-    You could also instead use a tsconfig.json file (like the default VS template) and add the following instead:
+    You could also use a tsconfig.json file (like the default VS template) and add the following instead:
     
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     var ts = require("gulp-typescript"),

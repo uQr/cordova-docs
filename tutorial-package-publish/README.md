@@ -24,8 +24,13 @@ The wizard guides you through a workflow that is similar to the workflow for cre
 Once you are ready to package your application for android, change the platform to the android platform, the build configuration to release and select ‘device’ as debug target as shown in the figure below:
 ![Android: Debug Target](<media/android_debug.png>)
 
-If you initiate a build with this configuration, VS builds an unsigned release package that can be deployed to a machine but cannot be published to store. In order to create a release signed package, you need to provide keystore information to the build in the ant.properties file under res\native\android. A keystore is a binary file that contains a set of private keys. You must keep your keystore in a safe and secure place.
+If you initiate a build with this configuration, VS builds an unsigned release package that can be deployed to a machine but cannot be published to store.
+
+**Cordova CLI verions < 5.0**, use ANT to build android applications. In order to create a release signed package, you need to provide keystore information to the build in the ant.properties file under res\native\android. A keystore is a binary file that contains a set of private keys. You must keep your keystore in a safe and secure place.
 ![Android: Build assets](<media/android_assets.png>)
+
+**Cordova CLI verions > 5.0**, use GRADLE to build android applications. In order to create a release signed package, you need to provide keystore information to the build in the build.json file under the project root. A keystore is a binary file that contains a set of private keys. You must keep your keystore in a safe and secure place.
+![Android: Build assets](<media/android_assets_cordova5.png>)
 
 You can either provide information about existing key-store or create a new one. Here I am going to explain how you can create a new key-store using standard tools from the Android SDK and the JDK:
 1. Open a new admin command prompt.
@@ -63,7 +68,7 @@ Running the above command, prompts you for passwords for the keystore and key, a
     ```
 4. It then generates the keystore as a file called **my-release-key.keystore** under *c:\* drive. The keystore contains a single key, valid for 10000 days.
 
-5. Edit the **ant.properties in res\native\android** with the information for the keystore:
+5. For Cordova CLI verions < 5.0, edit the **ant.properties in res\native\android** with the information for the keystore:
 
     ```
     key.store=c:\\my-release-key.keystore
@@ -71,8 +76,23 @@ Running the above command, prompts you for passwords for the keystore and key, a
     key.store.password= pwd123
     key.alias.password= pwd123
     ```
+    For Cordova CLI verions > 5.0, edit the **build.json in the project root** with the information for the keystore:
 
-After you have edited ant.properties with the keystore information, building the app for release configuration, results in a release signed APK package at <ProjectRoot>\bin\Android\Release. Once your app is ready for publishing, you can upload this app on Google play by signing into your [Google play developer console](https://play.google.com/apps/publish/). Please refer to [Launch Checklist for Google Play](http://developer.android.com/distribute/tools/launch-checklist.html) for successful publication of you app.
+    ```
+    {
+    	"android": {
+        	"release": {
+            	"keystore":"c:\\my-release-key.keystore"
+    			"storePassword":"pwd123"
+    			"alias":"johnS"
+				"password":"pwd123"
+                "keystoreType":""
+            }
+        }
+    }
+    ```
+
+After you have edited the appropriate file with the keystore information, building the app for release configuration, results in a release signed APK package at <ProjectRoot>\bin\Android\Release. Once your app is ready for publishing, you can upload this app on Google play by signing into your [Google play developer console](https://play.google.com/apps/publish/). Please refer to [Launch Checklist for Google Play](http://developer.android.com/distribute/tools/launch-checklist.html) for successful publication of you app.
 
 ### iOS:
 
@@ -187,6 +207,6 @@ The Manage Your Apps page of iTunes Connect should now list an updated status fo
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
