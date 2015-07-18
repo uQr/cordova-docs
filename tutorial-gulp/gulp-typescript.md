@@ -3,7 +3,7 @@
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common "tasks" for everything from compilation, to packaging, deployment, or simply copying files around.
 
-If you're using TypeScript in your Cordova app project, you'll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with a Gulp plugin. 
+If you're using TypeScript in your Cordova app project, you'll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with a Gulp plugin.
 
 See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.com/fwlink/?LinkID=533742) for the basics on using Gulp with Cordova. Next, follow these steps:
 
