@@ -15,6 +15,8 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. [General](./tips-and-workarounds/general)
 1. [Android](./tips-and-workarounds/android)
 1. [iOS and OSX](./tips-and-workarounds/ios)
+1. [Performance](./tips-and-workarounds/performance)
+
 
 <a name="knownissues"></a>
 ## Known Issues
