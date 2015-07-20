@@ -3,7 +3,7 @@
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common "tasks" for everything from compilation, to packaging, deployment, or simply copying files around.
 
-If you're using TypeScript in your Cordova app project, you'll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with a Gulp plugin. 
+If you're using TypeScript in your Cordova app project, you'll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with a Gulp plugin.
 
 See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.com/fwlink/?LinkID=533742) for the basics on using Gulp with Cordova. Next, follow these steps:
 
@@ -25,6 +25,10 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     }
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+    You can also manually edit package.json from Visual Studio and then install the dependency by right-clicking on the Dependency node in the Solution Explorer and selecting "Restore Packages."
+    
+    ![Restore Packages](<media/gulp-4.png>)
+
 2.  Add the following task to gulpfile.js:
 
  	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,8 +48,26 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     		.pipe(gulp.dest("www/scripts"));
     });
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    You could also use a tsconfig.json file (like the default VS template) and add the following instead:
+    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    var ts = require("gulp-typescript"),
+        fs = require("fs"),
+        tsconfigPath = "scripts/tsconfig.json";
+    
+    gulp.task("scripts", function () {
+        // Compile TypeScript code
+        if (fs.existsSync(tsconfigPath)) {
+            gulp.src("scripts/**/*.ts")
+                .pipe(ts(ts.createProject(tsconfigPath)))
+                .pipe(gulp.dest("."));
+        }
+    });
 
-	This will compile anything in the “scripts” folder in the root of your Cordova project and copy them as a single JavaScript file called “appBundle.js” under the “www/scripts” folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+	Either of these code snippets will compile anything in the “scripts” folder in the root of your Cordova project and copy them as a single JavaScript file called “appBundle.js” under the “www/scripts” folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	gulp.src(["scripts/**/*.ts","www/typescript/**/*.ts"])
@@ -82,6 +104,6 @@ gulp watch
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)

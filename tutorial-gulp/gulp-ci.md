@@ -1,7 +1,7 @@
 #<a name="ci"></a>Using Gulp to Build Cordova Projects
-**This tutorial is part of a series on [using Gulp with Tools for Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767) in Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
+**This tutorial is part of a series on [using Gulp with Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767) in Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
-[Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common "tasks" for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and the [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) are Node.js based which makes the two highly complementary technologies.
+[Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common tasks for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and the [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) are Node.js based which makes the two highly complementary technologies.
 
 Because it can run on Windows or OSX, Gulp can be extremely useful as a unified cross-platform build language for automating and testing your builds in a team / continuous integration (CI) environment such as Team Foundation Services 2015 or Visual Studio Online. You may also prefer to use a Gulp based workflow rather than using the Cordova CLI itself.
 
@@ -23,7 +23,7 @@ gulp.task("default", function (callback) {
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note that cordova-lib functions **are asynchronous** and so you need to include the Gulp callback function passed into your task as an argument to your last API call. 
+Note that cordova-lib functions **are asynchronous** and so you need to include the Gulp callback function passed into your task as an argument to your last API call.
 
 To see the example above in action you will need to install some additional npm packages. Create a simple [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file with a minimum of the following in it that is in the root of your Cordova project:
 
@@ -31,7 +31,7 @@ To see the example above in action you will need to install some additional npm 
 {
     "devDependencies": {
         "gulp": "latest",
-        "cordova-lib": "4.3.0"
+        "cordova-lib": "4.3.1"
     }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,9 +46,13 @@ gulp
 
 The "npm install -g gulp" command will install the Gulp command line interface and add it to your path while the "npm install" command will install the "devDepenencies" listed above in a node_modules folder for use in your gulp script. These two commands are only required if you need to install new dependencies that were added to package.json by hand or are installing Gulp globally for the first time.
 
-You can also quickly execute Gulp tasks from the Task Runner Explorer right from Visual Studio. Simply go to View \> Other Windows \> Task Runner Explorer to bring it up for use. Even better, any dependencies you add to package.json will automatically be installed locally for use when you save the file.
+You can also quickly execute Gulp tasks from the Task Runner Explorer right from Visual Studio. Simply go to View \> Other Windows \> Task Runner Explorer to bring it up for use. 
 
 ![View Menu](<media/gulp-1.png>)
+
+Even better, all you need to do to install dependencies you add to package.json is to right-click on the Dependencies node in the Solution Explorer and select "Restore Packages".
+
+![Restore Packages](<media/gulp-4.png>)
 
 Note that the **"cordova" and "cordova-lib" npm package version numbers do not match for CLI 3.6.3 or earlier**. If you need to target these older Cordova versions, you can instead reference the "cordova" npm package in your package.json file and edit the require statement in the above Gulp script as follows:
 
@@ -62,7 +66,7 @@ It is important to note that there are a number of additional considerations to 
 ##The taco-team-build Node Module
 The [taco-team-build](http://go.microsoft.com/fwlink/?LinkID=533736) node module is designed to help alleviate [common problems](http://go.microsoft.com/fwlink/?LinkID=533743) when building Cordova projects from the command line particularly in a team or CI environment. It can be used with any number of build systems including Jake, Grunt, and Gulp or even a command line tool. Here we will focus on how to set it up and use it with Gulp. You can see documentation on the module's methods in [its Git repository](http://go.microsoft.com/fwlink/?LinkID=533736).
 
-The easiest way to get started is to simply place the contents of the **samples/gulp** folder in the repository in the root of your Cordova project. No other files in the repository are required. 
+The easiest way to get started is to simply place the contents of the **samples/gulp** folder in the repository in the root of your Cordova project. No other files in the repository are required.
 
 Otherwise you can follow these steps:
 
@@ -104,9 +108,9 @@ gulp.task("default", function () {
 
 Underneath the covers, the script will do the following:
 
-1.  First, it check **taco.json** to see if a Cordova version is specified. If not, it assumes you want Cordova 4.3.0.
+1.  First, it check **taco.json** to see if a Cordova version is specified. If not, it assumes you want Cordova 5.1.1.
 
-2.  Next, it checks to see if this version of cordova-lib has already been installed at a location set in the **CORDOVA\_CACHE** environment variable. If no CORDOVA_CACHE environment variable is set, the cache location will default to %APPDATA%\\cordova-cache on Windows and ~/.cordova-cache on OSX. You can also set this location programmatically using the module's configure method. 
+2.  Next, it checks to see if this version of cordova-lib has already been installed at a location set in the **CORDOVA\_CACHE** environment variable. If no CORDOVA_CACHE environment variable is set, the cache location will default to %APPDATA%\\cordova-cache on Windows and ~/.cordova-cache on OSX. You can also set this location programmatically using the module's configure method.
 
 3.  If the correct version of cordova-lib is not present in the cache location, it download and installs it.
 
@@ -116,9 +120,9 @@ Underneath the covers, the script will do the following:
     3.  Builds the project
     4.  Packages the project
 
-Each method returns a promise so that you can chain the steps or run them concurrently. 
+Each method returns a promise so that you can chain the steps or run them concurrently.
 
-You may find it useful to create a script that will automatically build all of the platforms your project supports across OSX and Windows. This is extremely useful for team build scenarios where you want to be able to check in a single script that automates all of your build steps including TypeScript compilation. 
+You may find it useful to create a script that will automatically build all of the platforms your project supports across OSX and Windows. This is extremely useful for team build scenarios where you want to be able to check in a single script that automates all of your build steps including TypeScript compilation.
 
 Here is an enhanced script that provides you with this flexibility:
 
@@ -129,10 +133,10 @@ var gulp = require("gulp"),
 var winPlatforms = ["android", "windows", "wp8"],
 	osxPlatforms = ["ios"],
 	buildArgs = {
-		android: ["--release", "--ant"],
+		android: ["--release", "--device"],
 		ios: ["--release", "--device"],
-		windows: ["--release"],
-		wp8: ["--release"]
+		windows: ["--release", "--device"],
+		wp8: ["--release", "--device"]
 	}
 
 // "Darwin" is the platform name returned for OSX.
@@ -141,7 +145,7 @@ var platformsToBuild = process.platform == "darwin" ? osxPlatforms : winPlatform
 gulp.task("default", ["package"], function () {
 	// Copy results to bin folder
 	gulp.src("platforms/android/ant-build/*.apk").pipe(gulp.dest("bin/release/android"));
-	gulp.src("platforms/android/build/*.apk").pipe(gulp.dest("bin/release/android"));
+	gulp.src("platforms/android/bin/*.apk").pipe(gulp.dest("bin/release/android"));
 	gulp.src("platforms/windows/AppPackages/**/*").pipe(gulp.dest("bin/release/windows/AppPackages"));
 	gulp.src("platforms/wp8/bin/Release/*.xap").pipe(gulp.dest("bin/release/wp8"));
 	gulp.src("platforms/ios/build/device/*.ipa").pipe(gulp.dest("bin/release/ios"));
@@ -187,6 +191,6 @@ npm install --save-dev gulp-uglify
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studo Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
+* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
