@@ -16,6 +16,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 	1. [Getting Started with Cordova & TFS 2013](./tutorial-team-build/TFS2013.md)
 	1. [Getting Started with Cordova & Jenkins CI](./tutorial-team-build/Jenkins.md)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
+1. [Using TypeScript with your Cordova projects](./getting-started/tutorial-typescript.md)
 1. [Build and Simulate iOS in the Cloud](http://go.microsoft.com/fwlink/?LinkID=618476) (MSDN)
 1. [Build a Cordova app for iOS using Parallels](http://go.microsoft.com/fwlink/?LinkID=618477) (MSDN)
 1. [Run the Android Emulator on OSX when using Windows in Parallels](http://go.microsoft.com/fwlink/?LinkID=618478) (MSDN)
@@ -26,6 +27,8 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 1. [General](./tips-and-workarounds/general)
 1. [Android](./tips-and-workarounds/android)
 1. [iOS and OSX](./tips-and-workarounds/ios)
+1. [Performance](./tips-and-workarounds/performance)
+
 
 <a name="knownissues"></a>
 ## Known Issues
