@@ -23,7 +23,7 @@ Error		A fatal exception has occurred. Program will exit.
 Error		C:\cordova\BlankCordovaApp2\BlankCordovaApp2\platforms\android\cordova\build.bat: Command failed with exit code 1
 ~~~~~~~~~~~~~
 
-The problem is that the Ant or Gradle build systems are running out of heap memory when trying to compile your application. To resolve this problem you can increase the heap of the JVM by setting the following environment variable:
+The problem is that the Ant or Gradle build systems are running out of heap memory when trying to compile your application. To resolve this problem you can increase the heap of the JVM by setting the following environment variable and restarting Visual Studio:
 
 ~~~~~~~~~~~~~~~~~~~~~~
 _JAVA_OPTIONS=-Xmx512M
