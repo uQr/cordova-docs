@@ -23,13 +23,13 @@ Error		A fatal exception has occurred. Program will exit.
 Error		C:\cordova\BlankCordovaApp2\BlankCordovaApp2\platforms\android\cordova\build.bat: Command failed with exit code 1
 ~~~~~~~~~~~~~
 
-The problem is that the Ant or Gradle build systems are running out of heap memory when trying to compile your application. To resolve this problem you can follow [these instructions](http://www.tomsguide.com/faq/id-1761312/fix-create-java-virtual-machine-issue.html) to increase the heap of the JVM by setting the following environment variable:
+The problem is that the Ant or Gradle build systems are running out of heap memory when trying to compile your application. To resolve this problem you can increase the heap of the JVM by setting the following environment variable and restarting Visual Studio:
 
 ~~~~~~~~~~~~~~~~~~~~~~
 _JAVA_OPTIONS=-Xmx512M
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If this does not resolve the issue, you can upgrade to a 64-bit version of the JDK [from here](http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-windows-x64.exe) and update the JAVA_HOME environment variable to the new install location.
+See [Tips and Workarounds](../tips-and-workarounds/android/README.md#couldnotcreatevm) for additional details.
 
 ----------
 **Missing Android SDK Versions:** If you already had the Android SDK installed, you may also need to update and install the SDK for Android 4.4.2 (API level 19), Android 5.0.1 (API Level 21), or Android 5.1.1 (API Level 22) . You may need to restart Visual Studio if it is open while updating the Android SDK through the SDK Manager to be able to build for Android after the update is complete. See [Manually Installing Dependencies](https://msdn.microsoft.com/en-us/library/dn757054.aspx#ThirdParty) for details.

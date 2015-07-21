@@ -26,7 +26,7 @@ Remove these files from source control if you are not checking in the "platforms
  2. Update to Cordova 5.1.1 via the config designer (Platforms > Cordova CLI)
 
  3. Re-add your plugin via "Plugins" tab in the config.xml designer
-
+ 
 ----------
 **Slow first build or first plugin add:** The first build or plugin add for a given version of Cordova will be slower than subsequent builds as VS must first dynamically acquire Cordova. See the Output Window for more detail on progress. Further, the first remote iOS build will exhibit the same behavior as the agent downloads Cordova on your OSX machine. If you encounter a CordovaModuleLoadError with the first iOS build for a given Cordova version you can follow [these instructions](../tips-and-workarounds/ios/README.md#npm-cache) to resolve the problem.
 
