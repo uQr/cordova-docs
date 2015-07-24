@@ -10,6 +10,7 @@ It covers the following issues and tips:
 1. [Using a npm sourced plugins not listed in the config.xml designer or with Cordova < 5.0.0](#plugin-npm) 
 1. [Tips for troubleshooting 3rd party Cordova plugins](#plugin-troubleshoot) 
 1. [Build errors caused by long path and file names](#build-errors-long-path)
+1. [Using a different version of a Cordova platform](#cordova-platform-ver)
 
 <a name="missingexclude"></a>
 ##Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run
@@ -242,6 +243,55 @@ If your project is located inside a deeply nested directory in your file system 
 	~~~~~~~~~~~~~~~~~~~
 
 	...replacing "c:\npm\cache" with your desired folder.
+
+<a name="cordova-platform-ver"></a>
+##Using a Different Version of a Cordova Platform
+Typically when you want get a fix or feature for Cordova itself you will simply use the Platforms tab of the config.xml designer to update the Cordova version for your project. However, under [certain circumstances](../android/security-05-26-2015) you may want to update a "platform" independent of the entire Cordova release. See [this article](../../tutorial-cordova-5) for a discussion of what a "platform" is in the Cordova context and how it is versioned.
+
+Updating a platform version for your project is easy with Cordova 4.3.0 and up. First we need to update config.xml.
+
+1. In Visual Studio, right click on config.xml and select “View Code”
+2. When using Cordova 4.3.0 or 4.3.1, add the following under the root &lt;widget&gt; element in config.xml:
+
+    ~~~~~~~~~~~~~~~~~~~~~~~
+    <engine name="android" version="3.7.2" />
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    ...or if you opted to update to Cordova 5.0.0+:
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+	<engine name="android" spec="4.0.2" />
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+	
+    ...replacing "android" with the platform you want to update in all lower case.
+
+Next, for projects where you have **already executed a build for the platform on your system**, you’ll also need to remove the old version of the Cordova platform. 
+
+For iOS, all you need to do is execute a "clean" for your project and the new platform will take effect on next build.
+
+For Android, Windows, and Windows Phone, follow these steps:
+
+1.	Open a command prompt and go to your Cordova project root (not the solution root). 
+
+2.	Type the following commands:
+
+	~~~~~~~~~~~~~~~~~~~~~~~~
+	npm install -g cordova
+	cordova platform remove <platform>
+	cordova platform add <platform>
+	~~~~~~~~~~~~~~~~~~~~~~~~
+
+	...replacing &lt;platform&gt; with the platform you are trying to update in all lower case (Ex: android). 
+	
+The next time you build you will now be on the updated version of the platform. 
+
+You can also use a platform from Git using the following syntax:
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+<engine name="ios" spec="https://github.com/apache/cordova-ios.git" />
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Be aware that platform versions in Git are typically dev releases so you will likely encounter bugs.
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../../Readme.md)

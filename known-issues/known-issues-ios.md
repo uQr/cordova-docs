@@ -28,6 +28,9 @@ This article covers [known issues](../Readme.md#knownissues) related to Visual S
 **Deploying to iOS 8.3 device fails from OSX Mavericks or below:** If deploying to iOS 8.3 device fails because vs-mda-remote cannot find DeveloperDiskImage.dmg, ensure you are running OSX Yosemite and Xcode 6.3. Xcode 6.3 is required to deploy to an 8.3 device and only runs on Yosemite.
 
 ----------
+**"Could not find module 'Q'" error when building iOS:** If your OSX machine has case a case sensitive filesystem you can hit with certain versions of Cordova like Cordova 5.1.1. (Most people do not turn on case sensitivity.) A fix is in the works and will be in the next version of the Cordova iOS platform along with an updated version of Cordova itself. Watch the [Cordova homepage](http://cordova.apache.org) for release announcements. Once the Cordova iOS platform is released you can follow [these directions](../tips-and-workarounds/general/README.md#cordova-platform-ver) to use it at release or you may wait until a full Cordova "tools" release also occurs and update the Cordova version via the config.xml designer.
+
+----------
 **Incremental builds not faster than initial build when using VS 2015 RC or RTM:** Unfortunately this is a known issue with the iOS incremental build feature. We are actively working on a fix that will be resolved in a point release update.
 
 ----------
