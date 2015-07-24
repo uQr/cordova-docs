@@ -21,9 +21,7 @@ To migrate your previous projects to the new structure:
 	 * plugins
 	 * config.xml
  13. Copy all other files/folders into the www folder
- 14. If you're using TypeScript, you'll need to add a tsconfig.json to
-     your project folder and define config settings for your project –
-     see more in the Configuring TypeScript section
+ 14. If you're using TypeScript, you'll need to add a tsconfig.json to your project folder and define config settings for your project. See the [Configuring TypeScript](../getting-started/tutorial-typescript.md) section for details.
  15. Now you can build and run your application
 
 If you have errors, you may need to update file references to reflect the new folder structure. 
