@@ -239,10 +239,10 @@ To avoid re-installing each time, you can take advantage of Visual Studio's **ta
     	exec("npm install cordova@" + cordovaVersion, { cwd: cordovaModulePath }, function (err, stdout, stderr) {
             console.log(stdout);
             if (stderr) {
-                console.err(stderr);
+                console.error(stderr);
             }
             if (err) {
-                console.err(err);
+                console.error(err);
                 process.exit(1);
             }
     		console.log("Cordova " + cordovaVersion + " installed at " + cordovaModulePath);
