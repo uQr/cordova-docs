@@ -102,7 +102,7 @@ Lastly, you should add the following XML elements to your config.xml to ensure y
   ~~~~~~~~~~~~~~~~~~~~~~
 
 ##Visual Studio 2015 RTM
-**The debug dropdown just shows up "Start" and no other options for Ripple, devices or emulators & simulators**
+**The debug dropdown just shows up 'Start' and no other target options such as Ripple, devices, emulators & simulators:**
 In some cases, when you uninstall VS2013 or a previous version (RC) of VS2015, a library gets corrupted that causes the debug dropdown not to show all the target options. To resolve this issue:
  1. Close all VS instances
  2. cd %appdata%\Local\Microsoft\Phone Tools”
