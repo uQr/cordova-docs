@@ -82,11 +82,11 @@ Running the above command, prompts you for passwords for the keystore and key, a
     {
     	"android": {
         	"release": {
-            	"keystore":"c:\\my-release-key.keystore"
-    			"storePassword":"pwd123"
-    			"alias":"johnS"
-				"password":"pwd123"
-                "keystoreType":""
+            	"keystore":"c:\\my-release-key.keystore",
+    			"storePassword":"pwd123",
+    			"alias":"johnS",
+				"password":"pwd123",
+                "keystoreType":"",
             }
         }
     }
