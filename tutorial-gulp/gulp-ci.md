@@ -102,7 +102,7 @@ cordovaBuild = require("taco-team-build");
 
 gulp.task("default", function () {
     return cordovaBuild.buildProject("android", ["--release"])
-        .then(function() { return cordovaBuild.pacakgeProject("android"); });
+        .then(function() { return cordovaBuild.packageProject("android"); });
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -156,7 +156,7 @@ gulp.task("build", function () {
 });
 
 gulp.task("package", ["build"], function () {
-	return cordovaBuild.pacakgeProject(platformsToBuild);
+	return cordovaBuild.packageProject(platformsToBuild);
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
