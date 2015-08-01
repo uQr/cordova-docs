@@ -6,16 +6,16 @@ This tutorial is part of a [series of tutorials](./README.md) on building Visual
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and Cordova CLI are Node.js based which makes the two highly complementary technologies. For these reasons, this tutorial will focus on the use Gulp rather than MSBuild as the primary build language for Cordova apps when using Jenkins.
 
-**Troubleshooting Tip:** Be aware that we recommend against adding the "platforms" folder or the following json files in the "plugins" folder into source control: android.json, ios.json, remote_ios.json, windows.json, and wp8.json. See "What to Add to Source Control" in the [general team build tutorial](./README.md) for additional details.
+**Troubleshooting Tip:** Be aware that we recommend against adding the "platforms" folder or the following json files in the "plugins" folder into source control: android.json, ios.json, remote_ios.json, windows.json, and wp8.json. See "What to Add to Source Control" in the [general team build tutorial](./General.md#whattoadd) for additional details.
 
 ##Initial Setup
 Since the build process we will describe here is not directly dependent on MSBuild or Visual Studio, you have two options for installing pre-requisites on Windows:
 
 1.  Install Visual Studio 2015 and select the Tools for Apache Cordova option and let it install the pre-requisites for you
 
-2.  Manually install only the pre-requisites needed for the specific platforms you intend to build. For example, you do not need to install Visual Studio at all if you only intend to target Android. See "Installing Dependencies" in the [Building Cordova Apps in a Team / Continuous Integration Environment](http://go.microsoft.com/fwlink/?LinkID=533743) tutorial for details.
+2.  Manually install only the pre-requisites needed for the specific platforms you intend to build. For example, you do not need to install Visual Studio at all if you only intend to target Android. See "Installing Dependencies" in the [Building Cordova Apps in a Team / Continuous Integration Environment](./General.md#depends) tutorial for details.
 
-**Troubleshooting Tip:** See ["Internet Access & Proxy Setup" in the general CI tutorial](http://go.microsoft.com/fwlink/?LinkID=533743) if your build servers have limited Internet connectivity or require routing traffic through a proxy.
+**Troubleshooting Tip:** See ["Internet Access & Proxy Setup" in the general CI tutorial](./General.md#proxy) if your build servers have limited Internet connectivity or require routing traffic through a proxy.
 
 For OSX, the pre-requisites will need to be installed manually, but mirror [the requirements for the Visual Studio remote build agent](http://go.microsoft.com/fwlink/?LinkID=533745). However, unlike with TFS 2013, you do not need to install the remote build agent itself if your OSX machine will only be used for team / CI builds.
 
@@ -227,7 +227,7 @@ The OSX version of the build is similar but adds one additional requirement: Unl
 
 8. Click "Save" and then "Build Now" to verify everything is working!
 
-	**Trouble Shooting Tip:** See ["Troubleshooting Tips for Building on OSX" in the general CI tutorial](http://go.microsoft.com/fwlink/?LinkID=533743) for tips on resolving common build errors that can occur when building Cordova projects on that operating system.
+	**Trouble Shooting Tip:** See ["Troubleshooting Tips for Building on OSX" in the general CI tutorial](./General.md#osxgotcha) for tips on resolving common build errors that can occur when building Cordova projects on that operating system.
 
 ## More Information
 * [Learn about other Team Build / CI options](./README.md)

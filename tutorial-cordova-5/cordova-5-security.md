@@ -1,4 +1,7 @@
 #Introduction to Cordova 5 Security
+
+**Note: If the default blank template in Visual Studio 2015 is does not default to 5.1.1, you should update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update. 
+
 One of the more confusing changes about [Apache Cordova 5](http://go.microsoft.com/fwlink/?LinkID=617659) is that the updated version of the Android platform (also called Cordova Android 4.x) and iOS now follow a different, but more powerful security model designed to provide developers with the tools needed to prevent cross-site scripting attacks among other issues. A critical aspect of this security model is that **absolutely no network access of any kind is allowed without the installation of a Cordova plugin**.
 
 ##Cordova Whitelists
@@ -58,6 +61,7 @@ VS syntax (works with any Cordova version):
 <vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Both the default Cordova CLI template and Visual Studio's blank template use this feature to install the Whitelist plugin automatically on first build.
 
 ##The W3C Content Security Policy (CSP)
 A topic of frequent conversation for security focused developers on the web is the [W3C Content Security Policy (CSP)](http://go.microsoft.com/fwlink/?LinkID=617696) feature that is available in Chrome, Safari, and Internet Explorer Edge. CSP support is available natively to Cordova apps targeting iOS, Windows 10 and up, and Android 4.4 and up. However, you can get support back to Android 4.0 by using something called the Crosswalk WebView. See [Using Apache Cordova 5](./README.md#crosswalk) for information adding Crosswalk to your project.
@@ -107,18 +111,16 @@ You can find a [great tutorial on using the CSP in detail here](http://go.micros
 ##Migrating an Existing Project
 When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below in Visual Studio, you will want to take the following steps to ensure your app functions as you would expect.
 
-1. Add the whitelist plugin to your project:
+1. Add the whitelist plugin to your project via config.xml:
 
-	1. Right-click on config.xml and select "View Code"
-
-	2. Add the following XML elements under the &lt;widget&gt; element:
-
-	~~~~~~~~~~~~~~~~~~~~~~~
-	<vs:plugin name="cordova-plugin-whitelist" version="1.0.0" />
-	~~~~~~~~~~~~~~~~~~~~~~~
+	1. Double click on config.xml in your project
 	
-	The next time you build in Visual Studio, VS will install this version of the whitelist plugin. You can update the version number as needed.
-	
+	2. Click on the "Plugins" tab
+
+	2. Select "Whitelist" and click "Add"
+
+		![Add Whitelist Plugin](<media/cordova-5-7.png>)
+			
 2. Update config.xml with allow-intent or allow-navigation elements as needed:
 	
 	1. Right-click on config.xml and select "View Code" if you have not already
