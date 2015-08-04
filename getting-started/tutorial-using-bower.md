@@ -109,9 +109,10 @@ Bower packages often come with many files you don't need to include as part of y
 2. Select the Text File template, name the file ".bowerrc" and click Add.
 3. Replace the contents of the file with the following:
 
-```JSON
-{
-  "directory": "/www/lib"
-}
-```
+    ```JSON
+    {
+      "directory": "/www/lib"
+    }
+    ```
+
 The next time you use the `bower update` command or restore packages in Visual Studio, a lib folder will be created in your app's www folder and all packages will be downloaded to it. You can then remove the bower_components folder from the root of your project, on the file system. 
