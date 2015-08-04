@@ -59,15 +59,15 @@ To use Bower to download libraries into a new project, add a new bower.json file
 2. Select the JavaScript File template and name your file "bower.json", click Add
 3. In the file that opens, replace the contents with the following:
 
-```JSON
-{
-  "name": "ProjectName",
-  "dependencies": {
-    "angular": "~1.4.3"
-  }
-}
-```
-replacing "ProjectName" with the name of your project.
+    ```JSON
+    {
+      "name": "ProjectName",
+      "dependencies": {
+        "angular": "~1.4.3"
+      }
+    }
+    ```
+    Replacing "ProjectName" with the name of your project.
 
 4. Save your changes.
 
