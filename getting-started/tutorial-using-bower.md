@@ -1,6 +1,8 @@
 #Using the Bower package manager in Cordova projects
 While working on your Cordova project, you may want to use a JavaScript or CSS framework built by someone else and available for download from the web. To help with this, you may want to add the [Bower](http://www.bower.io) package manager to your web developer toolbelt. Bower advertises itself as "a package manager for the web" and is a JavaScript utility you can use to search framework packages and download them into a project. These packages are built by an active community of developers and framework authors.
 
+**Note** In the past, you may have used the [NuGet](http://www.nuget.org) package manager to download packages, such as JavaScript libraries. Bower is now the recommended package manager to use for client-side libraries, since it is more actively maintained by JavaScript & CSS library authors and it works well across Windows, MacOS X, and Linux paltforms. NuGet is still an option for Cordova projects in Visual Studio, but most packages install their files outside of the `www` folder used by Cordova. You can workaround this by manually copying your files into the `www` folder.
+
 In this article, we'll walk through how to use Bower directly from a command line and from within the Visual Studio Tools for Apache Cordova. We'll answer the following questions:
 
 - [How do I add libraries to my Cordova project using the Bower command line tool?](#cmdLine)
