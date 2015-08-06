@@ -85,6 +85,9 @@ npm config set registry http://registry.npmjs.org
 **Mixed case file added as lower case reference:** Dragging a mixed-case file into an HTML page creates a lowercase script or style reference which will cause it to not be found on Android and iOS. Manually update the reference with the correct casing.
 
 ----------
+**Visual Studio hangs when creating or opening a Cordova jsproj:** Follow the steps [in this MSDN blog post](https://social.msdn.microsoft.com/Forums/en-US/0e5115ca-83a7-4294-8740-289b3f453fca/rtm-known-issue-package-load-failure-when-creating-a-windows-app-project-with-javascript-or-hang).
+
+----------
 ## More Information
 * [Read up on additional known issues, tips, tricks, and tutorials](../Readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
