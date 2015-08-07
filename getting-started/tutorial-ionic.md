@@ -84,7 +84,7 @@ with this line, to prevent a runtime error:
 
 For Windows & Windows Phone 8.1:
 
-1. Open the folder for the Blank App project, and copy the merges folder (and its contents) to your Ionic project. Copy the folder under the top level folder (e.g., under ionicMySideMenu folder). This will resolve errors loading partial pages by using the winstore-jscompat.js shim.
+1. Open the folder for the Blank App project and copy the merges folder (and its contents) to your Ionic project. Copy the folder under the top level folder (e.g., under ionicMySideMenu folder). When you complete the next few steps, you will resolve errors loading partial pages by using the winstore-jscompat.js shim.
 2. Copy platformOverrides.js from the Blank App project's `www\js` folder to the Ionic project's `www\js` folder.
 3. In the Ionic project, add the following script reference to index.html, just before the Ionic Framework reference (before the ionic.bundle.js reference):
 
@@ -107,7 +107,7 @@ The Ionic starter app should run correctly on iOS when the remotebuild agent is 
 
 ##<a name="win10tips"></a>Known Issues and Windows 10 tips
 
-On Windows 8.1 dev machine, you may get a WWAHost runtime error when navigating between pages in the Ionic apps. You can work around this by:
+When debugging on a Windows 8.1 dev machine, you may get a WWAHost runtime error when navigating between pages in Ionic apps. You can work around this by:
 * Closing DOM Explorer before navigating pages.
 * Upgrading to Windows 10 on your dev machine (issue is fixed in Win10).
 
