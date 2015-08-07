@@ -30,7 +30,7 @@ To follow these steps, you must:
   ionic start ionicMySideMenu sidemenu
   ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Ionic creates the project.
+  Ionic creates the project in your current folder.
 4. Use the same command to install more templates, such as:
 
   ~~~~~~~~~~~~~~~~~~~~~~~
