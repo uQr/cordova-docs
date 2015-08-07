@@ -77,6 +77,7 @@ with this line, to prevent a runtime error:
     window.cordova.plugins.Keyboard) {
   ```
 5. In some of the Ionic starter app templates, you may also need to remove the TypeScript file, angular-ui-router.d.ts, for the angular-ui-router module, or you may see this error.
+
 ![TypeScript error] (media/ionic-ts2304.png)
 
   > **Note** If you are using TypeScript, you need to get an updated version of the file or the template to support the routing module.
@@ -102,7 +103,7 @@ For iOS:
 
 You can run initially on the Ripple Emulator after selecting iOS as a debug target, but for detailed info on setting up the remotebuild agent for iOS, see [this topic] (https://msdn.microsoft.com/en-us/library/dn757054.aspx#ios).
 
-The Ionic starter app should run correctly on iOS when the remotebuild agent is running on a Mac, and when VS is configured to connect to it. (the steps are outside the scope here.)
+The Ionic starter app should run correctly on iOS when the remotebuild agent is running on a Mac, and when VS is configured to connect to it. (The complete steps are outside the scope here.)
 
 ##<a name="win10tips"></a>Known Issues and Windows 10 tips
 
