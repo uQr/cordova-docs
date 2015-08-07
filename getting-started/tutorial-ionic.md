@@ -80,7 +80,7 @@ with this line, to prevent a runtime error:
 
 ![TypeScript error] (media/ionic-ts2304.png)
 
-  > **Note** If you are using TypeScript, you need to get an updated version of the file or the template to support the routing module.
+  > **Note** If you are using TypeScript, you need to get updated d.ts files or an updated version of the template to support the routing module.
 
 For Windows & Windows Phone 8.1:
 
