@@ -42,6 +42,7 @@ To follow these steps, you must:
 ##<a name="configTemplates"></a>How do I configure the templates to work with VS?
 
 For each of the Ionic starter app templates that you installed, do this:
+
 1. In Windows, open the folder where you created the Blank App project (which you named "blank" in the previous steps).
 2. Copy blank.jsproj and taco.json from this folder to the Ionic starter template folder (e.g., ionicMySideMenu).
   **Note** You may want to rename blank.jsproj to ionicMySideMenu.jsproj (or to the name of your starter template project).
