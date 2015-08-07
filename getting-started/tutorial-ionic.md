@@ -62,7 +62,8 @@ For Android:
   Or, you can add the platform by building in VS (Build > Build Solution).
 2. Choose Android as a debug target (Solution Platforms list), and to get the app running choose a target such as Ripple (Chrome required) or the VS Emulator 5" KitKat (4.4) (Hyper-V required).
 3. Press F5, and the app should load correctly.
-**Note** If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282(v=vs.140).aspx).
+
+  **Note** If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282(v=vs.140).aspx).
 4. In some of the Ionic starter app templates, you may need to replace this line in app.js:
 
   ```JavaScript
