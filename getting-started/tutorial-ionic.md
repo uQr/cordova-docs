@@ -27,7 +27,7 @@ To follow these steps, you must:
 3. In the command line, type
 
   ~~~~~~~~~~~~~~~~~~~~~~~
-  ionic start ionicMySideMenu sidemenu.
+  ionic start ionicMySideMenu sidemenu
   ~~~~~~~~~~~~~~~~~~~~~~~
 
   Ionic creates the project.
@@ -63,7 +63,7 @@ For Android:
 2. Choose Android as a debug target (Solution Platforms list), and to get the app running choose a target such as Ripple (Chrome required) or the VS Emulator 5" KitKat (4.4) (Hyper-V required).
 3. Press F5, and the app should load correctly.
 
-  **Note** If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282(v=vs.140).aspx).
+  > **Note** If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282(v=vs.140).aspx).
 4. In some of the Ionic starter app templates, you may need to replace this line in app.js:
 
   ```JavaScript
@@ -78,7 +78,7 @@ with this line, to prevent a runtime error:
 5. In some of the Ionic starter app templates, you may also need to remove the TypeScript file, angular-ui-router.d.ts, for the angular-ui-router module, or you may see this error.
 ![TypeScript error] (media/ionic-ts2304.png)
 
-**Note** If you are using TypeScript, you need to get an updated version of the file or the template to support the routing module.
+  > **Note** If you are using TypeScript, you need to get an updated version of the file or the template to support the routing module.
 
 For Windows & Windows Phone 8.1:
 
@@ -95,7 +95,7 @@ For Windows & Windows Phone 8.1:
 * For Windows Phone 8.1, choose one of the Emulator 8.1 options.
 5. Press F5 to start debugging.
 
-  **Note** If you see the TypeScript error or the Keyboard plugin error, see the previous steps for Android to resolve.
+  > **Note** If you see the TypeScript error or the Keyboard plugin error, see the previous steps for Android to resolve.
 
 For iOS:
 
