@@ -14,6 +14,7 @@ In this topic, we'll answer the following questions:
 ##<a name="getStarted"></a>How do I set up my machine for Ionic with VS?
 
 To follow these steps, you must:
+
 1. [Install Visual Studio 2015] (http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
 2. [Install the Ionic CLI] (http://ionicframework.com/docs/cli/install.html).
 3. Verify your VS setup is correct. Create a Blank App template (File > New > Project > JavaScript > Apache Cordova Apps > Blank App). Name it "blank".
