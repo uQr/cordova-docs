@@ -24,11 +24,14 @@ To follow these steps, you must:
 1. Make sure you installed the Ionic CLI, then open a command line.
 2. Go to the directory where you want to install the Ionic starter app templates, such as the Documents folder.
 3. In the command line, type
+
   ~~~~~~~~~~~~~~~~~~~~~~~
   ionic start ionicMySideMenu sidemenu.
   ~~~~~~~~~~~~~~~~~~~~~~~
+
   Ionic creates the project.
 4. Use the same command to install more templates, such as:
+
   ~~~~~~~~~~~~~~~~~~~~~~~
   ionic start ionicMyView view
   ionic start ionicMyTabs tabs
@@ -48,33 +51,39 @@ For each of the Ionic starter app templates that you installed, do this:
 
 For Android:
 1. If you want to use the Ionic CLI to add the Android platform, use this command in the command line:
+
   ~~~~~~~~~~~~~~~~~~~~~~~
   ionic platform add Android
   ~~~~~~~~~~~~~~~~~~~~~~~
+
   Or, you can add the platform by building in VS (Build > Build Solution).
 2. Choose Android as a debug target (Solution Platforms list), and to get the app running choose a target such as Ripple (Chrome required) or the VS Emulator 5" KitKat (4.4) (Hyper-V required).
 3. Press F5, and the app should load correctly.
 **Note** If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282(v=vs.140).aspx).
 4. In some of the Ionic starter app templates, you may need to replace this line in app.js:
+
   ```JavaScript
   if (window.cordova && window.cordova.plugins.Keyboard) {
   ```
 with this line, to prevent a runtime error:
+
   ```JavaScript
   if (window.cordova && window.cordova.plugins &&
     window.cordova.plugins.Keyboard) {
   ```
 5. In some of the Ionic starter app templates, you may also need to remove the TypeScript file, angular-ui-router.d.ts, for the angular-ui-router module, or you may see this error.
-![TypeScript error] (media/ionic-ts2304.PNG)
+![TypeScript error] (media/ionic-ts2304.png)
 **Note** If you are using TypeScript, you need to get an updated version of the file or the template to support the routing module.
 
 For Windows & Windows Phone 8.1:
 1. Open the folder for the Blank App project, and copy the merges folder (and its contents) to your Ionic project. Copy the folder under the top level folder (e.g., under ionicMySideMenu folder). This will resolve errors loading partial pages by using the winstore-jscompat.js shim.
 2. Copy platformOverrides.js from the Blank App project's `www\js` folder to the Ionic project's `www\js` folder.
 3. In the Ionic project, add the following script reference to index.html, just before the Ionic Framework reference (before the ionic.bundle.js reference):
+
   ~~~~~~~~~~~~~~~~~~~~~~~
   <script src="js/platformOverrides.js"></script>
   ~~~~~~~~~~~~~~~~~~~~~~~
+
 4. Select Windows or Windows Phone (Universal) as a debug target (Solution Platforms list).
 * For Windows, choose Local Machine as a target.
 * For Windows Phone 8.1, choose one of the Emulator 8.1 options.
@@ -94,8 +103,10 @@ On Windows 8.1 dev machine, you may get a WWAHost runtime error when navigating 
 * Upgrading to Windows 10 on your dev machine (issue is fixed in Win10).
 
 To target Windows 10 in the app, you need to:
-* Use VS install program to install optional software, the Universal Windows App Development Tools.
+* Use VS install program to install the Universal Windows App Development Tools (optional software).
 * In the configuration designer, select Cordova 5.1.1 and, in the Windows tab, choose Windows 10.
 However, if you target Windows 10 in the app, note that you may get errors loading partial pages, such as this unhandled exception.
-![unhandled exception](media/ionic-unhandled-exception.PNG)
-If you see this error when targeting Win/WinPhone 8.1, follow the earlier steps to call platformOverrides.js to fix this issue. Targeting Win10, this fix currently requires another update to the compatibility shim or a platform fix.
+
+![unhandled exception](media/ionic-unhandled-exception.png)
+
+If you see this error when targeting Win/WinPhone 8.1, follow the earlier steps to call platformOverrides.js to fix this issue. When targeting Win10, this fix currently requires another update to the compatibility shim or a platform fix.
