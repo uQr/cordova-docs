@@ -7,7 +7,7 @@ In this topic, we'll answer the following questions:
 - [How do I get the Ionic starter app templates?] (#getTemplates)
 - [How do I configure the templates to work with VS?] (#configTemplates)
 - [How do I get the app running on different platforms?] (#configPlatforms)
-- [Known Issues and Windows 10 tips] (#win10tips)
+- [Known issues and Windows 10 tips] (#win10tips)
 
 **Note** For a video walkthrough that shows similar steps, see the [Video tutorial] (http://go.microsoft.com/fwlink/p/?LinkID=534728).
 
@@ -105,7 +105,7 @@ You can run initially on the Ripple Emulator after selecting iOS as a debug targ
 
 The Ionic starter app should run correctly on iOS when the remotebuild agent is running on a Mac, and when VS is configured to connect to it. (The complete steps are outside the scope here.)
 
-##<a name="win10tips"></a>Known Issues and Windows 10 tips
+##<a name="win10tips"></a>Known issues and Windows 10 tips
 
 When debugging on a Windows 8.1 dev machine, you may get a WWAHost runtime error when navigating between pages in Ionic apps. You can work around this by:
 * Closing DOM Explorer before navigating pages.
