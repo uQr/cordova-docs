@@ -51,6 +51,7 @@ For each of the Ionic starter app templates that you installed, do this:
 ##<a name="configPlatforms"></a>How do I get the app running on different platforms?
 
 For Android:
+
 1. If you want to use the Ionic CLI to add the Android platform, use this command in the command line:
 
   ~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,9 +75,11 @@ with this line, to prevent a runtime error:
   ```
 5. In some of the Ionic starter app templates, you may also need to remove the TypeScript file, angular-ui-router.d.ts, for the angular-ui-router module, or you may see this error.
 ![TypeScript error] (media/ionic-ts2304.png)
+
 **Note** If you are using TypeScript, you need to get an updated version of the file or the template to support the routing module.
 
 For Windows & Windows Phone 8.1:
+
 1. Open the folder for the Blank App project, and copy the merges folder (and its contents) to your Ionic project. Copy the folder under the top level folder (e.g., under ionicMySideMenu folder). This will resolve errors loading partial pages by using the winstore-jscompat.js shim.
 2. Copy platformOverrides.js from the Blank App project's `www\js` folder to the Ionic project's `www\js` folder.
 3. In the Ionic project, add the following script reference to index.html, just before the Ionic Framework reference (before the ionic.bundle.js reference):
@@ -89,7 +92,8 @@ For Windows & Windows Phone 8.1:
 * For Windows, choose Local Machine as a target.
 * For Windows Phone 8.1, choose one of the Emulator 8.1 options.
 5. Press F5 to start debugging.
-**Note** If you see the TypeScript error or the Keyboard plugin error, see the previous steps for Android to resolve.
+
+  **Note** If you see the TypeScript error or the Keyboard plugin error, see the previous steps for Android to resolve.
 
 For iOS:
 
@@ -106,7 +110,7 @@ On Windows 8.1 dev machine, you may get a WWAHost runtime error when navigating 
 To target Windows 10 in the app, you need to:
 * Use VS install program to install the Universal Windows App Development Tools (optional software).
 * In the configuration designer, select Cordova 5.1.1 and, in the Windows tab, choose Windows 10.
-However, if you target Windows 10 in the app, note that you may get errors loading partial pages, such as this unhandled exception.
+However, if you target Windows 10 in the app, note that you may get errors loading partial pages in Ionic apps, such as this unhandled exception.
 
 ![unhandled exception](media/ionic-unhandled-exception.png)
 
