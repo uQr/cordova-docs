@@ -18,12 +18,12 @@ var gulp = require("gulp"),
 gulp.task("default", function (callback) {
 	cordova.build({
     	"platforms": ["android"],
-    	"options": ["--release"]
+    	"options": ["--release","--gradleArg=--no-daemon"]
     }, callback);
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note that cordova-lib functions **are asynchronous** and so you need to include the Gulp callback function passed into your task as an argument to your last API call.
+Note that cordova-lib functions **are asynchronous** and so you need to include the Gulp callback function passed into your task as an argument to your last API call. Note that "--gradleArg=--no-daemon" above should be added in for build automation scenarios since Cordova starts up a daemon process by default that can cause your build to appear to hang.
 
 To see the example above in action you will need to install some additional npm packages. Create a simple [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file with a minimum of the following in it that is in the root of your Cordova project:
 
@@ -101,7 +101,7 @@ var gulp = require("gulp"),
 cordovaBuild = require("taco-team-build");
 
 gulp.task("default", function () {
-    return cordovaBuild.buildProject("android", ["--release"])
+    return cordovaBuild.buildProject("android", ["--release", "--gradleArg=--no-daemon"])
         .then(function() { return cordovaBuild.packageProject("android"); });
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +133,7 @@ var gulp = require("gulp"),
 var winPlatforms = ["android", "windows", "wp8"],
 	osxPlatforms = ["ios"],
 	buildArgs = {
-		android: ["--release", "--device"],
+		android: ["--release", "--device", "--gradleArg=no-daemon"],
 		ios: ["--release", "--device"],
 		windows: ["--release", "--device"],
 		wp8: ["--release", "--device"]
@@ -160,7 +160,7 @@ gulp.task("package", ["build"], function () {
 });
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You may also wish to update the script with TypeScript compilation if you are using the language in your app.  See the [Gulp TypeScript tutorial](http://go.microsoft.com/fwlink/?LinkID=533769) for details.
+Again, note that "--gradleArg=--no-daemon" above should be added in for build automation scenarios since Cordova starts up a daemon process by default that can cause your build to appear to hang. You may also wish to update the script with TypeScript compilation if you are using the language in your app.  See the [Gulp TypeScript tutorial](http://go.microsoft.com/fwlink/?LinkID=533769) for details.
 
 ##Configuring a Team / CI Build Server
 If you haven't already, you'll need to set up your build server with all of the necessary native dependencies for the platforms you intend to build. See “Installing Dependencies” in the [Building Cordova Apps in a Team / Continuous Integration Environment](http://go.microsoft.com/fwlink/?LinkID=533743) tutorial for details.
