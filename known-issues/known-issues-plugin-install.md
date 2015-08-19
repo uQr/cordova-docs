@@ -1,29 +1,19 @@
 #**Known Issues - Plugins Installation**
 This article covers [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova and installing plugins.
 
-```
-
-```
+  
+  
 
 ##**Git sourced plugins will not install** 
 Git sourced plugins will not install properly if you have not installed the [Git command line tools](http://www.git-scm.com/downloads) and have them in your system path. During installation of the Git tools, select the "Use Git from the Windows Command Prompt" option or add the "bin" folder from the Git install location to your path and restart VS. (Usually "C:\Program Files (x86)\Git\bin").
-
-
-```
-
-```
-
+  
+  
+  
 
 ##**Git sourced plugins will not install with Cordova 5.1.1 only**
 Cordova 5.1.1 has a bug that can cause plugins installed from a Git repo to fail with the error "Error: EXDEV, cross-device link not permitted" if the project is on a different drive than your temp folder. 
 
 See [tips and workarounds](../tips-and-workarounds/general/README.md#plugin-xml) for information on adding plugins not in the config designer from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when installing or you can instead download a copy, unzip it, and add the plugin from the filesystem. 
-
-
-```
-
-```
-
 
 
 ##**Plugin with variables not working** 
@@ -35,9 +25,6 @@ Due to a Cordova issue with Cordova 4.3.0 and 4.3.1, you can run into problems w
 
  3. Re-add your plugin via "Plugins" tab in the config.xml designer
 
-```
-
-```
 
 
 ##**Old versions of Cordova plugins due to Cordova plugin ID changes**
@@ -45,18 +32,11 @@ A significant change occurred with Cordova 5.0.0+ that also altered the IDs of m
 
 If you update your Cordova version to 5.1.1 or later the config.xml designer will automatically switch to using the new IDs. If you do not see this behavior, update Tools for Apache Cordova. Some very early adopters may not see some of the improvments described in this document until after you update since a small post-RTM update enabled this functionality. You will get an update notification soon prompting you to update or you can click "Install Tools for Apache Cordova" from the Apache Cordova templates section when creating a new project. Be sure to remove plugins using older IDs from your project before adding the updated plugins with the new IDs.
 
-```
-
-```
 
 
 ##**TypeError: Request path contains unescaped characters** 
 When building or installing a plugin you may encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/README.md#cordovaproxy) for additional details.
 
-
-```
-
-```
 
 
 ##**Frequent ECONRESET errors from npm when using VPN or proxy** 
@@ -65,11 +45,6 @@ Is your development machine behind a firewall/proxy server?  If so, you might be
 ~~~~~~~~~~~~~~~~~~~~~~~
 npm config set registry http://registry.npmjs.org
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-```
-
-```
-
 
 
 
@@ -80,10 +55,6 @@ If you installed Visual Studio or Node.js running as an administrator, you can r
 npm config set prefix %APPDATA%\npm
 npm config set cache %APPDATA%\npm-cache
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-```
-
-```
 
 
 ----------
