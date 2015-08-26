@@ -2,6 +2,23 @@
 This article covers [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to iOS devices or simulators. 
 
 ----------
+##**Incremental builds with remotebuild@1.0.1 and Visual Studio 2015 RTM is broken:** 
+*Observation:*
+
+1.	First F5 = success
+2.	Makes changes to any files inside /www
+3.	Second F5 = changes to /www don’t appear; looks exactly like the first F5
+
+
+*Temporary Workaround:*
+
+1. First F5 = success
+2. User makes changes to /www
+3. **Do a Clean build or Rebuild**
+4. Second F5 = success
+
+
+----------
 **vs-ms-remote reports a 404 error when using VS 2015 RTM or later:** VS 2015 RTM and up uses a new "remotebuild" agent instead of vs-mda-remote. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
 
 ----------
