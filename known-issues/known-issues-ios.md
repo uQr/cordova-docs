@@ -12,7 +12,15 @@ Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug whe
 3.	Second F5 = changes to /www don’t appear; looks exactly like the first F5
 
 
-*Temporary Workaround:*
+***Temporary Workaround A:***
+
+1. Open File Explorer and Navigate to %APPDATA%\npm\node_modules\vs-tac\lib\
+2. Replace file remoteBuild.js with one from [here](https://raw.githubusercontent.com/Microsoft/cordova-docs/master/known-issues/ios-remote-incremental-build-fix/remoteBuild.js)
+
+*Note: if you are not using default npm installation location, then to find out the directory where remoteBuild.js is located, run “npm config get prefix” (from a command prompt) to get the base of the directory, “C:\Users\<user name>\AppData\Roaming\npm” for me, and then replace “\node_modules\vs-tac\lib\remoteBuild.js”.*
+
+
+***Temporary Workaround B:***
 
 1. First F5 = success
 2. User makes changes to /www
