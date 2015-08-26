@@ -3,10 +3,12 @@ This article covers [known issues](../Readme.md#knownissues) related to Visual S
 
 ----------
 ##**Incremental builds with remotebuild@1.0.1 and Visual Studio 2015 RTM is broken:** 
+Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug where incremental changes made to any files under the /www folder does not get updated/built on iOS.
+
 *Observation:*
 
 1.	First F5 = success
-2.	Makes changes to any files inside /www
+2.	Make changes to any files inside /www
 3.	Second F5 = changes to /www don’t appear; looks exactly like the first F5
 
 
