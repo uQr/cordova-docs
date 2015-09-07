@@ -86,7 +86,7 @@ Running the above command, prompts you for passwords for the keystore and key, a
     			"storePassword":"pwd123",
     			"alias":"johnS",
 				"password":"pwd123",
-                "keystoreType":"",
+                "keystoreType":""
             }
         }
     }
