@@ -49,7 +49,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 	1. [CTP 3.1 / Visual Studio 2013](./known-issues/known-issues-vs2013.md)
 
 ## Help us improve our documentation
-Help us improve out docuementaiton by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
+Help us improve our documentation by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
 
 
 ## More Information
