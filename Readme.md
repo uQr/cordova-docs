@@ -1,4 +1,4 @@
-# Visual Studio Tools for Apache Cordova
+# Visual Studio Tools for Apache Cordova 
 This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).**
 
 **Note that, with the exception of known issues, this documentation does not apply to Visual Studio 2013 CTPs.**
