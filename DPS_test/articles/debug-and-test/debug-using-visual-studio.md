@@ -42,7 +42,7 @@ You can attach the Visual Studio debugger to an app that’s running in the Apac
 
     Here, the Visual Studio debugger hits the breakpoint while debugging in the Ripple emulator.
 
-    ![Breakpoint caught by the Visual Studio debugger](<media/debug-hit-breakpoint.png "Breakpoint caught by the Visual Studio debugger")
+    ![Breakpoint caught by the Visual Studio debugger](<media/debug-hit-breakpoint.png> "Breakpoint caught by the Visual Studio debugger")
 
 **Important** The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in Ripple. However, the debugger will stop at these breakpoints after you refresh the browser.
 
@@ -115,9 +115,7 @@ If you’re using an Android version between 2.3.3 and 4.3, you can install the 
 
     You can interact with your page using the JavaScript Console, and use the DOM Explorer to inspect HTML and CSS.
 
-![Important note](https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif "Important note")**Important**</th></tr><tr><td>
-
-You must remove the jsHybugger plugin and the license file from your project before you publish your app.
+**Important** You must remove the jsHybugger plugin and the license file from your project before you publish your app.
 
 The plugin has no effect when you’re using the Apache Ripple emulator or debugging on Android 4.4 emulators and devices, so there’s no need to remove it when you switch between different Android targets during testing.
 
