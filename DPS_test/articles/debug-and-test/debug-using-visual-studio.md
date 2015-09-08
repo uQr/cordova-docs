@@ -38,11 +38,11 @@ You can attach the Visual Studio debugger to an app that’s running in the Apac
 
     The following illustration shows a breakpoint set in the Code Editor.
 
-    ![Setting a breakpoint while debugging using Ripple](https://i-msdn.sec.s-msft.com/dynimg/IC743100.png "Setting a breakpoint while debugging using Ripple")
+    ![Setting a breakpoint while debugging using Ripple](<media/debug-set-breakpoint.png> "Setting a breakpoint while debugging using Ripple")
 
     Here, the Visual Studio debugger hits the breakpoint while debugging in the Ripple emulator.
 
-    ![Breakpoint caught by the Visual Studio debugger](https://i-msdn.sec.s-msft.com/dynimg/IC752252.png "Breakpoint caught by the Visual Studio debugger")
+    ![Breakpoint caught by the Visual Studio debugger](<media/debug-hit-breakpoint.png "Breakpoint caught by the Visual Studio debugger")
 
 **Important** The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in Ripple. However, the debugger will stop at these breakpoints after you refresh the browser.
 
@@ -108,7 +108,7 @@ If you’re using an Android version between 2.3.3 and 4.3, you can install the 
 
     Here’s what your project will look like in Solution Explorer.
 
-    ![Project structure after installing jsHybugger](https://i-msdn.sec.s-msft.com/dynimg/IC816680.png "Project structure after installing jsHybugger")
+    ![Project structure after installing jsHybugger](<media/debug-jshybugger-solution-explorer.png> "Project structure after installing jsHybugger")
 3.  In your project, choose **Android** from the **Solution Platforms** list, and then choose one of the Android deployment targets.
 
 4.  Press F5 to start debugging.
@@ -216,7 +216,7 @@ As an alternative to using weinre for Windows Phone 8 debugging, you can instead
 
 **Caution** Changes you make to the native project will be overwritten when you rebuild the Cordova app.
 
-![Download the tools](https://i-msdn.sec.s-msft.com/dynimg/IC795792.png "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](<media/vs-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 #### See Also
 [Get Started with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771545.aspx)
