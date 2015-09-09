@@ -26,3 +26,83 @@ The services used in the demo application to fetch files from OneDrive are:
  - [O365 Discovery Services](https://msdn.microsoft.com/library/office/dn776441%28v=office.15%29.aspx), to find SharePoint service endpoints for the logged in user. 
  - [Files API](https://msdn.microsoft.com/library/office/dn605900%28v=office.15%29.aspx), to retrieve the file and folders information for the user’s OneDrive for Business.
 
+##Creating Authentication and Discovery Contexts
+Before your app can access Office 365 services, the app must be authenticated. The [common consent framework in Azure AD](https://msdn.microsoft.com/library/office/dn605895%28v=office.15%29.aspx) handles the authentication.
+
+The basic objects that you need before you can perform any operations with O365 service are the context objects. For the demo app, the following context objects are required:
+
+ - Authentication context
+ - Discovery context
+
+The code below constructs these objects as follows:
+
+    var authContext = new O365Auth.Context();
+    var discoveryContext = new O365Discovery.Context();
+
+The `authContext` object allows you to fetch the required ID token and access tokens, which can be used to obtain user information and to call specific services.
+
+The `discoveryContext` object allows you to fetch the Office 365 service capabilities, such as Mail or Calendar or MyFiles, along with their corresponding URL endpoints.
+
+Once you have the required ID token, it can be used to identify the user. The ID token is a base64 encoded web token. You can use this token to retrieve the user that has currently logged in, as follows:
+
+    authContext.getIdToken("https://outlook.office365.com/").then(
+            (function (token) {
+        // Can use token.givenName and token.familyName
+    }).bind(this), function (reason) {
+        console.og(reason.message);
+    });
+
+The access token is a base64 URL-encoded web token that can be used for API access. Here is how you can get the access token that is used to call SharePoint services:
+
+    authContext.getAccessTokenFn('Microsoft.SharePoint')
+
+##Using the Files API
+The SharePoint capability object for "MyFiles" allows you to work with the files and folders programmatically. To do this, you must first obtain the capabilities collection and then look for the MyFiles capability in the returned collection. To obtain the capabilities object, use the discovery service by passing the access token for `Microsoft.SharePoint` as follows:
+
+    var fileCapability;
+    discoveryContext.services(authContext.getAccessTokenFn(
+        'Microsoft.SharePoint')).then(
+        (function (capabilities) {
+        // We have the capabilities object. 
+        // Enumerate the object to get the capability 
+        // for "My Files"
+        capabilities.forEach(function (v, i, a) {
+            if (v.capability === 'MyFiles') {
+                filesCapability = v;
+            }
+        });
+    }).bind(this), function (error) {
+        // error
+    });
+
+Now that you have the capability object for MyFiles, you can create a SharePoint client and then call File APIs to work with user files, such as files stored on OneDrive for Business.
+
+##Create the SharePoint Client Object
+To create the SharePoint client object we need the end point URI information stored in the capability object and the access token for the resource:
+
+    var sharePoint = new 
+        Microsoft.CoreServices.SharePointClient (
+        filesCapability.endpointUri,
+        authContext.getAccessTokenFn(
+            filesCapability.resourceId)
+    );
+
+##Fetch Files and Folders
+Now we can enumerate the files by calling `getFileSystemItems()` as follows:
+
+    sharePoint.files.getFileSystemItems().fetch().then(
+        function (value) {
+        value.currentPage.forEach(function (o) {
+            // o._type will indicate whether this is a
+            // file or folder.
+            // o._Id provides the full path.
+            // o._name provides the name of the file.
+        });
+    }, function (reason) {
+        console.log(reason);
+    });
+
+In the demo application, the app fetches the information for each file and stores the information in a local JSON object. The app binds the JSON object to the UI using AngularJS.
+
+##Give it a Try!
+The complete application is available in [Github](http://go.microsoft.com/fwlink/?LinkID=517836). Please download and try the sample and let us know your feedback. We would like to hear your opinions about the new APIs!
