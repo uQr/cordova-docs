@@ -145,7 +145,7 @@ When you add the AngularJS framework (in later steps), other AngularJS attribute
         outline: none;
       }
 
-      /* style the todo app \*/
+      /* style the todo app*/
       #todoapp {
         background: rgba(255, 255, 255, 0.9);
         position: relative;
@@ -157,7 +157,7 @@ When you add the AngularJS framework (in later steps), other AngularJS attribute
 
       /* section styles*/
       @media (min-width: 650px) {
-          /* style the todo list to look better on larger screens \*/
+          /* style the todo list to look better on larger screens*/
             #todoapp {
                 width: 74%;
                 left: 13%;
@@ -190,7 +190,7 @@ When you add the AngularJS framework (in later steps), other AngularJS attribute
             height: 100%;
         }
 
-        /* the header that contains the input \*/
+        /* the header that contains the input*/
         header {
             height: 50px;
         }
@@ -228,25 +228,25 @@ When you add the AngularJS framework (in later steps), other AngularJS attribute
             border-top: 1px dotted #adadad;
         }
 
-        /* todo list \*/
+        /* todo list*/
         #todo-list {
             margin: 0px;
             overflow-y: auto;
         }
 
-        /* the host template \*/
+        /* the host template*/
         .templateWrapper {
             position: relative;
             overflow: hidden;
         }
 
-        /* blue border under the template \*/
+        /* blue border under the template*/
         .templateBorder {
             height: 0;
             border-bottom: 2px solid #bfdbf2;
         }
 
-        /* container for the todo-address div \*/
+        /* container for the todo-address div*/
         .templateContainer {
             margin: 4px 15px 0px 45px;
         }
@@ -307,7 +307,7 @@ When you add the AngularJS framework (in later steps), other AngularJS attribute
             margin: 0px 0px 4px 0px;
         }
 
-        /* button on the templated item \*/
+        /* button on the templated item*/
         button.templateLeft {
             position: absolute;
             top: 6px;
@@ -320,17 +320,17 @@ When you add the AngularJS framework (in later steps), other AngularJS attribute
             background-color: transparent;
         }
 
-        /* button when the item is checked \*/
+        /* button when the item is checked*/
         button.templateToggle.checked {
             background-image: url('http://go.microsoft.com/fwlink/?LinkID=403179');
         }
 
-        /* button when the item is unchecked \*/
+        /* button when the item is unchecked*/
         button.templateToggle.unchecked {
             background-image: url('http://go.microsoft.com/fwlink/?LinkID=403180');
         }
 
-        /* button for removing the item \*/
+        /* button for removing the item*/
         button.templateRemove {
             display: none;
             background-image: url('http://go.microsoft.com/fwlink/?LinkID=403181');
@@ -344,14 +344,16 @@ You can take a look at the empty task list in one of the emulators to verify tha
 
 2. If you chose the Android platform, choose one of the Ripple simulators, as shown here.
 
-  ![Selecting the Ripple emulator](./media/create-to-do-list-app/IC793846.png) If you chose a Windows platform, you can run the app on the default deployment target, Local Machine.
+  ![Selecting the Ripple emulator](./media/create-to-do-list-app/IC793846.png)
+
+   If you chose a Windows platform, you can run the app on the default deployment target, Local Machine.
 3. Press F5 to start debugging, or Shift+F5 to start without debugging.
   The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators (with no actual data yet attached, and with some files missing at this stage).
 
   ![Cordova_ToDo_List_App_Empty](./media/create-to-do-list-app/IC755669.png)
 
   **Tip**
-  If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, SDK Manager.exe is in C:\Program Files (x86)\Android\android-sdk.
+  If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, SDK Manager.exe is in C: Program Files (x86) Android android-sdk.
 
   If you see an error such as Cannot find module [modulename], see [Re-installing vs-tac](https://msdn.microsoft.com/en-us/library/dn757054.aspx#vsmda).
 
@@ -459,8 +461,7 @@ The data model is represented by the xPlat.services module, which you’ll imple
           /**
            * Storage service to abstract specific implementations.
            *
-           * @params {!angular.Service} $injector
-           \*/
+           * @params {!angular.Service} $inject*/
           function storage($injector) {
               // If Azure storage is available, use it. Otherwise, use local storage.
               //var azureService = $injector.get('azureStorage');
@@ -483,8 +484,7 @@ The data model is represented by the xPlat.services module, which you’ll imple
            * @param {angular.Service} $q
            * @param {angular.Service} $window
            * @param {angular.Service} guidGenerator
-           * @constructor
-           \*/
+           * @constructor*/
           function LocalStorage($q, $window, guidGenerator) {
               this.$q = $q;
               this.$window = $window;
@@ -494,29 +494,25 @@ The data model is represented by the xPlat.services module, which you’ll imple
           /**
            * Key for storing todo items locally.
            * @type {string}
-           * @const
-           \*/
+           * @const*/
           LocalStorage.prototype.LOCAL_STORAGE_KEY = 'toDoItems';
 
           /**
            * Load JSON data from the local storage.
-           * @return {Object} Todo items.
-           \*/
+           * @return {Object} Todo items*/
           LocalStorage.prototype.loadFromStorage = function () {
               return angular.fromJson(this.$window.localStorage.getItem(this.LOCAL_STORAGE_KEY)) || [];
           };
 
           /**
            * Save JSON data in the local storage.
-           * @params {Object} items Todo items.
-           \*/
+           * @params {Object} items Todo items*/
           LocalStorage.prototype.saveToStorage = function (items) {
               this.$window.localStorage.setItem(this.LOCAL_STORAGE_KEY, angular.toJson(items));
           }
 
           /**
-           * Retrieve all data from local storage.
-           \*/
+           * Retrieve all data from local storage*/
           LocalStorage.prototype.getAll = function () {
               return this.loadFromStorage();
           };
@@ -524,8 +520,7 @@ The data model is represented by the xPlat.services module, which you’ll imple
           /**
            * Create a new todo to local storage.
            * @param {string} text Text of the todo item.
-           * @param {string} address Address of the todo item.
-           \*/
+           * @param {string} address Address of the todo item*/
           LocalStorage.prototype.create = function (text, address) {
               var item = {
                   id: this.guidGenerator.get(),
@@ -542,8 +537,7 @@ The data model is represented by the xPlat.services module, which you’ll imple
 
           /**
            * Update an existing todo in local storage.
-           * @param {Object} item Todo item to modify.
-           \*/
+           * @param {Object} item Todo item to modify*/
           LocalStorage.prototype.update = function (item) {
               var items = this.loadFromStorage();
               for (var i = 0; i < items.length; i++) {
@@ -559,8 +553,7 @@ The data model is represented by the xPlat.services module, which you’ll imple
 
           /**
            * Remove a todo from local storage.
-           * @param {Object} item Todo item to remove from local storage.
-           \*/
+           * @param {Object} item Todo item to remove from local storage*/
           LocalStorage.prototype.del = function (item) {
               var items = this.loadFromStorage();
               for (var i = 0; i < items.length; i++) {
@@ -594,38 +587,35 @@ In this section, you’ll implement the AngularJS controller module (xPlat.contr
            * @param {!angular.Service} maps
            * @param {!angular.Service} storage
            * @constructor
-           * @export
-           \*/
+           * @export*/
           function ToDoCtrl(maps, storage) {
               this.maps = maps;
               this.storage = storage;
               this.todos = storage.getAll();
 
               this.updateAddress = function (toDoItem) {
-                  var \_this = this;
+                  var _this = this;
 
                   return this.maps.getCurrentPosition()
-                      .then(\_this.maps.getAddressFromPosition.bind(\_this.maps), function (error) { return error.message; })
+                      .then(_this.maps.getAddressFromPosition.bind(_this.maps), function (error) { return error.message; })
                       .then(function (address) {
                           toDoItem.address = address;
-                          return \_this.storage.update(toDoItem);
+                          return _this.storage.update(toDoItem);
                       }, function (errorMessage) {
                           toDoItem.address = errorMessage;
-                          return \_this.storage.update(toDoItem);
+                          return _this.storage.update(toDoItem);
                       });
               }
           }
 
           /**
            * Update the item location with an address.
-           * @param toDoItem
-           \*/
+           * @param toDoItem*/
 
           /**
-           * Add a todo item to the list.
-           \*/
+           * Add a todo item to the list*/
           ToDoCtrl.prototype.addToDo = function () {
-              var \_this = this;
+              var _this = this;
 
               var text = this.newToDoText;
               if (!text) {
@@ -635,35 +625,32 @@ In this section, you’ll implement the AngularJS controller module (xPlat.contr
               this.newToDoText = '';
               this.storage.create(text, 'Getting location...')
                   .then(function (todo) {
-                      \_this.todos.push(todo);
+                      _this.todos.push(todo);
                       return todo;
                   }).then(this.updateAddress.bind(this));
           };
 
           /**
-           * Update the text of a todo item.
-           \*/
+           * Update the text of a todo item*/
           ToDoCtrl.prototype.changeToDoText = function (toDoItem) {
               this.storage.update(toDoItem)
                   .then(this.updateAddress.bind(this))
           };
 
           /**
-           * Check/uncheck a todo item.
-           \*/
+           * Check/uncheck a todo item*/
           ToDoCtrl.prototype.toggleToDoDone = function (toDoItem) {
               toDoItem.done = !toDoItem.done;
               this.storage.update(toDoItem);
           };
 
           /**
-           * Remove a todo item from the list.
-           \*/
+           * Remove a todo item from the list*/
           ToDoCtrl.prototype.removeToDo = function (toDoItem) {
-              var \_this = this;
+              var _this = this;
               this.storage.del(toDoItem).then(function (todo) {
-                  var index = \_this.todos.indexOf(todo);
-                  \_this.todos.splice(index, 1);
+                  var index = _this.todos.indexOf(todo);
+                _this.todos.splice(index, 1);
               });
           };
       })();
@@ -682,8 +669,7 @@ Next, you’ll implement the directives module. In this code, you’ll create a 
           /**
            * Factory function for the directive for ng-text-change.
            *
-           * @return {Object} td-text-change
-           \*/
+           * @return {Object} td-text-change*/
           function tdTextChange() {
               return {
                   restrict: 'A',
@@ -711,8 +697,7 @@ In this section, you’ll add additional service modules to support features suc
 
           /**
            * Generates a GUID to use as an ID for the todos
-           * @constructor
-           \*/
+           * @constructor*/
           function GuidGenerator() {
               // Generates a small part of a GUID
               this.generatePart = function () {
@@ -723,8 +708,7 @@ In this section, you’ll add additional service modules to support features suc
 
           /**
            * Returns a new GUID.
-           * @return {string} generated GUID.
-           \*/
+           * @return {string} generated GUID*/
           GuidGenerator.prototype.get = function () {
               return this.generatePart()
                   + '-'
@@ -763,17 +747,17 @@ In the services folder, open maps.js and add the following code. We will use thi
           }
 
           Maps.prototype.getCurrentPosition = function () {
-              var \_this = this;
+              var _this = this;
               return this.cordova.ready.then(function () {
-                  var deferred = \_this.$q.defer();
-                  \_this.$window.navigator.geolocation.getCurrentPosition(function (successValue) {
-                      \_this.$rootScope.$apply(function () {
-                          deferred.resolve(successValue);
-                      }.bind(\_this));
+                  var deferred = _this.$q.defer();
+                  _this.$window.navigator.geolocation.getCurrentPosition(function (successValue) {
+                       _this.$rootScope.$apply(function () {
+                        deferred.resolve(successValue);
+                      }.bind( _this));
                   }, function (errorValue) {
-                      \_this.$rootScope.$apply(function () {
+                       _this.$rootScope.$apply(function () {
                           deferred.reject(errorValue);
-                      }.bind(\_this));
+                      }.bind( _this));
                   });
 
                   return deferred.promise;
@@ -783,10 +767,10 @@ In the services folder, open maps.js and add the following code. We will use thi
           /**
            * Gets an address from a position.
            * @params position
-           \*/
+            */
           Maps.prototype.getAddressFromPosition = function (position) {
-              var \_this = this;
-              return this.$resource(\_this.url, {})
+              var  _this = this;
+              return this.$resource( _this.url, {})
                   .get({ latitude: position.coords.latitude, longitude: position.coords.longitude })
                   .$promise.then(function (response) {
                       return response.resourceSets[0].resources[0].address.formattedAddress;
@@ -809,7 +793,7 @@ In the services folder, open cordova.js and add the following code. This code ad
            * @param {!angular.Service} $q
            * @param {!angular.Service} $window
            * @param {!angular.Service} $timeout
-           \*/
+            */
           function cordova($q, $window, $timeout) {
               var deferred = $q.defer();
               var resolved = false;
@@ -885,7 +869,7 @@ The complete sample includes additional code to store and retrieve task list ite
                           "applicationKey");
          });
 
-4. In Solution Explorer, remove the new services folder that was added when you chose Add, Connected Services and added the service. You won’t need this code or the services folder structure that was just added. 11\. In storage.js, uncomment the following lines of code to allow use of Azure as the storage service.
+4. In Solution Explorer, remove the new services folder that was added when you chose Add, Connected Services and added the service. You won’t need this code or the services folder structure that was just added. 11 . In storage.js, uncomment the following lines of code to allow use of Azure as the storage service.
 
          // var azureService = $injector.get('azureStorage');
          // return azureService.isAvailable ? azureService : $injector.get('localStorage');
@@ -915,7 +899,7 @@ The complete sample includes additional code to store and retrieve task list ite
            *
            * @type {string}
            * @const
-           \*/
+            */
           var AZURE_MOBILE_SERVICES_KEY = '';
 
           /**
@@ -924,7 +908,7 @@ The complete sample includes additional code to store and retrieve task list ite
            *
            * @type {string}
            * @const
-           \*/
+            */
           var AZURE_MOBILE_SERVICES_ADDRESS = '';
 
           /**
@@ -933,7 +917,7 @@ The complete sample includes additional code to store and retrieve task list ite
            * @param {angular.Service} $resource
            * @param {angular.Service} guidGenerator
            * @constructor
-           \*/
+            */
           function AzureStorage($resource, guidGenerator) {
               this.isAvailable = AZURE_MOBILE_SERVICES_KEY && AZURE_MOBILE_SERVICES_ADDRESS;
               if (!AZURE_MOBILE_SERVICES_KEY || !AZURE_MOBILE_SERVICES_KEY) {
@@ -976,7 +960,7 @@ The complete sample includes additional code to store and retrieve task list ite
 
           /**
            * Retrieve all data from Azure storage.
-           \*/
+            */
           AzureStorage.prototype.getAll = function () {
               return this.toDoItem.query();
           };
@@ -986,7 +970,7 @@ The complete sample includes additional code to store and retrieve task list ite
            *
            * @param {string} text Text of the todo item.
            * @param {string} address Address of the todo item.
-           \*/
+            */
           AzureStorage.prototype.create = function (text, address) {
               var item = new this.toDoItem({
                   text: text,
@@ -1001,7 +985,7 @@ The complete sample includes additional code to store and retrieve task list ite
            * Update an existing todo in Azure storage.
            *
            * @param {Object} item Todo item to modify.
-           \*/
+            */
           AzureStorage.prototype.update = function (item) {
               return item.$update();
           };
@@ -1010,7 +994,7 @@ The complete sample includes additional code to store and retrieve task list ite
            * Remove a todo from Azure storage.
            *
            * @param {Object} item Todo item to remove from local storage.
-           \*/
+            */
           AzureStorage.prototype.del = function (item) {
               return item.$delete();
           };
