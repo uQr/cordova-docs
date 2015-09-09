@@ -19,3 +19,39 @@ To build this app, you’ll follow these steps:
      - Delete mail, calendar event
      - Create new calendar event, contact
  10. Run the app
+
+The following screenshot shows the running Calendar app when completed:
+
+***INSERT PICTURE***
+
+The following screenshot shows the running Mail app when completed:
+
+***INSERT PICTURE***
+
+The following screenshot shows the running Contacts app when completed.
+
+##Prerequisites
+Before you can create a new project, make sure that you’ve met all system requirements and installed the Visual Studio Tools for Apache Cordova extension for Visual Studio. For more information, see Install Visual Studio Tools for Apache Cordova.
+
+##Create a project
+Create a new Cordova project in Visual Studio by choosing **File**, **New Project**, **JavaScript**, **Apache Cordova Apps**, and then **Blank App** template.
+
+##Add the Ionic Framework to your project
+To add the Ionic Framework:
+
+ 1. From the Ionic framework website, choose Download beta.
+ 2. Extract the zip file.
+ 3. Create a new folder named lib under your Cordova project in Solution Explorer in Visual Studio, and then copy the extracted content under lib folder.
+
+< insert image >
+
+ 4. Update the script references.
+
+In index.html, add the following Ionic references in the <head> element, after the Cordova and platformOverrides script references:
+
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+In index.html, add following ionic CSS reference:
+
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet" />
+
