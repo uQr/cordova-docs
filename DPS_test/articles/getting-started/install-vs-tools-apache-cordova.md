@@ -1,35 +1,35 @@
 
 # Install Visual Studio Tools for Apache Cordova
 
-_In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._ 
+_In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._
 
-Take advantage of the easy-to-use installer to build cross-platform apps with Visual Studio and Apache Cordova. With the installer, you don’t have to identify the required SDKs, tools, and libraries (or which versions). 
+Take advantage of the easy-to-use installer to build cross-platform apps with Visual Studio and Apache Cordova. With the installer, you don’t have to identify the required SDKs, tools, and libraries (or which versions).
 
-In this section: 
+In this section:
 
 [Requirements](#req)  
 [Get the tools](#GetTools)  
 [Install the tools](#InstallTools)  
-[Install tools for iOS](#ios) 
+[Install tools for iOS](#ios)
 [Additional Tasks](#AdditionalTasks)
 
 ##Requirements
 **
-Operating system requirements: 
+Operating system requirements:
 
 * Windows 7, Windows 8, Windows 8.1, Windows 10, or Windows Server 2012 R2.
 
     **Important**
 If you are using Windows 7, you can develop apps for Android and iOS, but not for Windows or Windows Phone.
-To build apps for specific device platforms, there are a few additional requirements: 
+To build apps for specific device platforms, there are a few additional requirements:
 
 * iOS and the iOS Simulator require a Mac computer capable of running [Xcode 6](https://developer.apple.com/xcode/) (Xcode 6 is recommended). For additional information and installation steps, see [Install tools for iOS](#ios).
 
     **Tip**
 If you want to build iOS on a cloud service instead of Mac hardware, see [Build and Simulate iOS in the Cloud](https://msdn.microsoft.com/en-us/library/dn858446.aspx).
-* Android emulators work best on computers that [can run either Hyper-V](https://msdn.microsoft.com/en-us/library/mt228280.aspx) or the Intel HAXM driver. See [Run Your Apache Cordova App on Android](https://msdn.microsoft.com/en-us/library/dn757059.aspx). 
+* Android emulators work best on computers that [can run either Hyper-V](https://msdn.microsoft.com/en-us/library/mt228280.aspx) or the Intel HAXM driver. See [Run Your Apache Cordova App on Android](https://msdn.microsoft.com/en-us/library/dn757059.aspx).
 
-* Windows Phone emulators require a computer that can run Hyper-V. 
+* Windows Phone emulators require a computer that can run Hyper-V.
 
 * Building a Windows 10 Universal Platform app requires the installation of the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=617471). Note that Windows 8.1/Phone 8.1 apps may also be deployed to Windows 10
 ##Get the tools
@@ -39,13 +39,13 @@ If you want to build iOS on a cloud service instead of Mac hardware, see [Build 
 Visual Studio 2015 is recommended for developing Apache Cordova apps. If you previously installed Visual Studio 2015 Preview, a Visual Studio 2015 CTP, or Visual Studio 2015 RC, you must first uninstall it using Control Panel, Programs and Features, before installing Visual Studio 2015.
 ##<a name="installTools"></a>Install the tools
 
-When you choose to install Visual Studio Tools for Apache Cordova, the installer for Visual Studio 2015 selects additional third-party software to install. Most of these are open-source software required by specific platforms or by Apache Cordova. You can override the default selections, and deslect software that you don’t want to install. 
+When you choose to install Visual Studio Tools for Apache Cordova, the installer for Visual Studio 2015 selects additional third-party software to install. Most of these are open-source software required by specific platforms or by Apache Cordova. You can override the default selections, and deslect software that you don’t want to install.
 
-If not already installed, the following software will be selected by default: 
+If not already installed, the following software will be selected by default:
 
-* Android SDK is required for the Android build process and Ripple. 
+* Android SDK is required for the Android build process and Ripple.
 
-* Apache Ant 1.8.0 or later is required for the Android build process. 
+* Apache Ant 1.8.0 or later is required for the Android build process.
 
 * 32-bit Oracle Java JDK 7 is required for the Android build process.
 
@@ -59,31 +59,30 @@ The installer does not install Google Chrome, which is required if you want to r
     **Important**
 When using Cordova 5.0.0+, you may need to add a **_JAVA_OPTIONS** environment variable that contains at least **-Xmx512M** to avoid out of memory issues when building Android. For more info, see the known issue [here](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-android.md).
 ### To install Visual Studio Tools for Apache Cordova
-1. Run the installer that you found in [Get the tools](#GetTools). 
+1. Run the installer that you found in [Get the tools](#GetTools).
 
-* Follow the instructions to install Visual Studio 2015, and make sure you install the following optional features: 
+* Follow the instructions to install Visual Studio 2015, and make sure you install the following optional features:
    * HTML/JavaScript (Apache Cordova), under Cross Platform Mobile Development
-   
+
          **Note** If you are installing Visual Studio 2013 instead of Visual Studio 2015 (we recommend Visual Studio 2015), the Cordova tools are installed as a [separate extension](http://go.microsoft.com/fwlink/p/?LinkId=397606).
 
    * Windows 8.1 and Windows Phone 8.0/8.1 Tools.
-   
-   * Microsoft Visual Studio Emulator for Android, if your development machine [supports Hyper-V](https://msdn.microsoft.com/en-us/library/mt228280.aspx). 
-   
-       ![Installing Visual Studio Tools for Apache Cordova](./media/IC816238.png)
-       ![Create Dropbox app](./media/app-service-api-create-dropbox-app/dbappcreate.png)
+
+   * Microsoft Visual Studio Emulator for Android, if your development machine [supports Hyper-V](https://msdn.microsoft.com/en-us/library/mt228280.aspx).
+
+       ![Installing Visual Studio Tools for Apache Cordova](./media/install-vs-tools-apache-cordova/IC816238.png)
 
     **Note**
 You can add these features to an existing installation of Visual Studio 2015\. In Control Panel, choose Programs and Features. Select Visual Studio 2015 from the list, and then choose Change. In the Visual Studio setup window, choose Modify. In the features list, select the optional features as shown in the illustration.
 
-    If you don’t want to accept the third-party dependencies selected by default under Common Tools and Software Development Kits, you can clear the software selections and manually install the dependencies you need later. 
+    If you don’t want to accept the third-party dependencies selected by default under Common Tools and Software Development Kits, you can clear the software selections and manually install the dependencies you need later.
 
-    ![Multi-Hybrid Device Apps installer](./media/IC816239.png)
+    ![Multi-Hybrid Device Apps installer](./media/install-vs-tools-apache-cordova/IC816239.png)
 
     **Important**
 If the third-party dependencies are already on your system or you choose to install them manually, you might have to update your system path. See [install the dependencies manually](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#ThirdParty).
 
-3. Reboot your computer to make sure everything is installed correctly. 
+3. Reboot your computer to make sure everything is installed correctly.
 4. Open Visual Studio, choose Tools, then Extensions and Updates, and then Updates. If there is a Visual Studio update available for Visual Studio Tools for Apache Cordova, install it.
 
     **Note**
@@ -99,22 +98,22 @@ To build and run iOS apps on the iOS Simulator or on an iOS device using Visual 
 For information on using cloud-hosted Mac services instead of a Mac, see [Build and Simulate iOS in the Cloud](https://msdn.microsoft.com/en-us/library/dn858446.aspx). If you are running Windows on a Mac using virtualization technology, you can build and run iOS locally. For more information, see [Build a Cordova app for iOS using Parallels](https://msdn.microsoft.com/en-us/library/dn878133.aspx).
 
 
-Before you install the remote agent, make sure you have [installed the Visual Studio Tools for Apache Cordova](#InstallTools). 
+Before you install the remote agent, make sure you have [installed the Visual Studio Tools for Apache Cordova](#InstallTools).
 
-You can configure the agent to handle build requests and run the app on an iOS device or the iOS Simulator. To host the remote agent, the Mac computer must have the following installed: 
+You can configure the agent to handle build requests and run the app on an iOS device or the iOS Simulator. To host the remote agent, the Mac computer must have the following installed:
 
 * Mac OS X Mavericks * Xcode 6 * Xcode command-line tools (from Terminal app, use xcode-select –install)
 
 * [Node.js](http://nodejs.org/)
 
-* [Git command line tools](http://go.microsoft.com/fwlink/?LinkID=396870), if you are using a CLI from a Git repository. If the CLI version is pointed to a Git location, Git is required to build the app for iOS. 
+* [Git command line tools](http://go.microsoft.com/fwlink/?LinkID=396870), if you are using a CLI from a Git repository. If the CLI version is pointed to a Git location, Git is required to build the app for iOS.
 
 You must also have the following:
 
 * An active iOS Developer Program account with Apple
 
 * An iOS provisioning profile configured in Xcode (download the provisioning profile and run the downloaded
- 
+
 * .mobileprovision file).
 
     **Note**
@@ -140,7 +139,7 @@ The first command updates npm, the second command installs the remote agent, and
         sudo npm cache clear
         sudo chown -R `whoami` ~/.npm
 
-This command makes sure that permissions of the npm package cache in your home directory are correctly configured (newer versions of Node.js and npm will do this for you automatically.) 
+This command makes sure that permissions of the npm package cache in your home directory are correctly configured (newer versions of Node.js and npm will do this for you automatically.)
 
 When you first start the remote agent (remotebuild), developer mode will be activated on your Mac. [Homebrew](http://brew.sh/) will also be installed, along with ideviceinstaller and ios-webkit-debug-proxy, to allow automatically running apps on devices, and to allow debugging apps on devices and on the simulator.
 
@@ -159,16 +158,16 @@ If you updated your computer to a new version of Visual Studio, you must update 
     **Note**
 In Visual Studio 2013, the preceding command is vs-mda-remote.
 
-This will start the agent with a default build directory of *~/.taco\_home/remote-builds/taco-remote/builds*. Additional configurations options for the agent are described in [Configure the remote agent](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#IosConfig). 
+This will start the agent with a default build directory of *~/.taco\_home/remote-builds/taco-remote/builds*. Additional configurations options for the agent are described in [Configure the remote agent](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#IosConfig).
 
-The first time you start the agent, you will be provided with the required information to configure the agent in Visual Studio, including the host, the port, and the security PIN. 
+The first time you start the agent, you will be provided with the required information to configure the agent in Visual Studio, including the host, the port, and the security PIN.
 
-![Cordova_iOS_Install_Agent](./media/IC816236.png)
+![Cordova_iOS_Install_Agent](./media/install-vs-tools-apache-cordova/IC816236.png)
 
 **Important**
 The remote agent has been designed to securely transfer build payloads to and from Visual Studio using SSL certificates.
 
-* If you intend to configure the remote agent in Visual Studio using the host name, ping the Mac using the host name to verify that it is reachable. Otherwise, you may need to use the IP address instead. 
+* If you intend to configure the remote agent in Visual Studio using the host name, ping the Mac using the host name to verify that it is reachable. Otherwise, you may need to use the IP address instead.
 * If the mac is externally visible under one hostname, but internally assigns itself another hostname, you may specify the host name using the following command in the Terminal app:
 
         remotebuild resetServerCerts --hostname=my.external.hostname.com
@@ -182,59 +181,59 @@ Before you can use the remote agent, you must specify the remote configuration i
 
 1. If the agent is not already running on your Mac, start the remote agent.
 
-2. On your Mac, get the host name or IP address of your Mac. 
+2. On your Mac, get the host name or IP address of your Mac.
 
-    You can get the IP address by using the **ifconfig** command. 
+    You can get the IP address by using the **ifconfig** command.
 
-3. On the Visual Studio menu bar, choose **Tools**, **Options**. 
+3. On the Visual Studio menu bar, choose **Tools**, **Options**.
 
 4. In the **Options** dialog box, open **Tools for Apache Cordova**, and then choose **Remote Agent Configuration**.
 
-5. Set **Enable remote iOS processing** to **True**. 
+5. Set **Enable remote iOS processing** to **True**.
 
-6. Set **Secure Mode** to **True**. 
+6. Set **Secure Mode** to **True**.
 
-7. In the **Host**, **Port**, and **Security PIN** fields, type the values specified by the remote agent when you started it the first time. The host can be the name or IP address of your Mac. The default port is 3000. 
+7. In the **Host**, **Port**, and **Security PIN** fields, type the values specified by the remote agent when you started it the first time. The host can be the name or IP address of your Mac. The default port is 3000.
 
-![Configuring the remote agent in Visual Studio](./media/IC795521.png)
+![Configuring the remote agent in Visual Studio](./media/install-vs-tools-apache-cordova/IC795521.png)
 
 **Note**
 If you cannot ping the Mac using the host name, you may need to use the IP address.
 
-When you click **OK**, Visual Studio will connect to the remote agent (the agent must be running to connect). 
+When you click **OK**, Visual Studio will connect to the remote agent (the agent must be running to connect).
 
 If you want to disable secure mode and enable simple HTTP-based connections, choose **False** as the **Secure mode** setting and start remotebuild with secure mode disabled:
 
        remotebuild --secure false
 
-If secure mode is disabled, you can leave the **Security PIN** field blank when configuring the agent in Visual Studio. 
+If secure mode is disabled, you can leave the **Security PIN** field blank when configuring the agent in Visual Studio.
 
 The security PIN is for one-time use. If you need to pair a new client with the remotebuild server, see [Generate a new security PIN](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#IosPin).
 
-####To stop the agent
+#### To stop the agent
 
 * From the Terminal app on your Mac, press Ctrl+C.
 
-##Additional Tasks
+## Additional Tasks
 
-In some circumstances, additional steps may be required to update and configure the tools. 
+In some circumstances, additional steps may be required to update and configure the tools.
 
-* If you choose not to install one or more dependencies with Visual Studio Tools for Apache Cordova, you may need to [install the dependencies manually](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#ThirdParty) 
+* If you choose not to install one or more dependencies with Visual Studio Tools for Apache Cordova, you may need to [install the dependencies manually](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#ThirdParty)
 
 * If you need to verify the path for a third-party dependency or if you have multiple versions of a dependency installed, see [Override system environment variables](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#env_var)
 
-* If you are running Visual Studio behind a proxy, see [Configure tools to work with a proxy](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#Proxy). 
+* If you are running Visual Studio behind a proxy, see [Configure tools to work with a proxy](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#Proxy).
 
-* To use and configure the remotebuild agent for building iOS apps, see the following: 
+* To use and configure the remotebuild agent for building iOS apps, see the following:
 
     * [Generate a new security PIN](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#IosPin)
     * [Configure the remote agent](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#IosConfig
     * [Generate a new server certificate](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#IosCert)
     * [Verify the remote agent configuration](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#IosVerify)
 
-* If you see unexpected errors when trying to build the Blank App template, see [Re-installing vs-tac](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#vstac). 
+* If you see unexpected errors when trying to build the Blank App template, see [Re-installing vs-tac](https://msdn.microsoft.com/library/dn771551%20(v=vs.140).aspx#vstac).
 
-![Download the tools](./media/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](./media/install-vs-tools-apache-cordova/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ##See Also
 
@@ -242,4 +241,3 @@ In some circumstances, additional steps may be required to update and configure 
 
 [Download the Tools](http://go.microsoft.com/fwlink/p/?LinkId=397606)  
 [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782)
-
