@@ -12,7 +12,7 @@ The latest update for [Office 365 API Tools for Visual Studio](http://blogs.offi
 ##Building a Simple File Explorer for OneDrive for Business
 The goal of this app is to enumerate files stored in OneDrive for Business. The source for the sample is on [GitHub](http://go.microsoft.com/fwlink/?LinkID=517836).
 
-***INSERT PICTURE!!!!***
+![enter image description here](media/O365_Files/Files.png)
 
 ##Getting Started
 The following frameworks and libraries are used in this application:
