@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Debug Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="Mikejo5000"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Get Your Apache Cordova App Approved by the App Stores
 
 Before you can publish your app and get it to your customers, it will have to get app store approval. The key to approval is what your app does and how it does it. While each store has a different process and a different list of requirements, a well-designed app is more likely to receive approval on any platform. These articles are a starting point for designing apps that have a high likelihood of approval.
@@ -63,4 +78,3 @@ Adhering to the Windows Phone Store policies will help you make choices that enh
 Following a foundation of design principles will delight your users.
 
 ![Download the tools](https://i-msdn.sec.s-msft.com/dynimg/IC795792.png "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
-  

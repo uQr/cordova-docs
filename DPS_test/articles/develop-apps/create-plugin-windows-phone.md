@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Debug Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="Mikejo5000"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Create a Cordova plugin for Windows and Windows Phone
 
 A Cordova plugin is a cross-platform library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. In this tutorial, you will create a Cordova plugin for Windows Phone, <span class="input">ToUpperPlugin</span>, add it to a Cordova app, and call the plugin method from the app. The plugin has one method, <span class="input">ToUpper</span>, that converts a string to uppercase. The plugin supports both Windows Phone 8 and Windows Phone (Universal). The Windows Phone 8 plugin uses C# and the Windows Phone (Universal) plugin uses JavaScript.
@@ -251,7 +266,30 @@ You cannot debug the Windows Phone Cordova project. There are a couple of option
 
 Open <span class="input">index.html</span> and add this code before the closing tag <span class="code"></body></span>.
 
-<div class="codeSnippetContainer" id="code-snippet-5" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>HTML</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8dc2f118-81c7-430e-b451-5c7e1c3fb452'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_8dc2f118-81c7-430e-b451-5c7e1c3fb452" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```html
+Input text: <input type="text" id="inputText" style="font-size: xx-large" /><br/>
+<button type="button" style="font-size: xx-large" onclick="toUpperClicked()">To Upper</button>
+<p id="toUpperResult"></p>
+
+<script>
+
+var successCallback = function () {
+        document.getElementById("toUpperResult").innerText =
+        'ToUpperPlugin successCallback ' + arguments[0];
+};
+
+var errorCallback = function (arguments) {
+    document.getElementById("toUpperResult").innerText =
+        'ToUpperPlugin errorCallback ' + arguments[0];
+};
+
+function toUpperClicked(arguments) {
+    ToUpperPlugin.ToUpper(successCallback, errorCallback,
+        document.getElementById("inputText").value);
+}
+
+</script>
+```
 
 The code you added to <span class="input">index.html</span> is discussed in more detail in the<span>[Calling Plugin Methods from Your App](#CallingPlugins)</span> section later in the tutorial
 
@@ -268,7 +306,32 @@ You now have a complete plugin and a project that uses the plugin. The following
 
 This section discusses the C# plugin method in more detail. Here’s the code you used for your plugin:
 
-<div class="codeSnippetContainer" id="code-snippet-6" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e82f8d3a-5b52-4853-ab26-6dcd143344ca'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_e82f8d3a-5b52-4853-ab26-6dcd143344ca" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```C#
+// C#
+
+using System;
+
+namespace WPCordovaClassLib.Cordova.Commands
+{
+    public class ToUpperPlugin : BaseCommand
+    {
+        public void ToUpper(string options)
+        {
+            string upperCase = JSON.JsonHelper.Deserialize<string[]>(options)[0].ToUpper();
+            PluginResult result;
+            if (upperCase != "")
+            {
+                result = new PluginResult(PluginResult.Status.OK, upperCase);
+            } else
+            {
+                result = new PluginResult(PluginResult.Status.ERROR, upperCase);
+            }
+
+            DispatchCommandResult(result);
+        }
+    }
+}
+```
 
 There are a few key elements that you have to get right so that you can call your plugin method and so that you can get results from your plugin method.
 
@@ -279,21 +342,49 @@ There are a few key elements that you have to get right so that you can call you
     ![The location of BaseCommand in the project.](https://i-msdn.sec.s-msft.com/dynimg/IC775937.png "The location of BaseCommand in the project.")
 *   **Signature.** Your method must use this signature:
 
-    <div class="codeSnippetContainer" id="code-snippet-7" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_aac4c6fb-02c7-4ad5-ab3d-8adafb0282f2'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_aac4c6fb-02c7-4ad5-ab3d-8adafb0282f2" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```C#
+// C#
 
-    You can change <span class="code">MethodName</span> and <span class="code">options</span> to something more meaningful for your app, but the rest must stay the same. The arguments that are passed to the method are converted into a JSON object. You need to parse the JSON to retrieve the arguments. For example, in <span class="input">ToUpperPlugin</span>, the string is passed as the first item in an array that is converted to JSON. Visual Studio includes a JSON visualizer to view the contents of a JSON package. To display the visualizer, in debug mode, mouse over the variable containing JSON. From the context menu, select JSON visualizer, as shown in the following image. For information on how to debug the Windows Phone project, see the section <span>[Developing and debugging the C# plugin code](#DebugPlugin)</span> later in this tutorial.
+public void MethodName(string options)
+```
+
+	 You can change <span class="code">MethodName</span> and <span class="code">options</span> to something more meaningful for your app, but the rest must stay the same. The arguments that are passed to the method are converted into a JSON object. You need to parse the JSON to retrieve the arguments. For example, in <span class="input">ToUpperPlugin</span>, the string is passed as the first item in an array that is converted to JSON. Visual Studio includes a JSON visualizer to view the contents of a JSON package. To display the visualizer, in debug mode, mouse over the variable containing JSON. From the context menu, select JSON visualizer, as shown in the following image. For information on how to debug the Windows Phone project, see the section <span>[Developing and debugging the C# plugin code](#DebugPlugin)</span> later in this tutorial.
 
     ![How to select the JSON visualizer.](https://i-msdn.sec.s-msft.com/dynimg/IC775938.png "How to select the JSON visualizer.")![The JSON visualizer.](https://i-msdn.sec.s-msft.com/dynimg/IC775939.png "The JSON visualizer.")
 *   **PluginResult.** If you want to return something from your method to your app, or if you want to trigger either a success callback method or an error callback method in your app, you need to create and dispatch a <span class="code">PluginResult</span> object. In the constructor for <span class="code">PluginResult</span>, you indicate whether the method succeeded or not, and you include the value to be passed back to your app. The code follows this pattern:
 
-    <div class="codeSnippetContainer" id="code-snippet-8" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_b980a570-4e3e-4f2f-9280-a463ad77744a'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_b980a570-4e3e-4f2f-9280-a463ad77744a" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```C#
+PluginResult result = new PluginResult(PluginResult.Status.OK, upperCase);
+DispatchCommandResult(result);
+```
 
 
 ## <a id="CreatingUniversal"></a>Creating a plugin method for Windows Phone 8 (Universal)
 
 This section discusses the JavaScript plugin method in more detail. Here’s the code you used for your plugin:
 
-<div class="codeSnippetContainer" id="code-snippet-9" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>JavaScript</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_3d6f83c8-44a2-4117-9f43-1982e23e9b00'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_3d6f83c8-44a2-4117-9f43-1982e23e9b00" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```javascript
+//  JavaScript
+
+var cordova = require('cordova'),
+    ToUpperPlugin= require('./ToUpperPlugin');
+
+module.exports = {
+
+    ToUpper: function (successCallback, errorCallback, strInput) {
+
+        var upperCase = strInput[0].toUpperCase();
+        if(upperCase != "") {
+            successCallback(upperCase);
+        }
+        else {
+            errorCallback(upperCase);
+        }
+    }
+};
+```
+
+require("cordova/exec/proxy").add("ToUpperPlugin", module.exports);
 
 There are a few key elements that you have to get right so that you can call your plugin method and so that you can get results from your plugin method.
 
@@ -301,7 +392,11 @@ There are a few key elements that you have to get right so that you can call you
 
 *   **Signature.** Your method must use this signature:
 
-    <div class="codeSnippetContainer" id="code-snippet-10" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>JavaScript</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8f9aa6d2-accd-4055-bd95-53fa2e2f35fc'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_8f9aa6d2-accd-4055-bd95-53fa2e2f35fc" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```javascript
+// JavaScript
+
+MethodName: function (successCallback, errorCallback, args)
+```
 
     You can change method name and parameter names to something more meaningful for your app. The <span class="code">args</span> parameter is an array.
 
@@ -312,17 +407,58 @@ There are a few key elements that you have to get right so that you can call you
 
 This section discusses the <span class="input">plugin.xml</span> file in more detail. Here’s the plugin.xml file that you created.
 
-<div class="codeSnippetContainer" id="code-snippet-11" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>Xml</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7207435a-0f50-4b76-8e11-71cd1857bf0a'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_7207435a-0f50-4b76-8e11-71cd1857bf0a" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.contoso.ToUpperPlugin"
+      version="0.1.0">
+    <name>ToUpperPlugin</name>
+    <description>ToUpper plugin for Apache Cordova</description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/ToUpperPlugin.js" name="ToUpperPlugin">
+        <clobbers target="ToUpperPlugin" />
+    </js-module>
+
+    <!-- wp8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ToUpperPlugin">
+                <param name="wp-package" value="ToUpperPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/wp/ToUpperPlugin.cs" />
+    </platform>
+
+    <!-- windows -->
+    <platform name="windows">
+        <js-module src="src/windows/ToUpperPluginProxy.js" name="ToUpperPluginProxy">
+            <merges target="" />
+        </js-module>
+    </platform>
+
+</plugin>
+```
 
 The XML contains the minimum elements you need to get your plugin working. There are a few key elements that you have to get right so Visual Studio and Cordova can find your plugin files and call your plugin methods.
 
 *   **<plugin>** The <span class="code">id</span> attribute that you add to the <span class="code"><plugin></span> element is used to by Visual Studio to create a project folder with the plugin files. It is the name of your plugin and it is carried over into the project’s <span class="code">config.xml</span> file. Here is how it appears in <span class="code">plugin.xml</span>, part of the plugin:
 
-    <div class="codeSnippetContainer" id="code-snippet-12" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>Xml</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_687486a1-195e-4297-8716-67a0658542bd'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_687486a1-195e-4297-8716-67a0658542bd" dir="ltr"><div style="color:Black;"></div></div></div></div>
+	```
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.contoso.ToUpperPlugin"
+      version="0.1.0">
+      ```
 
     This is how it appears in <span class="code">config.xml</span>, part of the Cordova project:
+	```
+   <vs:plugin name="com.contoso.toupperplugin" version="0.1.0" />
+   ```
 
-    <div class="codeSnippetContainer" id="code-snippet-13" xmlns=""><div class="codeSnippetContainerTabs"></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_af5e710a-3550-427b-a9ca-a0b115a297f0'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_af5e710a-3550-427b-a9ca-a0b115a297f0" dir="ltr"><div style="color:Black;"></div></div></div></div>
 *   **<js-module>** The <span class="code"><js-module></span> element specifies the location and filename of your plugin interface file, in this case <span class="code">ToUpperPlugin.js</span>. The interface file specifies the JavaScript signatures of your plugin methods and makes the all-important call to <span class="code">cordova.exec</span>. The <span class="code"><clobbers></span> element specifies the plugin name that you will use in your code that calls the plugin. The <span class="code">src</span> attribute specifies the name of the file and its location relative to the <span class="code">plugin.xml</span> file.
 
     <div class="codeSnippetContainer" id="code-snippet-14" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>Xml</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_edc413d9-d2c6-490d-ac5b-8319f0a059a1'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_edc413d9-d2c6-490d-ac5b-8319f0a059a1" dir="ltr"><div style="color:Black;"></div></div></div></div>
@@ -423,4 +559,3 @@ This tutorial created a very basic plugin. From here you could add any number of
 
 [Windows Phone Plugin Generator](http://download.microsoft.com/download/5/B/4/5B433693-63A4-4509-A6F5-17A892A7D59E/PluginSourceAndApp.zip)
 [Plugin Development Guide (Apache Cordova Documentation)](http://cordova.apache.org/docs/en/4.0.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide)
-  
