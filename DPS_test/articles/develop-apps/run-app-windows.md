@@ -25,9 +25,9 @@ Follow these instructions to run your app on your computer or on the Windows Sim
 
     Visual Studio runs the app on your computer or in the Windows Simulator, as shown here.
 
-    ![Running an app on the Windows Simulator](<media/run-windows-simulator.png> "Running an app on the Windows Simulator")
+    ![Running an app on the Windows Simulator](<media/run-app-windows/run-windows-simulator.png> "Running an app on the Windows Simulator")
 
-![Download the tools](<media/vs-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](<media/run-app-windows/run-windows-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 #### See Also
 

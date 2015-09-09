@@ -43,7 +43,7 @@ To add a connected service, first open the Visual Studio Services Manager.
 
 In Solution Explorer, open the shortcut menu for your project, and then choose **Add**, **Connected Service**.
 
-    ![Add a connected service](<media/connected-service-add.png> "Add a connected service")
+  ![Add a connected service](<media/add-connected-services/connected-service-add.png> "Add a connected service")
 
 The following sections explain how to add different types of connected services.
 
@@ -56,15 +56,15 @@ Azure Mobile Services let you add cloud-based services such as data and push not
 
 2.  In Visual Studio, open the Services Manager, choose **Windows Azure**, and then choose **Manage subscriptions**.
 
-    ![Sign in for Azure subscriptions](<media/connected-service-manage-subscription.png> "Sign in for Azure subscriptions")
+    ![Sign in for Azure subscriptions](<media/add-connected-services/connected-service-manage-subscription.png> "Sign in for Azure subscriptions")
 3.  Sign in to your account.
 
     Accounts available for your use will be listed here.
 
-    ![List of Azure subscriptions](<media/connected-service-accounts.png> "List of Azure subscriptions")
+    ![List of Azure subscriptions](<media/add-connected-services/connected-service-accounts.png> "List of Azure subscriptions")
 4. In the Services Manager, choose **Create service** to add a new Azure Mobile Service, fill out the required information, and then choose **OK**.
 
-    ![Create an Azure mobile service](<media/connected-service-create.png> "Create an Azure mobile service")
+    ![Create an Azure mobile service](<media/add-connected-services/connected-service-create.png> "Create an Azure mobile service")
 
     To get started, you will typically choose **<Create a free SQL Database>**, and then supply the **Server user name**, **Server password**, and **Server password confirmation**. The steps required here are similar to steps shown in the section "Create a new mobile service from Visual Studio" in [this article](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-javascript-get-started-data/).
 
@@ -86,7 +86,7 @@ If you’re creating a TypeScript app, you’ll need a [TypeScript definition](h
 
 4.  Choose one of the “azure-mobile-services-client.TypeScript.DefinitelyTyped” definitions, and then choose **Install** to add the definition file to your project.
 
-    ![Adding a TypeScript definition](<media/connected-service-asm.png> "Adding a TypeScript definition")
+    ![Adding a TypeScript definition](<media/add-connected-services/connected-service-asm.png> "Adding a TypeScript definition")
 
     For more information about the definitions, open the **Id** link in the right pane.
 
@@ -102,11 +102,11 @@ You can develop apps by using the Office 365 APIs to access services such as ema
 
 3.  If this is the first time you’re adding the service in Visual Studio, you might be asked to sign in to your Office 365 developer account. Choose **Sign in**.
 
-    ![Installing Office 365 APIs](<media/connected-service-O365.png> "Installing Office 365 APIs")
+    ![Installing Office 365 APIs](<media/add-connected-services/connected-service-O365.png> "Installing Office 365 APIs")
 
     After you sign in, you can configure permissions for different Office 365 services.
 
-![Download the tools](<media/vs-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](<media/add-connected-services/connected-service-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 #### See Also
 [Get Started with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771545.aspx)

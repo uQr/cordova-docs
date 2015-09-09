@@ -30,7 +30,7 @@ When building your app, you need to choose the correct build configuration. You 
 
 You can specify details such as the package ID and version number by using the configuration designer, which is the Visual Studio interface for the config.xml file. In Solution Explorer, open the shortcut menu for config.xml, and then choose **Open** or **View Designer** (or double-click the file).
 
-![Important settings in the Config Deisgner](<media/package-config-designer.png> "Important settings in the Config Deisgner")
+![Important settings in the Config Deisgner](<media/package-app-built-with-visual-studio/package-config-designer.png> "Important settings in the Config Deisgner")
 
 You must configure the following settings to package your app for distribution.
 
@@ -122,7 +122,7 @@ Visual Studio provides built-in features to package Windows 8, Windows 8.1, and 
 
 1.  In Visual Studio, choose <span class="label">Project</span>, <span class="label">Store</span>, <span class="label">Associate App with the Store</span>.
 
-    ![Associate an app with the Windows Store](<media/package-windows-associate-app-with-store.png> "Associate an app with the Windows Store")
+    ![Associate an app with the Windows Store](<media/package-app-built-with-visual-studio/package-windows-associate-app-with-store.png> "Associate an app with the Windows Store")
 2.  When prompted, sign in with your Microsoft account, choose a name for your app, and then choose **Reserve**.
 
     **Caution** App names must be unique within the Windows Store.
@@ -141,7 +141,7 @@ Windows Phone 8 apps are automatically packaged and don’t have to be signed at
 
 If you need to change the default language in a Windows Phone 8 package, locate the WMAppManifest.xml file in bld/Debug/platforms/wp8, modify the `<DefaultLanguage code="en-US" xmlns="" />` tag, and include the file into your Visual Studio project in the following folder: /res/native/wp8/Properties. In this way, you can include the custom XML file in your generated project.
 
-![Download the tools](<media/vs-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](<media/package-app-built-with-visual-studio/package-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 
