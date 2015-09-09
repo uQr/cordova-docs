@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Debug Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="Mikejo5000"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Run Your Apache Cordova App on the Apache Ripple Simulator
 
 The Apache Ripple simulator runs as a web app inside the Google Chrome browser. In Cordova, it can be used to simulate your app on a number of iOS and Android devices, and it provides basic support for core Cordova plugins like Geolocation and Device Orientation.

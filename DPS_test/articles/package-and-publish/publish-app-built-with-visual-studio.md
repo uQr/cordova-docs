@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Debug Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="Mikejo5000"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Publish Your App Built with Visual Studio Tools for Apache Cordova
 
 To publish your app built using Visual Studio Tools for Apache Cordova, you can access the packages you build in the bin folder in the Visual Studio project directory. For more information about building packages, see [Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx).
