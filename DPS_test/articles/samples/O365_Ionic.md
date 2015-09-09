@@ -45,7 +45,7 @@ To add the Ionic Framework:
  2. Extract the zip file.
  3. Create a new folder named lib under your Cordova project in Solution Explorer in Visual Studio, and then copy the extracted content under lib folder.
 
-< insert image >
+![enter image description here](media/O365_Ionic/oi_ionic_folder.png)
 
  4. Update the script references.
 
@@ -67,6 +67,8 @@ To add Nprogress to your project:
  2. Extract the zip file.
  3. Create a folder named **nprogress** under the **lib** folder in Solution Explorer and copy **nprogress.js** into the folder.
 
+![enter image description here](media/O365_Ionic/oi_nprogress_folder.png)
+
  4. Copy **nprogress.css** under the css folder
  5. In index.html, add the following NProgress references in the <head> element:
 
@@ -84,7 +86,7 @@ Once you have set up your Developer Site, follow these steps to add and configur
  2. From the shortcut menu of the project node, choose **Add**, and then choose **Connected Service**.
  3. At the top of the Services Manager dialog box, choose the Office 365 link, and then choose Register your app. Sign in with a tenant administrator account for your Office 365 developer organization:
 
-{image}
+![enter image description here](media/O365_Ionic/oi_services_manager.png)
 
 ##Set permissions for O365 mail, calendar and contact tenet to grant appropriate access to app
 After you sign in to O365 account you will see a list of O365 services like mail, calendar, contacts, and files under your tenant account. Select the service that you want to use in your app and set the permission you want your app to access, as specified below for each app.
@@ -92,18 +94,18 @@ After you sign in to O365 account you will see a list of O365 services like mail
 ###Mail app
 Select **Mail** and click the **Permissions**... link in the right pane. Then choose to read and write to user's mail because the app will need to perform read and delete mail operations. Similarly, if you want the app to send mail, then select mail as a user option.
 
-{ insert image }
+![enter image description here](media/O365_Ionic/oi_mail_app.png)
 
 ###Calendar app
 Select **Calendar** and click the **Permissions**... link in the right pane, and then select **have full access to users' calendar**. Similarly, if you want to give only read access to the app, then select **Read users' calendar**.
 
-{ insert image }
+![enter image description here](media/O365_Ionic/oi_calendar_app.png)
 
 
 ###Contact app
 Select **Contact** and click the **Permissions**... link in the right pane, and then select **have full access to users' contact**. Similarly, if you want to give only read access to app, select **Read users' contact**.
 
-{ insert image }
+![enter image description here](media/O365_Ionic/oi_contact_app.png)
 
 
 ###Apply changes and update references
@@ -111,7 +113,7 @@ To apply changes and update references:
 
  1. Click **Apply** and **Ok** to set the permissions and add the O365 API to your project. Services Manager adds the services folder to your project.
 
-{ insert image }
+![enter image description here](media/O365_Ionic/oi_services_manager_2.png)
 
  2. In index.html, add the following O365 references in the <head> element:
 
@@ -123,7 +125,7 @@ Follow these steps to structure the app UI and the JavaScript code.
 
 Create a folder named **app** under project root node. The app folder will contain files specific to the app. Each UI component that fetches and binds data to the UI will have a corresponding controller (following the UI with code behind pattern). For example, mail-list.html will show a list control to display user's mails, and mail-list-ctrl.js will contain code to fetch user's mail using the O365 API.
 
-{ insert image }
+![enter image description here](media/O365_Ionic/oi_folder_structure.png)
 
 Here are some details about the folders and files in the project:
 
@@ -255,7 +257,7 @@ Use the Ionic tab to show different content in separate tabs. For example, use t
 
 The following illustration shows the mail tab page:
 
-{ insert image }
+![enter image description here](media/O365_Ionic/oi_mail_tab.png)
 
 ##Acquire an access token and get the Outlook services client using AngularJS factory
 Create an AngularJS factory to expose the O365 API to acquire an access token, create the Outlook services client, logout, and to perform other utility functions that are used by different controllers in the app.
