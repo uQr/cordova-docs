@@ -22,13 +22,15 @@ To build this app, you’ll follow these steps:
 
 The following screenshot shows the running Calendar app when completed:
 
-***INSERT PICTURE***
+![enter image description here](media/O365_Ionic/oi_1.png)
 
 The following screenshot shows the running Mail app when completed:
 
-***INSERT PICTURE***
+![enter image description here](media/O365_Ionic/oi_2.png)
 
 The following screenshot shows the running Contacts app when completed.
+
+![enter image description here](media/O365_Ionic/oi_3.png)
 
 ##Prerequisites
 Before you can create a new project, make sure that you’ve met all system requirements and installed the Visual Studio Tools for Apache Cordova extension for Visual Studio. For more information, see Install Visual Studio Tools for Apache Cordova.
