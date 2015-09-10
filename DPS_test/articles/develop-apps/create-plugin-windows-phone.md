@@ -15,97 +15,90 @@
    ms.author="mikejo"/>
 # Create a Cordova plugin for Windows and Windows Phone
 
-A Cordova plugin is a cross-platform library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. In this tutorial, you will create a Cordova plugin for Windows Phone, <span class="input">ToUpperPlugin</span>, add it to a Cordova app, and call the plugin method from the app. The plugin has one method, <span class="input">ToUpper</span>, that converts a string to uppercase. The plugin supports both Windows Phone 8 and Windows Phone (Universal). The Windows Phone 8 plugin uses C# and the Windows Phone (Universal) plugin uses JavaScript.
+A Cordova plugin is a cross-platform library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. In this tutorial, you will create a Cordova plugin for Windows Phone, **ToUpperPlugin**, add it to a Cordova app, and call the plugin method from the app. The plugin has one method, **ToUpper**, that converts a string to uppercase. The plugin supports both Windows Phone 8 and Windows Phone (Universal). The Windows Phone 8 plugin uses C# and the Windows Phone (Universal) plugin uses JavaScript.
 
-The tutorial assumes you have some familiarity with Cordova plugins. For an introduction to plugins, see <span>[Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757051.aspx)</span> and [Apache Cordova Overview](http://cordova.apache.org/docs/en/4.0.0/guide_overview_index.md.html#Overview).
+The tutorial assumes you have some familiarity with Cordova plugins. For an introduction to plugins, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757051.aspx) and [Apache Cordova Overview](http://cordova.apache.org/docs/en/4.0.0/guide_overview_index.md.html#Overview).
 
 The early sections of the tutorial take you straight through the process with little detail. The later sections explain the code in more detail and will help you create, configure, debug, and deploy your own plugins.
 
 The [Windows Phone Plugin Generator](http://download.microsoft.com/download/5/B/4/5B433693-63A4-4509-A6F5-17A892A7D59E/PluginSourceAndApp.zip) download includes the code for this tutorial and an app that generates a simple plugin.
 
-*   <span>[Create the Cordova plugin](#CreateCordova)</span>
+*   [Create the Cordova plugin](#CreateCordova)
 
-*   <span>[Add the plugin to the Cordova project](#AddPlugin)</span>
+*   [Add the plugin to the Cordova project](#AddPlugin)
 
-*   <span>[Call the plugin from your app](#CallPlugin)</span>
+*   [Call the plugin from your app](#CallPlugin)
 
-*   <span>[Run the app with your plugin](#RunTheApp)</span>
+*   [Run the app with your plugin](#RunTheApp)
 
-*   <span>[Creating a plugin method for Windows Phone 8](#CreatingMethod)</span>
+*   [Creating a plugin method for Windows Phone 8](#CreatingMethod)
 
-*   <span>[Creating a plugin method for Windows Phone 8 (Universal)](#CreatingUniversal)</span>
+*   [Creating a plugin method for Windows Phone 8 (Universal)](#CreatingUniversal)
 
-*   <span>[Configuring the plugin.xml file](#ConfiguringXML)</span>
+*   [Configuring the plugin.xml file](#ConfiguringXML)
 
-*   <span>[Creating the JavaScript plugin interface file](#CreatingInterface)</span>
+*   [Creating the JavaScript plugin interface file](#CreatingInterface)
 
-*   <span>[Calling plugin methods from your app](#CallingPlugins)</span>
+*   [Calling plugin methods from your app](#CallingPlugins)
 
-*   <span>[How to remove a local plugin from your app](#RemovePlugin)</span>
+*   [How to remove a local plugin from your app](#RemovePlugin)
 
-*   <span>[Developing and debugging the plugin code](#DebugPlugin)</span>
+*   [Developing and debugging the plugin code](#DebugPlugin)
 
-*   <span>[Troubleshooting](#Troubleshooting)</span>
+*   [Troubleshooting](#Troubleshooting)
 
-*   <span>[Next steps](#NextSteps)</span>
+*   [Next steps](#NextSteps)
 
 ##<a id="CreateCordova"></a>Create the Cordova plugin
 
-The <span class="input">ToUpperPlugin</span> plugin needs four files.
+The **ToUpperPlugin** plugin needs four files.
 
 *   A native C# file that contains the plugin methods for Windows Phone 8\.
 
 *   A native JavaScript file that contains the plugin methods for Windows Phone (Universal).
 
-*   A JavaScript file that calls <span class="code">cordova.exec</span>. This file is the bridge between the JavaScript code in your app and the native code in your plugin.
+*   A JavaScript file that calls **cordova.exec**. This file is the bridge between the JavaScript code in your app and the native code in your plugin.
 
 *   An XML file that describes your plugin, defines the supported platforms, and specifies the locations of the C# file and the JavaScript file.
-
-<div>
 
 ### Create folders
 
 You start by creating the following folder and file structure. While this is not the only folder structure you can use, it is the structure that many plugins follow. The folder structure looks like this:
 
-![The file structure of a plugin.](https://i-msdn.sec.s-msft.com/dynimg/IC776843.png "The file structure of a plugin.")1.  Create a root folder for your plugin and name it <span class="input">ToUpperPlugin</span>.
+![The file structure of a plugin.](<media/create-plugin-windows-phone/create-plugin-folder-structure.png> "The file structure of a plugin.")
 
-1.  In the <span class="input">ToUpperPlugin</span> folder, create a folder named <span class="input">src</span>.
+1.  Create a root folder for your plugin and name it **ToUpperPlugin**.
 
-2.  In the <span class="input">src</span> folder, create a folder named <span class="input">wp</span>.
+2.  In the **ToUpperPlugin** folder, create a folder named **src**.
 
-3.  In the <span class="input">src</span> folder, create a folder named <span class="input">windows</span>.
+3.  In the **src** folder, create a folder named **wp**.
 
-4.  In the <span class="input">ToUpperPlugin</span> folder, create a folder named <span class="input">www</span.
+4.  In the **src** folder, create a folder named **windows**.
 
-### Add files
+5.  In the **ToUpperPlugin** folder, create a folder named **www**wp** folder, add an empty C# class file, **ToUpperPlugin.cs**.
 
-Now you add the files.
+4.  In the **windows** folder, add an empty JavaScript file, **ToUpperPluginProxy.js**.
 
-1.  In the <span class="input">wp</span> folder, add an empty C# class file, <span class="input">ToUpperPlugin.cs</span>.
+7.  In the **www** folder, add an empty JavaScript file, **ToUpperPlugin.js**.
 
-4.  In the <span class="input">windows</span> folder, add an empty JavaScript file, <span class="input">ToUpperPluginProxy.js</span>.
-
-7.  In the <span class="input">www</span> folder, add an empty JavaScript file, <span class="input">ToUpperPlugin.js</span>.
-
-10.  In the <span class="input">ToUpperPlugin</span> folder, add an empty xml file, <span class="input">plugin.xml</span>.
+10.  In the **ToUpperPlugin** folder, add an empty xml file, **plugin.xml**.
 
 You now have the files you need for the plugin:
 
-*   <span class="input">ToUpperPlugin\plugin.xml</span>
+*   **ToUpperPlugin\plugin.xml**
 
-*   <span class="input">ToUpperPlugin\src\wp\ToUpperPlugin.cs</span>
+*   **ToUpperPlugin\src\wp\ToUpperPlugin.cs**
 
-*   <span class="input">ToUpperPlugin\src\windows\ToUpperPluginProxy.cs</span>
+*   **ToUpperPlugin\src\windows\ToUpperPluginProxy.cs**
 
-*   <span class="input">ToUpperPlugin\www\ToUpperPlugin.js</span>
+*   **ToUpperPlugin\www\ToUpperPlugin.js**
 
 ### Add the plugin method for Windows Phone 8
 
-The native code for the Windows 8 platform is written in C#. Add the following code to the <span class="input">ToUpperPlugin.cs</span> file:
+The native code for the Windows 8 platform is written in C#. Add the following code to the **ToUpperPlugin.cs** file:
 
 ```C#
 // C#
-
 using System;
 
 namespace WPCordovaClassLib.Cordova.Commands
@@ -130,17 +123,14 @@ namespace WPCordovaClassLib.Cordova.Commands
 }
 ```
 
-The code in the <span class="input">ToUpperPlugin.cs</span> is discussed in more detail in the <span>[Creating a plugin method for Windows Phone 8](#CreatingMethod)</span> section later in this tutorial.
-
-</div></div><div>
+The code in the **ToUpperPlugin.cs** is discussed in more detail in the [Creating a plugin method for Windows Phone 8](#CreatingMethod) section later in this tutorial.
 
 ### Add the plugin method for Windows Phone (Universal)
 
-The native code for Windows Phone (Universal) is written in JavaScript. Add the following code to the <span class="input">ToUpperPluginProxy.js</span> file:
+The native code for Windows Phone (Universal) is written in JavaScript. Add the following code to the **ToUpperPluginProxy.js** file:
 
-```C#
-//  C#
-
+```javascript
+//  JavaScript
 var cordova = require('cordova'),
     ToUpperPlugin= require('./ToUpperPlugin');
 
@@ -157,15 +147,14 @@ module.exports = {
         }
     }
 };
+require("cordova/exec/proxy").add("ToUpperPlugin", module.exports);
 ```
 
-require("cordova/exec/proxy").add("ToUpperPlugin", module.exports);
-
-The code in this JavaScript file is discussed in more detail in the <span>[Creating a plugin method for Windows Phone (Universal)](#CreatingMethod)</span> section later in this tutorial
+The code in this JavaScript file is discussed in more detail in the [Creating a plugin method for Windows Phone (Universal)](#CreatingMethod) section later in this tutorial
 
 ### Add code to the plugin.xml file
 
-Add the following code to the <span class="input">plugin.xml</span> file:
+Add the following code to the **plugin.xml** file:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -204,13 +193,14 @@ Add the following code to the <span class="input">plugin.xml</span> file:
 </plugin>
 ```
 
-The code in the <span class="input">plugin.xml</span> file is discussed in more detail in the <span>[Configuring the plugin.xml file](#ConfiguringXML)</span> section later in this tutorial.
+The code in the **plugin.xml** file is discussed in more detail in the [Configuring the plugin.xml file](#ConfiguringXML) section later in this tutorial.
 
 ### Add code to the JavaScript plugin interface file
 
-Add the following code to the <span class="input">ToUpperPlugin.js</span> file:
+Add the following code to the **ToUpperPlugin.js** file:
 
 ```javascript
+// JavaScript
 var ToUpperPlugin = {
     ToUpper: function (successCallback, errorCallback, strInput) {
         cordova.exec(successCallback, errorCallback, "ToUpperPlugin", "ToUpper", [strInput]);
@@ -220,7 +210,7 @@ var ToUpperPlugin = {
 module.exports = ToUpperPlugin;
 ```
 
-The code in <span class="input">ToUpperPlugin.js</span> is discussed in more detail in the <span>[Creating the JavaScipt plugin interface file](#CreatingInterface)</span> section later in this tutorial.
+The code in **ToUpperPlugin.js** is discussed in more detail in the **[Creating the JavaScipt plugin interface file](#CreatingInterface)** section later in this tutorial.
 
 Your plugin is complete and ready to add to a project.
 
@@ -228,43 +218,41 @@ Your plugin is complete and ready to add to a project.
 
 1.  Create a new Cordova project.
 
-2.  Right-click <span class="input">config.xml</span> in <span class="label">Solution Explorer</span> and select <span class="label">View Designer</span>.
+2.  Right-click **config.xml** in **Solution Explorer** and select **View Designer**.
 
-6.  Select the <span class="label">Plugins</span> tab.
+6.  Select the **Plugins** tab.
 
-8.  Select the <span class="label">Custom</span> heading.
+8.  Select the **Custom** heading.
 
-10.  Select <span class="label">Local</span>.
+10.  Select **Local**.
 
 12.  Browse to the top of the plugin folder structure.
 
-13.  Click <span class="label">Add</span>.
+13.  Click **Add**.
 
     Visual Studio adds the plugin to your project and creates the folder structure shown in the following image:
 
-    ![Project structure of a plugin in a Cordova app.](https://i-msdn.sec.s-msft.com/dynimg/IC776844.png "Project structure of a plugin in a Cordova app.")
+    ![Project structure of a plugin in a Cordova app.](<media/create-plugin-windows-phone/create-plugin-updated-folder-structure.png> "Project structure of a plugin in a Cordova app.")
 15.  Save the project.
 
-16.  To run the app on Windows 8, choose the <span class="label">Windows Phone 8</span> platform and the <span class="label">Emulator WVGA 512MB</span>, as shown in the following image.
+16.  To run the app on Windows 8, choose the **Windows Phone 8** platform and the **Emulator WVGA 512MB**, as shown in the following image.
 
-    ![Selecting WP emulator from the toolbar.](https://i-msdn.sec.s-msft.com/dynimg/IC780863.png "Selecting WP emulator from the toolbar.")
+    ![Selecting WP emulator from the toolbar.](<media/create-plugin-windows-phone/create-plugin-run-app.png> "Selecting WP emulator from the toolbar.")
 19.  Press F5 to run your project and verify that it runs the Windows Phone emulator without error as shown in the following image.
 
-    ![The app running in a WP emulator.](https://i-msdn.sec.s-msft.com/dynimg/IC775935.png "The app running in a WP emulator.")
-20.  To run the app on Windows 8 (Universal), choose the <span class="label">Windows Phone (Universal)</span> platform and the <span class="label">Emulator 8.1 WVGA 4 inch 512MB</span>.
+    ![Selecting WP emulator from the toolbar.](<media/create-plugin-windows-phone/create-plugin-run-app-emulator.png> "The app running in a WP emulator.")
+20.  To run the app on Windows 8 (Universal), choose the **Windows Phone (Universal)** platform and the **Emulator 8.1 WVGA 4 inch 512MB**.
 
 23.  Press F5 to run your project and verify that it runs on the Windows Phone emulator.
 
-Now that you have added the plugin to the project, you are ready to call the <span class="code">ToUpper</span> method from your code.
+Now that you have added the plugin to the project, you are ready to call the **ToUpper** method from your code.
 
-<div class="alert"><table><tbody><tr><th align="left">![Note](https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif "Note")**Note**</th></tr><tr><td>
-
-You cannot debug the Windows Phone Cordova project. There are a couple of options for debugging the app. The first is to use the platform-specific project as described in the section <span>[Developing and debugging the plugin code](#DebugPlugin)</span> later in this tutorial. Another option is to use [Web Inspector Remote](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/).
+**Note** You cannot debug the Windows Phone Cordova project. There are a couple of options for debugging the app. The first is to use the platform-specific project as described in the section [Developing and debugging the plugin code](#DebugPlugin) later in this tutorial. Another option is to use [Web Inspector Remote](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/).
 
 
 ## <a id="CallPlugin"></a>Call the plugin from your app
 
-Open <span class="input">index.html</span> and add this code before the closing tag <span class="code"></body></span>.
+Open **index.html** and add this code before the closing tag **</body>**.
 
 ```html
 Input text: <input type="text" id="inputText" style="font-size: xx-large" /><br/>
@@ -291,13 +279,13 @@ function toUpperClicked(arguments) {
 </script>
 ```
 
-The code you added to <span class="input">index.html</span> is discussed in more detail in the<span>[Calling Plugin Methods from Your App](#CallingPlugins)</span> section later in the tutorial
+The code you added to **index.html** is discussed in more detail in the[Calling Plugin Methods from Your App](#CallingPlugins) section later in the tutorial
 
 ## <a id="RunTheApp"></a>Run the app with your plugin
 
 1.  Press F5 to run your project, as shown in the following image:
 
-    ![The app with input box and button.](https://i-msdn.sec.s-msft.com/dynimg/IC775936.png "The app with input box and button.")
+    ![Selecting WP emulator from the toolbar.](<media/create-plugin-windows-phone/create-plugin-run-app-emulator-2.png> "The app with input box and button.")
 2.  Verify that the app returns a successful result if you enter text in the input box and returns an error result if the input box is empty.
 
 You now have a complete plugin and a project that uses the plugin. The following sections describe the files in more detail.
@@ -308,7 +296,6 @@ This section discusses the C# plugin method in more detail. Here’s the code yo
 
 ```C#
 // C#
-
 using System;
 
 namespace WPCordovaClassLib.Cordova.Commands
@@ -335,28 +322,28 @@ namespace WPCordovaClassLib.Cordova.Commands
 
 There are a few key elements that you have to get right so that you can call your plugin method and so that you can get results from your plugin method.
 
-*   **Namespace.** Your plugin class must exist in the <span class="code">WPCordovaClassLib.Cordova.Commands</span> namespace. That namespace, which is added by Visual Studio to the Windows Phone version of the app, contains the <span class="code">BaseCommand</span> class that you must derive from.
+*   **Namespace.** Your plugin class must exist in the **WPCordovaClassLib.Cordova.Commands** namespace. That namespace, which is added by Visual Studio to the Windows Phone version of the app, contains the **BaseCommand** class that you must derive from.
 
-*   **Base class.** You can name your plugin class whatever you like, but it must derive from <span class="code">BaseCommand</span>. The <span class="code">BaseCommand</span> class is created by Visual Studio and added to the Windows Phone project. You can find the class in the <span class="code">cordovalib</span> folder of the Windows Phone project. It’s in the <span class="code">WPCordovaClassLib.Cordova.Commands</span> namespace. The location is shown in the following image.
+*   **Base class.** You can name your plugin class whatever you like, but it must derive from **BaseCommand**. The **BaseCommand** class is created by Visual Studio and added to the Windows Phone project. You can find the class in the **cordovalib** folder of the Windows Phone project. It’s in the **WPCordovaClassLib.Cordova.Commands** namespace. The location is shown in the following image.
 
-    ![The location of BaseCommand in the project.](https://i-msdn.sec.s-msft.com/dynimg/IC775937.png "The location of BaseCommand in the project.")
+    ![The location of BaseCommand in the project.](<media/create-plugin-windows-phone/create-plugin-basecommand-location.png> "The location of BaseCommand in the project.")
 *   **Signature.** Your method must use this signature:
 
-```C#
-// C#
+	```C#
+	// C#
+	public void MethodName(string options)
+	```
 
-public void MethodName(string options)
-```
+	 You can change **MethodName** and **options** to something more meaningful for your app, but the rest must stay the same. The arguments that are passed to the method are converted into a JSON object. You need to parse the JSON to retrieve the arguments. For example, in **ToUpperPlugin**, the string is passed as the first item in an array that is converted to JSON. Visual Studio includes a JSON visualizer to view the contents of a JSON package. To display the visualizer, in debug mode, mouse over the variable containing JSON. From the context menu, select JSON visualizer, as shown in the following image. For information on how to debug the Windows Phone project, see the section [Developing and debugging the C# plugin code](#DebugPlugin) later in this tutorial.
 
-	 You can change <span class="code">MethodName</span> and <span class="code">options</span> to something more meaningful for your app, but the rest must stay the same. The arguments that are passed to the method are converted into a JSON object. You need to parse the JSON to retrieve the arguments. For example, in <span class="input">ToUpperPlugin</span>, the string is passed as the first item in an array that is converted to JSON. Visual Studio includes a JSON visualizer to view the contents of a JSON package. To display the visualizer, in debug mode, mouse over the variable containing JSON. From the context menu, select JSON visualizer, as shown in the following image. For information on how to debug the Windows Phone project, see the section <span>[Developing and debugging the C# plugin code](#DebugPlugin)</span> later in this tutorial.
+    ![How to select the JSON visualizer.](<media/create-plugin-windows-phone/create-plugin-json-viz-select.png> "How to select the JSON visualizer.")![The JSON visualizer.](<media/create-plugin-windows-phone/create-plugin-json-viz.png "The JSON visualizer.")
+*   **PluginResult.** If you want to return something from your method to your app, or if you want to trigger either a success callback method or an error callback method in your app, you need to create and dispatch a `PluginResult` object. In the constructor for `PluginResult`, you indicate whether the method succeeded or not, and you include the value to be passed back to your app. The code follows this pattern:
 
-    ![How to select the JSON visualizer.](https://i-msdn.sec.s-msft.com/dynimg/IC775938.png "How to select the JSON visualizer.")![The JSON visualizer.](https://i-msdn.sec.s-msft.com/dynimg/IC775939.png "The JSON visualizer.")
-*   **PluginResult.** If you want to return something from your method to your app, or if you want to trigger either a success callback method or an error callback method in your app, you need to create and dispatch a <span class="code">PluginResult</span> object. In the constructor for <span class="code">PluginResult</span>, you indicate whether the method succeeded or not, and you include the value to be passed back to your app. The code follows this pattern:
-
-```C#
-PluginResult result = new PluginResult(PluginResult.Status.OK, upperCase);
-DispatchCommandResult(result);
-```
+	```C#
+	// C#
+	PluginResult result = new PluginResult(PluginResult.Status.OK, upperCase);
+	DispatchCommandResult(result);
+	```
 
 
 ## <a id="CreatingUniversal"></a>Creating a plugin method for Windows Phone 8 (Universal)
@@ -365,7 +352,6 @@ This section discusses the JavaScript plugin method in more detail. Here’s the
 
 ```javascript
 //  JavaScript
-
 var cordova = require('cordova'),
     ToUpperPlugin= require('./ToUpperPlugin');
 
@@ -382,30 +368,28 @@ module.exports = {
         }
     }
 };
-```
-
 require("cordova/exec/proxy").add("ToUpperPlugin", module.exports);
+```
 
 There are a few key elements that you have to get right so that you can call your plugin method and so that you can get results from your plugin method.
 
-*   **Exports**. The <span class="code">module.exports</span> and <span class="code">require</span> statements make the <span class="code">ToUpper</span> function available outside the source file as part of the plugin.
+*   **Exports**. The `module.exports` and `require` statements make the `ToUpper` function available outside the source file as part of the plugin.
 
 *   **Signature.** Your method must use this signature:
 
-```javascript
-// JavaScript
+	```javascript
+	// JavaScript
+	MethodName: function (successCallback, errorCallback, args)
+	```
 
-MethodName: function (successCallback, errorCallback, args)
-```
+	    You can change method name and parameter names to something more meaningful for your app. The `args` parameter is an array.
 
-    You can change method name and parameter names to something more meaningful for your app. The <span class="code">args</span> parameter is an array.
-
-*   **Callback functions**. If you want to return something from your method to your app, you can use the <span class="code">sucessCallback</span> and <span class="code">errorCallback</span> methods.
+*   **Callback functions**. If you want to return something from your method to your app, you can use the `sucessCallback` and `errorCallback` methods.
 
 
 ## <a id="ConfiguringXML"></a>Configuring the plugin.xml file
 
-This section discusses the <span class="input">plugin.xml</span> file in more detail. Here’s the plugin.xml file that you created.
+This section discusses the **plugin.xml** file in more detail. Here’s the plugin.xml file that you created.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -446,51 +430,100 @@ This section discusses the <span class="input">plugin.xml</span> file in more de
 
 The XML contains the minimum elements you need to get your plugin working. There are a few key elements that you have to get right so Visual Studio and Cordova can find your plugin files and call your plugin methods.
 
-*   **<plugin>** The <span class="code">id</span> attribute that you add to the <span class="code"><plugin></span> element is used to by Visual Studio to create a project folder with the plugin files. It is the name of your plugin and it is carried over into the project’s <span class="code">config.xml</span> file. Here is how it appears in <span class="code">plugin.xml</span>, part of the plugin:
+*   **<plugin>** The `id` attribute that you add to the `<plugin>` element is used to by Visual Studio to create a project folder with the plugin files. It is the name of your plugin and it is carried over into the project’s `config.xml` file. Here is how it appears in `plugin.xml`, part of the plugin:
 
 	```
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
       id="com.contoso.ToUpperPlugin"
       version="0.1.0">
       ```
+This is how it appears in `config.xml`, part of the Cordova project:
 
-    This is how it appears in <span class="code">config.xml</span>, part of the Cordova project:
+	`<vs:plugin name="com.contoso.toupperplugin" version="0.1.0" />`
+
+*   **<js-module>** The **<js-module>** element specifies the location and filename of your plugin interface file, in this case `ToUpperPlugin.js`. The interface file specifies the JavaScript signatures of your plugin methods and makes the all-important call to `cordova.exec`. The `<clobbers>` element specifies the plugin name that you will use in your code that calls the plugin. The `src` attribute specifies the name of the file and its location relative to the `plugin.xml` file.
+
 	```
-   <vs:plugin name="com.contoso.toupperplugin" version="0.1.0" />
-   ```
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.contoso.ToUpperPlugin"
+      version="0.1.0">
+      ```
+*   **<platform name="wp8">** The `<platform>` element specifies the location and filename of the native code file, in this case `ToUpperPlugin.cs`. The `name` attribute is limited to a set of names that are supported by Cordova. In this case, `"wp8"` is used for Windows Phone 8\. The `<config-file>` element contains plugin information that is added to the `config.xml` file of the Cordova project. It makes the Windows Phone project aware of the plugin source. The `<source-file>` element specifies the location and filename of the code file.
 
-*   **<js-module>** The <span class="code"><js-module></span> element specifies the location and filename of your plugin interface file, in this case <span class="code">ToUpperPlugin.js</span>. The interface file specifies the JavaScript signatures of your plugin methods and makes the all-important call to <span class="code">cordova.exec</span>. The <span class="code"><clobbers></span> element specifies the plugin name that you will use in your code that calls the plugin. The <span class="code">src</span> attribute specifies the name of the file and its location relative to the <span class="code">plugin.xml</span> file.
+	```
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ToUpperPlugin">
+                <param name="wp-package" value="ToUpperPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/wp/ToUpperPlugin.cs" />
+    </platform>
+    ```
+*   **<platform name="windows">** This element specifies the location and filename of the native code file for the Windows Phone (Universal) platform. The `<js-module>` element specifies the location and filename of the code file.
 
-    <div class="codeSnippetContainer" id="code-snippet-14" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>Xml</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_edc413d9-d2c6-490d-ac5b-8319f0a059a1'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_edc413d9-d2c6-490d-ac5b-8319f0a059a1" dir="ltr"><div style="color:Black;"></div></div></div></div>
-*   **<platform name="wp8">** The <span class="code"><platform></span> element specifies the location and filename of the native code file, in this case <span class="code">ToUpperPlugin.cs</span>. The <span class="code">name</span> attribute is limited to a set of names that are supported by Cordova. In this case, <span class="code">"wp8"</span> is used for Windows Phone 8\. The <span class="code"><config-file></span> element contains plugin information that is added to the <span class="code">config.xml</span> file of the Cordova project. It makes the Windows Phone project aware of the plugin source. The <span class="code"><source-file></span> element specifies the location and filename of the code file.
-
-    <div class="codeSnippetContainer" id="code-snippet-15" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>Xml</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0bc284db-7489-483b-b525-6e229e7f669c'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_0bc284db-7489-483b-b525-6e229e7f669c" dir="ltr"><div style="color:Black;"></div></div></div></div>
-*   **<platform name="windows">** This element specifies the location and filename of the native code file for the Windows Phone (Universal) platform. The <span class="code"><js-module></span> element specifies the location and filename of the code file.
-
-    <div class="codeSnippetContainer" id="code-snippet-16" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>Xml</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_fa5be9be-1604-4b3f-a17b-d976ba156bc6'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_fa5be9be-1604-4b3f-a17b-d976ba156bc6" dir="ltr"><div style="color:Black;"></div></div></div></div>
+	```
+    <platform name="windows">
+        <js-module src="src/windows/ToUpperPluginProxy.js" name="ToUpperPluginProxy">
+            <merges target="" />
+        </js-module>
+    </platform>
+    ```
 
 
 ## <a id="CreatingInterface"></a>Creating the JavaScript plugin interface file
 
-This section describes the JavaScript interface file in more detail. Here’s the <span class="input">toupperplugin.js</span> file that you created.
+This section describes the JavaScript interface file in more detail. Here’s the **toupperplugin.js** file that you created.
 
-<div class="codeSnippetContainer" id="code-snippet-17" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>JavaScript</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_87f2b03d-f922-45ab-9fe5-30192b09e113'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_87f2b03d-f922-45ab-9fe5-30192b09e113" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```javascript
+// JavaScript
+var ToUpperPlugin = {
+    ToUpper: function (successCallback, errorCallback, strInput) {
+        cordova.exec(successCallback, errorCallback, "ToUpperPlugin", "ToUpper", [strInput]);
+    }
+}
+
+module.exports = ToUpperPlugin;
+```
 
 There are a few key elements that you have to get right so Visual Studio and Cordova can find your plugin files and call your plugin methods.
 
-*   **ToUpper.** The function specifies how you call the function from your Cordova app. In this case you have three arguments, two callback functions and one string. The arguments passed to the native code vary by platform. For example, the call to the <span class="code">ToUpper</span> method in the <span class="input">ToUpperPluginProxy.js</span> file receives all three arguments while the call to <span class="code">ToUpperPlugin.cs</span> receives only one argument.
+*   **ToUpper.** The function specifies how you call the function from your Cordova app. In this case you have three arguments, two callback functions and one string. The arguments passed to the native code vary by platform. For example, the call to the `ToUpper` method in the **ToUpperPluginProxy.js** file receives all three arguments while the call to `ToUpperPlugin.cs` receives only one argument.
 
-*   **cordova.exec.** The call to <span class="code">cordova.exec</span> has four required parameters. The first two are the success and error callback functions. The third is the name of the service (or plugin). The fourth is the name of the method. In Cordova, this is called the action. Any remaining arguments are passed as an array to the plugin method.
+*   **cordova.exec.** The call to `cordova.exec` has four required parameters. The first two are the success and error callback functions. The third is the name of the service (or plugin). The fourth is the name of the method. In Cordova, this is called the action. Any remaining arguments are passed as an array to the plugin method.
 
-*   **module.exports.** The last line of code makes the <span class="code">ToUpper</span> function available to the rest of the project.
+*   **module.exports.** The last line of code makes the `ToUpper` function available to the rest of the project.
 
 ## <a id="CallingPlugins"></a>Calling plugin methods from your app
 
-This section describes the code in <span class="input">index.html</span> in more detail. Here’s the code you added that calls the plugin method, <span class="code">ToUpper</span>.
+This section describes the code in **index.html** in more detail. Here’s the code you added that calls the plugin method, **ToUpper**.
 
-<div class="codeSnippetContainer" id="code-snippet-18" xmlns=""><div class="codeSnippetContainerTabs"><div class="codeSnippetContainerTabSingle" dir="ltr"><a>HTML</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText">[Copy](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_58d7839c-093c-4438-92d6-693967e85c41'); "Copy to clipboard.")</div></div><div class="codeSnippetContainerCode" id="CodeSnippetContainerCode_58d7839c-093c-4438-92d6-693967e85c41" dir="ltr"><div style="color:Black;"></div></div></div></div>
+```html
+Input text: <input type="text" id="inputText" style="font-size: xx-large" /><br/>
+<button type="button" style="font-size: xx-large" onclick="toUpperClicked()">To Upper</button>
+<p id="toUpperResult"></p>
 
-The call to <span class="code">ToUpper</span> method takes three parameters, a callback function for success, a callback function for error, and the string you want to convert to uppercase. The callback functions extract the uppercase string, contained in <span class="code">arguments</span>, and display them in the <span class="code">toUpperResult</span> paragraph element. The <span class="code">ToUpper</span> method is called from the <span class="code">ToUpperPlugin</span> module.
+<script>
+
+var successCallback = function (arguments) {
+        document.getElementById("toUpperResult").innerText =
+        'ToUpperPlugin successCallback ' + arguments[0];
+};
+
+var errorCallback = function (arguments) {
+    document.getElementById("toUpperResult").innerText =
+        'ToUpperPlugin errorCallback ' + arguments[0];
+};
+
+function toUpperClicked() {
+    ToUpperPlugin.ToUpper(successCallback, errorCallback,
+        document.getElementById("inputText").value);
+}
+
+</script>
+```
+
+The call to `ToUpper` method takes three parameters, a callback function for success, a callback function for error, and the string you want to convert to uppercase. The callback functions extract the uppercase string, contained in `arguments`, and display them in the `toUpperResult` paragraph element. The `ToUpper` method is called from the `ToUpperPlugin` module.
 
 ## <a id="RemovePlugin"></a>How to remove a local plugin from your app
 
@@ -498,19 +531,17 @@ The Visual Studio designer for config.xml that removes plugins does not remove l
 
 1.  Delete the folder from the project.
 
-2.  Delete the <span class="code">vs:plugin</span> element in the config.xml file.
+2.  Delete the `vs:plugin` element in the config.xml file.
 
 ## <a id="DebugPlugin"></a>Developing and debugging the plugin code
 
-When you ran your Cordova project, Visual Studio created a Windows Phone projects in the <span class="input">platforms\wp8</span> and <span class="input">platforms\windows</span> folders of your project folder. The projects are recreated every time you build or clean your Cordova project.
+When you ran your Cordova project, Visual Studio created a Windows Phone projects in the **platforms\wp8** and **platforms\windows** folders of your project folder. The projects are recreated every time you build or clean your Cordova project.
 
 You can copy the projects to a new location and use them to develop your plugin. When you have your plugin working, you need to copy the final code back to the plugin location you created at the beginning of the tutorial.
 
-<div class="alert"><table><tbody><tr><th align="left">![Caution note](https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif "Caution note")**Caution**</th></tr><tr><td>
+**Caution** Visual Studio will update or delete the projects every time you build your Cordova app. You need to copy the projects to a new location to prevent Visual Studio from overwriting them.
 
-Visual Studio will update or delete the projects every time you build your Cordova app. You need to copy the projects to a new location to prevent Visual Studio from overwriting them.
-
-##<a="Troubleshooting"></a>Troubleshooting</span>](javascript:void(0) "Collapse")<div class="LW_CollapsibleArea_HrDiv">
+##<a="Troubleshooting"></a>Troubleshooting**](javascript:void(0) "Collapse")<div class="LW_CollapsibleArea_HrDiv">
 
 These are some of the issues that might happen as you create and use your plugin.
 
@@ -520,7 +551,7 @@ There might be a problem with the names of the files and folders as compared to 
 
 ### The plugin does not load into the platform-specific project.
 
-There might be problem in how you defined the <span class="code"><platform></span> element of <span class="input">plugin.xml</span>. There is a limited set of valid platform names. The plugin might load into the Cordova project, but at build time, the plugin files will not be added to the platform-specific projects.
+There might be problem in how you defined the `<platform>` element of **plugin.xml**. There is a limited set of valid platform names. The plugin might load into the Cordova project, but at build time, the plugin files will not be added to the platform-specific projects.
 
 ### The call to the plugin fails silently.
 
@@ -532,7 +563,7 @@ Check the following items:
 
 *   Make sure the casing on every instance of the plugin name and the method name is consistent across all the files, including both the filenames and the text inside the files. While there is some leeway in casing as you cross boundaries within and between JavaScript and C#, be consistent and you won't have to troubleshoot casing issues.
 
-*   Make sure the folders and files are named exactly as specified in the <span class="input">plugin.xml</span> file. A single typo can invalidate an entire plugin.
+*   Make sure the folders and files are named exactly as specified in the **plugin.xml** file. A single typo can invalidate an entire plugin.
 
 *   Carefully check any text substitutions for spelling errors you've made along the way.
 
@@ -553,7 +584,7 @@ This tutorial created a very basic plugin. From here you could add any number of
 
 *   You can support more or fewer platforms. To learn more about developing plugins for other platforms, see the [Plugin Development Guide](http://cordova.apache.org/docs/en/4.0.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide).
 
-![Download the tools](https://i-msdn.sec.s-msft.com/dynimg/IC795792.png "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx
+![Download the tools](<media/create-plugin-windows-phone/create-plugin-download-link.png "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx
 
 ## See Also
 
