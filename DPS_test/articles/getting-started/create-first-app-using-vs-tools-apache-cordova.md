@@ -1,4 +1,18 @@
-
+<properties
+   pageTitle="Create Your First App Using Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 # Create Your First App Using Visual Studio Tools for Apache Cordova
 
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)*.
@@ -39,11 +53,11 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
   **Note**
   If you intend to go through the complete tutorial, name the app AngularJSToDo.
 
-  ![Create a new Multi-Device Hybrid App project](./media/create-first-app-using-vs-tools-apache-cordova/IC793843.png)
+  ![Create a new Multi-Device Hybrid App project](media/create-first-app-using-vs-tools-apache-cordova/IC793843.png)
 
 17. Choose a source control option for the project, or choose **Cancel** to skip this for now. Visual Studio creates the new project and opens **Solution Explorer** in the right pane.
 
-  ![Project structure in an Apache Cordova app in VS](./media/create-first-app-using-vs-tools-apache-cordova/IC795829.png)
+  ![Project structure in an Apache Cordova app in VS](media/create-first-app-using-vs-tools-apache-cordova/IC795829.png)
 
   The project structure in Visual Studio 2015 is updated to support third-party CLIs, and to match the Cordova project structure. Visual Studio 2013 uses the deprecated project structure. We recommend that you create Cordova apps using Visual Studio 2015.
 
@@ -94,15 +108,15 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 ### To build and run the default “Hello” app
 
 1. Choose Windows-x64, Windows-x86, or Android from the Solution Platforms list. The following illustration shows the Android platform.
-    ![Select Android as your deployment target](./media/create-first-app-using-vs-tools-apache-cordova/IC793844.png)
+    ![Select Android as your deployment target](media/create-first-app-using-vs-tools-apache-cordova/IC793844.png)
 
     If the Solution Platforms list isn’t showing, choose **Solution Platforms** from the **Add/Remove Buttons** list, and then choose your platform (Windows-x64, Windows-x86, or Android).
 
-    ![Selecting a platform for deployment](./media/create-first-app-using-vs-tools-apache-cordova/IC793845.png)
+    ![Selecting a platform for deployment](media/create-first-app-using-vs-tools-apache-cordova/IC793845.png)
 
   If you chose the Android platform, and if you have installed Chrome, choose one of the Apache Ripple emulators, as shown here.
 
-  ![Selecting the Ripple emulator](./media/create-first-app-using-vs-tools-apache-cordova/IC793846.png)
+  ![Selecting the Ripple emulator](media/create-first-app-using-vs-tools-apache-cordova/IC793846.png)
 
   **Note**
   Chrome is not installed by default.
@@ -115,7 +129,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
    Here’s what the default app looks like in one of the Ripple emulators.
 
-   ![Run the “Hello” default app in Ripple Emulator](./media/create-first-app-using-vs-tools-apache-cordova/IC742604.png)
+   ![Run the “Hello” default app in Ripple Emulator](media/create-first-app-using-vs-tools-apache-cordova/IC742604.png)
 
    **Tip**
   If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, open the SDK Manager from a command line by typing the following command: android sdk  
@@ -213,7 +227,7 @@ To get started creating apps using Azure or O365 services with Cordova, see the 
 
 Platform-specific resources, like splash screens and store icons, are required to get apps approved for download from app stores. The res folder in your project contains these resources. You can also use the res folder to add custom configuration files. For more info, see [Configure Your App Built with Visual Studio Tools for Apache Cordova](configure-vs-tools-apache-cordova.md).
 
-![Download the tools](./media/create-first-app-using-vs-tools-apache-cordova/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/create-first-app-using-vs-tools-apache-cordova/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 

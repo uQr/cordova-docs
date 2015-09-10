@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Create the ToDoList Sample App | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 # Create the ToDoList Sample App
 
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)*.
@@ -345,13 +360,13 @@ You can take a look at the empty task list in one of the emulators to verify tha
 
 2. If you chose the Android platform, choose one of the Ripple simulators, as shown here.
 
-  ![Selecting the Ripple emulator](./media/create-to-do-list-app/IC793846.png)
+  ![Selecting the Ripple emulator](media/create-to-do-list-app/IC793846.png)
 
    If you chose a Windows platform, you can run the app on the default deployment target, Local Machine.
 3. Press F5 to start debugging, or Shift+F5 to start without debugging.
   The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators (with no actual data yet attached, and with some files missing at this stage).
 
-  ![Cordova_ToDo_List_App_Empty](./media/create-to-do-list-app/IC755669.png)
+  ![Cordova_ToDo_List_App_Empty](media/create-to-do-list-app/IC755669.png)
 
   **Tip**
   If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, SDK Manager.exe is in C: Program Files (x86) Android android-sdk.
@@ -834,7 +849,7 @@ In this step, you’ll run the AngularJSToDo list app on either Windows or on th
 
 * Press F5 to run the app on the same target you specified previously. Windows and the Ripple simulator have minimal setup requirements, so we recommend initially targeting one of these two platforms. The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators.
 
-  ![Running the ToDo List app on Ripple Emulator](./media/create-to-do-list-app/IC752251.png)
+  ![Running the ToDo List app on Ripple Emulator](media/create-to-do-list-app/IC752251.png)
 
   Now, you can add new task list items by typing text and pressing Enter (Ripple) or tapping outside of the input box (Windows). At this point, HTML 5 Web Storage stores the task list items locally.
 
@@ -1082,4 +1097,4 @@ The complete sample includes additional code to store and retrieve task list ite
 
 6. Press F5 to re-run the app. Now, task list items will be stored in Azure.
 
-![Download the tools](./media/create-to-do-list-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/create-to-do-list-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)

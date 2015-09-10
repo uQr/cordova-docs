@@ -1,10 +1,25 @@
+<properties
+   pageTitle="Run Your Apache Cordova App on Android | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 # Run Your Apache Cordova App on Android
 
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106).*
 
 There are many options for running your apps built using Visual Studio Tools for Apache Cordova on Android. From Visual Studio, you can run and debug Android apps on the following emulators and devices:
 
-* [Apache Ripple simulator](https://msdn.microsoft.com/en-us/library/dn757052.aspx) (discussed in a separate article)
+* [Apache Ripple simulator](run-apache-ripple-simulator) (discussed in a separate article)
 
 * [Visual Studio Emulator for Android](#VSAndroid)
 
@@ -49,7 +64,7 @@ Disabling Hyper-V will prevent you from using the Visual Studio Emulator for And
 
 2. Clear the check box for Hyper-V.
 
-  ![Disabling Hyper-V](./media/run-app-apache/IC741798.png)
+  ![Disabling Hyper-V](media/run-app-apache/IC741798.png)
 
 3. Reboot your PC. Now you can install the HAXM driver.
 
@@ -81,7 +96,7 @@ Disabling Hyper-V will prevent you from using the Visual Studio Emulator for And
 
 2. In the Android SDK Manager, look under Extras for the Intel x86 Emulator Accelerator (HAXM Installer). If the status column shows that it isn’t installed, select its check box, and then choose Install Packages.
 
-   ![Installing the HAXM driver](./media/run-app-apache/IC741799.png)
+   ![Installing the HAXM driver](media/run-app-apache/IC741799.png)
 
 3. Install the driver by going to sdk-path\extras\intel\Hardware_Accelerated_Execution_Manager and running **intelhaxm.exe**.
 
@@ -103,7 +118,7 @@ Before you run your app on the Android emulator in Visual Studio, use the Androi
   **Tip**
   If you want to emulate other Android device versions, you can install the images using the Android SDK Manager.
 
-  ![Creating an Android emulator](./media/run-app-apache/IC741800.png)
+  ![Creating an Android emulator](media/run-app-apache/IC741800.png)
 
   * If you installed the high-performance HAXM driver in the [previous section](#HAXM) and chose an Intel CPU, select the Use Host GPU check box in Emulation Options.
 
@@ -120,7 +135,7 @@ Before you run your app on the Android emulator in Visual Studio, use the Androi
 
 2. In the device list, choose Android Emulator.
 
-   ![Deploying to the Android emulator](./media/run-app-apache/IC740450.png)
+   ![Deploying to the Android emulator](media/run-app-apache/IC740450.png)
 
 3. Press F5 to start the app, or Shift+F5 to start the app without debugging. Android 4.4 is required to attach the debugger. Otherwise, the app will run without debugging.
 
@@ -154,7 +169,7 @@ The [Genymotion emulator](http://www.genymotion.com/) is a popular alternative t
 
 3. In the device list, choose Device.
 
-   ![Deploying to an Android device](./media/run-app-apache/IC740309.png)
+   ![Deploying to an Android device](media/run-app-apache/IC740309.png)
 
 4. Press F5 to start the app, or Shift+F5 to start the app without debugging.
 
@@ -164,7 +179,7 @@ Before you can use Visual Studio to run your app on a connected Android device, 
 
 * [Device-specific OEM driver](http://developer.android.com/tools/extras/oem-usb.html), or
 
-* For Google Nexus devices, [Google USB driver](http://developer.android.com/sdk/win-usb.html#top) You must also make sure that your device is in developer mode. For instructions, see “Enabling On-device Developer Options” and “Setting up a Device for Development” in the [Using Hardware Devices](http://developer.android.com/tools/device.html) page on the Android website. To deploy a Release or Distribution configuration of your app, you must sign your app first. For more information, see [Package your App](https://github.com/Microsoft/cordova-docs/tree/master/tutorial-package-publish#android).
+* For Google Nexus devices, [Google USB driver](http://developer.android.com/sdk/win-usb.html#top) You must also make sure that your device is in developer mode. For instructions, see “Enabling On-device Developer Options” and “Setting up a Device for Development” in the [Using Hardware Devices](http://developer.android.com/tools/device.html) page on the Android website. To deploy a Release or Distribution configuration of your app, you must sign your app first. For more information, see [Package your App](./package-and-publish/package-app-built-with-visual-studio.md#android).
 
 ### To run your app on an Android device
 
@@ -182,27 +197,27 @@ Before you can use Visual Studio to run your app on a connected Android device, 
 
     You should see your device in the list as shown here.
 
-    ![Viewing your device using the Android Debug Bridge](./media/run-app-apache/IC816243.png)
+    ![Viewing your device using the Android Debug Bridge](media/run-app-apache/IC816243.png)
 
 3. With your app open in Visual Studio, choose **Android** from the Solution Platforms list. (If you don’t see this option, choose Solution Platforms from the **Add/Remove Buttons** list.)
 
 4. In the device list, choose **Device**.
 
-   ![Deploying to an Android device](./media/run-app-apache/IC740309.png )
+   ![Deploying to an Android device](media/run-app-apache/IC740309.png )
 
 5. Press F5 to start the app, or Shift+F5 to start the app without debugging.
 
 6. When prompted, choose *Allow USB Debugging*.
 
-![Download the tools](./media/configure-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/configure-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 
 **Concepts**
 
-[Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx)  
-[Debug Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757061.aspx)  
-[Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx)  
+[Install Visual Studio Tools for Apache Cordova](./getting-started/install-vs-tools-apache-cordova.md)  
+[Debug Your App Built with Visual Studio Tools for Apache Cordova](./debug-and-test/debug-using-visual-studio.md)  
+[Package Your App Built with Visual Studio Tools for Apache Cordova](./debug-and-test/package-app-built-with-visual-studio.md)  
 
 **Other Resources**
 
