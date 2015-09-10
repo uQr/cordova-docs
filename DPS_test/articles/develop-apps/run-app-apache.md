@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="normesta"
+   authors="Mikejo5000"
    tags=""/>
 <tags
    ms.service="na"
@@ -11,8 +11,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/11/2015"
-   ms.author="normesta"/>
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Run Your Apache Cordova App on Android
 
 There are many options for running your apps built using Visual Studio Tools for Apache Cordova on Android. From Visual Studio, you can run and debug Android apps on the following emulators and devices:

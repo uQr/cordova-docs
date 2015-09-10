@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="normesta"
+   authors="Mikejo5000"
    tags=""/>
 <tags
    ms.service="na"
@@ -11,8 +11,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/11/2015"
-   ms.author="normesta"/>
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova
 
 Apache Cordova uses plugins to provide access to native device capabilities that aren’t available to simple web apps, such as access to the file system. A plugin is a cross-platform Cordova library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. Not all plugins are supported or needed on all device platforms.

@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="normesta"
+   authors="Mikejo5000"
    tags=""/>
 <tags
    ms.service="na"
@@ -11,8 +11,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/11/2015"
-   ms.author="normesta"/>
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Create Your First App Using Visual Studio Tools for Apache Cordova
 
 An app built using Visual Studio Tools for Apache Cordova uses Cordova to access native APIs by using web technologies like HTML and CSS. By reducing or eliminating the need for native code, apps work across multiple devices. Some tasks are common to most Cordova apps. These include:

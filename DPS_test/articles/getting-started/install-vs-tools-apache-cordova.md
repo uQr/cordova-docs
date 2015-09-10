@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="normesta"
+   authors="Mikejo5000"
    tags=""/>
 <tags
    ms.service="na"
@@ -11,8 +11,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/11/2015"
-   ms.author="normesta"/>
+   ms.date="09/10/2015"
+   ms.author="mikejo"/>
 # Install Visual Studio Tools for Apache Cordova
 
 Take advantage of the easy-to-use installer to build cross-platform apps with Visual Studio and Apache Cordova. With the installer, you don’t have to identify the required SDKs, tools, and libraries (or which versions).
