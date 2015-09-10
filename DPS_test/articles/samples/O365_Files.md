@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Application Lifecycle Management (ALM) with Apache Cordova Apps | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="kirupa"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="kirupa"/>
 #Cordova Sample App with O365 Discovery Service and the Files API
 
 In this topic, you will learn how to leverage some of the new APIs in the client libraries for Office 365 in an app built using Visual Studio Tools for Apache Cordova.
@@ -23,7 +38,7 @@ The following frameworks and libraries are used in this application:
 
 The services used in the demo application to fetch files from OneDrive are:
 
- - [O365 Discovery Services](https://msdn.microsoft.com/library/office/dn776441%28v=office.15%29.aspx), to find SharePoint service endpoints for the logged in user. 
+ - [O365 Discovery Services](https://msdn.microsoft.com/library/office/dn776441%28v=office.15%29.aspx), to find SharePoint service endpoints for the logged in user.
  - [Files API](https://msdn.microsoft.com/library/office/dn605900%28v=office.15%29.aspx), to retrieve the file and folders information for the user’s OneDrive for Business.
 
 ##Creating Authentication and Discovery Contexts
@@ -63,8 +78,8 @@ The SharePoint capability object for "MyFiles" allows you to work with the files
     discoveryContext.services(authContext.getAccessTokenFn(
         'Microsoft.SharePoint')).then(
         (function (capabilities) {
-        // We have the capabilities object. 
-        // Enumerate the object to get the capability 
+        // We have the capabilities object.
+        // Enumerate the object to get the capability
         // for "My Files"
         capabilities.forEach(function (v, i, a) {
             if (v.capability === 'MyFiles') {
@@ -80,7 +95,7 @@ Now that you have the capability object for MyFiles, you can create a SharePoint
 ##Create the SharePoint Client Object
 To create the SharePoint client object we need the end point URI information stored in the capability object and the access token for the resource:
 
-    var sharePoint = new 
+    var sharePoint = new
         Microsoft.CoreServices.SharePointClient (
         filesCapability.endpointUri,
         authContext.getAccessTokenFn(
