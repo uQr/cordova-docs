@@ -10,9 +10,9 @@ Alternatively, you can select **View Code** from the context menu to edit the fi
 
 * [Configure the Windows target version](#ConfigWindows) (in this topic)
 
-* [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757051.aspx)
+* [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](manage-plugins.md)
 
-* [Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx)
+* [Package Your App Built with Visual Studio Tools for Apache Cordova](./package-and-publish/package-app-built-with-visual-studio.md)
 
 **Caution**
 If you edit the config.xml file directly, make sure that your XML elements and attributes are valid. Invalid content in the XML file will result in errors when you build the app.

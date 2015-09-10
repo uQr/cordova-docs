@@ -2,19 +2,19 @@
 
 # Get Started with Visual Studio Tools for Apache Cordova #
 
-_In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova_. 
+_In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova_.
 
-You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._ You can build cross-platform apps for iOS, Android, and Windows devices by using Visual Studio Tools for Apache Cordova. The easy-to-use installer identifies and installs the right versions of the required SDKs, tools, and libraries that you need to build [Apache Cordova](http://cordova.apache.org/) apps. Use the Visual Studio debugger to attach to iOS, Android, and Windows apps, hit breakpoints, and inspect code using the console and DOM Explorer. Apache Cordova enables cross-platform development standard web technologies such as HTML, CSS, and JavaScript. 
+You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._ You can build cross-platform apps for iOS, Android, and Windows devices by using Visual Studio Tools for Apache Cordova. The easy-to-use installer identifies and installs the right versions of the required SDKs, tools, and libraries that you need to build [Apache Cordova](http://cordova.apache.org/) apps. Use the Visual Studio debugger to attach to iOS, Android, and Windows apps, hit breakpoints, and inspect code using the console and DOM Explorer. Apache Cordova enables cross-platform development standard web technologies such as HTML, CSS, and JavaScript.
 
 You can build apps using the tools for these devices and platforms:
 
-* Android 2.3.3 and later (4.4 provides the best developer experience) 
-* iOS 6, 7, and 8 
+* Android 2.3.3 and later (4.4 provides the best developer experience)
+* iOS 6, 7, and 8
 * Windows 8 and 8.1
 * Windows Phone 8 and 8.1
 
 **Note**
-Visual Studio Tools for Apache Cordova has been tested for use with Cordova 5.1.1 and 4.3.1\. You can select a different version using the [configuration designer](https://msdn.microsoft.com/en-us/library/dn757053.aspx). However, using an untested version may result in unexpected behaviors.
+Visual Studio Tools for Apache Cordova has been tested for use with Cordova 5.1.1 and 4.3.1\. You can select a different version using the [configuration designer](configure-vs-tools-apache-cordova.md). However, using an untested version may result in unexpected behaviors.
 
 When you develop apps using Visual Studio Tools for Apache Cordova, Visual Studio provides these benefits:
 
@@ -29,17 +29,17 @@ When you develop apps using Visual Studio Tools for Apache Cordova, Visual Studi
 
 ## Get the tools ##
 
-[Download Visual Studio 2015](http://aka.ms/mchm38) and select a custom installation with Cross Platform Mobile Development > HTML/JavaScript selected. You must also install the [remotebuild](https://www.npmjs.com/package/remotebuild) agent on OSX for iOS support. 
+[Download Visual Studio 2015](http://aka.ms/mchm38) and select a custom installation with Cross Platform Mobile Development > HTML/JavaScript selected. You must also install the [remotebuild](https://www.npmjs.com/package/remotebuild) agent on OSX for iOS support.
 
-For installation instructions, see [Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx), and to get started writing your first app, see [Create Your First App Using Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757057.aspx).
+For installation instructions, see [Install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md), and to get started writing your first app, see [Create Your First App Using Visual Studio Tools for Apache Cordova](create-first-app-using-vs-tools-apache-cordova.md).
 
 ## Download a sample ##
 
-The ToDoList sample app shows how you can use different frameworks for your Cordova app. ToDoList allows users to create new tasks, check them off, and remove them. The app uses Microsoft Azure Mobile Services to store data, and also uses Bing Maps to provide valid addresses. 
+The ToDoList sample app shows how you can use different frameworks for your Cordova app. ToDoList allows users to create new tasks, check them off, and remove them. The app uses Microsoft Azure Mobile Services to store data, and also uses Bing Maps to provide valid addresses.
 
-* [AngularJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398516) 
-* [WinJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398518) 
-* [Backbone sample](http://go.microsoft.com/fwlink/p/?LinkID=398517) 
+* [AngularJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398516)
+* [WinJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398518)
+* [Backbone sample](http://go.microsoft.com/fwlink/p/?LinkID=398517)
 
 To download the ToDoList sample app for Visual Studio 2013, see the deprecated samples on GitHub.
 
@@ -48,34 +48,34 @@ To download other samples for Visual Studio Tools for Apache Cordova that demons
 
 ## Get started ##
 
-* [Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx)
-       
-    [Configure the tools](https://msdn.microsoft.com/en-us/library/dn771551.aspx)  
+* [Install Visual Studio Tools for Apache Cordova](create-first-app-using-vs-tools-apache-cordova.md)
+
+    [Configure the tools](configure-vs-tools-apache-cordova.md)  
 
 * [Create your first app](https://msdn.microsoft.com/en-us/library/dn757057.aspx)
 
-* [Configure your app](https://msdn.microsoft.com/en-us/library/dn757053.aspx)
-* [Manage plugins](https://msdn.microsoft.com/en-us/library/dn757051.aspx)
+* [Configure your app](./develop-apps/configure-app.md)
+* [Manage plugins](./develop-apps/manage-plugins.md)
 
-* [Deploy and run your app on different platforms](https://msdn.microsoft.com/en-us/library/dn757049.aspx)  
-  
-     [Run your app on Android](https://msdn.microsoft.com/en-us/library/dn757059.aspx)  
-     [Run your app on iOS](https://msdn.microsoft.com/en-us/library/dn757056.aspx)   
-     [Run your app on Windows](https://msdn.microsoft.com/en-us/library/dn771547.aspx)  
-     [Run your app on Windows Phone](https://msdn.microsoft.com/en-us/library/dn757055.aspx)  
-     [Run your app on the Apache Ripple Emulator](https://msdn.microsoft.com/en-us/library/dn757052.aspx)
+* [Deploy and run your app on different platforms](./develop-apps/deploy-and-run-app.md)  
+
+     [Run your app on Android](./develop-apps/run-app-apache.md)  
+     [Run your app on iOS](./develop-apps/run-app-ios.md)   
+     [Run your app on Windows](./develop-apps/run-app-windows.md)  
+     [Run your app on Windows Phone](./develop-apps/run-app-windows-phone.md)  
+     [Run your app on the Apache Ripple Emulator](./develop-apps/run-app-ripple-simulator.md)
 * [Debug your app](https://msdn.microsoft.com/en-us/library/dn757061.aspx)
 
-* [Add Connected Services](https://msdn.microsoft.com/en-us/library/dn771546.aspx)
+* [Add Connected Services](./develop-apps/add-connected-services.md)
 
-* [Package your app](https://msdn.microsoft.com/en-us/library/dn757048.aspx)
+* [Package your app](./package-and-publish/package-app-built-with-visual-studio.md)
 
-* [Publish your app](https://msdn.microsoft.com/en-us/library/dn771554.aspx)
+* [Publish your app](./package-and-publish/publish-app-built-with-visual-studio.md)
 
-* [Access a Native Cordova Project](https://msdn.microsoft.com/en-us/library/dn771553.aspx)
+* [Access a Native Cordova Project](./develop-apps/access-native-cordova-project.md)
 
 * [Samples, Tutorials, and Videos](https://msdn.microsoft.com/en-us/library/dn848421.aspx)  
-  
+
      [Using Apache Cordova 5](http://go.microsoft.com/fwlink/p/?LinkID=618470) (github)  
      [An introduction to Cordova 5 security](http://go.microsoft.com/fwlink/p/?LinkID=617521) (github)  
      [Using Gulp with your Cordova projects](http://go.microsoft.com/fwlink/p/?LinkID=533767) (github)  
@@ -92,9 +92,7 @@ To download other samples for Visual Studio Tools for Apache Cordova that demons
      [Video Walkthrough: Interoperability with Third-party Tools](https://msdn.microsoft.com/en-us/library/mt162214.aspx)  
      [Video Walkthrough: Visual Studio Diagnostic Tools for Cordova](https://msdn.microsoft.com/en-us/library/mt162216.aspx)  
 
-* [Community: Connect with Developers](https://msdn.microsoft.com/en-us/library/dn771550.aspx)  
-
-[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx) 
+[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also ##
 
@@ -102,4 +100,3 @@ To download other samples for Visual Studio Tools for Apache Cordova that demons
 
 [Download the Tools](http://aka.ms/mchm38)  
 [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782)  
-

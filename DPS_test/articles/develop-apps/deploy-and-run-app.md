@@ -10,19 +10,17 @@ Visual Studio can build, deploy, and run your Apache Cordova app on any platform
 
 For instructions on how to build, deploy, and run your app on a specific platform, see one of these articles:
 
-* [Run Your Apache Cordova App on Android](https://msdn.microsoft.com/en-us/library/dn757059.aspx)
+* [Run Your Apache Cordova App on Android](./develop-apps/run-app-apache.md)
 
-* [Run Your Apache Cordova App on iOS](https://msdn.microsoft.com/en-us/library/dn757056.aspx)
+* [Run Your Apache Cordova App on iOS](./develop-apps/run-app-ios.md)
 
-* [Run Your Apache Cordova App on Windows](https://msdn.microsoft.com/en-us/library/dn771547.aspx)
+* [Run Your Apache Cordova App on Windows](./develop-apps/run-app-windows.md)
 
-* [Run Your Apache Cordova App on Windows Phone](https://msdn.microsoft.com/en-us/library/dn757055.aspx)
+* [Run Your Apache Cordova App on Windows Phone](./develop-apps/run-app-windows-phone.md)
 
-* [Run Your Apache Cordova App on the Apache Ripple Simulator](https://msdn.microsoft.com/en-us/library/dn757052.aspx)
+* [Run Your Apache Cordova App on the Apache Ripple Simulator](./develop-apps/run-app-ripple-simulator.md)
 
    In addition, this article provides information about the [Cordova build process in Visual Studio](#BuildProcess).
-
-
 
 ## Choose your target platform in Visual Studio
 
@@ -54,24 +52,24 @@ The Cordova Command Line Interface (CLI) does most of the heavy lifting for Visu
 
 ## Android
 
-The CLI supports both building and running Android apps on Windows. To run the app on the Android emulator, Visual Studio runs the CLI command cordova emulate android. This command deploys the app to an already running emulator, or, if none are available, it starts up the last emulator that was created. To run the app on a connected Android device, Visual Studio runs the CLI command cordova run android. To configure your Android device or emulator, see [Run Your Apache Cordova App on Android](https://msdn.microsoft.com/en-us/library/dn757059.aspx).
+The CLI supports both building and running Android apps on Windows. To run the app on the Android emulator, Visual Studio runs the CLI command cordova emulate android. This command deploys the app to an already running emulator, or, if none are available, it starts up the last emulator that was created. To run the app on a connected Android device, Visual Studio runs the CLI command cordova run android. To configure your Android device or emulator, see [Run Your Apache Cordova App on Android](./develop-apps/run-app-apache.md).
 
 ## iOS
 
-Because Windows cannot build an iOS app directly, Visual Studio uses a remote agent called remotebuild to build and run your app on a remote Mac machine. (You can build locally if you are using Visual Studio inside a Windows VM on a Mac.) To build for iOS, vs-tac prepares the CLI project in exactly the same way as it does for any platform, but for iOS it then transfers the contents over to remotebuild on the Mac. The remote agent unzips the contents, adds the iOS platform (with the command cordova platform add ios), compiles the iOS app (cordova prepare ios; cordova compile ios), and then transfers the resulting package (IPA) back to the Windows host machine. To configure the remotebuild and host Visual Studio for iOS build, see [Install tools for iOS](https://msdn.microsoft.com/library/dn757054.aspx#ios). To run apps on iOS, Visual Studio builds the app using remotebuild and then uses ios-sim to start up the simulator on the remote Mac machine. If you are running on an iOS device attached to your Mac, remotebuild starts the app directly (the ideviceinstaller must be installed from HomeBrew). If you run the app on an iOS device attached to Windows, Visual Studio builds and then adds the app to iTunes so you can deploy it to your device from Windows.
+Because Windows cannot build an iOS app directly, Visual Studio uses a remote agent called remotebuild to build and run your app on a remote Mac machine. (You can build locally if you are using Visual Studio inside a Windows VM on a Mac.) To build for iOS, vs-tac prepares the CLI project in exactly the same way as it does for any platform, but for iOS it then transfers the contents over to remotebuild on the Mac. The remote agent unzips the contents, adds the iOS platform (with the command cordova platform add ios), compiles the iOS app (cordova prepare ios; cordova compile ios), and then transfers the resulting package (IPA) back to the Windows host machine. To configure the remotebuild and host Visual Studio for iOS build, see [Install tools for iOS](./getting-started/install-vs-tools-apache-cordova.md#ios). To run apps on iOS, Visual Studio builds the app using remotebuild and then uses ios-sim to start up the simulator on the remote Mac machine. If you are running on an iOS device attached to your Mac, remotebuild starts the app directly (the ideviceinstaller must be installed from HomeBrew). If you run the app on an iOS device attached to Windows, Visual Studio builds and then adds the app to iTunes so you can deploy it to your device from Windows.
 
 ## Windows and Windows Phone
 
-When building for Windows/Windows Phone 8.1 and 10, Cordova generates a Windows Runtime app (APPX). When building for Windows Phone 8, it generates a Silverlight (XAP) WebView app. These apps are launched in the same way as a native Windows 8 or Windows Phone 8 project in Visual Studio. For more information, see [Run Your Apache Cordova App on Windows](https://msdn.microsoft.com/en-us/library/dn771547.aspx) and [Run Your Apache Cordova App on Windows Phone](https://msdn.microsoft.com/en-us/library/dn757055.aspx).
+When building for Windows/Windows Phone 8.1 and 10, Cordova generates a Windows Runtime app (APPX). When building for Windows Phone 8, it generates a Silverlight (XAP) WebView app. These apps are launched in the same way as a native Windows 8 or Windows Phone 8 project in Visual Studio. For more information, see [Run Your Apache Cordova App on Windows](./develop-apps/run-app-windows.md) and [Run Your Apache Cordova App on Windows Phone](https://msdn.microsoft.com/en-us/library/dn757055.aspx).
 
 ## Ripple Emulator
 
-To make the Ripple build process to be as fast as possible, the CLI is used to generate the needed plugin code, but otherwise, Visual Studio provides the web content directly (instead of providing content from the generated native project). When you run the app, the Ripple emulator is initialized, and Chrome is started using a Ripple URL (for example, http://localhost:4400/index.html?enableripple=cordova-3.0.0-Nexus7 for the Nexus7 tablet device). All Chrome settings are stored locally to your Visual Studio instance so that your normal browser experience is not affected. For more information, see [Run Your Apache Cordova App on the Apache Ripple Simulator](https://msdn.microsoft.com/en-us/library/dn757052.aspx). ![Download the tools](./media/deploy-and-run-app/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+To make the Ripple build process to be as fast as possible, the CLI is used to generate the needed plugin code, but otherwise, Visual Studio provides the web content directly (instead of providing content from the generated native project). When you run the app, the Ripple emulator is initialized, and Chrome is started using a Ripple URL (for example, http://localhost:4400/index.html?enableripple=cordova-3.0.0-Nexus7 for the Nexus7 tablet device). All Chrome settings are stored locally to your Visual Studio instance so that your normal browser experience is not affected. For more information, see [Run Your Apache Cordova App on the Apache Ripple Simulator](./develop-apps/run-app-ripple-simulator.md). ![Download the tools](./media/deploy-and-run-app/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 
 **Concepts**
 
-[Get Started with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771545.aspx)  
-[Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx)  
-[Create Your First App Using Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757057.aspx)  
+[Get Started with Visual Studio Tools for Apache Cordova](./get-started/get-started-vs-tools-apache-cordova.md)  
+[Install Visual Studio Tools for Apache Cordova](./get-started/install-vs-tools-apache-cordova.md)  
+[Create Your First App Using Visual Studio Tools for Apache Cordova](./get-started/create-first-app-using-vs-tools-apache-cordova.md)  

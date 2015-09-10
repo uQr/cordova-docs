@@ -159,7 +159,7 @@ The following plugins are available using the Config Designer:
 
 **Concepts**
 
-[Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx)
+[Install Visual Studio Tools for Apache Cordova](./get-started/install-vs-tools-apache-cordova.md)
 
 **Other Resources**
 

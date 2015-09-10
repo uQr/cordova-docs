@@ -18,12 +18,12 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
 * [Add platform-specific resources](#Platform)
 
-* [Test](https://msdn.microsoft.com/en-us/library/dn757061.aspx), [package](https://msdn.microsoft.com/en-us/library/dn757048.aspx), and
- [publish](https://msdn.microsoft.com/en-us/library/dn771554.aspx)
+* [Test](debug-using-visual-studio.md), [package](./package-and-publish/package-app-built-with-visual-studio.md), and
+ [publish](publish-app-built-with-visual-studio.md)
 
 ## <a id="Create"></a>Create a Cordova project
 
- Before you can create a new project, make sure that you’ve met all system requirements and installed the Visual Studio Tools for Apache Cordova extension for Visual Studio. For more information, see [Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx).
+ Before you can create a new project, make sure that you’ve met all system requirements and installed the Visual Studio Tools for Apache Cordova extension for Visual Studio. For more information, see [Install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md).
 
 ### To create a new project
 
@@ -89,7 +89,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
  After you create a project using the default Blank App template, run a quick test to verify your installation and setup. For this initial test, run the default “Hello” app (the unmodified Blank App template) on either Windows or one of the Apache Ripple emulators, which have minimal setup requirements.
 
- If you prefer to test your app on another target, see the following topics: [Run Your Apache Cordova App on Android](https://msdn.microsoft.com/en-us/library/dn757059.aspx), [Configure the Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771551.aspx), and [Run Your Apache Cordova App on Windows Phone](https://msdn.microsoft.com/en-us/library/dn757055.aspx).
+ If you prefer to test your app on another target, see the following topics: [Run Your Apache Cordova App on Android](./develop-apps/run-app-apache.md), [Configure the Visual Studio Tools for Apache Cordova](configure-vs-tools-apache-cordova.md), and [Run Your Apache Cordova App on Windows Phone](./develop-apps/run-app-windows-phone.md).
 
 ### To build and run the default “Hello” app
 
@@ -120,7 +120,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
    **Tip**
   If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, open the SDK Manager from a command line by typing the following command: android sdk  
 
-  If you see an error such as Cannot find module [modulename] or a build failure, see [Re-installing vs-tac](https://msdn.microsoft.com/library/dn771551(v=vs.140).aspx#vstac).
+  If you see an error such as Cannot find module [modulename] or a build failure, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
   If clearing the Cordova cache (or re-installing vs-tac) does not resolve the issue, see [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
 
@@ -164,7 +164,7 @@ Next steps:
 
  * Do you want your app to look the same on different platforms? A UI framework typically provides a branded experience and is intended to look the same across platforms. A few examples of popular UI frameworks include [Ionic](http://ionicframework.com/) and [Bootstrap](http://getbootstrap.com/). For a sample that uses Ionic, see the [Ionic SideMenu Starter Template](https://code.msdn.microsoft.com/windowsapps/Ionic-SideMenu-Starter-8e905eb5).
 
- * If you want a native look-and-feel, are you targeting a particular platform more than others? Some UI frameworks may resemble a particular platform’s look-and-feel, such as iOS. If you are aiming for a native look-and-feel for each platform, development cost will be higher and a native look-and-feel may be difficult to achieve. It is important to follow the design guidelines for particular platforms to make sure that your app can pass the review process. Apps don’t necessarily need to look native to get approved for an app store, but they should behave more like an app than a web page. For more information. see [Get Your Apache Cordova App Approved by the App Stores](https://msdn.microsoft.com/en-us/library/dn887955.aspx).
+ * If you want a native look-and-feel, are you targeting a particular platform more than others? Some UI frameworks may resemble a particular platform’s look-and-feel, such as iOS. If you are aiming for a native look-and-feel for each platform, development cost will be higher and a native look-and-feel may be difficult to achieve. It is important to follow the design guidelines for particular platforms to make sure that your app can pass the review process. Apps don’t necessarily need to look native to get approved for an app store, but they should behave more like an app than a web page. For more information. see [Get Your Apache Cordova App Approved by the App Stores](get-your-app-approved.md).
 
  For a sample that uses Ionic, see the [Ionic SideMenu Starter Template](http://go.microsoft.com/fwlink/p/?LinkID=544745).
 
@@ -181,11 +181,11 @@ Next steps:
 
 ## <a id="Native"></a>Add native features (plugins)
 
-One of the most important features that Cordova provides is support for plugins that enable access to native features, such as geolocation and battery. Using a plugin, you can program to a generic JavaScript API. Core plugins typically support all the main platforms, while third-party plugins may require more investigation. If plugin support is not available, you may need to customize an existing plugin or write your own, which will require native code. For more info, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757051.aspx)
+One of the most important features that Cordova provides is support for plugins that enable access to native features, such as geolocation and battery. Using a plugin, you can program to a generic JavaScript API. Core plugins typically support all the main platforms, while third-party plugins may require more investigation. If plugin support is not available, you may need to customize an existing plugin or write your own, which will require native code. For more info, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](./develop-apps/manage-plugins.md)
 
 ## <a id="Connected"></a>Add connected services
 
-If your app is using Azure or Office365 services, see [Add Connected Services to App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771546.aspx). A core plugin for Azure Mobile Services is available in the [Config Designer](https://msdn.microsoft.com/en-us/library/dn757051.aspx) in Visual Studio. For information on adding the Azure services in the task list sample app for Visual Studio Tools for Apache Cordova (AngularJS version), see [Create the ToDoList Sample App](https://msdn.microsoft.com/en-us/library/dn832630.aspx).
+If your app is using Azure or Office365 services, see [Add Connected Services to App Built with Visual Studio Tools for Apache Cordova](./develop-apps/add-connected-services.md). A core plugin for Azure Mobile Services is available in the [Config Designer](./develop-apps/add-connected-services.md) in Visual Studio. For information on adding the Azure services in the task list sample app for Visual Studio Tools for Apache Cordova (AngularJS version), see [Create the ToDoList Sample App](create-to-do-list-app.md).
 
 To get started creating apps using Azure or O365 services with Cordova, see the following articles and blog posts. Azure
 
@@ -211,7 +211,7 @@ To get started creating apps using Azure or O365 services with Cordova, see the 
 
 ## <a id="Platform"></a>Add platform-specific resources
 
-Platform-specific resources, like splash screens and store icons, are required to get apps approved for download from app stores. The res folder in your project contains these resources. You can also use the res folder to add custom configuration files. For more info, see [Configure Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757053.aspx).
+Platform-specific resources, like splash screens and store icons, are required to get apps approved for download from app stores. The res folder in your project contains these resources. You can also use the res folder to add custom configuration files. For more info, see [Configure Your App Built with Visual Studio Tools for Apache Cordova](configure-vs-tools-apache-cordova.md).
 
 ![Download the tools](./media/create-first-app-using-vs-tools-apache-cordova/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 

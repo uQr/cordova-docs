@@ -5,7 +5,7 @@
 In this tutorial, you’ll learn how to create a task list sample app using AngularJS (AngularJSToDo). This app allows users to create new tasks, check them off, and remove them. The app also stores tasks using HTML5 Web Storage on the device. (The complete sample uses Microsoft Azure Mobile Services to store data, and also uses Bing Maps to provide valid addresses.) This sample uses JavaScript code, but you can also write your Cordova app in TypeScript.
 
 **Note**
-For an overview of tasks required to build a Cordova app, see [Create Your First App Using Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757057.aspx).
+For an overview of tasks required to build a Cordova app, see [Create Your First App Using Visual Studio Tools for Apache Cordova](create-first-app-using-vs-tools-apache-cordova.md).
 
 The task list sample app is available for multiple frameworks, and can be downloaded here:
 
@@ -39,11 +39,11 @@ In this tutorial, you’ll follow these steps:
 
 ## Pre-requisites
 
-Before you can create a new project, make sure that you’ve met all system requirements and installed the Visual Studio Tools for Apache Cordova. For more information, see [Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx).
+Before you can create a new project, make sure that you’ve met all system requirements and installed the Visual Studio Tools for Apache Cordova. For more information, see [Install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md).
 
 ## <a id="Create"></a>Create a project
 
-Create a new Cordova project in Visual Studio by following the steps described in [Create Your First App Using Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757057.aspx). Alternatively, start with a new blank app by choosing **File**, **New**, and then **Project** in Visual Studio. In the **New Project** dialog box, choose **Installed**, **Templates**, **JavaScript**, **Apache Cordova Apps**, and then choose the **Blank App** template.
+Create a new Cordova project in Visual Studio by following the steps described in [Create Your First App Using Visual Studio Tools for Apache Cordova](create-first-app-using-vs-tools-apache-cordova.md). Alternatively, start with a new blank app by choosing **File**, **New**, and then **Project** in Visual Studio. In the **New Project** dialog box, choose **Installed**, **Templates**, **JavaScript**, **Apache Cordova Apps**, and then choose the **Blank App** template.
 
 ## <a id="UI"></a>Create the UI
 
@@ -355,7 +355,7 @@ You can take a look at the empty task list in one of the emulators to verify tha
   **Tip**
   If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, SDK Manager.exe is in C: Program Files (x86) Android android-sdk.
 
-  If you see an error such as Cannot find module [modulename], see [Re-installing vs-tac](https://msdn.microsoft.com/en-us/library/dn757054.aspx#vsmda).
+  If you see an error such as Cannot find module [modulename], see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vsmda).
 
   If you experience other problems, see [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782) and the [FAQ](http://go.microsoft.com/fwlink/p/?linkid=398476).
 
@@ -836,7 +836,7 @@ If you are more interested in setting up Azure Mobile Services, you can skip the
 
 ### To add Bing Maps support to the app:
 
-1. Add the Cordova Geolocation plugin to the app by double-clicking config.xml in **Solution Explorer**, choosing the **Plugins** tab, and then choosing **Geolocation**. For more information, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757051.aspx).
+1. Add the Cordova Geolocation plugin to the app by double-clicking config.xml in **Solution Explorer**, choosing the **Plugins** tab, and then choosing **Geolocation**. For more information, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](./develop-apps/manage-plugins.md).
 2. Choose **Add** to add the plugin.
 
   * [Get a Bing Maps key](https://msdn.microsoft.com/library/ff428642.aspx) and include it where instructed in the in maps.js.
@@ -851,7 +851,7 @@ The complete sample includes additional code to store and retrieve task list ite
 
 1. If you don’t already have one, create a [Microsoft Azure account](http://azure.microsoft.com/pricing/free-trial/).
 
-2. In **Solution Explorer**, choose **Add**, **Connected Service** from the shortcut menu for the project, and then follow instructions in [add a connected service](https://msdn.microsoft.com/en-us/library/dn771546.aspx) to add Azure Mobile Services to your app and to create a free SQL database. When the service is added, your project gets the following updates:
+2. In **Solution Explorer**, choose **Add**, **Connected Service** from the shortcut menu for the project, and then follow instructions in [add a connected service](./develop-apps/add-connected-services.md) to add Azure Mobile Services to your app and to create a free SQL database. When the service is added, your project gets the following updates:
 
   * A new services folder will be added to your project when you finish adding the connected service.
     The resulting code in will need to be replaced with code from the ToDoList sample app (code shown in the steps that follow).
