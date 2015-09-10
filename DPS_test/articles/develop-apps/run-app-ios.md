@@ -15,8 +15,6 @@
    ms.author="mikejo"/>
 # Run Your Apache Cordova App on iOS
 
-_In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._
-
 When you create app using Visual Studio Tools for Apache Cordova, you have several options for emulating and deploying your app on iOS:
 
 *   [Apache Ripple simulator](run-app-ripple-simulator.md), which provides basic validation of layout and CSS. (This does not require installation of the remote agent for iOS.)
@@ -41,12 +39,12 @@ If you have configured your Mac as described in the article [Install tools for i
 
 4.  In the simulator list, choose **Simulator – iPhone** or another iOS simulator.
 
-    ![Selecting the iOS Simulator](<media/run-app-ios/run-ios-simulator-select.png> "Selecting the iOS Simulator")
+    ![Selecting the iOS Simulator](media/run-app-ios/run-ios-simulator-select.png)
 5.  Press F5 to start the app.
 
     If the remote agent is set up correctly, Visual Studio deploys the app to the iOS Simulator on your Mac.
 
-    ![iOS Simulator running on a Mac](<media/run-app-ios/run-ios-simulator.png> "iOS Simulator running on a Mac")
+    ![iOS Simulator running on a Mac](media/run-app-ios/run-ios-simulator.png)
 
 **Tip** If you are running a version of the iOS Simulator with a Retina display on a lower-resolution Mac with a non-Retina display, you may need to scale the emulator to 50% so the app will fit on the screen (choose **Window**, **Scale**).
 
@@ -68,11 +66,11 @@ If you have configured the **remote build** agent on your Mac as described in th
 
 6.  In the device list, choose **Local Device** to run your app on a device connected to your PC, or choose <**Remote Device** to run your app on a device connected to your Mac.
 
-    ![Selecting an iOS device](<media/run-app-ios/run-ios-device-select.png> "Selecting an iOS device")
+    ![Selecting an iOS device](media/run-app-ios/run-ios-device-select.png)
 7.  Press F5 to start the app.
 
     If the remote agent and is set up correctly and your iOS device is connected, the app will run on your device.
 
     If you are running the app on your PC (**Local Device**), iTunes will start and the iOS app will automatically be added to (or replaced in) your library. You can [install or update the app](http://support.apple.com/kb/PH12315) on a connected device as you would any other iOS app.
 
-![Download the tools](<media/run-app-ios/run-ios-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/run-app-ios/run-ios-download-link.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)

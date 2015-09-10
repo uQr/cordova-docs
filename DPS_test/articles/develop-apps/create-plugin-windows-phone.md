@@ -65,7 +65,7 @@ The **ToUpperPlugin** plugin needs four files.
 
 You start by creating the following folder and file structure. While this is not the only folder structure you can use, it is the structure that many plugins follow. The folder structure looks like this:
 
-![The file structure of a plugin.](<media/create-plugin-windows-phone/create-plugin-folder-structure.png> "The file structure of a plugin.")
+![The file structure of a plugin.](media/create-plugin-windows-phone/create-plugin-folder-structure.png)
 
 1.  Create a root folder for your plugin and name it **ToUpperPlugin**.
 
@@ -210,7 +210,7 @@ var ToUpperPlugin = {
 module.exports = ToUpperPlugin;
 ```
 
-The code in **ToUpperPlugin.js** is discussed in more detail in the **[Creating the JavaScipt plugin interface file](#CreatingInterface)** section later in this tutorial.
+The code in **ToUpperPlugin.js** is discussed in more detail in the [Creating the JavaScipt plugin interface file](#CreatingInterface) section later in this tutorial.
 
 Your plugin is complete and ready to add to a project.
 
@@ -232,15 +232,15 @@ Your plugin is complete and ready to add to a project.
 
     Visual Studio adds the plugin to your project and creates the folder structure shown in the following image:
 
-    ![Project structure of a plugin in a Cordova app.](<media/create-plugin-windows-phone/create-plugin-updated-folder-structure.png> "Project structure of a plugin in a Cordova app.")
+    ![Project structure of a plugin in a Cordova app.](media/create-plugin-windows-phone/create-plugin-updated-folder-structure.png)
 15.  Save the project.
 
 16.  To run the app on Windows 8, choose the **Windows Phone 8** platform and the **Emulator WVGA 512MB**, as shown in the following image.
 
-    ![Selecting WP emulator from the toolbar.](<media/create-plugin-windows-phone/create-plugin-run-app.png> "Selecting WP emulator from the toolbar.")
+    ![Selecting WP emulator from the toolbar.](media/create-plugin-windows-phone/create-plugin-run-app.png)
 19.  Press F5 to run your project and verify that it runs the Windows Phone emulator without error as shown in the following image.
 
-    ![Selecting WP emulator from the toolbar.](<media/create-plugin-windows-phone/create-plugin-run-app-emulator.png> "The app running in a WP emulator.")
+    ![The app running in a Windows Phone Emulator.](media/create-plugin-windows-phone/create-plugin-run-app-emulator.png)
 20.  To run the app on Windows 8 (Universal), choose the **Windows Phone (Universal)** platform and the **Emulator 8.1 WVGA 4 inch 512MB**.
 
 23.  Press F5 to run your project and verify that it runs on the Windows Phone emulator.
@@ -285,7 +285,7 @@ The code you added to **index.html** is discussed in more detail in the[Calling 
 
 1.  Press F5 to run your project, as shown in the following image:
 
-    ![Selecting WP emulator from the toolbar.](<media/create-plugin-windows-phone/create-plugin-run-app-emulator-2.png> "The app with input box and button.")
+    ![The app with input box and button.](media/create-plugin-windows-phone/create-plugin-run-app-emulator-2.png)
 2.  Verify that the app returns a successful result if you enter text in the input box and returns an error result if the input box is empty.
 
 You now have a complete plugin and a project that uses the plugin. The following sections describe the files in more detail.
@@ -326,7 +326,7 @@ There are a few key elements that you have to get right so that you can call you
 
 *   **Base class.** You can name your plugin class whatever you like, but it must derive from **BaseCommand**. The **BaseCommand** class is created by Visual Studio and added to the Windows Phone project. You can find the class in the **cordovalib** folder of the Windows Phone project. It’s in the **WPCordovaClassLib.Cordova.Commands** namespace. The location is shown in the following image.
 
-    ![The location of BaseCommand in the project.](<media/create-plugin-windows-phone/create-plugin-basecommand-location.png> "The location of BaseCommand in the project.")
+    ![The location of BaseCommand in the project.](media/create-plugin-windows-phone/create-plugin-basecommand-location.png)
 *   **Signature.** Your method must use this signature:
 
 	```C#
@@ -336,7 +336,8 @@ There are a few key elements that you have to get right so that you can call you
 
 	 You can change **MethodName** and **options** to something more meaningful for your app, but the rest must stay the same. The arguments that are passed to the method are converted into a JSON object. You need to parse the JSON to retrieve the arguments. For example, in **ToUpperPlugin**, the string is passed as the first item in an array that is converted to JSON. Visual Studio includes a JSON visualizer to view the contents of a JSON package. To display the visualizer, in debug mode, mouse over the variable containing JSON. From the context menu, select JSON visualizer, as shown in the following image. For information on how to debug the Windows Phone project, see the section [Developing and debugging the C# plugin code](#DebugPlugin) later in this tutorial.
 
-    ![How to select the JSON visualizer.](<media/create-plugin-windows-phone/create-plugin-json-viz-select.png> "How to select the JSON visualizer.")![The JSON visualizer.](<media/create-plugin-windows-phone/create-plugin-json-viz.png "The JSON visualizer.")
+    ![How to select the JSON visualizer.](media/create-plugin-windows-phone/create-plugin-json-viz-select.png)
+    ![The JSON visualizer.](media/create-plugin-windows-phone/create-plugin-json-viz.png)
 *   **PluginResult.** If you want to return something from your method to your app, or if you want to trigger either a success callback method or an error callback method in your app, you need to create and dispatch a `PluginResult` object. In the constructor for `PluginResult`, you indicate whether the method succeeded or not, and you include the value to be passed back to your app. The code follows this pattern:
 
 	```C#
@@ -584,7 +585,7 @@ This tutorial created a very basic plugin. From here you could add any number of
 
 *   You can support more or fewer platforms. To learn more about developing plugins for other platforms, see the [Plugin Development Guide](http://cordova.apache.org/docs/en/4.0.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide).
 
-![Download the tools](<media/create-plugin-windows-phone/create-plugin-download-link.png "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx
+![Download the tools](media/create-plugin-windows-phone/create-plugin-download-link.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx
 
 ## See Also
 
