@@ -22,7 +22,7 @@ You can download Visual Studio from the [Microsoft Download Center](http://go.mi
 
     * [Verify the remote agent configuration](#IosVerify)
 
-* If you see unexpected errors when trying to build the Blank App template, see [Re-install vs-tac](configure-app.md#vstac).
+* If you see unexpected errors when trying to build the Blank App template, see [Re-install vs-tac](#vstac).
 
     **Caution**
 If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015) (github).
@@ -255,7 +255,7 @@ This command will fail if the agent is not running in a second window, or if the
 
         remotebuild test --device
 
-For more information about app provisioning and certificate signing identities, see [Package Your App Built with Visual Studio Tools for Apache Cordova](package-app-built-with-visual-studio.md).
+For more information about app provisioning and certificate signing identities, see [Package Your App Built with Visual Studio Tools for Apache Cordova](./package-and-publish/package-app-built-with-visual-studio.md).
 
 ##Reinstall vs-tac
 
@@ -336,4 +336,4 @@ where *username* and *password* are your proxy username and password; *proxy-por
 **Concepts**
 
 [Install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md)  
-[Run Your Apache Cordova App on iOS](run-app-ios.md)
+[Run Your Apache Cordova App on iOS](./develop-apps/run-app-ios.md)
