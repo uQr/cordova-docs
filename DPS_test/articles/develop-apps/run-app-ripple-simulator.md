@@ -37,13 +37,13 @@ The following procedure shows you how to run your app on the simulator and attac
 
 2.  Choose **Android** or **iOS** from the **Solution Platforms** list.
 
-    ![Select Android as your deployment target](<media/run-app-ripple-simulator/run-ripple-platform-select.png> "Select Android as your deployment target")
+    ![Select Android as your deployment target](media/run-app-ripple-simulator/run-ripple-platform-select.png)
 
 	**Note** If you don’t see this list, choose **Solution Platforms** from the **Add/Remove Buttons** list to display it.
 
 3.  In the list of target devices, choose one of the Ripple simulators.
 
-    ![Selecting the Ripple emulator](<media/run-app-ripple-simulator/run-ripple-device-select.png> "Selecting the Ripple emulator")
+    ![Selecting the Ripple emulator](media/run-app-ripple-simulator/run-ripple-device-select.png)
 4.  Press F5 to start debugging, or Shift+F5 to start your app without debugging.
 
   **Tip** If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. To open the SDK Manager on Windows, open a command line and type the following command: `android sdk`
@@ -58,7 +58,7 @@ Ripple avoids cross-domain limitations in the browser by using a proxy. Two prox
 
 2.  Choose the **Cross Domain Proxy** button, and then choose a proxy.
 
-    ![Selecting a proxy in the Ripple emulator](<media/run-app-ripple-simulator/run-ripple-proxy-settings.png> "Selecting a proxy in the Ripple emulator")
+    ![Selecting a proxy in the Ripple emulator](media/run-app-ripple-simulator/run-ripple-proxy-settings.png)
 
 You can change the target device on the fly while your app is running in Chrome. By doing this, you can avoid restarting the app in Visual Studio.
 
@@ -68,9 +68,9 @@ You can change the target device on the fly while your app is running in Chrome.
 
 2.  Choose the button that specifies the name of the current device, and then choose a different device.
 
-    ![Changing the device in Chrome](<media/run-app-ripple-simulator/run-ripple-change-device.png> "Changing the device in Chrome")
+    ![Changing the device in Chrome](media/run-app-ripple-simulator/run-ripple-change-device.png)
 
-![Download the tools](<media/run-app-ripple-simulator/run-ripple-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/run-app-ripple-simulator/run-ripple-download-link.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 #### See Also
 
