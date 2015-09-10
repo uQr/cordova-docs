@@ -1,3 +1,19 @@
+<properties
+   pageTitle="Cordova Sample App with 0365 Outlook Services and Ionic | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="kirupa"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="kirupa"/>
+
 #Cordova Sample App with O365 Outlook Services and Ionic
 
 In this tutorial, you’ll learn how to create a mail, calendar and contact client using O365 Outlook services and the Ionic framework. This app allows users to access their mail, calendar and contact through O365 Outlook services API. This sample uses JavaScript code, but you can also write your Cordova app in TypeScript.
@@ -143,13 +159,13 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
             url: "/app",
             templateUrl: "app/layout/layout.html"
         })
-    
+
         // Sign-in page
          .state('sign-in', {
              url: "/sign-in",
              templateUrl: "app/auth/sign-in.html"
          })
-    
+
         // Sign-out page
             .state('app.sign-out', {
                 url: "/sign-out",
@@ -159,7 +175,7 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
                     }
                 }
             })   
-    
+
         // Mail list page
         .state('app.mail', {
             url: "/mail",
@@ -169,7 +185,7 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
                 }
             }
         })
-    
+
         // Mail list containing mails flagged as important
         .state('app.mail.imp', {
             url: "/imp/id:important",
@@ -179,7 +195,7 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
                 }
             }
         })
-    
+
         // Mail detail page
         .state('app.mail-detail', {
             url: "/mail/:id",
@@ -189,7 +205,7 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
                 }
             }
         })
-    
+
         // Unread mail list page
         .state('app.mail.unread', {
             url: "/unread/id:unread",
@@ -199,7 +215,7 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
                 }
             }
         })
-    
+
         // All mail list page
         .state('app.mail.all', {
             url: "/all/id:all",
@@ -209,14 +225,14 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
                 }
             }
         });
-    
+
         // Navigate to sign-in page when app starts.
         $urlRouterProvider.otherwise('sign-in');
 
 For app layout (menu, nav-bar), use the Ionic side-menu and pane:
 
     <ion-side-menus ng-controller="layoutCtrl as vm">
-    
+
         <ion-pane ion-side-menu-content>
             <ion-nav-bar class="bar-positive">
                 <ion-nav-back-button class="button-clear icon ion-ios7-arrow-back"></ion-nav-back-button>
@@ -224,7 +240,7 @@ For app layout (menu, nav-bar), use the Ionic side-menu and pane:
             </ion-nav-bar>
             <ion-nav-view name="mainContent" animation="slide-left-right"></ion-nav-view>
         </ion-pane>
-    
+
         <ion-side-menu side="left">
             <header class="bar bar-header bar-positive">
                 <h1 class="title">{{vm.userName}}</h1>
@@ -234,7 +250,7 @@ For app layout (menu, nav-bar), use the Ionic side-menu and pane:
                     <ion-item nav-clear menu-close ui-sref="app.sign-out">Sign-out</ion-item>
                 </ion-list>
         </ion-side-menu>
-    
+
     </ion-side-menus>
 
 Use the Ionic tab to show different content in separate tabs. For example, use the Ionic controls below to create a mail tab page to show important mails, unread mails, and all mails under different tabs:
@@ -244,11 +260,11 @@ Use the Ionic tab to show different content in separate tabs. For example, use t
             <ion-tab title="Imp" icon="ion-star" ui-sref="app.mail.imp">
                 <ion-nav-view name="tab-imp-mail"></ion-nav-view>
             </ion-tab>
-    
+
             <ion-tab title="Unread" icon="ion-ios7-email-outline" ui-sref="app.mail.unread">
                 <ion-nav-view name="tab-unread-mail"></ion-nav-view>
             </ion-tab>
-    
+
             <ion-tab title="All" icon="ion-email" ui-sref="app.mail.all">
                 <ion-nav-view name="tab-all-mail"></ion-nav-view>
             </ion-tab>
@@ -275,30 +291,30 @@ Here is the code to acquire an access token:
               // Log sign-in error message.
               console.log('Failed to login. Error = ' + error.message);
          });
-    
+
     Here is the code to create an Outlook services client object.
-    
+
         var outlookClient = new Microsoft.OutlookServices.Client('https://outlook.office365.com/api/v1.0', authtoken.getAccessTokenFn('https://outlook.office365.com'));
-    
+
     Here is the complete AngularJS factory code to expose the O365 API:
-    
+
     (function () {
         'use strict';
         angular.module('app365').factory('app365api', [app365api]);
-    
+
         function app365api() {
-    
+
             var authContext;
             var authtoken;
             var outlookClient;      
             var userName;
-    
+
             // Login to O365
             function login(callback) {
                 if (!authContext) {
                     authContext = new O365Auth.Context();
                 }
-    
+
                 authContext.getIdToken("https://outlook.office365.com/")
                .then((function (token) {
                    // Get auth token
@@ -315,21 +331,21 @@ Here is the code to acquire an access token:
                    callback(error.message);
                });
             };
-    
+
             // Logout
             function logout() {
                 if (!authContext) {
                     authContext = new O365Auth.Context();
                 }
-    
+
                 authContext.logOut();
             };
-    
+
             // Get signed-in user name.
             function getUserName() {
                 return userName;
             };
-    
+
             return {
                 login: login,
                 logout: logout,
@@ -384,7 +400,7 @@ The following code reads all contacts:
 
     function getContacts() {
     NProgress.start();
-    
+
     // Fetch all the contacts.
     outlookClient.me.contacts.getContacts().fetch()
     .then(function (contacts) {
@@ -471,24 +487,24 @@ Here is the code to add a new contact:
 
     // Contact object
     var contact = new Microsoft.OutlookServices.Contact();
-    
+
     // First and last name
     contact.givenName = $scope.newContact.firstname;
     contact.surname = $scope.newContact.lastname;
-    
+
     // Mobile phone
     contact.mobilePhone1 = $scope.newContact.phone;
-    
+
     // Email address
     var emailAddress = new Microsoft.OutlookServices.EmailAddress();
     emailAddress.address = $scope.newContact.email;
     contact.emailAddresses.push(emailAddress);
-    
+
     // Add Contact
     outlookClient.me.contacts.addContact(contact)
     .then((function (response) {
     // Contact added successfully.
-    
+
     })
     .bind(this), function (reason) {
     // Log the error message when add contact fails.

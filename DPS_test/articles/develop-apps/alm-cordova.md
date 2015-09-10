@@ -1,16 +1,26 @@
----
-title: Kits
-layout: docs
-permalink: /docs/kits.html
----
-#Application Lifecycle Management (ALM) with Apache Cordova Apps
+<properties
+   pageTitle="Application Lifecycle Management (ALM) with Apache Cordova Apps | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="kirupa"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="kirupa"/>
+
+# Application Lifecycle Management (ALM) with Apache Cordova Apps
 
 Developing apps for modern platforms involves many more activities than just writing code. DevOps (development + operations) recognizes a variety of activities across an app’s complete lifecycle. These include agile planning and tracking work, designing and implementing code, managing a source code repository, running builds, managing continuous integrations and deployments, testing (including unit tests and UI tests), running various forms of diagnostics in both development and production environments, and monitoring app performance and user behaviors in real time through telemetry and analytics.
 
 Visual Studio, Visual Studio Online, and Team Foundation Server provide a variety of DevOps capabilities (also referred to as application lifecycle management or ALM), a number of which are applicable to Cordova apps. Tools that are designed for .NET languages like C#, however, do not apply to JavaScript code. Other tools require tight integration with build and runtime environments. Because Cordova apps on Windows run as native apps, you’re able to use a variety of Visual Studio’s diagnostic tools such as performance profilers that are not available on non-Windows platforms.
 
 The table below identifies which Visual Studio ALM features you can expect to work well with an Apache Cordova project, and which ones have limitations. Refer to the linked documentation for details on the features themselves.
-
 <table>
               <tbody><tr>
                 <th>
@@ -85,17 +95,17 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -183,17 +193,17 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -215,7 +225,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -232,7 +242,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -285,17 +295,17 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -361,7 +371,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -384,17 +394,17 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -416,7 +426,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -429,7 +439,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -443,7 +453,7 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -456,7 +466,7 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -494,7 +504,7 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -506,17 +516,17 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -586,17 +596,17 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -618,7 +628,7 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -631,7 +641,7 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
@@ -654,17 +664,17 @@ Android emulators only</p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
                 <td>
                   <p>
-                    
+
                   </p>
                 </td>
               </tr>
