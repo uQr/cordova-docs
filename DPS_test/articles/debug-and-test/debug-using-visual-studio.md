@@ -15,8 +15,6 @@
    ms.author="mikejo"/>
 # Debug Your App Built with Visual Studio Tools for Apache Cordova
 
-_In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._
-
 Visual Studio brings a seamless and common tooling experience for developing Cordova apps across app types and device platforms. However, in this early release, not all device platforms support all Visual Studio debugger and diagnostic capabilities, as shown in the following table.
 
 Device or operating system | Visual Studio debugger supported? | Console messages supported? | Workaround
@@ -39,7 +37,7 @@ In this article:
 
 [Debug Windows and Windows Phone](#DbgWindows)
 
-**Caution** For a video and accompanying tutorial that shows you how to debug using the Visual Studio debugger, DOM Explorer, and the JavaScript Console, see [Video Walkthrough: Debug using Visual Studio Diagnostic Tools for Cordova](https://msdn.microsoft.com/en-us/library/mt162216.aspx)
+**Caution** For a video and accompanying tutorial that shows you how to debug using the Visual Studio debugger, DOM Explorer, and the JavaScript Console, see [Video Walkthrough: Debug using Visual Studio Diagnostic Tools for Cordova](../video/debug_diagnostic_tools.md)
 
 You can attach the Visual Studio debugger to an app that’s running in the Apache Ripple emulator.
 
@@ -89,7 +87,7 @@ The supported set of console commands, and their behavior, is provided by the ho
 
 **Tip** The JavaScript Console in Visual Studio provides IntelliSense information to make easy to identify these commands and other objects on your page.
 
-The DOM Explorer enables debugging of HTML and CSS. Features available in the **Styles**, **Computed**, and **Layout** tabs of the **[Quickstart: Debug HTML and CSS](https://msdn.microsoft.com/en-us/library/hh441474.aspx)** are supported on Ripple.
+The DOM Explorer enables debugging of HTML and CSS. Features available in the **Styles**, **Computed**, and **Layout** tabs of the [Quickstart: Debug HTML and CSS](https://msdn.microsoft.com/en-us/library/hh441474.aspx) are supported on Ripple.
 
 **Note** For detailed information about debugging support, see [Known Issues](http://go.microsoft.com/fwlink/?linkid=398782).
 
@@ -134,7 +132,7 @@ If you’re using an Android version between 2.3.3 and 4.3, you can install the 
 
 The plugin has no effect when you’re using the Apache Ripple emulator or debugging on Android 4.4 emulators and devices, so there’s no need to remove it when you switch between different Android targets during testing.
 
-The following cross-platform **[JavaScript Console commands](https://msdn.microsoft.com/en-us/library/hh696634.aspx)** are currently supported for Android:
+The following cross-platform [JavaScript Console commands](https://msdn.microsoft.com/en-us/library/hh696634.aspx) are currently supported for Android:
 
 *   **$**
     **$$**
@@ -162,7 +160,7 @@ The supported set of console commands, and their behavior, is provided by the ho
 
 **Tip** The JavaScript Console in Visual Studio provides IntelliSense information to make easy to identify these commands and other objects on your page.
 
-Features available in the **Styles**, **Computed**, and **Layout** tabs of the **[Quickstart: Debug HTML and CSS](https://msdn.microsoft.com/en-us/library/hh441474.aspx)** are supported on Android.
+Features available in the **Styles**, **Computed**, and **Layout** tabs of the [Quickstart: Debug HTML and CSS](https://msdn.microsoft.com/en-us/library/hh441474.aspx) are supported on Android.
 
 **Caution** Other debugging and diagnostic tools available for Windows aren’t currently available for Android. We’ll continue to improve Android debugging support in subsequent releases. For detailed information about debugging support, see [Known Issues](http://go.microsoft.com/fwlink/?linkid=398782).
 
@@ -172,7 +170,7 @@ You can attach the Visual Studio debugger to the iOS Simulator or to an iOS devi
 
 ### <a name="DbgIOS"></a>To debug on iOS
 
-1.  Make sure you have [installed the remotebuild agent](https://msdn.microsoft.com/library/dn757054.aspx#ios) on your Mac, started the agent, and configured Visual Studio to connect to the agent.
+1.  Make sure you have [installed the remote agent](../getting-started/install-vs-tools-apache-cordova.md#ios) on your Mac, started the agent, and configured Visual Studio to connect to the agent.
 
 2.  If you are debugging on an actual device, go to your device and choose **Settings**, **Safari**, **Advanced**, and then enable Web Inspector.
 
@@ -216,7 +214,7 @@ The supported set of console commands, and their behavior, is provided by the ho
 
 **Tip** The JavaScript Console in Visual Studio provides IntelliSense information to make easy to identify these commands and other objects on your page.
 
-Features available in the **Styles**, **Computed**, and **Layout** tabs of the **[Quickstart: Debug HTML and CSS](https://msdn.microsoft.com/en-us/library/hh441474.aspx)**  are supported on iOS.
+Features available in the **Styles**, **Computed**, and **Layout** tabs of the [Quickstart: Debug HTML and CSS](https://msdn.microsoft.com/en-us/library/hh441474.aspx)  are supported on iOS.
 
 **Caution** We’ll continue to improve debugging support in subsequent releases. For detailed information about debugging support, see [Known Issues](http://go.microsoft.com/fwlink/?linkid=398782).
 
@@ -225,7 +223,7 @@ For Windows 8, Windows 8.1, and Windows Phone 8.1 apps, you can use the same Vis
 
 For Windows Phone 8 apps, you cannot attach the Visual Studio debugger. Instead, you can use Web Inspector Remote ([weinre](http://people.apache.org/~pmuellr/weinre/docs/latest/)), which is described in a [Microsoft Open Technologies blog post](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/).
 
-As an alternative to using weinre for Windows Phone 8 debugging, you can instead add the Console plugin to your app, build your app, and then open the generated native Windows Phone 8 project in Visual Studio. The native project can be found under the platforms\wp8 folder. With the native project open, you can use the Output window to view console output. For more information about accessing the native projects, see **[Access a Native Cordova Project](https://msdn.microsoft.com/en-us/library/dn771553.aspx)**.
+As an alternative to using weinre for Windows Phone 8 debugging, you can instead add the Console plugin to your app, build your app, and then open the generated native Windows Phone 8 project in Visual Studio. The native project can be found under the platforms\wp8 folder. With the native project open, you can use the Output window to view console output. For more information about accessing the native projects, see [Access a Native Cordova Project](../develop-apps/access-native-cordova-project.md).
 
 **Caution** Changes you make to the native project will be overwritten when you rebuild the Cordova app.
 
