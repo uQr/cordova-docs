@@ -40,7 +40,7 @@ Next, install and configure Java and the Android SDK.
 
 1. Download and install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html) for Mac. 2. Download the [Android SDK tools](http://developer.android.com/sdk/index.html) for Mac.
 
-   **Note**
+   >**Note:**
    You can choose the download under **Get the SDK for an existing IDE** if you don’t intend to use the Android IDE directly.
 
 2. Unzip the Android tools.
