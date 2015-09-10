@@ -124,4 +124,4 @@ You can develop apps by using the Office 365 APIs to access services such as ema
 ![Download the tools](<media/add-connected-services/connected-service-download-link.png> "Download the tools") [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 #### See Also
-[Get Started with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771545.aspx)
+[Get Started with Visual Studio Tools for Apache Cordova](../getting-started/get-started-vs-tools-apache-cordova.md)
