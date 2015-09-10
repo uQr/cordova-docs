@@ -1,3 +1,19 @@
+<properties
+   pageTitle="Build a Cordova app for iOS using Parallels | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="kirupa"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="kirupa"/>
+
 #Build a Cordova app for iOS using Parallels
 
 This article shows how you can build hybrid apps using Apache Cordova in Visual Studio and deploy them to iOS using Parallels. By using [Parallels](http://www.parallels.com/), you can develop Cordova apps using only a Mac. To accomplish this, you’ll need the following:
@@ -10,7 +26,7 @@ This article shows how you can build hybrid apps using Apache Cordova in Visual 
 
 Any Mac that can run Mavericks or Yosemite should work with Parallels and Visual Studio, such as a 2013 MacBook Pro.
 
-##Configure Parallels
+## Configure Parallels
 To install Parallels and Windows 8 on your Mac, follow the [instructions](http://kb.parallels.com/en/4729) that come with Parallels. Once you’ve installed Parallels and Windows 8, consider whether you should give your VM extra RAM and storage space, because the default values might not provide optimal performance. The following illustration shows some example settings in Parallels.
 
 INSERT IMAGE
@@ -23,7 +39,7 @@ In the environment we tested, we gave the VM 2 CPUS and 3 GB RAM with 8 GB RAM o
 > originate from a share) or choose a location for your app that is on
 > disk that is local to your VM.
 
-##Set up Node.js with remotebuild
+## Set up Node.js with remotebuild
 Once you’ve got Parallels up and running, you’re ready to set up your Mac. First you need to install Node.js on OS X. Follow the directions at [the NodeJS web site](http://nodejs.org/) to install it.
 
 Once Node.js is installed, get the [remotebuild](http://go.microsoft.com/fwlink/?LinkId=618169) agent. The remotebuild agent allows Visual Studio to communicate with OS X and use your Mac as a build service. You can install the remotebuild agent by opening the Terminal App on your Mac and typing the following command:
@@ -47,7 +63,7 @@ INSERT IMAGE
 
 You’ll need to use the PIN when you configure the agent in Visual Studio. The remotebuild agent is now up and running. Leave the Terminal App open.
 
-##Get the IP address on your Mac
+## Get the IP address on your Mac
 With Parallels running, the most reliable way to connect from Parallels to the Mac side is to use one of the VNIC IP addresses because it generally won’t change between restarts. You can get these IP addresses by going to Terminal App and typing the following command:
 
     ifconfig
@@ -58,7 +74,7 @@ INSERT IMAGE
 
 Either of the VNIC IP addresses will work. With remotebuild running and a VNIC IP address ready to use, you can open Visual Studio in Parallels and start building on the Mac.
 
-##Configure Visual Studio to use remotebuild
+## Configure Visual Studio to use remotebuild
 With Visual Studio open in Parallels, choose **Tools**, then **Options**. Open **Tools for Apache Cordova**, and then choose **Remote Agent Configuration**. Make the following changes to the remote agent settings.
 
  - Set **Enable remote iOS processing** to **True**.
@@ -73,7 +89,7 @@ INSERT IMAGE
 
 If time expires on your security PIN (10 minutes by default), you may need to regenerate your certificates again.
 
-##Build your project for iOS
+## Build your project for iOS
 Next, make sure that your project is set to build for iOS. If you don't see the Solutions Platforms list on your debug toolbar, you can show it by choosing the dropdown arrow at the right of the debug toolbar as shown in the following illustration.
 
 INSERT IMAGE
