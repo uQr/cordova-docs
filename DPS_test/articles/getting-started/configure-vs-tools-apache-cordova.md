@@ -39,8 +39,8 @@ You can download Visual Studio from the [Microsoft Download Center](http://go.mi
 
 * If you see unexpected errors when trying to build the Blank App template, see [Re-install vs-tac](#vstac).
 
-    **Caution**
-If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015) (github).
+    >**Caution:**
+  If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015) (github).
 
 * For other issues not listed here, see the [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
 ##Install dependencies manually
@@ -58,7 +58,7 @@ You can install the dependencies in any order, except for Java. You must install
 
     When you install Git command line tools, select the option that adds Git to your command prompt path.
 
-    **Caution**
+    >**Caution:**
 Git command line tools 1.9.5 are installed by default. Unexpected failures may occur if you install a version prior to 1.9.0.
 
 * [Apache Ant](http://go.microsoft.com/fwlink/?LinkID=396869)
@@ -69,7 +69,7 @@ Git command line tools 1.9.5 are installed by default. Unexpected failures may o
 
      * Add %ANT_HOME%\bin to the system path.
 
-    **Note**
+    >**Note:**
 If you need to set this environment variable manually, see [Override system environment variables](#env_var).
 * [32-bit Oracle Java 7](http://go.microsoft.com/fwlink/?LinkID=396871)
 
@@ -79,7 +79,7 @@ If you need to set this environment variable manually, see [Override system envi
 
     * To avoid out of memory issues, set a *JAVA_OPTIONS environment variable with at least -Xmx512M in it.
 
-    **Note**
+    >>**Note:**
 If you need to set this environment variable manually, see [Override system environment variables](#env_var).
 * [Android SDK](http://go.microsoft.com/fwlink/?LinkID=396873) with the following SDK packages:
 
@@ -126,7 +126,7 @@ If you need to set this environment variable manually, see [Override system envi
 
      If you need to set this environment variable manually, see [Override system environment variables](#env_var).
 
-    **Tip**
+    >**Tip:**
 If you install the Android SDK to its default location on Windows, it gets installed to C:\Program Files (x86)\Android\android-sdk.
 
    * Apple iTunes ([x86](http://go.microsoft.com/fwlink/?LinkID=397715), [x64](http://go.microsoft.com/fwlink/?LinkID=397313))
@@ -207,7 +207,7 @@ For security purposes, the server certificates that pair Visual Studio with the 
 
 You can configure the remote agent using various command line options. For example, you can specify the port to listen for build requests and specify the maximum number of builds to maintain on the file system. (By default, the limit is 10\. The agent will remove builds that exceed the maximum on shutdown.)
 
-**Caution**
+>**Caution:**
 Many options have changed between vs-mda-remote and remotebuild.
 
 ### To configure the remote agent
@@ -251,7 +251,7 @@ Once you have [installed the agent](install-vs-tools-apache-cordova.md#ios), you
 
        remotebuild test <same-options-as-first-agent>
 
-    **Important**
+    >**Important:**
 This command will fail if the agent is not running in a second window, or if the two instances are not using the same configuration options.
 
     This command initiates a test build. The output from the command should show the build number and other information about the build, such as its progress.
@@ -286,7 +286,7 @@ If you see unexpected errors when trying to build the Blank App template after i
 
 4. Choose **Build**, **Clean Solution**, and then rebuild your project.
 
-   **Tip**
+   >**Tip:**
 If you have no errors, you do not need to re-install vs-tac. If you still have the same error, then re-install vs-tac.
 
 ### To re-install vs-tac
@@ -303,7 +303,7 @@ The default path to vs-tac is C:\Program Files (x86)\Microsoft Visual Studio 14.
 ##Configure tools to work with a proxy
 If you are using Visual Studio behind a proxy, such as a corporate firewall, you may need to configure proxy settings for the npm package manager and for git before you can use Visual Studio Tools for Apache Cordova.
 
-**Important**
+>**Important:**
 Using npm proxy settings with recent versions of Node.js can cause Cordova to fail to acquire plugins at the command line or in the configuration designer or when adding platforms required for build. If you encounter unexpected issues (particularly a “TypeError: Request path contains unescaped characters” error), try downgrading Node.js to 0.10.29.
 
 ### To configure proxy settings for npm package manager

@@ -19,7 +19,7 @@
 
 In this tutorial, you’ll learn how to create a task list sample app using AngularJS (AngularJSToDo). This app allows users to create new tasks, check them off, and remove them. The app also stores tasks using HTML5 Web Storage on the device. (The complete sample uses Microsoft Azure Mobile Services to store data, and also uses Bing Maps to provide valid addresses.) This sample uses JavaScript code, but you can also write your Cordova app in TypeScript.
 
-**Note**
+>**Note:**
 For an overview of tasks required to build a Cordova app, see [Create Your First App Using Visual Studio Tools for Apache Cordova](create-first-app-using-vs-tools-apache-cordova.md).
 
 The task list sample app is available for multiple frameworks, and can be downloaded here:
@@ -86,7 +86,7 @@ In the preceding code, the AngularJS attribute, ng-repeat, allows you to define 
 element as a template to display task list items. Later, when you attach actual data and run the app, ng-repeat will add the child
 element (templateContainer) and its child elements to the DOM for each stored task list item.
 
-**Note**
+>**Note:**
 Because Cordova is not dependent on any particular JavaScript framework, we are not trying to provide in-depth information about [AngularJS programming](https://docs.angularjs.org/tutorial) in these steps. Instead, we are showing a good example of one way to create a cross-platform app using Visual Studio Tools for Apache Cordova.
 Now, we will add the complete markup for index.html.
 
@@ -368,7 +368,7 @@ You can take a look at the empty task list in one of the emulators to verify tha
 
   ![Cordova_ToDo_List_App_Empty](media/create-to-do-list-app/IC755669.png)
 
-  **Tip**
+  >>**Tip:**
   If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, SDK Manager.exe is in C: Program Files (x86) Android android-sdk.
 
   If you see an error such as Cannot find module [modulename], see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vsmda).
@@ -385,7 +385,7 @@ Now that you’ve verified your setup, you can create the AngularJSToDo app. The
 
 2. In the **Download AngularJS** dialog box, choose **Browse additional modules**, and download angular-resource.min.js. 5. In the Visual Studio Solution Explorer, add a new folder under the scripts folder of the project and name it frameworks.
 
-  **Note**
+  >**Note:**
   You cannot add this folder while the app is running. Press Shift + F5 to stop the debugger.
 
 3. Open the shortcut menu for the frameworks folder, and then choose **Add**, **Existing Item**. Add the two AngularJS files from steps 1 and 2 to the project.
@@ -409,7 +409,7 @@ Now that you’ve verified your setup, you can create the AngularJSToDo app. The
       <script src="scripts/frameworks/angular.min.js"></script>
       <script src="scripts/frameworks/angular-resource.min.js"></script>
 ```
-   **Note**
+   >**Note:**
   cordova.js needs to load before the AngularJS framework files.
 
 * Add script references for your AngularJS modules at the end of the element, after the AngularJS references. Those additional references should look like this.
@@ -857,7 +857,7 @@ In this step, you’ll run the AngularJSToDo list app on either Windows or on th
 
 The [complete sample](http://go.microsoft.com/fwlink/p/?LinkID=398516) includes a Bing Maps service to associate your current address with each task list item.
 
-**Tip**
+>**Tip:**
 If you are more interested in setting up Azure Mobile Services, you can skip these steps and go to the next section.
 
 ### To add Bing Maps support to the app:

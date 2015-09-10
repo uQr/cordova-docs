@@ -33,14 +33,14 @@ There are many options for running your apps built using Visual Studio Tools for
 
 Here’s how to run your app on the [Visual Studio Emulator for Android](https://www.visualstudio.com/msft-android-emulator-vs.aspx). For system requirements, see [System Requirements for the Visual Studio Emulator for Android](https://msdn.microsoft.com/en-us/library/mt228280.aspx).
 
-**Important**
+>**Important:**
 The Visual Studio Emulator for Android is only available in Visual Studio 2015.
 
 ### To run your app on the emulator
 
 1. Make sure that Hyper-V is enabled on your PC. Your PC must meet the [system requirements](https://msdn.microsoft.com/en-us/library/mt228280.aspx) for the Visual Studio Emulator for Android.
 
-  **Important**
+  >**Important:**
   The emulator is not supported in a virtualized environment.
 
 2. With your app open in Visual Studio, choose Android from the Solution Platforms list. If you don’t see this list, choose Solution Platforms from the Add/Remove Buttons list to display it. 9. Choose one of the emulators, such as VS Emulator 5” KitKat (4.4) XHDPI Phone. 11. Press F5 to start the app. Visual Studio starts the emulator and runs the app.
@@ -51,7 +51,7 @@ The Visual Studio Emulator for Android is only available in Visual Studio 2015.
 If you have a PC with an Intel processor, you can improve the performance of the Android and Genymotion emulators. To configure a high-performance emulator: 1. Disable Hyper-V. You can do this from Control Panel or from a command line, as described in the following procedures.
 
 
-**Caution**
+>**Caution:**
 Disabling Hyper-V will prevent you from using the Visual Studio Emulator for Android and the Windows Phone emulator. However, you can still deploy to a Windows Phone device while Hyper-V is disabled.
 
 1. (Android emulator only) Install the high-performance Intel Hardware Accelerated Execution Manager (HAXM) driver, if it isn’t already installed. (More information about the [HAXM driver](https://software.intel.com/android/articles/installation-instructions-for-intel-hardware-accelerated-execution-manager-windows))
@@ -76,7 +76,7 @@ Disabling Hyper-V will prevent you from using the Visual Studio Emulator for And
 
         bcdedit /set hypervisorlaunchtype off
 
-   **Caution**
+   >**Caution:**
    The bcdedit commands can prevent your system from booting if not executed correctly; be careful when using these commands.
 
    If you’re adding this command to a shell script, use the following instead:
@@ -100,7 +100,7 @@ Disabling Hyper-V will prevent you from using the Visual Studio Emulator for And
 
 3. Install the driver by going to sdk-path\extras\intel\Hardware_Accelerated_Execution_Manager and running **intelhaxm.exe**.
 
-   **Tip**
+   >**Tip:**
    If the “intel” portion of the path isn’t present, the driver was not installed.
    Now you can configure an emulator to use the driver. When you create or edit an emulator, you must use an Intel CPU and select the Use Host GPU option. For more information, see the next section.
 
@@ -115,14 +115,14 @@ Before you run your app on the Android emulator in Visual Studio, use the Androi
 
 2. In the AVD Manager, choose Create. 5. Configure the properties for the new emulator. The required properties are AVD Name, Device, Target, CPU/ABI, and Skin. Target represents an installed version of the Android SDK version (API set). Set this property to API Level 19.
 
-  **Tip**
+  >**Tip:**
   If you want to emulate other Android device versions, you can install the images using the Android SDK Manager.
 
   ![Creating an Android emulator](media/run-app-apache/IC741800.png)
 
   * If you installed the high-performance HAXM driver in the [previous section](#HAXM) and chose an Intel CPU, select the Use Host GPU check box in Emulation Options.
 
-  **Important**
+  >**Important:**
   To use the high-performance emulator, you must also choose an Intel processor in the CPU/ABI section of the AVD dialog box.
 
 3. Choose OK to close the configuration dialog box, and then choose OK again in the dialog box that shows all the emulator settings.
@@ -139,7 +139,7 @@ Before you run your app on the Android emulator in Visual Studio, use the Androi
 
 3. Press F5 to start the app, or Shift+F5 to start the app without debugging. Android 4.4 is required to attach the debugger. Otherwise, the app will run without debugging.
 
-  **Tip**
+  >**Tip:**
   * If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, you can open SDK Manager by typing the following command on a command line: android sdk.
 
   * Visual Studio deploys the app to the Android emulator that is currently running. If no emulator is running, Visual Studio starts the last emulator that was created using the AVD Manager, and then deploys the app.
