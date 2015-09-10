@@ -10,15 +10,15 @@ Visual Studio can build, deploy, and run your Apache Cordova app on any platform
 
 For instructions on how to build, deploy, and run your app on a specific platform, see one of these articles:
 
-* [Run Your Apache Cordova App on Android](./develop-apps/run-app-apache.md)
+* [Run Your Apache Cordova App on Android](run-app-apache.md)
 
-* [Run Your Apache Cordova App on iOS](./develop-apps/run-app-ios.md)
+* [Run Your Apache Cordova App on iOS](run-app-ios.md)
 
-* [Run Your Apache Cordova App on Windows](./develop-apps/run-app-windows.md)
+* [Run Your Apache Cordova App on Windows](run-app-windows.md)
 
-* [Run Your Apache Cordova App on Windows Phone](./develop-apps/run-app-windows-phone.md)
+* [Run Your Apache Cordova App on Windows Phone](run-app-windows-phone.md)
 
-* [Run Your Apache Cordova App on the Apache Ripple Simulator](./develop-apps/run-app-ripple-simulator.md)
+* [Run Your Apache Cordova App on the Apache Ripple Simulator](run-app-ripple-simulator.md)
 
    In addition, this article provides information about the [Cordova build process in Visual Studio](#BuildProcess).
 
@@ -64,7 +64,7 @@ When building for Windows/Windows Phone 8.1 and 10, Cordova generates a Windows 
 
 ## Ripple Emulator
 
-To make the Ripple build process to be as fast as possible, the CLI is used to generate the needed plugin code, but otherwise, Visual Studio provides the web content directly (instead of providing content from the generated native project). When you run the app, the Ripple emulator is initialized, and Chrome is started using a Ripple URL (for example, http://localhost:4400/index.html?enableripple=cordova-3.0.0-Nexus7 for the Nexus7 tablet device). All Chrome settings are stored locally to your Visual Studio instance so that your normal browser experience is not affected. For more information, see [Run Your Apache Cordova App on the Apache Ripple Simulator](./develop-apps/run-app-ripple-simulator.md). ![Download the tools](./media/deploy-and-run-app/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+To make the Ripple build process to be as fast as possible, the CLI is used to generate the needed plugin code, but otherwise, Visual Studio provides the web content directly (instead of providing content from the generated native project). When you run the app, the Ripple emulator is initialized, and Chrome is started using a Ripple URL (for example, http://localhost:4400/index.html?enableripple=cordova-3.0.0-Nexus7 for the Nexus7 tablet device). All Chrome settings are stored locally to your Visual Studio instance so that your normal browser experience is not affected. For more information, see [Run Your Apache Cordova App on the Apache Ripple Simulator](run-app-ripple-simulator.md). ![Download the tools](./media/deploy-and-run-app/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 
