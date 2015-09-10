@@ -2,7 +2,7 @@
 # Configure the Visual Studio Tools for Apache Cordova
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova.*
 
-You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106). Once you have [installed the tools](https://msdn.microsoft.com/en-us/library/dn757054.aspx), refer to this topic for additional ways to quickly configure, update, or customize the tools for your environment.
+You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106). Once you have [installed the tools](install-vs-tools-apache-cordova.md), refer to this topic for additional ways to quickly configure, update, or customize the tools for your environment.
 
 * If you choose not to install one or more dependencies with Visual Studio Tools for Apache Cordova, you may need to [install the dependencies manually](#ThirdParty).
 
@@ -12,7 +12,7 @@ You can download Visual Studio from the [Microsoft Download Center](http://go.mi
 
 * To install, start, and configure the remotebuild agent (previously called vs-mda-remote) for building iOS apps, see the following:
 
-    * [Install the remote agent and get it running](https://msdn.microsoft.com/library/dn757054(v=vs.140).aspx#ios) (external topic)
+    * [Install the remote agent and get it running](install-vs-tools-apache-cordova.md#ios) (external topic)
 
     * [Generate a new security PIN](#IosPin)
 
@@ -22,7 +22,7 @@ You can download Visual Studio from the [Microsoft Download Center](http://go.mi
 
     * [Verify the remote agent configuration](#IosVerify)
 
-* If you see unexpected errors when trying to build the Blank App template, see [Re-install vs-tac](https://msdn.microsoft.com/library/dn771551(v=vs.140).aspx#vstac).
+* If you see unexpected errors when trying to build the Blank App template, see [Re-install vs-tac](configure-app.md#vstac).
 
     **Caution**
 If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015) (github).
@@ -158,7 +158,7 @@ Visual Studio uses these environment variables when building and running your ap
 
 ##Generate a new security PIN
 
-When you [start the agent](https://msdn.microsoft.com/library/dn757054(v=vs.140).aspx#ios) the first time, the generated PIN is valid for a limited amount of time (10 minutes by default). If you don’t connect to the agent before the time expires, or if you want to connect a second client to the agent, you will need to generate a new PIN.
+When you [start the agent](install-vs-tools-apache-cordova.md#ios) the first time, the generated PIN is valid for a limited amount of time (10 minutes by default). If you don’t connect to the agent before the time expires, or if you want to connect a second client to the agent, you will need to generate a new PIN.
 ### To generate a new security PIN
 1. Stop the agent (or open a second Terminal app window on your Mac and use that to enter the command).
 
@@ -166,7 +166,7 @@ When you [start the agent](https://msdn.microsoft.com/library/dn757054(v=vs.140)
 
         remotebuild generateClientCert
 
-4. Follow instructions to [start the agent](https://msdn.microsoft.com/library/dn757054(v=vs.140).aspx#ios) on your Mac and configure the agent in Visual Studio.
+4. Follow instructions to [start the agent](install-vs-tools-apache-cordova.md#ios) on your Mac and configure the agent in Visual Studio.
 
 ##Generate a new server certificate
 For security purposes, the server certificates that pair Visual Studio with the remote agent are tied to your Mac’s IP or host name. If these values have changed, you will need to generate a new server certificate, and then reconfigure Visual Studio with the new values.
@@ -186,7 +186,7 @@ For security purposes, the server certificates that pair Visual Studio with the 
 
     –hostname is optional. If omitted, the agent will attempt to determine the hostname automatically.
 
-5. Follow instructions to [start the agent](https://msdn.microsoft.com/library/dn757054(v=vs.140).aspx#ios) on your Mac and configure the agent in Visual Studio.
+5. Follow instructions to [start the agent](install-vs-tools-apache-cordova.md#ios) on your Mac and configure the agent in Visual Studio.
 
 ##Configure the iOS remote agent
 
@@ -226,7 +226,7 @@ The server.log file might assist in troubleshooting build issues.
 The configuration file must be in JSON format. The startup options and their values must not include dashes. To see a documented configuration file, look at the remotebuild/examples/exampleConfig.json folder in the remote agent installation directory, although you must remove the comments in the file that you use for your configuration. An example of a path you might use when running this command is _/Users/<username\>/myConfig.json_. The default path where the agent looks for a configuration file is ~/.taco_home/RemoteBuild.config.\
 
 ##Verify the iOS remote agent configuration
-Once you have [installed the agent](https://msdn.microsoft.com/library/dn757054(v=vs.140).aspx#ios), you can verify the remote agent configuration.
+Once you have [installed the agent](install-vs-tools-apache-cordova.md#ios), you can verify the remote agent configuration.
 
 ### To verify the remote agent configuration
 
@@ -255,7 +255,7 @@ This command will fail if the agent is not running in a second window, or if the
 
         remotebuild test --device
 
-For more information about app provisioning and certificate signing identities, see [Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx).
+For more information about app provisioning and certificate signing identities, see [Package Your App Built with Visual Studio Tools for Apache Cordova](package-app-built-with-visual-studio.md).
 
 ##Reinstall vs-tac
 
@@ -335,5 +335,5 @@ where *username* and *password* are your proxy username and password; *proxy-por
 
 **Concepts**
 
-[Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx)  
-[Run Your Apache Cordova App on iOS](https://msdn.microsoft.com/en-us/library/dn757056.aspx)
+[Install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md)  
+[Run Your Apache Cordova App on iOS](run-app-ios.md)
