@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Configure Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 #Configure Your App Built with Visual Studio Tools for Apache Cordova
 
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106).*
@@ -36,13 +51,13 @@ You can use the configuration designer to change the CLI version used in your pr
 **Caution**
 Changing the Cordova CLI version may impact your application code. Platforms will be removed and then re-added to use the CLI pinned versions.
 
-![Configuring the CLI version](./media/configure-app/IC795807.png)
+![Configuring the CLI version](media/configure-app/IC795807.png)
 
 ## <a id="ConfigWindows"></a>Configure the Windows target version
 
 You can change the targeted version of Windows in the configuration designer, under the Windows tab (Windows Target Version).
 
-![Cordova_Config_Windows](./media/configure-app/IC795808.png)
+![Cordova_Config_Windows](media/configure-app/IC795808.png)
 
 The options that appear in Windows Target Version depend on which SDK is installed. If you install the Windows 8.0 or Windows 10 SDKs, the corresponding version will appear as an option that you can select. When you change the Windows target version, the following line is modified in your config.xml file:
 
@@ -161,7 +176,7 @@ The following table provides specific information for each platform.
 | Windows  | Place the custom package.windows80.appxmanifest (Windows 8.0), package.windows.appxmanifest (Windows 8.1), or package.phone.appxmanifestfile (Windows Phone 8.1) in the res/native/windows folder to override various configuration settings. Use the generated version of the file in the platforms/windows folder after building a Debug configuration of the project for Windows or Windows Phone (Universal). |
 | Windows Phone 8  | Place the custom WMAppManifest.xml file in the res/native/wp8/Properties folder. Use the generated version of the file in the platforms/wp8/Properties folder after building a Debug configuration of the project for Windows Phone 8. |
 
-![Download the tools](./media/configure-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/configure-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 

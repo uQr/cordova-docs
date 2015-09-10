@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Configure the Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 
 # Configure the Visual Studio Tools for Apache Cordova
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova.*
@@ -103,7 +118,7 @@ If you need to set this environment variable manually, see [Override system envi
                  * Google APIs (ARM System Image)
      The following illustration shows the minimum required packages in the Android SDK Manager.
 
-     ![Cordova_SDK_Android_Packages](./media/configure-vs-tools-apache-cordova/IC795810.png)
+     ![Cordova_SDK_Android_Packages](media/configure-vs-tools-apache-cordova/IC795810.png)
 
      Set the ADT_HOME environment variable to the SDK installation location.
 
@@ -154,7 +169,7 @@ Visual Studio uses these environment variables when building and running your ap
     * To reset an environment variable to its default value, clear its check box or choose **Reset to Default**.
 
 3. Choose **OK** to save your changes and close the dialog box.
-![Environment variables, warning message](./media/configure-vs-tools-apache-cordova/IC752249.png)
+![Environment variables, warning message](media/configure-vs-tools-apache-cordova/IC752249.png)
 
 ##Generate a new security PIN
 

@@ -1,4 +1,18 @@
-
+<properties
+   pageTitle="Install Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 # Install Visual Studio Tools for Apache Cordova
 
 _In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._
@@ -70,14 +84,14 @@ When using Cordova 5.0.0+, you may need to add a **_JAVA_OPTIONS** environment v
 
    * Microsoft Visual Studio Emulator for Android, if your development machine [supports Hyper-V](https://msdn.microsoft.com/en-us/library/mt228280.aspx).
 
-       ![Installing Visual Studio Tools for Apache Cordova](./media/install-vs-tools-apache-cordova/IC816238.png)
+       ![Installing Visual Studio Tools for Apache Cordova](media/install-vs-tools-apache-cordova/IC816238.png)
 
     **Note**
 You can add these features to an existing installation of Visual Studio 2015\. In Control Panel, choose Programs and Features. Select Visual Studio 2015 from the list, and then choose Change. In the Visual Studio setup window, choose Modify. In the features list, select the optional features as shown in the illustration.
 
     If you don’t want to accept the third-party dependencies selected by default under Common Tools and Software Development Kits, you can clear the software selections and manually install the dependencies you need later.
 
-    ![Multi-Hybrid Device Apps installer](./media/install-vs-tools-apache-cordova/IC816239.png)
+    ![Multi-Hybrid Device Apps installer](media/install-vs-tools-apache-cordova/IC816239.png)
 
     **Important**
 If the third-party dependencies are already on your system or you choose to install them manually, you might have to update your system path. See [install the dependencies manually](configure-vs-tools-apache-cordova.md#ThirdParty).
@@ -162,7 +176,7 @@ This will start the agent with a default build directory of *~/.taco\_home/remot
 
 The first time you start the agent, you will be provided with the required information to configure the agent in Visual Studio, including the host, the port, and the security PIN.
 
-![Cordova_iOS_Install_Agent](./media/install-vs-tools-apache-cordova/IC816236.png)
+![Cordova_iOS_Install_Agent](media/install-vs-tools-apache-cordova/IC816236.png)
 
 **Important**
 The remote agent has been designed to securely transfer build payloads to and from Visual Studio using SSL certificates.
@@ -195,7 +209,7 @@ Before you can use the remote agent, you must specify the remote configuration i
 
 7. In the **Host**, **Port**, and **Security PIN** fields, type the values specified by the remote agent when you started it the first time. The host can be the name or IP address of your Mac. The default port is 3000.
 
-![Configuring the remote agent in Visual Studio](./media/install-vs-tools-apache-cordova/IC795521.png)
+![Configuring the remote agent in Visual Studio](media/install-vs-tools-apache-cordova/IC795521.png)
 
 **Note**
 If you cannot ping the Mac using the host name, you may need to use the IP address.
@@ -233,7 +247,7 @@ In some circumstances, additional steps may be required to update and configure 
 
 * If you see unexpected errors when trying to build the Blank App template, see [Re-installing vs-tac](convert_cordova_phonegap.md#vstac).
 
-![Download the tools](./media/install-vs-tools-apache-cordova/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/install-vs-tools-apache-cordova/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ##See Also
 

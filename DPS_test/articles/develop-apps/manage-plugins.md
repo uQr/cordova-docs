@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 # Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova
 
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106).*
@@ -35,11 +50,11 @@ You can add a core Cordova plugin, or a custom plugin, by using Visual Studio. Y
 
    * To add a custom plugin, specify either Local or Git as the source, and then provide the location by browsing or specifying a Git repository, as indicated. For example, here is the repository for PushPlugin: https://github.com/phonegap-build/PushPlugin.git The following illustration shows selection of a core plugin in the configuration designer.
 
-   ![Adding a plugin](./media/manage-plugins/IC795804.png)
+   ![Adding a plugin](media/manage-plugins/IC795804.png)
 
    The following illustration shows how to add a custom plugin from a Git repository in the configuration designer.
 
-   ![Cordova_Plugin_Custom](./media/manage-plugins/IC795805.png)
+   ![Cordova_Plugin_Custom](media/manage-plugins/IC795805.png)
 
 3. When you add the plugin, Visual Studio also makes changes to your config.xml file. For more information about editing config.xml, see the [Cordova config.xml documentation](http://go.microsoft.com/fwlink/p/?LinkID=510632).
 
@@ -153,7 +168,7 @@ The following plugins are available using the Config Designer:
 
   Enables WebSQL on all platforms by adding WebSQL functionality to your app on Windows and Windows Phone 8.
 
-![Download the tools](./media/configure-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+![Download the tools](media/configure-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 

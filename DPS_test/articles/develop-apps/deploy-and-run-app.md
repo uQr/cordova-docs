@@ -1,3 +1,18 @@
+<properties
+   pageTitle="Deploy and Run Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   description="description"
+   services="na"
+   documentationCenter=""
+   authors="normesta"
+   tags=""/>
+<tags
+   ms.service="na"
+   ms.devlang="javascript"
+   ms.topic="article"
+   ms.tgt_pltfrm="mobile-multiple"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="normesta"/>
 # Deploy and Run Your App Built with Visual Studio Tools for Apache Cordova
 
 *In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106).*
@@ -30,11 +45,11 @@ When you want to run your Cordova app from Visual Studio, you must first select 
 
 * In Visual Studio, choose a platform from the Solution Platforms list. In the following example, we show Android selected.
 
-  ![Select Android as your deployment target](./media/deploy-and-run-app/IC793844.png)
+  ![Select Android as your deployment target](media/deploy-and-run-app/IC793844.png)
 
   If the Solution Platforms list isn’t showing, choose **Solution Platforms** from the **Add/Remove Buttons** list to display it.
 
-  ![Selecting a platform for deployment](./media/deploy-and-run-app/IC793845.png)
+  ![Selecting a platform for deployment](media/deploy-and-run-app/IC793845.png)
 
 For all other steps required to run your app, see the platform-specific topics for Android, iOS, Windows, and Windows Phone.
 
@@ -42,11 +57,11 @@ For all other steps required to run your app, see the platform-specific topics f
 
 The Cordova Command Line Interface (CLI) does most of the heavy lifting for Visual Studio when you build and run a Cordova app. To make the process of installing and managing Cordova native code plugins easy, the CLI uses plugman, another command line tool. The CLI requires a specific folder structure, shown here. Most of this folder structure is mirrored by Visual Studio.
 
- ![Cordova_VS_Project_Structure](./media/deploy-and-run-app/IC757826.png)
+ ![Cordova_VS_Project_Structure](media/deploy-and-run-app/IC757826.png)
 
  To leverage the CLI from the Visual Studio project, Visual Studio uses a CLI pre-processor called vs-tac, which is a Node.js (npm) package. The first time you build and run a project built using Visual Studio Tools for Apache Cordova, vs-tac installs Cordova, the Ripple Emulator, and other required dependencies. It is the job of vs-tac to accept a build, pre-process the Visual Studio project, execute the specified Cordova CLI build system command, and run (or emulate) the app.
 
- ![Cordova_VS_Build_Process](./media/deploy-and-run-app/IC795794.png)
+ ![Cordova_VS_Build_Process](media/deploy-and-run-app/IC795794.png)
 
  When building, Visual Studio injects its own custom hooks into the project to enable features that the CLI does not support. Visual Studio automates the process of adding platforms (using the cordova platform add command) and installation/uninstallation of Cordova plugins (using the cordova plugin add command) based on user selections in Visual Studio. Visual Studio uses the CLI to build for the requested platform for the selected configuration (for example, cordova build android debug). CLI native platform projects and the Cordova CLI project itself are not intended for editing, so don’t add these projects to your source control. They are updated and edited by the build process. However, if you choose, you can use the generated native platform projects to get an exported copy of the project. Following are a few platform-specific details on the build and deployment process.
 
@@ -64,7 +79,7 @@ When building for Windows/Windows Phone 8.1 and 10, Cordova generates a Windows 
 
 ## Ripple Emulator
 
-To make the Ripple build process to be as fast as possible, the CLI is used to generate the needed plugin code, but otherwise, Visual Studio provides the web content directly (instead of providing content from the generated native project). When you run the app, the Ripple emulator is initialized, and Chrome is started using a Ripple URL (for example, http://localhost:4400/index.html?enableripple=cordova-3.0.0-Nexus7 for the Nexus7 tablet device). All Chrome settings are stored locally to your Visual Studio instance so that your normal browser experience is not affected. For more information, see [Run Your Apache Cordova App on the Apache Ripple Simulator](run-app-ripple-simulator.md). ![Download the tools](./media/deploy-and-run-app/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
+To make the Ripple build process to be as fast as possible, the CLI is used to generate the needed plugin code, but otherwise, Visual Studio provides the web content directly (instead of providing content from the generated native project). When you run the app, the Ripple emulator is initialized, and Chrome is started using a Ripple URL (for example, http://localhost:4400/index.html?enableripple=cordova-3.0.0-Nexus7 for the Nexus7 tablet device). All Chrome settings are stored locally to your Visual Studio instance so that your normal browser experience is not affected. For more information, see [Run Your Apache Cordova App on the Apache Ripple Simulator](run-app-ripple-simulator.md). ![Download the tools](media/deploy-and-run-app/IC795792.png)[Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 ## See Also
 
