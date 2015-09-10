@@ -50,7 +50,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
 14. Give the app a name and then choose **OK**.
 
-  **Note**
+  >**Note:**
   If you intend to go through the complete tutorial, name the app AngularJSToDo.
 
   ![Create a new Multi-Device Hybrid App project](media/create-first-app-using-vs-tools-apache-cordova/IC793843.png)
@@ -61,7 +61,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
   The project structure in Visual Studio 2015 is updated to support third-party CLIs, and to match the Cordova project structure. Visual Studio 2013 uses the deprecated project structure. We recommend that you create Cordova apps using Visual Studio 2015.
 
-  **Caution**
+  >**Caution:**
   If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
 
   The new Cordova project includes four top-level folders:
@@ -118,7 +118,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
   ![Selecting the Ripple emulator](media/create-first-app-using-vs-tools-apache-cordova/IC793846.png)
 
-  **Note**
+  >**Note:**
   Chrome is not installed by default.
 
   If you are using Visual Studio 2015 and have Hyper-V enabled on your machine you can run the app on the Visual Studio Emulator for Android (select an option such as <span class="label">VS Emulator Android Phone</span>).
@@ -131,7 +131,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
    ![Run the “Hello” default app in Ripple Emulator](media/create-first-app-using-vs-tools-apache-cordova/IC742604.png)
 
-   **Tip**
+   >**Tip:**
   If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, open the SDK Manager from a command line by typing the following command: android sdk  
 
   If you see an error such as Cannot find module [modulename] or a build failure, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
@@ -190,7 +190,7 @@ Next steps:
 
  * If you target iOS or Android versions before 4.4, the browser is WebKit-based. (The Ripple simulator, which uses the installed version of Chrome, behaves more like Android 4.4.) Some WebKit browser behavior is different. For example, WebKit browsers don’t provide consistent support for [vw and vh units](http://caniuse.com/#feat=viewport-units), which are useful when designing a responsive UI.
 
-  **Tip**
+  >**Tip:**
   Use the merges folder in your project to handle platform differences that can’t be coded in a more generic fashion.  
 
 ## <a id="Native"></a>Add native features (plugins)

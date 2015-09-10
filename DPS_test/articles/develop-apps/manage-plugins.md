@@ -31,7 +31,7 @@ You enable plugins by using the Cordova config.xml file. Visual Studio provides 
 
 * [Extend or create a custom plugin](#Custom)
 
-**Note**
+>**Note:**
 To see the core plugins available in the configuration designer, see [List of available plugins](#List). For more information on plugins, see the [Cordova config.xml documentation](http://go.microsoft.com/fwlink/p/?LinkID=510632).
 
 
@@ -104,7 +104,7 @@ This has the same result as running the following command from the command line 
         cordova plugin add https://github/com/Wizcorp/phonegap-facebook-plugin.git
         --variable APP_ID="12345678" –variable APP_NAME="My Facebook App"
 
-**Important**
+>**Important:**
 Cordova 4.3.1 and previous versions have a set of known issues that can prevent plugins with parameters from working properly. We recommend using Cordova 5.1.1 or later when using plugins that require parameters.
 
 ## <a id="Custom"></a>Extending a custom plugin
@@ -145,7 +145,7 @@ The following plugins are available using the Config Designer:
 
 * InAppBrowser ([org.apache.cordova.inappbrowser](http://plugins.cordova.io/#/package/org.apache.cordova.inappbrowser)) Enables your app to host a web browser, and then perform actions in response to browser-related events such as inserting CSS into the browser window when a page loads.
 
-    **Note**
+    >**Note:**
     Currently, attaching the debugger to iOS apps that use the InAppBrowser plugin is not supported. The Azure Mobile Services plugin uses the InAppBrowser plugin and is affected by this limitation.
 
 * Media (org.apache.cordova.media)

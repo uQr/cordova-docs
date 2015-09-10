@@ -27,7 +27,7 @@ You can build apps using the tools for these devices and platforms:
 * Windows 8 and 8.1
 * Windows Phone 8 and 8.1
 
-**Note**
+>**Note:**
 Visual Studio Tools for Apache Cordova has been tested for use with Cordova 5.1.1 and 4.3.1\. You can select a different version using the [configuration designer](configure-vs-tools-apache-cordova.md). However, using an untested version may result in unexpected behaviors.
 
 When you develop apps using Visual Studio Tools for Apache Cordova, Visual Studio provides these benefits:
@@ -57,7 +57,7 @@ The ToDoList sample app shows how you can use different frameworks for your Cord
 
 To download the ToDoList sample app for Visual Studio 2013, see the deprecated samples on GitHub.
 
-**Tip**
+>**Tip:**
 To download other samples for Visual Studio Tools for Apache Cordova that demonstrate multi-page navigation and other features, see the [Ionic SideMenu starter template](http://go.microsoft.com/fwlink/p/?LinkID=544745) and [WinJS Navigation template](http://go.microsoft.com/fwlink/p/?LinkID=544743) samples.
 
 ## Get started ##
