@@ -2,6 +2,14 @@
 This article covers [known issues](../Readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to iOS devices or simulators. 
 
 ----------
+##**Building for iOS hangs when Node.js v4.0 is installed:**
+There is a [known compatibility issue](https://issues.apache.org/jira/browse/CB-9297) with Node.js v4 in Cordova v5.3.1 and earlier. If you have installed Node.js v4 on your build Mac, and then installed Cordova and the remotebuild agent, iOS builds can fail in the following situations:
+* The <name> element in config.xml has been changed (e.g. you’re changing the name of your app)
+* A <deployment-target> element is defined in config.xml (set when using the Deployment Target dropdown in the Config file UI in Visual Studio)
+* A <target-device> element is defined in config.xml (set when using the Target iOS Version field in the Config file UI in Visual Studio)
+
+A fix is being investigated, but it will require a new version of the Cordova CLI to be released, with supported added for Node.JS v4. In the meantime, we recommend that you do not use Node.js v4 on Mac’s running remotebuild.
+
 ##**Incremental builds with remotebuild@1.0.1 and Visual Studio 2015 RTM is broken:** 
 Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug where incremental changes made to any files under the /www folder does not get updated/built on iOS.
 
