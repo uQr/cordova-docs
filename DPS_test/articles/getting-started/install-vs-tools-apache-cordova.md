@@ -19,13 +19,13 @@ Take advantage of the easy-to-use installer to build cross-platform apps with Vi
 
 In this section:
 
-[Requirements](#req)  
-[Get the tools](#GetTools)  
+[Requirements](#req)
+[Get the Tools](#GetTools)   
 [Install the tools](#InstallTools)  
 [Install tools for iOS](#ios)
 [Additional Tasks](#AdditionalTasks)
 
-##Requirements
+##<a name="req">Requirements
 **
 Operating system requirements:
 
@@ -44,12 +44,12 @@ If you want to build iOS on a cloud service instead of Mac hardware, see [Build 
 * Windows Phone emulators require a computer that can run Hyper-V.
 
 * Building a Windows 10 Universal Platform app requires the installation of the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=617471). Note that Windows 8.1/Phone 8.1 apps may also be deployed to Windows 10
-##Get the tools
+##<a name="InstallTools">Get the tools
 [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38), which are included as an optional component in Visual Studio 2015. Follow the steps in the next section to install the tools.
 
 >**Important:**
 Visual Studio 2015 is recommended for developing Apache Cordova apps. If you previously installed Visual Studio 2015 Preview, a Visual Studio 2015 CTP, or Visual Studio 2015 RC, you must first uninstall it using Control Panel, Programs and Features, before installing Visual Studio 2015.
-##<a name="installTools"></a>Install the tools
+##<a name="InstallTools"></a>Install the tools
 
 When you choose to install Visual Studio Tools for Apache Cordova, the installer for Visual Studio 2015 selects additional third-party software to install. Most of these are open-source software required by specific platforms or by Apache Cordova. You can override the default selections, and deslect software that you don’t want to install.
 
@@ -102,7 +102,7 @@ The first time you build an app after installing the tools, Visual Studio will d
 
     If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
 
-##Install tools for iOS
+##<a name="ios"></a>Install tools for iOS
 
 To build and run iOS apps on the iOS Simulator or on an iOS device using Visual Studio, you must install and configure the remote agent, [remotebuild](http://go.microsoft.com/fwlink/?LinkId=618169), on a Mac computer that meets the requirements specified below. (Currently, iOS apps can’t be built on Windows.) In Visual Studio on your PC, you must also configure the remote agent as described in this topic.
 
@@ -226,7 +226,7 @@ The security PIN is for one-time use. If you need to pair a new client with the 
 
 * From the Terminal app on your Mac, press Ctrl+C.
 
-## Additional Tasks
+## <a name="AdditionalTasks">Additional Tasks
 
 In some circumstances, additional steps may be required to update and configure the tools.
 
