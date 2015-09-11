@@ -1,6 +1,6 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="General Known Issues" 
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
@@ -32,12 +32,12 @@ Remove these files from source control if you are not checking in the "platforms
  2. Update to Cordova 5.1.1 via the config designer (Platforms > Cordova CLI)
 
  3. Re-add your plugin via "Plugins" tab in the config.xml designer
- 
+
 ----------
 **Slow first build or first plugin add:** The first build or plugin add for a given version of Cordova will be slower than subsequent builds as VS must first dynamically acquire Cordova. See the Output Window for more detail on progress. Further, the first remote iOS build will exhibit the same behavior as the agent downloads Cordova on your OSX machine. If you encounter a CordovaModuleLoadError with the first iOS build for a given Cordova version you can follow [these instructions](../tips-and-workarounds/ios/tips-and-workarounds-ios-readme.md#npm-cache) to resolve the problem.
 
 ----------
-**Old versions of Cordova plugins due to Cordova plugin ID changes:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) with Cordova 4.3.1 and below since this version of the Cordova  < 5.0.0 do not support npm. 
+**Old versions of Cordova plugins due to Cordova plugin ID changes:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) with Cordova 4.3.1 and below since this version of the Cordova  < 5.0.0 do not support npm.
 
 If you update your Cordova version to 5.1.1 or later the config.xml designer will automatically switch to using the new IDs. If you do not see this behavior, update Tools for Apache Cordova. Some very early adopters may not see some of the improvments described in this document until after you update since a small post-RTM update enabled this functionality. You will get an update notification soon prompting you to update or you can click "Install Tools for Apache Cordova" from the Apache Cordova templates section when creating a new project. Be sure to remove plugins using older IDs from your project before adding the updated plugins with the new IDs.
 
@@ -45,9 +45,9 @@ If you update your Cordova version to 5.1.1 or later the config.xml designer wil
 **Git sourced plugins will not install:** Git sourced plugins will not install properly if you have not installed the [Git command line tools](http://www.git-scm.com/downloads) and have them in your system path. During installation of the Git tools, select the "Use Git from the Windows Command Prompt" option or add the "bin" folder from the Git install location to your path and restart VS. (Usually "C:\Program Files (x86)\Git\bin").
 
 ----------
-**Git sourced plugins will not install with Cordova 5.1.1 only:** Cordova 5.1.1 has a bug that can cause plugins installed from a Git repo to fail with the error "Error: EXDEV, cross-device link not permitted" if the project is on a different drive than your temp folder. 
+**Git sourced plugins will not install with Cordova 5.1.1 only:** Cordova 5.1.1 has a bug that can cause plugins installed from a Git repo to fail with the error "Error: EXDEV, cross-device link not permitted" if the project is on a different drive than your temp folder.
 
-See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-xml) for information on adding plugins not in the config designer from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when installing or you can instead download a copy, unzip it, and add the plugin from the filesystem. 
+See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-xml) for information on adding plugins not in the config designer from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when installing or you can instead download a copy, unzip it, and add the plugin from the filesystem.
 
 ----------
 **TypeError: Request path contains unescaped characters:** When building or installing a plugin you may encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordovaproxy) for additional details.

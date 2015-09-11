@@ -1,11 +1,11 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
+<properties pageTitle="Known Issues - Apache Cordova and Apache Ripple"
+  description="This is an article on bower tutorial"
   services="" 
   documentationCenter=""
   authors="bursteg" />
 
 #**Known Issues - Apache Cordova and Apache Ripple**
-This article covers general [known issues](../cordova-docs-readme.md#knownissues) related to Apache Cordova or Ripple. 
+This article covers general [known issues](../cordova-docs-readme.md#knownissues) related to Apache Cordova or Ripple.
 
 ----------
 **Cordova 5.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Cordova and Ripple related issues that are specific to Cordova 5.0.0 and up.
@@ -18,7 +18,7 @@ This article covers general [known issues](../cordova-docs-readme.md#knownissues
  2. Update to Cordova 5.1.1 via the config designer (Platforms > Cordova CLI)
 
  3. Re-add your plugin via "Plugins" tab in the config.xml designer
- 
+
 ----------
 **TypeError: Request path contains unescaped characters:** When building or installing a plugin you may encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade Node.js to 0.10.29. This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordovaproxy) for additional details.
 

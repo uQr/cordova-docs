@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Application Lifecycle Management (ALM) with Apache Cordova Apps | Cordova"
+   pageTitle="Cordova sample app with O365 Discovery Service and the Files API | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/11/2015"
    ms.author="kirupa"/>
-#Cordova Sample App with O365 Discovery Service and the Files API
+#Cordova sample app with O365 Discovery Service and the Files API
 
 In this topic, you will learn how to leverage some of the new APIs in the client libraries for Office 365 in an app built using Visual Studio Tools for Apache Cordova.
 

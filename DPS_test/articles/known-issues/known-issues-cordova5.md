@@ -1,17 +1,17 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Apache Cordova 5.x.x Related Known Issues" 
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
 #**Apache Cordova 5.x.x Related Known Issues**
-This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying using Apache Cordova 5.0.0+. 
+This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying using Apache Cordova 5.0.0+.
 
 In general we recommend **using Cordova 5.1.1 or above** instead of 5.0.0 as there are a number of issues including a security hole with Cordova 5.0.0.
 
 ##Apache Cordova 5.x.x General Issues
 ----------
-**config.xml Designer Does Not Show Updated Plugin IDs with Cordova 5.0.0+:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) with Cordova 4.3.1 and below since this version of the Cordova < 5.0.0 do not support npm. 
+**config.xml Designer Does Not Show Updated Plugin IDs with Cordova 5.0.0+:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) with Cordova 4.3.1 and below since this version of the Cordova < 5.0.0 do not support npm.
 
 However, if you update your Cordova version to 5.0.0 or later the config.xml designer should automatically see the new IDs in the "Plugins" tab of the designer. If you do not see this behavior, update Tools for Apache Cordova since a small post-RTM update enabled this functionality. Some very early adopters may not see some of the improvments described in this document until after you update. You will get an update notification soon prompting you to update or you can click "Install Tools for Apache Cordova" from the Apache Cordova templates section when creating a new project. Be sure to remove plugins with the older IDs before updating via the "Installed" tab to avoid unexpected behaviors.
 
@@ -32,9 +32,9 @@ line or by adding this XML element to config.xml (see [this article for more det
     ~~~~~~~~~~~~~~~~~    
 
 ----------
-**Error when adding plugin using Git URI with Cordova 5.1.1:** Cordova 5.1.1 has a bug that can cause plugins installed from a Git repo to fail with the error **Error: EXDEV, cross-device link not permitted** if the project is on a different drive than your temp folder. 
+**Error when adding plugin using Git URI with Cordova 5.1.1:** Cordova 5.1.1 has a bug that can cause plugins installed from a Git repo to fail with the error **Error: EXDEV, cross-device link not permitted** if the project is on a different drive than your temp folder.
 
-See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-xml) for information on adding plugins not in the config designer from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when installing or you can instead download a copy, unzip it, and add the plugin from the filesystem. 
+See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-xml) for information on adding plugins not in the config designer from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when installing or you can instead download a copy, unzip it, and add the plugin from the filesystem.
 
 ----------
 **Missing Android SDK 22:** The Android platform in Cordova 5.0.0 requires Android SDK API Level 22 which may not be installed on your system. Install the SDK using the Android SDK manager.
@@ -56,24 +56,24 @@ You can also set an environment variable to keep this preference around for a co
 
 Finally, if you are still build errors, you may want to opt to remove and re-add the android platform after switching build systems.
 
-    cordova platform remove android 
+    cordova platform remove android
     cordova platform add android
 
 ----------
 **Visual Studio 2015 RC cannot build an Android app with the Crosswalk plugin:** The Crosswalk Cordova plugin requires that Gradle be used to build Android to build but VS 2015 RC uses Ant. To build a project that uses the Crosswalk plug-in, you will need to build using the command line:
 
-    npm install -g cordova 
-    cordova platform remove android 
-    cordova platform add android 
-    
-    cordova build android 
-    
-    or 
-    
-    cordova run android 
-    
-    or 
-    
+    npm install -g cordova
+    cordova platform remove android
+    cordova platform add android
+
+    cordova build android
+
+    or
+
+    cordova run android
+
+    or
+
     cordova emulate android
 
 ----------
@@ -85,4 +85,3 @@ Finally, if you are still build errors, you may want to opt to remove and re-add
 * [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto://multidevicehybridapp@microsoft.com)
-

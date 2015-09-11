@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Deploy and Run Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Deploy and run your app built with Visual Studio Tools for Apache Cordova | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Deploy and Run Your App Built with Visual Studio Tools for Apache Cordova
+# Deploy and run your app built with Visual Studio Tools for Apache Cordova
 
 Visual Studio can build, deploy, and run your Apache Cordova app on any platform: browser, Android, iOS, Windows, and Windows Phone. This article will help you:
 

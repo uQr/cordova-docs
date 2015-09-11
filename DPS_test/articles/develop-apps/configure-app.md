@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Configure Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Configure your app built with Visual Studio Tools for Apache Cordova | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-#Configure Your App Built with Visual Studio Tools for Apache Cordova
+# Configure your app built with Visual Studio Tools for Apache Cordova
 
 A config.xml file included in each project provides most of your app configuration such as the app’s display name and start page. From **Solution Explorer**, you can double-click this file to open it in the configuration designer, a Visual Studio interface for the file.
 
