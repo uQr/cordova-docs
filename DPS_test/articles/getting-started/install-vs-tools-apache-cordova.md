@@ -19,11 +19,11 @@ Take advantage of the easy-to-use installer to build cross-platform apps with Vi
 
 In this section:
 
-[Requirements](#req)
-[Get the Tools](#GetTools)
-[Install the tools](#InstallTools)
-[Install tools for iOS](#ios)
-[Additional Tasks](#AdditionalTasks)
+* [Requirements](#req)
+* [Get the Tools](#GetTools)
+* [Install the tools](#InstallTools)
+* [Install tools for iOS](#ios)
+* [Additional Tasks](#AdditionalTasks)
 
 ##<a name="req">Requirements
 **
