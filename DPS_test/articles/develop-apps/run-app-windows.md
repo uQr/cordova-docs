@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Run Your Apache Cordova App on Windows | Cordova"
+   pageTitle="Run your Apache Cordova app on Windows | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Run Your Apache Cordova App on Windows
+# Run your Apache Cordova app on Windows
 
 
 Visual Studio provides these three options for deploying an app built using Visual Studio Tools for Apache Cordova on Windows:

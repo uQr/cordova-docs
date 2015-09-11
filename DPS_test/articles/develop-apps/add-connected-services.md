@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Add Connected Services to App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Add connected services to your Apache Cordova app | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Add Connected Services to App Built with Visual Studio Tools for Apache Cordova
+# Add connected services to your Apache Cordova app
 
 
 The Visual Studio Services Manager for connected services lets you integrate Microsoft services like Azure Mobile Services, Office 365, and other services into your app built with Visual Studio Tools for Apache Cordova. The manager makes it easy to add services without leaving Visual Studio.

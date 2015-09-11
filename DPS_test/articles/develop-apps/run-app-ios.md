@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Run Your Apache Cordova App on iOS | Cordova"
+   pageTitle="Run your Apache Cordova app on iOS | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Run Your Apache Cordova App on iOS
+# Run your Apache Cordova app on iOS
 
 When you create app using Visual Studio Tools for Apache Cordova, you have several options for emulating and deploying your app on iOS:
 
