@@ -41,7 +41,8 @@ You can download Visual Studio from the [Microsoft Download Center](http://go.mi
   If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015) (github).
 
 * For other issues not listed here, see the [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
-##Install dependencies manually
+
+##<a name="ThirdParty"></a>Install dependencies manually
 If you choose not to install one or more dependencies with the extension, you can install them later manually.
 
 You can install the dependencies in any order, except for Java. You must install and configure Java before you install the Android SDK. Read the following information and use these links to install dependencies manually.
@@ -136,7 +137,7 @@ If you install the Android SDK to its default location on Windows, it gets insta
 To unblock the DLL, open the file Properties for the DLL and choose Unblock in the General tab (at the bottom of the dialog box).
        3. After you unblock the DLL, copy net45\Release\WebSocket4Net.dll into the %ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\WebClient\Diagnostics\ToolWindows folder on your computer.
 
-##Override system environment variables
+##<a name="env-var"></a>Override system environment variables
 
 Visual Studio detects the configurations for the third-party software you’ve installed, and maintains the installation paths in the following environment variables:
 
@@ -169,7 +170,7 @@ Visual Studio uses these environment variables when building and running your ap
 3. Choose **OK** to save your changes and close the dialog box.
 ![Environment variables, warning message](media/configure-vs-tools-apache-cordova/IC752249.png)
 
-##Generate a new security PIN
+##<a name="IosPin"></a>Generate a new security PIN
 
 When you [start the agent](install-vs-tools-apache-cordova.md#ios) the first time, the generated PIN is valid for a limited amount of time (10 minutes by default). If you don’t connect to the agent before the time expires, or if you want to connect a second client to the agent, you will need to generate a new PIN.
 ### To generate a new security PIN
@@ -181,7 +182,7 @@ When you [start the agent](install-vs-tools-apache-cordova.md#ios) the first tim
 
 4. Follow instructions to [start the agent](install-vs-tools-apache-cordova.md#ios) on your Mac and configure the agent in Visual Studio.
 
-##Generate a new server certificate
+##<a name="IosCert"></a>Generate a new server certificate
 For security purposes, the server certificates that pair Visual Studio with the remote agent are tied to your Mac’s IP or host name. If these values have changed, you will need to generate a new server certificate, and then reconfigure Visual Studio with the new values.
 
 ### To generate a new server certificate
@@ -201,7 +202,7 @@ For security purposes, the server certificates that pair Visual Studio with the 
 
 5. Follow instructions to [start the agent](install-vs-tools-apache-cordova.md#ios) on your Mac and configure the agent in Visual Studio.
 
-##Configure the iOS remote agent
+##<a name="IosConfig"></a>Configure the iOS remote agent
 
 You can configure the remote agent using various command line options. For example, you can specify the port to listen for build requests and specify the maximum number of builds to maintain on the file system. (By default, the limit is 10\. The agent will remove builds that exceed the maximum on shutdown.)
 
@@ -238,7 +239,7 @@ The server.log file might assist in troubleshooting build issues.
 
 The configuration file must be in JSON format. The startup options and their values must not include dashes. To see a documented configuration file, look at the remotebuild/examples/exampleConfig.json folder in the remote agent installation directory, although you must remove the comments in the file that you use for your configuration. An example of a path you might use when running this command is _/Users/<username\>/myConfig.json_. The default path where the agent looks for a configuration file is ~/.taco_home/RemoteBuild.config.\
 
-##Verify the iOS remote agent configuration
+##<a name="IosVerify"></a>Verify the iOS remote agent configuration
 Once you have [installed the agent](install-vs-tools-apache-cordova.md#ios), you can verify the remote agent configuration.
 
 ### To verify the remote agent configuration
@@ -270,7 +271,7 @@ This command will fail if the agent is not running in a second window, or if the
 
 For more information about app provisioning and certificate signing identities, see [Package Your App Built with Visual Studio Tools for Apache Cordova](./package-and-publish/package-app-built-with-visual-studio.md).
 
-##Reinstall vs-tac
+##<a name="vstac"></a>Reinstall vs-tac
 
 If you see unexpected errors when trying to build the Blank App template after installing Visual Studio Tools for Apache Cordova, you can try clearing your cache and reinstalling the Cordova CLI pre-processor, vs-tac, on your PC. Typically, this is only necessary if you try to build a Cordova app and see the error Cannot find module *[modulename]*.
 
@@ -327,7 +328,7 @@ where proxy-port might be a value such as http://proxy.mycompany.com:80/
 
 7. Open your Apache Cordova solution and rebuild your project.
 
-### To configure proxy settings for git
+### <a name="Proxy"></a>To configure proxy settings for git
 1. Close Visual Studio.
 
 2. Open a Visual Studio developer command window (Ctrl + Alt + A) and type the following command.
