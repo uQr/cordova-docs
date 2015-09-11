@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create the ToDoList Sample App | Cordova"
+   pageTitle="Create the ToDoList sample app | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Create the ToDoList Sample App
+# Create the ToDoList sample app
 
 In this tutorial, you’ll learn how to create a task list sample app using AngularJS (AngularJSToDo). This app allows users to create new tasks, check them off, and remove them. The app also stores tasks using HTML5 Web Storage on the device. (The complete sample uses Microsoft Azure Mobile Services to store data, and also uses Bing Maps to provide valid addresses.) This sample uses JavaScript code, but you can also write your Cordova app in TypeScript.
 

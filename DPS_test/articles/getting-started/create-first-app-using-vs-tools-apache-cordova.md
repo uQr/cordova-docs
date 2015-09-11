@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Your First App Using Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Create your first app by using Visual Studio Tools for Apache Cordova | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Create Your First App Using Visual Studio Tools for Apache Cordova
+# Create your first app by using Visual Studio Tools for Apache Cordova
 
 An app built using Visual Studio Tools for Apache Cordova uses Cordova to access native APIs by using web technologies like HTML and CSS. By reducing or eliminating the need for native code, apps work across multiple devices. Some tasks are common to most Cordova apps. These include:
 * [Create a Cordova project](#Create)
