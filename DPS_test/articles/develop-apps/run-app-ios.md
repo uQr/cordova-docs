@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Debug Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Run Your Apache Cordova App on iOS | Cordova"
    description="description"
    services="na"
    documentationCenter=""

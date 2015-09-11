@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Debug Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Run Your Apache Cordova App on Windows | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -26,7 +26,7 @@ Visual Studio provides these three options for deploying an app built using Visu
 
 Windows 8, Windows 8.1, or Windows Server 2012 R2 (with Desktop Experience enabled) is required to deploy and run your app on Windows.
 
-You can configure your Windows app to target either Windows 8 or Windows 8.1 using the configuration designer. For more information, see [Configure Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757053.aspx).
+You can configure your Windows app to target either Windows 8 or Windows 8.1 using the configuration designer. For more information, see [Configure Your App Built with Visual Studio Tools for Apache Cordova](../develop-apps/configure-app.md).
 
 Follow these instructions to run your app on your computer or on the Windows Simulator.
 
@@ -46,6 +46,6 @@ Follow these instructions to run your app on your computer or on the Windows Sim
 
 #### See Also
 
-[Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx)
-[Debug Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757061.aspx)
-[Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx)
+[Install Visual Studio Tools for Apache Cordova](../getting-started/install-vs-tools-apache-cordova.md)
+[Debug Your App Built with Visual Studio Tools for Apache Cordova](../debug-and-test/debug-using-visual-studio.md)
+[Package Your App Built with Visual Studio Tools for Apache Cordova](../package-and-publish/package-app-built-with-visual-studio.md)
