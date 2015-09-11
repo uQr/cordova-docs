@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Debug Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Run Your Apache Cordova App on the Apache Ripple Simulator | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -17,7 +17,7 @@
 
 The Apache Ripple simulator runs as a web app inside the Google Chrome browser. In Cordova, it can be used to simulate your app on a number of iOS and Android devices, and it provides basic support for core Cordova plugins like Geolocation and Device Orientation.
 
-The Ripple simulator helps you quickly start validating how your apps looks and feels on iOS and Android, because both platforms use a browser with a similar code base. The Ripple simulator is particularly useful for validating layout and CSS code. For higher fidelity emulation that’s specific to a platform, use the [Android](https://msdn.microsoft.com/en-us/library/dn757059.aspx) or [iOS](https://msdn.microsoft.com/en-us/library/dn757056.aspx) emulators or an actual device.
+The Ripple simulator helps you quickly start validating how your apps looks and feels on iOS and Android, because both platforms use a browser with a similar code base. The Ripple simulator is particularly useful for validating layout and CSS code. For higher fidelity emulation that’s specific to a platform, use the [Android](run-app-apache.md) or [iOS](run-app-ios.md) emulators or an actual device.
 
 **Caution** Ripple doesn’t provide a complete simulation of Cordova APIs or native device capabilities. It also doesn’t simulate specific browser versions for a particular platform. You can achieve this by testing on actual devices or emulators.
 
@@ -74,6 +74,6 @@ You can change the target device on the fly while your app is running in Chrome.
 
 #### See Also
 
-[Install Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757054.aspx)
-[Debug Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757061.aspx)
-[Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx)
+[Install Visual Studio Tools for Apache Cordova](../getting-started/install-vs-tools-apache-cordova.md)
+[Debug Your App Built with Visual Studio Tools for Apache Cordova](../debug-and-test/debug-using-visual-studio.md)
+[Package Your App Built with Visual Studio Tools for Apache Cordova](../package-and-publish/package-app-built-with-visual-studio.md)
