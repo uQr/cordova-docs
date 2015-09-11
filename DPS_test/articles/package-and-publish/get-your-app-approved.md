@@ -63,7 +63,7 @@ This blog post by Brett Livaudais lists specific things that will get your app r
 
 This blog post by Matt Might provides code examples and how-to information for making your app look more like a native iOS app and less like a Web page.
 
-[Create an Apache Cordova App – Build a UI](https://msdn.microsoft.com/library/dn757057.aspx#BuildUI)
+[Create an Apache Cordova App – Build a UI](../getting-started/create-first-app-using-vs-tools-apache-cordova.md#BuildUI)
 
 This topic discusses designing your UI and some popular UI frameworks such as [Ionic](http://ionicframework.com/) and [Bootstrap](http://getbootstrap.com/).
 

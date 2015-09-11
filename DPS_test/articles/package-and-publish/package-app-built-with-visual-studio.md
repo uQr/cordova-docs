@@ -45,7 +45,7 @@ When building your app, you need to choose the correct build configuration. You 
 
 You can specify details such as the package ID and version number by using the configuration designer, which is the Visual Studio interface for the config.xml file. In Solution Explorer, open the shortcut menu for config.xml, and then choose **Open** or **View Designer** (or double-click the file).
 
-![Important settings in the Config Deisgner](media/package-app-built-with-visual-studio/package-config-designer.png)
+![Important settings in the Config Designer](media/package-app-built-with-visual-studio/package-config-designer.png)
 
 You must configure the following settings to package your app for distribution.
 
@@ -85,7 +85,7 @@ Each time you build your app for Android, a package is created. Extra steps are 
 
 If you accidentally delete the ant.properties file, create a new project and copy the file from your new project to the previous project.
 
-**Tip** For information on how to create the packaging assets for Android, see the [github documentation](https://github.com/Microsoft/cordova-docs/tree/master/tutorial-package-publish#android).
+**Tip** For information on how to create the packaging assets for Android, see the [Android section in the walkthrough on packaging](../tutorial-package-publish/tutorial-package-publish-readme.md#android).
 
 ## <a id="iOS">Package and sign an iOS app
 
@@ -111,7 +111,7 @@ To generate a package that can be used on an iOS device, you need to sign it by 
 
 5.  Build your app.
 
-**Tip** For information on how to create the packaging assets for iOS, see the [github documentation](https://github.com/Microsoft/cordova-docs/tree/master/tutorial-package-publish#ios).
+**Tip** For information on how to create the packaging assets for iOS, see the [iOS section in the walkthrough on packaging](../tutorial-package-publish/tutorial-package-publish-readme.md#ios).
 
 ### To force a specific signing identity
 
@@ -146,7 +146,7 @@ Visual Studio provides built-in features to package Windows 8, Windows 8.1, and 
 
     Visual Studio updates the app package. To see where the reserved name is used, open the configuration designer and look at the display name and package ID in the **Packaging** tab.
 
-**Tip** For information on how to create the packaging assets for Windows, see the [github documentation](https://github.com/Microsoft/cordova-docs/tree/master/tutorial-package-publish#windows).
+**Tip** For information on how to create the packaging assets for Windows, see the [Windows section in the walkthrough on packaging](../tutorial-package-publish/tutorial-package-publish-readme.md#windows).
 
 ## <a id="WindowsPhone"></a>Package and sign a Windows Phone 8 app
 
@@ -160,4 +160,4 @@ If you need to change the default language in a Windows Phone 8 package, locate 
 
 ## See Also
 
-[Publish Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771554.aspx)
+[Publish Your App Built with Visual Studio Tools for Apache Cordova](publish-app-built-with-visual-studio.md)
