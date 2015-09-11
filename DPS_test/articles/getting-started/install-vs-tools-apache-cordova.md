@@ -19,12 +19,22 @@ Take advantage of the easy-to-use installer to build cross-platform apps with Vi
 
 In this section:
 
+<<<<<<< HEAD
 [Requirements](#req)   
 [Install the tools](#InstallTools)  
 [Install tools for iOS](#ios)
 [Additional Tasks](#AdditionalTasks)
 
 ##Requirements<a name="req">
+=======
+* [Requirements](#req)
+* [Get the Tools](#GetTools)
+* [Install the tools](#InstallTools)
+* [Install tools for iOS](#ios)
+* [Additional Tasks](#AdditionalTasks)
+
+##<a name="req">Requirements
+>>>>>>> upstreamCD/master
 **
 Operating system requirements:
 
@@ -42,12 +52,22 @@ If you want to build iOS on a cloud service instead of Mac hardware, see [Build 
 
 * Windows Phone emulators require a computer that can run Hyper-V.
 
+<<<<<<< HEAD
 * Building a Windows 10 Universal Platform app requires the installation of the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=617471). Note that Windows 8.1/Phone 8.1 apps may also be deployed to Windows 10
 ##Get the tools
+=======
+* Building a Windows 10 Universal Platform app requires the installation of the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=617471). Note that Windows 8.1/Phone 8.1 apps may also be deployed to Windows 10.
+
+##<a name="InstallTools"></a>Get the tools
+>>>>>>> upstreamCD/master
 [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38), which are included as an optional component in Visual Studio 2015. Follow the steps in the next section to install the tools.
 
 >**Important:**
 Visual Studio 2015 is recommended for developing Apache Cordova apps. If you previously installed Visual Studio 2015 Preview, a Visual Studio 2015 CTP, or Visual Studio 2015 RC, you must first uninstall it using Control Panel, Programs and Features, before installing Visual Studio 2015.
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstreamCD/master
 ##<a name="InstallTools"></a>Install the tools
 
 When you choose to install Visual Studio Tools for Apache Cordova, the installer for Visual Studio 2015 selects additional third-party software to install. Most of these are open-source software required by specific platforms or by Apache Cordova. You can override the default selections, and deslect software that you don’t want to install.

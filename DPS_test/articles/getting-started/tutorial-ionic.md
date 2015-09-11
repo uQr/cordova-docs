@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <properties pageTitle="Getting started with Ionic apps in Visual Studio"
   description="This is an article on ionic tutorial"
   services=""
+=======
+﻿<properties pageTitle="Ionic Tutorial" 
+  description="This is an article on ionic tutorial" 
+  services="" 
+>>>>>>> upstreamCD/master
   documentationCenter=""
   authors="bursteg" />
 
@@ -107,7 +113,11 @@ For Windows & Windows Phone 8.1:
 
 For iOS:
 
+<<<<<<< HEAD
 You can run initially on the Ripple Emulator after selecting iOS as a debug target, but for detailed info on setting up the remotebuild agent for iOS, see [this topic] (https://../getting-started/install-vs-tools-apache-cordova.md#ios).
+=======
+You can run initially on the Ripple Emulator after selecting iOS as a debug target, but for detailed info on setting up the remotebuild agent for iOS, see [this topic] (https://msdn.microsoft.com/en-us/library/dn757054.aspx#ios).
+>>>>>>> upstreamCD/master
 
 The Ionic starter app should run correctly on iOS when the remotebuild agent is running on a Mac, and when VS is configured to connect to it. (The complete steps are outside the scope here.)
 

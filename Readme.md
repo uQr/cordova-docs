@@ -1,4 +1,4 @@
-# Visual Studio Tools for Apache Cordova
+# Visual Studio Tools for Apache Cordova 
 This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).**
 
 **Note that, with the exception of known issues, this documentation does not apply to Visual Studio 2013 CTPs.**
@@ -18,6 +18,8 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 	1. [General CI Guidence, Information, and Troubleshooting](./tutorial-team-build/General.md)
 1. [Package & Publish your Cordova Applications](./tutorial-package-publish)
 1. [Using TypeScript with your Cordova projects](./getting-started/tutorial-typescript.md)
+1. [Using the Bower package manager with your Cordova projects](./getting-started/tutorial-using-bower.md)
+1. [Using the NuGet package manager with your Cordova projects](./getting-started/tutorial-nuget.md)
 1. [Build and Simulate iOS in the Cloud](http://go.microsoft.com/fwlink/?LinkID=618476) (MSDN)
 1. [Build a Cordova app for iOS using Parallels](http://go.microsoft.com/fwlink/?LinkID=618477) (MSDN)
 1. [Run the Android Emulator on OSX when using Windows in Parallels](http://go.microsoft.com/fwlink/?LinkID=618478) (MSDN)
@@ -47,7 +49,7 @@ This repository contains a set of documents and tutorials for the **Visual Studi
 	1. [CTP 3.1 / Visual Studio 2013](./known-issues/known-issues-vs2013.md)
 
 ## Help us improve our documentation
-Help us improve out docuementaiton by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
+Help us improve our documentation by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
 
 
 ## More Information
