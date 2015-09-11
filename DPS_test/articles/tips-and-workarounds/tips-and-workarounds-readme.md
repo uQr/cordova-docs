@@ -1,10 +1,10 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Visual Studio Tools for Apache Cordova tips & workarounds"
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-# Visual Studio Tools for Apache Cordova Tips & Workarounds
+# Visual Studio Tools for Apache Cordova tips & workarounds
 This repository contains a set tips and workarounds for [Apache Cordova](http://cordova.apache.org) generally in addition to the **Visual Studio 2015 RC** release of **[Tools for Apache Cordova](http://aka.ms/cordova)**.
 
 **Note that this documentation does not apply to Visual Studio 2013 CTPs.**

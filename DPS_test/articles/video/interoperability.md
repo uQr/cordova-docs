@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Video Walkthrough: Interoperate with Third-Party Tools | Cordova"
-   description="description"
+   pageTitle="Video Walkthrough: Interoperate with third-party tools | Cordova"
+   description="Video Walkthrough: Interoperate with third-party tools"
    services="na"
    documentationCenter=""
    authors="normesta"
@@ -14,9 +14,7 @@
    ms.date="09/11/2015"
    ms.author="normesta"/>
 
-# Video Walkthrough: Interoperate with Third-Party Tools
-
-*In Visual Studio 2013, the Cordova tools are released as a preview (CTP) version. Cordova tools will be released as part of Visual Studio 2015 and we recommend that you now use Visual Studio 2015 RTM to [develop apps](https://msdn.microsoft.com/en-us/library/dn771545(v=vs.140).aspx) using Visual Studio Tools for Apache Cordova. You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106).*
+# Video Walkthrough: Interoperate with third-party tools
 
 Apache Cordova projects that you create using many third party tools are compatible with Visual Studio 2015, including projects that you create using command line interfaces (CLIs) such as Cordova and Ionic. In this video walkthrough, we show you how to use Visual Studio 2015 with a project that you create using the Ionic CLI. This article matches the steps of the Cordova [Video tutorial](http://go.microsoft.com/fwlink/p/?LinkID=534728) on interoperability.
 

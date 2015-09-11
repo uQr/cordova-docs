@@ -1,10 +1,10 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Cordova performance tips"
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-# Cordova Performance Tips
+# Cordova performance tips
 
 Cordova apps are web apps that run "inside" of native apps by using native "web view" UI components. There are therefore three major domains where performance can be affected in a Cordova app:
 

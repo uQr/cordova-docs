@@ -1,14 +1,14 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system"
+  description="Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-#Using Tools for Apache Cordova with the Jenkins CI System
+#Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system
 This tutorial is part of a [series of tutorials](./tutorial-team-build-readme.md) on building Visual Studio 2015 Tools for Apache Cordova projects in a Team / CI environment.
 
 ##Background
-[Jenkins](http://go.microsoft.com/fwlink/?LinkID=613695) is a hugely popular CI server with a large install base so using it to build your Cordova project may be the way to go if you already have it installed and running in your environment. Fortunatley Tools for Apache Cordova is designed to work with a number of different team build systems since the projects it creates are standard [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects. 
+[Jenkins](http://go.microsoft.com/fwlink/?LinkID=613695) is a hugely popular CI server with a large install base so using it to build your Cordova project may be the way to go if you already have it installed and running in your environment. Fortunatley Tools for Apache Cordova is designed to work with a number of different team build systems since the projects it creates are standard [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects.
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and Cordova CLI are Node.js based which makes the two highly complementary technologies. For these reasons, this tutorial will focus on the use Gulp rather than MSBuild as the primary build language for Cordova apps when using Jenkins.
 
@@ -25,7 +25,7 @@ Since the build process we will describe here is not directly dependent on MSBui
 
 For OSX, the pre-requisites will need to be installed manually, but mirror [the requirements for the Visual Studio remote build agent](http://go.microsoft.com/fwlink/?LinkID=533745). However, unlike with TFS 2013, you do not need to install the remote build agent itself if your OSX machine will only be used for team / CI builds.
 
-For the purposes of this tutorial, we will assume your primary Jenkins build server is installed on Windows. However, it is relatively straight forward to tweak these instructions to have your primary build server be on Linux or OSX. However, be aware that you will need to have a Windows [slave agent](http://go.microsoft.com/fwlink/?LinkID=613696) if you intend to build for the Windows (Windows or Windows Phone 8.1 or Windows 10) or Windows Phone 8 (WP8) Cordova platforms. 
+For the purposes of this tutorial, we will assume your primary Jenkins build server is installed on Windows. However, it is relatively straight forward to tweak these instructions to have your primary build server be on Linux or OSX. However, be aware that you will need to have a Windows [slave agent](http://go.microsoft.com/fwlink/?LinkID=613696) if you intend to build for the Windows (Windows or Windows Phone 8.1 or Windows 10) or Windows Phone 8 (WP8) Cordova platforms.
 
 If you have not already, start out by installing and setting up up Jenkins itself. See the [Jenkins website for details](http://go.microsoft.com/fwlink/?LinkID=613697). Note that you may want to install other [Jenkins plugins](http://go.microsoft.com/fwlink/?LinkID=613704) such as the [Jenkins Git Plugin](http://go.microsoft.com/fwlink/?LinkID=613698) depending on your environment.
 
@@ -38,22 +38,22 @@ We're going to use the [Jenkins NodeJS Plugin](http://go.microsoft.com/fwlink/?L
 
 3. Install the NodeJS Plugin
 	1. Click Manage Jenkins > Manage Plugins
-	
+
 	3. Click the "Available" tab
-	
+
 	3. Filter to "NodeJS". Note that if you do not see it, it may already be installed.
-	
+
 	4. Check "Install" checkbox and click "Install without restart"
-	
+
 	![NodeJS Plugin](media/jenkins/jenkins-0.png)
 
 4. Configure the NodeJS Plugin
 	1. Go to the Jenkins Dashboard again (click on "Jenkins" in the upper left hand corner)
-	
+
 	2. Click on Manage Jenkins > Configure System
-	
+
 	3. Under NodeJS, add installation locations for Windows and OSX. By default Windows will install node in "C:\Program Files (x86)\nodejs" while OSX keeps it under "/usr/local" (technically /usr/local/bin). You can ignore the warning that appears about "\usr\local" not existing on Windows. Set these based on your server's configuration.
-	
+
 	4. Click "Save"
 
 	![NodeJS Plugin](media/jenkins/jenkins-0-1.png)
@@ -65,15 +65,15 @@ For iOS, we will be taking advantage of an [Environment Variable Injector plugin
 
 3. Install the EnvInject Plugin
 	1. Click Manage Jenkins > Manage Plugins
-	
+
 	3. Click the "Available" tab
-	
+
 	3. Filter to "EnvInject". Note that if you do not see it, it may already be installed.
-	
+
 	4. Check "Install" checkbox and click "Install without restart"
-	
+
 	![EnvInject Plugin](media/jenkins/jenkins-1.png)
-	
+
 	We will use the EnvInject plugin in our Jenkins project build config for OSX later in this tutorial.
 
 4. Prep OSX for Use with a Slave Agent
@@ -87,47 +87,47 @@ For iOS, we will be taking advantage of an [Environment Variable Injector plugin
 		2. Check "Remote Login"
 
 		3. Ensure the user you want to run your builds is allowed access.
-	
+
 	![Enable SSH](media/jenkins/jenkins-2.png)
-	
+
 5. Configure an OSX Slave Agent
 
 	Next we need to setup our OSX Slave agent. The following is a brief summary. See [here](http://go.microsoft.com/fwlink/?LinkID=613696) for detailed instructions.
 
 	1. Go to the Jenkins Dashboard again
-	
+
 	2. Click Manage Jenkins > Manage Nodes > New Node
-	
+
 	5. Select "Dumb Slave" and give it this agent a name
-	
-	6. For "Launch Method," choose "Launch slave agents on Unix machines via SSH" and enter the login information based on your Remote Login settings above.	
-	
+
+	6. For "Launch Method," choose "Launch slave agents on Unix machines via SSH" and enter the login information based on your Remote Login settings above.
+
 	7. Add two Labels of "cordova" and "ios". We will use these labels to route builds to the correct server later in this tutorial.
-	
+
 	8. Click "Save" when done.
-	
+
 	![Slave Agent Config](media/jenkins/jenkins-3.png)
-	
-	Jenkins will now use SSH to start up the slave agent on OSX as needed. 
-	
+
+	Jenkins will now use SSH to start up the slave agent on OSX as needed.
+
 6. (Optional) Add Label to Windows Build Node(s)
-	
+
 	You should also add labels to any build nodes (including Master) if you do not intend to install all of the Cordova dependencies on each of your build servers.
-	
+
 	1. Go to the Jenkins Dashboard again
-	
+
 	2. Click Manage Jenkins > Manage Nodes
 
 	3. Click on the Configure Icon for one of your Windows nodes like "master"
-	
+
 	![Slave Agent Config](media/jenkins/jenkins-4.png)
-	
+
 	4. Enter a label of "cordova" and "windows" and click "Save."
-	
-	![Slave Agent Label Config](media/jenkins/jenkins-5.png)	
+
+	![Slave Agent Label Config](media/jenkins/jenkins-5.png)
 
 ##Environment Variables
-Next you will need to set the following environment variables if they have not already been configured in your build server environment. These can either be set as system variables on your build server, by checking the "Environment variables" option when [managing your build nodes](http://go.microsoft.com/fwlink/?LinkID=613696), or using the [Environment Variable Injector plugin](http://go.microsoft.com/fwlink/?LinkID=613700) and checking the "Inject environment variables to the build process" option in your project build config. 
+Next you will need to set the following environment variables if they have not already been configured in your build server environment. These can either be set as system variables on your build server, by checking the "Environment variables" option when [managing your build nodes](http://go.microsoft.com/fwlink/?LinkID=613696), or using the [Environment Variable Injector plugin](http://go.microsoft.com/fwlink/?LinkID=613700) and checking the "Inject environment variables to the build process" option in your project build config.
 
 | **Variable**       | **Required For**                         | **Purpose**                              | **Default Location (Visual Studio 2015)** |
 |:-------------------|:-----------------------------------------|:-----------------------------------------|:------------------------------------------|
@@ -155,7 +155,7 @@ Detailed instructions on configuring projects in Jenkins can be found [here](htt
 
 1. Open the Jenkins Dashboard in a web browser (typically at http://localhost:8080/ if running locally)
 
-2. Click "New Item" 
+2. Click "New Item"
 
 3. Enter a name for your project, select "Freestyle project," and click OK.
 
@@ -178,7 +178,7 @@ Detailed instructions on configuring projects in Jenkins can be found [here](htt
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	...where &lt;your project path&gt; is replaced with the project sub-folder for your solution (usually the name of the project).
-	 
+
 	This will install any dependencies in package.json including Gulp itself and then execute the Gulp build.
 
 7. Finally, under "Post-build Actions," add an "Archive Artifacts" action with a "Files to archive" pattern of "&#42;/bin/&#42;&#42;/&#42;"
@@ -188,7 +188,7 @@ Detailed instructions on configuring projects in Jenkins can be found [here](htt
 8. Click "Save" and then "Build Now" to verify everything is working!
 
 	**Troubleshooting Tip:** If you encounter an error similar to this one you may need to upgrade your Node.js install. The following error is known to occur on Windows with Node.js 0.10.33.
-	
+
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Error: ENOENT, stat 'C:\Windows\system32\config\systemprofile\AppData\Roaming\npm'
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,10 +1,10 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Build Cordova apps in a Team / Continuous Integration (CI) environment"
+  description="Build Cordova apps in a Team / Continuous Integration (CI) environment"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-#Building Cordova Apps in a Team / Continuous Integration (CI) Environment
+#Build Cordova apps in a Team / Continuous Integration (CI) environment
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 With the release of Visual Studio 2015, you now have a number of options for how you can integrate Cordova apps with your favorite team / continuous integration (CI) server thanks to the fact that projects created in Visual Studio are standard [Apache Cordova Command Line Interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects. In this tutorial, we will cover a few different approaches for building Cordova projects outside of Visual Studio.
@@ -18,7 +18,7 @@ For abridged informaiton on specific build systems, you may find this sample [ta
 
 Read these articles to get up and running quickly!
 
-This remaineder of this article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) effectively does behind the scenes. 
+This remaineder of this article will go through the general approach for tackling a number challenges that exist when building Cordova apps and cover what the [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) effectively does behind the scenes.
 
 It has the following sections:
 
@@ -44,7 +44,7 @@ On the surface, this seems like all files in a given Cordova project should be a
 	- platforms
 	- bld
 	- .vs
-- The following files should be excluded: 
+- The following files should be excluded:
 	- plugins/android.json
 	- plugins/windows.json
 	- plugins/wp8.json
@@ -56,7 +56,7 @@ On the surface, this seems like all files in a given Cordova project should be a
 
 **Troubleshooting Tip:** Adding plugins/android.json, plugins/ios.json, plugins/remote_ios.json, plugins/windows.json, or plugins/wp8.json adding these files to source control can result in a build that **appears to succeed but is missing plugin native code.** They should only be included if the "platforms" folder is also checked in which is not recommended. Simply remove these files from source control to resolve the issue.
 
-Note that you **can** add "plugins/fetch.json" to source control along with the rest of the contents of the plugins folder. See [our Issues, Tips, and Workarounds documentation](../tips-and-workarounds/tips-and-workarounds-readme.md) for additional tips on addressing common build issues. 
+Note that you **can** add "plugins/fetch.json" to source control along with the rest of the contents of the plugins folder. See [our Issues, Tips, and Workarounds documentation](../tips-and-workarounds/tips-and-workarounds-readme.md) for additional tips on addressing common build issues.
 
 <a name="basic"></a>
 ##Basic Workflow
@@ -108,13 +108,13 @@ Otherwise you can manually install only those dependencies that are needed for b
         2.  Instead you may download and install one of the ["SDK Tools Only" packages](http://go.microsoft.com/fwlink/?LinkID=533747).
 
         3.  When building, you may encounter an error telling you that you need to install specific SDK versions or tools depending on the version of Cordova you are using. Note that these messages are talking about the *tools and SDK* versions *not* the device target versions.
-        
+
         	1.  You can install additional SDKs using [the Android SDK Manager](http://go.microsoft.com/fwlink/?LinkID=533775).
-        
+
         	2. Note that only the "SDK Platform" is required for a given API level so you may uncheck other options. Android system images in particular are large and are not needed.
-        
+
         	3.  Be sure to also install the "platform tools"
-        
+
         	4.  Projects created using Visual Studio will typically use either the API SDK 19, 21, or API 22.
 
     2.   OSX only: [iOS Platform Guide](http://go.microsoft.com/fwlink/?LinkID=533776). You do not need to install the deployment tools mentioned.
@@ -149,7 +149,7 @@ You may also need to configure proxy settings for Java. This can be [accomplishe
 JAVA_OPTS=-Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port> -Dhttp.proxyHost=<host> -Dhttp.proxyPort=<port> -DproxySet=true
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Finally, if you see the error "**TypeError: Request path contains unescaped characters**" when building or installing a plugin you may need to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordovaproxy) for additional details. 
+Finally, if you see the error "**TypeError: Request path contains unescaped characters**" when building or installing a plugin you may need to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordovaproxy) for additional details.
 
 <a name="challenges"></a>
 ##Cordova Challenges
@@ -232,8 +232,8 @@ To avoid re-installing each time, you can take advantage of Visual Studio's **ta
         path = require("path"),
         exec = require("child_process").exec;
 
-    // Load taco.json 
-    var taco = require("./taco.json"); 
+    // Load taco.json
+    var taco = require("./taco.json");
     var cordovaVersion = taco["cordova-cli"];
 
     // Check if Cordova is already present in the cache, install it if not

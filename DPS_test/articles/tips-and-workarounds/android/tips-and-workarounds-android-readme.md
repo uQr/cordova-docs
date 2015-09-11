@@ -1,10 +1,10 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Android tips and workarounds"
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-#Android Tips and Workarounds
+#Android tips and workarounds
 This document covers tips, tricks, and known workarounds for problems with the Cordova Android platform.
 
 It covers the following tips and issues:
@@ -50,4 +50,3 @@ If this does not resolve the issue, you can upgrade to a 64-bit version of the J
 * [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
-

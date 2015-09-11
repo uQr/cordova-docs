@@ -1,10 +1,10 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Test Apache Cordova apps with Karma and Jasmine"
+  description="Test Apache Cordova apps with Karma and Jasmine"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-#Using Karma and Jasmine To Test Apache Cordova Apps in Visual Studio 2015
+#Test Apache Cordova apps with Karma and Jasmine
 ===================
 
 In this article, you will learn how to use the [Karma test runner](http://karma-runner.github.io/0.13/index.html) with the [Jasmine test framework]( http://jasmine.github.io/) in Visual Studio 2015. To help with this, we are going to look at a simple Apache Cordova project. Download the file here: [Calculator.zip](karma_files/Calculator.zip?raw=true)

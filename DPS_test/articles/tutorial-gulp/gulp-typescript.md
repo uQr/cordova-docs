@@ -1,10 +1,10 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
+<properties pageTitle="Compile TypeScript by using Gulp"
+  description="Compile TypeScript by using Gulp"
   services="" 
   documentationCenter=""
   authors="bursteg" />
 
-#<a name="ts"></a>Using Gulp to Compile TypeScript
+#<a name="ts"></a>Compile TypeScript by using Gulp
 **This tutorial is part of a series on [using Gulp with Tools for Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767) in Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common "tasks" for everything from compilation, to packaging, deployment, or simply copying files around.
@@ -32,7 +32,7 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     You can also manually edit package.json from Visual Studio and then install the dependency by right-clicking on the Dependency node in the Solution Explorer and selecting "Restore Packages."
-    
+
     ![Restore Packages](media/gulp-typescript/gulp-4.png)
 
 2.  Add the following task to gulpfile.js:
@@ -54,14 +54,14 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     		.pipe(gulp.dest("www/scripts"));
     });
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
+
     You could also use a tsconfig.json file (like the default VS template) and add the following instead:
-    
+
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     var ts = require("gulp-typescript"),
         fs = require("fs"),
         tsconfigPath = "scripts/tsconfig.json";
-    
+
     gulp.task("scripts", function () {
         // Compile TypeScript code
         if (fs.existsSync(tsconfigPath)) {
@@ -72,7 +72,7 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](http://go.microsoft.co
     });
 
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
+
 	Either of these code snippets will compile anything in the “scripts” folder in the root of your Cordova project and copy them as a single JavaScript file called “appBundle.js” under the “www/scripts” folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
 
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

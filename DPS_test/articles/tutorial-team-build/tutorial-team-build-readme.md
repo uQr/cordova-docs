@@ -1,13 +1,13 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Build Cordova apps in a Team / Continuous Integration (CI) environment"
+  description="Build Cordova apps in a Team / Continuous Integration (CI) environment" 
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-#Getting Started Building Cordova Apps in a Team / Continuous Integration (CI) Environment
+#Build Cordova apps in a Team / Continuous Integration (CI) environment
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
-With the release of Visual Studio 2015, you now have a number of options for how you can integrate Cordova apps with your favorite team / continuous integration (CI) server thanks to the fact that projects created in Visual Studio are standard [Apache Cordova Command Line Interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects. 
+With the release of Visual Studio 2015, you now have a number of options for how you can integrate Cordova apps with your favorite team / continuous integration (CI) server thanks to the fact that projects created in Visual Studio are standard [Apache Cordova Command Line Interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects.
 
 In this tutorial, we will cover how you can get your project running in nearly any CI system quickly using the [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) and Gulp. Note that the method described here can be used with Visual Studio Online, TFS 2015, Jenkins, and others but will **not** work with TFS 2013. See [Tutorials on Specific CI Systems](#ci) for details.
 
@@ -15,7 +15,7 @@ In this tutorial, we will cover how you can get your project running in nearly a
 To get going quickly, follow these steps:
 
 1. **Install dependencies:** First, either install Visual Studio with the Tools for Apache Cordova option on your build server or simply install the pre-requisites for the platforms you are targeting separately. In brief:
-    - Visual Studio itself is **only** required if you are building for **Windows or Windows Phone**. 
+    - Visual Studio itself is **only** required if you are building for **Windows or Windows Phone**.
     - Install [Node.js](http://go.microsoft.com/fwlink/?LinkID=396867) and you'll also need to install the [Git command line tools](http://go.microsoft.com/fwlink/?LinkID=396870) on Windows. Note that the default option for Git's install does not place the tools in the path. Select option to run the tools from the command prompt.
     - **Android** requires the [Java](http://go.microsoft.com/fwlink/?LinkID=396871), [Ant](http://go.microsoft.com/fwlink/?LinkID=396869) (Cordova < 5.0.0 only), and the [Android SDK](http://go.microsoft.com/fwlink/?LinkID=533747) with the correct API level installed (usually API 21 or 22). Add environment variables for ANDROID_HOME pointing to your Android SDK install, ANT_HOME to your Ant install, and JAVA_HOME to your Java install. Add %ANT_HOME%\bin to your path.
     - **iOS** requires Xcode (from the Mac app store) and [Node.js](http://go.microsoft.com/fwlink/?LinkID=396867)
@@ -43,7 +43,7 @@ To get going quickly, follow these steps:
     npm install
     node_modules\.bin\gulp
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
+
     ...or on a Mac...
 
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,7 +52,7 @@ To get going quickly, follow these steps:
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Gulp will now build Android, Windows, and Windows Phone 8 versions of your project when run from Windows and iOS when run from OSX. You can change this behavior by updating the following lines in gulpfile.js.
-    
+
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
     var winPlatforms = ["android", "windows", "wp8"],
         osxPlatforms = ["ios"],

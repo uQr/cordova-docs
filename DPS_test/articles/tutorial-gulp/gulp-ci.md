@@ -1,10 +1,10 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
+<properties pageTitle="Build a Cordova project by using Gulp"
+  description="Build a Cordova project by using Gulp"
   services="" 
   documentationCenter=""
   authors="bursteg" />
 
-#<a name="ci"></a>Using Gulp to Build Cordova Projects
+#<a name="ci"></a>Build a Cordova project by using Gulp
 **This tutorial is part of a series on [using Gulp with Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767) in Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common tasks for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and the [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) are Node.js based which makes the two highly complementary technologies.
@@ -52,7 +52,7 @@ gulp
 
 The "npm install -g gulp" command will install the Gulp command line interface and add it to your path while the "npm install" command will install the "devDepenencies" listed above in a node_modules folder for use in your gulp script. These two commands are only required if you need to install new dependencies that were added to package.json by hand or are installing Gulp globally for the first time.
 
-You can also quickly execute Gulp tasks from the Task Runner Explorer right from Visual Studio. Simply go to View \> Other Windows \> Task Runner Explorer to bring it up for use. 
+You can also quickly execute Gulp tasks from the Task Runner Explorer right from Visual Studio. Simply go to View \> Other Windows \> Task Runner Explorer to bring it up for use.
 
 ![View Menu](media/gulp-ci/gulp-1.png)
 
