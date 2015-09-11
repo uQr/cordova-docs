@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Package Your App Built with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Package your app built with Visual Studio Tools for Apache Cordova | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Package Your App Built with Visual Studio Tools for Apache Cordova
+# Package your app built with Visual Studio Tools for Apache Cordova
 
 When you package the app you created using Visual Studio Tools for Apache Cordova, you’ll want to configure the settings required for publishing your app. In addition to general settings, there are also platform-specific steps required in most cases.
 

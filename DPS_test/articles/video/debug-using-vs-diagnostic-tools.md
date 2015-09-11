@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Video Walkthrough: Debug using Visual Studio Diagnostic Tools for Cordova | Cordova"
+   pageTitle="Video walkthrough: Debug using Visual Studio diagnostic tools for Cordova | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Video Walkthrough: Debug using Visual Studio Diagnostic Tools for Cordova
+# Video walkthrough: Debug using Visual Studio diagnostic tools for Cordova
 
 When developing Apache Cordova apps in Visual Studio, you can use diagnostic tools such as the Visual Studio debugger, the DOM Explorer, and the JavaScript Console to fix problems in your apps.
 
@@ -71,7 +71,7 @@ $scope.addToDo = function () {
 
         ![Using the Watch Window](media/debug-using-vs-diagnostic-tools/video-debug-add-watch.png)
     *   Use the Locals and Call Stack windows to find more information about the state of the app while you debug.
-7. While your app is running, select the [DOM Explorer](https://msdn.microsoft.com/library/windows/apps/hh441474.aspx) tab.
+7. While your app is running, select the [DOM Explorer](https://msdn.microsoft.com/library/hh441474.aspx) tab.
 
     On the left of the DOM Explorer, you have a view of the live DOM.
 8. Choose the **Select Element** button and select something, like a list item, in the Ripple emulator.
@@ -101,7 +101,7 @@ $scope.addToDo = function () {
     Another critical tool to help debug Cordova apps is the JavaScript Console. You can also use the JavaScript Console window to read errors and messages sent from your running app, and also to evaluate lines of JavaScript code that run within the current script context.
 10. Look at the output in the JavaScript Console window to view messages.
 
-	**Note** For a list of commands such as `console.log`, see [JavaScript Console commands](https://msdn.microsoft.com/library/windows/apps/hh696634.aspx)
+	**Note** For a list of commands such as `console.log`, see [JavaScript Console commands](https://msdn.microsoft.com/library/hh696634.aspx)
 
 11.  To evaluate JavaScript, type JavaScript code in the input box. For example, type "document." and you will see IntelliSense information for the document object for the current HTML page displayed in Ripple (Chrome).
 
