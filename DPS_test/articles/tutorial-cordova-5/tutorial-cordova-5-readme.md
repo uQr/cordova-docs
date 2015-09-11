@@ -1,11 +1,11 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Using Apache Cordova 5"
+  description="Using Apache Cordova 5"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
 #Using Apache Cordova 5
-**Note: If the default blank template in Visual Studio 2015 is does not default to 5.1.1, you should update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update. 
+**Note: If the default blank template in Visual Studio 2015 is does not default to 5.1.1, you should update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.
 
 Tools for Apache Cordova RTM has been tested with both Cordova 4.3.1 and Cordova 5.1.1. As the major version number increase implies, [Apache Cordova 5](http://http://go.microsoft.com/fwlink/?LinkID=617659) is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](http://http://go.microsoft.com/fwlink/?LinkID=617658). As a result, we strongly recommend the use of **Cordova 5.1.1** with **Visual Studio 2015 RTM** and up.
 
@@ -81,7 +81,7 @@ When you upgrade a project to Cordova 5.0.0+, you will want to take the followin
 1. Add the whitelist plugin to your project via config.xml:
 
 	1. Double click on config.xml in your project
-	
+
 	2. Click on the "Plugins" tab
 
 	2. Select "Whitelist" and click "Add"
@@ -138,11 +138,11 @@ As a result, core plugins like Camera have changed from [org.apache.cordova.came
 
 ![Custom Local Plugin](media/tutorial-cordova-5-readme/cordova-5-5.png)
 
-You can find running list of [old verses new plugin IDs in this location](http://go.microsoft.com/fwlink/?LinkID=617674). 
+You can find running list of [old verses new plugin IDs in this location](http://go.microsoft.com/fwlink/?LinkID=617674).
 
-The config.xml designer in Visual Studio will automatically use the new plugin IDs if you are targeting Cordova 5.0.0+ and use the old plugin IDs for 4.3.1 and below where npm based plugin support is not available (see below for details). 
+The config.xml designer in Visual Studio will automatically use the new plugin IDs if you are targeting Cordova 5.0.0+ and use the old plugin IDs for 4.3.1 and below where npm based plugin support is not available (see below for details).
 
-**If you do not see this behavior, update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update. 
+**If you do not see this behavior, update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.
 
 See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-npm) for additional details on adding npm versions of plugins to your project.
 
@@ -217,7 +217,7 @@ There is now a [Cordova Crosswalk plugin](http://go.microsoft.com/fwlink/?LinkID
 
 ###Installing the Crosswalk Plugin from VS
 To use the Crosswalk WebView plugin from Visual Studio, follow these steps:
-	
+
 1. Double click on config.xml in your project
 
 2. Click on the "Plugins" tab
@@ -225,7 +225,7 @@ To use the Crosswalk WebView plugin from Visual Studio, follow these steps:
 2. Select "Crosswalk WebView" and click "Add"
 
 	![Add Crosswalk Plugin](media/tutorial-cordova-5-readme/cordova-5-1.png)
-		
+
 The next time you build, your app will be running in the Crosswalk WebView. Note that the first build for Android in particular will take a bit given the plugin does some dynamic acquisition.
 
 ###Tips on Using the Crosswalk

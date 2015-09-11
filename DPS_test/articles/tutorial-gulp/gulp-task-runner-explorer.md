@@ -1,15 +1,15 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Invoke a Gulp task in a Cordova build"
+  description="Invoke a Gulp task in a Cordova build"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-#<a name="invoke"></a>Invoking Gulp Tasks in a Cordova Build
+#<a name="invoke"></a>Invoke a Gulp task in a Cordova build
 **This tutorial is part of a series on [using Gulp with Apache Cordova projects](http://go.microsoft.com/fwlink/?LinkID=533767) in Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common tasks for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and the [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) are Node.js based which makes the two highly complementary technologies.
 
-You may find it useful to fire off a Gulp task right from Visual Studio every time you do a Cordova build particularly when using a Gulp to minify your JavaScript code or compile languages like [TypeScript](http://go.microsoft.com/fwlink/?LinkID=533748), [LESS](http://go.microsoft.com/fwlink/?LinkID=533791), or [SASS](http://go.microsoft.com/fwlink/?LinkID=533792). Fortunately, this is quite easy to do thanks to the "Task Runner Explorer." 
+You may find it useful to fire off a Gulp task right from Visual Studio every time you do a Cordova build particularly when using a Gulp to minify your JavaScript code or compile languages like [TypeScript](http://go.microsoft.com/fwlink/?LinkID=533748), [LESS](http://go.microsoft.com/fwlink/?LinkID=533791), or [SASS](http://go.microsoft.com/fwlink/?LinkID=533792). Fortunately, this is quite easy to do thanks to the "Task Runner Explorer."
 
 ##Using the Visual Studio Task Runner Explorer
 The Visual Studio Task Runner Explorer provides a convenient way to run Gulp tasks right from Visual Studio. First let's install Gulp globally so it's convenient to use from the command line as well as Visual studio. Type the following from a command prompt:
@@ -78,7 +78,7 @@ gulp before-build
 
 However, you may want to be able to simply assign bindings in Visual Studio and have them apply from builds at the command line or in a team / Continuous Integration (CI) environment. Fortunately this is fairly straight forward to do via a [Cordova "hook"](http://go.microsoft.com/fwlink/?LinkID=533744).
 
-To do so, **[follow these directions to add a pre-built Cordova hook to your project](hook-task-runner-binding/tutorial-gulp-hook-task-runner-binding-readme.md)**. You can then modify it as you see fit to meet your needs. 
+To do so, **[follow these directions to add a pre-built Cordova hook to your project](hook-task-runner-binding/tutorial-gulp-hook-task-runner-binding-readme.md)**. You can then modify it as you see fit to meet your needs.
 
 ## More Information
 * [Learn more about using Gulp with your Cordova projects](tutorial-gulp-readme.md)

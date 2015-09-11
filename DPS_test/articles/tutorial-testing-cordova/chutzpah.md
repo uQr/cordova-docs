@@ -1,10 +1,10 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Test Apache Cordova apps with Chutzpah"
+  description="Test Apache Cordova apps with Chutzpah"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
-#Getting Started With Chutzpah to Test Apache Cordova Applications in Visual Studio 2015  
+#Test Apache Cordova apps with Chutzpah
 ===================
 
 Let’s unit test a simple Apache Cordova project by using Chutzpah in Visual Studio.
@@ -108,6 +108,6 @@ Click on "Run All" once again, and all tests will pass.
 
 Conclusion
 -------------
-In this article, you learned how to set up and use Chutzpah. You first downloaded and installed Chutzpah through “Extensions and Updates.” Next, you opened the references to required files in Chutzpah.json, and then you tried running tests through the Test Explorer. Finally, you modified tests files in Jasmine, Mocha and QUnit, and now you have a starting point for testing out your apps.   
+In this article, you learned how to set up and use Chutzpah. You first downloaded and installed Chutzpah through “Extensions and Updates.” Next, you opened the references to required files in Chutzpah.json, and then you tried running tests through the Test Explorer. Finally, you modified tests files in Jasmine, Mocha and QUnit, and now you have a starting point for testing out your apps.  
  
 You can download the Calculator_Final project here: [Calculator-Final.zip](chutzpah_files/Calculator-Final.zip?raw=true)

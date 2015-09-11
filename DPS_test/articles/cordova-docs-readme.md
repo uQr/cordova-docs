@@ -1,5 +1,5 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
+<properties pageTitle="Visual Studio Tools for Apache Cordova"
+  description="Visual Studio Tools for Apache Cordova"
   services="" 
   documentationCenter=""
   authors="bursteg" />
@@ -68,7 +68,7 @@ Help us improve out docuementaiton by sending us a pull-request or opening a [Gi
 
 
 ## Terms of Use
-By downloading and running this project, you agree to the license terms of the third party application software, Microsoft products, and components to be installed. 
+By downloading and running this project, you agree to the license terms of the third party application software, Microsoft products, and components to be installed.
 
 The third party software and products are provided to you by third parties. You are responsible for reading and accepting the relevant license terms for all software that will be installed. Microsoft grants you no rights to third party software.
 

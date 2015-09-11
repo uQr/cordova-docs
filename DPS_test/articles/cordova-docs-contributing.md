@@ -1,6 +1,6 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="How to contribute"
+  description="How to contribute"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
