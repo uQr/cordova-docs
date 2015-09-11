@@ -1,11 +1,11 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Known Issues - Android" 
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
 #**Known Issues - Android**
-This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to Android devices or emulators. 
+This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to Android devices or emulators.
 
 ----------
 **Cordova 5.x.x / Cordova Android 4.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Android related issues that are specific to Cordova 5.0.0 and up.

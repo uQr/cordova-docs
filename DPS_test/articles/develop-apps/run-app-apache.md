@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
-# Run Your Apache Cordova App on Android
+# Run your Apache Cordova app on Android
 
 There are many options for running your apps built using Visual Studio Tools for Apache Cordova on Android. From Visual Studio, you can run and debug Android apps on the following emulators and devices:
 

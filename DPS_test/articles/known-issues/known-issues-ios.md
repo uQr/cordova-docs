@@ -1,14 +1,14 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
+<properties pageTitle="Known Issues - iOS"
+  description="This is an article on bower tutorial"
   services="" 
   documentationCenter=""
   authors="bursteg" />
 
 #**Known Issues - iOS**
-This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to iOS devices or simulators. 
+This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to iOS devices or simulators.
 
 ----------
-##**Incremental builds with remotebuild@1.0.1 and Visual Studio 2015 RTM is broken:** 
+##**Incremental builds with remotebuild@1.0.1 and Visual Studio 2015 RTM is broken:**
 Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug where incremental changes made to any files under the /www folder does not get updated/built on iOS.
 
 *Observation:*
@@ -52,7 +52,7 @@ Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug whe
     sudo chown -R `whoami` ~/.npm
 
 ----------
-**Slow first build:** The first build using the remote iOS build agent for a given version of Cordova will be slower than subsequent builds as the remote agent must first dynamically acquire Cordova on OSX. 
+**Slow first build:** The first build using the remote iOS build agent for a given version of Cordova will be slower than subsequent builds as the remote agent must first dynamically acquire Cordova on OSX.
 
 ----------
 **Adding "plugins/remote_ios.json" to source control can result in non-functional plugins:** Five json files that can cause issues if added to source control are missing from the default source code exclusion list including "plugins/remote_ios.json." If you encounter a build that has non-functional Cordova APIs after fetching the project from source control, you should ensure that "plugins/android.json", "plugins/ios.json", "plugins/windows.json", "plugins/remote_ios.json", "plugins/wp8.json" are removed from source control and retry. See this [Tips and Workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#missingexclude) for additional details.
@@ -67,7 +67,7 @@ Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug whe
 **Incremental builds not faster than initial build when using VS 2015 RC or RTM:** Unfortunately this is a known issue with the iOS incremental build feature. We are actively working on a fix that will be resolved in a point release update.
 
 ----------
-**Unresponsive iOS device during app deployment:** In some circumstances, when deploying to iOS devices, they phone may enter an unresponsive state where apps may stops responding. Avoid deploying an app when the same app is still running. 
+**Unresponsive iOS device during app deployment:** In some circumstances, when deploying to iOS devices, they phone may enter an unresponsive state where apps may stops responding. Avoid deploying an app when the same app is still running.
 As a workaround, if you enter this state, soft reset your iOS device.
 
 ----------

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Convert a Cordova Project to a PhoneGap Project | Cordova"
+   pageTitle="Convert a Cordova project to a PhoneGap project | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.workload="na"
    ms.date="09/11/2015"
    ms.author="kirupa"/>
-# Convert a Cordova Project to a PhoneGap Project
+# Convert a Cordova project to a PhoneGap project
 
 PhoneGap is an open source framework for quickly building cross-platform mobile apps using HTML5, JavaScript and CSS. Adobe [PhoneGap Build](https://build.phonegap.com/) is a cloud service that allows you to quickly build mobile applications and easily compile them without SDKs, compilers and hardware. This article describes how to convert an Apache Cordova project created using Visual Studio to a PhoneGap project and use the PhoneGap Build cloud service.
 

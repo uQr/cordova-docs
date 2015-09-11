@@ -1,11 +1,11 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Known Issues - CTP 3/3.1 for Visual Studio 2013"
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
 #**Known Issues - CTP 3/3.1 for Visual Studio 2013**
-This article covers [known issues](../cordova-docs-readme.md#knownissues) specific to Visual Studio Tools for Apache Cordova CTP3/3.1 and Visual Studio 2013. 
+This article covers [known issues](../cordova-docs-readme.md#knownissues) specific to Visual Studio Tools for Apache Cordova CTP3/3.1 and Visual Studio 2013.
 
 ----------
 **Missing iOS Icons and Splashscreens:** When using version 0.2.8 or higher of vs-mda-remote, you should add the following XML elements to your config.xml to ensure your icons and splash screens are picked up properly.
@@ -58,4 +58,3 @@ Alternatively you can install version 0.2.7 instead by using the following comma
 * [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto://multidevicehybridapp@microsoft.com)
-

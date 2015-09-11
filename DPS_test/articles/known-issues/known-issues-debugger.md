@@ -1,11 +1,11 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="VS Debugger Known Issues and Limitations" 
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
 #**VS Debugger Known Issues and Limitations**
-This article covers [known issues and limitations](../cordova-docs-readme.md#knownissues) related to Visual Studio Debugger in Tools for Apache Cordova 2015. 
+This article covers [known issues and limitations](../cordova-docs-readme.md#knownissues) related to Visual Studio Debugger in Tools for Apache Cordova 2015.
 
 ----------
 **No debugger support for Windows Phone 8 (WP8):** There is currently no Visual Studio debugger support for Windows Phone 8. Developers can use the Weinre (Web Inspector Remote) project as described in this [blog post](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/) from MS OpenTech as an alternative.
