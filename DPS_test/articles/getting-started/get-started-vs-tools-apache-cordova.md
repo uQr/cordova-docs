@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Get started with Visual Studio Tools for Apache Cordova | Cordova"
+   pageTitle="Visual Studio Tools for Apache Cordova | Cordova"
    description="description"
    services="na"
    documentationCenter=""
@@ -14,7 +14,7 @@
    ms.date="09/10/2015"
    ms.author="mikejo"/>
 
-# Get started with Visual Studio Tools for Apache Cordova #
+# Visual Studio Tools for Apache Cordova #
 
 You can download Visual Studio from the [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?linkid=517106)._ You can build cross-platform apps for iOS, Android, and Windows devices by using Visual Studio Tools for Apache Cordova. The easy-to-use installer identifies and installs the right versions of the required SDKs, tools, and libraries that you need to build [Apache Cordova](http://cordova.apache.org/) apps. Use the Visual Studio debugger to attach to iOS, Android, and Windows apps, hit breakpoints, and inspect code using the console and DOM Explorer. Apache Cordova enables cross-platform development standard web technologies such as HTML, CSS, and JavaScript.
 
