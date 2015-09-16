@@ -26,32 +26,6 @@ The early sections of the tutorial take you straight through the process with li
 
 The [Windows Phone Plugin Generator](http://download.microsoft.com/download/5/B/4/5B433693-63A4-4509-A6F5-17A892A7D59E/PluginSourceAndApp.zip) download includes the code for this tutorial and an app that generates a simple plugin.
 
-*   [Create the Cordova plugin](#CreateCordova)
-
-*   [Add the plugin to the Cordova project](#AddPlugin)
-
-*   [Call the plugin from your app](#CallPlugin)
-
-*   [Run the app with your plugin](#RunTheApp)
-
-*   [Creating a plugin method for Windows Phone 8](#CreatingMethod)
-
-*   [Creating a plugin method for Windows Phone 8 (Universal)](#CreatingUniversal)
-
-*   [Configuring the plugin.xml file](#ConfiguringXML)
-
-*   [Creating the JavaScript plugin interface file](#CreatingInterface)
-
-*   [Calling plugin methods from your app](#CallingPlugins)
-
-*   [How to remove a local plugin from your app](#RemovePlugin)
-
-*   [Developing and debugging the plugin code](#DebugPlugin)
-
-*   [Troubleshooting](#Troubleshooting)
-
-*   [Next steps](#NextSteps)
-
 ##<a id="CreateCordova"></a>Create the Cordova plugin
 
 The **ToUpperPlugin** plugin needs four files.

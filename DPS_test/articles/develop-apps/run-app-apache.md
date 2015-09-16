@@ -15,31 +15,21 @@
    ms.author="mikejo"/>
 # Run your Apache Cordova app on Android
 
-There are many options for running your apps built using Visual Studio Tools for Apache Cordova on Android. From Visual Studio, you can run and debug Android apps on the following emulators and devices:
+There are many options for running your apps built using Visual Studio Tools for Apache Cordova on Android. From Visual Studio, you can run and debug Android apps on the emulators and devices including the [Apache Ripple simulator](run-apache-ripple-simulator) (discussed in a separate article) and the [Visual Studio Emulator for Android](#VSAndroid).
 
-* [Apache Ripple simulator](run-apache-ripple-simulator) (discussed in a separate article)
-
-* [Visual Studio Emulator for Android](#VSAndroid)
-
-* [Android emulator](#AndEmu)
-
-* [Genymotion emulator](#GenyMotion)
-
-* An [Android device](#AndDevice) connected to the machine If you run into errors building for Android, see these [tips and workarounds](https://github.com/Microsoft/cordova-docs/tree/master/tips-and-workarounds/android).
+If you run into errors building for Android, see these [tips and workarounds](https://github.com/Microsoft/cordova-docs/tree/master/tips-and-workarounds/android).
 
 ## Visual Studio Emulator for Android
 
 Here’s how to run your app on the [Visual Studio Emulator for Android](https://www.visualstudio.com/msft-android-emulator-vs.aspx). For system requirements, see [System Requirements for the Visual Studio Emulator for Android](https://msdn.microsoft.com/en-us/library/mt228280.aspx).
 
->**Important:**
-The Visual Studio Emulator for Android is only available in Visual Studio 2015.
+>**Important:** The Visual Studio Emulator for Android is only available in Visual Studio 2015.
 
 ### To run your app on the emulator
 
 1. Make sure that Hyper-V is enabled on your PC. Your PC must meet the [system requirements](https://msdn.microsoft.com/en-us/library/mt228280.aspx) for the Visual Studio Emulator for Android.
 
-  >**Important:**
-  The emulator is not supported in a virtualized environment.
+  >**Important:** The emulator is not supported in a virtualized environment.
 
 2. With your app open in Visual Studio, choose Android from the Solution Platforms list. If you don’t see this list, choose Solution Platforms from the Add/Remove Buttons list to display it. 9. Choose one of the emulators, such as VS Emulator 5” KitKat (4.4) XHDPI Phone. 11. Press F5 to start the app. Visual Studio starts the emulator and runs the app.
 
@@ -137,8 +127,7 @@ Before you run your app on the Android emulator in Visual Studio, use the Androi
 
 3. Press F5 to start the app, or Shift+F5 to start the app without debugging. Android 4.4 is required to attach the debugger. Otherwise, the app will run without debugging.
 
-  >**Tip:**
-  * If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, you can open SDK Manager by typing the following command on a command line: android sdk.
+  >**Tip:** If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, you can open SDK Manager by typing the following command on a command line: android sdk.
 
   * Visual Studio deploys the app to the Android emulator that is currently running. If no emulator is running, Visual Studio starts the last emulator that was created using the AVD Manager, and then deploys the app.
 
