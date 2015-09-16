@@ -15,23 +15,7 @@
    ms.author="mikejo"/>
 # Create your first app by using Visual Studio Tools for Apache Cordova
 
-An app built using Visual Studio Tools for Apache Cordova uses Cordova to access native APIs by using web technologies like HTML and CSS. By reducing or eliminating the need for native code, apps work across multiple devices. Some tasks are common to most Cordova apps. These include:
-* [Create a Cordova project](#Create)
-
-* [Build and run the default “Hello” app](#BuildHello)
-
-* [Choose a third-party JavaScript framework](#Framework)
-
-* [Build a UI](#BuildUI)
-
-* [Add native features](#Native) (plugins)
-
-* [Add connected services](#Connected)
-
-* [Add platform-specific resources](#Platform)
-
-* [Test](debug-using-visual-studio.md), [package](./package-and-publish/package-app-built-with-visual-studio.md), and
- [publish](publish-app-built-with-visual-studio.md)
+An app built using Visual Studio Tools for Apache Cordova uses Cordova to access native APIs by using web technologies like HTML and CSS. By reducing or eliminating the need for native code, apps work across multiple devices. The tasks described in this topic are common to most Cordova apps.
 
 ## <a id="Create"></a>Create a Cordova project
 

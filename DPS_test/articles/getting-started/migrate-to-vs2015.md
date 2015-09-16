@@ -20,11 +20,11 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 
 ## Create a blank project in Visual Studio 2015
 
-2. If you haven't already, [Install Visual Studio 2015] (http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
+1. If you haven't already, [Install Visual Studio 2015] (http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
 
   ![Install Cordova components](media/migrate-to-vs2015/install-cordova-components.png)
 
-3. Make sure your Visual Studio 2015 setup is correct by creating and running the default Blank App template.
+2. Make sure your Visual Studio 2015 setup is correct by creating and running the default Blank App template.
      * In Visual Studio, choose **File**, **New**, **Project**, **JavaScript**, **Apache Cordova Apps**, **Blank App** and name the new project "blank".
 
      **Note** For TypeScript projects, you can use the TypeScript equivalent of this same project.
@@ -67,7 +67,8 @@ Next, you need to make sure that your icons and splash screens are picked up cor
 
 1. In Visual Studio's Solution Explorer, open config.xml.
 2. From the config.xml shortcut menu, choose **View Code**.
-2. In config.xml, replace the platform section, such as the following:
+3. In config.xml, replace the platform section, such as the following:
+
   ```
   <vs:platformSpecificValues>
   <vs:platformSpecificWidget platformName="windows" id="" version="0.0.0.0">
@@ -75,6 +76,7 @@ Next, you need to make sure that your icons and splash screens are picked up cor
   </vs:platformSpecificWidget>
 </vs:platformSpecificValues>
   ```
+
   with this xml:
 
   ```
