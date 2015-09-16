@@ -108,7 +108,7 @@ with this line, to prevent a runtime error:
 
 ##<a name="configiOS"></a>Get your app running on iOS
 
-  You can run initially on the Ripple Emulator after selecting iOS as a debug target, but for detailed info on setting up the remotebuild agent for iOS, see [this topic] (https://../getting-started/install-vs-tools-apache-cordova.md#ios).
+  You can run initially on the Ripple Emulator after selecting iOS as a debug target, but for detailed info on setting up the remotebuild agent for iOS, see [this topic] (install-vs-tools-apache-cordova.md#ios).
 
 
   The Ionic starter app should run correctly on iOS when the remotebuild agent is running on a Mac, and when VS is configured to connect to it. (The complete steps are outside the scope here.)
