@@ -21,20 +21,6 @@ Visual Studio can build, deploy, and run your Apache Cordova app on any platform
 
 * Understand how Visual Studio builds your app for each platform.
 
-For instructions on how to build, deploy, and run your app on a specific platform, see one of these articles:
-
-* [Run Your Apache Cordova App on Android](run-app-apache.md)
-
-* [Run Your Apache Cordova App on iOS](run-app-ios.md)
-
-* [Run Your Apache Cordova App on Windows](run-app-windows.md)
-
-* [Run Your Apache Cordova App on Windows Phone](run-app-windows-phone.md)
-
-* [Run Your Apache Cordova App on the Apache Ripple Simulator](run-app-ripple-simulator.md)
-
-   In addition, this article provides information about the [Cordova build process in Visual Studio](#BuildProcess).
-
 ## Choose your target platform in Visual Studio
 
 When you want to run your Cordova app from Visual Studio, you must first select your target platform. The first time you try to do this after installing Visual Studio Tools for Apache Cordova, you might need to make the Solution Platforms list visible.

@@ -17,20 +17,6 @@
 
 When you package the app you created using Visual Studio Tools for Apache Cordova, you’ll want to configure the settings required for publishing your app. In addition to general settings, there are also platform-specific steps required in most cases.
 
-In this article:
-
-*   [Configure build settings](#Build)
-
-*   [Configure general app package settings](#General)
-
-*   [Package and sign an Android app](#Android)
-
-*   [Package and sign an iOS app](#iOS)
-
-*   [Package and sign a Windows 8, Windows 8.1, or Windows Phone 8.1 app](#Windows)
-
-*   [Package and sign a Windows Phone 8 app](#WindowsPhone)
-
 For a tutorial that walks you through the packaging and publishing process, see [Package and publish your Cordova applications](https://github.com/Microsoft/cordova-docs/blob/master/tutorial-package-publish).
 
 ## <a id="Build"></a>Configure build settings

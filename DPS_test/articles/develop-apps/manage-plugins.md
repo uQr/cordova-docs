@@ -17,17 +17,7 @@
 
 Apache Cordova uses plugins to provide access to native device capabilities that aren’t available to simple web apps, such as access to the file system. A plugin is a cross-platform Cordova library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. Not all plugins are supported or needed on all device platforms.
 
-You enable plugins by using the Cordova config.xml file. Visual Studio provides ways to update this file using the configuration designer. To manage plugins in your Cordova app:
-
-* Use the Visual Studio configuration designer to [add a plugin](#Adding) from the core set of Cordova plugins or to add a custom plugin
-
-* Use the configuration designer to [update a plugin](#Updating).
-
-* Edit config.xml to [add a plugin](#AddOther) that is not present in the configuration designer.
-
-* Edit config.xml to [specify plugin parameters](#Configuring).
-
-* [Extend or create a custom plugin](#Custom)
+You enable plugins by using the Cordova config.xml file. Visual Studio provides ways to update this file using the configuration designer.
 
 >**Note:**
 To see the core plugins available in the configuration designer, see [List of available plugins](#List). For more information on plugins, see the [Cordova config.xml documentation](http://go.microsoft.com/fwlink/p/?LinkID=510632).

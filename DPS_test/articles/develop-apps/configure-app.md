@@ -17,26 +17,10 @@
 
 A config.xml file included in each project provides most of your app configuration such as the app’s display name and start page. From **Solution Explorer**, you can double-click this file to open it in the configuration designer, a Visual Studio interface for the file.
 
-Alternatively, you can select **View Code** from the context menu to edit the file directly. For more information about this file, see [config.xml file](http://go.microsoft.com/fwlink/p/?LinkID=510632) in the Apache Cordova documentation. For information about configuring this file in Visual Studio, see these topics:
-
-* [Configure the Cordova CLI version](#ConfigCLI)
-
-* [Configure the Windows target version](#ConfigWindows) (in this topic)
-
-* [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](manage-plugins.md)
-
-* [Package Your App Built with Visual Studio Tools for Apache Cordova](./package-and-publish/package-app-built-with-visual-studio.md)
+Alternatively, you can select **View Code** from the context menu to edit the file directly. For more information about this file, see [config.xml file](http://go.microsoft.com/fwlink/p/?LinkID=510632) in the Apache Cordova documentation.
 
 >**Caution:**
 If you edit the config.xml file directly, make sure that your XML elements and attributes are valid. Invalid content in the XML file will result in errors when you build the app.
-
-Visual Studio also provides other ways to configure your app to support platform-specific content:
-
-* [Platform-specific visual assets](#VisualAssets) (in this topic)
-
-* [Platform-specific content](#Content) (in this topic)
-
-* [Platform-specific configuration files](#Configuration) (in this topic)
 
 ## <a id="ConfigCLI"></a>Configure the Cordova CLI version
 
