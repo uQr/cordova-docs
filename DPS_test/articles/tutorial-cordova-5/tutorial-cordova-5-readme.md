@@ -7,15 +7,7 @@
 #Using Apache Cordova 5
 **Note: If the default blank template in Visual Studio 2015 is does not default to 5.1.1, you should update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.
 
-Tools for Apache Cordova RTM has been tested with both Cordova 4.3.1 and Cordova 5.1.1. As the major version number increase implies, [Apache Cordova 5](http://http://go.microsoft.com/fwlink/?LinkID=617659) is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](http://http://go.microsoft.com/fwlink/?LinkID=617658). As a result, we strongly recommend the use of **Cordova 5.1.1** with **Visual Studio 2015 RTM** and up.
-
-This article will summarize the changes in Cordova 5 and how you can take advantage of some of its new features and adapt existing apps. Specifically it will cover:
-
-1. [Security model changes to the Android and iOS platforms](#security)
-1. [Primary Cordova plugin repository switching to npm](#npm)
-1. [Gradle build instead of Ant for Android](#gradle)
-1. [Pluggable WebViews and the Crosswalk WebView for Android](#crosswalk)
-1. [Windows 10 support and improved Cordova interoperability](#win10)
+Tools for Apache Cordova RTM has been tested with both Cordova 4.3.1 and Cordova 5.1.1. As the major version number increase implies, [Apache Cordova 5](http://cordova.apache.org/docs/en/5.1.1/index.html) is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](http://go.microsoft.com/fwlink/?LinkID=617658). As a result, we strongly recommend the use of **Cordova 5.1.1** with **Visual Studio 2015 RTM** and up.
 
 You can update your project to use Cordova 5.1.1 by following these steps:
 
@@ -184,7 +176,7 @@ A good example of a plugin that requires Gradle is the [Crosswalk plugin](http:/
 ###Migrating an Existing Project to Use Gradle
 Simply updating to Cordova 5.0.0+ will automatically cause Gradle to be used from that point forward. Because of the differences mentioned above you should take the following steps to adapt your project:
 
-1. If you've already added release signing information into ant.properties in your project, you'll need to place this information in a new file in your project. See the [Packaging & Publishing tutorial for details](../tutorial-package-publish) for details.
+1. If you've already added release signing information into ant.properties in your project, you'll need to place this information in a new file in your project. See the [Packaging & Publishing tutorial for details](./package-and-publish/tutorial-package-publish) for details.
 
 2. If you encounter an unexpected build error specifically for Android, see if the error references Cordova plugin source code. If so, update it by removing the plugin using the "Installed" tab of the config.xml designer and re-adding the plugin. If you cannot determine which plugin is causing the issue, you can opt to proactively upgrade all of them.
 
@@ -278,6 +270,5 @@ That's it! Underneath the convers Cordova will switch from an 8.1 project to a n
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
