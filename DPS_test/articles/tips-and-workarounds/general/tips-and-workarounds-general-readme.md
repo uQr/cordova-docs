@@ -5,18 +5,7 @@
   authors="bursteg" />
 
 #General Cordova tips and workarounds
-This document covers tips, tricks, and known workarounds for general issues with Cordova or Tools for Apache Cordova
-
-It covers the following issues and tips:
-
-1. [Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run](#missingexclude)
-1. ["TypeError: Request path contains unescaped characters" during a build or when installing a plugin](#cordovaproxy)
-1. [Using plugins not listed in the config.xml designer](#plugin-xml)
-1. [Using a specific version of a GitHub sourced plugin](#plugin-github)
-1. [Using a npm sourced plugins not listed in the config.xml designer or with Cordova < 5.0.0](#plugin-npm)
-1. [Tips for troubleshooting 3rd party Cordova plugins](#plugin-troubleshoot)
-1. [Build errors caused by long path and file names](#build-errors-long-path)
-1. [Using a different version of a Cordova platform](#cordova-platform-ver)
+This document covers tips, tricks, and known workarounds for general issues with Cordova or Tools for Apache Cordova.
 
 <a name="missingexclude"></a>
 ##Building a Cordova project from source control results in a successful build, but with Cordova plugin APIs not returning results when the app is run
@@ -42,14 +31,16 @@ W/System.err( 1425):  at java.lang.Class.forName(Class.java:216)
 The missing class would be recognizable as a Cordova plugin class such as "org.apache.cordova.camera.CameraLauncher" from the camera plugin.
 
 Remediation is fortunately simple:
-- Remove these files (plugins/android.json, plugins/ios.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control.
-- Leave plugins/fetch.json.
+
+* Remove these files (plugins/android.json, plugins/ios.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control.
+
+* Leave plugins/fetch.json.
 
 For **existing local copies**, you can either fetch a fresh copy from source control or delete the above files along with the entire contents of the "platforms" folder in the filesystem (which is not visible by default in the Solution Explorer) to resolve the issue.
 
 <a name="cordovaproxy"></a>
 ##"TypeError: Request path contains unescaped characters" during a build or when installing a plugin
-When building or installing a plugin you may encounter an error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". Ex:
+When building or installing a plugin you may encounter an error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". For example:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 npm http GET https://registry.npmjs.org/cordova-android/3.7.1
@@ -97,12 +88,16 @@ Ex:
 <vs:plugin name="org.apache.cordova.camera" version="0.3.6" />
 ~~~~~~~~~~~~~~~~~
 
-...substituting org.apache.cordova.camera for the correct ID and 0.3.6 with the version of the plugin you want to install.
+This substitutes org.apache.cordova.camera for the correct ID and 0.3.6 with the version of the plugin you want to install.
 
 ###Install from a Local Copy
 However, if the plugin is only available through GitHub, you can follow these steps to install a specific version:
 
-1. Go to the GitHub repository for the plugin. Ex: https://github.com/wildabeast/BarcodeScanner
+1. Go to the GitHub repository for the plugin. Ex: 
+
+~~~~~~~~~~~~~~~~~
+https://github.com/wildabeast/BarcodeScanner
+~~~~~~~~~~~~~~~~~
 
 2. Click on the "Releases" tab
 
@@ -118,6 +113,7 @@ However, if the plugin is only available through GitHub, you can follow these st
 
 <a name="plugin-npm"></a>
 ##Using a Npm Sourced Plugins Not Listed in the Config Designer or with Cordova < 5.0.0
+
 ###Background
 A significant departure in Cordova 5.0.0 and the community as a whole is the migration of the primary source of Cordova plugins from the custom repoistory backed model that exists in Cordova 3.x and 4.x to the "Node Package Manager" (npm) repository. The plugins.cordova.io repository has seen a few service interruptions and given the web community's increased use of Node.js for client-side development and Cordova's heavy use of npm for not only its command line interface but as a source for Cordova "platforms," the natural next step was to migrate plugins to npm as well. More details on this transition [can be found here.](http://cordova.apache.org/announcements/2015/04/21/plugins-release-and-move-to-npm.html)
 
@@ -146,9 +142,10 @@ Ex:
 
 
 ###Installing Npm Sourced Plugins When Using Cordova < 5.0.0
-*Note that versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
 There are two primary methods to install a plugin from npm when using Cordova 4.3.1 or below: using a recent version of the Cordova CLI or the "npm" command.
+
+> **Note**: Versions of plugins present in npm were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.*
 
 ####Using Cordova CLI 5.0.0+
 The simplest method to install a plugin from npm is to take advantage of Visual Studio's command line interoperability and simply use a recent version of the Cordova CLI. To do so, follow these steps:
@@ -165,7 +162,7 @@ The simplest method to install a plugin from npm is to take advantage of Visual 
 
 	...replacing "path-to-project" with the path to the Cordova project inside your Visual Studio solution (not the solution root) and "cordova-plugin-camera" with the plugin you wish to install. You may also replace "cordova@5.1.1" with the version of Cordova you are using in your project so long as it is 5.0.0 or later.
 
-Note that with this method **you may not see these plugins listed in the "Installed" tab of the config.xml designer** but they will be present in the project and included in build or source control operations.
+    > **Note**: With this method **you may not see these plugins listed in the "Installed" tab of the config.xml designer** but they will be present in the project and included in build or source control operations.
 
 ####Using the npm Command
 Adding a Cordova plugin using Cordova CLI 5.0.0+ when your project is using an earlier version of Cordova (like 4.3.0) could in concept cause unexpected results. This second proceedure is more involved but avoids risks with potential Cordova CLI incompatibilities.
@@ -289,7 +286,7 @@ For Android, Windows, and Windows Phone, follow these steps:
 
 	...replacing &lt;platform&gt; with the platform you are trying to update in all lower case (Ex: android).
 
-The next time you build you will now be on the updated version of the platform.
+    The next time you build you will now be on the updated version of the platform.
 
 You can also use a platform from Git using the following syntax:
 
@@ -301,9 +298,3 @@ Be aware that platform versions in Git are typically dev releases so you will li
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../../cordova-docs-readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto:/vscordovatools@microsoft.com)
