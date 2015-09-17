@@ -17,13 +17,57 @@
 
 Visual Studio brings a seamless and common tooling experience for developing Cordova apps across app types and device platforms. However, in this early release, not all device platforms support all Visual Studio debugger and diagnostic capabilities, as shown in the following table.
 
-Device or operating system | Visual Studio debugger supported? | Console messages supported? | Workaround
-:-----|:-----|:------|:------
-Android 4.4 or later | Yes | Yes | -
-Android versions 2.3.3 to 4.3 | No | Yes | For debugger support, see [information about jsHybugger](#DbgAndroid) later in this article
-iOS 6, 7, 8 | Yes | Yes | -
-8.1(Store), Windows Phone 8.1, Windows 10  | Yes | Yes | -
-Windows Phone 8 | No | No (use the Console plugin) | Use Web Inspector Remote (weinre) or the Console plugin. See [Debug Windows 8 and Windows Phone 8](#DbgWindows) later in this article.
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+    }
+</style>
+<table>
+	<thead>
+		<tr>
+			<th>Device or operating system</th>
+			<th>Visual Studio debugger supported?</th>
+			<th>Console messages supported?</th>
+			<th>Workaround</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Android 4.4 or later</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Android versions 2.3.3 to 4.3</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>For debugger support, see [information about jsHybugger](#DbgAndroid) later in this article.</td>
+		</tr>
+		<tr>
+			<td>iOS 6, 7, 8</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>-</td>
+		</tr>
+    <tr>
+      <td>8.1(Store), Windows Phone 8.1, Windows 10</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Windows Phone 8</td>
+      <td>No</td>
+      <td>No (use the Console plugin)</td>
+      <td>Use Web Inspector Remote (weinre) or the Console plugin. See [Debug Windows 8 and Windows Phone 8](#DbgWindows) later in this article.</td>
+    </tr>
+	</tbody>
+</table>
 
 >**Note**: If you are using Windows 7, you can develop apps for Android and iOS, but not for Windows or Windows Phone. To run the app on Windows Server 2012 R2, you must enable the **Desktop Experience** option.
 
