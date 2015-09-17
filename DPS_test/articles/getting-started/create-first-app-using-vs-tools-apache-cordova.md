@@ -25,7 +25,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
 1. Open Visual Studio. On the menu bar, choose **File**, **New, Project**. 5. In the **New Project** dialog box, under **Templates**, choose **JavaScript**, **Apache Cordova Apps**, and then choose the **Blank App** template.
 
-  **Note**
+    >**Note**
   A Blank App template for TypeScript is under **TypeScript**, **Apache Cordova** (If you intend to go through the complete ToDoList tutorial, choose JavaScript.)
 
 12. Choose **Browse** to find a location for the project.
@@ -44,7 +44,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
   The project structure in Visual Studio 2015 is updated to support third-party CLIs, and to match the Cordova project structure. Visual Studio 2013 uses the deprecated project structure. We recommend that you create Cordova apps using Visual Studio 2015.
 
   >**Caution:**
-  If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
+  If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
 
   The new Cordova project includes four top-level folders:
 
@@ -61,7 +61,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
  * **www** folder, which is used for your app code.
 
-   The **www** folder contains several more folders:
+    The **www** folder contains several more folders:
 
    * **css** contains basic CSS style sheets that are included with the blank template.
 
@@ -118,11 +118,11 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
   If you see an error such as Cannot find module [modulename] or a build failure, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
-  If clearing the Cordova cache (or re-installing vs-tac) does not resolve the issue, see [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
+  If clearing the Cordova cache (or re-installing vs-tac) does not resolve the issue, see [Known Issues](./known-issues/known-issues-general.md).
 
 3. Press Shift + F5 to stop debugging.
 
-Next steps:
+## Next steps
 
 * To continue this tutorial by creating the ToDoList sample app using AngularJS, see Create the ToDoList Sample App.
 
@@ -181,7 +181,7 @@ One of the most important features that Cordova provides is support for plugins 
 
 ## <a id="Connected"></a>Add connected services
 
-If your app is using Azure or Office365 services, see [Add Connected Services to App Built with Visual Studio Tools for Apache Cordova](./develop-apps/add-connected-services.md). A core plugin for Azure Mobile Services is available in the [Config Designer](./develop-apps/add-connected-services.md) in Visual Studio. For information on adding the Azure services in the task list sample app for Visual Studio Tools for Apache Cordova (AngularJS version), see [Create the ToDoList Sample App](create-to-do-list-app.md).
+If your app is using Azure or Office365 services, see [Add Connected Services to App Built with Visual Studio Tools for Apache Cordova](./develop-apps/add-connected-services.md). A core plugin for Azure Mobile Services is available in the configuration designer in Visual Studio. For information on adding the Azure services in the task list sample app for Visual Studio Tools for Apache Cordova (AngularJS version), see [Create the ToDoList Sample App](create-to-do-list-app.md).
 
 To get started creating apps using Azure or O365 services with Cordova, see the following articles and blog posts. Azure
 
