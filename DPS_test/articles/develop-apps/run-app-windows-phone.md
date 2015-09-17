@@ -26,7 +26,7 @@ Windows 8, Windows 8.1, or Windows Server 2012 R2 (with Desktop Experience enabl
 
 You can choose either Windows Phone 8 or Windows Phone (Universal) as your deployment target. When you choose Windows Phone (Universal), the generated project is an APPX package, which is a native Windows Store app targeting Windows Phone 8.1. If you choose Windows Phone 8, the generated project is a XAP package; Windows Phone 8 apps for Cordova are hosted in a Silverlight WebView control.
 
-**Note** You can attach the Visual Studio debugger when targeting Windows Phone 8.1, but not Windows Phone 8.
+>**Note**: You can attach the Visual Studio debugger when targeting Windows Phone 8.1, but not Windows Phone 8.
 
 Follow these instructions to run your app on the Windows Phone emulator. For additional information, see [Run Windows Phone apps in the emulator](https://msdn.microsoft.com/library/windows/apps/dn632391.aspx) in the Windows Dev Center.
 
@@ -60,7 +60,6 @@ Follow these instructions to run your app on a Windows Phone device that is conn
 
 ![Download the tools](media/run-app-windows-phone/run-windows-phone-download-link.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
-#### See Also
-[Install Visual Studio Tools for Apache Cordova](../getting-started/install-vs-tools-apache-cordova.md)
+### See Also
+
 [Debug Your App Built with Visual Studio Tools for Apache Cordova](../debug-and-test/debug-using-visual-studio.md)
-[Package Your App Built with Visual Studio Tools for Apache Cordova](../package-and-publish/package-app-built-with-visual-studio.md)
