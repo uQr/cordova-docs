@@ -42,7 +42,7 @@ See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-
 ----------
 **Ripple throws error when starting up Cordova 5.0.0:** Ripple does not function properly in Cordova 5.0.0 due to a newly introduced validation check. This problem was fixed in Cordova 5.1.1.
 
-##Apache Cordova 5.x.x and Visual Studio 2015 RC
+## Known issues with Apache Cordova 5.x.x and Visual Studio 2015 RC
 ----------
 **Visual Studio 2015 RC uses Ant to build Android with Cordova 5.x.x:** Visual Studio 2015 RC uses Ant to build Android while the command line has switched to Gradle by default in version 5.0.0 of the CLI. When switching between Visual Studio and the command line with the version of Android in Cordova 5.0.0, you may want to specify that the platform should be built with Ant instead if you are running into unexpected issues.
 
@@ -60,6 +60,7 @@ Finally, if you are still build errors, you may want to opt to remove and re-add
     cordova platform add android
 
 ----------
+
 **Visual Studio 2015 RC cannot build an Android app with the Crosswalk plugin:** The Crosswalk Cordova plugin requires that Gradle be used to build Android to build but VS 2015 RC uses Ant. To build a project that uses the Crosswalk plug-in, you will need to build using the command line:
 
     npm install -g cordova
@@ -77,11 +78,3 @@ Finally, if you are still build errors, you may want to opt to remove and re-add
     cordova emulate android
 
 ----------
-## More Information
-* [Read up on additional known issues, tips, tricks, and tutorials](../cordova-docs-readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto://multidevicehybridapp@microsoft.com)
