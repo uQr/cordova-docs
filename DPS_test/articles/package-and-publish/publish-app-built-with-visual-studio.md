@@ -15,9 +15,9 @@
    ms.author="mikejo"/>
 # Publish your app built with Visual Studio Tools for Apache Cordova
 
-To publish your app built using Visual Studio Tools for Apache Cordova, you can access the packages you build in the bin folder in the Visual Studio project directory. For more information about building packages, see [Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx).
+To publish your app built using Visual Studio Tools for Apache Cordova, you can access the packages you build in the bin folder in the Visual Studio project directory. For more information about building packages, see [Package Your App Built with Visual Studio Tools for Apache Cordova](package-app-built-with-visual-studio.md).
 
-**Tip** For information on how to create packaging assets for Windows, iOS, and Android, see this [github documentation](https://github.com/Microsoft/cordova-docs/tree/master/tutorial-package-publish).
+**Tip** For information on how to create packaging assets for Windows, iOS, and Android, see this [github documentation](./tutorial-package-publish/tutorial-package-publish-readme.md).
 
 Instructions for uploading your app to the public app store vary by platform:
 
@@ -38,8 +38,3 @@ Follow the steps described in [Deploy software to mobile devices in Windows Intu
 For your convenience, the `vs-mda-remote` agent also creates a Wireless Manifest plist file. You can use this file to upload your iOS app to Windows Intune. The plist file can be found in the bin folder with your IPA (.ipa) file after you build your app in Visual Studio. You can also modify this file manually.
 
 ![Download the tools](media/publish-app-built-with-visual-studio/publish-download-link.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
-
-## See Also
-
-[Package Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757048.aspx)
-[Get Started with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn771545.aspx)

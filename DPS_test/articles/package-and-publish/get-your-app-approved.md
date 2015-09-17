@@ -77,4 +77,5 @@ Adhering to the Windows Phone Store policies will help you make choices that enh
 
 Following a foundation of design principles will delight your users.
 
+
 ![Download the tools](media/get-your-app-approved/approved-download-link.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
