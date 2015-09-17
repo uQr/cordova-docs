@@ -78,7 +78,7 @@ If you need to set this environment variable manually, see [Override system envi
 
     * To avoid out of memory issues, set a *JAVA_OPTIONS environment variable with at least -Xmx512M in it.
 
-    >>**Note:**
+    >**Note:**
 If you need to set this environment variable manually, see [Override system environment variables](#env_var).
 * [Android SDK](http://go.microsoft.com/fwlink/?LinkID=396873) with the following SDK packages:
 
@@ -255,8 +255,6 @@ This command will fail if the agent is not running in a second window, or if the
 
     This command initiates a test build. The output from the command should show the build number and other information about the build, such as its progress.
 
-    After you start a test build, [verify the build](#VerifyBuild).
-
 * If you started the server on a port other than 3000, use the following command instead to initiate a test build:
 
         remotebuild test –-server http://localhost:<portNumber>
@@ -285,7 +283,7 @@ If you see unexpected errors when trying to build the Blank App template after i
 
 4. Choose **Build**, **Clean Solution**, and then rebuild your project.
 
-   >**Tip:**
+    >**Tip:**
 If you have no errors, you do not need to re-install vs-tac. If you still have the same error, then re-install vs-tac.
 
 ### To re-install vs-tac
@@ -297,7 +295,7 @@ If you have no errors, you do not need to re-install vs-tac. If you still have t
         npm install -g <path-to-vs-tac>
 The default path to vs-tac is C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ApacheCordovaTools\packages\vs-tac
 
-3. Re-open Visual Studio. 5. Open your project, choose Build, Clean Solution, and then rebuild your project. If this does not resolve the issue, see the [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
+3. Re-open Visual Studio. 5. Open your project, choose Build, Clean Solution, and then rebuild your project. If this does not resolve the issue, see the [Known Issues](./known-issues/known-issues-general.md).
 
 ##Configure tools to work with a proxy
 If you are using Visual Studio behind a proxy, such as a corporate firewall, you may need to configure proxy settings for the npm package manager and for git before you can use Visual Studio Tools for Apache Cordova.

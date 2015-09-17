@@ -60,9 +60,11 @@ The file name of each resource provides some information about the asset. For ex
 
 The following table provides the complete list of splash screens and icons that are required if you need to support specific devices and screen resolutions. For additional information about these assets, see Icons and Splash Screens in the Apache Cordova documentation.
 
+
+
 | Icons and splash screens for Android |    Resolution    |
 |----------|:-------------:|
-|res/icons/android/icon-36-ldpi.png | 36x36 |
+| res/icons/android/icon-36-ldpi.png | 36x36 |
 |res/icons/android/icon-48-mdpi.png | 48x48 |
 |res/icons/android/icon-72-hdpi.png | 72x72 |
 |res/icons/android/icon-96-xhdpi.png | 96x96

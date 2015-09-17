@@ -20,23 +20,25 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 
 ## Create a blank project in Visual Studio 2015
 
-1. If you haven't already, [Install Visual Studio 2015] (http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
+1. If you haven't already, [Install Visual Studio 2015](http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
 
-  ![Install Cordova components](media/migrate-to-vs2015/install-cordova-components.png)
+    ![Install Cordova components](media/migrate-to-vs2015/install-cordova-components.png)
 
 2. Make sure your Visual Studio 2015 setup is correct by creating and running the default Blank App template.
      * In Visual Studio, choose **File**, **New**, **Project**, **JavaScript**, **Apache Cordova Apps**, **Blank App** and name the new project "blank".
 
-     > **Note** For TypeScript projects, you can use the TypeScript equivalent of this same project.
+        > **Note** For TypeScript projects, you can use the TypeScript equivalent of this same project.
 
      * Choose **Windows**, **Local Machine** and press F5 to run the app (make sure the app loads correctly). If any issues occur, see [Configure the Tools] (configure-vs-tools-apache-cordova.md) or [Read up on additional known issues](../cordova-docs-readme.md).
 
 ## Update your existing project
 1. Make a backup of your existing project (obligatory first step :))
+
 2. In Windows, open the folder where you created the Blank App project (which you named "blank" in the previous steps).
+
 3. Copy `blank.jsproj` and `taco.json` from this folder to your existing project folder.
 
-  ![Updating the project files](media/migrate-to-vs2015/adding-vs2015-project-files.png)
+    ![Updating the project files](media/migrate-to-vs2015/adding-vs2015-project-files.png)
 
 4. Delete the older `.jsproj` file and, optionally, rename `blank.jsproj` to re-use the old name.
 
@@ -51,14 +53,14 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 	 * config.xml
 8. Copy all other files and folders, including index.html, into the new `www` folder.
 
-  ![Updated VS 2015 project](media/migrate-to-vs2015/vs-2015-project-structure.png)
+    ![Updated VS 2015 project](media/migrate-to-vs2015/vs-2015-project-structure.png)
 
-  > **Note** If you're using TypeScript, you'll need to add a tsconfig.json to your project folder and define config settings for your project. See the [Configuring TypeScript](../getting-started/tutorial-typescript.md) section for details.
+    > **Note** If you're using TypeScript, you'll need to add a tsconfig.json to your project folder and define config settings for your project. See the [Configuring TypeScript](../getting-started/tutorial-typescript.md) section for details.
 10. Open the `.jsproj` file in Visual Studio 2015.
 
-  Here is what this example project looks like in Solution Explorer.
+    Here is what this example project looks like in Solution Explorer.
 
-  ![Updated VS 2015 project](media/migrate-to-vs2015/solution-explorer.png)
+    ![Updated VS 2015 project](media/migrate-to-vs2015/solution-explorer.png)
 
   Now you can build and run your application by pressing F5 with the desired platform and device selected.
 
@@ -69,20 +71,22 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 Next, you need to make sure that your icons and splash screens are picked up correctly in the updated project.
 
 1. In Visual Studio's Solution Explorer, open config.xml.
-2. From the config.xml shortcut menu, choose **View Code**.
-3. In config.xml, replace the platform section, such as the following:
 
-  ```
+3. From the config.xml shortcut menu, choose **View Code**.
+
+4. In config.xml, replace the platform section, such as the following:
+
+    ```
   <vs:platformSpecificValues>
   <vs:platformSpecificWidget platformName="windows" id="" version="0.0.0.0">
     <vs:name />
   </vs:platformSpecificWidget>
 </vs:platformSpecificValues>
-  ```
+    ```
 
-  with this xml:
+    with this xml:
 
-  ```
+     ```
   <platform name="android">
     <icon src="res/icons/android/icon-36-ldpi.png" density="ldpi" />
     <icon src="res/icons/android/icon-48-mdpi.png" density="mdpi" />
@@ -153,9 +157,9 @@ Next, you need to make sure that your icons and splash screens are picked up cor
   <platform name="wp8">
     <splash src="res/screens/wp8/SplashScreenImage.jpg" width="480" height="800"/>
   </platform>
-  ```
+     ```
 
-  Now, icons and splash screens should load correctly when you run the app!
+    Now, icons and splash screens should load correctly when you run the app!
 
 
 ----------
