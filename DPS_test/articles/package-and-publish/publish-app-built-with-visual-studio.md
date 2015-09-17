@@ -17,7 +17,7 @@
 
 To publish your app built using Visual Studio Tools for Apache Cordova, you can access the packages you build in the bin folder in the Visual Studio project directory. For more information about building packages, see [Package Your App Built with Visual Studio Tools for Apache Cordova](package-app-built-with-visual-studio.md).
 
-**Tip** For information on how to create packaging assets for Windows, iOS, and Android, see this [github documentation](./tutorial-package-publish/tutorial-package-publish-readme.md).
+> **Tip**: For information on how to create packaging assets for Windows, iOS, and Android, see this [github documentation](./tutorial-package-publish/tutorial-package-publish-readme.md).
 
 Instructions for uploading your app to the public app store vary by platform:
 
