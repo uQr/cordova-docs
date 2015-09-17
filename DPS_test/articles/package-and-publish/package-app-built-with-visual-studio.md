@@ -17,7 +17,7 @@
 
 When you package the app you created using Visual Studio Tools for Apache Cordova, you’ll want to configure the settings required for publishing your app. In addition to general settings, there are also platform-specific steps required in most cases.
 
-For a tutorial that walks you through the packaging and publishing process, see [Package and publish your Cordova applications](https://github.com/Microsoft/cordova-docs/blob/master/tutorial-package-publish).
+For a tutorial that walks you through the packaging and publishing process, see [Walkthrough: Package and publish your app](./tutorial-package-publish/tutorial-package-publish-readme.md).
 
 ## <a id="Build"></a>Configure build settings
 
@@ -91,7 +91,7 @@ To generate a package that can be used on an iOS device, you need to sign it by 
 
     *   When building a Release configuration, by default the Visual Studio remote agent selects the first valid iOS Distribution signing identity installed on your Mac.
 
-    **Important** Make sure that your Mac has the appropriate provisioning profile that corresponds to the configuration you choose. For detailed information, read the  in the iOS Developer Library.[Maintaining Your Signing Identities and Certificates](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html)
+    **Important** Make sure that your Mac has the appropriate provisioning profile that corresponds to the configuration you choose. For detailed information, read the  in the iOS Developer Library, [Maintaining Your Signing Identities and Certificates](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html).
 
     **Note** A signing identity is valid if the provisioning profile identifier matches the package ID specified in the Visual Studio configuration designer. For example, a provisioning profile of `com.msft.multidevice.*` matches a package ID of <span class="code">com.msft.multidevice.someName</span>. In many cases, you can use a wildcard provisioning profile that matches all package IDs, in which case validity isn’t a concern.
 
@@ -117,7 +117,7 @@ To generate a package that can be used on an iOS device, you need to sign it by 
 
 Visual Studio provides built-in features to package Windows 8, Windows 8.1, and Windows Phone 8.1 apps for distribution. These packages are APPX packages.
 
-**Caution** The AppxManifest may not get updated correctly when you do create a Store association. This may result in an error when publishing an app to the Store. Additionally, the Config Designer does not currently provide a method to create APPX bundles. See [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782) for workarounds to these common issues.
+**Caution** The AppxManifest may not get updated correctly when you do create a Store association. This may result in an error when publishing an app to the Store. Additionally, the Config Designer does not currently provide a method to create APPX bundles. See [Known Issues](../known-issues/known-issues-windows.md) for workarounds to these common issues.
 
 ### To sign a Windows 8, Windows 8.1, or Windows Phone 8.1 app for distribution
 

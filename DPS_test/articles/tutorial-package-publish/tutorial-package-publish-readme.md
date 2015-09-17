@@ -1,5 +1,5 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
+<properties pageTitle="Walkthrough: Package and publish your app | Cordova" 
+  description="description" 
   services="" 
   documentationCenter=""
   authors="bursteg" />
@@ -9,7 +9,7 @@ Using Visual Studio tools for Apache Cordova, you can build hybrid applications 
 
 Here is step by step tutorial on how to go about it.
 
-### Windows:
+## Windows:
 Once you are ready to package your application, using the solution platforms dropdown, change the platform to the specific Windows platform that matches the platform you are targeting as shown in the figure below:
 ![Windows: Debug targets](media/tutorial-package-publish-readme/windows_target.png)
 
@@ -23,10 +23,13 @@ The wizard guides you through a workflow that is similar to the workflow for cre
 
 **Note:**
 - Cordova generates a XAP package for Windows Phone 8 platform and hence ‘Create App Packages’ option is disabled if you choose Windows Phone 8 as target platform.
+
 - Visual Studio creates a test certificate under the res\native\windows folder when the project is created, but you can also use an existing certificate to sign your package by replacing the default certificate with yours.
+
 - The final APPX resides in the <ProjectRoot>\AppPackages folder.
 
-### Android:
+
+## Android:
 Once you are ready to package your application for android, change the platform to the android platform, the build configuration to release and select ‘device’ as debug target as shown in the figure below:
 ![Android: Debug Target](media/tutorial-package-publish-readme/android_debug.png)
 
@@ -100,16 +103,16 @@ Running the above command, prompts you for passwords for the keystore and key, a
 
 After you have edited the appropriate file with the keystore information, building the app for release configuration, results in a release signed APK package at <ProjectRoot>\bin\Android\Release. Once your app is ready for publishing, you can upload this app on Google play by signing into your [Google play developer console](https://play.google.com/apps/publish/). Please refer to [Launch Checklist for Google Play](http://developer.android.com/distribute/tools/launch-checklist.html) for successful publication of you app.
 
-### iOS:
+## iOS:
 
-Since you cannot build iOS packages on windows platform, you have to install and run remote build agent on a Mac machine. [Here](https://msdn.microsoft.com/en-us/library/dn771551.aspx) are the instructions on how to setup your Mac machine for iOS builds.
+Since you cannot build iOS packages on windows platform, you have to install and run remote build agent on a Mac machine. [Here](./getting-started/configure-vs-tools-apache-cordova.md#IosConfig) are the instructions on how to setup your Mac machine for iOS builds.
 
 Once you have installed the remote build agent, you need to setup the machine with proper certificates and provisioning profiles for code signing, so that the build can generate signed IPA packages. Code signing your app lets users trust that your app has been created by a source known to Apple and that it hasn’t been tampered with. All iOS apps and most Mac apps must be code signed and provisioned to launch on a device, to be distributed for testing, or to be submitted to the store. A development certificate identifies you, as a team member, in a development provisioning profile that allows apps signed by you to launch on devices. A distribution certificate identifies your team or organization in a distribution provisioning profile and allows you to submit your app to the store.
 
 You need developer certificate and a developer provisioning profile to install, launch and debug your application on a device (through VS). Distribution certificate and a matching distribution profile is required for store publication. Here is the process to create and install distribution certificates and matching provisioning profiles which will allow you to publish your package to Apple app store.
 
 
-#### Generating distribution certificate:
+### Generating distribution certificate:
 1. In a browser, go to [Apple Dev Portal](https://developer.apple.com).
 
 2. Choose **Member Center** and login with your developer account credentials.
@@ -134,7 +137,7 @@ The certificate will download into your **downloads** folder & double-clicking t
 ![ios: Using CSR](media/tutorial-package-publish-readme/ios-disCertLoc.png)
 
 
-##### The process of generating Certificate Signing Request (CSR) [step 6, above] is as follows:
+#### The process of generating Certificate Signing Request (CSR) [step 6, above] is as follows:
 In order for you to generate a certificate you must request a certificate using keychain access.
 - Launch **Keychain Access**. Keychain Access is located in Macintosh HD/Applications/Utilities -
 ![ios: KeyChain](media/tutorial-package-publish-readme/ios-keyChain.png)
@@ -151,7 +154,7 @@ Now you can go back to the distribution certificate section still active in your
 
 ![ios: Using CSR](media/tutorial-package-publish-readme/ios-usecsr.png)
 
-#### Generating distribution provisioning profile:
+### Generating distribution provisioning profile:
 1. In a browser, go to [Apple Dev Portal](https://developer.apple.com).
 
 2. Choose **Member Center** and login with your developer account credentials.
@@ -175,10 +178,10 @@ Now you can go back to the distribution certificate section still active in your
 8. Double-click that file to install it and then add it to the **Code signing section of *Build Settings* for Xcode**.
 ![ios: XCode, build settings](media/tutorial-package-publish-readme/ios-xcodeBuildSettings.png)
 
-	###### 	Add Provisioning Profile
+	##### 	Add Provisioning Profile
 ![ios: XCode, build settings](media/tutorial-package-publish-readme/ios-xcodepro.png)
 
-	###### 	Add Distribution Certificate
+	##### 	Add Distribution Certificate
 ![ios: XCode, build settings](media/tutorial-package-publish-readme/ios-xcodecer.png)
 
 **Note:** While creating developer provisioning profile [after step 6], you will have to select the devices you wish to include in this provisioning profile. To install an app signed with this profile on a device, the device must be included.
@@ -202,17 +205,11 @@ To **submit** your application to the store
 1. Fill out the Export compliance form.
 
 Your app should now be in a *Waiting for upload* state. Complete the rest of the process with the Application Loader utility.  **Note:** The Application Loader utility is available only for Mac OS X 10.5.3 or later. In Windows, you can run Mac OS X inside a virtual machine. Here's how you use it:
+
 - Unzip the app IPA file (change the extension to .zip).
+
 - Locate the APP file within the Payload folder and compress the APP file to create a new ZIP archive.
+
 - Use the Application Loader to upload the compressed APP file to iTunes Connect.
 
 The Manage Your Apps page of iTunes Connect should now list an updated status for your application. See the [iTunes Connect Developer Guide](http://itunesconnect.apple.com/docs/iTunesConnect_DeveloperGuide.pdf), available from the iTunes Connect website, for information about the application statuses.
-
-## More Information
-* [Read tutorials and learn about tips, tricks, and known issues](../cordova-docs-readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto:/vscordovatools@microsoft.com)
