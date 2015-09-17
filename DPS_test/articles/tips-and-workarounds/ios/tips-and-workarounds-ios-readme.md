@@ -1,17 +1,10 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
+<properties pageTitle="iOS and OSX Tips and Workarounds | Cordova" 
+  description="description" 
   services="" 
   documentationCenter=""
   authors="bursteg" />
 
 #iOS and OSX Tips and Workarounds
-This document covers tips, tricks, and known workarounds for problems with the Cordova iOS platform or when building from OSX.
-
-It covers the following issues:
-
-1. [Errors about missing header or library files after adding a 3rd party Cordova plugin when building for iOS](#symlink) 
-2. [Permission errors from "npm" when trying to build on the remote agent, a CI server, or the command line](#npm-cache)
-3. [Permission errors when building or executing a cordova command (plugin add) on OSX after checking in or copying the "platforms" folder from Windows](#osx-set-execute)
 
 <a name="symlink"></a>
 ##Errors About Missing Header or Library Files in Plugins
@@ -19,7 +12,7 @@ There are a small number of Cordova plugins that contain "custom framework" file
 
 To install it:
 
-1. Download [this hook-symlink-fix.js file](ios-plugin-symlink-fix) and drop it a "hooks" folder in your project root
+1. Download [this hook-symlink-fix.js](../tips-and-workarounds/ios/hook-symlink-fix.js) file and drop it a "hooks" folder in your project root
 2. Update config.xml with the following (using Right-Click > View Code):
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,7 +21,7 @@ To install it:
 
 3. Run a "Clean" operation in VS or remove the ios platform and re-add if you are using the command line.
 
-Alternativley you can install the [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) which encapsulates this functionality.
+Alternatively you can install the [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) which encapsulates this functionality.
 
 ##Permission Issues (EACCES Errors)
 <a name="npm-cache"></a>
@@ -69,14 +62,3 @@ To resolve this problem you have two options:
 	2. Commit / check these into source control.
     
 	3. Next time you build / run / add a plugin, the problem should be resolved.
-
-
-## More Information
-* [Read tutorials and learn about tips, tricks, and known issues](../../cordova-docs-readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto:/vscordovatools@microsoft.com)
-

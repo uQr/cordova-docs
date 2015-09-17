@@ -12,8 +12,7 @@ Cordova apps are web apps that run "inside" of native apps by using native "web 
 - The native code, in Objective-C/Swift, Java, or WinJS (Cordova plugin code)
 - The bridge between the native and web code (Cordova runtime code)
 
-Web App Domain
-==============
+## Optimizing web code, in JS, CSS, and HTML
 
 There are *very many* things that can be optimized in a web app. The Internet contains a wealth of information on the topic. Optimizations highly relevant to Cordova apps are given below, but afterward we have a list of links for more in-depth reading.
 
@@ -46,8 +45,7 @@ Below are some links for further reading on performance improvements in Cordova 
 - Christophe Coenraets' [PhoneGap Performance slides][coenraets]
 - Ryan Salva's [Cordova Performance presentation][salva]
 
-Native App Domain
-=================
+## Improving native code, in Objective-C/Swift, Java, or WinJS (Cordova plugin code)
 
 In a Cordova app, all code that will usually be written is in JS, CSS, and HTML. However, the source for native Cordova components (like the plugins and the runtime) is open, and it is within the power of an app developer to change it. Optimizing platform-specific code is outside the scope of this document, but many guides are available online for each platform supported by Cordova. They are as follows:
 
@@ -59,8 +57,7 @@ In a Cordova app, all code that will usually be written is in JS, CSS, and HTML.
 - [WinJS] [perf_winjs]
 - Browsers: [Chrome][perf_chrome], [Firefox][perf_firefox], [Safari][perf_safari], [Opera][perf_opera]
 
-Web-to-Native Bridge
-====================
+## Navigating the Web-to-Native Bridge (Cordova runtime code)
 
 Between the web code and native code is the Cordova runtime JavaScript and native code, which is also freely available and can be modified by any developer through the same process as is used to modify plugins. All Cordova repositories are available on GitHub under the [Apache organization][cordova_repos], prefixed with the string `cordova-`.
 
