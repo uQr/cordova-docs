@@ -1,14 +1,15 @@
-<properties pageTitle="Bower Tutorial" 
+<properties pageTitle="Known Issues - Visual Studio 2015" 
   description="This is an article on bower tutorial" 
   services="" 
   documentationCenter=""
   authors="bursteg" />
 
 #**Known Issues - Visual Studio 2015**
-This article covers [known issues](../cordova-docs-readme.md#knownissues) specific to Visual Studio Tools for Apache Cordova 2015. 
+This article covers known issues specific to Visual Studio Tools for Apache Cordova 2015. 
 
-----------
-**Project structure change from CTP3/3.1:** Projects created in an earlier version of Visual Studio will need to be migrated to support the new Cordova CLI based project structure in VS 2015 that is more interoperable with 3rd party tools and CLIs. 
+##**Project structure change from CTP3/3.1** 
+
+Projects created in an earlier version of Visual Studio will need to be migrated to support the new Cordova CLI based project structure in VS 2015 that is more interoperable with 3rd party tools and CLIs. 
 
 To migrate your previous projects to the new structure:
 
@@ -152,7 +153,7 @@ To install updated plugins, follow [this proceedure to install a npm sourced plu
 - plugins/remote_ios.json
 - plugins/wp8.json.
 
-Remove these files from source control if you are not checking in the "platforms" folder (reccomended). For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#l#missingexclude) for additional details.
+Remove these files from source control if you are not checking in the "platforms" folder (reccomended). For local copies, you can either fetch a fresh copy from source control or remove the above files along with platforms found in the "platforms" folder to resolve the issue. See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#missingexclude) for additional details.
 
 ----------
 **Plugin with variables not working:** Due to a Cordova issue with Cordova 4.3.0 and a bug in VS 2015 RC, you can run into problems with plugin variables in Cordova < 5.0.0. Plugin variable information is lost if you install the "plugin" before the "platform" which can happen depending on your workflow. They do, however, function in Cordova 5.1.1 which you can use with VS 2015 RC. To update to 5.1.1 and use plugin variables, you will need to update your VS project and use the command line.
@@ -174,13 +175,3 @@ Remove these files from source control if you are not checking in the "platforms
 ##Visual Studio 2015 CTP6
 ----------
 **Ant uninstalled when upgrading from CTP5 to CTP6:** When you upgrade from VS2015 CTP5 to CTP6, Apache Ant gets uninstalled. The workaround is to reinstall Ant. You can find manual instructions for installing and configuring Ant at [this location](https://msdn.microsoft.com/en-us/library/dn757054.aspx#InstallTools).
-
-----------
-## More Information
-* [Read up on additional known issues, tips, tricks, and tutorials](../cordova-docs-readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto://multidevicehybridapp@microsoft.com)

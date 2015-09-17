@@ -5,7 +5,7 @@
   authors="bursteg" />
 
 #**Known Issues - Plugins Installation**
-This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova and installing plugins.
+This article covers known issues related to Visual Studio Tools for Apache Cordova and installing plugins.
 
 
 
@@ -55,7 +55,13 @@ npm config set registry http://registry.npmjs.org
 
 
 ##**Errors from npm related to permission problems**
-If you installed Visual Studio or Node.js running as an administrator, you can run into problems where npm attempts to install npm packages under "C:\Program Files (x86)\node.js". You will typically see errors in the Output Window similar to this one: "npm ERR! error rolling back error : EPERM, unlink 'C:\Program Files (x86)\nodejs\vs-tac-cli.cmd'". To resolve this issue you can re-install Node.js or reconfigured npm using these commands from the command prompt and restarting Visual Studio:
+If you installed Visual Studio or Node.js running as an administrator, you can run into problems where npm attempts to install npm packages under "C:\Program Files (x86)\node.js". You will typically see errors in the Output Window similar to this one:
+
+~~~~~~~~~~~~~~~~~~~~~~~
+npm ERR! error rolling back error : EPERM, unlink 'C:\Program Files (x86)\nodejs\vs-tac-cli.cmd'
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To resolve this issue you can re-install Node.js or reconfigured npm using these commands from the command prompt and restarting Visual Studio:
 
 ~~~~~~~~~~~~~~~~~~~~~~~
 npm config set prefix %APPDATA%\npm
@@ -63,13 +69,3 @@ npm config set cache %APPDATA%\npm-cache
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 
-----------
-## More Information
-* [Read up on additional known issues](../cordova-docs-readme.md#knownissues)
-* [Read up on additional tips, tricks, and tutorials](../cordova-docs-readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto://multidevicehybridapp@microsoft.com)
