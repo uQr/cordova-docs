@@ -27,7 +27,8 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 2. Make sure your Visual Studio 2015 setup is correct by creating and running the default Blank App template.
      * In Visual Studio, choose **File**, **New**, **Project**, **JavaScript**, **Apache Cordova Apps**, **Blank App** and name the new project "blank".
 
-     **Note** For TypeScript projects, you can use the TypeScript equivalent of this same project.
+     > **Note** For TypeScript projects, you can use the TypeScript equivalent of this same project.
+     
      * Choose **Windows**, **Local Machine** and press F5 to run the app (make sure the app loads correctly). If any issues occur, see [Configure the Tools] (configure-vs-tools-apache-cordova.md) or [Read up on additional known issues](../cordova-docs-readme.md).
 
 ## Update your existing project
