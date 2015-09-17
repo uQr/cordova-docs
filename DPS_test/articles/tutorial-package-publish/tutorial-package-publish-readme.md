@@ -21,12 +21,13 @@ The wizard guides you through a workflow that is similar to the workflow for cre
 
 ![Windows: Resources](media/tutorial-package-publish-readme/windows_assets.png)
 
-**Note:**
-- Cordova generates a XAP package for Windows Phone 8 platform and hence ‘Create App Packages’ option is disabled if you choose Windows Phone 8 as target platform.
+> **Note**:
 
-- Visual Studio creates a test certificate under the res\native\windows folder when the project is created, but you can also use an existing certificate to sign your package by replacing the default certificate with yours.
+> * Cordova generates a XAP package for Windows Phone 8 platform and hence ‘Create App Packages’ option is disabled if you choose Windows Phone 8 as target platform.
 
-- The final APPX resides in the <ProjectRoot>\AppPackages folder.
+> * Visual Studio creates a test certificate under the res\native\windows folder when the project is created, but you can also use an existing certificate to sign your package by replacing the default certificate with yours.
+
+> * The final APPX resides in the <ProjectRoot>\AppPackages folder.
 
 
 ## Android:
@@ -139,16 +140,17 @@ The certificate will download into your **downloads** folder & double-clicking t
 
 #### The process of generating Certificate Signing Request (CSR) [step 6, above] is as follows:
 In order for you to generate a certificate you must request a certificate using keychain access.
-- Launch **Keychain Access**. Keychain Access is located in Macintosh HD/Applications/Utilities -
+
+* Launch **Keychain Access**. Keychain Access is located in Macintosh HD/Applications/Utilities.
 ![ios: KeyChain](media/tutorial-package-publish-readme/ios-keyChain.png)
 
-- Once Keychain Access is launched, choose Keychain Access > Certificate Assistant >Request a Certificate from a Certificate Authority.
+* Once Keychain Access is launched, choose Keychain Access > Certificate Assistant >Request a Certificate from a Certificate Authority.
 ![ios: Request CSR](media/tutorial-package-publish-readme/ios-reqcsr.png)
 
-- Enter your Apple Developer Account email address, Common Name (your name),CA (Certificate Assistant) [optional] & Choose: Request is **Saved to disk**.
+* Enter your Apple Developer Account email address, Common Name (your name),CA (Certificate Assistant) [optional] & Choose: Request is **Saved to disk**.
 ![ios: Request CSR Information](media/tutorial-package-publish-readme/ios-csrInfo.png)
 
-- Choose **Continue**, save the file to your hard drive and choose **Done**.
+* Choose **Continue**, save the file to your hard drive and choose **Done**.
 
 Now you can go back to the distribution certificate section still active in your browser [step 7, above] and choose **Choose File**.
 
@@ -204,12 +206,14 @@ To **submit** your application to the store
 1. Back on the Manage Your Apps page, select the app description you just created and click the Ready to Upload Binary button.
 1. Fill out the Export compliance form.
 
-Your app should now be in a *Waiting for upload* state. Complete the rest of the process with the Application Loader utility.  **Note:** The Application Loader utility is available only for Mac OS X 10.5.3 or later. In Windows, you can run Mac OS X inside a virtual machine. Here's how you use it:
+Your app should now be in a *Waiting for upload* state. Complete the rest of the process with the Application Loader utility.  
 
-- Unzip the app IPA file (change the extension to .zip).
+> **Note:** The Application Loader utility is available only for Mac OS X 10.5.3 or later. In Windows, you can run Mac OS X inside a virtual machine. Here's how you use it:
 
-- Locate the APP file within the Payload folder and compress the APP file to create a new ZIP archive.
+>* Unzip the app IPA file (change the extension to .zip).
 
-- Use the Application Loader to upload the compressed APP file to iTunes Connect.
+>* Locate the APP file within the Payload folder and compress the APP file to create a new ZIP archive.
+
+>* Use the Application Loader to upload the compressed APP file to iTunes Connect.
 
 The Manage Your Apps page of iTunes Connect should now list an updated status for your application. See the [iTunes Connect Developer Guide](http://itunesconnect.apple.com/docs/iTunesConnect_DeveloperGuide.pdf), available from the iTunes Connect website, for information about the application statuses.
