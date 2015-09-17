@@ -1,10 +1,10 @@
 <properties pageTitle="Build Cordova apps in a Team / Continuous Integration (CI) environment"
-  description="Build Cordova apps in a Team / Continuous Integration (CI) environment" 
+  description="Build Cordova apps in a Team / Continuous Integration (CI) environment"
   services=""
   documentationCenter=""
   authors="bursteg" />
 
-#Build Cordova apps in a Team / Continuous Integration (CI) environment
+# Build Cordova apps in a Team / Continuous Integration (CI) environment
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 
 With the release of Visual Studio 2015, you now have a number of options for how you can integrate Cordova apps with your favorite team / continuous integration (CI) server thanks to the fact that projects created in Visual Studio are standard [Apache Cordova Command Line Interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects.
@@ -85,6 +85,5 @@ The following articles also provide some additional details and troubleshooting 
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
