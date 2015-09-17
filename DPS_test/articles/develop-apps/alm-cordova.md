@@ -21,6 +21,24 @@ Developing apps for modern platforms involves many more activities than just wri
 Visual Studio, Visual Studio Online, and Team Foundation Server provide a variety of DevOps capabilities (also referred to as application lifecycle management or ALM), a number of which are applicable to Cordova apps. Tools that are designed for .NET languages like C#, however, do not apply to JavaScript code. Other tools require tight integration with build and runtime environments. Because Cordova apps on Windows run as native apps, you’re able to use a variety of Visual Studio’s diagnostic tools such as performance profilers that are not available on non-Windows platforms.
 
 The table below identifies which Visual Studio ALM features you can expect to work well with an Apache Cordova project, and which ones have limitations. Refer to the linked documentation for details on the features themselves.
+
+<style>
+
+    table, th, td {
+
+        border: 1px solid black;
+
+        border-collapse: collapse;
+
+    }
+
+    th, td {
+
+        padding: 5px;
+
+    }
+
+</style>
 <table>
               <tbody><tr>
                 <th>
