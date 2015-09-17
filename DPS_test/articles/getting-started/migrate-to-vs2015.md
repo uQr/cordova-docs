@@ -33,11 +33,11 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 ## Update your existing project
 1. Make a backup of your existing project (obligatory first step :))
 2. In Windows, open the folder where you created the Blank App project (which you named "blank" in the previous steps).
-3. Copy blank.jsproj and taco.json from this folder to your existing project folder.
+3. Copy `blank.jsproj` and `taco.json` from this folder to your existing project folder.
 
   ![Updating the project files](media/migrate-to-vs2015/adding-vs2015-project-files.png)
 
-4. Delete the older .jsproj file and, optionally, rename blank.jsproj to re-use the old name.
+4. Delete the older `.jsproj` file and, optionally, rename `blank.jsproj` to re-use the old name.
 
 5. In your older project, create a new folder named **www** in the same location as the `res` folder and `config.xml`.
 6. In your existing project, delete the following folders:
@@ -50,16 +50,18 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 	 * config.xml
 8. Copy all other files and folders, including index.html, into the new `www` folder.
 
-  Here is an example of what your updated project structure should look like.
-
   ![Updated VS 2015 project](media/migrate-to-vs2015/vs-2015-project-structure.png)
 
-9. If you're using TypeScript, you'll need to add a tsconfig.json to your project folder and define config settings for your project. See the [Configuring TypeScript](../getting-started/tutorial-typescript.md) section for details.
-10. Open the .jsproj file in Visual Studio 2015.
+  > **Note** If you're using TypeScript, you'll need to add a tsconfig.json to your project folder and define config settings for your project. See the [Configuring TypeScript](../getting-started/tutorial-typescript.md) section for details.
+10. Open the ``.jsproj` file in Visual Studio 2015.
 
-  Now you can build and run your application by pressing F5 with the desired deployment target selected.
+  Here is what this example project looks like in Solution Explorer.
 
-  If you have errors, you may need to update file references to reflect the new folder structure.
+  ![Updated VS 2015 project](media/migrate-to-vs2015/solution-explorer.png)
+
+  Now you can build and run your application by pressing F5 with the desired platform and device selected.
+
+  > **Note** If you have errors, you may need to update file references to reflect the new folder structure.
 
 ## Update Configl.xml
 
@@ -152,6 +154,7 @@ Next, you need to make sure that your icons and splash screens are picked up cor
   </platform>
   ```
 
+  Now, icons and splash screens should load correctly when you run the app!
 
 
 ----------
