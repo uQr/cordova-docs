@@ -28,7 +28,7 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
      * In Visual Studio, choose **File**, **New**, **Project**, **JavaScript**, **Apache Cordova Apps**, **Blank App** and name the new project "blank".
 
      > **Note** For TypeScript projects, you can use the TypeScript equivalent of this same project.
-     
+
      * Choose **Windows**, **Local Machine** and press F5 to run the app (make sure the app loads correctly). If any issues occur, see [Configure the Tools] (configure-vs-tools-apache-cordova.md) or [Read up on additional known issues](../cordova-docs-readme.md).
 
 ## Update your existing project
@@ -54,7 +54,7 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
   ![Updated VS 2015 project](media/migrate-to-vs2015/vs-2015-project-structure.png)
 
   > **Note** If you're using TypeScript, you'll need to add a tsconfig.json to your project folder and define config settings for your project. See the [Configuring TypeScript](../getting-started/tutorial-typescript.md) section for details.
-10. Open the ``.jsproj` file in Visual Studio 2015.
+10. Open the `.jsproj` file in Visual Studio 2015.
 
   Here is what this example project looks like in Solution Explorer.
 
