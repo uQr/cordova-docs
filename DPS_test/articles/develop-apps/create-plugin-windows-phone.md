@@ -60,22 +60,21 @@ You start by creating the following folder and file structure. While this is not
 
 10.  In the **ToUpperPlugin** folder, add an empty xml file, **plugin.xml**.
 
-You now have the files you need for the plugin:
+    You now have the files you need for the plugin:
 
-*   **ToUpperPlugin\plugin.xml**
+  *   **ToUpperPlugin\plugin.xml**
 
-*   **ToUpperPlugin\src\wp\ToUpperPlugin.cs**
+  *   **ToUpperPlugin\src\wp\ToUpperPlugin.cs**
 
-*   **ToUpperPlugin\src\windows\ToUpperPluginProxy.cs**
+  *   **ToUpperPlugin\src\windows\ToUpperPluginProxy.cs**
 
-*   **ToUpperPlugin\www\ToUpperPlugin.js**
+  *   **ToUpperPlugin\www\ToUpperPlugin.js**
 
 ### Add the plugin method for Windows Phone 8
 
 The native code for the Windows 8 platform is written in C#. Add the following code to the **ToUpperPlugin.cs** file:
 
 ```C#
-// C#
 using System;
 
 namespace WPCordovaClassLib.Cordova.Commands
@@ -98,6 +97,7 @@ namespace WPCordovaClassLib.Cordova.Commands
         }
     }
 }
+
 ```
 
 The code in the **ToUpperPlugin.cs** is discussed in more detail in the [Creating a plugin method for Windows Phone 8](#CreatingMethod) section later in this tutorial.

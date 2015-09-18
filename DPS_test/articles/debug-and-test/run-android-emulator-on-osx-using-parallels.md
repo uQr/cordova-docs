@@ -40,17 +40,17 @@ Next, install and configure Java and the Android SDK.
 
 1. Download and install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html) for Mac. 2. Download the [Android SDK tools](http://developer.android.com/sdk/index.html) for Mac.
 
-   >**Note:**
-   You can choose the download under **Get the SDK for an existing IDE** if you don’t intend to use the Android IDE directly.
+  >**Note:** You can choose the download under **Get the SDK for an existing IDE** if you don’t intend to use the Android IDE directly.
 
 2. Unzip the Android tools.
 
    In this tutorial, we will assume you’ve unzipped it to your Documents folder (~/Documents/android-sdk-macosx).
 
-
 3. Open the Terminal app and type the following command:
 
-        ~/Documents/android-sdk-macosx/tools/tools/android
+  ```
+  ~/Documents/android-sdk-macosx/tools/tools/android
+  ```
 
 4. Deselect anything you do not want to install, but make sure the following are selected:
 
@@ -66,16 +66,17 @@ Next, install and configure Java and the Android SDK.
 
    1. In Finder, go to **Documents**, **android-sdk-macosx**, **extras**, **Intel**, and then **Hardware_Accelerated_Execution_Manager**.
 
-   2. Open IntelHAXM_x.x.x.dmg.
+   2. Open `IntelHAXM_x.x.x.dmg`.
 
-   3. Open the .mpkg file in the folder window that appears.
+   3. Open the `.mpkg` file in the folder window that appears.
 
    4. Follow the installation instructions.
 
-
 8. In the Terminal app, type:
 
-         ~/Documents/android-sdk-macosx/tools/android avd
+  ```
+  ~/Documents/android-sdk-macosx/tools/android avd
+  ```
 
 9. Create an AVD image, start it, and verify that it runs. Make sure to select the following options:
 
@@ -102,19 +103,19 @@ Next, start Parallels and configure Windows.
 
 3. In the preceding script, replace:
 
-  * “jondoe123” with your Mac user name
+  * `jondoe123` with your Mac user name
 
-  * “johnspassword” with your Mac password
+  * `johnspassword` with your Mac password
 
-  * “johnsmac.microsoft.com” with either the IP address or the host name of your Mac
+  * `johnsmac.microsoft.com` with either the IP address or the host name of your Mac
 
-4. For the second script, create another file in this same folder called “mac-script.sh” and copy the following script into the file:
+4. For the second script, create another file in this same folder called `mac-script.sh` and copy the following script into the file:
 
           #!/bin/sh
           ~/Documents/android-sdk-macosx/platform-tools/adb kill-server
           read -p "Press any key to terminate SSH tunnel" anykey
 
-5. In the preceding script, replace “~/Documents/android-sdk-macosx” with the location where you unzipped the Android SDK.
+5. In the preceding script, replace ``~/Documents/android-sdk-macosx` with the location where you unzipped the Android SDK.
 
 Windows is now configured and ready to go.
 
@@ -132,8 +133,8 @@ Follow these instructions each time you startup your Mac and Parallels.
 
 3. On Windows in Parallels, take the following steps:
 
-   1. Go to the location where you created connect-to-mac.cmd.
-   2. Open connect-to-mac.cmd.
+   1. Go to the location where you created `connect-to-mac.cmd`.
+   2. Open `connect-to-mac.cmd`.
    3. Leave the window open!
 
 After you do this, you should connect any attached Android devices to the Mac side not the Windows side if prompted by Parallels.

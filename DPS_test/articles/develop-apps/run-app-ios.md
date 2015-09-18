@@ -23,13 +23,13 @@ When you create app using Visual Studio Tools for Apache Cordova, you have sever
 
 *   [iOS device](#iOSDevice)</span>, which also requires installation and configuration of the [remote agent](../getting-started/install-vs-tools-apache-cordova.md#ios) when running from Visual Studio.
 
-If you run into errors building for iOS, see these [tips and workarounds](https://github.com/Microsoft/cordova-docs/tree/master/tips-and-workarounds/ios).
+If you run into errors building for iOS, see these [tips and workarounds](../tips-and-workarounds/tips-and-workarounds-readme.md).
 
 If you have configured your Mac as described in the article [Install tools for iOS](../getting-started/install-vs-tools-apache-cordova.md#ios), you can build and run your app on the iOS Simulator. The iOS Simulator runs on your Mac.
 
-**Note** We recommend that you use the iOS Simulator if you have a personal Mac or if you’re running Windows from a Mac using virtualization technology such as Parallels .
+>**Note**: We recommend that you use the iOS Simulator if you have a personal Mac or if you’re running Windows from a Mac using virtualization technology such as Parallels .
 
-### To run your app on the iOS Simulator
+### To run your app on the iOS Simulator <a name="iOSSimulator"></a>
 
 1.   Make sure that you have [installed the remote agent](../getting-started/install-vs-tools-apache-cordova.md#ios) on a Mac that meets all system requirements, and that you have started the remote agent.
 
@@ -50,7 +50,7 @@ If you have configured your Mac as described in the article [Install tools for i
 
 If you have configured the **remote build** agent on your Mac as described in the article [Install tools for iOS](../getting-started/install-vs-tools-apache-cordova.md#ios), you can build and run your app on an iOS device that is connected to your Mac or PC.
 
-### To run your app on an iOS device
+### To run your app on an iOS device <a name="iOSDevice"></a>
 
 1.  If you are running your app on a device that is connected to your Windows PC, make sure that you have installed iTunes on the PC.
 

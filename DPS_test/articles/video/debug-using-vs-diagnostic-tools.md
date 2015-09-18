@@ -101,7 +101,7 @@ $scope.addToDo = function () {
     Another critical tool to help debug Cordova apps is the JavaScript Console. You can also use the JavaScript Console window to read errors and messages sent from your running app, and also to evaluate lines of JavaScript code that run within the current script context.
 10. Look at the output in the JavaScript Console window to view messages.
 
-	**Note** For a list of commands such as `console.log`, see [JavaScript Console commands](https://msdn.microsoft.com/library/hh696634.aspx)
+	>**Note**: For a list of commands such as `console.log`, see [JavaScript Console commands](https://msdn.microsoft.com/library/hh696634.aspx)
 
 11.  To evaluate JavaScript, type JavaScript code in the input box. For example, type "document." and you will see IntelliSense information for the document object for the current HTML page displayed in Ripple (Chrome).
 
@@ -111,4 +111,4 @@ $scope.addToDo = function () {
 
 12.  Press Enter to see the value of the document object in the console window.
 
-	**Tip** Set breakpoints in your code to get your app into the desired state, and then use the JavaScript Console to check variables and evaluate code.
+	>**Tip**: Set breakpoints in your code to get your app into the desired state, and then use the JavaScript Console to check variables and evaluate code.
