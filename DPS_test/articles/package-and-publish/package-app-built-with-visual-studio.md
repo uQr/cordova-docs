@@ -71,7 +71,7 @@ Each time you build your app for Android, a package is created. Extra steps are 
 
 If you accidentally delete the ant.properties file, create a new project and copy the file from your new project to the previous project.
 
-**Tip**: For information on how to create the packaging assets for Android, see the [Android section in the walkthrough on packaging](../tutorial-package-publish/tutorial-package-publish-readme.md#android).
+> **Tip**: For information on how to create the packaging assets for Android, see the [Android section in the walkthrough on packaging](../tutorial-package-publish/tutorial-package-publish-readme.md#android).
 
 ## <a id="iOS">Package and sign an iOS app
 

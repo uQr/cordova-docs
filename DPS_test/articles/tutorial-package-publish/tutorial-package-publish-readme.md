@@ -186,7 +186,7 @@ Now you can go back to the distribution certificate section still active in your
 	##### 	Add Distribution Certificate
 ![ios: XCode, build settings](media/tutorial-package-publish-readme/ios-xcodecer.png)
 
-**Note:** While creating developer provisioning profile [after step 6], you will have to select the devices you wish to include in this provisioning profile. To install an app signed with this profile on a device, the device must be included.
+> **Note:** While creating developer provisioning profile [after step 6], you will have to select the devices you wish to include in this provisioning profile. To install an app signed with this profile on a device, the device must be included.
 ![ios: Developer profile, Choosing devices](media/tutorial-package-publish-readme/ios-proDev.png)
 
 Once you have installed the distribution certificates and the matching provisioning profiles in the XCode’s build settings on the remote agent, you are now ready to build a release package for iOS from VS. On your host Windows machine, in VS, change the platform to *iOS*, build configuration to *Release* and target to *Remote (or Local) Device*, as shown below:

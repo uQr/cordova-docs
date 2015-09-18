@@ -113,7 +113,7 @@ You can develop apps by using the Office 365 APIs to access services such as ema
 
 2.  In Visual Studio, open Services Manager, and then choose **Office 365 APIs**.
 
- **Tip** If you don't see the Office 365 APIs in the Services Manager after installing them, close and reopen Visual Studio.
+    > **Tip** If you don't see the Office 365 APIs in the Services Manager after installing them, close and reopen Visual Studio.
 
 3.  If this is the first time you’re adding the service in Visual Studio, you might be asked to sign in to your Office 365 developer account. Choose **Sign in**.
 
@@ -124,4 +124,4 @@ You can develop apps by using the Office 365 APIs to access services such as ema
 ![Download the tools](media/add-connected-services/connected-service-download-link.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
 #### See Also
-[Get Started with Visual Studio Tools for Apache Cordova](../getting-started/get-started-vs-tools-apache-cordova.md)
+[Get Started with Visual Studio Tools for Apache Cordova](./getting-started/get-started-vs-tools-apache-cordova.md)

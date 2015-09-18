@@ -59,7 +59,7 @@ If not already installed, the following software will be selected by default:
 
 * Git CLI is required only if you need to manually add Git URIs for specific Cordova plug-ins.
 
-    > **Important:** When using Cordova 5.0.0+, you may need to add a **_JAVA_OPTIONS** environment variable that contains at least **-Xmx512M** to avoid out of memory issues when building Android. For more info, see the known issue [here](./known-issues/known-issues-android.md).
+    > **Important:** When using Cordova 5.0.0+, you may need to add a **_JAVA_OPTIONS** environment variable that contains at least **-Xmx512M** to avoid out of memory issues when building Android. For more info, see the known issue [here](./known-issues/known-issues-android.md#strongcould-not-create-the-java-virtual-machine-errorstrong-when-building-for-android-you-may-encounter-a-set-of-errors-in-the-errors-list-like-the-following).
 
 ### To install Visual Studio Tools for Apache Cordova
 1. Run the installer that you found in [Get the tools](#GetTools).
@@ -88,7 +88,7 @@ If not already installed, the following software will be selected by default:
 
     > **Note:** The first time you build an app after installing the tools, Visual Studio will download and install the Cordova tools. As a result, the first build takes extra time to complete. Check the Output window to see progress. If you see an error such as Cannot find module [modulename], you may need to clean the solution and rebuild. For more information, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
-    If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
+    If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md##strongproject-structure-change-from-ctp331strong).
 
 ## Install tools for iOS <a name="ios"></a>
 
@@ -157,7 +157,7 @@ If you updated your computer to a new version of Visual Studio, you must update 
 
     > **Note:** In Visual Studio 2013, the preceding command is vs-mda-remote.
 
-  This will start the agent with a default build directory of *~/.taco\_home/remote-builds/taco-remote/builds*. Additional configurations options for the agent are described in [Configure the remote agent](convert_cordova_phonegap.md#IosConfig).
+  This will start the agent with a default build directory of *~/.taco\_home/remote-builds/taco-remote/builds*. Additional configurations options for the agent are described in [Configure the remote agent](configure-vs-tools-apache-cordova.md#IosConfig).
 
   The first time you start the agent, you will be provided with the required information to configure the agent in Visual Studio, including the host, the port, and the security PIN.
 
@@ -207,7 +207,7 @@ If you updated your computer to a new version of Visual Studio, you must update 
 
   If secure mode is disabled, you can leave the **Security PIN** field blank when configuring the agent in Visual Studio.
 
-  The security PIN is for one-time use. If you need to pair a new client with the remotebuild server, see [Generate a new security PIN](convert_cordova_phonegap.md#IosPin).
+  The security PIN is for one-time use. If you need to pair a new client with the remotebuild server, see [Generate a new security PIN](configure-vs-tools-apache-cordova.md#IosPin).
 
 #### To stop the agent
 
@@ -217,19 +217,19 @@ If you updated your computer to a new version of Visual Studio, you must update 
 
 In some circumstances, additional steps may be required to update and configure the tools.
 
-* If you choose not to install one or more dependencies with Visual Studio Tools for Apache Cordova, you may need to [install the dependencies manually](convert_cordova_phonegap.md#ThirdParty)
+* If you choose not to install one or more dependencies with Visual Studio Tools for Apache Cordova, you may need to [install the dependencies manually](configure-vs-tools-apache-cordova.md#ThirdParty)
 
-* If you need to verify the path for a third-party dependency or if you have multiple versions of a dependency installed, see [Override system environment variables](convert_cordova_phonegap.md#env_var)
+* If you need to verify the path for a third-party dependency or if you have multiple versions of a dependency installed, see [Override system environment variables](configure-vs-tools-apache-cordova.md#env-var)
 
-* If you are running Visual Studio behind a proxy, see [Configure tools to work with a proxy](convert_cordova_phonegap.md#Proxy).
+* If you are running Visual Studio behind a proxy, see [Configure tools to work with a proxy](configure-vs-tools-apache-cordova.md#Proxy).
 
 * To use and configure the remotebuild agent for building iOS apps, see the following:
 
-    * [Generate a new security PIN](convert_cordova_phonegap.md#IosPin)
-    * [Configure the remote agent](convert_cordova_phonegap.md#IosConfig)
-    * [Generate a new server certificate](convert_cordova_phonegap.md#IosCert)
-    * [Verify the remote agent configuration](convert_cordova_phonegap.md#IosVerify)
+    * [Generate a new security PIN](configure-vs-tools-apache-cordova.md#IosPin)
+    * [Configure the remote agent](configure-vs-tools-apache-cordova.md#IosConfig)
+    * [Generate a new server certificate](configure-vs-tools-apache-cordova.md#IosCert)
+    * [Verify the remote agent configuration](configure-vs-tools-apache-cordova.md#IosVerify)
 
-* If you see unexpected errors when trying to build the Blank App template, see [Re-installing vs-tac](convert_cordova_phonegap.md#vstac).
+* If you see unexpected errors when trying to build the Blank App template, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
 ![Download the tools](media/install-vs-tools-apache-cordova/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)

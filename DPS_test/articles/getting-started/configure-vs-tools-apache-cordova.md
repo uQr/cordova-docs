@@ -19,7 +19,7 @@ You can download Visual Studio from the [Microsoft Download Center](http://go.mi
 
 * If you choose not to install one or more dependencies with Visual Studio Tools for Apache Cordova, you may need to [install the dependencies manually](#ThirdParty).
 
-* If you need to verify the path for a third-party dependency or if you have multiple versions of a dependency installed, see [Override system environment variables](#env_var).
+* If you need to verify the path for a third-party dependency or if you have multiple versions of a dependency installed, see [Override system environment variables](#env-var).
 
 * If you are running Visual Studio behind a proxy, see [Configure tools to work with a proxy](#Proxy).
 
@@ -40,7 +40,7 @@ You can download Visual Studio from the [Microsoft Download Center](http://go.mi
     >**Caution:**
   If you are migrating a project from an earlier version of Visual Studio, see this [migration information](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015) (github).
 
-* For other issues not listed here, see the [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
+* For other issues not listed here, see the [Known Issues](./known-issues/known-issues-general.md).
 
 ##<a name="ThirdParty"></a>Install dependencies manually
 If you choose not to install one or more dependencies with the extension, you can install them later manually.
@@ -69,7 +69,7 @@ Git command line tools 1.9.5 are installed by default. Unexpected failures may o
      * Add %ANT_HOME%\bin to the system path.
 
     >**Note:**
-If you need to set this environment variable manually, see [Override system environment variables](#env_var).
+If you need to set this environment variable manually, see [Override system environment variables](#env-var).
 * [32-bit Oracle Java 7](http://go.microsoft.com/fwlink/?LinkID=396871)
 
     * Set the JAVA_HOME environment variable to C:/Program Files/Java/jdk1.7.0_55
@@ -79,7 +79,7 @@ If you need to set this environment variable manually, see [Override system envi
     * To avoid out of memory issues, set a *JAVA_OPTIONS environment variable with at least -Xmx512M in it.
 
     >**Note:**
-If you need to set this environment variable manually, see [Override system environment variables](#env_var).
+If you need to set this environment variable manually, see [Override system environment variables](#env-var).
 * [Android SDK](http://go.microsoft.com/fwlink/?LinkID=396873) with the following SDK packages:
 
    * Android SDK Tools (latest version) * Android SDK Platform-tools (latest version)
@@ -124,7 +124,7 @@ If you need to set this environment variable manually, see [Override system envi
 
      Add this to the system path: %ADT_HOME%\tools;%ADT_HOME%\platform-tools
 
-     If you need to set this environment variable manually, see [Override system environment variables](#env_var).
+     If you need to set this environment variable manually, see [Override system environment variables](#env-var).
 
     >**Tip:**
 If you install the Android SDK to its default location on Windows, it gets installed to C:\Program Files (x86)\Android\android-sdk.

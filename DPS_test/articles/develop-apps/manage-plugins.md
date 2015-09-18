@@ -38,11 +38,11 @@ You can add a core Cordova plugin, or a custom plugin, by using Visual Studio. Y
 
    * To add a custom plugin, specify either Local or Git as the source, and then provide the location by browsing or specifying a Git repository, as indicated. For example, here is the repository for PushPlugin: https://github.com/phonegap-build/PushPlugin.git The following illustration shows selection of a core plugin in the configuration designer.
 
-   ![Adding a plugin](media/manage-plugins/IC795804.png)
+        ![Adding a plugin](media/manage-plugins/IC795804.png)
 
-   The following illustration shows how to add a custom plugin from a Git repository in the configuration designer.
+        The following illustration shows how to add a custom plugin from a Git repository in the configuration designer.
 
-   ![Cordova_Plugin_Custom](media/manage-plugins/IC795805.png)
+        ![Cordova_Plugin_Custom](media/manage-plugins/IC795805.png)
 
 3. When you add the plugin, Visual Studio also makes changes to your config.xml file. For more information about editing config.xml, see the [Cordova config.xml documentation](http://go.microsoft.com/fwlink/p/?LinkID=510632).
 
@@ -72,7 +72,7 @@ Occasionally you may need to install a specific version of a Cordova plugin that
 
 3. Add the following element to config.xml under the root widget element:
 
-          <vs:plugin name="org.apache.cordova.pluginname" version="0.1.1" />
+        <vs:plugin name="org.apache.cordova.pluginname" version="0.1.1" />
 
 and replace org.apache.cordova.pluginname with the correct ID, and replace 0.1.1 with the correct version. The plugin will be installed the next time you build the app.
 
@@ -82,15 +82,15 @@ You can add plugins using a Git URI or the local filesystem by using the Custom 
 
 When you are adding a plugin using the configuration designer, you can also specify plugin parameters in the UI. However, when adding a plugin not present in the configuration designer (by editing config.xml), you can also specify parameters by using some additional XML elements. For example, to configure the Facebook plugin, you can edit the following parameters in config.xml.
 
-      <vs:plugin name="com.phonegap.plugins.facebookconnect" version="0.8.1">
+    <vs:plugin name="com.phonegap.plugins.facebookconnect" version="0.8.1">
           <param name="APP_ID" value="12345678" />
           <param name="APP_NAME" value="My Facebook App" />
-      </vs:plugin>
+    </vs:plugin>
 
 This has the same result as running the following command from the command line (if you were not using Visual Studio):
 
-        cordova plugin add https://github/com/Wizcorp/phonegap-facebook-plugin.git
-        --variable APP_ID="12345678" –variable APP_NAME="My Facebook App"
+    cordova plugin add https://github/com/Wizcorp/phonegap-facebook-plugin.git
+       --variable APP_ID="12345678" –variable APP_NAME="My Facebook App"
 
 >**Important:**
 Cordova 4.3.1 and previous versions have a set of known issues that can prevent plugins with parameters from working properly. We recommend using Cordova 5.1.1 or later when using plugins that require parameters.
@@ -101,7 +101,7 @@ At times, the custom plugins in the Cordova registry might not meet all your app
 
 If you need to extend your app using a custom plugin, check the plugin registry first and use code that others have already written. If an existing plugin is close to what you need, download it, make improvements, and then submit those changes to the original author. This is a great way of giving back to the Cordova community and making it easier for others to solve similar problems. Install the custom plugin using the configuration designer. When the plugin.xml file is next to the www folder in the project folder tree, the required JavaScript files from the plugin’s www folder will be loaded automatically at runtime. You do not need to reference these files from an HTML file. You can also set breakpoints within these code files if needed. The build process also compiles any platform-specific files in the src folder.
 
-## List of plugins available in the configuration designer
+## <a id="List"></a>List of plugins available in the configuration designer
 
 The following plugins are available using the Config Designer:
 
