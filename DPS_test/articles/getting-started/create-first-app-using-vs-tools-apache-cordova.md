@@ -44,7 +44,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
   The project structure in Visual Studio 2015 is updated to support third-party CLIs, and to match the Cordova project structure. Visual Studio 2013 uses the deprecated project structure. We recommend that you create Cordova apps using Visual Studio 2015.
 
   >**Caution:**
-  If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
+  If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md#strongproject-structure-change-from-ctp331strong).
 
   The new Cordova project includes four top-level folders:
 
@@ -150,7 +150,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
  * Model-View-Controller (MVC) design patterns to help separate application concerns. [AngularJS](https://angularjs.org/) and [Backbone](http://backbonejs.org/) are just two popular examples of this.
 
- * UI controls and styles. A UI framework (or library) typically includes specific controls, such as a grid control, and sometimes CSS style sheets. For more info, see [Build a UI](#BuildUI).
+ * UI controls and styles. A UI framework (or library) typically includes specific controls, such as a grid control, and sometimes CSS style sheets. For more info, see the section below **Build a UI**.
 
  * Navigation model. Frameworks like AngularJS and open source [WinJS](https://github.com/winjs/winjs/), and other frameworks provide a single-page navigation model to help enable app-like behavior.
 
@@ -183,9 +183,9 @@ One of the most important features that Cordova provides is support for plugins 
 
 If your app is using Azure or Office365 services, see [Add Connected Services to App Built with Visual Studio Tools for Apache Cordova](./develop-apps/add-connected-services.md). A core plugin for Azure Mobile Services is available in the configuration designer in Visual Studio. For information on adding the Azure services in the task list sample app for Visual Studio Tools for Apache Cordova (AngularJS version), see [Create the ToDoList Sample App](create-to-do-list-app.md).
 
-To get started creating apps using Azure or O365 services with Cordova, see the following articles and blog posts. Azure
+To get started creating apps using Azure or O365 services with Cordova, see the following articles and blog posts:
 
-* [Try it now](http://azure.microsoft.com/pricing/free-trial/)
+* [Try a free trial of Azure](http://azure.microsoft.com/pricing/free-trial/)
 
 * Azure Tables (using Azure Mobile Services)
 
@@ -211,10 +211,3 @@ Platform-specific resources, like splash screens and store icons, are required t
 
 ![Download the tools](media/create-first-app-using-vs-tools-apache-cordova/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
 
-## See Also
-
-**Other Resources**
-
-[AngularJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398516)  
-[WinJS sample](http://go.microsoft.com/fwlink/p/?LinkID=39851)  
-[Backbone sample](http://go.microsoft.com/fwlink/p/?LinkID=398517)
