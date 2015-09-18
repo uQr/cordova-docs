@@ -23,21 +23,13 @@ Visual Studio, Visual Studio Online, and Team Foundation Server provide a variet
 The table below identifies which Visual Studio ALM features you can expect to work well with an Apache Cordova project, and which ones have limitations. Refer to the linked documentation for details on the features themselves.
 
 <style>
-
     table, th, td {
-
         border: 1px solid black;
-
         border-collapse: collapse;
-
     }
-
     th, td {
-
         padding: 5px;
-
     }
-
 </style>
 <table>
               <tbody><tr>
