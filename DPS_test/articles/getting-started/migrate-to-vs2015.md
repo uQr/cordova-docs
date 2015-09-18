@@ -29,7 +29,7 @@ The new project structure in Visual Studio 2015 makes Visual Studio much easier 
 
         > **Note** For TypeScript projects, you can use the TypeScript equivalent of this same project.
 
-     * Choose **Windows**, **Local Machine** and press F5 to run the app (make sure the app loads correctly). If any issues occur, see [Configure the Tools] (configure-vs-tools-apache-cordova.md) or [Read up on additional known issues](../cordova-docs-readme.md).
+     * Choose **Windows**, **Local Machine** and press F5 to run the app (make sure the app loads correctly). If any issues occur, see [Configure the Tools] (configure-vs-tools-apache-cordova.md) or [Read up on additional known issues](./known-issues/known-issues-general.md).
 
 ## Update your existing project
 1. Make a backup of your existing project (obligatory first step :))
