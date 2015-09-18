@@ -52,17 +52,17 @@ The main UI in the task list sample app consists of the following elements:
 When you first run the app, some of the attributes in the preceding code won’t do anything. For example, the AngularJS ng-model directive enables two-way data binding, and allows you to save the entered task when the addToDo() function runs. For the task list, we define a template using some nested elements that wrap several other elements. For example, the nested element shown here is used to display each task string.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      <div class="templateWrapper" ng-repeat="toDoItem in toDoCtrl.todos">
-       <div class="templateContainer">
-     <input class="templateTitle" ng-class="{crossedOut: toDoItem.done}" type="text"
+<div class="templateWrapper" ng-repeat="toDoItem in toDoCtrl.todos">
+  <div class="templateContainer">
+    <input class="templateTitle" ng-class="{crossedOut: toDoItem.done}" type="text"
         td-text-change="toDoCtrl.changeToDoText(toDoItem)" ng-model="toDoItem.text" />
-     <!—More list item HTML elements -->
-    </div>
-    <div class="templateBorder"></div>
-    </div>
+    <!—More list item HTML elements -->
+  </div>
+  <div class="templateBorder"></div>
+</div>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the preceding code, the AngularJS attribute, ng-repeat, allows you to define the top
+In the preceding code, the AngularJS attribute, **ng-repeat**, allows you to define the top
 element as a template to display task list items. Later, when you attach actual data and run the app, ng-repeat will add the child
 element (templateContainer) and its child elements to the DOM for each stored task list item.
 
@@ -110,9 +110,9 @@ Now, we will add the complete markup for index.html.
 
   When you add the AngularJS framework (in later steps), other AngularJS attributes specified in index.html will become meaningful, but for now they won’t have any effect when you run the app. Here are the other AngularJS attributes included in index.html:
 
-  * ng-app directive to specify the root node of an AngularJS app.
+  * **ng-app** directive to specify the root node of an AngularJS app.
 
-  * ng-controller to specify the AngularJS controller to support MVC.
+  * **ng-controller** to specify the AngularJS controller to support MVC.
 
 ### Add CSS style information
 
@@ -333,17 +333,17 @@ Now, we will add the complete markup for index.html.
   }
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can take a look at the empty task list in one of the emulators to verify that everything looks correct. In this step, you’ll run the AngularJSToDo list app on either Windows or on the Apache Ripple simulator, which have minimal setup requirements (although Ripple requires Chrome). If you prefer to test your app on another target, see the following topics: Run Your Apache Cordova App on Android, Configure the Visual Studio Tools for Apache Cordova, and Run Your Apache Cordova App on Windows Phone.
+You can take a look at the empty task list in one of the emulators to verify that everything looks correct. In this step, you’ll run the AngularJSToDo list app on either Windows or on the Apache Ripple simulator, which have minimal setup requirements (although Ripple requires Chrome). If you prefer to test your app on another target, see the following topics: [Run your app on Android](../develop-apps/run-app-apache.md), [Run your app on iOS](../develop-apps/run-app-ios.md), and [Run your app on Windows Phone](../develop-apps/run-app-windows-phone.md).
 
 ### To build and run the app
 
-1. Choose Windows-x64, Windows-x86, or Android from the Solution Platforms list.
+1. Choose **Windows-x64**, **Windows-x86**, or **Android** from the Solution Platforms list.
 
 2. If you chose the Android platform, choose one of the Ripple simulators, as shown here.
 
   ![Selecting the Ripple emulator](media/create-to-do-list-app/IC793846.png)
 
-   If you chose a Windows platform, you can run the app on the default deployment target, Local Machine.
+   If you chose a Windows platform, you can run the app on the default deployment target, **Local Machine**.
 3. Press F5 to start debugging, or Shift+F5 to start without debugging.
   The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators (with no actual data yet attached, and with some files missing at this stage).
 
@@ -353,7 +353,7 @@ You can take a look at the empty task list in one of the emulators to verify tha
 
   If you see an error such as Cannot find module [modulename], see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vsmda).
 
-  If you experience other problems, see [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782) and the [FAQ](http://go.microsoft.com/fwlink/p/?linkid=398476).
+  If you experience other problems, see [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
 
 ## <a id="AddAngularJS"></a>Add the AngularJS framework to your project
 
@@ -416,7 +416,7 @@ Now that you’ve verified your setup, you can create the AngularJSToDo app. The
 
 ## <a id="RegisterModules"></a>Register app modules
 
-In this section, you’ll register AngularJS app modules to help separate application concerns. Modules in this app include the data model (xPlat.services), the AngularJS controller (xPlat.controller), and AngularJS directives (xPlat.directives) to support data binding. To register the modules, use the angular.module function.
+In this section, you’ll register AngularJS app modules to help separate application concerns. Modules in this app include the data model (`xPlat.services`), the AngularJS controller (`xPlat.controller`), and AngularJS directives (`xPlat.directives`) to support data binding. To register the modules, use the `angular.module` function.
 
 ### To register angular modules
 
@@ -451,7 +451,7 @@ In this section, you’ll register AngularJS app modules to help separate applic
 
 ## <a id="DataModel"></a>Add the data model
 
-The data model is represented by the xPlat.services module, which you’ll implement in the files in the services folder. This code includes a service that provides local storage of task list items using HTML5 Web Storage (localStorage.js). In this initial implementation, the app also provides placeholder code for Bing Maps services, which can be implemented fully later on. The [complete sample app](http://go.microsoft.com/fwlink/?LinkID=398516) also uses Azure to store data.
+The data model is represented by the `xPlat.services` module, which you’ll implement in the files in the services folder. This code includes a service that provides local storage of task list items using HTML5 Web Storage (localStorage.js). In this initial implementation, the app also provides placeholder code for Bing Maps services, which can be implemented fully later on. The [complete sample app](http://go.microsoft.com/fwlink/?LinkID=398516) also uses Azure to store data.
 
 ### To add code for the data model
 * In the **services** folder, open storage.js and add the following code. In this code, we provide a generic way to add storage service. In the initial implementation, we add the localStorage service. Later, we will add an Azure service using this code.
@@ -476,222 +476,222 @@ The data model is represented by the xPlat.services module, which you’ll imple
   })();
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* In the **services** folder, open localStorage.js and add the following code. One thing to note here is the inclusion of the **q∗∗servicecomponentintheserviceproviderfunction.Thisobjectenablesasynchronousprogramming,sothatyoucancreateapromiseobjectusing∗∗ q.when**. Using the promise object, you can resolve the asynchronous operation when it has completed.
+* In the **services** folder, open localStorage.js and add the following code. One thing to note here is the inclusion of the **q** service component in the service provider function. This object enables asynchronous programming,so that you can create a promise object using `q.when`. Using the promise object, you can resolve the asynchronous operation when it has completed.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      (function () {
-          'use strict';
+  (function () {
+      'use strict';
 
-          angular.module('xPlat.services').service('localStorage', ['$q', '$window', 'guidGenerator', LocalStorage]);
+      angular.module('xPlat.services').service('localStorage', ['$q', '$window', 'guidGenerator', LocalStorage]);
 
-          /**
-           * Local storage service.
-           * @param {angular.Service} $q
-           * @param {angular.Service} $window
-           * @param {angular.Service} guidGenerator
-           * @constructor*/
-          function LocalStorage($q, $window, guidGenerator) {
-              this.$q = $q;
-              this.$window = $window;
-              this.guidGenerator = guidGenerator;
+      /**
+       * Local storage service.
+       * @param {angular.Service} $q
+       * @param {angular.Service} $window
+       * @param {angular.Service} guidGenerator
+       * @constructor*/
+      function LocalStorage($q, $window, guidGenerator) {
+          this.$q = $q;
+          this.$window = $window;
+          this.guidGenerator = guidGenerator;
+      }
+
+      /**
+       * Key for storing todo items locally.
+       * @type {string}
+       * @const*/
+      LocalStorage.prototype.LOCAL_STORAGE_KEY = 'toDoItems';
+
+      /**
+       * Load JSON data from the local storage.
+       * @return {Object} Todo items*/
+      LocalStorage.prototype.loadFromStorage = function () {
+          return angular.fromJson(this.$window.localStorage.getItem(this.LOCAL_STORAGE_KEY)) || [];
+      };
+
+      /**
+       * Save JSON data in the local storage.
+       * @params {Object} items Todo items*/
+      LocalStorage.prototype.saveToStorage = function (items) {
+          this.$window.localStorage.setItem(this.LOCAL_STORAGE_KEY, angular.toJson(items));
+      }
+
+      /**
+       * Retrieve all data from local storage*/
+      LocalStorage.prototype.getAll = function () {
+          return this.loadFromStorage();
+      };
+
+      /**
+       * Create a new todo to local storage.
+       * @param {string} text Text of the todo item.
+       * @param {string} address Address of the todo item*/
+      LocalStorage.prototype.create = function (text, address) {
+          var item = {
+              id: this.guidGenerator.get(),
+              text: text,
+              address: address,
+              done: false
+          }
+          var items = this.loadFromStorage();
+          items.push(item);
+
+          this.saveToStorage(items);
+          return this.$q.when(item);
+      };
+
+      /**
+       * Update an existing todo in local storage.
+       * @param {Object} item Todo item to modify*/
+      LocalStorage.prototype.update = function (item) {
+          var items = this.loadFromStorage();
+          for (var i = 0; i < items.length; i++) {
+              if (items[i].id === item.id) {
+                  items[i] = item;
+                  break;
+              }
           }
 
-          /**
-           * Key for storing todo items locally.
-           * @type {string}
-           * @const*/
-          LocalStorage.prototype.LOCAL_STORAGE_KEY = 'toDoItems';
+          this.saveToStorage(items);
+          return this.$q.when(item);
+      };
 
-          /**
-           * Load JSON data from the local storage.
-           * @return {Object} Todo items*/
-          LocalStorage.prototype.loadFromStorage = function () {
-              return angular.fromJson(this.$window.localStorage.getItem(this.LOCAL_STORAGE_KEY)) || [];
-          };
-
-          /**
-           * Save JSON data in the local storage.
-           * @params {Object} items Todo items*/
-          LocalStorage.prototype.saveToStorage = function (items) {
-              this.$window.localStorage.setItem(this.LOCAL_STORAGE_KEY, angular.toJson(items));
+      /**
+       * Remove a todo from local storage.
+       * @param {Object} item Todo item to remove from local storage*/
+      LocalStorage.prototype.del = function (item) {
+          var items = this.loadFromStorage();
+          for (var i = 0; i < items.length; i++) {
+              if (items[i].id === item.id) {
+                  items.splice(i, 1);
+                  break;
+              }
           }
 
-          /**
-           * Retrieve all data from local storage*/
-          LocalStorage.prototype.getAll = function () {
-              return this.loadFromStorage();
-          };
-
-          /**
-           * Create a new todo to local storage.
-           * @param {string} text Text of the todo item.
-           * @param {string} address Address of the todo item*/
-          LocalStorage.prototype.create = function (text, address) {
-              var item = {
-                  id: this.guidGenerator.get(),
-                  text: text,
-                  address: address,
-                  done: false
-              }
-              var items = this.loadFromStorage();
-              items.push(item);
-
-              this.saveToStorage(items);
-              return this.$q.when(item);
-          };
-
-          /**
-           * Update an existing todo in local storage.
-           * @param {Object} item Todo item to modify*/
-          LocalStorage.prototype.update = function (item) {
-              var items = this.loadFromStorage();
-              for (var i = 0; i < items.length; i++) {
-                  if (items[i].id === item.id) {
-                      items[i] = item;
-                      break;
-                  }
-              }
-
-              this.saveToStorage(items);
-              return this.$q.when(item);
-          };
-
-          /**
-           * Remove a todo from local storage.
-           * @param {Object} item Todo item to remove from local storage*/
-          LocalStorage.prototype.del = function (item) {
-              var items = this.loadFromStorage();
-              for (var i = 0; i < items.length; i++) {
-                  if (items[i].id === item.id) {
-                      items.splice(i, 1);
-                      break;
-                  }
-              }
-
-              this.saveToStorage(items);
-              return this.$q.when(item);
-          };
-      })();
+          this.saveToStorage(items);
+          return this.$q.when(item);
+      };
+  })();
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## <a id="ViewLogic"></a>Add the app’s view logic and implement data binding
 
-In this section, you’ll implement the AngularJS controller module (xPlat.controllers) to handle view logic and manipulate the data model. The code implements declarative functions in the HTML such as addToDo, which adds a new task item to the list. In this section, you’ll also add an AngularJS directive to help implement two-way data binding.
+In this section, you’ll implement the AngularJS controller module (`xPlat.controllers`) to handle view logic and manipulate the data model. The code implements declarative functions in the HTML such as addToDo, which adds a new task item to the list. In this section, you’ll also add an AngularJS directive to help implement two-way data binding.
 
 ### To add the controller
 
-* In the controllers folder, open toDoCtrl.js and add the following code. The controller name, ToDoCtrl, is also referenced by the AngularJS ng-controller directive in index.html.
+* In the controllers folder, open toDoCtrl.js and add the following code. The controller name, `ToDoCtrl`, is also referenced by the AngularJS `ng-controller` directive in index.html.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      (function () {
-          'use strict';
+  (function () {
+      'use strict';
 
-          angular.module("xPlat.controllers").controller('ToDoCtrl', ['maps', 'storage', ToDoCtrl]);
+      angular.module("xPlat.controllers").controller('ToDoCtrl', ['maps', 'storage', ToDoCtrl]);
 
-          /**
-           * Controller for the todo list.
-           *
-           * @param {!angular.Service} maps
-           * @param {!angular.Service} storage
-           * @constructor
-           * @export*/
-          function ToDoCtrl(maps, storage) {
-              this.maps = maps;
-              this.storage = storage;
-              this.todos = storage.getAll();
+      /**
+       * Controller for the todo list.
+       *
+       * @param {!angular.Service} maps
+       * @param {!angular.Service} storage
+       * @constructor
+       * @export*/
+      function ToDoCtrl(maps, storage) {
+          this.maps = maps;
+          this.storage = storage;
+          this.todos = storage.getAll();
 
-              this.updateAddress = function (toDoItem) {
-                  var _this = this;
+          this.updateAddress = function (toDoItem) {
+              var _this = this;
 
-                  return this.maps.getCurrentPosition()
-                      .then(_this.maps.getAddressFromPosition.bind(_this.maps), function (error) { return error.message; })
-                      .then(function (address) {
-                          toDoItem.address = address;
-                          return _this.storage.update(toDoItem);
-                      }, function (errorMessage) {
-                          toDoItem.address = errorMessage;
-                          return _this.storage.update(toDoItem);
-                      });
-              }
+              return this.maps.getCurrentPosition()
+                  .then(_this.maps.getAddressFromPosition.bind(_this.maps), function (error) { return error.message; })
+                  .then(function (address) {
+                      toDoItem.address = address;
+                      return _this.storage.update(toDoItem);
+                  }, function (errorMessage) {
+                      toDoItem.address = errorMessage;
+                      return _this.storage.update(toDoItem);
+                  });
           }
+      }
 
-          /**
-           * Update the item location with an address.
-           * @param toDoItem*/
+      /**
+       * Update the item location with an address.
+       * @param toDoItem*/
 
-          /**
-           * Add a todo item to the list*/
-          ToDoCtrl.prototype.addToDo = function () {
-              var _this = this;
+      /**
+       * Add a todo item to the list*/
+      ToDoCtrl.prototype.addToDo = function () {
+          var _this = this;
 
-              var text = this.newToDoText;
-              if (!text) {
-                  return;
-              };
-
-              this.newToDoText = '';
-              this.storage.create(text, 'Getting location...')
-                  .then(function (todo) {
-                      _this.todos.push(todo);
-                      return todo;
-                  }).then(this.updateAddress.bind(this));
+          var text = this.newToDoText;
+          if (!text) {
+              return;
           };
 
-          /**
-           * Update the text of a todo item*/
-          ToDoCtrl.prototype.changeToDoText = function (toDoItem) {
-              this.storage.update(toDoItem)
-                  .then(this.updateAddress.bind(this))
-          };
+          this.newToDoText = '';
+          this.storage.create(text, 'Getting location...')
+              .then(function (todo) {
+                  _this.todos.push(todo);
+                  return todo;
+              }).then(this.updateAddress.bind(this));
+      };
 
-          /**
-           * Check/uncheck a todo item*/
-          ToDoCtrl.prototype.toggleToDoDone = function (toDoItem) {
-              toDoItem.done = !toDoItem.done;
-              this.storage.update(toDoItem);
-          };
+      /**
+       * Update the text of a todo item*/
+      ToDoCtrl.prototype.changeToDoText = function (toDoItem) {
+          this.storage.update(toDoItem)
+              .then(this.updateAddress.bind(this))
+      };
 
-          /**
-           * Remove a todo item from the list*/
-          ToDoCtrl.prototype.removeToDo = function (toDoItem) {
-              var _this = this;
-              this.storage.del(toDoItem).then(function (todo) {
-                  var index = _this.todos.indexOf(todo);
-                _this.todos.splice(index, 1);
-              });
-          };
-      })();
+      /**
+       * Check/uncheck a todo item*/
+      ToDoCtrl.prototype.toggleToDoDone = function (toDoItem) {
+          toDoItem.done = !toDoItem.done;
+          this.storage.update(toDoItem);
+      };
+
+      /**
+       * Remove a todo item from the list*/
+      ToDoCtrl.prototype.removeToDo = function (toDoItem) {
+          var _this = this;
+          this.storage.del(toDoItem).then(function (todo) {
+              var index = _this.todos.indexOf(todo);
+              _this.todos.splice(index, 1);
+          });
+      };
+  })();
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Next, you’ll implement the directives module. In this code, you’ll create a custom directive to specify behavior for the onchange DOM event. At runtime, this code associates the correct event handler (declared in HTML markup in index.html) with the element, either the addToDoText or changeToDoText functions. These are implemented in toDoCtrl.js.
+  Next, you’ll implement the directives module. In this code, you’ll create a custom directive to specify behavior for the onchange DOM event. At runtime, this code associates the correct event handler (declared in HTML markup in index.html) with the element, either the `addToDoText` or `changeToDoText` functions. These are implemented in toDoCtrl.js.
 
 ### To add a directive for data binding
 
 * In the directives folder, open textChange.js and add the following code.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      (function () {
-          'use strict';
+  (function () {
+      'use strict';
 
-          angular.module('xPlat.directives').directive('tdTextChange', tdTextChange);
+      angular.module('xPlat.directives').directive('tdTextChange', tdTextChange);
 
-          /**
-           * Factory function for the directive for ng-text-change.
-           *
-           * @return {Object} td-text-change*/
-          function tdTextChange() {
-              return {
-                  restrict: 'A',
-                  link: function (scope, element, attr) {
-                      element.on('change', function () {
-                          scope.$apply(function () {
-                              scope.$eval(attr.tdTextChange);
-                          });
+      /**
+       * Factory function for the directive for ng-text-change.
+       *
+       * @return {Object} td-text-change*/
+      function tdTextChange() {
+          return {
+              restrict: 'A',
+              link: function (scope, element, attr) {
+                  element.on('change', function () {
+                      scope.$apply(function () {
+                          scope.$eval(attr.tdTextChange);
                       });
-                  }
-              };
-          }
-      })();
+                  });
+              }
+          };
+      }
+  })();
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## <a id="AppServices"></a>Add additional services
@@ -703,134 +703,134 @@ In this section, you’ll add additional service modules to support features suc
 * In the services folder, open guidGenerator.js and add the following code. This code generates a unique ID to associate with each task list item.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      (function () {
-          angular.module('xPlat.services').service('guidGenerator', GuidGenerator);
+  (function () {
+      angular.module('xPlat.services').service('guidGenerator', GuidGenerator);
 
-          /**
-           * Generates a GUID to use as an ID for the todos
-           * @constructor*/
-          function GuidGenerator() {
-              // Generates a small part of a GUID
-              this.generatePart = function () {
-                  var guidPartNumber = (Math.random() * 0x10000) | 0;
-                  return (guidPartNumber + 0x10000).toString(16).substring(1).toUpperCase();
-              };
-          }
-
-          /**
-           * Returns a new GUID.
-           * @return {string} generated GUID*/
-          GuidGenerator.prototype.get = function () {
-              return this.generatePart()
-                  + '-'
-                  + this.generatePart()
-                  + '-'
-                  + this.generatePart()
-                  + '-'
-                  + this.generatePart()
-                  + '-'
-                  + this.generatePart()
-                  + this.generatePart()
-                  + this.generatePart();
+      /**
+       * Generates a GUID to use as an ID for the todos
+       * @constructor*/
+      function GuidGenerator() {
+          // Generates a small part of a GUID
+          this.generatePart = function () {
+              var guidPartNumber = (Math.random() * 0x10000) | 0;
+              return (guidPartNumber + 0x10000).toString(16).substring(1).toUpperCase();
           };
-      })();
+      }
+
+      /**
+       * Returns a new GUID.
+       * @return {string} generated GUID*/
+      GuidGenerator.prototype.get = function () {
+          return this.generatePart()
+              + '-'
+              + this.generatePart()
+              + '-'
+              + this.generatePart()
+              + '-'
+              + this.generatePart()
+              + '-'
+              + this.generatePart()
+              + this.generatePart()
+              + this.generatePart();
+      };
+  })();
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the services folder, open maps.js and add the following code. We will use this code later to enable Bing Maps geolocation services. For now, it is used to associate the current location, if available, or a default location with the current task list item.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      (function () {
-          'use strict';
+  (function () {
+      'use strict';
 
-          angular.module('xPlat.services').service('maps', ['$rootScope', '$q', '$window', '$resource', 'cordova', Maps]);
+      angular.module('xPlat.services').service('maps', ['$rootScope', '$q', '$window', '$resource', 'cordova', Maps]);
 
-          // Bing maps to retreive addresses from locations.
-          function Maps($rootScope, $q, $window, $resource, cordova) {
-              var BING_MAPS_API_KEY = 'API-KEY-GOES-HERE'; // TODO: Add your Bing Maps API key
-              if (BING_MAPS_API_KEY === 'API-KEY-GOES-HERE') {
-                  console.warn("A Bing Maps API key was not provided, skipping the API call. Get an API key at https://msdn.microsoft.com/en-us/library/ff428642.aspx");
-              }
-              this.url = 'http://dev.virtualearth.net/REST/v1/Locations/:latitude,:longitude?key=' + BING_MAPS_API_KEY;
-
-              this.$rootScope = $rootScope;
-              this.$q = $q;
-              this.$window = $window;
-              this.$resource = $resource;
-              this.cordova = cordova;
+      // Bing maps to retreive addresses from locations.
+      function Maps($rootScope, $q, $window, $resource, cordova) {
+          var BING_MAPS_API_KEY = 'API-KEY-GOES-HERE'; // TODO: Add your Bing Maps API key
+          if (BING_MAPS_API_KEY === 'API-KEY-GOES-HERE') {
+              console.warn("A Bing Maps API key was not provided, skipping the API call. Get an API key at https://msdn.microsoft.com/en-us/library/ff428642.aspx");
           }
+          this.url = 'http://dev.virtualearth.net/REST/v1/Locations/:latitude,:longitude?key=' + BING_MAPS_API_KEY;
 
-          Maps.prototype.getCurrentPosition = function () {
-              var _this = this;
-              return this.cordova.ready.then(function () {
-                  var deferred = _this.$q.defer();
-                  _this.$window.navigator.geolocation.getCurrentPosition(function (successValue) {
-                       _this.$rootScope.$apply(function () {
-                        deferred.resolve(successValue);
-                      }.bind( _this));
-                  }, function (errorValue) {
-                       _this.$rootScope.$apply(function () {
-                          deferred.reject(errorValue);
-                      }.bind( _this));
-                  });
+          this.$rootScope = $rootScope;
+          this.$q = $q;
+          this.$window = $window;
+          this.$resource = $resource;
+          this.cordova = cordova;
+      }
 
-                  return deferred.promise;
+      Maps.prototype.getCurrentPosition = function () {
+          var _this = this;
+          return this.cordova.ready.then(function () {
+              var deferred = _this.$q.defer();
+              _this.$window.navigator.geolocation.getCurrentPosition(function (successValue) {
+                  _this.$rootScope.$apply(function () {
+                      deferred.resolve(successValue);
+                  }.bind(_this));
+              }, function (errorValue) {
+                  _this.$rootScope.$apply(function () {
+                      deferred.reject(errorValue);
+                  }.bind(_this));
               });
-          };
 
-          /**
-           * Gets an address from a position.
-           * @params position
-            */
-          Maps.prototype.getAddressFromPosition = function (position) {
-              var  _this = this;
-              return this.$resource( _this.url, {})
-                  .get({ latitude: position.coords.latitude, longitude: position.coords.longitude })
-                  .$promise.then(function (response) {
-                      return response.resourceSets[0].resources[0].address.formattedAddress;
-                  }, function (error) {
-                      return position.coords.latitude + ',' + position.coords.longitude
-                  });
-          };
-      })();
+              return deferred.promise;
+          });
+      };
+
+      /**
+       * Gets an address from a position.
+       * @params position
+        */
+      Maps.prototype.getAddressFromPosition = function (position) {
+          var _this = this;
+          return this.$resource(_this.url, {})
+              .get({ latitude: position.coords.latitude, longitude: position.coords.longitude })
+              .$promise.then(function (response) {
+                  return response.resourceSets[0].resources[0].address.formattedAddress;
+              }, function (error) {
+                  return position.coords.latitude + ',' + position.coords.longitude
+              });
+      };
+  })();
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the services folder, open cordova.js and add the following code. This code adds a handler for the Cordova **deviceready** event to help make sure that the event fires before the app runs plugin code.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      (function () {
-          'use strict';
+  (function () {
+      'use strict';
 
-          angular.module('xPlat.services').factory('cordova', ['$q', '$window', '$timeout', cordova]);
+      angular.module('xPlat.services').factory('cordova', ['$q', '$window', '$timeout', cordova]);
 
-          /**
-           * Service that allows access to Cordova when it is ready.
-           *
-           * @param {!angular.Service} $q
-           * @param {!angular.Service} $window
-           * @param {!angular.Service} $timeout
-            */
-          function cordova($q, $window, $timeout) {
-              var deferred = $q.defer();
-              var resolved = false;
+      /**
+       * Service that allows access to Cordova when it is ready.
+       *
+       * @param {!angular.Service} $q
+       * @param {!angular.Service} $window
+       * @param {!angular.Service} $timeout
+        */
+      function cordova($q, $window, $timeout) {
+          var deferred = $q.defer();
+          var resolved = false;
 
-              // Listen to the 'deviceready' event to resolve Cordova.
-              // This is when Cordova plugins can be used.
-              document.addEventListener('deviceready', function () {
-                  resolved = true;
+          // Listen to the 'deviceready' event to resolve Cordova.
+          // This is when Cordova plugins can be used.
+          document.addEventListener('deviceready', function () {
+              resolved = true;
+              deferred.resolve($window.cordova);
+              console.log('deviceready fired');
+          }, false);
+
+          // If the 'deviceready' event didn't fire after a delay, continue.
+          $timeout(function () {
+              if (!resolved && $window.cordova) {
                   deferred.resolve($window.cordova);
-                  console.log('deviceready fired');
-              }, false);
+              }
+          }, 1000);
 
-              // If the 'deviceready' event didn't fire after a delay, continue.
-              $timeout(function () {
-                  if (!resolved && $window.cordova) {
-                      deferred.resolve($window.cordova);
-                  }
-              }, 1000);
-
-              return { ready: deferred.promise };
-          }
-      })();
+          return { ready: deferred.promise };
+      }
+  })();
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## <a id="BuildToDo"></a>Build and run your app
@@ -880,218 +880,220 @@ The complete sample includes additional code to store and retrieve task list ite
 3. Copy the Azure Mobile Service application key and URL from into Notepad. The key and URL are shown here.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      var Zumo_MDHA_ServiceClient;
-      document.addEventListener("deviceready", function () {
-          Zumo_MDHA_ServiceClient = new WindowsAzure.MobileServiceClient(
-                          "https://applicationUrl/",
-                          "applicationKey");
-         });
+  var Zumo_MDHA_ServiceClient;
+  document.addEventListener("deviceready", function () {
+    Zumo_MDHA_ServiceClient = new WindowsAzure.MobileServiceClient(
+      "https://applicationUrl/",
+      "applicationKey");
+  });
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4. In Solution Explorer, remove the new services folder that was added when you chose Add, Connected Services and added the service. You won’t need this code or the services folder structure that was just added. 11 . In storage.js, uncomment the following lines of code to allow use of Azure as the storage service.
+4. In Solution Explorer, remove the new services folder that was added when you chose **Add**, **Connected Services** and added the service. You won’t need this code or the services folder structure that was just added.
+
+5. In storage.js, uncomment the following lines of code to allow use of Azure as the storage service.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         // var azureService = $injector.get('azureStorage');
-         // return azureService.isAvailable ? azureService : $injector.get('localStorage');
+  // var azureService = $injector.get('azureStorage');
+  // return azureService.isAvailable ? azureService : $injector.get('localStorage');
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   And remove the next line of code:
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        return $injector.get('localStorage');
+  return $injector.get('localStorage');
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   After uncommenting the code and removing the specified code, the storage function in storage.js will look like this.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        function storage($injector) {
-            // If Azure storage is available, use it. Otherwise, use local storage.
-            var azureService = $injector.get('azureStorage');
-            return azureService.isAvailable ? azureService : $injector.get('localStorage');
-        }
+  function storage($injector) {
+    // If Azure storage is available, use it. Otherwise, use local storage.
+    var azureService = $injector.get('azureStorage');
+    return azureService.isAvailable ? azureService : $injector.get('localStorage');
+  }
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-5. In azureStorage.js, add the following code for the Azure service. Where indicated in the code, add Azure Mobile Service application key and URL that you obtained when you added the Azure service.
+5. In azureStorage.js, add the following code for the Azure service. Where indicated in the code, add Azure Mobile Service **application key** and **URL** that you obtained when you added the Azure service.
 
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        (function () {
-          'use strict';
+  (function () {
+      'use strict';
 
-          angular.module('xPlat.services').service('azureStorage', ['$resource', 'guidGenerator', AzureStorage]);
+      angular.module('xPlat.services').service('azureStorage', ['$resource', 'guidGenerator', AzureStorage]);
 
-          /**
-           * Azure Mobile Service Application Key.
-           * TODO: Add your Azure Mobile Service Application Key.
-           *
-           * @type {string}
-           * @const
-            */
-          var AZURE_MOBILE_SERVICES_KEY = '';
+      /**
+       * Azure Mobile Service Application Key.
+       * TODO: Add your Azure Mobile Service Application Key.
+       *
+       * @type {string}
+       * @const
+        */
+      var AZURE_MOBILE_SERVICES_KEY = '';
 
-          /**
-           * Azure Mobile Service Application URL.
-           * TODO: Add your Azure Mobile Service Application URL.
-           *
-           * @type {string}
-           * @const
-            */
-          var AZURE_MOBILE_SERVICES_ADDRESS = '';
+      /**
+       * Azure Mobile Service Application URL.
+       * TODO: Add your Azure Mobile Service Application URL.
+       *
+       * @type {string}
+       * @const
+        */
+      var AZURE_MOBILE_SERVICES_ADDRESS = '';
 
-          /**
-           * Use the Azure Mobile Service to store todo items in the cloud.
-           *
-           * @param {angular.Service} $resource
-           * @param {angular.Service} guidGenerator
-           * @constructor
-            */
-          function AzureStorage($resource, guidGenerator) {
-              this.isAvailable = AZURE_MOBILE_SERVICES_KEY && AZURE_MOBILE_SERVICES_ADDRESS;
-              if (!AZURE_MOBILE_SERVICES_KEY || !AZURE_MOBILE_SERVICES_KEY) {
-                  console.warn("The Azure Mobile Services key and URL are not set up properly. Items will not be stored on Azure.");
-              }
-
-              // Generate the headers to access the Azure Mobile Services table.
-              var azureMobileServicesInstallationId = guidGenerator.get();
-              var headers = {
-                  'X-ZUMO-APPLICATION': AZURE_MOBILE_SERVICES_KEY,
-                  'X-ZUMO-INSTALLATION-ID': azureMobileServicesInstallationId,
-                  'X-ZUMO-VERSION': 'ZUMO/1.0 (lang=Web; os=--; os_version=--; arch=--; version=1.0.20218.0)',
-                  'Content-Type': 'application/json'
-              };
-
-              // Url of the Azure Mobile Services table to access.
-              var azureMobileServicesTableAddress = AZURE_MOBILE_SERVICES_ADDRESS + 'tables/todoitem/:id';
-
-              this.toDoItem = $resource(azureMobileServicesTableAddress, { id: '@id' }, {
-                  'query': {
-                      method: 'GET',
-                      params: { $top: '1000' },
-                      isArray: true,
-                      headers: headers
-                  },
-                  'delete': {
-                      method: 'DELETE',
-                      headers: headers
-                  },
-                  'save': {
-                      method: 'POST',
-                      headers: headers
-                  },
-                  'update': {
-                      method: 'PATCH',
-                      headers: headers
-                  }
-              });
+      /**
+       * Use the Azure Mobile Service to store todo items in the cloud.
+       *
+       * @param {angular.Service} $resource
+       * @param {angular.Service} guidGenerator
+       * @constructor
+        */
+      function AzureStorage($resource, guidGenerator) {
+          this.isAvailable = AZURE_MOBILE_SERVICES_KEY && AZURE_MOBILE_SERVICES_ADDRESS;
+          if (!AZURE_MOBILE_SERVICES_KEY || !AZURE_MOBILE_SERVICES_KEY) {
+              console.warn("The Azure Mobile Services key and URL are not set up properly. Items will not be stored on Azure.");
           }
 
-          /**
-           * Retrieve all data from Azure storage.
-            */
-          AzureStorage.prototype.getAll = function () {
-              return this.toDoItem.query();
+          // Generate the headers to access the Azure Mobile Services table.
+          var azureMobileServicesInstallationId = guidGenerator.get();
+          var headers = {
+              'X-ZUMO-APPLICATION': AZURE_MOBILE_SERVICES_KEY,
+              'X-ZUMO-INSTALLATION-ID': azureMobileServicesInstallationId,
+              'X-ZUMO-VERSION': 'ZUMO/1.0 (lang=Web; os=--; os_version=--; arch=--; version=1.0.20218.0)',
+              'Content-Type': 'application/json'
           };
 
-          /**
-           * Create a new todo to Azure storage.
-           *
-           * @param {string} text Text of the todo item.
-           * @param {string} address Address of the todo item.
-            */
-          AzureStorage.prototype.create = function (text, address) {
-              var item = new this.toDoItem({
+          // Url of the Azure Mobile Services table to access.
+          var azureMobileServicesTableAddress = AZURE_MOBILE_SERVICES_ADDRESS + 'tables/todoitem/:id';
+
+          this.toDoItem = $resource(azureMobileServicesTableAddress, { id: '@id' }, {
+              'query': {
+                  method: 'GET',
+                  params: { $top: '1000' },
+                  isArray: true,
+                  headers: headers
+              },
+              'delete': {
+                  method: 'DELETE',
+                  headers: headers
+              },
+              'save': {
+                  method: 'POST',
+                  headers: headers
+              },
+              'update': {
+                  method: 'PATCH',
+                  headers: headers
+              }
+          });
+      }
+
+      /**
+       * Retrieve all data from Azure storage.
+        */
+      AzureStorage.prototype.getAll = function () {
+          return this.toDoItem.query();
+      };
+
+      /**
+       * Create a new todo to Azure storage.
+       *
+       * @param {string} text Text of the todo item.
+       * @param {string} address Address of the todo item.
+        */
+      AzureStorage.prototype.create = function (text, address) {
+          var item = new this.toDoItem({
+              text: text,
+              address: address,
+              done: false
+          });
+
+          return item.$save();
+      };
+
+      /**
+       * Update an existing todo in Azure storage.
+       *
+       * @param {Object} item Todo item to modify.
+        */
+      AzureStorage.prototype.update = function (item) {
+          return item.$update();
+      };
+
+      /**
+       * Remove a todo from Azure storage.
+       *
+       * @param {Object} item Todo item to remove from local storage.
+        */
+      AzureStorage.prototype.del = function (item) {
+          return item.$delete();
+      };
+  })();
+  // To support Azure, add Azure storage service
+  // code here ("azureStorage").
+
+  .factory("azureStorage", ["$q", "$resource", "$rootScope", "guidGenerator", function ($q, $resource, $rootScope, guidGenerator) {
+      var azureMobileServicesInstallationId = guidGenerator();
+      var azureMobileServicesKey = ''; // Add your Azure Mobile Service Application Key
+      var azureMobileServicesAddress = ''; // Add your Azure Mobile Service Application URL
+      var azureMobileServicesTableAddress = azureMobileServicesAddress + 'tables/todoitem/:id';
+      var headers = {
+          'X-ZUMO-APPLICATION': azureMobileServicesKey,
+          'X-ZUMO-INSTALLATION-ID': azureMobileServicesInstallationId,
+          'X-ZUMO-VERSION': 'ZUMO/1.0 (lang=Web; os=--; os_version=--; arch=--; version=1.0.20218.0)',
+          'Content-Type':'application/json'
+      };
+
+      var toDoItem = $resource(azureMobileServicesTableAddress, { id: '@id' }, {
+          'query': {
+              method: 'GET',
+              params: { $top: '1000' },
+              isArray: true,
+              headers: headers
+          },
+          'delete': {
+              method: 'DELETE',
+              headers: headers
+          },
+          'save': {
+              method: 'POST',
+              headers: headers
+          },
+          'update': {
+              method: 'PATCH',
+              headers: headers
+          }
+      });
+
+      var azureStorage = {
+          getAll: function () {
+              return toDoItem.query();
+          },
+
+          create: function (text, address) {
+              var item = new toDoItem({
                   text: text,
                   address: address,
                   done: false
               });
 
               return item.$save();
-          };
+          },
 
-          /**
-           * Update an existing todo in Azure storage.
-           *
-           * @param {Object} item Todo item to modify.
-            */
-          AzureStorage.prototype.update = function (item) {
+          update: function (item) {
               return item.$update();
-          };
+          },
 
-          /**
-           * Remove a todo from Azure storage.
-           *
-           * @param {Object} item Todo item to remove from local storage.
-            */
-          AzureStorage.prototype.del = function (item) {
+          del: function (item) {
               return item.$delete();
-          };
-        })();
-          // To support Azure, add Azure storage service
-              // code here ("azureStorage").
+          },
+      };
 
-              .factory("azureStorage", ["$q", "$resource", "$rootScope", "guidGenerator", function ($q, $resource, $rootScope, guidGenerator) {
-                  var azureMobileServicesInstallationId = guidGenerator();
-                  var azureMobileServicesKey = ''; // Add your Azure Mobile Service Application Key
-                  var azureMobileServicesAddress = ''; // Add your Azure Mobile Service Application URL
-                  var azureMobileServicesTableAddress = azureMobileServicesAddress + 'tables/todoitem/:id';
-                  var headers = {
-                      'X-ZUMO-APPLICATION': azureMobileServicesKey,
-                      'X-ZUMO-INSTALLATION-ID': azureMobileServicesInstallationId,
-                      'X-ZUMO-VERSION': 'ZUMO/1.0 (lang=Web; os=--; os_version=--; arch=--; version=1.0.20218.0)',
-                      'Content-Type':'application/json'
-                  };
+      Object.defineProperty(azureStorage, "isAvailable", {
+          enumerable: false,
+          get : function(){ return azureMobileServicesKey && azureMobileServicesAddress; },
+      });
 
-                  var toDoItem = $resource(azureMobileServicesTableAddress, { id: '@id' }, {
-                      'query': {
-                          method: 'GET',
-                          params: { $top: '1000' },
-                          isArray: true,
-                          headers: headers
-                      },
-                      'delete': {
-                          method: 'DELETE',
-                          headers: headers
-                      },
-                      'save': {
-                          method: 'POST',
-                          headers: headers
-                      },
-                      'update': {
-                          method: 'PATCH',
-                          headers: headers
-                      }
-                  });
-
-                  var azureStorage = {
-                      getAll: function () {
-                          return toDoItem.query();
-                      },
-
-                      create: function (text, address) {
-                          var item = new toDoItem({
-                              text: text,
-                              address: address,
-                              done: false
-                          });
-
-                          return item.$save();
-                      },
-
-                      update: function (item) {
-                          return item.$update();
-                      },
-
-                      del: function (item) {
-                          return item.$delete();
-                      },
-                  };
-
-                  Object.defineProperty(azureStorage, "isAvailable", {
-                      enumerable: false,
-                      get : function(){ return azureMobileServicesKey && azureMobileServicesAddress; },
-                  });
-
-                  return azureStorage;
-              }])
+      return azureStorage;
+  }])
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 6. Press F5 to re-run the app. Now, task list items will be stored in Azure.
