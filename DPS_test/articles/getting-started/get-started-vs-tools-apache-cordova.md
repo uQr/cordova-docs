@@ -57,10 +57,3 @@ To download the ToDoList sample app for Visual Studio 2013, see the deprecated s
 
 >**Tip:**
 To download other samples for Visual Studio Tools for Apache Cordova that demonstrate multi-page navigation and other features, see the [Ionic SideMenu starter template](http://go.microsoft.com/fwlink/p/?LinkID=544745) and [WinJS Navigation template](http://go.microsoft.com/fwlink/p/?LinkID=544743) samples.
-
-## See Also ##
-
-###Other Resources###
-
-[Download the Tools](http://aka.ms/mchm38)  
-[Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782)  
