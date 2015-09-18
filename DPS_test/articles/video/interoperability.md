@@ -3,7 +3,7 @@
    description="Video Walkthrough: Interoperate with third-party tools"
    services="na"
    documentationCenter=""
-   authors="normesta"
+   authors="Mikejo5000"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/11/2015"
-   ms.author="normesta"/>
+   ms.author="Mikejo5000"/>
 
 # Video Walkthrough: Interoperate with third-party tools
 
@@ -38,9 +38,9 @@ To follow the steps in this tutorial, you must:
 
         ionic start MyIonicApp slide
 
-   Ionic creates the project. In File Explorer, you can find the new project, MyIonicApp, in the location that you created it.
+    Ionic creates the project. In File Explorer, you can find the new project, MyIonicApp, in the location that you created it.
 
-   Next, we will prepare the same project so that you can open it in Visual Studio. We will do that by adding files to the project that contain metadata required by Visual Studio.
+    Next, we will prepare the same project so that you can open it in Visual Studio. We will do that by adding files to the project that contain metadata required by Visual Studio.
 
 3. Open Visual Studio and create a new Apache Cordova solution using the Blank App template and name the solution **cli**.
 
@@ -48,15 +48,15 @@ To follow the steps in this tutorial, you must:
 
 5. From the location of the Visual Studio project, copy cli.jsproj and taco.json to the project folder for MyIonicApp.
 
-   ![Project structure in Ionic](media/interoperability/IC795791.png)
+    ![Project structure in Ionic](media/interoperability/IC795791.png)
 
 6. In Visual Studio, locate the cli.jsproj file in the MyIonicApp folder, select it, and open it.
 
-   Visual Studio loads the Ionic project as a Visual Studio solution.
+    Visual Studio loads the Ionic project as a Visual Studio solution.
 
 7. In Solution Explorer, choose **Show All Files**.
 
-   ![Project structure in Visual Studio](media/interoperability/IC795803.png)
+    ![Project structure in Visual Studio](media/interoperability/IC795803.png)
 
 8. In the command prompt, switch to the MyIonicApp folder.
 
@@ -64,6 +64,6 @@ To follow the steps in this tutorial, you must:
 
        ionic platform add android
 
-Ionic adds a platforms folder and populates the project with any other required files for Android.
+    Ionic adds a platforms folder and populates the project with any other required files for Android.
 
-From here, you can make project changes either using Visual Studio or the Ionic CLI.
+    From here, you can make project changes either using Visual Studio or the Ionic CLI.
