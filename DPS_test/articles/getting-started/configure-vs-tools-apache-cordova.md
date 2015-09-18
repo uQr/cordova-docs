@@ -104,17 +104,17 @@ If you need to set this environment variable manually, see [Override system envi
 
          * Android 5.1.x (API level 22) with the following packages:
 
-             * SDK platform
+          SDK platform
 
-             * If you want to use the Google Android Emulator to emulate a 5.1.x device:
+          If you want to use the Google Android Emulator to emulate a 5.1.x device:
 
-                 * ARM EABI v7a System Image
+          * ARM EABI v7a System Image
 
-                 * Intel x86 Atom System Image
+          * Intel x86 Atom System Image
 
-                 * Google APIs (x86 System Image)
+          * Google APIs (x86 System Image)
 
-                 * Google APIs (ARM System Image)
+          * Google APIs (ARM System Image)
 
      The following illustration shows the minimum required packages in the Android SDK Manager.
 
