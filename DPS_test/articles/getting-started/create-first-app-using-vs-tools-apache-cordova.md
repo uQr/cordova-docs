@@ -25,19 +25,17 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
 1. Open Visual Studio. On the menu bar, choose **File**, **New, Project**. 5. In the **New Project** dialog box, under **Templates**, choose **JavaScript**, **Apache Cordova Apps**, and then choose the **Blank App** template.
 
-    >**Note**
-  A Blank App template for TypeScript is under **TypeScript**, **Apache Cordova** (If you intend to go through the complete ToDoList tutorial, choose JavaScript.)
+  >**Note**: A Blank App template for TypeScript is under **TypeScript**, **Apache Cordova** (If you intend to go through the complete ToDoList tutorial, choose JavaScript.)
 
-12. Choose **Browse** to find a location for the project.
+2. Choose **Browse** to find a location for the project.
 
-14. Give the app a name and then choose **OK**.
+3. Give the app a name and then choose **OK**.
 
-  >**Note:**
-  If you intend to go through the complete tutorial, name the app AngularJSToDo.
+  >**Note**: If you intend to go through the complete tutorial, name the app AngularJSToDo.
 
   ![Create a new Multi-Device Hybrid App project](media/create-first-app-using-vs-tools-apache-cordova/IC793843.png)
 
-17. Choose a source control option for the project, or choose **Cancel** to skip this for now. Visual Studio creates the new project and opens **Solution Explorer** in the right pane.
+4. Choose a source control option for the project, or choose **Cancel** to skip this for now. Visual Studio creates the new project and opens **Solution Explorer** in the right pane.
 
   ![Project structure in an Apache Cordova app in VS](media/create-first-app-using-vs-tools-apache-cordova/IC795829.png)
 
@@ -90,17 +88,17 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
 1. Choose Windows-x64, Windows-x86, or Android from the Solution Platforms list. The following illustration shows the Android platform.
 
-    ![Select Android as your deployment target](media/create-first-app-using-vs-tools-apache-cordova/IC793844.png)
+  ![Select Android as your deployment target](media/create-first-app-using-vs-tools-apache-cordova/IC793844.png)
 
-    If the Solution Platforms list isn’t showing, choose **Solution Platforms** from the **Add/Remove Buttons** list, and then choose your platform (Windows-x64, Windows-x86, or Android).
+  If the Solution Platforms list isn’t showing, choose **Solution Platforms** from the **Add/Remove Buttons** list, and then choose your platform (Windows-x64, Windows-x86, or Android).
 
-    ![Selecting a platform for deployment](media/create-first-app-using-vs-tools-apache-cordova/IC793845.png)
+  ![Selecting a platform for deployment](media/create-first-app-using-vs-tools-apache-cordova/IC793845.png)
 
-    If you chose the Android platform, and if you have installed Chrome, choose one of the Apache Ripple emulators, as shown here.
+  If you chose the Android platform, and if you have installed Chrome, choose one of the Apache Ripple emulators, as shown here.
 
-    ![Selecting the Ripple emulator](media/create-first-app-using-vs-tools-apache-cordova/IC793846.png)
+  ![Selecting the Ripple emulator](media/create-first-app-using-vs-tools-apache-cordova/IC793846.png)
 
-    >**Note**: Chrome is not installed by default.
+  >**Note**: Chrome is not installed by default.
 
   If you are using Visual Studio 2015 and have Hyper-V enabled on your machine you can run the app on the Visual Studio Emulator for Android (select an option such as **VS Emulator Android Phone**.
 
@@ -108,12 +106,11 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
 2. Press F5 to start debugging, or Shift+F5 to start without debugging.
 
-   Here’s what the default app looks like in one of the Ripple emulators.
+  Here’s what the default app looks like in one of the Ripple emulators.
 
-   ![Run the “Hello” default app in Ripple Emulator](media/create-first-app-using-vs-tools-apache-cordova/IC742604.png)
+  ![Run the “Hello” default app in Ripple Emulator](media/create-first-app-using-vs-tools-apache-cordova/IC742604.png)
 
-   >**Tip**: If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, open the SDK Manager from a command line by typing the following command: android sdk  
-
+  >**Tip**: If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, open the SDK Manager from a command line by typing the following command: android sdk  
   If you see an error such as Cannot find module [modulename] or a build failure, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
   If clearing the Cordova cache (or re-installing vs-tac) does not resolve the issue, see [Known Issues](./known-issues/known-issues-general.md).
