@@ -116,9 +116,9 @@ For each of the Ionic starter app templates that you installed and want to run, 
 
 3. In the Ionic project, add the following script reference to index.html, just before the Ionic Framework reference (before the ionic.bundle.js reference):
 
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
   <script src="scripts/platformOverrides.js></script>
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ```
 
   >**Note**: You can use the js folder instead of scripts, but the folder and path will need to be updated in several other files.
 
