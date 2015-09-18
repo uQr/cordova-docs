@@ -343,10 +343,3 @@ where *username* and *password* are your proxy username and password; *proxy-por
 4. Open Visual Studio.
 
 5. Open your Apache Cordova solution and rebuild your project.
-
-##See Also
-
-**Concepts**
-
-[Install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md)  
-[Run Your Apache Cordova App on iOS](./develop-apps/run-app-ios.md)

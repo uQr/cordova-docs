@@ -26,7 +26,7 @@ Operating system requirements:
     > **Important:** If you are using Windows 7, you can develop apps for Android and iOS, but not for Windows or Windows Phone.
 To build apps for specific device platforms, there are a few additional requirements:
 
-* iOS and the iOS Simulator require a Mac computer capable of running [Xcode 6](https://developer.apple.com/xcode/) (Xcode 6 is recommended). For additional information and installation steps, 
+* iOS and the iOS Simulator require a Mac computer capable of running [Xcode 6](https://developer.apple.com/xcode/) (Xcode 6 is recommended). For additional information and installation steps,
 * see [Install tools for iOS](#ios).
 
     >**Tip:** If you want to build iOS on a cloud service instead of Mac hardware, see [Build and Simulate iOS in the Cloud](build_ios_cloud.md).
@@ -172,7 +172,7 @@ If you updated your computer to a new version of Visual Studio, you must update 
   remotebuild resetServerCerts --hostname=my.external.hostname.com
   remotebuild generateClientCert --hostname=my.external.hostname.com
     ```
- 
+
   to regenerate certificates that will work with the given hostname. If you intend to configure the remote agent in Visual Studio using the host name, ping the Mac using the host name to verify that it is reachable. Otherwise, you may need to use the IP address instead.
 
   Before you can use the remote agent, you must specify the remote configuration in Visual Studio.
@@ -233,8 +233,3 @@ In some circumstances, additional steps may be required to update and configure 
 * If you see unexpected errors when trying to build the Blank App template, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
 ![Download the tools](media/install-vs-tools-apache-cordova/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
-
-## See Also
-
-[Download the Tools](http://go.microsoft.com/fwlink/p/?LinkId=397606)  
-[Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782)
