@@ -89,6 +89,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 ### To build and run the default “Hello” app
 
 1. Choose Windows-x64, Windows-x86, or Android from the Solution Platforms list. The following illustration shows the Android platform.
+
     ![Select Android as your deployment target](media/create-first-app-using-vs-tools-apache-cordova/IC793844.png)
 
     If the Solution Platforms list isn’t showing, choose **Solution Platforms** from the **Add/Remove Buttons** list, and then choose your platform (Windows-x64, Windows-x86, or Android).
