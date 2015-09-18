@@ -115,6 +115,7 @@ If you need to set this environment variable manually, see [Override system envi
                  * Google APIs (x86 System Image)
 
                  * Google APIs (ARM System Image)
+
      The following illustration shows the minimum required packages in the Android SDK Manager.
 
      ![Cordova_SDK_Android_Packages](media/configure-vs-tools-apache-cordova/IC795810.png)
