@@ -17,13 +17,7 @@
 
 PhoneGap is an open source framework for quickly building cross-platform mobile apps using HTML5, JavaScript and CSS. Adobe [PhoneGap Build](https://build.phonegap.com/) is a cloud service that allows you to quickly build mobile applications and easily compile them without SDKs, compilers and hardware. This article describes how to convert an Apache Cordova project created using Visual Studio to a PhoneGap project and use the PhoneGap Build cloud service.
 
-One of the main differences between a Visual Studio Project and the PhoneGap project is the application definition in the configuration file (config.xml). The following tasks are required to change your Visual Studio project into a PhoneGap project:
-
- 1. Create a new Cordova project using Visual Studio
- 1. Create the PhoneGap project structure
- 1. Update config.xml
- 1. Upload to cloud build
- 1. Code sign and provision the app
+One of the main differences between a Visual Studio Project and the PhoneGap project is the application definition in the configuration file (config.xml). Following this walkthrough will help you change your Visual Studio project into a PhoneGap project.
 
 ## Create a new Cordova project using Visual Studio
 To create application packages, the cloud-based PhoneGap Build only requires the web-assets of your application, which are limited to your HTML, CSS, images, .js files, and similar files. PhoneGap Build will probably fail to compile your application if native files are uploaded (.h, .m, .java, etc.). Because the project structure created by Visual Studio matches the Cordova project structure, the www folder of your project now hosts all the web assets required by your application.
@@ -39,11 +33,11 @@ Once you copy over all the files and folders, the PhoneGap Build project should 
 
   ![image](media/convert_cordova_phonegap/IC795800.png)
 
-Because your application may contain files or folders not required in your final packaged application (such as unused splash screens, bower packages, grunt artifacts, un-compiled less files, etc.), PhoneGap Build supports a special file called .pgbomit.
+Because your application may contain files or folders not required in your final packaged application (such as unused splash screens, bower packages, grunt artifacts, un-compiled less files, etc.), PhoneGap Build supports a special file called **.pgbomit**.
 
-.pgbomit is a file that you can create and add to a folder to instruct PhoneGap Build to exclude the folder as a source of native application files. (However, you can use this folder to store any files needed during the PhoneGap build process up to the compile step.) As a typical example, you may want to place .pgbomit in the folder containing the icons and splash-screens. So place .pgbomit in the www/res folder of your PhoneGap Build project; as a result, none of files and folders in www/res will be included in the binary app package, except those copied and used for icons and splash-screens for a specific platform.
+**.pgbomit** is a file that you can create and add to a folder to instruct PhoneGap Build to exclude the folder as a source of native application files. (However, you can use this folder to store any files needed during the PhoneGap build process up to the compile step.) As a typical example, you may want to place **.pgbomit** in the folder containing the icons and splash-screens. So place **.pgbomit** in the www/res folder of your PhoneGap Build project; as a result, none of files and folders in www/res will be included in the binary app package, except those copied and used for icons and splash-screens for a specific platform.
 
-The following illustration shows the .pgbomit file in the www/res folder:
+The following illustration shows the **.pgbomit** file in the www/res folder:
 
   ![image](media/convert_cordova_phonegap/IC795811.png)
 
@@ -108,13 +102,13 @@ If you want specific splash-screens for the Android platform, the following entr
 For more information on specifying splash screen elements in config.xml, see this [article](http://docs.build.phonegap.com/en_US/configuring_icons_and_splash.md.html#Icons%20and%20Splash%20Screens).
 
 ### Plugins
-To extend access to native platform features exposed by the PhoneGap native-app container, PhoneGap Build supports a white-listed selection of PhoneGap Plugins. For the list of supported plugins, see [Plugins](https://build.phonegap.com/plugins). If you include any plugins that aren't in Adobe's white-list, the build will fail. To import a plugin into your PhoneGap Build project, you will need to add the correct <gap:plugin> element to config.xml. If you omit the version attribute for plugin, the app will always build using the latest version of the plugin.
+To extend access to native platform features exposed by the PhoneGap native-app container, PhoneGap Build supports a white-listed selection of PhoneGap Plugins. For the list of supported plugins, see [Plugins](https://build.phonegap.com/plugins). If you include any plugins that aren't in Adobe's white-list, the build will fail. To import a plugin into your PhoneGap Build project, you will need to add the correct **gap:plugin** element to config.xml. If you omit the version attribute for plugin, the app will always build using the latest version of the plugin.
 
 Here is the most simplistic way of using a versioned plugin:
 
     <gap:plugin name="com.phonegap.plugins.example" version="2.2.1" />
 
-Because Visual Studio emits the <vs:plugin> element into config.xml for each plugin you have added, you will need to replace these elements with <gap:plugin> elements. In the example project we're using, we use two plugins and two corresponding lines in config.xml:
+Because Visual Studio emits the **vs:plugin** element into config.xml for each plugin you have added, you will need to replace these elements with **gap:plugin** elements. In the example project we're using, we use two plugins and two corresponding lines in config.xml:
 
     <vs:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
     <vs:plugin name="org.apache.cordova.camera" version="0.3.2" />
@@ -144,10 +138,8 @@ To build a release APK package for Android that is ready for store submission, P
 
   ![image](media/convert_cordova_phonegap/IC795815.png)
 
-For Android, We will use an existing key-store that we have created earlier (or you can create a new one using this [guide](http://developer.android.com/tools/publishing/app-signing.html)) and then rebuild the application. Now, the build service creates a fully signed release package that can either be downloaded for publishing to the store or installed on a tethered device.
+For Android, we will use an existing key-store that we have created earlier (or you can create a new one using this [guide](http://developer.android.com/tools/publishing/app-signing.html)) and then rebuild the application. Now, the build service creates a fully signed release package that can either be downloaded for publishing to the store or installed on a tethered device.
 
   ![image](media/convert_cordova_phonegap/IC795813.png)
 
 We hope this article helps you to convert your Visual Studio Cordova project into a PhoneGap Build project and to quickly build your apps for iOS, Android, or Windows using the PhoneGap build service.
-
-If you’ve already installed Visual Studio Tools for Apache Cordova and are actively using them, thank you! If not, [please visit this page](https://www.visualstudio.com/explore/cordova-vs.aspx) to get the tools.

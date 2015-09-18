@@ -18,7 +18,7 @@
 In this topic, you will learn how to leverage some of the new APIs in the client libraries for Office 365 in an app built using Visual Studio Tools for Apache Cordova.
 
 ##Office 365 API Tools for Visual Studio 2013
-If you are trying to consume the Office 365 APIs for the first time in a Cordova application workflow, please follow instructions in the [documentation](https://msdn.microsoft.com/library/dn771546.aspx#Office) to [install Office 365 API Tools for Visual Studio](https://visualstudiogallery.msdn.microsoft.com/7e947621-ef93-4de7-93d3-d796c43ba34f) and to add the service into your project.
+If you are trying to consume the Office 365 APIs for the first time in a Cordova application workflow, please follow instructions in the [documentation](./develop-apps/add-connected-services.md#Office) to [install Office 365 API Tools for Visual Studio](https://visualstudiogallery.msdn.microsoft.com/a15b85e6-69a7-4fdf-adda-a38066bb5155) and to add the service into your project.
 
 Office 365 provides REST-based APIs that enable developers to access Office resources such as calendar, contacts, mail, files, and more. You can program directly against the REST APIs to interact with Office 365, but if you use the REST APIs you must write and maintain code around managing authentication tokens, constructing the right URLs, querying for the API you want to access, and performing other tasks. By using Office 365 client libraries to access the Office 365 APIs instead of REST, you reduce the complexity of the code that you need to write in your Cordova application.
 
