@@ -43,8 +43,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
   The project structure in Visual Studio 2015 is updated to support third-party CLIs, and to match the Cordova project structure. Visual Studio 2013 uses the deprecated project structure. We recommend that you create Cordova apps using Visual Studio 2015.
 
-  >**Caution:**
-  If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
+  >**Caution**: If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md#known-issues—visual-studio-2015).
 
   The new Cordova project includes four top-level folders:
 
@@ -79,7 +78,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
   * **Project_Readme.html** contains links to useful information.
 
-For in-depth information on the Cordova build process in Visual Studio and on the Visual Studio project structure, see Deploy and Run your App.
+For in-depth information on the Cordova build process in Visual Studio and on the Visual Studio project structure, see [Deploy and Run your App](../develop-apps/deploy-and-run-app.md).
 
 ## <a id="BuildHello"></a>Build and run the default “Hello” app
 
@@ -96,16 +95,15 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
     ![Selecting a platform for deployment](media/create-first-app-using-vs-tools-apache-cordova/IC793845.png)
 
-  If you chose the Android platform, and if you have installed Chrome, choose one of the Apache Ripple emulators, as shown here.
+    If you chose the Android platform, and if you have installed Chrome, choose one of the Apache Ripple emulators, as shown here.
 
-  ![Selecting the Ripple emulator](media/create-first-app-using-vs-tools-apache-cordova/IC793846.png)
+    ![Selecting the Ripple emulator](media/create-first-app-using-vs-tools-apache-cordova/IC793846.png)
 
-  >**Note:**
-  Chrome is not installed by default.
+    >**Note**: Chrome is not installed by default.
 
-  If you are using Visual Studio 2015 and have Hyper-V enabled on your machine you can run the app on the Visual Studio Emulator for Android (select an option such as <span class="label">VS Emulator Android Phone</span>).
+  If you are using Visual Studio 2015 and have Hyper-V enabled on your machine you can run the app on the Visual Studio Emulator for Android (select an option such as **VS Emulator Android Phone**.
 
-  If you chose a Windows platform, you can run the app on the default deployment target, <span class="label">Local Machine</span>.
+  If you chose a Windows platform, you can run the app on the default deployment target, **Local Machine**.
 
 2. Press F5 to start debugging, or Shift+F5 to start without debugging.
 
@@ -113,8 +111,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
    ![Run the “Hello” default app in Ripple Emulator](media/create-first-app-using-vs-tools-apache-cordova/IC742604.png)
 
-   >**Tip:**
-  If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, open the SDK Manager from a command line by typing the following command: android sdk  
+   >**Tip**: If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, open the SDK Manager from a command line by typing the following command: android sdk  
 
   If you see an error such as Cannot find module [modulename] or a build failure, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
@@ -124,25 +121,25 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
 ## Next steps
 
-* To continue this tutorial by creating the ToDoList sample app using AngularJS, see Create the ToDoList Sample App.
+* To continue this tutorial by creating the ToDoList sample app using AngularJS, see [Create the ToDoList Sample App](create-to-do-list-app.md).
 
 * Check out our samples GitHub repo for samples. We have samples that demonstrate the use of different JavaScript frameworks and connected services like Azure and O365.
 
   JavaScript frameworks (AngularJS, Backbone, et al) with Azure back end
 
-  * AngularJS sample
+  * [AngularJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398516)
 
-  * WinJS sample
+  * [WinJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398518)
 
-  * Backbone sample
+  * [Backbone sample](http://go.microsoft.com/fwlink/p/?LinkID=398517)
 
   UI frameworks
 
-  * WinJS Navigation template
+  * [Ionic SideMenu starter template](http://go.microsoft.com/fwlink/p/?LinkID=544745)
 
-  * Ionic SideMenu starter template
+  * [WinJS Navigation template](http://go.microsoft.com/fwlink/p/?LinkID=544743) samples.
 
-  * For other samples that show the use of services like Azure Storage and O365, see Add connected services.
+  * For other samples that show the use of services like Azure Storage and O365, see [Add connected services](connected).
 
 ## <a id="Framework"></a>Choose a third-party JavaScript framework
 
@@ -158,7 +155,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
  Cordova apps run in a WebView control on all platforms except Windows and Windows Phone 8.1, so they will tend to look more like web apps. When planning a UX for customers, it is important to ask a couple of questions:
 
- * Do you want your app to look the same on different platforms? A UI framework typically provides a branded experience and is intended to look the same across platforms. A few examples of popular UI frameworks include [Ionic](http://ionicframework.com/) and [Bootstrap](http://getbootstrap.com/). For a sample that uses Ionic, see the [Ionic SideMenu Starter Template](https://code.msdn.microsoft.com/windowsapps/Ionic-SideMenu-Starter-8e905eb5).
+ * Do you want your app to look the same on different platforms? A UI framework typically provides a branded experience and is intended to look the same across platforms. A few examples of popular UI frameworks include [Ionic](http://ionicframework.com/) and [Bootstrap](http://getbootstrap.com/). For a sample that uses Ionic, see the [Ionic SideMenu Starter Template](http://go.microsoft.com/fwlink/p/?LinkID=544745).
 
  * If you want a native look-and-feel, are you targeting a particular platform more than others? Some UI frameworks may resemble a particular platform’s look-and-feel, such as iOS. If you are aiming for a native look-and-feel for each platform, development cost will be higher and a native look-and-feel may be difficult to achieve. It is important to follow the design guidelines for particular platforms to make sure that your app can pass the review process. Apps don’t necessarily need to look native to get approved for an app store, but they should behave more like an app than a web page. For more information. see [Get Your Apache Cordova App Approved by the App Stores](get-your-app-approved.md).
 
@@ -172,8 +169,7 @@ For in-depth information on the Cordova build process in Visual Studio and on th
 
  * If you target iOS or Android versions before 4.4, the browser is WebKit-based. (The Ripple simulator, which uses the installed version of Chrome, behaves more like Android 4.4.) Some WebKit browser behavior is different. For example, WebKit browsers don’t provide consistent support for [vw and vh units](http://caniuse.com/#feat=viewport-units), which are useful when designing a responsive UI.
 
-  >**Tip:**
-  Use the merges folder in your project to handle platform differences that can’t be coded in a more generic fashion.  
+  >**Tip**: Use the merges folder in your project to handle platform differences that can’t be coded in a more generic fashion.  
 
 ## <a id="Native"></a>Add native features (plugins)
 
@@ -187,19 +183,19 @@ To get started creating apps using Azure or O365 services with Cordova, see the 
 
 * [Try it now](http://azure.microsoft.com/pricing/free-trial/)
 
-* Azure Tables (using Azure Mobile Services)
+* Azure Tables (using Azure Mobile Services):
 
-* [AngularJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398516)
+  * [AngularJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398516)
 
-* [WinJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398518)
+  * [WinJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398518)
 
-* [Backbone sample](http://go.microsoft.com/fwlink/p/?LinkID=398517)
+  * [Backbone sample](http://go.microsoft.com/fwlink/p/?LinkID=398517)
 
-* Azure Storage (using Azure Mobile Services)
+* Azure Storage (using Azure Mobile Services):
 
-* [Cordova Upload Images](https://github.com/Mikejo5001/mobile-services-samples/tree/master/CordovaUploadImages)
+  * [Cordova Upload Images](https://github.com/Mikejo5001/mobile-services-samples/tree/master/CordovaUploadImages)
 
-* [Push Notifications to Cordova Apps with Microsoft Azure](https://msdn.microsoft.com/magazine/dn879353.aspx) (MSDN Magazine) O365
+  * [Push Notifications to Cordova Apps with Microsoft Azure](https://msdn.microsoft.com/magazine/dn879353.aspx) (MSDN Magazine) O365
 
 * [Cordova Sample App with O365 Discovery Service and the Files API](https://msdn.microsoft.com/en-us/library/dn848423.aspx)
 
@@ -210,11 +206,3 @@ To get started creating apps using Azure or O365 services with Cordova, see the 
 Platform-specific resources, like splash screens and store icons, are required to get apps approved for download from app stores. The res folder in your project contains these resources. You can also use the res folder to add custom configuration files. For more info, see [Configure Your App Built with Visual Studio Tools for Apache Cordova](configure-vs-tools-apache-cordova.md).
 
 ![Download the tools](media/create-first-app-using-vs-tools-apache-cordova/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
-
-## See Also
-
-**Other Resources**
-
-[AngularJS sample](http://go.microsoft.com/fwlink/p/?LinkID=398516)  
-[WinJS sample](http://go.microsoft.com/fwlink/p/?LinkID=39851)  
-[Backbone sample](http://go.microsoft.com/fwlink/p/?LinkID=398517)
