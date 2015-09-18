@@ -4,24 +4,24 @@
   documentationCenter=""
   authors="bursteg" />
 
-#Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system
+# Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system
 This tutorial is part of a [series of tutorials](./tutorial-team-build-readme.md) on building Visual Studio 2015 Tools for Apache Cordova projects in a Team / CI environment.
 
-##Background
+## Background
 [Jenkins](http://go.microsoft.com/fwlink/?LinkID=613695) is a hugely popular CI server with a large install base so using it to build your Cordova project may be the way to go if you already have it installed and running in your environment. Fortunatley Tools for Apache Cordova is designed to work with a number of different team build systems since the projects it creates are standard [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects.
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common “tasks” for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and Cordova CLI are Node.js based which makes the two highly complementary technologies. For these reasons, this tutorial will focus on the use Gulp rather than MSBuild as the primary build language for Cordova apps when using Jenkins.
 
-**Troubleshooting Tip:** Be aware that we recommend against adding the "platforms" folder or the following json files in the "plugins" folder into source control: android.json, ios.json, remote_ios.json, windows.json, and wp8.json. See "What to Add to Source Control" in the [general team build tutorial](./general.md#whattoadd) for additional details.
+>**Troubleshooting Tip**: Be aware that we recommend against adding the "platforms" folder or the following json files in the "plugins" folder into source control: android.json, ios.json, remote_ios.json, windows.json, and wp8.json. See "What to Add to Source Control" in the [general team build tutorial](./general.md#whattoadd) for additional details.
 
-##Initial Setup
+## Initial Setup
 Since the build process we will describe here is not directly dependent on MSBuild or Visual Studio, you have two options for installing pre-requisites on Windows:
 
 1.  Install Visual Studio 2015 and select the Tools for Apache Cordova option and let it install the pre-requisites for you
 
 2.  Manually install only the pre-requisites needed for the specific platforms you intend to build. For example, you do not need to install Visual Studio at all if you only intend to target Android. See "Installing Dependencies" in the [Building Cordova Apps in a Team / Continuous Integration Environment](./general.md#depends) tutorial for details.
 
-**Troubleshooting Tip:** See ["Internet Access & Proxy Setup" in the general CI tutorial](./general.md#proxy) if your build servers have limited Internet connectivity or require routing traffic through a proxy.
+>**Troubleshooting Tip**: See ["Internet Access & Proxy Setup" in the general CI tutorial](./general.md#proxy) if your build servers have limited Internet connectivity or require routing traffic through a proxy.
 
 For OSX, the pre-requisites will need to be installed manually, but mirror [the requirements for the Visual Studio remote build agent](http://go.microsoft.com/fwlink/?LinkID=533745). However, unlike with TFS 2013, you do not need to install the remote build agent itself if your OSX machine will only be used for team / CI builds.
 
@@ -29,7 +29,7 @@ For the purposes of this tutorial, we will assume your primary Jenkins build ser
 
 If you have not already, start out by installing and setting up up Jenkins itself. See the [Jenkins website for details](http://go.microsoft.com/fwlink/?LinkID=613697). Note that you may want to install other [Jenkins plugins](http://go.microsoft.com/fwlink/?LinkID=613704) such as the [Jenkins Git Plugin](http://go.microsoft.com/fwlink/?LinkID=613698) depending on your environment.
 
-###Install the NodeJS Plugin
+### Install the NodeJS Plugin
 We're going to use the [Jenkins NodeJS Plugin](http://go.microsoft.com/fwlink/?LinkID=613699) to help manage our Node.js environment. Here's a quick summary of how to install it.
 
 1. Start up Jenkins CI. If you installed it as a service on Windows, it is likely already running.
@@ -58,7 +58,7 @@ We're going to use the [Jenkins NodeJS Plugin](http://go.microsoft.com/fwlink/?L
 
 	![NodeJS Plugin](media/jenkins/jenkins-0-1.png)
 
-###Additional Setup for iOS Builds
+### Additional Setup for iOS Builds
 For iOS, we will be taking advantage of an [Environment Variable Injector plugin](http://go.microsoft.com/fwlink/?LinkID=613700) and a [slave agent](http://go.microsoft.com/fwlink/?LinkID=613696) on OSX. Here's a basic walkthrough for configuring these.  
 
 1. Go to the Jenkins Dashboard again (click on "Jenkins" in the upper left hand corner)
@@ -126,19 +126,61 @@ For iOS, we will be taking advantage of an [Environment Variable Injector plugin
 
 	![Slave Agent Label Config](media/jenkins/jenkins-5.png)
 
-##Environment Variables
+## Environment Variables
 Next you will need to set the following environment variables if they have not already been configured in your build server environment. These can either be set as system variables on your build server, by checking the "Environment variables" option when [managing your build nodes](http://go.microsoft.com/fwlink/?LinkID=613696), or using the [Environment Variable Injector plugin](http://go.microsoft.com/fwlink/?LinkID=613700) and checking the "Inject environment variables to the build process" option in your project build config.
 
-| **Variable**       | **Required For**                         | **Purpose**                              | **Default Location (Visual Studio 2015)** |
-|:-------------------|:-----------------------------------------|:-----------------------------------------|:------------------------------------------|
-| **ANDROID\_HOME**  | Android                                  | Location of the Android SDK              | C:\\Program Files (x86)\\Android\\android-sdk |
-|**JAVA\_HOME**     | Android                                  | Location of Java                         | C:\\Program Files (x86)\\Java\\jdk1.7.0\_55 |
-| **ANT\_HOME**      | Android when building using Ant (not Gradle) | Location of Ant                          | C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Apps\\apache-ant-1.9.3 |
-| **GRADLE\_USER\_HOME**      | Optional | Overrides the default location Gradle build system dependencies should be installed when building Android using Cordova 5.0.0+ | If not specified, uses %HOME%\\.gradle on Windows or ~/.gradle on OSX |
-| **CORDOVA\_CACHE** | Optional                                 | Overrides the default location used by the [sample build script](http://go.microsoft.com/fwlink/?LinkID=533736) to cache installs of multiple versions of Cordova. | If not specified, uses %APPDATA%\\cordova-cache on Windows and ~/.cordova-cache on OSX |
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+    }
+</style>
+<table><thead>
+<tr>
+<td align="left"><strong>Variable</strong></td>
+<td align="left"><strong>Required For</strong></td>
+<td align="left"><strong>Purpose</strong></td>
+<td align="left"><strong>Default Location (Visual Studio 2015)</strong></td>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left"><strong>ANDROID_HOME</strong></td>
+<td align="left">Android</td>
+<td align="left">Location of the Android SDK</td>
+<td align="left">C:\Program Files (x86)\Android\android-sdk</td>
+</tr>
+<tr>
+<td align="left"><strong>JAVA_HOME</strong></td>
+<td align="left">Android</td>
+<td align="left">Location of Java</td>
+<td align="left">C:\Program Files (x86)\Java\jdk1.7.0_55</td>
+</tr>
+<tr>
+<td align="left"><strong>ANT_HOME</strong></td>
+<td align="left">Android when building using Ant (not Gradle)</td>
+<td align="left">Location of Ant</td>
+<td align="left">C:\Program Files (x86)\Microsoft Visual Studio 14.0\Apps\apache-ant-1.9.3</td>
+</tr>
+<tr>
+<td align="left"><strong>GRADLE_USER_HOME</strong></td>
+<td align="left">Optional</td>
+<td align="left">Overrides the default location Gradle build system dependencies should be installed when building Android using Cordova 5.0.0+</td>
+<td align="left">If not specified, uses %HOME%\.gradle on Windows or ~/.gradle on OSX</td>
+</tr>
+<tr>
+<td align="left"><strong>CORDOVA_CACHE</strong></td>
+<td align="left">Optional</td>
+<td align="left">Overrides the default location used by the <a href="http://go.microsoft.com/fwlink/?LinkID=533736">sample build script</a> to cache installs of multiple versions of Cordova.</td>
+<td align="left">If not specified, uses %APPDATA%\cordova-cache on Windows and ~/.cordova-cache on OSX</td>
+</tr>
+</tbody></table>
 
-##Project Setup & Configuring Jenkins to Build Your Project
-###Adding Gulp to Your Project
+
+## Project Setup & Configuring Jenkins to Build Your Project
+### Adding Gulp to Your Project
 Using Gulp in a team environment is fairly straight forward as you can see in the detailed [Gulp tutorial](http://go.microsoft.com/fwlink/?LinkID=533742). However, to streamline setup, follow these steps:
 
 1.  Take the sample "gulpfile.js" and "package.json" file from the "samples/gulp" folder [from this GitHub repo](http://go.microsoft.com/fwlink/?LinkID=533736) and place them in the root of your project
@@ -147,10 +189,10 @@ Using Gulp in a team environment is fairly straight forward as you can see in th
 
 From here you can modify gulpfile.js and add other gulp plugins. The [Gulp tutorial](http://go.microsoft.com/fwlink/?LinkID=533742) provides additional detail on what the gulpfile does and how to wire Gulp tasks as "hooks" into Cordova build events.
 
-###Project Build Settings
+### Project Build Settings
 We'll assume for the purposes of this tutorial that we want to build our Cordova app for Android, iOS, and Windows. The Windows Cordova platform can only be built on Windows and iOS can only be built on OSX. As a result, we'll need the ability to be able to queue a build that can target one of these two operating systems. To keep things simple, we will create a separate "Freestyle" project build configs for Windows and iOS. A more complex configuration can be achieved through a "Multi-configuration project" but the different filesystems and conventions between Windows and OSX can get out of hand quickly.
 
-####Windows Project Build Settings
+#### Windows Project Build Settings
 Detailed instructions on configuring projects in Jenkins can be found [here](http://go.microsoft.com/fwlink/?LinkID=613701), but here is a walkthrough of the settings needed to build your project:
 
 1. Open the Jenkins Dashboard in a web browser (typically at http://localhost:8080/ if running locally)
@@ -193,7 +235,7 @@ Detailed instructions on configuring projects in Jenkins can be found [here](htt
 	Error: ENOENT, stat 'C:\Windows\system32\config\systemprofile\AppData\Roaming\npm'
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-####OSX Project Build Settings
+#### OSX Project Build Settings
 The OSX version of the build is similar but adds one additional requirement: Unlocking the keychain. For iOS to build, you will need to [configure your signing certificates on the OSX machine](http://go.microsoft.com/fwlink/?LinkID=613702) as you would normally using with user Jenkins uses to start up the slave agent via SSH. Since the agent does not run interactively, you will then need to unlock the keychain for Jenkins to access the signing certificates. Here is a walkthrough of how to make this happen:
 
 1. Go to the Jenkins Dashboard again (click on "Jenkins" in the upper left hand corner)
@@ -241,6 +283,5 @@ The OSX version of the build is similar but adds one additional requirement: Unl
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
 * [Email us your questions](mailto:/vscordovatools@microsoft.com)
