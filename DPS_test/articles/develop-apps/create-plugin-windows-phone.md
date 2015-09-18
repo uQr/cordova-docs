@@ -74,7 +74,7 @@ You start by creating the following folder and file structure. While this is not
 
 The native code for the Windows 8 platform is written in C#. Add the following code to the **ToUpperPlugin.cs** file:
 
-```C#
+```c#
 using System;
 
 namespace WPCordovaClassLib.Cordova.Commands
@@ -224,7 +224,7 @@ Your plugin is complete and ready to add to a project.
 
 Now that you have added the plugin to the project, you are ready to call the **ToUpper** method from your code.
 
-**Note** You cannot debug the Windows Phone Cordova project. There are a couple of options for debugging the app. The first is to use the platform-specific project as described in the section [Developing and debugging the plugin code](#DebugPlugin) later in this tutorial. Another option is to use [Web Inspector Remote](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/).
+   >**Note** You cannot debug the Windows Phone Cordova project. There are a couple of options for debugging the app. The first is to use the platform-specific project as described in the section [Developing and debugging the plugin code](#DebugPlugin) later in this tutorial. Another option is to use [Web Inspector Remote](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/).
 
 
 ## <a id="CallPlugin"></a>Call the plugin from your app
@@ -517,7 +517,7 @@ When you ran your Cordova project, Visual Studio created a Windows Phone project
 
 You can copy the projects to a new location and use them to develop your plugin. When you have your plugin working, you need to copy the final code back to the plugin location you created at the beginning of the tutorial.
 
-**Caution** Visual Studio will update or delete the projects every time you build your Cordova app. You need to copy the projects to a new location to prevent Visual Studio from overwriting them.
+> **Caution** Visual Studio will update or delete the projects every time you build your Cordova app. You need to copy the projects to a new location to prevent Visual Studio from overwriting them.
 
 ##<a="Troubleshooting"></a>Troubleshooting**](javascript:void(0) "Collapse")<div class="LW_CollapsibleArea_HrDiv">
 
