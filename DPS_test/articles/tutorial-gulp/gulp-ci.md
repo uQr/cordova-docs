@@ -1,6 +1,6 @@
 <properties pageTitle="Build a Cordova project by using Gulp"
   description="Build a Cordova project by using Gulp"
-  services="" 
+  services=""
   documentationCenter=""
   authors="bursteg" />
 
@@ -18,7 +18,7 @@ The Cordova CLI internally uses a node module called cordova-lib that encapsulat
 
 For example, this is a sample **gulpfile.js** that you can place in the root of your Cordova project that will build a release version of the Android platform:
 
-```javascript
+```typescript
 var gulp = require("gulp"),
     cordova = require("cordova-lib").cordova;
 
