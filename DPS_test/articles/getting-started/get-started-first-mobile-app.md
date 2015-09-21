@@ -299,6 +299,10 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 
 4. Open the **index.html** page, and add this reference to the ```<body>``` of the page.
 
+	```html   
+		<script src="scripts/weather.js"></script>
+	```
+
     When your done, your script reference should like like this.
 
 	```html   
@@ -543,17 +547,17 @@ Also, as your page layouts become more advanced, you might have to tweak them a 
 
 1. In **Solution Explorer**, expand the **www** folder, and then the **scripts** folder.
 
-3. In the shortcut menu of the **index.js** file, choose **Copy**.
+3. In the shortcut menu of the **weather.js** file, choose **Copy**.
 
 1. In **Solution Explorer**, expand the **android** sub-folder in your **merges** folder.
 
 2. In the shortcut menu of the **scripts** folder, choose **paste**.
 
-    You now have a copy of the **index.js** in the **android** folder.
+    You now have a copy of the **weather.js** in the **android** folder.
 
     ![Platform-Specific Javascript File](media/get-started-first-mobile-app/android-js-file.png)
 
-4. In the **index.js** file, add the following code to the ``geolocation`` method.
+4. In the **weather.js** file, add the following code to the ``geolocation`` method.
 
 	```javascript
 		$('#app-title').text("Android Weather App");
@@ -565,7 +569,7 @@ Also, as your page layouts become more advanced, you might have to tweak them a 
 
     ![Platform-Specific Javascript File](media/get-started-first-mobile-app/tailor-js.png)
 
-    Making a copy of a file this large to change one line of code is an extreme example, but you can begin to imagine the possibilities. You can refactor your code in ways that leverage the **merges** folder more efficiently.
+    Making a copy of a file this large to change one line of code is an extreme example, but you can begin to imagine the possibilities, and you can always refactor your code in ways that leverage the **merges** folder more efficiently.
 
 ### Tailor the appearance of your app
 
