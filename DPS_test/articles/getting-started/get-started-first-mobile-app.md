@@ -144,10 +144,10 @@ First, we'll add the [JQuery](https://jquery.com/) Nuget package to your project
     Now they're in the correct location.
 
 3. Add these script references to the ```<body>``` tag of your [index.html](#tour-project) file:
+
 ```html
-        
-        <script src="scripts/index.js"></script>
-        <script src="scripts/jquery-2.1.4.min.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/jquery-2.1.4.min.js"></script>
 ```
 
 ### Design a page
@@ -155,92 +155,94 @@ First, we'll add the [JQuery](https://jquery.com/) Nuget package to your project
 **index.html** is the first page that appears when users run your app. So we'll add our HTML to that file. Of course, this the default setting and you can change that at any time in the [configuration designer](#settings).
 
 1. Open the **index.html** file and remove the this line.
-```html
-        
-        <p>Hello, your application is ready!</p>
-```
+
+	```html
+	  <p>Hello, your application is ready!</p>
+	```
 
 2. Add this HTML to the ```<body>``` of the page to give users a way to search for the weather see the results in a table.
-```html
-        
-        <h1 id="app-title">Weather App</h1>
-         <table cellpadding="5" class="appfont">
-        <tr>
-            <td>Zip Code: </td>
-            <td><input id="input-box" /></td>
-            <td><button id="get-weather">Get Weather</button></td>
-        </tr>
-        </table>
-        <table>
-        <tr>
-            <td colspan="2"><h3 id="description">Get the Weather</h3></td>
-        </tr>
-        <tr>
-            <td>Temp:</td>
-            <td align="right"><div id="temp"></div></td>
-        </tr>
-        <tr>
-            <td>Wind:</td>
-            <td align="right"><div id="wind"></div></td>
-        </tr>
-        <tr>
-            <td>Humidity:</td>
-            <td align="right"><div id="humidity"></div></td>
-        </tr>
-        <tr>
-            <td>Visibility:</td>
-            <td align="right"><div id="visibility"></div></td>
-        </tr>
-        <tr>
-            <td>Sunrise:</td>
-            <td align="right"><div id="sunrise"></div></td>
-        </tr>
-        <tr>
-            <td>Sunset:</td>
-            <td align="right"><div id="sunset"></div></td>
-        </tr>
-        </table>
-```
+
+	```html
+		<h1 id="app-title">Weather App</h1>
+		 <table cellpadding="5" class="appfont">
+		<tr>
+		    <td>Zip Code: </td>
+		    <td><input id="input-box" /></td>
+		    <td><button id="get-weather">Get Weather</button></td>
+		</tr>
+		</table>
+		<table>
+		<tr>
+		    <td colspan="2"><h3 id="description">Get the Weather</h3></td>
+		</tr>
+		<tr>
+		    <td>Temp:</td>
+		    <td align="right"><div id="temp"></div></td>
+		</tr>
+		<tr>
+		    <td>Wind:</td>
+		    <td align="right"><div id="wind"></div></td>
+		</tr>
+		<tr>
+		    <td>Humidity:</td>
+		    <td align="right"><div id="humidity"></div></td>
+		</tr>
+		<tr>
+		    <td>Visibility:</td>
+		    <td align="right"><div id="visibility"></div></td>
+		</tr>
+		<tr>
+		    <td>Sunrise:</td>
+		    <td align="right"><div id="sunrise"></div></td>
+		</tr>
+		<tr>
+		    <td>Sunset:</td>
+		    <td align="right"><div id="sunset"></div></td>
+		</tr>
+		</table>
+	```
 
 ### Handle a button event
 
 1. Open the [index.js](#tour-project) file and add the following line of code to the ```onDeviceReady``` function.
-```javascript
-        
-        $('#get-weather').click(getWeather);
-```
+
+	```javascript
+	    $('#get-weather').click(getWeather);
+	```
 
     This code refers to the ID of the following button on the HTML page.
-```html
-        
-        <button id="get-weather">Get Weather</button>
-```
+
+	```html
+	  <button id="get-weather">Get Weather</button>
+	```
 
     The code handles the ``click`` event by passing in the name of a function (*getWeather*). You'll add that function shortly.
 
 #### A quick look at index.js
-  This is a good time to quickly look at the ```index.js``` file. This file loads when the user runs the app.  Why? Because the ```index.html``` page contains this reference to it:
-```javascript
-        
-        <script src="scripts/index.js"></script>
+This is a good time to quickly look at the ```index.js``` file. This file loads when the user runs the app.  Why? Because the ```index.html``` page contains this reference to it:
+	
+```javascript       
+  <script src="scripts/index.js"></script>
 ```
 
-  You'll notice a few things about the ```index.js``` file. First, all the code in that file is enclosed within an *anonymous self-invoking function*. This is a fancy way of saying that this function executes automatically when the file loads.
-```javascript
-        
-        (function () {
-            "use strict";
-          // all the stuff is in this function.
-        })();
+You'll notice a few things about the ```index.js``` file. First, all the code in that file is enclosed within an *anonymous self-invoking function*. This is a fancy way of saying that this function executes automatically when the file loads.
+
+```javascript      
+	(function () {
+	    "use strict";
+	  // all the stuff is in this function.
+	})();
 ```
-  Enclosed in this function, you'll see an event handler that runs when the Cordova device APIs are fully loaded.  
-```javascript
-        
+
+Enclosed in this function, you'll see an event handler that runs when the Cordova device APIs are fully loaded.  
+
+```javascript      
         function onDeviceReady() {
 
          // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
         };
 ```
+
 So what exactly do we mean by *Cordova device APIs*? These are APIs that you 'd use to interact with device capabilities such as the camera or accelerometer. If you want to run any code like this when the app first starts, make sure you add that code or call those functions from inside of this event handler. In fact, later on, we'll do just that.
 
 ### Add code to get the weather
@@ -256,40 +258,40 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 3. Name the file *weather.js*, and then choose the **Add** button.
 
 4. Open the **weather.js** file and add the following function.
-```javascript
-        
-        function getWeather() {
 
-          var zipcode = $('#input-box').val();
-          var queryString =
-              "https://query.yahooapis.com/v1/public/yql?q=" +
-              "select+*+from+weather.forecast+where+location=" +
-               zipcode + "&format=json";
-
-          $.getJSON(queryString, function (results) {
-              if (results.query.count > 0) {
-                  var weather = results.query.results.channel;
-
-                  console.log(weather);
-
-                  $('#description').text(weather.description);
-
-                  var wind = weather.wind;
-                  $('#temp').text(wind.chill);
-                  $('#wind').text(wind.speed);
-
-                  var atmosphere = weather.atmosphere;
-                  $('#humidity').text(atmosphere.humidity);
-                  $('#visibility').text(atmosphere.visibility);
-
-                  var astronomy = weather.astronomy;
-                  $('#sunrise').text(astronomy.sunrise);
-                  $('#sunset').text(astronomy.sunset);
-              }
-
-          });
-      }
-```
+	```javascript       
+		function getWeather() {
+		
+		  var zipcode = $('#input-box').val();
+		  var queryString =
+		      "https://query.yahooapis.com/v1/public/yql?q=" +
+		      "select+*+from+weather.forecast+where+location=" +
+		       zipcode + "&format=json";
+		
+		  $.getJSON(queryString, function (results) {
+		      if (results.query.count > 0) {
+		          var weather = results.query.results.channel;
+		
+		          console.log(weather);
+		
+		          $('#description').text(weather.description);
+		
+		          var wind = weather.wind;
+		          $('#temp').text(wind.chill);
+		          $('#wind').text(wind.speed);
+		
+		          var atmosphere = weather.atmosphere;
+		          $('#humidity').text(atmosphere.humidity);
+		          $('#visibility').text(atmosphere.visibility);
+		
+		          var astronomy = weather.astronomy;
+		          $('#sunrise').text(astronomy.sunrise);
+		          $('#sunset').text(astronomy.sunset);
+		      }
+		
+		  });
+		}
+	```
 
     This function gets a zip code from the input box, and uses a free service to get the weather for that zip code. The rest of this code uses JQuery syntax to populate controls on the page with data from the service.
 
@@ -298,15 +300,15 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 4. Open the **index.html** page, and add this reference to the ```<body>``` of the page.
 
     When your done, your script reference should like like this.
-```html
-       
-        <body>
-        <script src="cordova.js"></script>
-        <script src="scripts/platformOverrides.js"></script>
-        <script src="scripts/index.js"></script>
-        <script src="scripts/jquery-2.1.4.min.js"></script>
-        <script src="scripts/weather.js"></script>
-```
+
+	```html   
+		<body>
+		<script src="cordova.js"></script>
+		<script src="scripts/platformOverrides.js"></script>
+		<script src="scripts/index.js"></script>
+		<script src="scripts/jquery-2.1.4.min.js"></script>
+		<script src="scripts/weather.js"></script>
+	```
 
 ## Run your app in an Emulator
 
@@ -337,10 +339,10 @@ A big benefit of Visual Studio is it's powerful debugger. If you're already fami
 1. Run your app. This time, try an Android emulator.
 
 2. After your app starts, open the **weather.js** file, and set a *breakpoint* by clicking the margin next to this line:
-```javascript
-        
-        $('#description').text(weather.description);
-```
+
+	```javascript        
+	  $('#description').text(weather.description);
+	```
 
 3. In the running app, type a valid United States zip code into the edit box, and then press the **Get Weather** button.
 
@@ -387,11 +389,10 @@ While the JavaScript Console is not specific to Visual Studio, it's a handy way 
 Most likely, you'll see messages logged by scripts that your app consumes. It's a common practice to add code that logs messages and then view those messages in the console. Let's do that now.
 
 1.  Open the **weather.js** file and add the following code to the ``getWeather`` function.
-```javascript
-        
-        console.log(weather.description);
-```
 
+	```javascript
+	  console.log(weather.description);
+	```
 
 2. Run your app, provide a zip code, and then choose the **Get Weather** button.
 
@@ -435,93 +436,94 @@ Most likely you'll want your app to do more than just show web pages on a mobile
     Let's add some code that consumes this plugin.
 
 3. In the **weather.js** file add the following code:
-```javascript
-         
-        function getLocation() {
 
-            navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+	```javascript        
+		function getLocation() {
+		
+		    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+		
+		 }
+		
+		 var onSuccess = function (position) {
+		
+		 var latitude = position.coords.latitude;
+		 var longitude = position.coords.longitude;
+		
+		 }
+		
+		function onError(error) {
+		   console.log('code: ' + error.code + '\n' +
+		       'message: ' + error.message + '\n');
+		 }
+	```
 
-         }
-
-         var onSuccess = function (position) {
-
-         var latitude = position.coords.latitude;
-         var longitude = position.coords.longitude;
-
-         }
-
-        function onError(error) {
-           console.log('code: ' + error.code + '\n' +
-               'message: ' + error.message + '\n');
-         }
-```
     This code uses the device's geolocation capability to get the latitude and longitude of the device's location.
 
     Now let's use the latitude and longitude to get a zip code for that location and then populate the input box of your app with that zip code.
 
 4. Replace the ``getLocation`` function with this complete function.
-```javascript
-           
-        function getLocation() {
-
-            navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
-
-              $('#description').text("Determining your current location ...");
-              $('#get-weather').prop("disabled", true);
-           }
-
-           var onSuccess = function (position) {
-
-           var latitude = position.coords.latitude;
-           var longitude = position.coords.longitude;
-
-           // Get zipCode by using latitude and longitude.
-
-           var queryString = "https://query.yahooapis.com/v1/public/yql?q=" +
-              "select%20*%20from%20geo.placefinder%20where%20text%3D%22" + latitude +
-              "%2C" + longitude + "%22%20and%20gflags%3D%22R%22" + "&format=json";
-
-           $.getJSON(queryString, function (results) {
-
-              if (results.query.count > 0) {
-
-                  // Put the zip code into the input box for the user.
-                  var zipCode = results.query.results.Result.uzip
-                  $('#input-box').val(zipCode);
-
-               }
-
-           });
-
-              $('#description').text("Get the Weather");
-              $('#get-weather').prop("disabled", false);
-           }
-
-           function onError(error) {
-            console.log('code: ' + error.code + '\n' +
-              'message: ' + error.message + '\n');
-           }
-```
+	
+	```javascript
+		function getLocation() {
+		
+		    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
+		
+		      $('#description').text("Determining your current location ...");
+		      $('#get-weather').prop("disabled", true);
+		   }
+		
+		   var onSuccess = function (position) {
+		
+		   var latitude = position.coords.latitude;
+		   var longitude = position.coords.longitude;
+		
+		   // Get zipCode by using latitude and longitude.
+		
+		   var queryString = "https://query.yahooapis.com/v1/public/yql?q=" +
+		      "select%20*%20from%20geo.placefinder%20where%20text%3D%22" + latitude +
+		      "%2C" + longitude + "%22%20and%20gflags%3D%22R%22" + "&format=json";
+		
+		   $.getJSON(queryString, function (results) {
+		
+		      if (results.query.count > 0) {
+		
+		          // Put the zip code into the input box for the user.
+		          var zipCode = results.query.results.Result.uzip
+		          $('#input-box').val(zipCode);
+		
+		       }
+		
+		   });
+		
+		      $('#description').text("Get the Weather");
+		      $('#get-weather').prop("disabled", false);
+		   }
+		
+		   function onError(error) {
+		    console.log('code: ' + error.code + '\n' +
+		      'message: ' + error.message + '\n');
+		   }
+	```
 
 5. Open the **index.js** file, and add the following code to the ``onDeviceReady`` function.
-```javascript
-        
-        getLocation();
-```
 
-   The ``onDeviceReady`` function should look like this.
-```javascript
+	```javascript  
+	  getLocation();
+	```
 
-        function onDeviceReady() {
-            // Handle the Cordova pause and resume events
-            document.addEventListener( 'pause', onPause.bind( this ), false );
-            document.addEventListener('resume', onResume.bind(this), false);
-            $('#get-weather').click(getWeather);
+    The ``onDeviceReady`` function should look like this.
 
-            getLocation();
-
-        };
-```
+	```javascript
+		function onDeviceReady() {
+		    // Handle the Cordova pause and resume events
+		    document.addEventListener( 'pause', onPause.bind( this ), false );
+		    document.addEventListener('resume', onResume.bind(this), false);
+		    $('#get-weather').click(getWeather);
+		
+		    getLocation();
+		
+		};
+	```
 
 6. Run the app.
 
@@ -552,10 +554,10 @@ Also, as your page layouts become more advanced, you might have to tweak them a 
     ![Platform-Specific Javascript File](media/get-started-first-mobile-app/android-js-file.png)
 
 4. In the **index.js** file, add the following code to the ``geolocation`` method.
-```javascript
-        
-        $('#app-title').text("Android Weather App");
-```
+
+	```javascript
+		$('#app-title').text("Android Weather App");
+	```
 
 5. Run your app in the Apache Ripple Simulator.
 
@@ -578,14 +580,14 @@ Also, as your page layouts become more advanced, you might have to tweak them a 
     ![Platform-Specific style sheet File](media/get-started-first-mobile-app/android-css-file.png)
 
 4. Replace the contents of the new **index.css** file with the following.
-```css
-       
-        body {
 
-          background-color:blue;   
-          color:white;
-        }
-```
+	```css
+		body {
+		
+		  background-color:blue;   
+		  color:white;
+		}
+	```
 5. Run your app in the Apache Ripple Simulator.
 
     The app has a blue background and white foreground because the **index.css** file in the **android** folder replaces the **index.css** file in the **www** folder for the Android version of your app.

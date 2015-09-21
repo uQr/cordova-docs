@@ -47,7 +47,7 @@ The main UI in the task list sample app consists of the following elements:
  ```html
   <input id="new-todo" placeholder="What needs to be done?"
        td-text-change="toDoCtrl.addToDo()" ng-model="toDoCtrl.newToDoText" autofocus>
-```
+ ```
 
 When you first run the app, some of the attributes in the preceding code won’t do anything. For example, the AngularJS ng-model directive enables two-way data binding, and allows you to save the entered task when the addToDo() function runs. For the task list, we define a template using some nested elements that wrap several other elements. For example, the nested element shown here is used to display each task string.
 
