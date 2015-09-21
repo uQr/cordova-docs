@@ -37,7 +37,7 @@ An app built using Visual Studio Tools for Apache Cordova uses Cordova to access
 
 4. Choose a source control option for the project, or choose **Cancel** to skip this for now. Visual Studio creates the new project and opens **Solution Explorer** in the right pane.
 
-  ![Project structure in an Apache Cordova app in VS](media/create-first-app-using-vs-tools-apache-cordova/IC795829.png)
+  ![Project structure in an Apache Cordova app in VS](media/create-first-app-using-vs-tools-apache-cordova/updatedCordovaProject.jpg)
 
   The project structure in Visual Studio 2015 is updated to support third-party CLIs, and to match the Cordova project structure. Visual Studio 2013 uses the deprecated project structure. We recommend that you create Cordova apps using Visual Studio 2015.
 
