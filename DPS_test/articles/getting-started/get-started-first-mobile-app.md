@@ -119,23 +119,23 @@ These options and many more are captured in the **config.xml** file of your proj
 
     For example, choose the **Plugins** to tab to add or remove *plugins*. You can use *plugins* to  access a device capability such as the camera on a phone. We'll discuss plug-ins a bit later.
 
-    When your done exploring, close the designer and we'll build a basic app to get an idea of how things flow.
+    When you're done exploring, close the designer and we'll build a basic app to get an idea of how things flow.
 
 ## <a id="build-something"></a>Start Small: Build a basic app
 
-Apps can be as complicated or as simple as you want them to be. The goal of this section is to build a very basic single page app that shows the weather conditions of any area in the United states.
+Apps can be as complicated or as simple as you want them to be. The goal of this section is to build a very basic single page app that shows the weather conditions of any area in the United States.
 
 ### Add a package
 
-First, we'll add the [JQuery](https://jquery.com/) Nuget package to your project. If your not familiar with JQuery, it's a just a JavaScript library that makes certain tasks easier such as changing the properties of a control or handling it's events, and that's exactly what we'll use it for.
+First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project. If you're not familiar with JQuery, it's a just a JavaScript library that makes certain tasks easier such as changing the properties of a control or handling it's events, and that's exactly what we'll use it for.
 
-> **Tip**: There is more than one way to add packages like this one to your project. After you've got a little experience, check out Bower. Bower is a bit advanced for this discussion, but when your ready to explore more advanced features, we've created a topic that helps you use it.
+> **Tip**: There is more than one way to add packages like this one to your project. After you've got a little experience, check out Bower. Bower is a bit advanced for this discussion, but when you're ready to explore more advanced features, we've created a topic that helps you use it.
 
 1. Choose **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**, and add the **jQuery** NuGet package to your solution.
 
     ![JQuery Package](media/get-started-first-mobile-app/nuget-jquery.png)
 
-    Nuget adds files to the **Scripts** folder of your project, but that's not really where we need them so we'll have to fix that.
+    NuGet adds files to the **Scripts** folder of your project, but that's not really where we need them so we'll have to fix that.
 
 2. Drag those files to **scripts** subfolder of your **www** folder
 
@@ -154,7 +154,7 @@ First, we'll add the [JQuery](https://jquery.com/) Nuget package to your project
 
 **index.html** is the first page that appears when users run your app. So we'll add our HTML to that file. Of course, this the default setting and you can change that at any time in the [configuration designer](#settings).
 
-1. Open the **index.html** file and remove the this line.
+1. Open the **index.html** file and remove this line.
 
 	```html
 	  <p>Hello, your application is ready!</p>
@@ -243,7 +243,7 @@ Enclosed in this function, you'll see an event handler that runs when the Cordov
         };
 ```
 
-So what exactly do we mean by *Cordova device APIs*? These are APIs that you 'd use to interact with device capabilities such as the camera or accelerometer. If you want to run any code like this when the app first starts, make sure you add that code or call those functions from inside of this event handler. In fact, later on, we'll do just that.
+So what exactly do we mean by *Cordova device APIs*? These are APIs that you'd use to interact with device capabilities such as the camera or accelerometer. If you want to run any code like this when the app first starts, make sure you add that code or call those functions from inside of this event handler. In fact, later on, we'll do just that.
 
 ### Add code to get the weather
 
@@ -303,7 +303,7 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 		<script src="scripts/weather.js"></script>
 	```
 
-    When your done, your script reference should like like this.
+    When you're done, your script reference should look like this.
 
 	```html   
 		<body>
@@ -336,7 +336,7 @@ Let's run the app, but this time let's use an emulator.
 
 ## <a id="find-fix"></a>Find and fix problems
 
-A big benefit of Visual Studio is it's powerful debugger. If you're already familiar with it, you can skip this section. If you're not, let's try a few basic things.
+A big benefit of Visual Studio is its powerful debugger. If you're already familiar with it, you can skip this section. If you're not, let's try a few basic things.
 
 ### Breakpoints and conditional breakpoints
 
@@ -615,9 +615,9 @@ see [Add packages by using Bower](./develop-apps/tutorial-using-bower).
 
 **Learn about other great ways to leverage the Visual Studio debugger**
 
-see see [Debugger Basics](https://msdn.microsoft.com/en-us/library/k0k771bt.aspx).
+see [Debugger Basics](https://msdn.microsoft.com/en-us/library/k0k771bt.aspx).
 
-**Explore the many javascript frameworks out there**
+**Explore the many JavaScript frameworks out there**
 
 Search online. They're everywhere! Here's a couple of them: [AngularJS](https://angularjs.org/), and [ionic](http://ionicframework.com/).
 
