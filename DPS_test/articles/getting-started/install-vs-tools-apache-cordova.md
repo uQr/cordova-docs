@@ -26,8 +26,7 @@ Operating system requirements:
     > **Important:** If you are using Windows 7, you can develop apps for Android and iOS, but not for Windows or Windows Phone.
 To build apps for specific device platforms, there are a few additional requirements:
 
-* iOS and the iOS Simulator require a Mac computer capable of running [Xcode 6](https://developer.apple.com/xcode/) (Xcode 6 is recommended). For additional information and installation steps,
-* see [Install tools for iOS](#ios).
+* iOS and the iOS Simulator require a Mac computer capable of running [Xcode 5](https://developer.apple.com/xcode/) (Xcode 6 is recommended). For additional information and installation steps, see [Install tools for iOS](#ios).
 
     >**Tip:** If you want to build iOS on a cloud service instead of Mac hardware, see [Build and Simulate iOS in the Cloud](build_ios_cloud.md).
 * Android emulators work best on computers that [can run either Hyper-V](https://msdn.microsoft.com/en-us/library/mt228280.aspx) or the Intel HAXM driver. See [Run Your Apache Cordova App on Android](./develop-apps/run-app-apache.md).
@@ -88,7 +87,7 @@ If not already installed, the following software will be selected by default:
 
     > **Note:** The first time you build an app after installing the tools, Visual Studio will download and install the Cordova tools. As a result, the first build takes extra time to complete. Check the Output window to see progress. If you see an error such as Cannot find module [modulename], you may need to clean the solution and rebuild. For more information, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
-    If you are migrating a project from an earlier version of Visual Studio, see this [migration information](./known-issues/known-issues-vs2015.md##strongproject-structure-change-from-ctp331strong).
+    If you are migrating a project from an earlier version of Visual Studio, see this [migration information](migrate-to-vs2015.md).
 
 ## Install tools for iOS <a name="ios"></a>
 
@@ -101,9 +100,10 @@ Before you install the remote agent, make sure you have [installed the Visual St
 
 You can configure the agent to handle build requests and run the app on an iOS device or the iOS Simulator. To host the remote agent, the Mac computer must have the following installed:
 
-* Mac OS X Mavericks * Xcode 6 * Xcode command-line tools (from Terminal app, use `xcode-select –install`)
+* Mac OS X Mavericks **Xcode6** Xcode command-line tools (from Terminal app, use `xcode-select –install`)
 
 * [Node.js](http://nodejs.org/)
+  >**Note**: See known issues for updated information on Node.js.
 
 * [Git command line tools](http://go.microsoft.com/fwlink/?LinkID=396870), if you are using a CLI from a Git repository. If the CLI version is pointed to a Git location, Git is required to build the app for iOS.
 
@@ -111,7 +111,7 @@ You must also have the following:
 
 * An active iOS Developer Program account with Apple
 
-* An iOS provisioning profile configured in Xcode (download the provisioning profile and run the downloaded ``*.mobileprovision` file).
+* An iOS provisioning profile configured in Xcode (download the provisioning profile and run the downloaded `*.mobileprovision` file).
 
     > **Note:** For detailed information, read the [Maintaining Your Signing Identities and Certificates](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) in the iOS Developer Library.
 
@@ -124,9 +124,7 @@ You must also have the following:
 1. From the Terminal app on your Mac, type:
 
     ```
-  sudo npm install –g npm
   sudo npm install -g remotebuild
-  sudo npm install –g ios-sim@3.1.1
   ```
 
   The first command updates npm, the second command installs the remote agent, and the third command is only required if you will be using the iOS Simulator from Visual Studio.
@@ -134,7 +132,6 @@ You must also have the following:
 2. If you have an older version of Node.js and npm, you may need to type the following commands before you start the remote agent, or you will encounter a permissions error when building. From the Terminal app on your Mac, type:
 
     ```
-  sudo npm cache clear
   sudo chown -R `whoami` ~/.npm
   ```
 
@@ -169,11 +166,11 @@ If you updated your computer to a new version of Visual Studio, you must update 
 * If the mac is externally visible under one hostname, but internally assigns itself another hostname, you may specify the host name using the following command in the Terminal app:
 
     ```
-  remotebuild resetServerCerts --hostname=my.external.hostname.com
-  remotebuild generateClientCert --hostname=my.external.hostname.com
+  remotebuild certificates reset --hostname=my.external.hostname.com
+  remotebuild certificates generate --hostname=my.external.hostname.com
     ```
 
-  to regenerate certificates that will work with the given hostname. If you intend to configure the remote agent in Visual Studio using the host name, ping the Mac using the host name to verify that it is reachable. Otherwise, you may need to use the IP address instead.
+  to regenerate certificates that will work with the given hostname.
 
   Before you can use the remote agent, you must specify the remote configuration in Visual Studio.
 
