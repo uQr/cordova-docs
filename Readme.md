@@ -5,13 +5,13 @@
   authors="bursteg" />
 
 # Visual Studio Tools for Apache Cordova
-This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).**
+This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).** The official site for Visual Studio 2015 documentation is hosted on **[taco.visualstudio.com](http://taco.visualstudio.com)**, and any content changes in the current repository will be updated there as well.
 
 **Note that, with the exception of known issues, this documentation does not apply to Visual Studio 2013 CTPs.**
 
 <a name="tutorials"></a>
 ## Tutorials
-1. [Using Apache Cordova 5](tutorial-cordova-5/tutorial-cordova-5-readme.md)
+1. [Using Apache Cordova 5](/articles/tutorial-cordova-5/tutorial-cordova-5-readme.md)
 	1. [An Introduction to Cordova 5 Security](./tutorial-cordova-5/cordova-5-security.md)
 1. [Using Gulp with your Cordova projects](tutorial-gulp/tutorial-gulp-readme.md)
 	1. [Using Gulp to Build Cordova Projects](./tutorial-gulp/gulp-ci.md)
