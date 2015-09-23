@@ -17,7 +17,7 @@ Due to a bug in the VS templates in VS 2015 RC, four json files that can cause i
 - plugins/remote_ios.json
 - plugins/wp8.json.
 
-Adding these files to source control can result in a build that appears to succeed but is missing plugin native code. They should only be included if the "platforms" folder is also checked in which is not recommended.
+Adding these files to source control can result in a build that appears to succeed but is missing plugin native code. They should only be included if the "platforms" folder is also checked in, which is not recommended.
 
 A telltale sign that you are encountering this issue is that the build appears to succeed and the app starts up properly but Cordova plugin APIs do not appear to function and no error can be found in the JavaScript console. On further inspection in the **Output Window** you may see an exception similar to the following when debugging an Android version of your app:
 
@@ -32,9 +32,9 @@ The missing class would be recognizable as a Cordova plugin class such as "org.a
 
 Remediation is fortunately simple:
 
-* Remove these files (plugins/android.json, plugins/ios.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control.
+- Remove these files (plugins/android.json, plugins/ios.json, plugins/windows.json, plugins/remote_ios.json, and plugins/wp8.json) from source control.
 
-* Leave plugins/fetch.json.
+- Leave plugins/fetch.json.
 
 For **existing local copies**, you can either fetch a fresh copy from source control or delete the above files along with the entire contents of the "platforms" folder in the filesystem (which is not visible by default in the Solution Explorer) to resolve the issue.
 

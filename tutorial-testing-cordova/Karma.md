@@ -1,11 +1,17 @@
-Using Karma and Jasmine To Test Apache Cordova Apps in Visual Studio 2015
+<properties pageTitle="Test Apache Cordova apps with Karma and Jasmine"
+  description="Test Apache Cordova apps with Karma and Jasmine"
+  services=""
+  documentationCenter=""
+  authors="bursteg" />
+
+#Test Apache Cordova apps with Karma and Jasmine
 ===================
 
 In this article, you will learn how to use the [Karma test runner](http://karma-runner.github.io/0.13/index.html) with the [Jasmine test framework]( http://jasmine.github.io/) in Visual Studio 2015. To help with this, we are going to look at a simple Apache Cordova project. Download the file here: [Calculator.zip](karma_files/Calculator.zip?raw=true)
 
 Once you’ve downloaded and opened this project in Visual Studio, the folder structure of this project should look very similar to that of a new Apache Cordova project template. The difference is that there are some additional files that we’ve added, and these files are highlighted below:  
 
-![enter image description here](karma_images/1.png)
+![enter image description here](media/karma/1.png)
 
 
 In order to test our files using Karma, we will:
@@ -71,22 +77,22 @@ Step 3: Run gulpfile.js from the Task Runner Explorer
 -------------
 Now click on View | Other Windows | Task Runner Explorer).
 
-![enter image description here](karma_images/2.png)
+![enter image description here](media/karma/2.png)
 
 This will open up a Task Runner Explorer window.
 
-![enter image description here](karma_images/3.png)
+![enter image description here](media/karma/3.png)
 
 Right-click on “default,” which is linked to the gulp task in gulpfile.js. Select run.
 This should open up a Chrome browser instance, and within the task runner, Visual Studio will show that our test case has passed.
 
-![enter image description here](karma_images/4.png)
+![enter image description here](media/karma/4.png)
 
 Step 4: Modify test file
 -------------
 Open the file calculator-tests_Jasmine.js and uncomment the additional three tests. Save the file. You should immediately see three of the four tests passing. This is due to the “tdd” task in gulpfile.js, which watches for changes in your files.
 
-![enter image description here](karma_images/5.png)
+![enter image description here](media/karma/5.png)
 
 The test “Calculator Jasmine can divide” failed. In order to solve this problem make a single-character change to the last test case ( .toEqual(1)), or simply replace it using the following line of code:
 
@@ -95,7 +101,7 @@ The test “Calculator Jasmine can divide” failed. In order to solve this prob
     });
 When you save the files again, you should see that all tests have passed.
 
-![enter image description here](karma_images/6.png)
+![enter image description here](media/karma/6.png)
 
 Note that if all files are correctly referenced, you can also run gulp tasks in the Windows Command Prompt by changing directories to the project root and then typing in “gulp.” (If you use this method, Node and gulp dependencies must be installed first.)
 
