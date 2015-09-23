@@ -24,15 +24,19 @@ _JAVA_OPTIONS=-Xmx512M
 
 More specifically, following the instructions from [this article](http://www.tomsguide.com/faq/id-1761312/fix-create-java-virtual-machine-issue.html):
 
-1. Open the Control Panel
+1. Close Visual Studio, if you do not close it - you will need to restart it at the end
+2. Open the Control Panel
+2. Go to System and Security
 2. Go to System
-3. Go to Advanced Systems Properties
-4. Go to Environment Variables
-5. In System Variables, click Add
-6. New Variable Name: _JAVA_OPTIONS
-7. New Variable Value: -Xmx512M
-8. Click OK
-9. Now restart Visual Studio to ensure the variable is picked up
+3. Go to Advanced systems settings
+4. Go to Environment Variables... (on the Advanced tab)
+5. Under System Variables, click New...
+6. Variable Name: _JAVA_OPTIONS
+7. Variable Value: -Xmx512M
+8. Click OK to close the dialog
+9. Click OK to close Environment Variables
+10. Click OK to close System Properties
+9. Now open Visual Studio
 
 If this does not resolve the issue, you can upgrade to a 64-bit version of the JDK [from here](http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-windows-x64.exe) and update the JAVA_HOME environment variable to the new install location.
 
