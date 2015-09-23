@@ -140,7 +140,7 @@ git config --global http.proxy http://<username>:<password>@<host>
 You may also need to configure proxy settings for Java. This can be [accomplished via the Java control panel (reccomended)](http://java.com/en/download/help/proxy_setup.xml) or by setting an environment variable as the follows:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-JAVA_OPTS=-Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port> -Dhttp.proxyHost=<host> -Dhttp.proxyPort=<port> -DproxySet=true
+JAVA_OPTS="-Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port> -Dhttp.proxyHost=<host> -Dhttp.proxyPort=<port> -DproxySet=true"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Finally, if you see the error "**TypeError: Request path contains unescaped characters**" when building or installing a plugin you may need to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). See [tips and workarounds](../tips-and-workarounds/general/README.md#cordovaproxy) for additional details. 
