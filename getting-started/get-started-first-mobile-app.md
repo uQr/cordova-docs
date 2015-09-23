@@ -131,7 +131,7 @@ These options and many more are captured in the **config.xml** file of your proj
 
 Apps can be as complicated or as simple as you want them to be. The goal of this section is to build a very basic single page app that shows the weather conditions of any area in the United States.
 
-You can find the complete sample [here](URL).
+You can find the complete sample here: [WeatherApp](https://github.com/Microsoft/cordova-samples/tree/master/weather-app).
 
 ### Add a package
 
