@@ -133,7 +133,7 @@ var gulp = require("gulp"),
 var winPlatforms = ["android", "windows", "wp8"],
 	osxPlatforms = ["ios"],
 	buildArgs = {
-		android: ["--release", "--device", "--gradleArg=no-daemon"],
+		android: ["--release", "--device", "--gradleArg=-no-daemon"],
 		ios: ["--release", "--device"],
 		windows: ["--release", "--device"],
 		wp8: ["--release", "--device"]
