@@ -55,6 +55,8 @@ If you've already installed Visual Studio, just modify it to include the tools.
 
     ![Project template locations](media/get-started-first-mobile-app/blank-project-template.png)
 
+    > **Note:** If you like TypeScript, there's a template for that under **TypeScript**->**Apache Cordova Apps**. Later, I'll point you to some guidance for using it.
+
     After you create the project, your solution should resemble the following:
 
     ![Solution Explorer](media/get-started-first-mobile-app/solution-explorer.png)
@@ -75,7 +77,7 @@ The **merges** folder is where you add HTML, JavaScript, and style sheet files t
 
 ![merges folder](media/get-started-first-mobile-app/merges.png)
 
-Notice the file named *PlatformOverrides.js*. It's no coincidence that it shares the same name as a file in the **www** folder. When you build your app for Android, this file replaces the *PlatformOverrides.js* file in the **www** folder.
+Notice the file named *platformOverrides.js*. It's no coincidence that it shares the same name as a file in the **www** folder. When you build your app for Android, this file replaces the *platformOverrides.js* file in the **www** folder.
 
 Use this pattern to add other platform-specific code, styles, or layout. In fact, we’ll do exactly that later on.
 
@@ -95,9 +97,13 @@ But before we get bogged down on all of these details, let’s run the app now.
 
     Apache Ripple is a free mobile simulator. If you haven’t used it before, try a few things while you have it open. For example, change the device orientation or the platform and see how your app appears. Apache Ripple is probably the easiest way to see the effect of your changes as you develop.
 
+2. Stop the app. You'll find the button to stop it in the Standard Toolbar.
+
+    ![Stop Debugging button](media/get-started-first-mobile-app/stop-debugger.png)
+
     You can also run your app in Android, iOS, and Windows device emulators. An emulator gives you a bit more of a realistic device experience.
 
-2. Find the platform list on the Standard toolbar. Then, choose a platform and an emulator.
+3. Find the platform list on the Standard toolbar. Then, choose a platform and an emulator.
 
     ![Emulators](media/get-started-first-mobile-app/emulators.png)
 
@@ -124,6 +130,8 @@ These options and many more are captured in the **config.xml** file of your proj
 ## <a id="build-something"></a>Start Small: Build a basic app
 
 Apps can be as complicated or as simple as you want them to be. The goal of this section is to build a very basic single page app that shows the weather conditions of any area in the United States.
+
+You can find the complete sample [here](URL).
 
 ### Add a package
 
@@ -220,7 +228,7 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
 
 #### A quick look at index.js
 This is a good time to quickly look at the ```index.js``` file. This file loads when the user runs the app.  Why? Because the ```index.html``` page contains this reference to it:
-	
+
 ```javascript       
   <script src="scripts/index.js"></script>
 ```
@@ -261,34 +269,34 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 
 	```javascript       
 		function getWeather() {
-		
+
 		  var zipcode = $('#input-box').val();
 		  var queryString =
 		      "https://query.yahooapis.com/v1/public/yql?q=" +
 		      "select+*+from+weather.forecast+where+location=" +
 		       zipcode + "&format=json";
-		
+
 		  $.getJSON(queryString, function (results) {
 		      if (results.query.count > 0) {
 		          var weather = results.query.results.channel;
-		
+
 		          console.log(weather);
-		
+
 		          $('#description').text(weather.description);
-		
+
 		          var wind = weather.wind;
 		          $('#temp').text(wind.chill);
 		          $('#wind').text(wind.speed);
-		
+
 		          var atmosphere = weather.atmosphere;
 		          $('#humidity').text(atmosphere.humidity);
 		          $('#visibility').text(atmosphere.visibility);
-		
+
 		          var astronomy = weather.astronomy;
 		          $('#sunrise').text(astronomy.sunrise);
 		          $('#sunset').text(astronomy.sunset);
 		      }
-		
+
 		  });
 		}
 	```
@@ -303,7 +311,7 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 		<script src="scripts/weather.js"></script>
 	```
 
-    When you're done, your script reference should look like this.
+    When you're done, your script reference should look like the following.
 
 	```html   
 		<body>
@@ -382,7 +390,9 @@ You can also change values on the fly while your app is running.
 
     ![Edit and Continue](media/get-started-first-mobile-app/edit-continue-in-app.png)
 
-9. Stop the debugger.
+9. Stop the debugger. You'll find the button to stop it in the Standard Toolbar.
+
+    ![Stop Debugging button](media/get-started-first-mobile-app/stop-debugger.png)
 
     That was just a small sampling of things you can do with the Visual Studio debugger. At the end of this topic, I'll point you to a guide that gives you many more examples.
 
@@ -420,7 +430,7 @@ You can examine the structure of your pages as they render and tweak them while 
 
     ![Edit page title](media/get-started-first-mobile-app/DOM.png)
 
-    The title in your running app is now **How do I like this title?** and you didn't have to modify the source or reload the page. [Learn more about the DOM Explorer](http://docs.telerik.com/teststudio/features/recorder/dom-explorer).
+    The title in your running app is now **How do I like this title?** and you didn't have to modify the source or reload the page. [Learn more about the DOM Explorer](https://msdn.microsoft.com/library/dn255008.aspx).
 
 
 ## <a id="capability"></a>Access a device capability
@@ -443,18 +453,18 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 
 	```javascript        
 		function getLocation() {
-		
+
 		    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
-		
+
 		 }
-		
+
 		 var onSuccess = function (position) {
-		
+
 		 var latitude = position.coords.latitude;
 		 var longitude = position.coords.longitude;
-		
+
 		 }
-		
+
 		function onError(error) {
 		   console.log('code: ' + error.code + '\n' +
 		       'message: ' + error.message + '\n');
@@ -466,43 +476,43 @@ Most likely you'll want your app to do more than just show web pages on a mobile
     Now let's use the latitude and longitude to get a zip code for that location and then populate the input box of your app with that zip code.
 
 4. Replace the ``getLocation`` function with this complete function.
-	
+
 	```javascript
 		function getLocation() {
-		
+
 		    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
-		
+
 		      $('#description').text("Determining your current location ...");
 		      $('#get-weather').prop("disabled", true);
 		   }
-		
+
 		   var onSuccess = function (position) {
-		
+
 		   var latitude = position.coords.latitude;
 		   var longitude = position.coords.longitude;
-		
+
 		   // Get zipCode by using latitude and longitude.
-		
+
 		   var queryString = "https://query.yahooapis.com/v1/public/yql?q=" +
 		      "select%20*%20from%20geo.placefinder%20where%20text%3D%22" + latitude +
 		      "%2C" + longitude + "%22%20and%20gflags%3D%22R%22" + "&format=json";
-		
+
 		   $.getJSON(queryString, function (results) {
-		
+
 		      if (results.query.count > 0) {
-		
+
 		          // Put the zip code into the input box for the user.
 		          var zipCode = results.query.results.Result.uzip
 		          $('#input-box').val(zipCode);
-		
+
 		       }
-		
+
 		   });
-		
+
 		      $('#description').text("Get the Weather");
 		      $('#get-weather').prop("disabled", false);
 		   }
-		
+
 		   function onError(error) {
 		    console.log('code: ' + error.code + '\n' +
 		      'message: ' + error.message + '\n');
@@ -523,9 +533,9 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 		    document.addEventListener( 'pause', onPause.bind( this ), false );
 		    document.addEventListener('resume', onResume.bind(this), false);
 		    $('#get-weather').click(getWeather);
-		
+
 		    getLocation();
-		
+
 		};
 	```
 
@@ -538,12 +548,11 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 
 ## <a id="tailor"></a>Tailor the app to a platform
 
-The code that you used to get the device's location works pretty well across all platforms, but what if it didn't? For example, you'll have to write a bit of extra code to consume the **Contacts** plug-in on a Windows device. The readme file of each plug-in will tell you what sort of device-specific code you'll have to write.
+The code that you used to get the device's location works pretty well across all platforms, but what if it didn't? What if you had to write extra code to get the location of a iOS device?
 
-Also, as your page layouts become more advanced, you might have to tweak them a bit so that they appear correctly for one type of device or another. This is where the **merges** folder becomes useful. We touched on that folder earlier in this article. Now let's try a few basic things.
+This is where the **merges** folder becomes useful. We touched on that folder earlier in this article. Now let's try a few basic things.
 
 ### Tailor the behavior of your app
-
 
 1. In **Solution Explorer**, expand the **www** folder, and then the **scripts** folder.
 
@@ -571,7 +580,11 @@ Also, as your page layouts become more advanced, you might have to tweak them a 
 
     Making a copy of a file this large to change one line of code is an extreme example, but you can begin to imagine the possibilities, and you can always refactor your code in ways that leverage the **merges** folder more efficiently.
 
+    The readme file of each plug-in will tell you what sort of device-specific code you'll have to write.
+
 ### Tailor the appearance of your app
+
+In some cases, you'll have to tweak the layout of your pages so that they appear correctly for one type of device or another.
 
 1. Return to the **android** sub-folder in your **merges** folder.
 
@@ -587,7 +600,7 @@ Also, as your page layouts become more advanced, you might have to tweak them a 
 
 	```css
 		body {
-		
+
 		  background-color:blue;   
 		  color:white;
 		}
@@ -609,13 +622,15 @@ Here are a few ideas about what you can explore next on your journey to build mo
 
 see [Search Cordova Plugins](http://plugins.cordova.io/npm/index.html).
 
+> **Tip:** If find a plugin that doesn't appear in the **Plugins** tab of configuration designer, you can still use it. [Learn more](./develop-apps/manage-plugins.md##AddOther).
+
 **Try using Bower to add a package to your project**
 
-see [Add packages by using Bower](./develop-apps/tutorial-using-bower).
+see [Add packages by using Bower](./develop-apps/tutorial-using-bower,md).
 
 **Learn about other great ways to leverage the Visual Studio debugger**
 
-see [Debugger Basics](https://msdn.microsoft.com/en-us/library/k0k771bt.aspx).
+see [Debugger Basics](https://msdn.microsoft.com/library/k0k771bt.aspx).
 
 **Explore the many JavaScript frameworks out there**
 
@@ -623,7 +638,7 @@ Search online. They're everywhere! Here's a couple of them: [AngularJS](https://
 
 **Get a mac and run your app in an iOS emulator**
 
-see [Configure the iOS remote agent](configure-vs-tools-apache-cordova.md#IosConfig.md).
+see [Install the tools for iOS](install-vs-tools-apache-cordova.md#ios).
 
 **Tack on an Azure backend - it's free to try**
 
@@ -631,4 +646,4 @@ see [Connect a cloud service](./develop-apps/add-connected-services.md).
 
 **Take a look at TypeScript - it's fully supported in your project**
 
-see [Use TypeScript](./develop-apps/Use TypeScript.md).
+see [Use TypeScript](./develop-apps/tutorial-typescript.md).
