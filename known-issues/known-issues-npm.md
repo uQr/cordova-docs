@@ -1,3 +1,9 @@
+<properties pageTitle="Known Issues - NPM" 
+  description="This is an article on bower tutorial"
+  services=""
+  documentationCenter=""
+  authors="bursteg" />
+
 #**Known Issues - NPM**
 **NPM Proxy Errors**
 

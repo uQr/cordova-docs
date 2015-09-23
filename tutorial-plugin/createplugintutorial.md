@@ -1,4 +1,10 @@
-## Building Your First Cordova Plugin ##
+<properties pageTitle="Build your first Cordova plugin"
+  description="Build your first Cordova plugin"
+  services=""
+  documentationCenter=""
+  authors="bursteg" />
+
+# Build your first Cordova plugin
 
 ### Step 1: Determine what you want your plugin to do ###
 Cordova plugins are appropriate in two main cases:
@@ -130,7 +136,7 @@ At this point, the plugin is ready to be consumed by a Cordova app.
 
 #### iOS&trade; ####
 
-Adding the ios platform can also be done via plugman: 
+Adding the ios platform can also be done via plugman:
 
     plugman platform add --platform_name ios
 
@@ -147,7 +153,7 @@ When the command completes, your folder structure should now look like this:
        \- AmILate.js
 
 As well, plugin.xml will include these new lines:
-    
+
 	<platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="AmILate">
@@ -165,7 +171,7 @@ The final AmILate.m implementation, which illustrates the key plugin plumbing co
 	{
 	    CDVPluginResult* pluginResult = nil;
 	    int minutes = [[command.arguments objectAtIndex:0] intValue];
-	
+
 	    if (minutes > 0) {
 			/**
 				Code to retrieve name, time of next appointment goes here
@@ -182,7 +188,7 @@ The final AmILate.m implementation, which illustrates the key plugin plumbing co
 			// Indicate an error result
 	        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
 	    }
-	
+
 	    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 	}
 
@@ -282,4 +288,3 @@ Answer the questions presented, and you will end up with a package.json that loo
 If everything looks right, you are ready to publish! Just run the following command from a command prompt:
 
     npm publish .
-

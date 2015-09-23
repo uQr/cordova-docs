@@ -1,8 +1,15 @@
-#**Known Issues - CTP 3/3.1 for Visual Studio 2013**
-This article covers [known issues](../Readme.md#knownissues) specific to Visual Studio Tools for Apache Cordova CTP3/3.1 and Visual Studio 2013. 
+<properties pageTitle="Known Issues - CTP 3/3.1 for Visual Studio 2013"
+  description="This is an article on bower tutorial"
+  services=""
+  documentationCenter=""
+  authors="bursteg" />
 
-----------
-**Missing iOS Icons and Splashscreens:** When using version 0.2.8 or higher of vs-mda-remote, you should add the following XML elements to your config.xml to ensure your icons and splash screens are picked up properly.
+#**Known Issues - CTP 3/3.1 for Visual Studio 2013**
+This article covers known issues specific to Visual Studio Tools for Apache Cordova CTP3/3.1 and Visual Studio 2013.
+
+##**Missing iOS Icons and Splashscreens** 
+
+When using version 0.2.8 or higher of vs-mda-remote, you should add the following XML elements to your config.xml to ensure your icons and splash screens are picked up properly.
 
 ~~~~~~~~~~~~~~~~~~
   <platform name="ios">
@@ -40,16 +47,6 @@ Alternatively you can install version 0.2.7 instead by using the following comma
 
     npm install -g vs-mda-remote@0.2.7
 
-----------
-**Incorrect Application Id & Publisher Name after creating app packages:** While trying to associate a Cordova app with Windows store using Visual Studio 13 and CTP3.1, the AppxManifest.xml doesn’t get updated with the appropriate Application Id & publisher name. We have fixed this issue in VS2015 RC. To fix this issue in VS 2013, install the plugin from [https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix](https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix) and try building your application again.
+##**Incorrect Application Id & Publisher Name after creating app packages** 
 
-----------
-## More Information
-* [Read up on additional known issues, tips, tricks, and tutorials](../Readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Read MSDN docs on using Visual Studio Tools for Apache Cordova](http://go.microsoft.com/fwlink/?LinkID=533794)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto://multidevicehybridapp@microsoft.com)
-
+While trying to associate a Cordova app with Windows store using Visual Studio 13 and CTP3.1, the AppxManifest.xml doesn’t get updated with the appropriate Application Id & publisher name. We have fixed this issue in VS2015 RC. To fix this issue in VS 2013, install the plugin from [https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix](https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix) and try building your application again.
