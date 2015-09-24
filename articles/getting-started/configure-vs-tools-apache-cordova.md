@@ -179,7 +179,9 @@ When you [start the agent](install-vs-tools-apache-cordova.md#ios) the first tim
 
 3. From the Terminal app on your Mac, type:
 
-        remotebuild generateClientCert
+        remotebuild certificates generate
+
+  >**Note**: This command replaces the command used in earlier versions of remotebuild.
 
 4. Follow instructions to [start the agent](install-vs-tools-apache-cordova.md#ios) on your Mac and configure the agent in Visual Studio.
 
@@ -191,13 +193,13 @@ For security purposes, the server certificates that pair Visual Studio with the 
 
 2. From the Terminal app on your Mac, type:
 
-        remotebuild resetServerCert --hostname=my.hostname.com
+        remotebuild certificates reset --hostname=my.hostname.com
 
 3. When prompted, type “Y” and then type Enter.
 
 4. From the Terminal app on your Mac, type:
 
-        remotebuild generateClientCert --hostname=my.hostname.com  
+        remotebuild certificates generate --hostname=my.hostname.com  
 
     –hostname is optional. If omitted, the agent will attempt to determine the hostname automatically.
 

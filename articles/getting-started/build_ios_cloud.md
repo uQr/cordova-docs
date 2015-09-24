@@ -70,9 +70,11 @@ With one exception, you can use the same process to configure Visual Studio for 
 5. After you verify the configuration, type the following command in the Terminal App on your Mac, substituting the host name for the one you use to connect to MacInCloud. .
 
   ```
-  remotebuild resetServerCert
-  remotebuild generateClientCert
+  remotebuild certificates reset
+  remotebuild certificates generate
   ```
+
+  >**Note**: The preceding commands replace the commands used in previous versions of remotebuild.
 
   Press “Y” and press Enter is prompted. You will now see the following information.
 
@@ -124,7 +126,7 @@ Instead of overriding the host name, you may instead use the IP address of your 
 4. If you do not see this information, type the following to generate a new PIN:
 
   ```
-  remotebuild generateClientCert
+  remotebuild certificates generate
   ```
 
   Be sure to restart the agent after generating the PIN if you shut it down.
