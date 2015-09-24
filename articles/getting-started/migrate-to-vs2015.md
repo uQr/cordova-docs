@@ -160,13 +160,3 @@ Next, you need to make sure that your icons and splash screens are picked up cor
      ```
 
     Now, icons and splash screens should load correctly when you run the app!
-
-
-----------
-## More Information
-* [Read up on additional known issues, tips, tricks, and tutorials](../cordova-docs-readme.md)
-* [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto://multidevicehybridapp@microsoft.com)

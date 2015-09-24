@@ -4,8 +4,10 @@
   documentationCenter=""
   authors="bursteg" />
 
-#Using Apache Cordova 5
-**Note: If the default blank template in Visual Studio 2015 is does not default to 5.1.1, you should update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.
+# Using Apache Cordova 5
+If the default blank template in Visual Studio 2015 does not default to 5.1.1, you should update Tools for Apache Cordova.
+
+If your a very early adopter, you might not see some of the improvements described in this document until after you update the tools. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.
 
 Tools for Apache Cordova RTM has been tested with both Cordova 4.3.1 and Cordova 5.1.1. As the major version number increase implies, [Apache Cordova 5](http://cordova.apache.org/docs/en/5.1.1/index.html) is a departure from 3.x and 4.x versions of Cordova in a number of very important ways. Note that there were a number of issues with Cordova 5.0.0 itself that kept us from recommending its use including an [Android security issue](http://go.microsoft.com/fwlink/?LinkID=617658). As a result, we strongly recommend the use of **Cordova 5.1.1** with **Visual Studio 2015 RTM** and up.
 
@@ -23,8 +25,8 @@ Note that when you build this will **automatically remove any existing contents 
 
 However, you will want to exercise care here since **Android in particular has undergone significant revisions in Cordova 5.** The remainder of this article will highlight these updates and cover tips for adapting your existing apps to these changes.
 
-###A Note on Cordova Version Numbers
-Historically Cordova and all its components have used one unified version number. This was particularly true with Cordova versions prior to 3.0.0. Underneath the hood this changed when Cordova 4.0.0 was released but most end users were never exposed to this difference. With the release of Cordova 5.0.0 you may also see reference to the release of "Cordova Android 4.0.0." It's important to note that this does not refer to the top level Cordova version but instead the **platform** version. You can think of a platform in many ways as a native project generator combined with a set of scripts designed to build the app.
+### A Note on Cordova Version Numbers
+Historically Cordova and all its components have used one unified version number. This was particularly true with Cordova versions prior to 3.0.0. Underneath the hood, this changed when Cordova 4.0.0 was released but most end users were never exposed to this difference. With the release of Cordova 5.0.0, you may also see reference to the release of "Cordova Android 4.0.0". This does not refer to the top level Cordova version but instead the **platform** version. You can think of a platform in many ways as a native project generator combined with a set of scripts designed to build the app.
 
 Understanding these differences can be important when reading blog posts or updates on the Cordova web site. Here is how these different components are typically described:
 
@@ -46,12 +48,12 @@ Other components are also versioned independantly, but typically you will not be
 Note that you can actually add different platform versions to your project for a given CLI version through the use of some XML elements or command line options for edge case scenarios. See the [May 26th, 2015 Android Cordova Platform Security Issue](../tips-and-workarounds/android/security-05-26-2015/tips-and-workarounds-android-security-05-26-2015-readme.md) article for a specific example of how this works.
 
 <a name="security"></a>
-##Security Model Changes for Android and iOS
+## Security Model Changes for Android and iOS
 One of the more confusing changes about Cordova 5 is that the updated version of the Android platform (also called Cordova Android 4.x) and iOS now follow a different, but more powerful security model designed to provide developers with the tools needed to prevent cross-site scripting attacks among other issues. A critical aspect of this security model is that **absolutely no network access of any kind is allowed without the installation of a Cordova plugin**.
 
 There are a whole host of new security features available and we **strongly recommend you read the [Introduction to Cordova 5 Security](./cordova-5-security.md) document** for a introduction on them. This article will focus on getting you up and running with the basics.
 
-###The New Whitelist Plugin
+### The New Whitelist Plugin
 The new [Cordova Whitelist plugin (cordova-plugin-whitelist)](http://go.microsoft.com/fwlink/?LinkID=617668) is the recommended base security plugin to use for managing network security access. Historically there was one **access** element in config.xml used to control all access to network resources.
 
 The problem with this model is you may want to be able to make an XHR request to a service like Azure Mobile Services without actually allowing your app to navigate to an Azure web page in the same domain. The reason this is a concern is that this remote web page is then given access to all Cordova and plugin APIs. Further, for Android, the access element has been overloaded to control "intents" in the wake of a discovered [security issue in Cordova 3.5.0 and below](http://go.microsoft.com/fwlink/?LinkID=617669) which has led to a syntax that strayed away from the original [W3C Widget spec](http://go.microsoft.com/fwlink/?LinkID=617670) that config.xml's structure is based on. Some restructuring and improvements were therefore appropriate for the Cordova 5.0.0 release.
@@ -271,4 +273,3 @@ That's it! Underneath the convers Cordova will switch from an 8.1 project to a n
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto:/vscordovatools@microsoft.com)
