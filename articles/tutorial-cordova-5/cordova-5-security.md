@@ -6,7 +6,7 @@
 
 #An introduction to Cordova 5 security
 
-**Note: If the default blank template in Visual Studio 2015 is does not default to 5.1.1, you should update Tools for Apache Cordova.** Some very early adopters may not see some of the improvments described in this document until after you update. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.
+If the default blank template in Visual Studio 2015 does not default to 5.1.1, you should update Tools for Apache Cordova. If you're an early adopter, you might not see some of the improvements described in this document until after you update the tools. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.
 
 One of the more confusing changes about [Apache Cordova 5](http://go.microsoft.com/fwlink/?LinkID=617659) is that the updated version of the Android platform (also called Cordova Android 4.x) and iOS now follow a different, but more powerful security model designed to provide developers with the tools needed to prevent cross-site scripting attacks among other issues. A critical aspect of this security model is that **absolutely no network access of any kind is allowed without the installation of a Cordova plugin**.
 
@@ -175,5 +175,3 @@ When you upgrade a project to Cordova 5.0.0+ from Cordova 4.3.1 or below in Visu
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto:/vscordovatools@microsoft.com)
- 

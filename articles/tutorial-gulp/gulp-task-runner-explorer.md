@@ -86,4 +86,3 @@ To do so, [follow these directions to add a pre-built Cordova hook to your proje
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
 * [Follow us on Twitter](https://twitter.com/VSCordovaTools)
 * [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
-* [Email us your questions](mailto://vscordovatools@microsoft.com)
