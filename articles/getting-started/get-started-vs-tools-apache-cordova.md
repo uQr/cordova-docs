@@ -22,7 +22,7 @@ You can build apps using the tools for these devices and platforms:
 
 * Android 2.3.3 and later (4.4 provides the best developer experience)
 * iOS 6, 7, and 8
-* Windows 8 and 8.1
+* Windows 8, 8.1, and 10
 * Windows Phone 8 and 8.1
 
 >**Note:**
@@ -34,7 +34,7 @@ When you develop apps using Visual Studio Tools for Apache Cordova, Visual Studi
 
 * **Easy installation**. Manual installation of Cordova involves a lot of work to find, install, and maintain the correct version of all the third-party software required to support native platforms. Our third-party installer handles all of that for you and gets you up and running quickly.
 * **Plugin management**. Cordova plugins provide access to native APIs using a JavaScript interface. Support for custom plugins like those that turn a mobile phone into a barcode scanner can help you provide rich experiences within your app. Visual Studio and IntelliSense make it easy to add and work with custom plugins and core plugins as well.
-* **Unified debugging experience**. Cross-platform development often requires a different tool for debugging each device, emulator, or simulator. Different tools mean different workflows and lost productivity every time you switch devices. With Visual Studio, you can use the same world-class debugging tools for all deployment targets, including iOS devices and emulators, Android devices and emulators, Windows, and the Apache Ripple emulator.
+* **Unified debugging experience**. Cross-platform development often requires a different tool for debugging each device, emulator, or simulator. Different tools mean different workflows and lost productivity every time you switch devices. With Visual Studio, you can use the same world-class debugging tools for all deployment targets, including iOS devices and simulators, Android devices and emulators, Windows, and the Apache Ripple emulator.
 * **Write once, deploy everywhere**. The common JavaScript and plugin APIs in Cordova make it easy to write an app using a single code base that deploys to all target platforms—iOS, Android, and Windows. Of course, you can always write platform-specific code if and when you need it.
 * **Command line interoperability**. Visual Studio solutions directly reflect the file system and are updated in real time; this means that you can use any command line tool.
 * **Multi-Version Cordova support**. Visual Studio solutions allow you to easily change to different versions of Cordova in your project.
