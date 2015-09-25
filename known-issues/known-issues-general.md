@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #**General Known Issues**
 This article covers general known issues related to Visual Studio Tools for Apache Cordova. For version specific issues, see:
 

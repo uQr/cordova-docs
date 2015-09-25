@@ -14,6 +14,9 @@
    ms.date="09/11/2015"
    ms.author="kirupa"/>
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #Cordova sample app with O365 Outlook Services and Ionic
 
 In this tutorial, you’ll learn how to create a mail, calendar and contact client using O365 Outlook services and the Ionic framework. This app allows users to access their mail, calendar and contact through O365 Outlook services API. This sample uses JavaScript code, but you can also write your Cordova app in TypeScript.

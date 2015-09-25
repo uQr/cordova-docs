@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #**Known Issues - Apache Cordova and Apache Ripple**
 This article covers general [known issues](../cordova-docs-readme.md#knownissues) related to Apache Cordova or Ripple. See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Cordova and Ripple related issues that are specific to Cordova 5.0.0 and up.
 

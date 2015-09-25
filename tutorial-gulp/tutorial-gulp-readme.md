@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #Automate tasks for your Cordova project by using Gulp
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
 

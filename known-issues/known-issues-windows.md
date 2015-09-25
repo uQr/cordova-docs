@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #**Known Issues - Windows**
 This article covers known issues related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to a Windows 8.0, 8.1, Windows Phone 8.1 or any Windows 10 device or emulator.
 

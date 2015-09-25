@@ -13,6 +13,9 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Get your Apache Cordova app approved by the app stores
 
 Before you can publish your app and get it to your customers, it will have to get app store approval. The key to approval is what your app does and how it does it. While each store has a different process and a different list of requirements, a well-designed app is more likely to receive approval on any platform. These articles are a starting point for designing apps that have a high likelihood of approval.

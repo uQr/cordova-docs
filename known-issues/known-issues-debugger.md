@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #**VS Debugger Known Issues and Limitations**
 This article covers known issues and limitations related to Visual Studio Debugger in Tools for Apache Cordova 2015.
 

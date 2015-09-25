@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #Android tips and workarounds
 This document covers tips, tricks, and known workarounds for problems with the Cordova Android platform.
 > **Note**: If your problem is security related, please read [May 26th, 2015 Android Security Issue](../tutorial-cordova-5-readme/)

@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Using Apache Cordova 5
 If the default blank template in Visual Studio 2015 does not default to 5.1.1, you should update Tools for Apache Cordova.
 

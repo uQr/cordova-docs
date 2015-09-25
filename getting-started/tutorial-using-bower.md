@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Add packages to your Cordova project with the Bower Package Manager
 While working on your Cordova project, you may want to use a JavaScript or CSS framework built by someone else and available for download from the web. To help with this, you may want to add the [Bower](http://www.bower.io) package manager to your web developer toolbelt. Bower advertises itself as "a package manager for the web" and is a JavaScript utility you can use to search framework packages and download them into a project. These packages are built by an active community of developers and framework authors.
 

@@ -13,6 +13,9 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Package your app built with Visual Studio Tools for Apache Cordova
 
 When you package the app you created using Visual Studio Tools for Apache Cordova, you’ll want to configure the settings required for publishing your app. In addition to general settings, there are also platform-specific steps required in most cases.

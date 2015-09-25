@@ -13,6 +13,9 @@
    ms.workload="na"
    ms.date="09/11/2015"
    ms.author="kirupa"/>
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #Cordova sample app with O365 Discovery Service and the Files API
 
 In this topic, you will learn how to leverage some of the new APIs in the client libraries for Office 365 in an app built using Visual Studio Tools for Apache Cordova.

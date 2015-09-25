@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #Cordova plugin Symlink fix for iOS plugins with custom frameworks
 
 License: MIT

@@ -13,6 +13,9 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Publish your app built with Visual Studio Tools for Apache Cordova
 
 To publish your app built using Visual Studio Tools for Apache Cordova, you can access the packages you build in the bin folder in the Visual Studio project directory. For more information about building packages, see [Package Your App Built with Visual Studio Tools for Apache Cordova](package-app-built-with-visual-studio.md).

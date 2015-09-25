@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #General Cordova tips and workarounds
 This document covers tips, tricks, and known workarounds for general issues with Cordova or Tools for Apache Cordova.
 

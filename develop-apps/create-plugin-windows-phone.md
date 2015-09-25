@@ -13,6 +13,9 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Create a Cordova plugin for Windows and Windows Phone
 
 A Cordova plugin is a cross-platform library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. In this tutorial, you will create a Cordova plugin for Windows Phone, **ToUpperPlugin**, add it to a Cordova app, and call the plugin method from the app. The plugin has one method, **ToUpper**, that converts a string to uppercase. The plugin supports both Windows Phone 8 and Windows Phone (Universal). The Windows Phone 8 plugin uses C# and the Windows Phone (Universal) plugin uses JavaScript.
