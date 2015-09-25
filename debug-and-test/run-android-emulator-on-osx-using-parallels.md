@@ -14,6 +14,9 @@
    ms.date="09/10/2015"
    ms.author="mikejo"/>
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Run the Android emulator on OSX when using Windows in Parallels
 
 Visual Studio Tools for Apache Cordova allow you to build cross-platform, multi-device hybrid apps based on [Apache Cordova](http://cordova.apache.org/). In other tutorials, we’ve shown how to [Build a Cordova app for iOS using Parallels](./getting-started/build_ios_parallels.md) so you can use the tools from your Mac. In this tutorial, we will show how to speed up Android emulation by running the Android emulator on OSX rather than inside Parallels running Windows using a SSH tunnel. The instructions here use the Android emulator as an example, but you should be able to do this with other emulators like GenyMotion as well.
