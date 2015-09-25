@@ -14,6 +14,9 @@
    ms.date="09/11/2015"
    ms.author="kirupa"/>
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #Build a Cordova app for iOS by using Parallels
 
 This article shows how you can build hybrid apps using Apache Cordova in Visual Studio and deploy them to iOS using Parallels. By using [Parallels](http://www.parallels.com/), you can develop Cordova apps using only a Mac. To accomplish this, you’ll need the following:

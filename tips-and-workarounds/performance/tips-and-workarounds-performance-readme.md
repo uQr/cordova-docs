@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Cordova performance tips
 
 Cordova apps are web apps that run "inside" of native apps by using native "web view" UI components. There are therefore three major domains where performance can be affected in a Cordova app:

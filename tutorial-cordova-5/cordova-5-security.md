@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 #An introduction to Cordova 5 security
 
 If the default blank template in Visual Studio 2015 does not default to 5.1.1, you should update Tools for Apache Cordova. If you're an early adopter, you might not see some of the improvements described in this document until after you update the tools. You will soon see a notification in the in the  notification center (flag in the upper right) prompting you to update.

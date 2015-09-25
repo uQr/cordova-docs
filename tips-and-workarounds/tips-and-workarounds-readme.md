@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Visual Studio Tools for Apache Cordova tips & workarounds
 This repository contains a set tips and workarounds for [Apache Cordova](http://cordova.apache.org) generally in addition to the **Visual Studio 2015 RC** release of **[Tools for Apache Cordova](http://aka.ms/cordova)**.
 

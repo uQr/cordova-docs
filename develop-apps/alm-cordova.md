@@ -14,6 +14,9 @@
    ms.date="09/11/2015"
    ms.author="kirupa"/>
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Application Lifecycle Management (ALM) with Apache Cordova Apps
 
 Developing apps for modern platforms involves many more activities than just writing code. DevOps (development + operations) recognizes a variety of activities across an app’s complete lifecycle. These include agile planning and tracking work, designing and implementing code, managing a source code repository, running builds, managing continuous integrations and deployments, testing (including unit tests and UI tests), running various forms of diagnostics in both development and production environments, and monitoring app performance and user behaviors in real time through telemetry and analytics.

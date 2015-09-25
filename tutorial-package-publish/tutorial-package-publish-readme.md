@@ -4,6 +4,9 @@
   documentationCenter=""
   authors="bursteg" />
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Walkthrough: Package and Publish your Cordova Applications
 Using Visual Studio tools for Apache Cordova, you can build hybrid applications for Windows, Android and iOS platforms. The process to create application packages for store consumption is different for each of the 3 supported platforms.
 

@@ -14,6 +14,9 @@
    ms.date="09/10/2015"
    ms.author="mikejo"/>
 
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Migrate a Visual Studio 2013 project to Visual Studio 2015
 
 The new project structure in Visual Studio 2015 makes Visual Studio much easier to use with 3rd party tools and CLIs. Migration to Visual Studio 2015 is recommended. Some extra steps are required to migrate a Visual Studio 2013 project to Visual Studio 2015.

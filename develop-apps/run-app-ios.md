@@ -13,6 +13,9 @@
    ms.workload="na"
    ms.date="09/10/2015"
    ms.author="mikejo"/>
+
+# **NOTE:** This article is depreciated. Current articles can be found in the [Articles folder](/articles/).
+
 # Run your Apache Cordova app on iOS
 
 When you create app using Visual Studio Tools for Apache Cordova, you have several options for emulating and deploying your app on iOS:
