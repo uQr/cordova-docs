@@ -162,52 +162,72 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
 
 **index.html** is the first page that appears when users run your app. So we'll add our HTML to that file. Of course, this the default setting and you can change that at any time in the [configuration designer](#settings).
 
+1. Open the **index.html** file and add this style to the ```<head>``` of the page.
+```css
+  <style type="text/css">
+      body {
+          font: 1em Sans-Serif;
+      }
+
+      .flex {
+          display: -webkit-box;
+          display: flex;
+      }
+
+          .flex > div:nth-child(2) {
+              -webkit-flex-grow: 1;
+              flex-grow: 1;
+              text-align: right;
+          }
+  </style>
+```
 1. Open the **index.html** file and remove this line.
 
-	```html
-	  <p>Hello, your application is ready!</p>
-	```
+  ```html
+  	<p>Hello, your application is ready!</p>
+  ```
+2. Add this HTML to the ```<body>``` of the page to give users a way to search for the weather see the results.
 
-2. Add this HTML to the ```<body>``` of the page to give users a way to search for the weather see the results in a table.
-
 	```html
-		<h1 id="app-title">Weather App</h1>
-		 <table cellpadding="5" class="appfont">
-		<tr>
-		    <td>Zip Code: </td>
-		    <td><input id="input-box" /></td>
-		    <td><button id="get-weather">Get Weather</button></td>
-		</tr>
-		</table>
-		<table>
-		<tr>
-		    <td colspan="2"><h3 id="description">Get the Weather</h3></td>
-		</tr>
-		<tr>
-		    <td>Temp:</td>
-		    <td align="right"><div id="temp"></div></td>
-		</tr>
-		<tr>
-		    <td>Wind:</td>
-		    <td align="right"><div id="wind"></div></td>
-		</tr>
-		<tr>
-		    <td>Humidity:</td>
-		    <td align="right"><div id="humidity"></div></td>
-		</tr>
-		<tr>
-		    <td>Visibility:</td>
-		    <td align="right"><div id="visibility"></div></td>
-		</tr>
-		<tr>
-		    <td>Sunrise:</td>
-		    <td align="right"><div id="sunrise"></div></td>
-		</tr>
-		<tr>
-		    <td>Sunset:</td>
-		    <td align="right"><div id="sunset"></div></td>
-		</tr>
-		</table>
+    <h1 id="app-title">Weather App</h1>
+
+    <div>
+        <label for="zip-code">Zip Code:</label>
+        <input type="text" id="input-box" />
+        <button id="get-weather">Get Weather</button>
+    </div>
+
+    <h3 id="description">Get the Weather</h3>
+
+    <div class="flex">
+        <div>Temp</div>
+        <div id="temp"></div>
+    </div>
+
+    <div class="flex">
+        <div>Wind:</div>
+        <div id="wind"></div>
+    </div>
+
+    <div class="flex">
+        <div>Humidity:</div>
+        <div id="humidity"></div>
+  </div>
+
+  <div class="flex">
+      <div>Visibility:</div>
+      <div id="visibility"></div>
+    </div>
+
+    <div class="flex">
+        <div>Sunrise:</div>
+        <div id="sunrise"></div>
+    </div>
+
+    <div class="flex">
+        <div>Sunset:</div>
+        <div id="sunset"></div>
+    </div>
 	```
 
 ### Handle a button event
@@ -326,21 +346,17 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 
 Let's run the app, but this time let's use an emulator.
 
-1. In the platforms list, choose **Windows Phone (Universal)**.
+2. In the list of Android emulators, choose the one of the VS Emulators to run your app.
 
-    ![Windows Emulators](media/get-started-first-mobile-app/windows-target.png)
+    ![Android Emulator](media/get-started-first-mobile-app/android-emulator.png)
 
-2. In the list of Windows emulators, choose the first one to run your app.
-
-    ![Windows Emulator](media/get-started-first-mobile-app/windows-emulator.png)
-
-3. In the Windows emulator, type a valid United States zip code into the edit box (for example: 98052), and then press the **Get Weather** button.
+3. In the Android emulator, type a valid United States zip code into the edit box (for example: 98052), and then press the **Get Weather** button.
 
     Weather data for that region appears in the controls.
 
-    ![Weather App](media/get-started-first-mobile-app/weather-app.png)
+    ![Weather App](media/get-started-first-mobile-app/weather-app-overview.png)
 
-    What's great here is that this app is completely cross platform. If you have a little extra time, run this app in an Android emulator. You can use an iOS emulator, but that's a little more advanced. At the end of this article, I'll point you to some guidance for doing that.
+    What's great here is that this app is completely cross platform. If you have a little extra time, run this app in a Windows emulator. You can use an iOS emulator, but that's a little more advanced. At the end of this article, I'll point you to some guidance for doing that.
 
 ## <a id="find-fix"></a>Find and fix problems
 
@@ -348,7 +364,15 @@ A big benefit of Visual Studio is its powerful debugger. If you're already famil
 
 ### Breakpoints and conditional breakpoints
 
-1. Run your app. This time, try an Android emulator.
+Run your app. This time, try a Windows emulator.
+
+1. In the platforms list, choose **Windows Phone (Universal)**.
+
+    ![Windows Emulators](media/get-started-first-mobile-app/windows-target.png)
+
+2. In the list of Windows emulators, choose the first one to run your app.
+
+    ![Windows Emulator](media/get-started-first-mobile-app/windows-emulator.png)
 
 2. After your app starts, open the **weather.js** file, and set a *breakpoint* by clicking the margin next to this line:
 
