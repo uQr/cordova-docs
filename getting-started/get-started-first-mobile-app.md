@@ -184,60 +184,52 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
   ```
 1. Open the **index.html** file and remove this line.
 
-```html
-  	 <p>Hello, your application is ready!</p>
-```
+    ```html
+        <p>Hello, your application is ready!</p>
+    ```
 
 2. Add this HTML to the ```<body>``` of the page to give users a way to search for the weather see the results.
 
-```html
-    <h1 id="app-title">Weather App</h1>
-
-    <div>
-        <label for="zip-code">Zip Code:</label>
-        <input type="text" id="input-box" />
-        <button id="get-weather">Get Weather</button>
-    </div>
-
-    <h3 id="description">Get the Weather</h3>
-
-    <div class="flex">
-        <div>Temp</div>
-        <div id="temp"></div>
-    </div>
-
-    <div class="flex">
-        <div>Wind:</div>
-        <div id="wind"></div>
-    </div>
-
-    <div class="flex">
-        <div>Humidity:</div>
-        <div id="humidity"></div>
-    </div>
-
-     <div class="flex">
-         <div>Visibility:</div>
-         <div id="visibility"></div>
-     </div>
-
-     <div class="flex">
-         <div>Sunrise:</div>
-         <div id="sunrise"></div>
-     </div>
-
-    <div class="flex">
-        <div>Sunset:</div>
-        <div id="sunset"></div>
-    </div>
-```
+    ```html
+        <h1 id="app-title">Weather App</h1>
+        <div>
+            <label for="zip-code">Zip Code:</label>
+            <input type="text" id="input-box" />
+           <button id="get-weather">Get Weather</button>
+        </div>
+        <h3 id="description">Get the Weather</h3>
+        <div class="flex">
+            <div>Temp</div>
+            <div id="temp"></div>
+        </div>
+        <div class="flex">
+            <div>Wind:</div>
+            <div id="wind"></div>
+        </div>
+        <div class="flex">
+            <div>Humidity:</div>
+            <div id="humidity"></div>
+        </div>
+        <div class="flex">
+             <div>Visibility:</div>
+             <div id="visibility"></div>
+         </div>
+         <div class="flex">
+             <div>Sunrise:</div>
+             <div id="sunrise"></div>
+         </div>
+        <div class="flex">
+            <div>Sunset:</div>
+            <div id="sunset"></div>
+        </div>
+    ```
 
 ### Handle a button event
 
 1. Open the [index.js](#tour-project) file and add the following line of code to the ```onDeviceReady``` function.
 
-	```javascript
-	    $('#get-weather').click(getWeather);
+    ```javascript
+        $('#get-weather').click(getWeather);
 	```
 
     This code refers to the ID of the following button on the HTML page.
