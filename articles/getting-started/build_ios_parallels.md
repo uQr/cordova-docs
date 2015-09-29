@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="kirupa"
+   authors="Chuxel"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/11/2015"
-   ms.author="kirupa"/>
+   ms.author="clantz"/>
 
 #Build a Cordova app for iOS by using Parallels
 
