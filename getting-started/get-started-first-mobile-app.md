@@ -566,7 +566,7 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 
 ## <a id="tailor"></a>Tailor the app to a platform
 
-The code that you used to get the device's location works pretty well across all platforms, but what if it didn't? What if you had to write extra code to get the location of a iOS device?
+The code that you used to get the device's location works pretty well across all platforms, but what if it didn't? What if you had to write extra code to get the location of an iOS device?
 
 This is where the **merges** folder becomes useful. We touched on that folder earlier in this article. Now let's try a few basic things.
 
