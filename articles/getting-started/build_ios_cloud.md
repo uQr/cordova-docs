@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="Mikejo5000"
+   authors="Chuxel"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/10/2015"
-   ms.author="mikejo"/>
+   ms.author="clantz"/>
 
 # Build and simulate a Cordova iOS app in the cloud
 

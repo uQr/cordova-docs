@@ -2,7 +2,15 @@
   description="Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="clantz"/>
 
 # Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system
 This tutorial is part of a [series of tutorials](./tutorial-team-build-readme.md) on building Visual Studio 2015 Tools for Apache Cordova projects in a Team / CI environment.

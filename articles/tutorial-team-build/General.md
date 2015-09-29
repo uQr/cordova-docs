@@ -2,7 +2,15 @@
   description="Build Cordova apps in a Team / Continuous Integration (CI) environment"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="clantz"/>
 
 # Build Cordova apps in a Team / Continuous Integration (CI) environment
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
