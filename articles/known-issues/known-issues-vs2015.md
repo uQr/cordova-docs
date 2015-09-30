@@ -1,15 +1,23 @@
-<properties pageTitle="Known Issues - Visual Studio 2015" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Known Issues - Visual Studio 2015"
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #**Known Issues - Visual Studio 2015**
-This article covers known issues specific to Visual Studio Tools for Apache Cordova 2015. 
+This article covers known issues specific to Visual Studio Tools for Apache Cordova 2015.
 
-##**Project structure change from CTP3/3.1** 
+##**Project structure change from CTP3/3.1**
 
-Projects created in an earlier version of Visual Studio will need to be migrated to support the new Cordova CLI based project structure in VS 2015 that is more interoperable with 3rd party tools and CLIs. 
+Projects created in an earlier version of Visual Studio will need to be migrated to support the new Cordova CLI based project structure in VS 2015 that is more interoperable with 3rd party tools and CLIs.
 
 To migrate your previous projects to the new structure:
 
@@ -31,7 +39,7 @@ To migrate your previous projects to the new structure:
  14. If you're using TypeScript, you'll need to add a tsconfig.json to your project folder and define config settings for your project. See the [Configuring TypeScript](../getting-started/tutorial-typescript.md) section for details.
  15. Now you can build and run your application
 
-If you have errors, you may need to update file references to reflect the new folder structure. 
+If you have errors, you may need to update file references to reflect the new folder structure.
 
 Lastly, you should add the following XML elements to your config.xml to ensure your icons and splash screens are picked up by right clicking on the file and selecting "View Code":
 
@@ -129,7 +137,7 @@ In some cases, when you uninstall VS2013 or a previous version (RC) of VS2015, a
 **Existing vs-mda-remote settings in Visual Studio do not work with the remotebuild agent:** You will need to generate and use a new PIN when setting up Visual Studio to connect to the remotebuild agent for the first time. If you are not using secure mode, turn secure mode on and then off again to cause VS to reinitalize. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
 
 ----------
-**config.xml Designer Does Not Show Updated Plugin IDs with Cordova 5.0.0+:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) with Cordova 4.3.1 and below since this version of the Cordova < 5.0.0 do not support npm. 
+**config.xml Designer Does Not Show Updated Plugin IDs with Cordova 5.0.0+:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) with Cordova 4.3.1 and below since this version of the Cordova < 5.0.0 do not support npm.
 
 However, if you update your Cordova version to 5.0.0 or later the config.xml designer should automatically see the new IDs in the "Plugins" tab of the designer. If you do not see this behavior, update Tools for Apache Cordova since a small post-RTM update enabled this functionality. You will get an update notification soon prompting you to update or you can click "Install Tools for Apache Cordova" from the Apache Cordova templates section when creating a new project. Be sure to remove plugins with the older IDs before updating via the "Installed" tab to avoid unexpected behaviors.
 
@@ -138,9 +146,9 @@ However, if you update your Cordova version to 5.0.0 or later the config.xml des
 **VS 2015 RC and Cordova 5.x.x / Cordova Android 4.x.x:** See [Cordova 5.x.x known issues](known-issues-cordova5.md) for details on Android related issues that are specific to Cordova 5.0.0 and up.
 
 ----------
-**Old versions of Cordova plugins due to Cordova plugin ID changes:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 RC config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) because Cordova 4.3.1 and below cannot access plugins using these new IDs and the default template uses 4.3.0. 
+**Old versions of Cordova plugins due to Cordova plugin ID changes:** A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 RC config.xml designer uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) because Cordova 4.3.1 and below cannot access plugins using these new IDs and the default template uses 4.3.0.
 
-To install updated plugins, follow [this proceedure to install a npm sourced plugin](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-npm). 
+To install updated plugins, follow [this proceedure to install a npm sourced plugin](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-npm).
 
 *Note that these updated plugins were tested on Cordova 5.0.0 or later and therefore may or may not work on earlier versions of Cordova.* We advise against updating your plugins when using older versions of Cordova unless you are attempting to solve a specific problem.
 
@@ -165,10 +173,10 @@ Remove these files from source control if you are not checking in the "platforms
  3. From the command line:
 	 1. Go to your project directory.
 	 2. Type the following from substituting project path, plugin name, and variables for those that apply to you:
-        
+
 	    ~~~~~~~~~~~~~~
         cd <project path>
-		npm install -g cordova@5.1.1 
+		npm install -g cordova@5.1.1
         cordova plugin add nl.x-services.plugins.launchmyapp --variable URL_SCHEME=myscheme
 	    ~~~~~~~~~~~~~~
 

@@ -1,8 +1,16 @@
-<properties pageTitle="Apache Cordova 5.x.x Related Known Issues" 
+<properties pageTitle="Apache Cordova 5.x.x Related Known Issues"
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #**Apache Cordova 5.x.x Related Known Issues**
 This article covers [known issues](../cordova-docs-readme.md#knownissues) related to Visual Studio Tools for Apache Cordova 2015 when building or deploying using Apache Cordova 5.0.0+.

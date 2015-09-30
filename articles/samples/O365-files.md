@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="kirupa"
+   authors="subhagpo"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,8 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/11/2015"
-   ms.author="kirupa"/>
+   ms.author="Subhag.Oak"/>
+   
 #Cordova sample app with O365 Discovery Service and the Files API
 
 In this topic, you will learn how to leverage some of the new APIs in the client libraries for Office 365 in an app built using Visual Studio Tools for Apache Cordova.
