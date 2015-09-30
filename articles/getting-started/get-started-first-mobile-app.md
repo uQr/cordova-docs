@@ -163,7 +163,8 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
 **index.html** is the first page that appears when users run your app. So we'll add our HTML to that file. Of course, this the default setting and you can change that at any time in the [configuration designer](#settings).
 
 1. Open the **index.html** file and add this style to the ```<head>``` of the page.
-```css
+
+  ```
   <style type="text/css">
       body {
           font: 1em Sans-Serif;
@@ -180,62 +181,55 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
               text-align: right;
           }
   </style>
-```
+  ```
 1. Open the **index.html** file and remove this line.
 
-  ```html
-  	<p>Hello, your application is ready!</p>
-  ```
+    ```html
+        <p>Hello, your application is ready!</p>
+    ```
+
 2. Add this HTML to the ```<body>``` of the page to give users a way to search for the weather see the results.
 
-	```html
-    <h1 id="app-title">Weather App</h1>
-
-    <div>
-        <label for="zip-code">Zip Code:</label>
-        <input type="text" id="input-box" />
-        <button id="get-weather">Get Weather</button>
-    </div>
-
-    <h3 id="description">Get the Weather</h3>
-
-    <div class="flex">
-        <div>Temp</div>
-        <div id="temp"></div>
-    </div>
-
-    <div class="flex">
-        <div>Wind:</div>
-        <div id="wind"></div>
-    </div>
-
-    <div class="flex">
-        <div>Humidity:</div>
-        <div id="humidity"></div>
-  </div>
-
-  <div class="flex">
-      <div>Visibility:</div>
-      <div id="visibility"></div>
-    </div>
-
-    <div class="flex">
-        <div>Sunrise:</div>
-        <div id="sunrise"></div>
-    </div>
-
-    <div class="flex">
-        <div>Sunset:</div>
-        <div id="sunset"></div>
-    </div>
-	```
+    ```html
+        <h1 id="app-title">Weather App</h1>
+        <div>
+            <label for="zip-code">Zip Code:</label>
+            <input type="text" id="input-box" />
+           <button id="get-weather">Get Weather</button>
+        </div>
+        <h3 id="description">Get the Weather</h3>
+        <div class="flex">
+            <div>Temp</div>
+            <div id="temp"></div>
+        </div>
+        <div class="flex">
+            <div>Wind:</div>
+            <div id="wind"></div>
+        </div>
+        <div class="flex">
+            <div>Humidity:</div>
+            <div id="humidity"></div>
+        </div>
+        <div class="flex">
+             <div>Visibility:</div>
+             <div id="visibility"></div>
+         </div>
+         <div class="flex">
+             <div>Sunrise:</div>
+             <div id="sunrise"></div>
+         </div>
+        <div class="flex">
+            <div>Sunset:</div>
+            <div id="sunset"></div>
+        </div>
+    ```
 
 ### Handle a button event
 
 1. Open the [index.js](#tour-project) file and add the following line of code to the ```onDeviceReady``` function.
 
-	```javascript
-	    $('#get-weather').click(getWeather);
+    ```javascript
+        $('#get-weather').click(getWeather);
 	```
 
     This code refers to the ID of the following button on the HTML page.
@@ -265,10 +259,10 @@ You'll notice a few things about the ```index.js``` file. First, all the code in
 Enclosed in this function, you'll see an event handler that runs when the Cordova device APIs are fully loaded.  
 
 ```javascript      
-        function onDeviceReady() {
+   function onDeviceReady() {
 
-         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-        };
+      // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+   };
 ```
 
 So what exactly do we mean by *Cordova device APIs*? These are APIs that you'd use to interact with device capabilities such as the camera or accelerometer. If you want to run any code like this when the app first starts, make sure you add that code or call those functions from inside of this event handler. In fact, later on, we'll do just that.
@@ -346,7 +340,7 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 
 Let's run the app, but this time let's use an emulator.
 
-2. In the list of Android emulators, choose the one of the VS Emulators to run your app.
+2. In the list of Android emulators, choose the one of the **VS Emulator 5** to run your app.
 
     ![Android Emulator](media/get-started-first-mobile-app/android-emulator.png)
 
@@ -572,7 +566,7 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 
 ## <a id="tailor"></a>Tailor the app to a platform
 
-The code that you used to get the device's location works pretty well across all platforms, but what if it didn't? What if you had to write extra code to get the location of a iOS device?
+The code that you used to get the device's location works pretty well across all platforms, but what if it didn't? What if you had to write extra code to get the location of an iOS device?
 
 This is where the **merges** folder becomes useful. We touched on that folder earlier in this article. Now let's try a few basic things.
 
