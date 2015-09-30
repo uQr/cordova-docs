@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="Mikejo5000"
+   authors="normesta"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/10/2015"
-   ms.author="mikejo"/>
+   ms.author="normesta"/>
 # Configure your app built with Visual Studio Tools for Apache Cordova
 
 A config.xml file included in each project provides most of your app configuration such as the app’s display name and start page. From **Solution Explorer**, you can double-click this file to open it in the configuration designer, a Visual Studio interface for the file.
