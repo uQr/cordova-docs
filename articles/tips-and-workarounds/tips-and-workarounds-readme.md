@@ -2,7 +2,15 @@
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 # Visual Studio Tools for Apache Cordova tips & workarounds
 This repository contains a set tips and workarounds for [Apache Cordova](http://cordova.apache.org) generally in addition to the **Visual Studio 2015 RC** release of **[Tools for Apache Cordova](http://aka.ms/cordova)**.

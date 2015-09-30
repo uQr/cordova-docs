@@ -1,25 +1,33 @@
-<properties pageTitle="VS Debugger Known Issues and Limitations" 
+<properties pageTitle="VS Debugger Known Issues and Limitations"
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #**VS Debugger Known Issues and Limitations**
 This article covers known issues and limitations related to Visual Studio Debugger in Tools for Apache Cordova 2015.
 
-##**No debugger support for Windows Phone 8 (WP8)** 
+##**No debugger support for Windows Phone 8 (WP8)**
 
 There is currently no Visual Studio debugger support for Windows Phone 8. Developers can use the Weinre (Web Inspector Remote) project as described in this [blog post](http://msopentech.com/blog/2013/05/31/now-on-ie-and-firefox-debug-your-mobile-html5-page-remotely-with-weinre-web-inspector-remote/) from MS OpenTech as an alternative.
 
-##**Debugger does not stop at breakpoints when the app is initially starting** 
+##**Debugger does not stop at breakpoints when the app is initially starting**
 
 Due to a race condition, the VS Debugger will not consistently stop at breakpoints that occur prior to the first page load in Ripple or Android emulators or devices. This can be problematic when attempting to debug code tied to page "load" or "device ready" events on the very first page of your app. However, these breakpoints will be hit after refreshing the browser (Ripple) or executing “window.location.reload()” from the JavaScript Console.
 
-##**DOM explorer shows Ripple HTML in addition to app HTML** 
+##**DOM explorer shows Ripple HTML in addition to app HTML**
 
 When debugging an application deployed to the Ripple emulator, the JavaScript Console's default execution target is the Ripple top-level, instead of the application frame. To switch to the execution target of the user’s application, change the execution target of the JavaScript Console to the "frame: &lt;application html page&gt;" target using the target selector in the upper right of the JavaScript Console window.
 
-##**No debugging Release versions of Android, iOS** 
+##**No debugging Release versions of Android, iOS**
 
 You cannot use the VS Debugger for apps deployed to Android emulators or devices that are built in the Release Solution Configurations (by design) as they are signed. JavaScript console output is, however, captured in the Output window.
 
