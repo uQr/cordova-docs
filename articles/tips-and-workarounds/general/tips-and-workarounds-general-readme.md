@@ -2,7 +2,15 @@
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #General Cordova tips and workarounds
 This document covers tips, tricks, and known workarounds for general issues with Cordova or Tools for Apache Cordova.
@@ -93,7 +101,7 @@ This substitutes org.apache.cordova.camera for the correct ID and 0.3.6 with the
 ###Install from a Local Copy
 However, if the plugin is only available through GitHub, you can follow these steps to install a specific version:
 
-1. Go to the GitHub repository for the plugin. Ex: 
+1. Go to the GitHub repository for the plugin. Ex:
 
 ~~~~~~~~~~~~~~~~~
 https://github.com/wildabeast/BarcodeScanner

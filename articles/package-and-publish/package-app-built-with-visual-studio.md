@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="Mikejo5000"
+   authors="normesta"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,8 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/10/2015"
-   ms.author="mikejo"/>
+   ms.author="normesta"/>
+   
 # Package your app built with Visual Studio Tools for Apache Cordova
 
 When you package the app you created using Visual Studio Tools for Apache Cordova, you’ll want to configure the settings required for publishing your app. In addition to general settings, there are also platform-specific steps required in most cases.
