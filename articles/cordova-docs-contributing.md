@@ -5,14 +5,16 @@
   authors="bursteg" />
 
 # How to contribute
+All content hosted on this site is from [Microsoft's cordova-docs Gihub repo](https://github.com/Microsoft/cordova-docs).
+
 There are many ways that you can contribute to **cordova-docs**:
-* Submit a bug
-* Verify fixes for bugs
-* Submit a code fix for a bug
-* Submit a feature request
-* Submit a unit test
-* Tell others about **cordova-docs**
-* Tell the developers how much you appreciate the samples available here
+1. Submit a bug
+2. Verify fixes for bugs
+3. Submit a code fix for a bug
+4. Submit a feature request
+5. Submit a unit test
+6. Tell others about **cordova-docs**
+7. Tell the developers how much you appreciate their work here in the Disqus comments section of each article
 
 ## Contributing Code
 Note that all code submissions will be rigorously reviewed and tested by the team, and only those that meet an extremely high bar for both quality and design/roadmap appropriateness will be merged into the source.
