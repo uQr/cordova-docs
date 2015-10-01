@@ -62,15 +62,15 @@ The basic flow for building a Cordova app is simple on the surface:
 
 2.  Add the platforms you want to build to the project using the "cordova platform add" command. Ex:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 	cordova platform add android
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 3.  Build the project using the "cordova build" command:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
     cordova build android --release
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 The Cordova CLI is node.js based, so these exact same steps can be run from Windows or an OSX machine or from a cloud hosted VM like [MacInCloud](http://go.microsoft.com/fwlink/?LinkID=533746). See the [Cordova CLI documentation](http://go.microsoft.com/fwlink/?LinkID=533773) for additional details.
 
@@ -129,19 +129,19 @@ If your build server is running in a datacenter, it may be very locked down and 
 
 If you need to use a proxy, you will need to configure both npm and Git command line tools to use them. Open a command prompt on Windows or the Terminal app on OSX and type the following:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 npm config set proxy http://<username>:<password>@<host>
 npm config set https-proxy http://<username>:<password>@<host>
 git config --global http.proxy http://<username>:<password>@<host>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ...where "&lt;username&gt;:&lt;password&gt;@" is optional and should contain the appropriate user name and password for proxy access while &lt;host&gt; is the correct proxy host and port (ex: myproxy.mycompany.com:8080).
 
 You may also need to configure proxy settings for Java. This can be [accomplished via the Java control panel (reccomended)](http://java.com/en/download/help/proxy_setup.xml) or by setting an environment variable as the follows:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 JAVA_OPTS="-Dhttps.proxyHost=<host> -Dhttps.proxyPort=<port> -Dhttp.proxyHost=<host> -Dhttp.proxyPort=<port> -DproxySet=true"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Finally, if you see the error "**TypeError: Request path contains unescaped characters**" when building or installing a plugin you may need to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordovaproxy) for additional details.
 
@@ -176,41 +176,41 @@ Installing and using the correct version of the Cordova CLI at the project level
 1.  Create a package.json file in the root of your Cordova project.
 2.  Add the following json to the file where "4.3.0" is the version of the Cordova CLI you intend to use:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
     {
     	"devDependencies": {
     		"cordova": "4.3.0"
 	    }
     }
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 3.  Check this into source control with your project.
 
 4.  Configure your build system to run the following command as its first task. This will then install the correct version of the CLI in a new "node\_modules" folder under your project.
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
     npm install
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 5.  When executing a Cordova CLI command for your build task, you can then use the following commands:
 
 	Windows:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 	node_modules\cordova\bin\cordova
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 	OSX:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 	./node_modules/cordova/bin/cordova
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
     Ex:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
     ./node_modules/cordova/bin/cordova platform add android
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 The downside of this method is that you will end up installing the Cordova CLI each time you execute a "clean" build which will slow down your build times particularly on Windows as the CLI consists of around 25mb of small files.
 
@@ -221,7 +221,7 @@ To avoid re-installing each time, you can take advantage of Visual Studio's **ta
 
 2.  Add this node.js script to your project and call it "setup-cordova.js":
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
     var fs = require("fs"),
         path = require("path"),
         exec = require("child_process").exec;
@@ -260,7 +260,7 @@ To avoid re-installing each time, you can take advantage of Visual Studio's **ta
         // Windows
     	fs.writeFileSync("cordova.cmd", "@" + path.join(cordovaModulePath, "node_modules", "cordova", "bin", "cordova") + " %*", "utf8");
     }
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 
 3.  In your team / CI build definition or script, add a build task to execute "node setup-cordova.js" from your project root
@@ -273,9 +273,9 @@ Note that this same script can be easily adapted to a [Gulp build task](http://g
 ###Adding Platforms
 Adding platforms in Cordova is quite simple using the "cordova platform" command. Ex:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 cordova platform add android
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 However, there are a couple of common problems when executing this command that you could run into.
 
@@ -283,9 +283,9 @@ However, there are a couple of common problems when executing this command that 
 1. **Platform Download Messages Result in Build Failures.** Where things can get a bit tricky is that Node.js emits warnings to "Standard Error."  The issue is that "platform add" command can result in warnings being reported when the CLI is downloading a version of a given Cordova platform for the first time. This is not an error, but some build systems will assume anything sent to standard error means a build failure occurred.
 
     Many CI systems provide a "continue on error" option that you can select to get around this particular problem or you can pipe standard error to standard out if you'd prefer.
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 	cordova platform add ios 2>&1
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
 
 2. **Errors During Incremental Builds.** If you are doing an incremental build and the platform you are building has already been added, the resulting exit code will be non-zero and may be interpreted as a build failure. If your build system supports a "continue on error" option for a given task, you can simply select that.
 
@@ -293,15 +293,15 @@ However, there are a couple of common problems when executing this command that 
 
     Windows:
 
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
     IF NOT EXIST platforms/android CALL cordova platform add android
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
 
     OSX:
 
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
     if [ ! -d "platforms/android" ]; then cordova platform add android; fi;
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```
 
 <a name="ipa"></a>
 ###Generating an iOS App Store Package
@@ -310,46 +310,46 @@ In order to distribute your iOS application you will need to generate an "iOS Ap
 #### Using xcrun
 Future versions of the Cordova CLI will likely support generating these archives directly. However, current state it is not supported so an Xcode command line tool needs to be used instead. Ex:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 xcrun -v -sdk iphoneos PackageApplication source.app -o dest.ipa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 In Cordova projects, the source ".app" package can be found in the platforms/ios/build/device folder in your project after a successful Cordova "device" build. As an important detail, "source.app" and "dest.ipa" above should be **absolute paths** and the name of the package is taken from the "Display Name" (widget/@name) in config.xml which may not match your project folder name. Ex:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 xcrun -v -sdk iphoneos PackageApplication "/Users/cdvusr/Documents/cordova/myapp/platforms/ios/build/device/My Cordova App.app" -o "/Users/cordova/Documents/cordova/myapp/platforms/ios/build/device/My Cordova App.ipa"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Each build system has a different mechanisms in place for passing the absolute path of the project to shell scripts, but typically it involves the use of an environment variable. For example, in Jenkins you can use the following:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/device/My Cordova App.app" -o "${WORKSPACE}/platforms/ios/build/device/My Cordova App.ipa"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 This command will automatically match a developer signing identitiy (when building Debug) or distribution (when building Release) signing identity based on the app's package name. When you are using res/native, you can place a custom [build-debug.xcconfig](http://go.microsoft.com/fwlink/?LinkID=533752) or [build-release.xcconfig](http://go.microsoft.com/fwlink/?LinkID=533782) file in res/native/ios/cordova in your Cordova project to override signing identities and other [build settings](http://go.microsoft.com/fwlink/?LinkID=533783) for these configurations.
 
 However, additional command line arguments can also be passed such as "--sign" to resign the app using a specific signing identity or a path to a .p12 file and "--embed" to specify the path to a provisioning profile. Ex:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/device/My Cordova App.app" -o "${WORKSPACE}/platforms/ios/build/device/My Cordova App.ipa" –-sign "/path/to/signing.p12" --embed "/path/to/some.mobileprovision"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 #### Solving Keychain Permission Errors
 When auto-matching, you may hit permissions issues when using a build server like [Jenkins](http://go.microsoft.com/fwlink/?LinkID=533784) because the build agent does not have permissions to access the login keychain. To solve this problem, you'll need to unlock the keychain before you build and package your Cordova app.
 
 Most build servers provide a way to inject secure environment variables before executing build tasks. In Jenkins this is accomplished by using the "Environment Injector Plugin." By then setting a KEYCHAIN\_PWD environment variable you can add the following command to your build.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 security unlock-keychain -p ${KEYCHAIN_PWD} ${HOME}/Library/Keychains/login.keychain
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 To then build and package your iOS app, you can run the following commands:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 security unlock-keychain -p ${KEYCHAIN_PWD} ${HOME}/Library/Keychains/login.keychain
 cordova build ios --device --release
 xcrun -v -sdk iphoneos PackageApplication "${WORKSPACE}/platforms/ios/build/device/My Cordova App.app" -o "${WORKSPACE}/platforms/ios/build/device/My Cordova App.ipa"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 <a name="vsspecific"></a>
 ###Visual Studio Specific Features
@@ -368,33 +368,33 @@ For this behind the scenes tutorial, we'll use a Node.js based shell script for 
 
 Add the following to the file:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#!/usr/bin/env node
-var fs = require("fs"),
+    ```
+    #!/usr/bin/env node
+    var fs = require("fs"),
 	path = require("path");
 
-process.env["CORDOVA_PLATFORMS"].split(",").forEach(function(platform) {
-	console.log("Processing res/native for " + platform);
-	var resNative = path.join(process.cwd(), "res", "native", platform)
-	if (fs.existsSync(resNative)) {
-		copyFiles(resNative, path.join(process.cwd(), "platforms", platform));
+        process.env["CORDOVA_PLATFORMS"].split(",").forEach(function(platform) {
+	    console.log("Processing res/native for " + platform);
+	   var resNative = path.join(process.cwd(), "res", "native", platform)
+	    if (fs.existsSync(resNative)) {
+	    	copyFiles(resNative, path.join(process.cwd(), "platforms", platform));
 	}
-});
+    });
 
-// Recursive copy function for res/native processing
-function copyFiles(srcPath, destPath) {
-	if (fs.statSync(srcPath).isDirectory()) {
-		if (!fs.existsSync(destPath)) {
-			fs.mkdirSync(destPath);
-		}
-		fs.readdirSync(srcPath).forEach(function (child) {
-			copyFiles(path.join(srcPath, child), path.join(destPath, child));
-		});
-	} else {
-		fs.writeFileSync(destPath, fs.readFileSync(srcPath));
-	}
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Recursive copy function for res/native processing
+    function copyFiles(srcPath, destPath) {
+	    if (fs.statSync(srcPath).isDirectory()) {
+		    if (!fs.existsSync(destPath)) {
+	    		fs.mkdirSync(destPath);
+	    	}
+	    	fs.readdirSync(srcPath).forEach(function (child) {
+	    		copyFiles(path.join(srcPath, child), path.join(destPath, child));
+	    	});
+	    } else {
+	    	fs.writeFileSync(destPath, fs.readFileSync(srcPath));
+	    }
+    }
+    ```
 
 You can place this into a "hooks\before_prepare" folder Visual Studio Cordova project and check it into source control and it will automatically be used.
 
@@ -407,42 +407,45 @@ There are a few relativley common issues when building a Cordova app on OSX rela
     1.  Log into OSX with the user that installed and set up the cross-platform agent
     2.  Open the Terminal app and type:
 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ```
         sudo npm cache clear
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ```
 
     3.  Next, type:
 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ```
         sudo chown -R `whoami` ~/.npm
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ```
 
 3.  **You checked in the "platforms" folder from Windows and are seeing permission errors:** If you are seeing errors that are originating from files in your project's "platforms" folder, the root cause may be that you checked in shell scripts under the "platforms/android/cordova" or "platforms/ios/cordova" folders from Windows. This is because the NTFS file system has no concept of an "execute bit" that is required to run these from OSX. (The contents of the platforms is generally not intended for checked in and by default are excluded from Cordova projects in Visual Studio as a result.)
 
     For example, this error is saying the "version" script is not executable:
 
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   [17:41:57] Error:
-   /Users/vsoagent/vsoagent/agent/work/build/b424d56537be4854de825289f019285698609afddf826d5d1a185eb60b806e47/repo/tfs-vnext test/platforms/android/cordova/version:
-   Command failed with exit code EACCES
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	```
+    [17:41:57] Error:
+    /Users/vsoagent/vsoagent/agent/work/build/b424d56537be4854de825289f019285698609afddf826d5d1a185eb60b806e47/repo/tfs-vnext test/platforms/android/cordova/version:
+    Command failed with exit code EACCES
+   ```
 
    To resolve this problem you have two options:
-	1.  Don't check in the contents of the "platforms" folder into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
-	2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process. There is also a [**Cordova hook based version of this script**](../tips-and-workarounds/ios/osx-set-execute/tips-and-workarounds-ios-osx-set-execute-readme.md) available in the tips and workarounds section.
-	    1.  Create a shell script called "set-execute.sh" with the following contents:
+   
+   1.  Don't check in the contents of the "platforms" folder into source control. This is by far the path of least resistance. The Gulp build script can add them at the time you build.
+	
+   2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a shell script to set the execute bits on these files and include it as a part of your build process. There is also a [**Cordova hook based version of this script**](../tips-and-workarounds/ios/osx-set-execute/tips-and-workarounds-ios-osx-set-execute-readme.md) available in the tips and workarounds section.
+	
+    * Create a shell script called "set-execute.sh" with the following contents:
 
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            #!/bin/sh
-            find -E platforms/ios/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
-            find -E platforms/android/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
-            find -E platforms/windows/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
-            find -E platforms/wp8/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       ```
+        #!/bin/sh
+        find -E platforms/ios/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+        find -E platforms/android/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+        find -E platforms/windows/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+        find -E platforms/wp8/cordova -type f -regex "[^.(LICENSE)]*" -exec chmod +x {} +
+      ```
 
-    	2.  Add this file to your project in Visual Studio and check it into source control
-
-    	3.  Add a "shell script" build step at the very beginning of your build definition that runs the above script.
+    * Add this file to your project in Visual Studio and check it into source control.
+    
+    * Add a "shell script" build step at the very beginning of your build definition that runs the above script.
 
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../cordova-docs-readme.md)
