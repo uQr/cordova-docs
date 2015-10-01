@@ -101,7 +101,7 @@ You can attach the Visual Studio debugger to an app that’s running in the Apac
 
     ![Breakpoint caught by the Visual Studio debugger](media/debug-using-visual-studio/debug-hit-breakpoint.png)
 
->**Important**: The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in Ripple. However, the debugger will stop at these breakpoints after you refresh the browser.
+    >**Important**: The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in Ripple. However, the debugger will stop at these breakpoints after you refresh the browser.
 
 The following cross-platform [JavaScript Console commands](https://msdn.microsoft.com/library/hh696634.aspx) are currently supported from Ripple:
 
@@ -147,7 +147,7 @@ If you’re using an Android version between 2.3.3 and 4.3, you can install the 
 
     If you are using Android 4.4, you can hit breakpoints set in your code, interact with your page using the JavaScript Console, and use the DOM Explorer.
 
->**Important**: The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in Android 4.4 emulators or in Android devices. However, the debugger will stop at these breakpoints after you execute the following command from the JavaScript Console: `window.location.reload()`
+    >**Important**: The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in Android 4.4 emulators or in Android devices. However, the debugger will stop at these breakpoints after you execute the following command from the JavaScript Console: `window.location.reload()`
 
 ### To debug on Android versions 2.3.3-4.3 with the jsHybugger plugin
 
@@ -157,7 +157,7 @@ If you’re using an Android version between 2.3.3 and 4.3, you can install the 
 
 3.   [Download the jsHybugger plugin](https://www.jshybugger.com/download?release=Plugin) and extract its contents.
 
->**Note**: For more information about this plugin, see the [jsHybugger website](https://www.jshybugger.com/). You can use the plugin without a license, but debugging sessions are limited to two minutes. For unlimited debugging, you must [purchase a jshybugger license](https://www.jshybugger.com/#!/buy). The following instructions assume that you’ve purchased a license and downloaded the license file as jshybugger_license.xml.
+    >**Note**: For more information about this plugin, see the [jsHybugger website](https://www.jshybugger.com/). You can use the plugin without a license, but debugging sessions are limited to two minutes. For unlimited debugging, you must [purchase a jshybugger license](https://www.jshybugger.com/#!/buy). The following instructions assume that you’ve purchased a license and downloaded the license file as jshybugger_license.xml.
 
 1.  Place the unzipped jshybugger-plugin-**x.x.x** folder in your project’s **plugins** folder.
 
@@ -172,7 +172,7 @@ If you’re using an Android version between 2.3.3 and 4.3, you can install the 
 
     You can interact with your page using the JavaScript Console, and use the DOM Explorer to inspect HTML and CSS.
 
->**Important**: You must remove the jsHybugger plugin and the license file from your project before you publish your app.
+    >**Important**: You must remove the jsHybugger plugin and the license file from your project before you publish your app.
 
 The plugin has no effect when you’re using the Apache Ripple emulator or debugging on Android 4.4 emulators and devices, so there’s no need to remove it when you switch between different Android targets during testing.
 
@@ -228,7 +228,7 @@ You can attach the Visual Studio debugger to the iOS Simulator or to an iOS devi
 
     You can hit breakpoints set in your code, interact with your page using the JavaScript Console, and use the DOM Explorer to inspect HTML and CSS.
 
->**Important**: The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in the iOS Simulator or on iOS devices. However, the debugger will stop at these breakpoints after you execute the following command from the JavaScript Console: `window.location.reload()`
+    >**Important**: The Visual Studio debugger won’t stop at breakpoints that are hit before the first page loads in the iOS Simulator or on iOS devices. However, the debugger will stop at these breakpoints after you execute the following command from the JavaScript Console: `window.location.reload()`
 
 The following cross-platform [JavaScript Console commands](https://msdn.microsoft.com/library/hh696634.aspx) are currently supported for iOS:
 

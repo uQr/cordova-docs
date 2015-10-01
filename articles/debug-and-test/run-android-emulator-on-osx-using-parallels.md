@@ -40,23 +40,23 @@ Next, install and configure Java and the Android SDK.
 
 1. Download and install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html) for Mac. 2. Download the [Android SDK tools](http://developer.android.com/sdk/index.html) for Mac.
 
-  >**Note:** You can choose the download under **Get the SDK for an existing IDE** if you don’t intend to use the Android IDE directly.
+    >**Note:** You can choose the download under **Get the SDK for an existing IDE** if you don’t intend to use the Android IDE directly.
 
 2. Unzip the Android tools.
 
-   In this tutorial, we will assume you’ve unzipped it to your Documents folder (~/Documents/android-sdk-macosx).
+    In this tutorial, we will assume you’ve unzipped it to your Documents folder (~/Documents/android-sdk-macosx).
 
 3. Open the Terminal app and type the following command:
 
-  ```
-  ~/Documents/android-sdk-macosx/tools/tools/android
-  ```
+    ```
+    ~/Documents/android-sdk-macosx/tools/tools/android
+    ```
 
 4. Deselect anything you do not want to install, but make sure the following are selected:
 
-   * Android 4.4.2 (API 19)
+    * Android 4.4.2 (API 19)
 
-   * Extras/Intel x86 Emulator Accelerator (HAXM installer)
+    * Extras/Intel x86 Emulator Accelerator (HAXM installer)
 
 5. Choose **Install packages…**
 
@@ -74,17 +74,17 @@ Next, install and configure Java and the Android SDK.
 
 8. In the Terminal app, type:
 
-  ```
-  ~/Documents/android-sdk-macosx/tools/android avd
-  ```
+    ```
+    ~/Documents/android-sdk-macosx/tools/android avd
+    ```
 
 9. Create an AVD image, start it, and verify that it runs. Make sure to select the following options:
 
-   * Set CPU/ABI to an **Intel Atom (x86)** system image.
+    * Set CPU/ABI to an **Intel Atom (x86)** system image.
 
-   * Select **Use Host GPU**.
+    * Select **Use Host GPU**.
 
-To start up your Android emulator images in the future, use the android avd command.
+To start up your Android emulator images in the future, use the `android avd` command.
 
 ### Windows
 
