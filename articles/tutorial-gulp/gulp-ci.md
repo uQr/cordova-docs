@@ -79,7 +79,6 @@ Otherwise you can follow these steps:
 
 1.  Add a package.json to the root of your project with at least the following
     contents:
-
 ```json
     {
         "devDependencies": {
@@ -89,7 +88,7 @@ Otherwise you can follow these steps:
     }
 ```
 
-	This will install the taco-team-build npm package from the GitHub repository when "npm install" is executed. Note that you may also opt to use the node module from inside your project so you can modify it. To do this, you can simply add taco-team-build.js to the root of your project and require “./taco-team-build” instead of “taco-team-build” in gulpfile.js.
+     This will install the taco-team-build npm package from the GitHub repository when "npm install" is executed. Note that you may also opt to use the node module from inside your project so you can modify it. To do this, you can simply add taco-team-build.js to the root of your project and require “./taco-team-build” instead of “taco-team-build” in gulpfile.js.
 
 2.  Create a gulpfile.js file in the root of your project if you do not already have one. We'll cover what goes in it in the next section.
 
