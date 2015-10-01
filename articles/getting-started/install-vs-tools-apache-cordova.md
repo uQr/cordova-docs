@@ -35,7 +35,7 @@ To build apps for specific device platforms, there are a few additional requirem
 
 * Building a Windows 10 Universal Platform app requires the installation of the [Windows 10 Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=617471). Note that Windows 8.1/Phone 8.1 apps may also be deployed to Windows 10.
 
-## Get the tools <a name="InstallTools"></a>
+## Get the tools <a name="GetTools"></a>
 [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38), which are included as an optional component in Visual Studio 2015. Follow the steps in the next section to install the tools.
 
   > **Important:** Visual Studio 2015 is recommended for developing Apache Cordova apps. If you previously installed Visual Studio 2015 Preview, a Visual Studio 2015 CTP, or Visual Studio 2015 RC, you must first uninstall it using Control Panel, Programs and Features, before installing Visual Studio 2015.
@@ -63,18 +63,15 @@ If not already installed, the following software will be selected by default:
 ### To install Visual Studio Tools for Apache Cordova
 1. Run the installer that you found in [Get the tools](#GetTools).
 
-2. Follow the instructions to install Visual Studio 2015, and make sure you install the following optional features:
-   * HTML/JavaScript (Apache Cordova), under Cross Platform Mobile Development.
+2. Follow the instructions to install Visual Studio 2015, and make sure you install the **HTML/JavaScript (Apache Cordova)** optional feature, under **Cross Platform Mobile Development**.
 
-        > **Note:** If you are installing Visual Studio 2013 instead of Visual Studio 2015 (we recommend Visual Studio 2015), the Cordova tools are installed as a [separate extension](http://go.microsoft.com/fwlink/p/?LinkId=397606).
+    > **Note:** If you are installing Visual Studio 2013 instead of Visual Studio 2015 (we recommend Visual Studio 2015), the Cordova tools are installed as a [separate extension](http://go.microsoft.com/fwlink/p/?LinkId=397606).
 
-   * Windows 8.1 and Windows Phone 8.0/8.1 Tools.
+    ![Installing Visual Studio Tools for Apache Cordova](media/get-started-first-mobile-app/install-tools.png)
 
-   * Microsoft Visual Studio Emulator for Android, if your development machine [supports Hyper-V](https://msdn.microsoft.com/en-us/library/mt228280.aspx).
+     > **Note:** You can add this feature to an existing installation of Visual Studio 2015. In **Control Panel**, choose **Programs and Features**. Select **Visual Studio 2015** from the list, and then choose **Change**. In the Visual Studio setup window, choose **Modify**. In the list of optional features to install, select the **HTML/JavaScript (Apache Cordova) Update 2** checkbox, choose the **Next** button, and then choose the **Update** button.
 
-       ![Installing Visual Studio Tools for Apache Cordova](media/install-vs-tools-apache-cordova/IC816238.png)
-
-     > **Note:** You can add these features to an existing installation of Visual Studio 2015\. In Control Panel, choose Programs and Features. Select Visual Studio 2015 from the list, and then choose **Change**. In the Visual Studio setup window, choose **Modify**. In the features list, select the optional features as shown in the illustration.
+    ![Choose Apache Corodova components](media/get-started-first-mobile-app/modify-setup.png)
 
     If you don’t want to accept the third-party dependencies selected by default under Common Tools and Software Development Kits, you can clear the software selections and manually install the dependencies you need later.
 
@@ -83,7 +80,7 @@ If not already installed, the following software will be selected by default:
     > **Important:** If the third-party dependencies are already on your system or you choose to install them manually, you might have to update your system path. See [install the dependencies manually](configure-vs-tools-apache-cordova.md#ThirdParty).
 
 3. Reboot your computer to make sure everything is installed correctly.
-4. Open Visual Studio, choose Tools, then Extensions and Updates, and then Updates. If there is a Visual Studio update available for Visual Studio Tools for Apache Cordova, install it.
+4. Open Visual Studio, choose **Tools**, then **Extensions and Updates**, and then **Updates**. If there is a Visual Studio update available for Visual Studio Tools for Apache Cordova, install it.
 
     > **Note:** The first time you build an app after installing the tools, Visual Studio will download and install the Cordova tools. As a result, the first build takes extra time to complete. Check the Output window to see progress. If you see an error such as Cannot find module [modulename], you may need to clean the solution and rebuild. For more information, see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vstac).
 
@@ -100,10 +97,10 @@ Before you install the remote agent, make sure you have [installed the Visual St
 
 You can configure the agent to handle build requests and run the app on an iOS device or the iOS Simulator. To host the remote agent, the Mac computer must have the following installed:
 
-* Mac OS X Mavericks **Xcode6** Xcode command-line tools (from Terminal app, use `xcode-select –install`)
+* Mac OS X Mavericks **Xcode6** Xcode command-line tools (from Terminal app, use `xcode-select –install`).
 
 * [Node.js](http://nodejs.org/)
-  >**Note**: See known issues for updated information on Node.js.
+    >**Note**: See known issues for updated information on Node.js.
 
 * [Git command line tools](http://go.microsoft.com/fwlink/?LinkID=396870), if you are using a CLI from a Git repository. If the CLI version is pointed to a Git location, Git is required to build the app for iOS.
 
@@ -124,23 +121,24 @@ You must also have the following:
 1. From the Terminal app on your Mac, type:
 
     ```
-  sudo npm install -g remotebuild
-  ```
+    sudo npm install -g remotebuild
+    ```
 
-  The first command updates npm, the second command installs the remote agent, and the third command is only required if you will be using the iOS Simulator from Visual Studio.
+    The first command updates npm, the second command installs the remote agent, and the third command is only required if you will be using the iOS Simulator from Visual Studio.
 
 2. If you have an older version of Node.js and npm, you may need to type the following commands before you start the remote agent, or you will encounter a permissions error when building. From the Terminal app on your Mac, type:
 
     ```
-  sudo chown -R `whoami` ~/.npm
-  ```
+    sudo chown -R `whoami` ~/.npm
+    ```
 
-  This command makes sure that permissions of the npm package cache in your home directory are correctly configured (newer versions of Node.js and npm will do this for you automatically.)
+    This command makes sure that permissions of the npm package cache in your home directory are correctly configured (newer versions of Node.js and npm will do this for you automatically.)
 
-  When you first start the remote agent (remotebuild), developer mode will be activated on your Mac. [Homebrew](http://brew.sh/) will also be installed, along with ideviceinstaller and ios-webkit-debug-proxy, to allow automatically running apps on devices, and to allow debugging apps on devices and on the simulator.
+    When you first start the remote agent (remotebuild), developer mode will be activated on your Mac. [Homebrew](http://brew.sh/) will also be installed, along with ideviceinstaller and ios-webkit-debug-proxy, to allow automatically running apps on devices, and to allow debugging apps on devices and on the simulator.
 
-   > **Caution:** To install Homebrew, you need sudo (administrator) access. If you need to install remotebuild without sudo, you can install Homebrew manually in a usr/local location and add its bin folder to your path. For more information, see the [Homebrew documentation](https://github.com/Homebrew/homebrew/wiki/Installation). If you need to manually enable developer mode, type the following in the Terminal app: DevToolsSecurity –enable
-If you updated your computer to a new version of Visual Studio, you must update to the current version of the remote agent as well.
+    > **Caution:** To install Homebrew, you need sudo (administrator) access. If you need to install remotebuild without sudo, you can install Homebrew manually in a usr/local location and add its bin folder to your path. For more information, see the [Homebrew documentation](https://github.com/Homebrew/homebrew/wiki/Installation). If you need to manually enable developer mode, type the following in the Terminal app: DevToolsSecurity –enable
+
+    If you updated your computer to a new version of Visual Studio, you must update to the current version of the remote agent as well.
 
 ### To update the remote agent
 * Repeat the installation step from the previous section.
@@ -154,13 +152,13 @@ If you updated your computer to a new version of Visual Studio, you must update 
 
     > **Note:** In Visual Studio 2013, the preceding command is vs-mda-remote.
 
-  This will start the agent with a default build directory of *~/.taco\_home/remote-builds/taco-remote/builds*. Additional configurations options for the agent are described in [Configure the remote agent](configure-vs-tools-apache-cordova.md#IosConfig).
+    This will start the agent with a default build directory of *~/.taco\_home/remote-builds/taco-remote/builds*. Additional configurations options for the agent are described in [Configure the remote agent](configure-vs-tools-apache-cordova.md#IosConfig).
 
-  The first time you start the agent, you will be provided with the required information to configure the agent in Visual Studio, including the host, the port, and the security PIN.
+    The first time you start the agent, you will be provided with the required information to configure the agent in Visual Studio, including the host, the port, and the security PIN.
 
-  ![Cordova_iOS_Install_Agent](media/install-vs-tools-apache-cordova/IC816236.png)
+    ![Cordova_iOS_Install_Agent](media/install-vs-tools-apache-cordova/IC816236.png)
 
-   > **Important:** The remote agent has been designed to securely transfer build payloads to and from Visual Studio using SSL certificates.
+    > **Important:** The remote agent has been designed to securely transfer build payloads to and from Visual Studio using SSL certificates.
 
 * If you intend to configure the remote agent in Visual Studio using the host name, ping the Mac using the host name to verify that it is reachable. Otherwise, you may need to use the IP address instead.
 * If the mac is externally visible under one hostname, but internally assigns itself another hostname, you may specify the host name using the following command in the Terminal app:
@@ -192,19 +190,19 @@ If you updated your computer to a new version of Visual Studio, you must update 
 
 7. In the **Host**, **Port**, and **Security PIN** fields, type the values specified by the remote agent when you started it the first time. The host can be the name or IP address of your Mac. The default port is 3000.
 
-  ![Configuring the remote agent in Visual Studio](media/install-vs-tools-apache-cordova/IC795521.png)
+    ![Configuring the remote agent in Visual Studio](media/install-vs-tools-apache-cordova/IC795521.png)
 
-  > **Note:** If you cannot ping the Mac using the host name, you may need to use the IP address.
+    > **Note:** If you cannot ping the Mac using the host name, you may need to use the IP address.
 
-  When you click **OK**, Visual Studio will connect to the remote agent (the agent must be running to connect).
+    When you click **OK**, Visual Studio will connect to the remote agent (the agent must be running to connect).
 
-  If you want to disable secure mode and enable simple HTTP-based connections, choose **False** as the **Secure mode** setting and start remotebuild with secure mode disabled:
+    If you want to disable secure mode and enable simple HTTP-based connections, choose **False** as the **Secure mode** setting and start remotebuild with secure mode disabled:
 
     remotebuild --secure false
 
-  If secure mode is disabled, you can leave the **Security PIN** field blank when configuring the agent in Visual Studio.
+    If secure mode is disabled, you can leave the **Security PIN** field blank when configuring the agent in Visual Studio.
 
-  The security PIN is for one-time use. If you need to pair a new client with the remotebuild server, see [Generate a new security PIN](configure-vs-tools-apache-cordova.md#IosPin).
+    The security PIN is for one-time use. If you need to pair a new client with the remotebuild server, see [Generate a new security PIN](configure-vs-tools-apache-cordova.md#IosPin).
 
 #### To stop the agent
 
