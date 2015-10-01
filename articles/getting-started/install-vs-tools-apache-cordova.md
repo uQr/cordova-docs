@@ -140,7 +140,7 @@ You must also have the following:
 
     If you updated your computer to a new version of Visual Studio, you must update to the current version of the remote agent as well.
 
-### To update the remote agent
+### To update the remote agent <a name="update"></a>
 * Repeat the installation step from the previous section.
 
 ### To start the remote agent
@@ -169,6 +169,8 @@ You must also have the following:
     ```
 
   to regenerate certificates that will work with the given hostname.
+
+    > **Note** If you are running an older version of the agent, the preceding commands are not supported. Make sure that you [update](#update) the remotebuild agent.
 
   Before you can use the remote agent, you must specify the remote configuration in Visual Studio.
 
