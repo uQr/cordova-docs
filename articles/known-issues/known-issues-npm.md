@@ -21,3 +21,5 @@ If NPM packages aren't installing properly, and you see an error that mentions b
 npm config set proxy http://proxydomain:port/
 npm config set registry http://registry.npmjs.org/
 ~~~~~~~~~~~~~
+
+**Note**: If you feel like you are seeing this error despite having configured the NPM proxy, it is possible that upgrading your Cordova version to 5.3.1 will fix the issue.
