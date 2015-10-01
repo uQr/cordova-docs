@@ -29,9 +29,9 @@ Here’s how to run your app on the [Visual Studio Emulator for Android](https:/
 
 1. Make sure that Hyper-V is enabled on your PC. Your PC must meet the [system requirements](https://msdn.microsoft.com/en-us/library/mt228280.aspx) for the Visual Studio Emulator for Android.
 
-  >**Important**: The emulator is not supported in a virtualized environment.
+    >**Important**: The emulator is not supported in a virtualized environment.
 
-2. With your app open in Visual Studio, choose Android from the Solution Platforms list. If you don’t see this list, choose Solution Platforms from the Add/Remove Buttons list to display it. 9. Choose one of the emulators, such as VS Emulator 5” KitKat (4.4) XHDPI Phone. 11. Press F5 to start the app. Visual Studio starts the emulator and runs the app.
+2. With your app open in Visual Studio, choose **Android** from the Solution Platforms list. If you don’t see this list, choose Solution Platforms from the Add/Remove Buttons list to display it. 9. Choose one of the emulators, such as **VS Emulator 5” KitKat (4.4) XHDPI Phone**. 11. Press F5 to start the app. Visual Studio starts the emulator and runs the app.
 
 
 ## Configure a high-performance emulator <a name="HAXM"></a>
@@ -40,7 +40,7 @@ If you have a PC with an Intel processor, you can improve the performance of the
 
 1. Disable Hyper-V. You can do this from Control Panel or from a command line, as described in the following procedures.
 
-  >**Caution**: Disabling Hyper-V will prevent you from using the Visual Studio Emulator for Android and the Windows Phone emulator. However, you can still deploy to a Windows Phone device while Hyper-V is disabled.
+    >**Caution**: Disabling Hyper-V will prevent you from using the Visual Studio Emulator for Android and the Windows Phone emulator. However, you can still deploy to a Windows Phone device while Hyper-V is disabled.
 
 2. (Android emulator only) Install the high-performance Intel Hardware Accelerated Execution Manager (HAXM) driver, if it isn’t already installed. (More information about the [HAXM driver](https://software.intel.com/android/articles/installation-instructions-for-intel-hardware-accelerated-execution-manager-windows))
 
@@ -52,7 +52,7 @@ If you have a PC with an Intel processor, you can improve the performance of the
 
 2. Clear the check box for Hyper-V.
 
-  ![Disabling Hyper-V](media/run-app-apache/IC741798.png)
+    ![Disabling Hyper-V](media/run-app-apache/IC741798.png)
 
 3. Reboot your PC. Now you can install the HAXM driver.
 
@@ -62,26 +62,26 @@ If you have a PC with an Intel processor, you can improve the performance of the
 
 1. Open an elevated command prompt (with administrative credentials), and type:
 
-  ```
-  bcdedit /set hypervisorlaunchtype off
-  ```
+    ```
+    bcdedit /set hypervisorlaunchtype off
+    ```
 
-   >**Caution**: The bcdedit commands can prevent your system from booting if not executed correctly; be careful when using these commands.
+    >**Caution**: The bcdedit commands can prevent your system from booting if not executed correctly; be careful when using these commands.
 
-   If you’re adding this command to a shell script, use the following instead:
+    If you’re adding this command to a shell script, use the following instead:
 
-  ```
-  bcdedit /set hypervisorlaunchtype off
-       shutdown /r
-  ```
+    ```
+    bcdedit /set hypervisorlaunchtype off
+    shutdown /r
+    ```
 
 2. Reboot your PC. If you want to re-enable Hyper-V later, use the following command, and then reboot your PC:
 
-  ```
-  bcdedit /set hypervisorlaunchtype auto
-  ```
+    ```
+    bcdedit /set hypervisorlaunchtype auto
+    ```
 
-   If you’re using the Genymotion emulator, you can skip this procedure. For more information, see Genymotion emulator.
+    If you’re using the Genymotion emulator, you can skip this procedure. For more information, see Genymotion emulator.
 
 ### To install the high-performance HAXM driver (Android emulator only)
 
@@ -89,11 +89,11 @@ If you have a PC with an Intel processor, you can improve the performance of the
 
 2. In the Android SDK Manager, look under **Extras for the Intel x86 Emulator Accelerator (HAXM Installer)**. If the status column shows that it isn’t installed, select its check box, and then choose **Install Packages**.
 
-  ![Installing the HAXM driver](media/run-app-apache/IC741799.png)
+    ![Installing the HAXM driver](media/run-app-apache/IC741799.png)
 
 3. Install the driver by going to sdk-path\extras\intel\Hardware_Accelerated_Execution_Manager and running **intelhaxm.exe**.
 
-  >**Tip**: If the “intel” portion of the path isn’t present, the driver was not installed.
+    >**Tip**: If the “intel” portion of the path isn’t present, the driver was not installed.
    Now you can configure an emulator to use the driver. When you create or edit an emulator, you must use an Intel CPU and select the Use Host GPU option. For more information, see the next section.
 
 
@@ -105,15 +105,19 @@ Before you run your app on the Android emulator in Visual Studio, use the Androi
 
 1. Open the AVD Manager. To do this from a command line, go the location of the SDK and type android avd. On Windows, the AVD Manager.exe is installed in the following location: C:\Program Files (x86)\Android\android-sdk.
 
-2. In the AVD Manager, choose Create. 5. Configure the properties for the new emulator. The required properties are AVD Name, Device, Target, CPU/ABI, and Skin. Target represents an installed version of the Android SDK version (API set). Set this property to API Level 19.
+2. In the AVD Manager, choose **Create**.
 
-  >**Tip**: If you want to emulate other Android device versions, you can install the images using the Android SDK Manager.
+    ![Creating an Android emulator](media/run-app-apache/IC741800.png)
 
-  ![Creating an Android emulator](media/run-app-apache/IC741800.png)
+3. Configure the properties for the new emulator. The required properties are **AVD Name**, **Device**, **Target**, **CPU/ABI**, and **Skin**. **Target** represents an installed version of the Android SDK version (API set). Set this property to a value such as API Level 22.
 
-  If you installed the high-performance HAXM driver in the [previous section](#HAXM) and chose an Intel CPU, select the Use Host GPU check box in Emulation Options.
+    >**Tip**: You may need to install more Android images using the Android SDK Manager.
 
-  >**Important**: To use the high-performance emulator, you must also choose an Intel processor in the CPU/ABI section of the AVD dialog box.
+    ![Creating an Android emulator](media/run-app-apache/create-new-virtual-device.png)
+
+    If you installed the high-performance HAXM driver in the [previous section](#HAXM) and chose an Intel CPU, select the **Use Host GPU** check box in Emulation Options.
+
+    >**Important**: To use the high-performance emulator, you must also choose an Intel processor in the CPU/ABI section of the AVD dialog box.
 
 3. Choose **OK** to close the configuration dialog box, and then choose **OK** again in the dialog box that shows all the emulator settings.
 
@@ -125,19 +129,17 @@ Before you run your app on the Android emulator in Visual Studio, use the Androi
 
 2. In the device list, choose **Android Emulator**.
 
-   ![Deploying to the Android emulator](media/run-app-apache/IC740450.png)
+    ![Deploying to the Android emulator](media/run-app-apache/IC740450.png)
 
 3. Press F5 to start the app, or Shift+F5 to start the app without debugging.
 
-  Android 4.4 is required to attach the debugger. Otherwise, the app will run without debugging.
+    Android 4.4 is required to attach the debugger. Otherwise, the app will run without debugging.
 
-  >**Tip**: If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, you can open SDK Manager by typing the following command on a command line: android sdk.
+    >**Tip**: If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, you can open SDK Manager by typing the following command on a command line: android sdk.
 
-  Visual Studio deploys the app to the Android emulator that is currently running. If no emulator is running, Visual Studio starts the last emulator that was created using the AVD Manager, and then deploys the app.
+    Visual Studio deploys the app to the Android emulator that is currently running. If no emulator is running, Visual Studio starts the last emulator that was created using the AVD Manager, and then deploys the app.
 
   If you want to debug your app against Android versions 4.1.2-4.3, see the information about the jsHybugger plugin in the article [Debug Your App Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757061.aspx).
-
-
 
 ## Genymotion emulator
 
@@ -160,7 +162,7 @@ The [Genymotion emulator](http://www.genymotion.com/) is a popular alternative t
 
 3. In the device list, choose Device.
 
-  ![Deploying to an Android device](media/run-app-apache/IC740309.png)
+    ![Deploying to an Android device](media/run-app-apache/IC740309.png)
 
 4. Press F5 to start the app, or Shift+F5 to start the app without debugging.
 
@@ -184,19 +186,19 @@ Before you can use Visual Studio to run your app on a connected Android device, 
 
     2. Type the following command:
 
-    ```
-    "%ADT_HOME%\platform-tools\adb.exe" devices
-    ```
+      ```
+      "%ADT_HOME%\platform-tools\adb.exe" devices
+      ```
 
-  You should see your device in the list as shown here.
+      You should see your device in the list as shown here.
 
-  ![Viewing your device using the Android Debug Bridge](media/run-app-apache/IC816243.png)
+    ![Viewing your device using the Android Debug Bridge](media/run-app-apache/IC816243.png)
 
 3. With your app open in Visual Studio, choose **Android** from the Solution Platforms list. (If you don’t see this option, choose Solution Platforms from the **Add/Remove Buttons** list.)
 
 4. In the device list, choose **Device**.
 
-  ![Deploying to an Android device](media/run-app-apache/IC740309.png )
+    ![Deploying to an Android device](media/run-app-apache/IC740309.png )
 
 5. Press F5 to start the app, or Shift+F5 to start the app without debugging.
 

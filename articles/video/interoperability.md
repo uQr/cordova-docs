@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/11/2015"
-   ms.author="Mikejo5000"/>
+   ms.author="mikejo"/>
 
 # Video Walkthrough: Interoperate with third-party tools
 
