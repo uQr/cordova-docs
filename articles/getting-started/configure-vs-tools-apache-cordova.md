@@ -181,7 +181,7 @@ When you [start the agent](install-vs-tools-apache-cordova.md#ios) the first tim
 
         remotebuild certificates generate
 
-  >**Note**: This command replaces the command used in earlier versions of remotebuild.
+    > **Note** If you are running an older version of the agent, the preceding command is not supported. Make sure that you [update](install-vs-tools-apache-cordova.md#update) the remotebuild agent.
 
 4. Follow instructions to [start the agent](install-vs-tools-apache-cordova.md#ios) on your Mac and configure the agent in Visual Studio.
 
@@ -194,6 +194,8 @@ For security purposes, the server certificates that pair Visual Studio with the 
 2. From the Terminal app on your Mac, type:
 
         remotebuild certificates reset --hostname=my.hostname.com
+
+    > **Note** If you are running an older version of the agent, the preceding command is not supported. Make sure that you [update](install-vs-tools-apache-cordova.md#update) the remotebuild agent.
 
 3. When prompted, type “Y” and then type Enter.
 
@@ -217,6 +219,10 @@ Many options have changed between vs-mda-remote and remotebuild.
 * To see a complete list of agent commands, type:
 
         remotebuild --help
+
+    To see the full list of supported options, type `remotebuild --help <*command*>`. For example, to see options for the certificates parameter, type:
+
+        remotebuild --help certificates
 
 * To disable secure mode and enable simple HTTP based connections, type:
 
