@@ -56,7 +56,7 @@ When you first run the app, some of the attributes in the preceding code won’t
   <div class="templateContainer">
     <input class="templateTitle" ng-class="{crossedOut: toDoItem.done}" type="text"
         td-text-change="toDoCtrl.changeToDoText(toDoItem)" ng-model="toDoItem.text" />
-    <!—More list item HTML elements -->
+    <!—- More list item HTML elements -->
   </div>
   <div class="templateBorder"></div>
 </div>
@@ -341,19 +341,21 @@ You can take a look at the empty task list in one of the emulators to verify tha
 
 2. If you chose the Android platform, choose one of the Ripple simulators, as shown here.
 
-  ![Selecting the Ripple emulator](media/create-to-do-list-app/IC793846.png)
+    ![Selecting the Ripple emulator](media/create-to-do-list-app/IC793846.png)
 
-   If you chose a Windows platform, you can run the app on the default deployment target, **Local Machine**.
+    If you chose a Windows platform, you can run the app on the default deployment target, **Local Machine**.
+
 3. Press F5 to start debugging, or Shift+F5 to start without debugging.
-  The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators (with no actual data yet attached, and with some files missing at this stage).
 
-  ![Cordova_ToDo_List_App_Empty](media/create-to-do-list-app/IC755669.png)
+    The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators (with no actual data yet attached, and with some files missing at this stage).
 
-  >**Tip**: If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, SDK Manager.exe is in C: Program Files (x86) Android android-sdk.
+    ![Cordova_ToDo_List_App_Empty](media/create-to-do-list-app/IC755669.png)
 
-  If you see an error such as Cannot find module [modulename], see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vsmda).
+    >**Tip**: If you are running on a Ripple simulator and you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. On Windows, SDK Manager.exe is in C: Program Files (x86) Android android-sdk.
 
-  If you experience other problems, see [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
+    If you see an error such as Cannot find module [modulename], see [Re-installing vs-tac](configure-vs-tools-apache-cordova.md#vsmda).
+
+    If you experience other problems, see [Known Issues](http://go.microsoft.com/fwlink/p/?linkid=398782).
 
 ## <a id="AddAngularJS"></a>Add the AngularJS framework to your project
 
@@ -365,54 +367,54 @@ Now that you’ve verified your setup, you can create the AngularJSToDo app. The
 
 2. In the **Download AngularJS** dialog box, choose **Browse additional modules**, and download angular-resource.min.js. 5. In the Visual Studio Solution Explorer, add a new folder under the scripts folder of the project and name it frameworks.
 
-  >**Note**: You cannot add this folder while the app is running. Press Shift + F5 to stop the debugger.
+    >**Note**: You cannot add this folder while the app is running. Press Shift + F5 to stop the debugger.
 
 3. Open the shortcut menu for the frameworks folder, and then choose **Add**, **Existing Item**. Add the two AngularJS files from steps 1 and 2 to the project.
 
 ### Update the script references
 
-* In index.html, add the following AngularJS references in the element, after the Cordova and platformOverrides script references.
+1. In index.html, add the following AngularJS references in the element, after the Cordova and platformOverrides script references.
 
-```html
-  <!-- Angular JS -->
-  <script src="scripts/frameworks/angular.min.js"></script>
-  <script src="scripts/frameworks/angular-resource.min.js"></script>
+    ```html
+    <!-- Angular JS -->
+    <script src="scripts/frameworks/angular.min.js"></script>
+    <script src="scripts/frameworks/angular-resource.min.js"></script>
+    ```
 
-```
-  Your script references in the element should now look like this.
+    Your script references in the element should now look like this.
 
-```html
-  <!-- Cordova reference, this is added to your app when it's built. -->
-  <script src="cordova.js"></script>
-  <script src="scripts/platformOverrides.js"></script>
+    ```html
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
 
-  <!-- Angular JS -->
-  <script src="scripts/frameworks/angular.min.js"></script>
-  <script src="scripts/frameworks/angular-resource.min.js"></script>
-```
+    <!-- Angular JS -->
+    <script src="scripts/frameworks/angular.min.js"></script>
+    <script src="scripts/frameworks/angular-resource.min.js"></script>
+    ```
 
-   >**Note**: cordova.js needs to load before the AngularJS framework files.
+    >**Note**: cordova.js needs to load before the AngularJS framework files.
 
-* Add script references for your AngularJS modules at the end of the element, after the AngularJS references. Those additional references should look like this.
+2. Add script references for your AngularJS modules at the end of the element, after the AngularJS references. Those additional references should look like this.
 
-```html
-  <!-- Initialize all the modules -->
+    ```html
+    <!-- Initialize all the modules -->
 
-  <script src="scripts/index.js"></script>
+    <script src="scripts/index.js"></script>
 
-  <!-- Services -->
-  <script src="scripts/services/localStorage.js"></script>
-  <script src="scripts/services/storage.js"></script>
-  <script src="scripts/services/guidGenerator.js"></script>
-  <script src="scripts/services/maps.js"></script>
-  <script src="scripts/services/cordova.js"></script>
+    <!-- Services -->
+    <script src="scripts/services/localStorage.js"></script>
+    <script src="scripts/services/storage.js"></script>
+    <script src="scripts/services/guidGenerator.js"></script>
+    <script src="scripts/services/maps.js"></script>
+    <script src="scripts/services/cordova.js"></script>
 
-  <!-- Directives -->
-  <script src="scripts/directives/textChange.js"></script>
+    <!-- Directives -->
+    <script src="scripts/directives/textChange.js"></script>
 
-  <!-- Controllers -->
-  <script src="scripts/controllers/toDoCtrl.js"></script>
-```
+    <!-- Controllers -->
+    <script src="scripts/controllers/toDoCtrl.js"></script>
+    ```
 
 ## <a id="RegisterModules"></a>Register app modules
 
@@ -420,65 +422,68 @@ In this section, you’ll register AngularJS app modules to help separate applic
 
 ### To register angular modules
 
-* In **Solution Explorer**, open the shortcut menu for the scripts folder, and then choose **Add**, **New Folder**. Use this command to add three folders under the scripts folder:
+1. In **Solution Explorer**, open the shortcut menu for the scripts folder, and then choose **Add**, **New Folder**. Use this command to add three folders under the scripts folder:
 
-  * **controllers**
+    * **controllers**
 
-  * **directives**
+    * **directives**
 
-  * **services**
+    * **services**
 
 2. In **Solution Explorer**, open the shortcut menu for the controllers folder, and then choose **Add**, **New Item**.
 
-3. In the **Add New Item** dialog box, choose **JavaScript File**, and name it toDoCtrl.js. * Repeat the preceding step to add additional JavaScript files to the directives and services folders, respectively:
+3. In the **Add New Item** dialog box, choose **JavaScript File**, and name it toDoCtrl.js.
 
-  * textChange.js (add it to the directives folder).
+4. Repeat the preceding step to add additional JavaScript files to the directives and services folders, respectively:
 
-  * cordova.js, guidGenerator.js, localStorage.js, maps.js, and storage.js (add them to the services folder)
+    * textChange.js (add it to the directives folder).
 
-4. Open index.js, and replace the default code with the following code.
+    * cordova.js, guidGenerator.js, localStorage.js, maps.js, and storage.js (add them to the services folder)
 
- ```javascript
-  (function () {
-    'use strict';
+5. Open index.js, and replace the default code with the following code.
 
-    angular.module('xPlat', ['xPlat.services', 'xPlat.controllers', 'xPlat.directives']);
-    angular.module('xPlat.directives', []);
-    angular.module('xPlat.controllers', []);
-    angular.module('xPlat.services', ['ngResource']);
-  })();
-```
+    ```javascript
+    (function () {
+      'use strict';
+
+      angular.module('xPlat', ['xPlat.services', 'xPlat.controllers', 'xPlat.directives']);
+      angular.module('xPlat.directives', []);
+      angular.module('xPlat.controllers', []);
+      angular.module('xPlat.services', ['ngResource']);
+    })();
+    ```
 
 ## <a id="DataModel"></a>Add the data model
 
 The data model is represented by the `xPlat.services` module, which you’ll implement in the files in the services folder. This code includes a service that provides local storage of task list items using HTML5 Web Storage (localStorage.js). In this initial implementation, the app also provides placeholder code for Bing Maps services, which can be implemented fully later on. The [complete sample app](http://go.microsoft.com/fwlink/?LinkID=398516) also uses Azure to store data.
 
 ### To add code for the data model
-* In the **services** folder, open storage.js and add the following code. In this code, we provide a generic way to add storage service. In the initial implementation, we add the localStorage service. Later, we will add an Azure service using this code.
 
-```javascript
-  (function () {
-    'use strict';
+1. In the **services** folder, open storage.js and add the following code. In this code, we provide a generic way to add storage service. In the initial implementation, we add the localStorage service. Later, we will add an Azure service using this code.
 
-    angular.module('xPlat.services').factory('storage', ['$injector', storage]);
+    ```javascript
+    (function () {
+      'use strict';
 
-    /**
-      * Storage service to abstract specific implementations.
-      *
-      * @params {!angular.Service} $inject*/
-    function storage($injector) {
-      // If Azure storage is available, use it. Otherwise, use local storage.
-      //var azureService = $injector.get('azureStorage');
-      //return azureService.isAvailable ? azureService : $injector.get('localStorage');
-      return $injector.get('localStorage');
-    }
+      angular.module('xPlat.services').factory('storage', ['$injector', storage]);
 
-  })();
-```
+      /**
+        * Storage service to abstract specific implementations.
+        *
+        * @params {!angular.Service} $inject*/
+      function storage($injector) {
+        // If Azure storage is available, use it. Otherwise, use local storage.
+        //var azureService = $injector.get('azureStorage');
+        //return azureService.isAvailable ? azureService : $injector.get('localStorage');
+        return $injector.get('localStorage');
+      }
 
-* In the **services** folder, open localStorage.js and add the following code. One thing to note here is the inclusion of the **q** service component in the service provider function. This object enables asynchronous programming,so that you can create a promise object using `q.when`. Using the promise object, you can resolve the asynchronous operation when it has completed.
+    })();
+    ```
 
-```javascript
+2. In the **services** folder, open localStorage.js and add the following code. One thing to note here is the inclusion of the **q** service component in the service provider function. This object enables asynchronous programming,so that you can create a promise object using `q.when`. Using the promise object, you can resolve the asynchronous operation when it has completed.
+
+    ```javascript
   (function () {
       'use strict';
 
@@ -572,7 +577,7 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
           return this.$q.when(item);
       };
   })();
-```
+    ```
 
 ## <a id="ViewLogic"></a>Add the app’s view logic and implement data binding
 
@@ -582,7 +587,7 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
 
 * In the controllers folder, open toDoCtrl.js and add the following code. The controller name, `ToDoCtrl`, is also referenced by the AngularJS `ng-controller` directive in index.html.
 
-```javascript
+    ```javascript
   (function () {
       'use strict';
 
@@ -661,7 +666,7 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
           });
       };
   })();
-```
+    ```
 
   Next, you’ll implement the directives module. In this code, you’ll create a custom directive to specify behavior for the onchange DOM event. At runtime, this code associates the correct event handler (declared in HTML markup in index.html) with the element, either the `addToDoText` or `changeToDoText` functions. These are implemented in toDoCtrl.js.
 
@@ -669,30 +674,30 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
 
 * In the directives folder, open textChange.js and add the following code.
 
-```javascript
-  (function () {
-      'use strict';
+    ```javascript
+    (function () {
+        'use strict';
 
-      angular.module('xPlat.directives').directive('tdTextChange', tdTextChange);
+        angular.module('xPlat.directives').directive('tdTextChange', tdTextChange);
 
-      /**
-       * Factory function for the directive for ng-text-change.
-       *
-       * @return {Object} td-text-change*/
-      function tdTextChange() {
-          return {
-              restrict: 'A',
-              link: function (scope, element, attr) {
-                  element.on('change', function () {
-                      scope.$apply(function () {
-                          scope.$eval(attr.tdTextChange);
-                      });
-                  });
-              }
-          };
-      }
-  })();
-```
+        /**
+         * Factory function for the directive for ng-text-change.
+        *
+         * @return {Object} td-text-change*/
+        function tdTextChange() {
+            return {
+                restrict: 'A',
+                link: function (scope, element, attr) {
+                    element.on('change', function () {
+                        scope.$apply(function () {
+                            scope.$eval(attr.tdTextChange);
+                        });
+                    });
+                }
+            };
+        }
+    })();
+    ```
 
 ## <a id="AppServices"></a>Add additional services
 
@@ -700,9 +705,9 @@ In this section, you’ll add additional service modules to support features suc
 
 ### To add other app services
 
-* In the services folder, open guidGenerator.js and add the following code. This code generates a unique ID to associate with each task list item.
+1. In the services folder, open guidGenerator.js and add the following code. This code generates a unique ID to associate with each task list item.
 
-```javascript
+    ```javascript
   (function () {
       angular.module('xPlat.services').service('guidGenerator', GuidGenerator);
 
@@ -734,11 +739,11 @@ In this section, you’ll add additional service modules to support features suc
               + this.generatePart();
       };
   })();
-```
+    ```
 
-In the services folder, open maps.js and add the following code. We will use this code later to enable Bing Maps geolocation services. For now, it is used to associate the current location, if available, or a default location with the current task list item.
+2. In the services folder, open maps.js and add the following code. We will use this code later to enable Bing Maps geolocation services. For now, it is used to associate the current location, if available, or a default location with the current task list item.
 
-```javascript
+    ```javascript
   (function () {
       'use strict';
 
@@ -792,9 +797,9 @@ In the services folder, open maps.js and add the following code. We will use thi
               });
       };
   })();
-```
+    ```
 
-In the services folder, open cordova.js and add the following code. This code adds a handler for the Cordova **deviceready** event to help make sure that the event fires before the app runs plugin code.
+3. In the services folder, open cordova.js and add the following code. This code adds a handler for the Cordova **deviceready** event to help make sure that the event fires before the app runs plugin code.
 
 ```javascript
   (function () {
@@ -839,11 +844,13 @@ In this step, you’ll run the AngularJSToDo list app on either Windows or on th
 
 ### To build and run the app
 
-* Press F5 to run the app on the same target you specified previously. Windows and the Ripple simulator have minimal setup requirements, so we recommend initially targeting one of these two platforms. The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators.
+* Press F5 to run the app on the same target you specified previously.
 
-  ![Running the ToDo List app on Ripple Emulator](media/create-to-do-list-app/IC752251.png)
+    Windows and the Ripple simulator have minimal setup requirements, so we recommend initially targeting one of these two platforms. The following illustration shows an example of what the AngularJSToDo list app looks like in one of the Ripple simulators.
 
-  Now, you can add new task list items by typing text and pressing Enter (Ripple) or tapping outside of the input box (Windows). At this point, HTML 5 Web Storage stores the task list items locally.
+    ![Running the ToDo List app on Ripple Emulator](media/create-to-do-list-app/IC752251.png)
+
+Now, you can add new task list items by typing text and pressing Enter (Ripple) or tapping outside of the input box (Windows). At this point, HTML 5 Web Storage stores the task list items locally.
 
 ## <a id="BingMaps"></a>Add Bing Maps services
 
@@ -853,12 +860,17 @@ The [complete sample](http://go.microsoft.com/fwlink/p/?LinkID=398516) includes 
 
 ### To add Bing Maps support to the app:
 
-1. Add the Cordova Geolocation plugin to the app by double-clicking config.xml in **Solution Explorer**, choosing the **Plugins** tab, and then choosing **Geolocation**. For more information, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](./develop-apps/manage-plugins.md).
+1. Add the Cordova Geolocation plugin to the app by double-clicking config.xml in **Solution Explorer**, choosing the **Plugins** tab, and then choosing **Geolocation**.
+
+    For more information, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](./develop-apps/manage-plugins.md).
+
 2. Choose **Add** to add the plugin.
 
-  * [Get a Bing Maps key](https://msdn.microsoft.com/library/ff428642.aspx) and include it where instructed in the in maps.js.
+    * [Get a Bing Maps key](https://msdn.microsoft.com/library/ff428642.aspx) and include it where instructed in the in maps.js.
 
-3. Press F5 to start the app. Now, Bing Maps will provide an address for your current location.
+3. Press F5 to start the app.
+
+    Now, Bing Maps will provide an address for your current location.
 
 ## <a id="Azure"></a>Add Azure Mobile Services
 
@@ -870,52 +882,52 @@ The complete sample includes additional code to store and retrieve task list ite
 
 2. In **Solution Explorer**, choose **Add**, **Connected Service** from the shortcut menu for the project, and then follow instructions in [add a connected service](./develop-apps/add-connected-services.md) to add Azure Mobile Services to your app and to create a free SQL database. When the service is added, your project gets the following updates:
 
-  * A new services folder will be added to your project when you finish adding the connected service.
+    * A new services folder will be added to your project when you finish adding the connected service.
     The resulting code in will need to be replaced with code from the ToDoList sample app (code shown in the steps that follow).
 
-  * The Azure Mobile Services plugin is added to the plugins folder.
+    * The Azure Mobile Services plugin is added to the plugins folder.
 
-  * The InAppBrowser plugin is added to the plugins folder.
+    * The InAppBrowser plugin is added to the plugins folder.
 
 3. Copy the Azure Mobile Service application key and URL from into Notepad. The key and URL are shown here.
 
-```javascript
-  var Zumo_MDHA_ServiceClient;
-  document.addEventListener("deviceready", function () {
-    Zumo_MDHA_ServiceClient = new WindowsAzure.MobileServiceClient(
-      "https://applicationUrl/",
-      "applicationKey");
-  });
-```
+    ```javascript
+    var Zumo_MDHA_ServiceClient;
+    document.addEventListener("deviceready", function () {
+      Zumo_MDHA_ServiceClient = new WindowsAzure.MobileServiceClient(
+        "https://applicationUrl/",
+        "applicationKey");
+    });
+  ```
 
 4. In Solution Explorer, remove the new services folder that was added when you chose **Add**, **Connected Services** and added the service. You won’t need this code or the services folder structure that was just added.
 
 5. In storage.js, uncomment the following lines of code to allow use of Azure as the storage service.
 
-```javascript
-  // var azureService = $injector.get('azureStorage');
-  // return azureService.isAvailable ? azureService : $injector.get('localStorage');
-```
+    ```javascript
+    // var azureService = $injector.get('azureStorage');
+    // return azureService.isAvailable ? azureService : $injector.get('localStorage');
+    ```
 
-  And remove the next line of code:
+    And remove the next line of code:
 
-```javascript
-  return $injector.get('localStorage');
-```
+    ```javascript
+    return $injector.get('localStorage');
+    ```
 
-  After uncommenting the code and removing the specified code, the storage function in storage.js will look like this.
+    After uncommenting the code and removing the specified code, the storage function in storage.js will look like this.
 
-```javascript
-  function storage($injector) {
-    // If Azure storage is available, use it. Otherwise, use local storage.
-    var azureService = $injector.get('azureStorage');
-    return azureService.isAvailable ? azureService : $injector.get('localStorage');
-  }
-```
+    ```javascript
+    function storage($injector) {
+      // If Azure storage is available, use it. Otherwise, use local storage.
+      var azureService = $injector.get('azureStorage');
+      return azureService.isAvailable ? azureService : $injector.get('localStorage');
+    }
+    ```
 
 5. In azureStorage.js, add the following code for the Azure service. Where indicated in the code, add Azure Mobile Service **application key** and **URL** that you obtained when you added the Azure service.
 
-```javascript
+    ```javascript
   (function () {
       'use strict';
 
@@ -1094,7 +1106,7 @@ The complete sample includes additional code to store and retrieve task list ite
 
       return azureStorage;
   }])
-```
+    ```
 
 6. Press F5 to re-run the app. Now, task list items will be stored in Azure.
 
