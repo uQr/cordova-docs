@@ -2,7 +2,15 @@
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #Android tips and workarounds
 This document covers tips, tricks, and known workarounds for problems with the Cordova Android platform.

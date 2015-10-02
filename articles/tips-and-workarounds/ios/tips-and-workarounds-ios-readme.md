@@ -1,8 +1,16 @@
-<properties pageTitle="iOS and OSX Tips and Workarounds | Cordova" 
-  description="description" 
-  services="" 
+<properties pageTitle="iOS and OSX Tips and Workarounds | Cordova"
+  description="description"
+  services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #iOS and OSX Tips and Workarounds
 
@@ -27,7 +35,7 @@ Alternatively you can install the [Visual Studio Tools for Apache Cordova CLI Su
 <a name="npm-cache"></a>
 ###Permission errors from "npm" when trying to build on the remote agent, a CI server, or the command line
 If you are seeing permission errors from "npm," you may be running into a situation where the your user's cache folder (~/.npm) is inaccessible. Generally this occurs if the folder or some of its contents was created while running as an administrator (sudo) when using older versions of Node.js and npm (though recent versions do not exhibit this behavior). Fortunately this is easy to resolve. Open the Terminal app and type:
-    
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sudo chown -R `whoami` ~/.npm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,15 +58,15 @@ To resolve this problem you have two options:
 
 2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a simple script to set the execute bits on these files and include it as a part of your build process.
 	1. Download [this hook-execute-bit-fix.js file](osx-set-execute) and drop it in a "hooks" folder in your project root.
-    
+
 	2. Update config.xml with the following (using Right-Click > View Code):
 
 	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	  <hook type="before_plugin_add" src="hooks/hook-execute-bit-fix.js" />
 	  <hook type="after_platform_add" src="hooks/hook-execute-bit-fix.js" />
 	  <hook type="before_prepare" src="hooks/hook-execute-bit-fix.js" />
-	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-	
+	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	2. Commit / check these into source control.
-    
+
 	3. Next time you build / run / add a plugin, the problem should be resolved.

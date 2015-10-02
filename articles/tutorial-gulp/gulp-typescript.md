@@ -14,13 +14,11 @@ If you're using TypeScript in your Cordova app project, you'll want to compile i
 See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the basics on using Gulp with Cordova. Next, follow these steps:
 
 1.  Add [gulp-typescript](http://go.microsoft.com/fwlink/?LinkID=533748) as a devDependency in a [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file in the root of you project. If you already have a package.json file, type the following from the command line in your project folder:
-
 ```
     npm install --save-dev gulp-typescript
 ```
 
     This will install the "gulp-typescript" plugin and update package.json. For example:
-
 ```json
     {
         "devDependencies": {
@@ -37,10 +35,10 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the ba
 
 2.  Add the following task to gulpfile.js:
 
-``typescript
-    var ts = require("gulp-typescript");
+    ```javascript
+      var ts = require("gulp-typescript");
 
-    gulp.task("scripts", function () {
+      gulp.task("scripts", function () {
         // Compile TypeScript code
         gulp.src("scripts/**/*.ts")
         	.pipe(ts({
@@ -53,11 +51,12 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the ba
     		}))
     		.pipe(gulp.dest("www/scripts"));
     });
-```
+    ```    
 
     You could also use a tsconfig.json file (like the default VS template) and add the following instead:
 
-```javascript
+
+    ```javascript
     var ts = require("gulp-typescript"),
         fs = require("fs"),
         tsconfigPath = "scripts/tsconfig.json";
@@ -71,13 +70,13 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the ba
         }
     });
 
-```
+    ```
 
-	Either of these code snippets will compile anything in the “scripts” folder in the root of your Cordova project and copy them as a single JavaScript file called “appBundle.js” under the “www/scripts” folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
+    Either of these code snippets will compile anything in the “scripts” folder in the root of your Cordova project and copy them as a single JavaScript file called “appBundle.js” under the “www/scripts” folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
 
-```
+    ```
 	gulp.src(["scripts/**/*.ts","www/typescript/**/*.ts"])
-```
+    ```
 
 4.  You should also update any "build" related task you have to require that the "scripts" task is run first.
 

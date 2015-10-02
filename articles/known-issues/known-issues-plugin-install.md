@@ -2,7 +2,15 @@
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #**Known Issues - Plugins Installation**
 This article covers known issues related to Visual Studio Tools for Apache Cordova and installing plugins.
@@ -67,5 +75,3 @@ To resolve this issue you can re-install Node.js or reconfigured npm using these
 npm config set prefix %APPDATA%\npm
 npm config set cache %APPDATA%\npm-cache
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-

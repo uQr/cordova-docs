@@ -9,7 +9,7 @@
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common tasks for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and the [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) are Node.js based which makes the two highly complementary technologies.
 
-Because it can run on Windows or OSX, Gulp can be extremely useful as a unified cross-platform build language for automating and testing your builds in a team / continuous integration (CI) environment such as Team Foundation Services 2015 or Visual Studio Online. You may also prefer to use a Gulp based workflow rather than using the Cordova CLI itself.
+Because it can run on Windows or OSX, Gulp can be extremely useful as a unified cross-platform build language for automating and testing your builds in a team / continuous integration (CI) environment such as Team Foundation Services 2015 or Visual Studio Online. You might also prefer to use a Gulp-based workflow rather than using the Cordova CLI itself.
 
 For specifics on using Gulp with TFS 2015, see the  [abridged tutorial on specifics building Cordova apps using Gulp and TFS 2015 or Visual Studio Online](./tutorial-team-build/tfs2015.md). Be aware that [TFS 2013 requires a different approach](./tutorial-team-build/tfs2013.md) because MSBuild must be the primary build language.
 
@@ -79,7 +79,6 @@ Otherwise you can follow these steps:
 
 1.  Add a package.json to the root of your project with at least the following
     contents:
-
 ```json
     {
         "devDependencies": {
@@ -89,7 +88,7 @@ Otherwise you can follow these steps:
     }
 ```
 
-	This will install the taco-team-build npm package from the GitHub repository when "npm install" is executed. Note that you may also opt to use the node module from inside your project so you can modify it. To do this, you can simply add taco-team-build.js to the root of your project and require “./taco-team-build” instead of “taco-team-build” in gulpfile.js.
+     This will install the taco-team-build npm package from the GitHub repository when "npm install" is executed. Note that you may also opt to use the node module from inside your project so you can modify it. To do this, you can simply add taco-team-build.js to the root of your project and require “./taco-team-build” instead of “taco-team-build” in gulpfile.js.
 
 2.  Create a gulpfile.js file in the root of your project if you do not already have one. We'll cover what goes in it in the next section.
 
@@ -123,9 +122,9 @@ Underneath the covers, the script will do the following:
 
 4.  It then performs the following operations:
     1.  Adds the sample [Visual Studio Tools for Apache Cordova CLI Support Plugin](http://go.microsoft.com/fwlink/?LinkID=533753) to the project if it is not already present.
-	2.  Adds the specified platform to the project
-    3.  Builds the project
-    4.  Packages the project
+	2.  Adds the specified platform to the project.
+    3.  Builds the project.
+    4.  Packages the project.
 
 Each method returns a promise so that you can chain the steps or run them concurrently.
 

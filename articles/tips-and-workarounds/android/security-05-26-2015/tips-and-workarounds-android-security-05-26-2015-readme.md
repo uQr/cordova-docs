@@ -1,13 +1,21 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Bower Tutorial"
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
 
 #May 26th, 2015 Android Cordova Platform Security Issue
 Recently [Trend Micro uncovered a security flaw](http://blog.trendmicro.com/trendlabs-security-intelligence/trend-micro-discovers-apache-vulnerability-that-allows-one-click-modification-of-android-apps/) in the Cordova Android “platform” that affects all versions of Cordova. As a result the [Cordova community has taken swift action to resolve the issue by releasing a patched version of the platform](http://cordova.apache.org/announcements/2015/05/26/android-402.html). While it is difficult to know if a given app has been compromised by this issue, it is a broad risk and therefore we recommend all app developers update their projects to use the patched versions of the Cordova Android platform.
 
-While we are working with the community on a “tools release” for the Apache Cordova Command Line Interface (CLI) to update the default version of the Android platform to include this patch, you can immediately update your project to the patched version of the Cordova Android platform when using Cordova 4.3.0 or 5.0.0 with Tools for Apache Cordova 2015 RC or later. 
+While we are working with the community on a “tools release” for the Apache Cordova Command Line Interface (CLI) to update the default version of the Android platform to include this patch, you can immediately update your project to the patched version of the Cordova Android platform when using Cordova 4.3.0 or 5.0.0 with Tools for Apache Cordova 2015 RC or later.
 
 Developers using the Cordova CLI without Visual Studio can [follow the steps covered in this Apache blog post on the issue](http://cordova.apache.org/announcements/2015/05/26/android-402.html). However, we recommend also adding the &lt;engine&gt; element to your config.xml file as described below to prevent you from accidently going back to the unpatched version of the Android platform (particularly if you do not check in the platforms folder to source control).
 
@@ -32,7 +40,7 @@ First, you need to add one XML element into config.xml in your project.
 
 For projects where you have **already executed a build for Android on your system**, you’ll also need to remove the old version of the Cordova Android platform. Follow these steps:
 
-1.	Open a command prompt and go to your Cordova project root (not the solution root). 
+1.	Open a command prompt and go to your Cordova project root (not the solution root).
 
 2.	Type the following commands:
 

@@ -1,8 +1,18 @@
-<properties pageTitle="Bower Tutorial" 
-  description="This is an article on bower tutorial" 
-  services="" 
+<properties pageTitle="Bower Tutorial"
+  description="This is an article on bower tutorial"
+  services=""
   documentationCenter=""
-  authors="bursteg" />#Workaround for Missing Execute Bit for Builds on OSX After Checking in Platforms Folder from Windows
+  authors="kirupa" />
+  <tags
+     ms.service="na"
+     ms.devlang="javascript"
+     ms.topic="article"
+     ms.tgt_pltfrm="mobile-multiple"
+     ms.workload="na"
+     ms.date="09/10/2015"
+     ms.author="kirupac"/>
+
+#Workaround for Missing Execute Bit for Builds on OSX After Checking in Platforms Folder from Windows
 
 License: MIT
 
@@ -22,18 +32,17 @@ To resolve this problem you have two options:
 
 2.  If you absolutely must check in the contents of the platforms folder from Windows, you can craft a simple script to set the execute bits on these files and include it as a part of your build process.
 	1. Download the hook-execute-bit-fix.js file and drop it in a "hooks" folder in your project root.
-    
+
 	2. Update config.xml with the following (using Right-Click > View Code):
 
 	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	  <hook type="before_plugin_add" src="hooks/hook-execute-bit-fix.js" />
 	  <hook type="after_platform_add" src="hooks/hook-execute-bit-fix.js" />
 	  <hook type="before_prepare" src="hooks/hook-execute-bit-fix.js" />
-	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-	
-	2. Commit / check these into source control.
-    
-	3. Next time you build / run / add a plugin, the problem should be resolved.
-	
-You could also opt to encapsulate this functionality inside a Cordova plugin by placing the same XML elements above in plugin.xml.  Finally, there is also a simple set-execute.sh script from the command line that can be used instead.
+	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+	2. Commit / check these into source control.
+
+	3. Next time you build / run / add a plugin, the problem should be resolved.
+
+You could also opt to encapsulate this functionality inside a Cordova plugin by placing the same XML elements above in plugin.xml.  Finally, there is also a simple set-execute.sh script from the command line that can be used instead.

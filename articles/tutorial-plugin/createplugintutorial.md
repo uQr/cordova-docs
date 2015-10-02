@@ -9,7 +9,7 @@
 ### Step 1: Determine what you want your plugin to do ###
 Cordova plugins are appropriate in two main cases:
 
-- There is a need to expose the native capabilities of a device to a Cordova app
+- There is a need to expose the native capabilities of a device to a Cordova app.
 - There is a need to encapsulate common functionality across a number of Cordova apps, even if that functionality does not require interaction with the native platform.
 
 In this tutorial, we will focus on the first type of plugin. We will demonstrate the steps needed to create a plugin that accesses a user's calendar to determine if they are about to be late for a meeting. To do this, we will use the native Calendar APIs present on Android&trade;, iOS&trade;, and Windows Phone &reg;.

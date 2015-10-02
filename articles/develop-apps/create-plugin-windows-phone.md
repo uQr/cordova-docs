@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="Mikejo5000"
+   authors="normesta"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,15 +12,12 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/10/2015"
-   ms.author="mikejo"/>
+   ms.author="normesta"/>
 # Create a Cordova plugin for Windows and Windows Phone
 
-A Cordova plugin is a cross-platform library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. In this tutorial, you will create a Cordova plugin for Windows Phone, **ToUpperPlugin**, add it to a Cordova app, and call the plugin method from the app. The plugin has one method, **ToUpper**, that converts a string to uppercase. The plugin supports both Windows Phone 8 and Windows Phone (Universal). The Windows Phone 8 plugin uses C# and the Windows Phone (Universal) plugin uses JavaScript.
+A Cordova plugin is a cross-platform library that accesses native code and device capabilities through a JavaScript interface. When required, the plugin also updates the platform manifest to enable device capabilities. In this tutorial, you will create a Cordova plugin for Windows Phone named **ToUpperPlugin**, add it to a Cordova app, and then call the plugin method from the app. The plugin has one method, **ToUpper**, that converts a string to uppercase. The plugin supports both Windows Phone 8 and Windows Phone (Universal). The Windows Phone 8 plugin uses C# and the Windows Phone (Universal) plugin uses JavaScript.
 
 The tutorial assumes you have some familiarity with Cordova plugins. For an introduction to plugins, see <span>[Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](manage-plugins.md)</span> and [Apache Cordova Overview](http://cordova.apache.org/docs/en/4.0.0/guide_overview_index.md.html#Overview).
-
-The tutorial assumes you have some familiarity with Cordova plugins. For an introduction to plugins, see [Manage Plugins for Apps Built with Visual Studio Tools for Apache Cordova](https://msdn.microsoft.com/en-us/library/dn757051.aspx) and [Apache Cordova Overview](http://cordova.apache.org/docs/en/4.0.0/guide_overview_index.md.html#Overview).
-
 
 The early sections of the tutorial take you straight through the process with little detail. The later sections explain the code in more detail and will help you create, configure, debug, and deploy your own plugins.
 
@@ -52,7 +49,13 @@ You start by creating the following folder and file structure. While this is not
 
 4.  In the **src** folder, create a folder named **windows**.
 
-5.  In the **ToUpperPlugin** folder, create a folder named **www**wp** folder, add an empty C# class file, **ToUpperPlugin.cs**.
+5.  In the **ToUpperPlugin** folder, create a folder named **www**.
+
+### Add files
+
+Now you add the files.
+
+1.  In the **wp** folder, add an empty C# class file, **ToUpperPlugin.cs**.
 
 4.  In the **windows** folder, add an empty JavaScript file, **ToUpperPluginProxy.js**.
 
@@ -83,7 +86,8 @@ namespace WPCordovaClassLib.Cordova.Commands
     {
         public void ToUpper(string options)
         {
-            string upperCase = JSON.JsonHelper.Deserialize<string[]>(options)[0].ToUpper();
+            string upperCase = 
+               JSON.JsonHelper.Deserialize<string[]>(options)[0].ToUpper();
             PluginResult result;
             if (upperCase != "")
             {
@@ -127,7 +131,7 @@ module.exports = {
 require("cordova/exec/proxy").add("ToUpperPlugin", module.exports);
 ```
 
-The code in this JavaScript file is discussed in more detail in the [Creating a plugin method for Windows Phone (Universal)](#CreatingMethod) section later in this tutorial
+The code in this JavaScript file is discussed in more detail in the [Creating a plugin method for Windows Phone (Universal)](#CreatingMethod) section later in this tutorial.
 
 ### Add code to the plugin.xml file
 
@@ -519,7 +523,7 @@ You can copy the projects to a new location and use them to develop your plugin.
 
 > **Caution** Visual Studio will update or delete the projects every time you build your Cordova app. You need to copy the projects to a new location to prevent Visual Studio from overwriting them.
 
-##<a="Troubleshooting"></a>Troubleshooting**](javascript:void(0) "Collapse")<div class="LW_CollapsibleArea_HrDiv">
+## <a id="Troubleshooting"></a>Troubleshooting
 
 These are some of the issues that might happen as you create and use your plugin.
 

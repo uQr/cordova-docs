@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="kirupa"
+   authors="subhagpo"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/11/2015"
-   ms.author="kirupa"/>
+   ms.author="Subhag.Oak"/>
 
 #Cordova sample app with O365 Outlook Services and Ionic
 
@@ -52,17 +52,21 @@ To add the Ionic Framework:
  2. Extract the zip file.
  3. Create a new folder named lib under your Cordova project in Solution Explorer in Visual Studio, and then copy the extracted content under lib folder.
 
-![enter image description here](media/O365_Ionic/oi_ionic_folder.png)
+    ![enter image description here](media/O365_Ionic/oi_ionic_folder.png)
 
  4. Update the script references.
 
-In index.html, add the following Ionic references in the <head> element, after the Cordova and platformOverrides script references:
+    In index.html, add the following Ionic references in the <head> element, after the Cordova and platformOverrides script references:
 
+    ```
     <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    ```
 
-In index.html, add following ionic CSS reference:
+    In index.html, add following ionic CSS reference:
 
+    ```
     <link href="lib/ionic/css/ionic.min.css" rel="stylesheet" />
+    ```
 
 ##Add NProgress to your project
 NProgress will be used to show a progress bar while fetching mail, calendar and contacts from O365.
@@ -72,9 +76,10 @@ To add Nprogress to your project:
  1. From the NProgress [website](http://ricostacruz.com/nprogress/), choose Download.
 
  2. Extract the zip file.
+
  3. Create a folder named **nprogress** under the **lib** folder in Solution Explorer and copy **nprogress.js** into the folder.
 
-![enter image description here](media/O365_Ionic/oi_nprogress_folder.png)
+    ![enter image description here](media/O365_Ionic/oi_nprogress_folder.png)
 
  4. Copy **nprogress.css** under the css folder
  5. In index.html, add the following NProgress references in the <head> element:
@@ -90,10 +95,12 @@ Once you have set up your Developer Site, follow these steps to add and configur
 **To add and configure Office 365 APIs:**
 
  1. Download and install the [Office 365 API tools](https://visualstudiogallery.msdn.microsoft.com/a15b85e6-69a7-4fdf-adda-a38066bb5155) from the Visual Studio Gallery.
+
  2. From the shortcut menu of the project node, choose **Add**, and then choose **Connected Service**.
+
  3. At the top of the Services Manager dialog box, choose the Office 365 link, and then choose Register your app. Sign in with a tenant administrator account for your Office 365 developer organization:
 
-![enter image description here](media/O365_Ionic/oi_services_manager.png)
+    ![enter image description here](media/O365_Ionic/oi_services_manager.png)
 
 ##Set permissions for O365 mail, calendar and contact tenet to grant appropriate access to app
 After you sign in to O365 account you will see a list of O365 services like mail, calendar, contacts, and files under your tenant account. Select the service that you want to use in your app and set the permission you want your app to access, as specified below for each app.
@@ -120,12 +127,14 @@ To apply changes and update references:
 
  1. Click **Apply** and **Ok** to set the permissions and add the O365 API to your project. Services Manager adds the services folder to your project.
 
-![enter image description here](media/O365_Ionic/oi_services_manager_2.png)
+    ![enter image description here](media/O365_Ionic/oi_services_manager_2.png)
 
  2. In index.html, add the following O365 references in the <head> element:
 
-`<script src="services/office365/scripts/o365loader.js"></script>
- <script src="services/office365/settings/settings.js"></script>`
+    ```
+    <script src="services/office365/scripts/o365loader.js"></script>
+    <script src="services/office365/settings/settings.js"></script>
+    ```
 
 ##Create app folder structure, UI routing and layout using Ionic controls and navigation
 Follow these steps to structure the app UI and the JavaScript code.
@@ -136,14 +145,17 @@ Create a folder named **app** under project root node. The app folder will conta
 
 Here are some details about the folders and files in the project:
 
- - The **auth** folder contains UI and code for signing-in and sign-out.
- - The **layout** folder contains UI to display app content and navigation like ion-pane, ion-side-menus, ion-nav-bar and code to bind the user name.
- - app.js contains UI routing to navigate to different pages.
- - service-o365.js contains utility functions to get the access token, create the Outlook services client object, signout, and get the user name. This is implemented as an AngularJS factory so that these functions can be exposed as utility function across different pages.
-Use AngularJS routing to navigate to different pages. For example, here is the routing for the Mail app.
+    * The **auth** folder contains UI and code for signing-in and sign-out.
+
+    * The **layout** folder contains UI to display app content and navigation like ion-pane, ion-side-menus, ion-nav-bar and code to bind the user name.
+
+    * app.js contains UI routing to navigate to different pages.
+
+    * service-o365.js contains utility functions to get the access token, create the Outlook services client object, signout, and get the user name. This is implemented as an AngularJS factory so that these functions can be exposed as utility function across different pages.
 
 Use AngularJS routing to navigate to different pages. For example, here is the routing for the Mail app:
 
+```
     // Layout page
         .state('app', {
             abstract: true,
@@ -219,9 +231,11 @@ Use AngularJS routing to navigate to different pages. For example, here is the r
 
         // Navigate to sign-in page when app starts.
         $urlRouterProvider.otherwise('sign-in');
+```
 
 For app layout (menu, nav-bar), use the Ionic side-menu and pane:
 
+```
     <ion-side-menus ng-controller="layoutCtrl as vm">
 
         <ion-pane ion-side-menu-content>
@@ -243,9 +257,11 @@ For app layout (menu, nav-bar), use the Ionic side-menu and pane:
         </ion-side-menu>
 
     </ion-side-menus>
+```
 
 Use the Ionic tab to show different content in separate tabs. For example, use the Ionic controls below to create a mail tab page to show important mails, unread mails, and all mails under different tabs:
 
+```
     <ion-view>
         <ion-tabs class="tabs-positive tabs-icon-top">
             <ion-tab title="Imp" icon="ion-star" ui-sref="app.mail.imp">
@@ -261,6 +277,7 @@ Use the Ionic tab to show different content in separate tabs. For example, use t
             </ion-tab>
         </ion-tabs>
     </ion-view>
+```
 
 The following illustration shows the mail tab page:
 
@@ -271,6 +288,7 @@ Create an AngularJS factory to expose the O365 API to acquire an access token, c
 
 Here is the code to acquire an access token:
 
+```
         var authContext = new O365Auth.Context();
         authContext.getIdToken("https://outlook.office365.com/")
         .then((function (token) {
@@ -345,6 +363,7 @@ Here is the code to acquire an access token:
             };
         };
     })();
+```
 
 ##Use Outlook client object to access O365 services like mail, calendar and contact
 You can use the Outlook client object to perform read and write operations on mail, calendar and contacts.
@@ -352,6 +371,7 @@ You can use the Outlook client object to perform read and write operations on ma
 ###Use Outlook client object to read mail, calendar and contacts
 The following code reads all mail flagged as important:
 
+```
     // Get all mails flagged as important.
     function getImpMails() {
        NProgress.start();
@@ -373,9 +393,11 @@ The following code reads all mail flagged as important:
         console.log("Error encountered while fetching inbox folder. Error: " + error.message);
       });
     };
+```
 
 The following code reads all the events with a start date equal to today:
 
+```
     var filterQuery = 'start gt ' + today.toISOString() + ' and start lt ' + tomorrow.toISOString();
     NProgress.start();
     // Get events with filter.
@@ -386,9 +408,11 @@ The following code reads all the events with a start date equal to today:
         $scope.$apply();
         NProgress.done();
     });
+```
 
 The following code reads all contacts:
 
+```
     function getContacts() {
     NProgress.start();
 
@@ -401,6 +425,7 @@ The following code reads all contacts:
         NProgress.done();
       });
     };
+```
 
 ###Use Outlook client object to delete mail and calendar event
 The Outlook client object can be used to delete mail. To delete mail, get the mail that you want to delete using mail ID and then call delete() on the mail object to delete the particular mail.
@@ -409,6 +434,7 @@ The Outlook client object can be used to delete mail. To delete mail, get the ma
 
 Here is the code to delete mail:
 
+```
     // Fetch the mail with specified mail id.                    outlookClient.me.folders.getFolder("Inbox").messages.getMessage(mail.id).fetch()
     .then(function (mail) {
         // Delete the mail.
@@ -419,9 +445,11 @@ Here is the code to delete mail:
              // Log the error message when error is encountered while deleting the mail.
              console.log('fail to delete mail. Error = ' + error.message);
      });
+```
 
 Here is the code to delete an event:
 
+```
     // Fetch event with specified event id.
     outlookClient.me.calendar.events.getEvent(event.id).fetch()
     .then(function (event) {
@@ -433,12 +461,14 @@ Here is the code to delete an event:
          // Log delete event error.
          console.log('Fail to delete event. Error = ' + reason.message);
     });
+```
 
 ###Use Outlook client object to create new contact and calendar event
 The Outlook client object can be used to create new contacts, calendar event, and to send mail.
 
 Here is the code to add a new calendar event:
 
+```
     // Event body content
     var eventBody = new Microsoft.OutlookServices.ItemBody();
     eventBody.contentType = Microsoft.OutlookServices.BodyType.HTML;
@@ -473,9 +503,11 @@ Here is the code to add a new calendar event:
     // Log the error message encountered while adding the event.
     console.log('Fail to add event. Error = ' + reason.message);
     });
+```
 
 Here is the code to add a new contact:
 
+```
     // Contact object
     var contact = new Microsoft.OutlookServices.Contact();
 
@@ -501,6 +533,7 @@ Here is the code to add a new contact:
     // Log the error message when add contact fails.
     console.log('Fail to add contact. Error = ' + reason.message);
     });
+```
 
 That's it! You can run the app to see everything working. For O365 authentication, you can't use Ripple. Be sure to test on an emulator or device instead.
 
