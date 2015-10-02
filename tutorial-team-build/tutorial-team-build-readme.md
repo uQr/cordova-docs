@@ -1,0 +1,9 @@
+<properties pageTitle="Build Cordova apps in a Team / Continuous Integration (CI) environment"
+  description="Build Cordova apps in a Team / Continuous Integration (CI) environment"
+  services=""
+  documentationCenter=""
+  authors="bursteg" />
+
+# Build Cordova apps in a Team / Continuous Integration (CI) environment
+
+> **NOTE:** This article is depreciated. The new article can be found [here](/articles/tutorial-team-build/tutorial-team-build-readme.md).
