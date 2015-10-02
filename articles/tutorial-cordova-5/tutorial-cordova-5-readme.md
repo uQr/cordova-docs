@@ -272,6 +272,3 @@ That's it! Cordova will switch from a Windows 8.1 project to a new Universal App
 * [Learn about security features in Apache Cordova 5](./cordova-5-security.md)
 * [Read tutorials and learn about tips, tricks, and known issues](../cordova-docs-readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
