@@ -26,7 +26,7 @@ In this article:
 
 *   [Adding Office 365 services](#Office)
 
-For information and tutorials on using connected services like Azure and o365with Cordova apps in Visual Studio, see the following articles and blog posts.
+For information and tutorials on using connected services like Azure and o365 with Cordova apps in Visual Studio, see the following articles and blog posts.
 
 Azure
 
@@ -44,7 +44,7 @@ Azure
 
     *   [Cordova Upload Images](https://github.com/Mikejo5001/mobile-services-samples/tree/master/CordovaUploadImages)
 
-*   [Push Notifications to Cordova Apps with Microsoft Azure](https://msdn.microsoft.com/magazine/dn879353.aspx) (MSDN Magazine)
+    *   [Push Notifications to Cordova Apps with Microsoft Azure](https://msdn.microsoft.com/magazine/dn879353.aspx) (MSDN Magazine)
 
 O365
 
@@ -56,7 +56,7 @@ To add a connected service, first open the Visual Studio Services Manager.
 
 ### <a id="ServiceMan"></a>To open the manager
 
-In Solution Explorer, open the shortcut menu for your project, and then choose **Add**, **Connected Service**.
+In **Solution Explorer**, open the shortcut menu for your project, and then choose **Add**, **Connected Service**.
 
   ![Add a connected service](media/add-connected-services/connected-service-add.png)
 
@@ -81,7 +81,7 @@ Azure Mobile Services let you add cloud-based services such as data and push not
 
     ![Create an Azure mobile service](media/add-connected-services/connected-service-create.png)
 
-    To get started, you will typically choose **<Create a free SQL Database>**, and then supply the **Server user name**, **Server password**, and **Server password confirmation**. The steps required here are similar to steps shown in the section "Create a new mobile service from Visual Studio" in [this article](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-javascript-get-started-data/).
+    To get started, you will typically choose **Create a free SQL Database**, and then supply the **Server user name**, **Server password**, and **Server password confirmation**. The steps required here are similar to steps shown in the section "Create a new mobile service from Visual Studio" in [this article](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-javascript-get-started-data/).
 
     The new service appears in the Services Manager list of connected services.
 
@@ -89,7 +89,7 @@ Azure Mobile Services let you add cloud-based services such as data and push not
 
     Visual Studio adds a service.js file to your project under services/*azure_service_name*/. This file contains your Azure key for accessing and using the service in your app.
 
-If you’re creating a TypeScript app, you’ll need a [TypeScript definition](http://typescript.codeplex.com/wikipage?title=Writing Definition (.d.ts) Files&referringTitle=Documentation) (.d.ts file) that describes the API surface of the Azure service you’re using. You can find definitions created by the community in NuGet, which you can access from Visual Studio.
+If you’re creating a TypeScript app, you’ll need a [TypeScript definition](http://typescript.codeplex.com/wikipage?title=Writing Definition) (.d.ts) Files&referringTitle=Documentation) (.d.ts file) that describes the API surface of the Azure service you’re using. You can find definitions created by the community in NuGet, which you can access from Visual Studio.
 
 ### To use Azure Mobile Services with TypeScript
 

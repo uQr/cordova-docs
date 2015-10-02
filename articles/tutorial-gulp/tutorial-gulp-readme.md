@@ -16,6 +16,4 @@
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../cordova-docs-readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-* [Follow us on Twitter](https://twitter.com/VSCordovaTools)
-* [Visit our site http://aka.ms/cordova](http://aka.ms/cordova)
-* [Ask for help on StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova)
+
