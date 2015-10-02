@@ -19,7 +19,7 @@ The Apache Ripple simulator runs as a web app inside the Google Chrome browser. 
 
 The Ripple simulator helps you quickly start validating how your apps looks and feels on iOS and Android, because both platforms use a browser with a similar code base. The Ripple simulator is particularly useful for validating layout and CSS code. For higher fidelity emulation that’s specific to a platform, use the [Android](run-app-apache.md) or [iOS](run-app-ios.md) emulators or an actual device.
 
-**Caution** Ripple doesn’t provide a complete simulation of Cordova APIs or native device capabilities. It also doesn’t simulate specific browser versions for a particular platform. You can achieve this by testing on actual devices or emulators.
+>**Caution**: Ripple doesn’t provide a complete simulation of Cordova APIs or native device capabilities. It also doesn’t simulate specific browser versions for a particular platform. You can achieve this by testing on actual devices or emulators.
 
 Here are a few things to keep in mind when testing layout using Ripple.
 
@@ -33,24 +33,24 @@ The following procedure shows you how to run your app on the simulator and attac
 
 1.  If it is not already installed, install Chrome.
 
-	**Note** Chrome is not installed by the installer for Visual Studio when you choose to install Visual Studio Tools for Apache Cordova.
+	>**Note**: Chrome is not installed by the installer for Visual Studio when you choose to install Visual Studio Tools for Apache Cordova.
 
 2.  Choose **Android** or **iOS** from the **Solution Platforms** list.
 
     ![Select Android as your deployment target](media/run-app-ripple-simulator/run-ripple-platform-select.png)
 
-	**Note** If you don’t see this list, choose **Solution Platforms** from the **Add/Remove Buttons** list to display it.
+	>**Note**: If you don’t see this list, choose **Solution Platforms** from the **Add/Remove Buttons** list to display it.
 
 3.  In the list of target devices, choose one of the Ripple simulators.
 
     ![Selecting the Ripple emulator](media/run-app-ripple-simulator/run-ripple-device-select.png)
 4.  Press F5 to start debugging, or Shift+F5 to start your app without debugging.
 
-  **Tip** If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. To open the SDK Manager on Windows, open a command line and type the following command: `android sdk`
+  >**Tip**: If you get an error that indicates you need to install a new version of the Android SDK, use the Android SDK Manager to install it. To open the SDK Manager on Windows, open a command line and type the following command: `android sdk`
 
 Ripple avoids cross-domain limitations in the browser by using a proxy. Two proxies are available: a remote proxy and a local proxy. The remote proxy is cloud-hosted.
 
-**Security Note** If your app is transferring sensitive data (for example, Active Directory authentication tokens), we strongly recommend using the local proxy instead of the remote proxy.
+>**Security Note**: If your app is transferring sensitive data (for example, Active Directory authentication tokens), we strongly recommend using the local proxy instead of the remote proxy.
 
 ### To change the proxy
 
