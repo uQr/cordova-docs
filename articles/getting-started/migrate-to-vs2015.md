@@ -16,7 +16,7 @@
 
 # Migrate a Visual Studio 2013 project to Visual Studio 2015
 
-The new project structure in Visual Studio 2015 makes Visual Studio much easier to use with 3rd party tools and CLIs. Migration to Visual Studio 2015 is recommended. Some extra steps are required to migrate a Visual Studio 2013 project to Visual Studio 2015.
+The project structure in Visual Studio 2015 mirrors the project structure of Apache Cordova apps that you create using the Cordova command-line interface (CLI). This allows you to use any third-party tools or CLIs in Visual Studio that are compatible with Cordova, such as Gulp and the Ionic CLI. If you have a project created in Visual Studio 2013, we recommend migrating to Visual Studio 2015. Some extra steps are required to migrate a Visual Studio 2013 project to Visual Studio 2015.
 
 ## Create a blank project in Visual Studio 2015
 
