@@ -484,7 +484,7 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
 2. In the **services** folder, open localStorage.js and add the following code. One thing to note here is the inclusion of the **q** service component in the service provider function. This object enables asynchronous programming,so that you can create a promise object using `q.when`. Using the promise object, you can resolve the asynchronous operation when it has completed.
 
     ```javascript
-  (function () {
+    (function () {
       'use strict';
 
       angular.module('xPlat.services').service('localStorage', ['$q', '$window', 'guidGenerator', LocalStorage]);
@@ -576,7 +576,7 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
           this.saveToStorage(items);
           return this.$q.when(item);
       };
-  })();
+    })();
     ```
 
 ## <a id="ViewLogic"></a>Add the app’s view logic and implement data binding
