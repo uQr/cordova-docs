@@ -2,7 +2,7 @@
   description="Build a Cordova project by using Gulp"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
 
 #<a name="ci"></a>Build a Cordova project by using Gulp
 **This tutorial applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
