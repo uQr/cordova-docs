@@ -14,19 +14,17 @@
    ms.date="09/10/2015"
    ms.author="normesta"/>
 
-# The question
+# The performance costs of Cordova
 
-If you are considering using Cordova for your cross-platform strategy, your CIO will walk into your office very soon with this question: “Aren’t web apps slow? I heard that Facebook tried this and gave up. They couldn’t figure it out and we don’t have the resources that Facebook has, is Cordova something we should even consider?” You pause for a moment…
+Understanding the performance costs of Cordova will help you as you evaluate the platform, and plan ahead as you develop for it. There are some areas that deserve special attention: startup and resume overhead due to the interpreted nature of the web languages, memory overhead from hosting an entire browser in your app, serialization overhead when sending data to and from native code, and the general performance concerns that come with web applications.
 
-Understanding the costs imposed by the nature of Cordova will help you as you evaluate the platform and plan ahead as you develop for it. There are some main areas that deserve special attention: startup and resume overhead due to the interpreted nature of the web languages, memory overhead from hosting an entire browser in your app, serialization overhead when sending data to and from native code, and the general performance concerns that come with web applications.
+> **Note**: We used a Nexus 7, iPad Mini 3, and Lumia 928 to produce most of the results that you'll see presented in this topic.
 
-> **Note**: For most of the results described below, a Nexus 7, iPad Mini 3, and Lumia 928 were used as the target devices.
+## <a id="startup"></a>The startup cost
 
-# <a id="startup"></a>The startup cost
+The first impression you get to make is when a user launches your app for the first time. Are they pulled right into the app or is there a long loading period? Launching a Cordova app feels almost like setting off a Rube Goldberg machine: you’re launching a native app that hosts a WebView that points to an HTML file that initializes your application and pulls in all your JavaScript and HTML templates. Unsurprisingly, this can take a moment.
 
-The first impression you get to make is when a user launches your app for the first time. Are they pulled right into the app or is there a long loading period? Launching a Cordova app feels almost like setting off a Rube Goldberg machine: you’re launching a native app that hosts a webview that points to an HTML file that initializes your application and pulls in all your JavaScript and HTML templates. Unsurprisingly, this can take a moment.
-
-We don’t know the complexity of your app but we experimented with launch times for a “Hello World” app that updated some text on page when the “deviceready” event fires. For the timings in the table below, we used a camera to measure from when the touch was visually registered until we could see the text update. Additionally, we define “cold” as launching the app immediately following a reboot (when assets should be completely cleared from RAM) and “warm” as launching the app right after we close it (when maybe the OS hasn’t really cleaned everything up yet).
+We don’t know the complexity of your app, but we experimented with launch times for a very basic "Hello World" app that updated some text on page when the “deviceready” event fires. For the timings in the table below, we used a camera to measure the time from when the touch was visually registered until we could see the text update. Additionally, we define “cold” as launching the app immediately after a reboot (when assets should be completely cleared from RAM) and “warm” as launching the app right after we close it (when maybe the operating system hasn’t really cleaned everything up yet).
 
 <style>
     table, th, td {
@@ -69,11 +67,13 @@ We don’t know the complexity of your app but we experimented with launch times
  </tr>
 </table>
 
-If you’re struggling with this, see what you can defer or cut to minimize your time to paint. Are you requesting all your resources on launch or can some be deferred to load on demand? Does the UI library you are using include components you aren’t using?
+If you’re experiencing large delays when your app starts up, see what you tasks you can defer or cut to minimize your time. Are you requesting all your resources when the app launches or can some of those resources be deferred to load on demand? Does the UI library that you're using include components that your app is not using?
 
-# <a id="resume"></a>The resume cost
+## <a id="resume"></a>The resume cost
 
-Like startup, resuming your app isn’t instant either. If your app needs to do anything to respond to the “resume” event, you’ll want to keep an eye on this. We tested this with a “Hello World” app that additionally changed background color when the “resume” event fired, then measured with a camera the time from tap on the app switching screen being visually registered until the background color was updated. We don’t have comparisons for native but it seemed like times we saw were based more on the animation the OS played to smoothly bring the app full screen than necessarily taking a while to wake the app up.
+Just like when your app starts, resuming your app doesn't happen instantly either. If your app needs to do anything to respond to the “resume” event, you’ll want to keep an eye on this.
+
+We tested this with a “Hello World” app that changed its background color when the “resume” event fired. Then, by using a camera, we measured the time from tapping on the app and the switching of the screen being visually registered, until the background color was updated. We don’t have comparisons for native apps, but it seemed like the times that transpired were based more on the animation that the operating system used to smoothly bring the app to full screen rather than to wake the app up.
 
 <table>
 <tbody><tr>
@@ -95,13 +95,15 @@ Like startup, resuming your app isn’t instant either. If your app needs to do 
  </tr>
 </table>
 
-If you’re struggling with this, see what code is running when you resume your app and if you can move that activity to another place.
+If you're experiencing these issues, see what code is running when you resume your app and if you can move that activity to another place.
 
-# <a id="memory"></a>The memory cost
+## <a id="memory"></a>The memory cost
 
-You shouldn’t be surprised to find out that Cordova apps have a higher memory footprint than their native counterparts. Hosting essentially a browser inside your app is not cheap. This can be significant on low-end phones. Android and iOS don't have hard numbers for allowable memory consumption, with each device and platform providing different usage allowances and those allowances change based on how much memory the device has and how much is in use at the time. Windows Phone has some hard limits, ranging from 150MB to 825MB.
+Cordova apps have a higher memory footprint than their native counterparts. Hosting what is essentially a browser inside of your app is not inexpensive. This can be a significant issue on low-end phones.
 
-For a benchmark though, here is the memory usage we recorded for "Hello World" apps across the three platforms. For the browser, we navigated to about:blank.
+Android and iOS don't have hard numbers for allowable memory consumption. Each device and platform provides different usage allowances, and those allowances change based on how much memory the device has, and how much is in use at any given time. Windows Phone has some hard limits, ranging from 150MB to 825MB.
+
+For a benchmark, here is the memory usage we recorded for "Hello World" apps across the three platforms. For the browser, we navigated to *about:blank*.
 
 <table>
 <tbody><tr>
@@ -132,7 +134,9 @@ For a benchmark though, here is the memory usage we recorded for "Hello World" a
  </tr>
 </table>
 
-While we don't have an app for comparing a full-featured app implemented both natively and with Cordova across all three platforms, we thought comparing a native app across the platforms was a data point worth keeping in mind. Note in the table below, Android ran higher and iOS ran lower. I launched the Facebook app, loaded the news feed, my profile page, and recorded the memory usage.
+While we haven't compared a full-featured app implemented both natively, and with Cordova across all three platforms, we did compare a native app across the platforms. This is a data point worth keeping in mind.
+
+In the table below, you'll see that Android consumed more memory and iOS consumed less. To obtain these numbers, we launched the Facebook app, loaded the news feed, a profile page, and then recorded the memory usage.
 
 <table>
 <tbody><tr>
@@ -154,11 +158,11 @@ While we don't have an app for comparing a full-featured app implemented both na
  </tr>
 </table>
 
-If you’re struggling with this, see if your app is allocating large DOM trees or keeping extra copies of data in memory. Try virtualizing things that normally require large DOM trees, such as lists or tables, and make sure you are letting go of data you don’t need so the garbage collector can dispose of it.
+If you’re struggling with these issues, see if your app is allocating large DOM trees or keeping extra copies of data in memory. Try virtualizing things that normally require large DOM trees, such as lists or tables, and make sure you are letting go of data you don’t need so that the garbage collector can dispose of it.
 
-# <a id="communication"></a>The communication cost
+## <a id="communication"></a>The communication cost
 
-Due to the architecture of Cordova, a thin native shim hosting a webview, moving application state from JavaScript to the native side and back requires expensive serialization and deserialization. You may be reading and writing files, getting photos from the camera, or getting the results of computationally expensive calculations performed in native code. The good news is that our testing indicated this time is linear related to the size of the data being transferred. The table below shows the times we recorded sending an array of numbers across the barrier and back.
+Due to the architecture of Cordova which provides a thin native shim hosting a WebView, moving application state from JavaScript to the native side and back requires expensive serialization and deserialization. You might be reading and writing files, getting photos from the camera, or getting the results of computationally expensive calculations performed in native code. The good news is that our testing indicated this time is linearly related to the size of the data being transferred. The table below shows the times that we recorded when sending an array of numbers across the barrier and back.
 
 <table>
 <tbody><tr>
@@ -192,13 +196,12 @@ Due to the architecture of Cordova, a thin native shim hosting a webview, moving
  </tr>
 </table>
 
-If you’re struggling with this, make sure you know what is being sent back and forth and try to figure out how to reduce it. Look for duplicate data or maybe even experiment with different data formats to see if one serializes faster than others.
+If you’re struggling with this, make sure you that you know what is being sent back and forth and try to figure out how to reduce it. Look for duplicate data or maybe even experiment with different data formats to see if one serializes faster than others.
 
-# <a id="web"></a>The web cost
+## <a id="web"></a>The web cost
 
-Although last here, perhaps the most important is the cost that comes from building with web technologies. This is a cost that your team may have already paid if you have experience building applications for the modern web. If you’re new to frontend web technologies, the learning curve appears deceptively low. This is not a magic bullet: just like any other tech stack, building a performant application requires planning and knowledge of the pitfalls. If you’re struggling with this, we have a blog post [TODO: LINK] that covers some of the bigger gotchas that you should watch for.
+Although last here, perhaps the most important cost to consider, is the cost that comes from building with web technologies. This is a cost that your team may have already paid if you have experience building applications for the modern web. If you’re new to frontend web technologies, the learning curve appears deceptively low. This is not a magic bullet: just like any other tech stack, building a performant application requires planning and knowledge of the pitfalls. If you’re struggling with this, read this article: [!Build performant web apps](https://www.visualstudio.com/explore/cordova-vs).
 
-# <a id="answer"></a>The answer
+## <a id="answer"></a>Final thoughts
 
-You’ve finally crafted a response for your CIO: “There are a number of issues that can make Cordova slower but we know what these are and we’ve planned for them. Our users shouldn’t notice the difference.”
 One of the key attractors to Cordova is that you use web technology to build cross-platform apps. If your team has a strong web background or has an existing web app, leveraging that experience and those assets while tracking the costs listed here should enable you to bring a quality app to your customers.
