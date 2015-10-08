@@ -1,9 +1,9 @@
 <properties
-   pageTitle="Optimize the performance your Cordova app"
-   description="Optimize the performance your Cordova app"
+   pageTitle="Optimize the performance of a Cordova app"
+   description="Optimize the performance of a Cordova app"
    services="na"
    documentationCenter=""
-   authors="normesta"
+   authors="AdamTReineke"
    tags=""/>
 <tags
    ms.service="na"
@@ -11,10 +11,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/10/2015"
-   ms.author="normesta"/>
+   ms.date="10/08/2015"
+   ms.author="adamre"/>
 
-# Optimize the performance your Cordova app
+# Optimize the performance of a Cordova app
 
 When you build a Cordova app, you'll write the User Interface (UI) and the majority of the application’s logic by using web technologies. This most likely includes a combination of HTML, JavaScript and CSS. To build Cordova apps that perform well, it’s important to understand how to use these technologies in the most efficient ways to obtain the best performance. This topic surveys a variety of techniques that you can apply including Document Object Model (DOM) complexity, animation techniques, and memory management.
 
