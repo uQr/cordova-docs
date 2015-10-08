@@ -2,12 +2,12 @@
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="jmatthiesen" />
 
 # Use TypeScript in a Cordova project
 [TypeScript](http://www.typescriptlang.org) is a programming language that is a superset of JavaScript - offering classes, modules, and interfaces. You can use these features while developing your Cordova app and TypeScript will compile into simple JavaScript that will be deployed as part of your app.
 
-The Visual Studio Tools for Apache Cordova provide templates to help you get started with TypeScript and the TypeScript editor in Visual Studio. 
+The Visual Studio Tools for Apache Cordova provide templates to help you get started with TypeScript and the TypeScript editor in Visual Studio.
 
 > **Note:** You need to know that for the current version of the Tools for Apache Cordova, you can only work with TypeScript files in the /scripts folder of a project. Ideally, you're free to arrange files into any folder. This is a known issue being worked on for a later update.
 

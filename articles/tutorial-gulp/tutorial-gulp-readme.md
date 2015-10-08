@@ -2,7 +2,7 @@
   description="Automate tasks for your Cordova project by using Gulp"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
 
 #Automate tasks for your Cordova project by using Gulp
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**
@@ -16,4 +16,3 @@
 ## More Information
 * [Read tutorials and learn about tips, tricks, and known issues](../cordova-docs-readme.md)
 * [Download samples from our Cordova Samples repository](http://github.com/Microsoft/cordova-samples)
-

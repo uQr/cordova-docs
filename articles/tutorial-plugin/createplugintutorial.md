@@ -2,7 +2,7 @@
   description="Build your first Cordova plugin"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Dan Levine" />
 
 # Build your first Cordova plugin
 

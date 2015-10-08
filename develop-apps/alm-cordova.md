@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="kirupa"
+   authors="kraigb"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/11/2015"
-   ms.author="kirupa"/>
+   ms.author="kraigb"/>
 
 # Application Lifecycle Management (ALM) with Apache Cordova Apps
 
