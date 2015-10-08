@@ -38,31 +38,31 @@ We don’t know the complexity of your app, but we experimented with launch time
 <table>
 <tbody><tr>
   <th>
-    <p>**Platform**</p>
+    <p><strong>Platform</strong></p>
   </th>
   <th>
-    <p>**Cordova Cold**</p>
+    <p><strong>Cordova Cold</strong></p>
   </th>
   <th>
-    <p>**Native Cold**</p>
+    <p><strong>Native Cold</strong></p>
   </th>
   <th>
-    <p>**Cordova Warm**</p>
+    <p><strong>Cordova Warm</strong></p>
   </th>
   <th>
-    <p>**Native Warm**</p>
+    <p><strong>Native Warm</strong></p>
   </th>
 </tr>
  <tr>
-   <td>**Android 4.4**</td><td>3425 ms</td><td>557 ms</td>
+   <td><strong>Android 4.4</strong></td><td>3425 ms</td><td>557 ms</td>
    <td>3358 ms</td><td>454 ms</td>
  </tr>
  <tr>
-   <td>**iOS 8**</td><td>3142 ms</td><td>5825 ms</td>
+   <td><strong>iOS 8</strong></td><td>3142 ms</td><td>5825 ms</td>
    <td>1921 ms</td><td>2000 ms</td>
  </tr>
  <tr>
-   <td>**WP 8.0**</td><td>2433 ms</td><td>1667 ms</td>
+   <td><strong>WP 8.0</strong></td><td>2433 ms</td><td>1667 ms</td>
    <td>1083 ms</td><td>1098 ms</td>
  </tr>
 </table>
@@ -78,20 +78,20 @@ We tested this with a “Hello World” app that changed its background color wh
 <table>
 <tbody><tr>
   <th>
-    <p>**Platform**</p>
+    <p><strong>Platform</strong></p>
   </th>
   <th>
-    <p>**Time**</p>
+    <p><strong>Time</strong></p>
   </th>
   </tr>
  <tr>
-   <td>**Android 4.4**</td><td>450 ms</td>
+   <td><strong>Android 4.4</strong></td><td>450 ms</td>
  </tr>
  <tr>
-   <td>**iOS 8**</td><td>58.3 ms</td>
+   <td><strong>iOS 8</strong></td><td>58.3 ms</td>
  </tr>
  <tr>
-   <td>**WP 8.0**</td><td>595.8 ms</td>
+   <td><strong>WP 8.0</strong></td><td>595.8 ms</td>
  </tr>
 </table>
 
@@ -108,28 +108,28 @@ For a benchmark, here is the memory usage we recorded for "Hello World" apps acr
 <table>
 <tbody><tr>
   <th>
-    <p>**Platform**</p>
+    <p><strong>Platform</strong></p>
   </th>
   <th>
-    <p>**Native**</p>
+    <p><strong>Native</strong></p>
   </th>
   <th>
-    <p>**Browser**</p>
+    <p><strong>Browser</strong></p>
   </th>
   <th>
-    <p>**Cordova**</p>
+    <p><strong>Cordova</strong></p>
   </th>
 </tr>
  <tr>
-   <td>**Android**</td><td>26 MB</td><td>14 MB</td>
+   <td><strong>Android</strong></td><td>26 MB</td><td>14 MB</td>
    <td>59 MB</td>
  </tr>
  <tr>
-   <td>**iOS**</td><td>7 MB</td><td>20 MB</td>
+   <td><strong>iOS</strong></td><td>7 MB</td><td>20 MB</td>
    <td>18 MB</td>
  </tr>
  <tr>
-   <td>**WP**</td><td>30 MB</td><td>23 MB</td>
+   <td><strong>WP</strong></td><td>30 MB</td><td>23 MB</td>
    <td>36 MB</td>
  </tr>
 </table>
@@ -141,20 +141,20 @@ In the table below, you'll see that Android consumed more memory and iOS consume
 <table>
 <tbody><tr>
   <th>
-    <p>**Platform**</p>
+    <p><strong>Platform</strong></p>
   </th>
   <th>
-    <p>**Something**</p>
+    <p><strong>Memory</strong></p>
   </th>
 </tr>
  <tr>
-   <td>**Android 4.4**</td><td>101.4 MB</td>
+   <td><strong>Android 4.4</strong></td><td>101.4 MB</td>
  </tr>
  <tr>
-   <td>**iOS 8**</td><td>75.10 MB</td>
+   <td><strong>iOS 8</strong></td><td>75.10 MB</td>
  </tr>
  <tr>
-   <td>**WP 8.1**</td><td>90.42 MB</td>
+   <td><strong>WP 8.1</strong></td><td>90.42 MB</td>
  </tr>
 </table>
 
@@ -167,31 +167,31 @@ Due to the architecture of Cordova which provides a thin native shim hosting a W
 <table>
 <tbody><tr>
   <th>
-    <p>**Items**</p>
+    <p><strong>Items</strong></p>
   </th>
   <th>
-    <p>**1**</p>
+    <p><strong>1</strong></p>
   </th>
   <th>
-    <p>**2,000**</p>
+    <p><strong>2,000</strong></p>
   </th>
   <th>
-    <p>**20,000**</p>
+    <p><strong>20,000</strong></p>
   </th>
   <th>
-    <p>**200,000**</p>
+    <p><strong>200,000</strong></p>
   </th>
 </tr>
  <tr>
-   <td>**Android 4.4**</td><td>4 ms</td><td>22 ms</td>
+   <td><strong>Android 4.4</strong></td><td>4 ms</td><td>22 ms</td>
    <td>157 ms</td><td>1121 ms</td>
  </tr>
  <tr>
-   <td>**iOS 8.0**</td><td>3 ms</td><td>45 ms</td>
+   <td><strong>iOS 8.0</strong></td><td>3 ms</td><td>45 ms</td>
    <td>135 ms</td><td>1120 ms</td>
  </tr>
  <tr>
-   <td>**WP 8.1**</td><td>1 ms</td><td>27 ms</td>
+   <td><strong>WP 8.1</strong></td><td>1 ms</td><td>27 ms</td>
    <td>139 ms</td><td>877 ms</td>
  </tr>
 </table>
@@ -200,7 +200,7 @@ If you’re struggling with this, make sure you that you know what is being sent
 
 ## <a id="web"></a>The web cost
 
-Although last here, perhaps the most important cost to consider, is the cost that comes from building with web technologies. This is a cost that your team may have already paid if you have experience building applications for the modern web. If you’re new to frontend web technologies, the learning curve appears deceptively low. This is not a magic bullet: just like any other tech stack, building a performant application requires planning and knowledge of the pitfalls. If you’re struggling with this, read this article: [!Build performant web apps](https://www.visualstudio.com/explore/cordova-vs).
+Although last here, perhaps the most important cost to consider, is the cost that comes from building with web technologies. This is a cost that your team may have already paid if you have experience building applications for the modern web. If you’re new to frontend web technologies, the learning curve appears deceptively low. This is not a magic bullet: just like any other tech stack, building a performant application requires planning and knowledge of the pitfalls. If you’re struggling with this, read this article: [Optimize the performance of a Cordova app](better-web-performance.md).
 
 ## <a id="answer"></a>Final thoughts
 
