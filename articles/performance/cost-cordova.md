@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Title goes here"
-   description="Title goes here"
+   pageTitle="Evaluate the performance costs of a Cordova app"
+   description="Evaluate the performance costs of a Cordova app"
    services="na"
    documentationCenter=""
    authors="normesta"
@@ -14,7 +14,7 @@
    ms.date="09/10/2015"
    ms.author="normesta"/>
 
-# The performance costs of Cordova
+# Evaluate the performance costs of a Cordova app
 
 Understanding the performance costs of Cordova will help you as you evaluate the platform, and plan ahead as you develop for it. There are some areas that deserve special attention: startup and resume overhead due to the interpreted nature of the web languages, memory overhead from hosting an entire browser in your app, serialization overhead when sending data to and from native code, and the general performance concerns that come with web applications.
 

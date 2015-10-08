@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Building Performant Web Apps"
-   description="Building Performant Web Apps"
+   pageTitle="Optimize the performance your Cordova app"
+   description="Optimize the performance your Cordova app"
    services="na"
    documentationCenter=""
    authors="normesta"
@@ -14,13 +14,18 @@
    ms.date="09/10/2015"
    ms.author="normesta"/>
 
-# Building Performant Web Apps
+# Optimize the performance your Cordova app
 
-When building a Cordova app, the UI and the majority of the application’s logic are written with web technologies: a combination of HTML, JavaScript and CSS. To build a performant Cordova app then, it’s important to understand how to use these technologies to get the best behavior. This post surveys a variety of techniques from DOM complexity to animation techniques to memory management.
+When you build a Cordova app, you'll write the User Interface (UI) and the majority of the application’s logic by using web technologies. This most likely includes a combination of HTML, JavaScript and CSS. To build Cordova apps that perform well, it’s important to understand how to use these technologies in the most efficient ways to obtain the best performance. This topic surveys a variety of techniques that you can apply including Document Object Model (DOM) complexity, animation techniques, and memory management.
 
 ## Interaction Classes
 
-Before we get into specific tricks, it’s important to understand how users perceive waiting for actions in your app. Users are impatient and come to your app with expectations of performance. These expectations can be grouped into the following categories, ranging from fluid to responsive.
+Before we get into specific tricks, it’s important to understand how users react to having to wait for actions in your app to complete. Users are impatient and expect your app to perform. These expectations can be grouped into the following categories:
+
+* Fluid
+* Instantaneous
+* Fast
+* Responsive
 
 ### Fluid (17ms)
 
@@ -28,7 +33,7 @@ The majority of screens today refresh at 60 Hz, that is, 60 frames per second. T
 
 ### Instantaneous (17-100ms)
 
-The next interaction class ranges from 17 to 100 milliseconds. Operations in this span may be perceptible to the user but finish so quickly they will barely register the pause. For example, to have a button instantly respond to a press, a response as slow as 100ms may feel immediate to the user. This response time may be too slow though for dragging items around on the screen and having the items feel “stuck” to the user’s finger.
+The next interaction class ranges from 17 to 100 milliseconds. Operations in this span might be perceptible to the user, but finish so quickly that they will barely register the pause. For example, to have a button instantly respond to a press, a response as slow as 100ms might feel immediate to the user. This response time may be too slow though for dragging items around on the screen and having the items feel “stuck” to the user’s finger.
 
 ### Fast (100-250ms)
 
@@ -36,17 +41,17 @@ For something to feel fast, it should probably fall into the range of 100-250ms.
 
 ### Responsive (250-1000ms)
 
-Under a second, your app will still feel responsive and your users won’t disengage. You may want to display a loading spinner or a progress bar, especially if you know the activity may stretch beyond one second. Within this interaction class, you may be making a network call or crunching some numbers before updating the UI with your results.
+Under a second, your app will still feel responsive and your users won’t disengage. You might want to display a loading spinner or a progress bar, especially if you know the activity may stretch beyond one second. Within this interaction class, you might be making a network call or crunching some numbers before updating the UI with your results.
 
 ## DOM
 
-Nearly everything your app will do will have an interaction in the DOM, the view of your app.
+Nearly everything your app will do interacts with in the DOM, which is the *view* of your app.
 
 ### Reduce element count
 
-When manipulating the DOM, the secret to getting done faster is to do less work. This sounds pretty obvious but if you’re coming from a background that stressed SEO and semantic HTML, you may have some habits that introduce unnecessary complexity into the DOM.
+When manipulating the DOM, the secret to getting things done faster is to do less work. This sounds pretty obvious but if you’re coming from a background that stressed SEO and semantic HTML, you might have some habits that introduce unnecessary complexity into the DOM.
 
-Here’s an example that simplifies the markup for a clickable item in a list. While a rather simple example, try to imagine places in your code where you can remove or combine unnecessary elements to simplify the DOM.
+Here’s an example that simplifies the markup for a clickable item in a list. While this is a rather simple example, you can imagine places in your code where you can remove or combine unnecessary elements to simplify the DOM.
 
 ```
 <ul>
@@ -59,7 +64,7 @@ Here’s an example that simplifies the markup for a clickable item in a list. W
 
 ### Avoid layout thrashing
 
-Certain operations invalidate the layout of the page and require a recalculation. Layout thrashing occurs when you’re reading and updating properties that require a layout before you can read the next property. You may encounter this if you’re looping through a list of nodes and changing how they’re displayed. If you depend on getting values from the DOM, get all those values before you begin to update the DOM. Here is a bad example followed by a corrected good example that demonstrates changing a list of items to absolute positioning.
+Certain operations invalidate the layout of the page and require a recalculation. Layout thrashing occurs when you’re reading and updating properties that require a layout before you can read the next property. You might encounter this if you’re looping through a list of nodes and changing how they’re displayed. If you depend on getting values from the DOM, get all those values before you begin to update the DOM. Here is a bad example followed by a corrected good example that demonstrates changing a list of items to absolute positioning.
 
 ```
 // BAD
@@ -96,19 +101,19 @@ While code demonstrating virtualization would be a bit much for this post, if yo
 
 ## Images
 
-Generally, there isn’t much you can do with images. Be aware that it takes time to decode an image and it takes memory to keep it on the page, so be sure you have the right resolution images for the device so you aren’t wasting resources scaling down images that are excessively large.
+Generally, there isn’t much you can do with images. Be aware that it takes time to decode an image and it takes memory to keep it on the page, so be sure you have the right resolution images for the device so that you aren’t wasting resources scaling down images that are excessively large.
 
 ### Gradients vs. Images
 
-Although CSS gradients have universal support now, our tests showed that it’s faster to change the size of an element with a background provided by an image gradient than a CSS gradient. While this may not move your app into higher interaction classes by itself, if you’re looking to shave off milliseconds and you’re animating elements with CSS gradients, try benchmarking against an image gradient and see if that helps.
+Although CSS gradients have universal support now, our tests showed that it’s faster to change the size of an element with a background provided by an image gradient than a CSS gradient. While this might not move your app into higher interaction classes by itself, if you’re looking to shave off milliseconds and you’re animating elements with CSS gradients, try benchmarking against an image gradient and see if that helps.
 
 ## Animations
 
-With animations, it is critical to make sure they fall into the fluid interaction class. If the time needed to update the page as it draws each frame in the animation exceeds 17 milliseconds, your animation won’t be perfectly smooth.
+With animations, it is critical to make sure that they fall into the fluid interaction class. If the time needed to update the page as it draws each frame in the animation exceeds 17 milliseconds, your animation won’t be perfectly smooth.
 
 ### Transform vs. position
 
-One of the tricks to getting high performance animations is to get the animation to happen on the GPU. Rather than animating the position by changing top and left via keyframes, you should use the transform property to translate the element instead. This keeps the browser from having to invalidate and recalculate the layout and instead allows it to use the GPU to just move the layer holding the element you are animating. Here’s some CSS that shows bad and good ways to define the keyframes.
+One of the tricks to getting high performance animations is to get the animation to happen on the GPU. Rather than animating the position by changing top and left via keyframes, you should use the transform property to translate the element instead. This keeps the browser from having to invalidate and recalculate the layout, and instead, allows it to use the GPU to just move the layer holding the element you are animating. Here’s some CSS that shows bad and good ways to define the keyframes.
 
 ```
 /* Bad */
@@ -128,7 +133,7 @@ One of the tricks to getting high performance animations is to get the animation
 
 ### Using CSS vs. JS for animations
 
-Although today, CSS will promise the fastest, smoothest animations, there are cases where you’ll need to use JavaScript. If you need your animation to be interactive, like moving an object to a user-defined position or dynamically pausing or changing, you may need to consider JavaScript to run the animation. Use requestAnimationFrame to do the work of scheduling the callbacks for the smoothest and fastest animations.
+Although today, CSS will promise the fastest, smoothest animations, there are cases where you’ll need to use JavaScript. If you need your animation to be interactive, like moving an object to a user-defined position or dynamically pausing or changing, you may need to consider JavaScript to run the animation. Use ```requestAnimationFrame``` to do the work of scheduling the callbacks for the smoothest and fastest animations.
 
 ```
 var move = function () {
@@ -143,8 +148,8 @@ requestAnimationFrame(move);
 
 ## Memory Management and Garbage Collection
 
-In traditional application models, every navigation tears down your page and rebuilds it on the next page. Think of this as the nuclear option for garbage collection: don’t need to worry much about garbage collection if you can just reset everything ever minute or so. However, most likely your Cordova app is built with a single page architecture, meaning it could be around for hours or even days. This makes paying attention to leaking memory important.
-Additionally, garbage collection in JavaScript isn’t very predictable and can be quite slow, meaning the animation you perfected with our earlier advice now stutters when the GC happens.
+In traditional application models, every navigation tears down your page and rebuilds it on the next page. This is the most powerful option for garbage collection because you don’t need to worry much about garbage collection if you can just reset everything ever minute or so. However, most likely, your Cordova app is built with a single page architecture, meaning it could be around for hours or even days. This makes paying attention to leaking memory important.
+Additionally, garbage collection in JavaScript isn’t very predictable and can be quite slow, meaning that the animation that you perfected with our earlier advice now stutters when the garbage collection happens.
 
 
 ### Event Listeners
@@ -190,7 +195,7 @@ function clear() {
   }
 }
 ```
-The takeaway here is either to be proactive and clean up as you go or to be patient and wait for the garbage collector to do its job.
+The takeaway here is either to be proactive, and clean up as you go, or to be patient and wait for the garbage collector to do its job.
 
 ### Event Bubbling and Shared Listeners
 
@@ -203,20 +208,22 @@ for(elem in elements) {
   });
 }
 ```
-Adding an anonymous function as the event listener for every element ends up allocating a bunch of excess memory for functions that are identical. There are two better options here: attaching event listeners to every item using a function saved to a variable rather than an anonymous function or attaching a single event listener to a parent in the DOM tree and letting event bubbling carry the event fired on the child up to the parent.
-The code to demonstrate this is a bit too complex to include inline, so check out this Cordova project instead, which has examples of an anonymous listener on every element, one listener on a parent that fires via event bubbling, and a listener on every element that all share the same callback function. [Project needs to be code reviewed and moved to a public repository. In Louis’s VSO account.]
+
+Adding an anonymous function as the event listener for every element ends up allocating a bunch of excess memory for functions that are identical. There are two better options here. First, attach event listeners to every item by using a function that is saved to a variable rather than an anonymous function. Another one is to attach a single event listener to a parent in the DOM tree and let event bubbling carry the event fired on the child up to the parent.
 
 
 ### Memory Leaks
 
-If you’re waiting around for the garbage collector to clean up all your unused memory, it’s important to make sure your app isn’t accidently hanging on to elements you expect to get cleaned up. The effect of this is compounded in a single page applications.
-For example, assume that your single page app has containers for every page that are created, populated and removed as you navigate through your app. You may have a line like this, where you create a local variable to hold a reference to your container:
+If you’re waiting around for the garbage collector to clean up all your unused memory, it’s important to make sure that your app isn’t accidently hanging on to elements you expect to get cleaned up. The effect of this is compounded in a single page applications.
+For example, assume that your single page app has containers for every page that are created, populated and removed as you navigate through it. You might have a line like this, where you create a local variable to hold a reference to your container:
+
 ```
 var homeContainer = document.getElementById("homeContainer");
 ```
-A trivial typo that can easily slip through code review, simply dropping the var from the beginning of the line, will cause homeContainer to be added as a property on the window. Innocent enough, but now when your app navigates to a new page and cleans up the DOM by removing homeContainer, your window maintain a reference to the element, preventing it from getting garbage collected!
+
+This is a trivial typo that can easily slip through code review, simply dropping the var from the beginning of the line, will cause ```homeContainer``` to be added as a property on the window. This is innocent enough, but now when your app navigates to a new page and cleans up the DOM by removing ```homeContainer```, your window maintain a reference to the element and prevent it from getting garbage collected!
 If you use the memory profiler in your browser’s developer tools, these elements should be identified as “Detached DOM Tree” nodes, making them easy to identify if you are leaking this way.
 
 ## Conclusion
 
-The areas we’ve mentioned in these blog posts are kind of like the classifications you studied in biology: these are just the big families and there are many specific genus and species under each family, each being a little different from the other and coming with their own set of concerns. Hopefully this blog post gave you the big picture to identify the families of issues in your own code and help you write more performant code. Know of a family we didn’t cover here or a specific genus or species that really tripped you up? Leave a comment to help others identify all the beasts that inhabit the world of browser performance.
+The areas we’ve mentioned in this topic and others in this section of the site are kind of like the classifications you studied in biology: these are just the big families and there are many specific genus and species under each family, each being a little different from the other and coming with their own set of concerns. Hopefully this topic gave you the big picture to identify the families of issues in your own code and help you write more performant code. Know of a family we didn’t cover here or a specific genus or species that really tripped you up? Leave a comment to help others identify all the beasts that inhabit the world of browser performance.
