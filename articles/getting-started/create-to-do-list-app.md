@@ -588,7 +588,7 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
 * In the controllers folder, open toDoCtrl.js and add the following code. The controller name, `ToDoCtrl`, is also referenced by the AngularJS `ng-controller` directive in index.html.
 
     ```javascript
-  (function () {
+    (function () {
       'use strict';
 
       angular.module("xPlat.controllers").controller('ToDoCtrl', ['maps', 'storage', ToDoCtrl]);
@@ -665,7 +665,7 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
               _this.todos.splice(index, 1);
           });
       };
-  })();
+    })();
     ```
 
   Next, you’ll implement the directives module. In this code, you’ll create a custom directive to specify behavior for the onchange DOM event. At runtime, this code associates the correct event handler (declared in HTML markup in index.html) with the element, either the `addToDoText` or `changeToDoText` functions. These are implemented in toDoCtrl.js.
@@ -708,7 +708,7 @@ In this section, you’ll add additional service modules to support features suc
 1. In the services folder, open guidGenerator.js and add the following code. This code generates a unique ID to associate with each task list item.
 
     ```javascript
-  (function () {
+    (function () {
       angular.module('xPlat.services').service('guidGenerator', GuidGenerator);
 
       /**
@@ -738,13 +738,13 @@ In this section, you’ll add additional service modules to support features suc
               + this.generatePart()
               + this.generatePart();
       };
-  })();
+    })();
     ```
 
 2. In the services folder, open maps.js and add the following code. We will use this code later to enable Bing Maps geolocation services. For now, it is used to associate the current location, if available, or a default location with the current task list item.
 
     ```javascript
-  (function () {
+    (function () {
       'use strict';
 
       angular.module('xPlat.services').service('maps', ['$rootScope', '$q', '$window', '$resource', 'cordova', Maps]);
@@ -796,13 +796,13 @@ In this section, you’ll add additional service modules to support features suc
                   return position.coords.latitude + ',' + position.coords.longitude
               });
       };
-  })();
+    })();
     ```
 
 3. In the services folder, open cordova.js and add the following code. This code adds a handler for the Cordova **deviceready** event to help make sure that the event fires before the app runs plugin code.
 
-```javascript
-  (function () {
+    ```javascript
+    (function () {
       'use strict';
 
       angular.module('xPlat.services').factory('cordova', ['$q', '$window', '$timeout', cordova]);
@@ -835,8 +835,8 @@ In this section, you’ll add additional service modules to support features suc
 
           return { ready: deferred.promise };
       }
-  })();
-```
+    })();
+    ```
 
 ## <a id="BuildToDo"></a>Build and run your app
 
@@ -898,7 +898,7 @@ The complete sample includes additional code to store and retrieve task list ite
         "https://applicationUrl/",
         "applicationKey");
     });
-  ```
+    ```
 
 4. In Solution Explorer, remove the new services folder that was added when you chose **Add**, **Connected Services** and added the service. You won’t need this code or the services folder structure that was just added.
 
@@ -928,7 +928,7 @@ The complete sample includes additional code to store and retrieve task list ite
 5. In azureStorage.js, add the following code for the Azure service. Where indicated in the code, add Azure Mobile Service **application key** and **URL** that you obtained when you added the Azure service.
 
     ```javascript
-  (function () {
+    (function () {
       'use strict';
 
       angular.module('xPlat.services').service('azureStorage', ['$resource', 'guidGenerator', AzureStorage]);
@@ -1038,11 +1038,11 @@ The complete sample includes additional code to store and retrieve task list ite
       AzureStorage.prototype.del = function (item) {
           return item.$delete();
       };
-  })();
+    })();
   // To support Azure, add Azure storage service
   // code here ("azureStorage").
 
-  .factory("azureStorage", ["$q", "$resource", "$rootScope", "guidGenerator", function ($q, $resource, $rootScope, guidGenerator) {
+    .factory("azureStorage", ["$q", "$resource", "$rootScope", "guidGenerator", function ($q, $resource, $rootScope, guidGenerator) {
       var azureMobileServicesInstallationId = guidGenerator();
       var azureMobileServicesKey = ''; // Add your Azure Mobile Service Application Key
       var azureMobileServicesAddress = ''; // Add your Azure Mobile Service Application URL
@@ -1105,7 +1105,7 @@ The complete sample includes additional code to store and retrieve task list ite
       });
 
       return azureStorage;
-  }])
+    }])
     ```
 
 6. Press F5 to re-run the app. Now, task list items will be stored in Azure.
