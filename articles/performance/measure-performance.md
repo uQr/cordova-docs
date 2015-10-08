@@ -3,7 +3,7 @@
    description="Measuring Cordova Performance"
    services="na"
    documentationCenter=""
-   authors="luisdlp"
+   authors="AdamTReineke"
    tags=""/>
 <tags
    ms.service="na"
@@ -12,7 +12,7 @@
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
    ms.date="09/10/2015"
-   ms.author="luisdlp"/>
+   ms.author="adamre"/>
 
 # Measuring Cordova Performance
 
