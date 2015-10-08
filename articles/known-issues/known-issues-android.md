@@ -19,7 +19,7 @@ This article covers known issues related to Visual Studio Tools for Apache Cordo
 
 ##**Build failures after installing Android SDK Tools 24.3.2**
 
-When building for Android, you may encounter a build error showing a "java.io.IOException: Cannot run program" message in the Output Window after updating the "Android SDK Tools" to 24.3.2 in the Android SDK manager. This is due to [an Android SDK bug](https://code.google.com/p/android/issues/detail?id=176488) which can cause problems when building any Android app using Apache Ant (including but not limited to Cordova). If you run into problems after updating to 24.3.2 or see the stack trace shown in the [Android SDK bug](https://code.google.com/p/android/issues/detail?id=176488) in the Output Window, you will need to downgrade to a previous release of the SDK Tools (only) as follows:
+When building for Android, you may encounter a build error showing a "java.io.IOException: Cannot run program" message in the Output Window after updating the "Android SDK Tools" to 24.3.2 in the Android SDK manager. This is due to [an Android SDK bug](https://code.google.com/p/android/issues/detail?id=176488) that can cause problems when building any Android app using Apache Ant (including but not limited to Cordova). If you run into problems after updating to 24.3.2 or see the stack trace shown in the [Android SDK bug](https://code.google.com/p/android/issues/detail?id=176488) in the Output Window, you will need to downgrade to a previous release of the SDK Tools (only) as follows:
 
 1. Locate the "tools" folder for the Android SDK. (By default it is in "C:\Program Files (x86)\Android\android-sdk" or "C:\Users\\&lt;YOUR USER NAME HERE&gt;\AppData\Local\Android\android-sdk")
 2. Rename the tools folder to "tools-24.3.2"
