@@ -11,7 +11,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/10/2015"
+   ms.date="10/08/2015"
    ms.author="adamre"/>
 
 # Measure the performance of a Cordova app

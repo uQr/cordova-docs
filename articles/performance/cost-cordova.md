@@ -3,7 +3,7 @@
    description="Evaluate the performance costs of a Cordova app"
    services="na"
    documentationCenter=""
-   authors="normesta"
+   authors="AdamTReineke"
    tags=""/>
 <tags
    ms.service="na"
@@ -11,8 +11,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/10/2015"
-   ms.author="normesta"/>
+   ms.date="10/08/2015"
+   ms.author="adamre"/>
 
 # Evaluate the performance costs of a Cordova app
 
