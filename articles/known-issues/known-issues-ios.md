@@ -18,14 +18,14 @@ This article covers known issues related to Visual Studio Tools for Apache Cordo
 ----------
 ##**Building for iOS hangs when Node.js v4.0 is installed:**
 There is a [known compatibility issue](https://issues.apache.org/jira/browse/CB-9297) with Node.js v4 in Cordova v5.3.1 and earlier. If you have installed Node.js v4 on your build Mac, and then installed Cordova and the remotebuild agent, iOS builds can fail in the following situations:
-* The <name> element in config.xml has been changed (e.g. you’re changing the name of your app)
-* A <deployment-target> element is defined in config.xml (set when using the Deployment Target dropdown in the Config file UI in Visual Studio)
-* A <target-device> element is defined in config.xml (set when using the Target iOS Version field in the Config file UI in Visual Studio)
+* The <name> element in config.xml has been changed (for example, you’re changing the name of your app).
+* A <deployment-target> element is defined in config.xml (set when using the Deployment Target dropdown in the Config file UI in Visual Studio).
+* A <target-device> element is defined in config.xml (set when using the Target iOS Version field in the Config file UI in Visual Studio).
 
-A fix is being investigated, but it will require a new version of the Cordova CLI to be released, with supported added for Node.JS v4. In the meantime, we recommend that you do not use Node.js v4 on Mac’s running remotebuild.
+A fix is being investigated, but it will require a new version of the Cordova CLI to be released, with support added for Node.JS v4. In the meantime, we recommend that you do not use Node.js v4 on Macs running remotebuild.
 
 ##**Incremental builds with remotebuild@1.0.1 and Visual Studio 2015 RTM is broken:**
-Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug where incremental changes made to any files under the /www folder does not get updated/built on iOS.
+Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug where incremental changes made to any files under the /www folder do not get updated/built on iOS.
 
 *Observation:*
 
@@ -39,8 +39,7 @@ Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug whe
 1. Open File Explorer and Navigate to %APPDATA%\npm\node_modules\vs-tac\lib\
 2. Replace file remoteBuild.js with one from [here](https://raw.githubusercontent.com/Microsoft/cordova-docs/master/known-issues/ios-remote-incremental-build-fix/remoteBuild.js)
 
-*Note: if you are not using default npm installation location, then to find out the directory where remoteBuild.js is located, run “npm config get prefix” (from a command prompt) to get the base of the directory, “C:\Users\<user name>\AppData\Roaming\npm” for me, and then replace “\node_modules\vs-tac\lib\remoteBuild.js”.*
-
+> **Note**: if you are not using default npm installation location, then to find out the directory where remoteBuild.js is located, run “npm config get prefix” (from a command prompt) to get the base of the directory, “C:\Users\<user name>\AppData\Roaming\npm” for me, and then replace “\node_modules\vs-tac\lib\remoteBuild.js”.*
 
 ***Temporary Workaround B:***
 
@@ -49,10 +48,9 @@ Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug whe
 3. **Do a Clean build or Rebuild**
 4. Second F5 = success
 
-
 ##**vs-ms-remote reports a 404 error when using VS 2015 RTM or later**
 
-VS 2015 RTM and up uses a new "remotebuild" agent instead of vs-mda-remote. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
+VS 2015 RTM and later versions a new "remotebuild" agent instead of vs-mda-remote. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
 
 ##**iOS Simulator does not work when using the remotebuild agent and VS 2015 RTM**
 
@@ -68,7 +66,7 @@ You will need to generate and use a new PIN when setting up Visual Studio to con
 
 ##**CordovaModuleLoadError from iOS remote agent**
 
-This error can occur if your ~/.npm folder or some of its contents were created while running as an administrator (sudo). To resolve, run the following command after installing the latest version of the [remotebuild](https://www.npmjs.com/package/remotebuild) or [vs-mda-remote](https://www.npmjs.com/package/vs-mda-remote) packages. This command ensures your user has permissions to the contents of the npm package cache in your home directory when using older versions of Node.js and npm. Newer versions of Node.js and npm will do this for you automatically.
+This error can occur if your ~/.npm folder or some of its contents were created while running as an administrator (sudo). To resolve, run the following command after installing the latest version of the [remotebuild](https://www.npmjs.com/package/remotebuild) or [vs-mda-remote](https://www.npmjs.com/package/vs-mda-remote) packages. This command ensures that your user has permissions to the contents of the npm package cache in your home directory when using older versions of Node.js and npm. Newer versions of Node.js and npm will do this for you automatically.
 
     sudo chown -R `whoami` ~/.npm
 
@@ -77,23 +75,23 @@ The first build using the remote iOS build agent for a given version of Cordova 
 
 ##**Adding "plugins/remote_ios.json" to source control can result in non-functional plugins**
 
-Five json files that can cause issues if added to source control are missing from the default source code exclusion list including "plugins/remote_ios.json." If you encounter a build that has non-functional Cordova APIs after fetching the project from source control, you should ensure that "plugins/android.json", "plugins/ios.json", "plugins/windows.json", "plugins/remote_ios.json", "plugins/wp8.json" are removed from source control and retry. See this [Tips and Workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#missingexclude) for additional details.
+Five .json files that can cause issues if added to source control are missing from the default source code exclusion list including "plugins/remote_ios.json." If you encounter a build that has non-functional Cordova APIs after fetching the project from source control, you should ensure that "plugins/android.json", "plugins/ios.json", "plugins/windows.json", "plugins/remote_ios.json", and "plugins/wp8.json" are removed from source control and retry. See this [Tips and Workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#missingexclude) for additional details.
 
 ##**Deploying to iOS 8.3 device fails from OSX Mavericks or below**
 
-If deploying to iOS 8.3 device fails because vs-mda-remote cannot find DeveloperDiskImage.dmg, ensure you are running OSX Yosemite and Xcode 6.3. Xcode 6.3 is required to deploy to an 8.3 device and only runs on Yosemite.
+If deploying to iOS 8.3 device fails because vs-mda-remote cannot find DeveloperDiskImage.dmg, make sure you are running OSX Yosemite and Xcode 6.3. Xcode 6.3 is required to deploy to an 8.3 device and only runs on Yosemite.
 
 ##**"Could not find module 'Q'" error when building iOS**
 
-If your OSX machine has case a case sensitive filesystem you can hit with certain versions of Cordova like Cordova 5.1.1. (Most people do not turn on case sensitivity.) A fix is in the works and will be in the next version of the Cordova iOS platform along with an updated version of Cordova itself. Watch the [Cordova homepage](http://cordova.apache.org) for release announcements. Once the Cordova iOS platform is released you can follow [these directions](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordova-platform-ver) to use it at release or you may wait until a full Cordova "tools" release also occurs and update the Cordova version via the config.xml designer.
+If your OSX machine has a case sensitive file system, you can hit this error with certain versions of Cordova like Cordova 5.1.1. (Most people do not turn on case sensitivity.) A fix is in the works and will be in the next version of the Cordova iOS platform along with an updated version of Cordova itself. Watch the [Cordova homepage](http://cordova.apache.org) for release announcements. Once the Cordova iOS platform is released, you can follow [these directions](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordova-platform-ver) to use it at release or you may wait until a full Cordova "tools" release also occurs and update the Cordova version using the config designer.
 
 ##**Incremental builds not faster than initial build when using VS 2015 RC or RTM**
 
-Unfortunately this is a known issue with the iOS incremental build feature. We are actively working on a fix that will be resolved in a point release update.
+Unfortunately, this is a known issue with the iOS incremental build feature. We are actively working on a fix that will be resolved in a point release update.
 
 ##**Unresponsive iOS device during app deployment**
 
-In some circumstances, when deploying to iOS devices, they phone may enter an unresponsive state where apps may stops responding. Avoid deploying an app when the same app is still running.
+In some circumstances, when deploying to iOS devices, the phone may enter an unresponsive state where apps may stop responding. Avoid deploying an app when the same app is still running.
 As a workaround, if you enter this state, soft reset your iOS device.
 
 ##**Errors about missing header or library files in plugins**
