@@ -34,23 +34,23 @@ The methods described below have strengths that are exposed for specific use cas
 <table>
 <tbody><tr>
   <th>
-    <p>**Which tool**</p>
+    <p><strong>Which tool</strong></p>
   </th>
   <th>
-    <p>**When to use**</p>
+    <p><strong>When to use</strong></p>
   </th>
 </tr>
  <tr>
-   <td>**Developer Tools – CPU Profiler**</td><td>You are identifying which JavaScript code is taking the most time to run.</td>
+   <td><strong>Developer Tools – CPU Profiler</strong></td><td>You are identifying which JavaScript code is taking the most time to run.</td>
  </tr>
  <tr>
-   <td>**Developer Tools – Timeline (UI) Profiler**</td><td>You are identifying whether JavaScript or rendering performance may be a bottleneck in your app. </td>
+   <td><strong>Developer Tools – Timeline (UI) Profiler</strong></td><td>You are identifying whether JavaScript or rendering performance may be a bottleneck in your app. </td>
  </tr>
  <tr>
-   <td>**JavaScript timing APIs**</td><td>You are measuring the duration of specific scenarios with clear start and end points.</td>
+   <td><strong>JavaScript timing APIs</strong></td><td>You are measuring the duration of specific scenarios with clear start and end points.</td>
  </tr>
  <tr>
-   <td>**Visually timing**</td><td>You are measuring scenarios that are hard to time with code, such as startup time or navigation, or “time to glass” loading/update scenarios that require precise timing.</td>
+   <td><strong>Visually timing</strong></td><td>You are measuring scenarios that are hard to time with code, such as startup time or navigation, or “time to glass” loading/update scenarios that require precise timing.</td>
  </tr>
 </table>
 
