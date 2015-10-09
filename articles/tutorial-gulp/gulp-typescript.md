@@ -9,7 +9,7 @@
 
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common "tasks" for everything from compilation, to packaging, deployment, or simply copying files around.
 
-If you're using TypeScript in your Cordova app project, you'll want to compile it in your team / CI build environment. You also may want to be able to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with a Gulp plugin.
+If you're using TypeScript in your Cordova app project, you'll want to compile it in your team / CI build environment. You also might want to compile your TypeScript code from the command line rather than Visual Studio. Fortunately this is straight forward to do with a Gulp plugin.
 
 See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the basics on using Gulp with Cordova. Next, follow these steps:
 
@@ -72,13 +72,13 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the ba
 
     ```
 
-    Either of these code snippets will compile anything in the “scripts” folder in the root of your Cordova project and copy them as a single JavaScript file called “appBundle.js” under the “www/scripts” folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
+    Either of these code snippets will compile anything that is in the **scripts** folder in the root of your Cordova project, and then copy them as a single JavaScript file called *appBundle.js* under the **www/scripts** folder. You should update this with the location of all of the TypeScript files you want compiled. You can add an array of locations to compile as follows:
 
     ```
 	gulp.src(["scripts/**/*.ts","www/typescript/**/*.ts"])
     ```
 
-4.  You should also update any "build" related task you have to require that the "scripts" task is run first.
+4.  You should also update "build" related tasks to run the "scripts" task is first.
 
 ```javascript
     gulp.task("build", ["scripts"], function () {
@@ -86,10 +86,10 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the ba
     ...
 ```
 
-The **samples/gulp** folder in [this Git repository](http://go.microsoft.com/fwlink/?LinkID=533736) contains a sample gulpfile.js and package.json with TypeScript already configured for use.
+The **samples/gulp** folder in [this Git repository](http://go.microsoft.com/fwlink/?LinkID=533736) contains a sample gulpfile.js and package.json with TypeScript that is already configured for you to use.
 
 ##TypeScript Command Line File Watcher
-You may  find it useful to set up a "file watcher" that automatically compiles your TypeScript code whenever you make an edit and save the file. Gulp's "watch" feature makes this easy to do.
+You might find it useful to set up a "file watcher" that automatically compiles your TypeScript code whenever you make an edit and save the file. Gulp's "watch" feature makes this easy to do.
 
 ```javascript
 gulp.task("watch", ["scripts"], function () {
