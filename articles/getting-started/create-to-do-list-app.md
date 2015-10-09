@@ -481,7 +481,7 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
     })();
     ```
 
-2. In the **services** folder, open localStorage.js and add the following code. One thing to note here is the inclusion of the **q** service component in the service provider function. This object enables asynchronous programming,so that you can create a promise object using `q.when`. Using the promise object, you can resolve the asynchronous operation when it has completed.
+2. In the **services** folder, open localStorage.js and add the following code. One thing to note here is the inclusion of the **q** service component in the service provider function. This object enables asynchronous programming, so that you can create a promise object using `q.when`. Using the promise object, you can resolve the asynchronous operation when it has completed.
 
     ```javascript
     (function () {
@@ -490,11 +490,11 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
       angular.module('xPlat.services').service('localStorage', ['$q', '$window', 'guidGenerator', LocalStorage]);
 
       /**
-       * Local storage service.
-       * @param {angular.Service} $q
-       * @param {angular.Service} $window
-       * @param {angular.Service} guidGenerator
-       * @constructor*/
+        * Local storage service.
+        * @param {angular.Service} $q
+        * @param {angular.Service} $window
+        * @param {angular.Service} guidGenerator
+        * @constructor*/
       function LocalStorage($q, $window, guidGenerator) {
           this.$q = $q;
           this.$window = $window;
@@ -502,35 +502,35 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
       }
 
       /**
-       * Key for storing todo items locally.
-       * @type {string}
-       * @const*/
+        * Key for storing todo items locally.
+        * @type {string}
+        * @const*/
       LocalStorage.prototype.LOCAL_STORAGE_KEY = 'toDoItems';
 
       /**
-       * Load JSON data from the local storage.
-       * @return {Object} Todo items*/
+        * Load JSON data from the local storage.
+        * @return {Object} Todo items*/
       LocalStorage.prototype.loadFromStorage = function () {
           return angular.fromJson(this.$window.localStorage.getItem(this.LOCAL_STORAGE_KEY)) || [];
       };
 
       /**
-       * Save JSON data in the local storage.
-       * @params {Object} items Todo items*/
+        * Save JSON data in the local storage.
+        * @params {Object} items Todo items*/
       LocalStorage.prototype.saveToStorage = function (items) {
           this.$window.localStorage.setItem(this.LOCAL_STORAGE_KEY, angular.toJson(items));
       }
 
       /**
-       * Retrieve all data from local storage*/
+        * Retrieve all data from local storage*/
       LocalStorage.prototype.getAll = function () {
           return this.loadFromStorage();
       };
 
       /**
-       * Create a new todo to local storage.
-       * @param {string} text Text of the todo item.
-       * @param {string} address Address of the todo item*/
+        * Create a new todo to local storage.
+        * @param {string} text Text of the todo item.
+        * @param {string} address Address of the todo item*/
       LocalStorage.prototype.create = function (text, address) {
           var item = {
               id: this.guidGenerator.get(),
@@ -546,8 +546,8 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
       };
 
       /**
-       * Update an existing todo in local storage.
-       * @param {Object} item Todo item to modify*/
+        * Update an existing todo in local storage.
+        * @param {Object} item Todo item to modify*/
       LocalStorage.prototype.update = function (item) {
           var items = this.loadFromStorage();
           for (var i = 0; i < items.length; i++) {
@@ -562,8 +562,8 @@ The data model is represented by the `xPlat.services` module, which you’ll imp
       };
 
       /**
-       * Remove a todo from local storage.
-       * @param {Object} item Todo item to remove from local storage*/
+        * Remove a todo from local storage.
+        * @param {Object} item Todo item to remove from local storage*/
       LocalStorage.prototype.del = function (item) {
           var items = this.loadFromStorage();
           for (var i = 0; i < items.length; i++) {
@@ -594,12 +594,12 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
       angular.module("xPlat.controllers").controller('ToDoCtrl', ['maps', 'storage', ToDoCtrl]);
 
       /**
-       * Controller for the todo list.
-       *
-       * @param {!angular.Service} maps
-       * @param {!angular.Service} storage
-       * @constructor
-       * @export*/
+        * Controller for the todo list.
+        *
+        * @param {!angular.Service} maps
+        * @param {!angular.Service} storage
+        * @constructor
+        * @export*/
       function ToDoCtrl(maps, storage) {
           this.maps = maps;
           this.storage = storage;
@@ -621,11 +621,11 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
       }
 
       /**
-       * Update the item location with an address.
-       * @param toDoItem*/
+        * Update the item location with an address.
+        * @param toDoItem*/
 
       /**
-       * Add a todo item to the list*/
+        * Add a todo item to the list*/
       ToDoCtrl.prototype.addToDo = function () {
           var _this = this;
 
@@ -643,21 +643,21 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
       };
 
       /**
-       * Update the text of a todo item*/
+        * Update the text of a todo item*/
       ToDoCtrl.prototype.changeToDoText = function (toDoItem) {
           this.storage.update(toDoItem)
               .then(this.updateAddress.bind(this))
       };
 
       /**
-       * Check/uncheck a todo item*/
+        * Check/uncheck a todo item*/
       ToDoCtrl.prototype.toggleToDoDone = function (toDoItem) {
           toDoItem.done = !toDoItem.done;
           this.storage.update(toDoItem);
       };
 
       /**
-       * Remove a todo item from the list*/
+        * Remove a todo item from the list*/
       ToDoCtrl.prototype.removeToDo = function (toDoItem) {
           var _this = this;
           this.storage.del(toDoItem).then(function (todo) {
@@ -681,9 +681,9 @@ In this section, you’ll implement the AngularJS controller module (`xPlat.cont
         angular.module('xPlat.directives').directive('tdTextChange', tdTextChange);
 
         /**
-         * Factory function for the directive for ng-text-change.
-        *
-         * @return {Object} td-text-change*/
+          * Factory function for the directive for ng-text-change.
+          *
+          * @return {Object} td-text-change*/
         function tdTextChange() {
             return {
                 restrict: 'A',
@@ -712,8 +712,8 @@ In this section, you’ll add additional service modules to support features suc
       angular.module('xPlat.services').service('guidGenerator', GuidGenerator);
 
       /**
-       * Generates a GUID to use as an ID for the todos
-       * @constructor*/
+        * Generates a GUID to use as an ID for the todos
+        * @constructor*/
       function GuidGenerator() {
           // Generates a small part of a GUID
           this.generatePart = function () {
@@ -723,8 +723,8 @@ In this section, you’ll add additional service modules to support features suc
       }
 
       /**
-       * Returns a new GUID.
-       * @return {string} generated GUID*/
+        * Returns a new GUID.
+        * @return {string} generated GUID*/
       GuidGenerator.prototype.get = function () {
           return this.generatePart()
               + '-'
@@ -783,8 +783,8 @@ In this section, you’ll add additional service modules to support features suc
       };
 
       /**
-       * Gets an address from a position.
-       * @params position
+        * Gets an address from a position.
+        * @params position
         */
       Maps.prototype.getAddressFromPosition = function (position) {
           var _this = this;
@@ -808,11 +808,11 @@ In this section, you’ll add additional service modules to support features suc
       angular.module('xPlat.services').factory('cordova', ['$q', '$window', '$timeout', cordova]);
 
       /**
-       * Service that allows access to Cordova when it is ready.
-       *
-       * @param {!angular.Service} $q
-       * @param {!angular.Service} $window
-       * @param {!angular.Service} $timeout
+        * Service that allows access to Cordova when it is ready.
+        *
+        * @param {!angular.Service} $q
+        * @param {!angular.Service} $window
+        * @param {!angular.Service} $timeout
         */
       function cordova($q, $window, $timeout) {
           var deferred = $q.defer();
@@ -934,29 +934,29 @@ The complete sample includes additional code to store and retrieve task list ite
       angular.module('xPlat.services').service('azureStorage', ['$resource', 'guidGenerator', AzureStorage]);
 
       /**
-       * Azure Mobile Service Application Key.
-       * TODO: Add your Azure Mobile Service Application Key.
-       *
-       * @type {string}
-       * @const
+        * Azure Mobile Service Application Key.
+        * TODO: Add your Azure Mobile Service Application Key.
+        *
+        * @type {string}
+        * @const
         */
       var AZURE_MOBILE_SERVICES_KEY = '';
 
       /**
-       * Azure Mobile Service Application URL.
-       * TODO: Add your Azure Mobile Service Application URL.
-       *
-       * @type {string}
-       * @const
+        * Azure Mobile Service Application URL.
+        * TODO: Add your Azure Mobile Service Application URL.
+        *
+        * @type {string}
+        * @const
         */
       var AZURE_MOBILE_SERVICES_ADDRESS = '';
 
       /**
-       * Use the Azure Mobile Service to store todo items in the cloud.
-       *
-       * @param {angular.Service} $resource
-       * @param {angular.Service} guidGenerator
-       * @constructor
+        * Use the Azure Mobile Service to store todo items in the cloud.
+        *
+        * @param {angular.Service} $resource
+        * @param {angular.Service} guidGenerator
+        * @constructor
         */
       function AzureStorage($resource, guidGenerator) {
           this.isAvailable = AZURE_MOBILE_SERVICES_KEY && AZURE_MOBILE_SERVICES_ADDRESS;
@@ -999,17 +999,17 @@ The complete sample includes additional code to store and retrieve task list ite
       }
 
       /**
-       * Retrieve all data from Azure storage.
+        * Retrieve all data from Azure storage.
         */
       AzureStorage.prototype.getAll = function () {
           return this.toDoItem.query();
       };
 
       /**
-       * Create a new todo to Azure storage.
-       *
-       * @param {string} text Text of the todo item.
-       * @param {string} address Address of the todo item.
+        * Create a new todo to Azure storage.
+        *
+        * @param {string} text Text of the todo item.
+        * @param {string} address Address of the todo item.
         */
       AzureStorage.prototype.create = function (text, address) {
           var item = new this.toDoItem({
@@ -1022,18 +1022,18 @@ The complete sample includes additional code to store and retrieve task list ite
       };
 
       /**
-       * Update an existing todo in Azure storage.
-       *
-       * @param {Object} item Todo item to modify.
+        * Update an existing todo in Azure storage.
+        *
+        * @param {Object} item Todo item to modify.
         */
       AzureStorage.prototype.update = function (item) {
           return item.$update();
       };
 
       /**
-       * Remove a todo from Azure storage.
-       *
-       * @param {Object} item Todo item to remove from local storage.
+        * Remove a todo from Azure storage.
+        *
+        * @param {Object} item Todo item to remove from local storage.
         */
       AzureStorage.prototype.del = function (item) {
           return item.$delete();
@@ -1108,6 +1108,6 @@ The complete sample includes additional code to store and retrieve task list ite
     }])
     ```
 
-6. Press F5 to re-run the app. Now, task list items will be stored in Azure. 
+6. Press F5 to re-run the app. Now, task list items will be stored in Azure.
 
 ![Download the tools](media/create-to-do-list-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
