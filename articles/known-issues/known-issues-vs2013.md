@@ -49,12 +49,12 @@ When using version 0.2.8 or higher of vs-mda-remote, you should add the followin
   </platform>
 ~~~~~~~~~~~~~~~~~~
 
-**(You can edit the contents of config.xml by right clicking on it and selecting "View Code".)**
+> **Note**: You can edit the contents of config.xml by right clicking on it and selecting "View Code".
 
-Alternatively you can install version 0.2.7 instead by using the following command:
+Alternatively, you can install version 0.2.7 instead by using the following command:
 
     npm install -g vs-mda-remote@0.2.7
 
 ##**Incorrect Application Id & Publisher Name after creating app packages**
 
-While trying to associate a Cordova app with Windows store using Visual Studio 13 and CTP3.1, the AppxManifest.xml doesn’t get updated with the appropriate Application Id & publisher name. We have fixed this issue in VS2015 RC. To fix this issue in VS 2013, install the plugin from [https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix](https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix) and try building your application again.
+While trying to associate a Cordova app with Windows Store using Visual Studio 2013 and CTP3.1, the AppxManifest.xml doesn’t get updated with the appropriate Application Id & publisher name. We have fixed this issue in Visual Studio 2015 RC. To fix this issue in Visual Studio 2013, install the plugin from [https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix](https://github.com/Chuxel/taco-tricks/tree/master/plugin-windows-package-fix) and try building your application again.
