@@ -160,3 +160,5 @@ Next, you need to make sure that your icons and splash screens are picked up cor
      ```
 
     Now, icons and splash screens should load correctly when you run the app!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n44ynSECDCY" frameborder="0" allowfullscreen></iframe>
