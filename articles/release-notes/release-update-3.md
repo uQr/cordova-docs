@@ -50,7 +50,7 @@ Update 3 of the Visual Studio Tools for Apache Cordova, includes the following c
 
   Previously, if taco.json was deleted in a project, the build would fail. Now if taco.json is missing, the build step adds the file back in.
 
-* **Fix for Connect bug [1748409](https://connect.microsoft.com/VisualStudio/feedback/details/1748409/incorrect-cordova-android-versioncode) Incorrect Cordova Android versioncode **
+* **Fix for Connect bug [1748409](https://connect.microsoft.com/VisualStudio/feedback/details/1748409/incorrect-cordova-android-versioncode) Incorrect Cordova Android versioncode**
 * **Supported localization of an unlocalized Help link in config.xml**
 * **When installing Visual Studio Tools for Apache Cordova, the latest version of Windows Tools is also selected**
 * **On build, the vs:packageOutputPath setting in config.xml is now cleared so that absolute paths are not checked into source control**
