@@ -1,8 +1,8 @@
-<properties pageTitle="Ionic Tutorial" 
-  description="This is an article on ionic tutorial" 
-  services="" 
+<properties pageTitle="Ionic Tutorial"
+  description="This is an article on ionic tutorial"
+  services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
 
 #Cordova Hook to Execute VS Task Runner Explorer Bindings from the Command Line
 
@@ -46,7 +46,7 @@ While not supported via Visual Studio UI, you can wire in Gulp tasks to addition
 The hook also automatically detects if Gulp is not installed in the node_modules folder in your project and will "npm install" the contents of package.json in your project to further streamline development.
 
 ## Terms of Use
-By downloading and running this project, you agree to the license terms of the third party application software, Microsoft products, and components to be installed. 
+By downloading and running this project, you agree to the license terms of the third party application software, Microsoft products, and components to be installed.
 
 The third party software and products are provided to you by third parties. You are responsible for reading and accepting the relevant license terms for all software that will be installed. Microsoft grants you no rights to third party software.
 
@@ -77,4 +77,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-

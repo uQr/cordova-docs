@@ -1,12 +1,12 @@
-﻿<properties pageTitle="Add packages to your Cordova project with the Nuget Package Manager"
+<properties pageTitle="Add packages to your Cordova project with the Nuget Package Manager"
   description="This is an article on nuget tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="panarasi" />
 
 # Add packages to your Cordova project with the Nuget Package Manager
 
-[NuGet](https://www.nuget.org/) is the package manager for the Microsoft development platform. It has client tools to produce and consume packages and a gallery where all the packages are hosted. In addition to popular .NET packages, it also hosts many popular JavaSript frameworks that have typically been used in ASP.NET applications. 
+[NuGet](https://www.nuget.org/) is the package manager for the Microsoft development platform. It has client tools to produce and consume packages and a gallery where all the packages are hosted. In addition to popular .NET packages, it also hosts many popular JavaSript frameworks that have typically been used in ASP.NET applications.
 
 >**Note**: [Bower](http://www.bower.io) is now the recommended package manager to use for client-side libraries, since it is more actively maintained by JavaScript & CSS library authors and it works well across Windows, Mac OS X, and Linux platforms. To learn more about Bower, see our tutorial [Using the Bower package manager in Cordova projects](./tutorial-using-bower.md).
 
@@ -40,4 +40,4 @@ To copy the resources over to the `www` folder, we could simpy write a hook in o
 
     > Note that the file locations used may change, depending on the NuGet package and your project structure. You may have to modify the source accordingly.
 
-    After defining the destination, we simply use the `shelljs` module to perform the actual copy into a `www/lib` folder. Now you may refer to the JavaScript files in their new location in your `www/index.html` file!
+    After defining the destination, we simply use the `shelljs` module to perform the actual copy into a `www/lib` folder. Now you may refer to the JavaScript files in their new location in your `www/index.html` file.

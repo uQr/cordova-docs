@@ -3,7 +3,7 @@
    description="description"
    services="na"
    documentationCenter=""
-   authors="Kraig Brockschmidt"
+   authors="kraigb"
    tags=""/>
 <tags
    ms.service="na"

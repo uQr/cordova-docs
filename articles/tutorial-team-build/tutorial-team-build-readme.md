@@ -2,7 +2,7 @@
   description="Build Cordova apps in a Continuous Integration environment"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
 
 # Build Cordova apps in a Continuous Integration environment
 **Note that this documentation applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.**

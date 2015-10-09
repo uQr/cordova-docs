@@ -2,14 +2,14 @@
   description="This is an article on bower tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="jmatthiesen" />
 
 # Add packages to your Cordova project with the Bower Package Manager
-While working on your Cordova project, you may want to use a JavaScript or CSS framework built by someone else and available for download from the web. To help with this, you may want to add the [Bower](http://www.bower.io) package manager to your web developer toolbelt. Bower advertises itself as "a package manager for the web" and is a JavaScript utility you can use to search framework packages and download them into a project. These packages are built by an active community of developers and framework authors.
+While working on your Cordova project, you might want download and use a JavaScript or CSS framework that was built by someone else. To help with this, you might want to add the [Bower](http://www.bower.io) package manager to your web developer "tool belt". Bower advertises itself as "a package manager for the web" and is a JavaScript utility  that you can use to search framework packages and download them into a project. These packages are built by an active community of developers and framework authors.
 
-> **Note** In the past, you may have used the [NuGet](http://www.nuget.org) package manager to download packages, such as JavaScript libraries. Bower is now the recommended package manager to use for client-side libraries, since it is more actively maintained by JavaScript & CSS library authors and it works well across Windows, Mac OS X, and Linux paltforms. NuGet is still an option for Cordova projects in Visual Studio, but most packages install their files outside of the `www` folder used by Cordova. You can work around this by manually copying your files into the `www` folder.
+> **Note** In the past, you might have used the [NuGet](http://www.nuget.org) package manager to download packages, such as JavaScript libraries. Bower is now the recommended package manager to use for client-side libraries, since it is more actively maintained by JavaScript & CSS library authors and it works well across Windows, Mac OS X, and Linux platforms. NuGet is still an option for Cordova projects in Visual Studio, but most packages install their files outside of the `www` folder used by Cordova. You can work around this by manually copying your files into the `www` folder.
 
-In this article, we'll walk through how to use Bower directly from a command line and from within the Visual Studio Tools for Apache Cordova. 
+In this article, we'll walk through how to use Bower directly from a command line and from within the Visual Studio Tools for Apache Cordova.
 
 ##<a name="cmdLine"></a>How do I  add libraries to my Cordova project using the Bower command line?
 To use Bower from the command line, you'll need to install Node.js from [nodejs.org](https://nodejs.org/). Then you'll use the Node Package Manager (NPM), included with Node.js, to install bower:
@@ -20,7 +20,7 @@ After Bower is installed, you can use it to add a new JavaScript library to your
 
 `bower install angular`
 
-This creates a bower_components folder in the current location, and within that you'll find the AngularJS library files:
+This creates a bower_components folder in the current location, and within that folder, you'll find the AngularJS library files:
 
 ```
 bower_components
@@ -37,7 +37,7 @@ This command takes you through a set of questions (be sure to choose to save you
     "angular": "~1.4.3"
   }
 ```
-Finally, when you commit your changes to source control, or share your source with others, be sure to include the bower.json file. The bower_components folder should not be included in source control - this is to save on disk space and makes it easier when you change library versions later, so you don't have to commit a new bower_components folder.
+Finally, when you commit your changes to source control, or share your source with others, be sure to include the bower.json file. The bower_components folder should not be included in source control. This folder is there to save on disk space and makes it easier when you change library versions later, so you don't have to commit a new bower_components folder.
 
 When you share your project files, another developer only needs to use the following command from the root of the project folder. This will then download all of your dependencies:
 
@@ -47,19 +47,19 @@ You can search for packages directly from the [Bower website](http://stackoverfl
 
 `bower search <packageName>`
 
-After using the command above, you could get more information about a package, such as available version numbers, using the info command:
+After you use the command above, you could get more information about a package, such as available version numbers, using the info command:
 
 `bower info <packageName>`
 
-Once you finde a package/version combination that you like, add it to your bower.json file using the `bower install` command described earlier.
+Once you find a package and version combination that you like, add it to your bower.json file using the `bower install` command described earlier.
 
 ##<a name="TACO"></a>How do I add libraries to my Cordova project in the Visual Studio Tools for Apache Cordova?
-In Visual Studio, support for Bower is built-in; if a bower.json file is included in a project, the tools recognize that Bower is being used and will automatically download dependencies.
+In Visual Studio, support for Bower is built-in; if a bower.json file is included in a project, the tools recognize that Bower is being used, and will automatically download dependencies.
 
 To use Bower to download libraries into a new project, add a new bower.json file to your project:
 
-1. Right-click on your project and choose Add | New Item...
-2. Select the JavaScript File template and name your file "bower.json", then click Add.
+1. Right-click on your project and choose **Add**->**New Item**
+2. Select the JavaScript File template and name your file *bower.json*, then click the **Add** button.
 3. In the file that opens, replace the contents with the following:
 
     ```JSON
@@ -74,9 +74,9 @@ To use Bower to download libraries into a new project, add a new bower.json file
 
 4. Save your changes.
 
-In Visual Studio's Solution Explorer, you'll notice a Dependencies item with a Bower folder underneath that. After a short wait, Bower will finish installing the Angular package and you'll see angular (1.4.3) appear inside of the Bower folder.
+In Visual Studio's Solution Explorer, you'll notice a **Dependencies** item with a **Bower** folder underneath that. After a short wait, Bower will finish installing the Angular package and you'll see angular (1.4.3) appear inside of the **Bower** folder.
 
-You can manage Bower packages within Solution Explorer by right-clicking on the Dependencies\Bower folder, or by right-clicking on packages within that folder. For example, the Restore Packages menu acts the same as the `bower update` command and will download the latest packages.
+You can manage Bower packages within Solution Explorer by right-clicking on the **Dependencies\Bower** folder, or by right-clicking on packages within that folder. For example, the **Restore Packages** menu acts the same as the `bower update` command and will download the latest packages.
 
 ![Restoring packages from the solution explorer menu](media/tutorial-using-bower/bower-solution-explorer-menu.png)
 
@@ -108,8 +108,8 @@ If you need to deploy the files from Bower as part of your application, then you
 ##<a name="downloadToWww"></a>How do I set up Bower to deploy all of my dependencies with my Cordova application?
 Bower packages often come with many files you don't need to include as part of your built application. However, if you don't mind deploying these files with your app, you can easily set up Bower to add all packages directly into your project's `www` folder so that they're deployed. To do this, add a new file called .bowerrc to the root of your project:
 
-1. Right-click on your project and choose the Add | New Item... menu.
-2. Select the Text File template, name the file ".bowerrc" and click Add.
+1. Right-click on your project and choose the **Add**->**New Item** menu.
+2. Select the Text File template, name the file **.bowerrc** and click the **Add** button.
 3. Replace the contents of the file with the following:
 
     ```JSON

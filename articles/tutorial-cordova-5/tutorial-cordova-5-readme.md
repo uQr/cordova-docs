@@ -2,7 +2,7 @@
   description="Using Apache Cordova 5"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
 
 # Using Apache Cordova 5
 If the default blank template in Visual Studio 2015 does not default to 5.1.1, you should update Tools for Apache Cordova.

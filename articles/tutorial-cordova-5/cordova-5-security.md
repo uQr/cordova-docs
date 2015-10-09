@@ -2,7 +2,7 @@
   description="This is an article on ionic tutorial"
   services=""
   documentationCenter=""
-  authors="bursteg" />
+  authors="Chuxel" />
 
 # An introduction to Cordova 5 security
 
