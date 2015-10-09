@@ -1039,8 +1039,8 @@ The complete sample includes additional code to store and retrieve task list ite
           return item.$delete();
       };
     })();
-  // To support Azure, add Azure storage service
-  // code here ("azureStorage").
+    // To support Azure, add Azure storage service
+    // code here ("azureStorage").
 
     .factory("azureStorage", ["$q", "$resource", "$rootScope", "guidGenerator", function ($q, $resource, $rootScope, guidGenerator) {
       var azureMobileServicesInstallationId = guidGenerator();
@@ -1108,6 +1108,6 @@ The complete sample includes additional code to store and retrieve task list ite
     }])
     ```
 
-6. Press F5 to re-run the app. Now, task list items will be stored in Azure.
+6. Press F5 to re-run the app. Now, task list items will be stored in Azure. 
 
 ![Download the tools](media/create-to-do-list-app/IC795792.png) [Get the Visual Studio Tools for Apache Cordova](http://aka.ms/mchm38) or [learn more](https://www.visualstudio.com/cordova-vs.aspx)
