@@ -40,7 +40,7 @@ You cannot use the VS debugger for apps deployed to Android emulators or devices
  * DOM Explorer Events and Changes panes are not available.
  * If an HTML file only contains script that ran and was immediately unloaded, the HTML will never appear in the Solution Explorer.
  * Only script blocks that contain code that can still run will be visible.
- * An HTML file will only appear under Script Documents in Solution Explorer if the HTML file contains code that can still run in the engine.
+ * An HTML file will appear only under Script Documents in Solution Explorer if the HTML file contains code that can still run in the engine.
 
 ##When using the VS Debugger with Android < 4.4 emulators or devices
 
@@ -50,16 +50,17 @@ You cannot use the VS debugger for apps deployed to Android emulators or devices
 
 ##When using the jsHybugger plugin for debugging Android < 4.4
 
-* **Limitations:** The following limitations exist when using the VS debugger with jsHybugger:
- * There is no support for Source Maps.
- * While using the DOM explorer with jsHybugger, there is no support for:
-  * Deleting CSS properties
-  * Selecting DOM elements by clicking on them
-  * Add/edit/delete of element attributes
-  * Add/edit of CSS rules
-  * Forcing Hover and Visited Pseudo-class states
-  * Undo/redo
-  * Edit as HTML
-  * Shorthand property display is generally not supported.
+**Limitations:** The following limitations exist when using the VS debugger with jsHybugger:
+  
+  * There is no support for Source Maps.
+  * While using the DOM explorer with jsHybugger, there is no support for:
+    * Deleting CSS properties.
+    * Selecting DOM elements by clicking on them.
+    * Add/edit/delete of element attributes.
+    * Add/edit of CSS rules.
+    * Forcing Hover and Visited Pseudo-class states.
+    * Undo/redo.
+    * Edit as HTML.
+    * Shorthand property display is generally not supported.
 
-* **JavaScript console read only:** While using the JavaScript Console with the jsHybugger, the JS Console works as output only – messages are logged but we do not execute commands.  We also do not support source locations of messages, clearing messages on navigation, and expanding objects and properties of the logged messages.
+**JavaScript console read only:** While using the JavaScript Console with the jsHybugger, the JS Console works as output only – messages are logged but we do not execute commands.  We also do not support source locations of messages, clearing messages on navigation, and expanding objects and properties of the logged messages.

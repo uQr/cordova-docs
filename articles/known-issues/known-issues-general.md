@@ -12,7 +12,7 @@ This article covers general known issues related to Visual Studio Tools for Apac
 
 ##**Missing Platform Dropdown**
 
-The “Solution Platform” dropdown may not appear in the toolbar when upgrading Visual Studio 2013 from a previous version to Update 4. You can add using the “Standard Toolbar Options” dropdown as described in [Microsoft Support article 2954109](http://support.microsoft.com/kb/2954109).
+The “Solution Platform” dropdown might not appear in the toolbar when upgrading Visual Studio 2013 from a previous version to Update 4. You can add using the “Standard Toolbar Options” drop-down as described in [Microsoft Support article 2954109](http://support.microsoft.com/kb/2954109).
 
 ##**Building a Cordova project from source control results in Cordova plugin APIs not returning results**
 
@@ -38,13 +38,13 @@ Due to a Cordova issue with Cordova 4.3.0 and 4.3.1, you can run into problems w
 
 ##**Slow first build or first plugin add**
 
-The first build or plugin add for a given version of Cordova will be slower than subsequent builds as VS must first dynamically acquire Cordova. See the Output Window for more detail on progress. Further, the first remote iOS build will exhibit the same behavior as the agent downloads Cordova on your OSX machine. If you encounter a CordovaModuleLoadError with the first iOS build for a given Cordova version you can follow [these instructions](../tips-and-workarounds/ios/tips-and-workarounds-ios-readme.md#npm-cache) to resolve the problem.
+The first build or plugin that you add for a given version of Cordova will be slower than subsequent builds as VS must first dynamically acquire Cordova. See the Output Window for more detail on the progress. Furthermore, the first remote iOS build will exhibit the same behavior as the agent downloads Cordova on your OSX machine. If you encounter a CordovaModuleLoadError with the first iOS build for a given Cordova version, you can follow [these instructions](../tips-and-workarounds/ios/tips-and-workarounds-ios-readme.md#npm-cache) to resolve the problem.
 
 ##**Old versions of Cordova plugins due to Cordova plugin ID changes**
 
 A significant change occurred with Cordova 5.0.0+ that also altered the IDs of many core Cordova plugins. The Visual Studio 2015 config designer (config.xml) uses the old IDs (ex: org.apache.cordova.camera not cordova-plugin-camera) with Cordova 4.3.1 and below since the version of Cordova before 5.0.0 does not support npm.
 
-If you update your Cordova version to 5.1.1 or later, the config designer will automatically switch to using the new IDs. If you do not see this behavior, update Tools for Apache Cordova. Some very early adopters may not see some of the improvements described in this document until after you update since a small post-RTM update enabled this functionality. You will get an update notification soon prompting you to update or, when creating a new project, you can click "Install Tools for Apache Cordova" from the Apache Cordova templates section. Be sure to remove plugins using older IDs from your project before adding the updated plugins with the new IDs.
+If you update your Cordova version to 5.1.1 or later, the config designer will automatically switch to using the new IDs. If you do not see this behavior, update Tools for Apache Cordova. If you're an early adopter, you might not see some of the improvements described in this document until after you update since a small post-RTM update enabled this functionality. You will get an update notification soon that prompts you to update or, when creating a new project, you can click "Install Tools for Apache Cordova" from the Apache Cordova templates section. Be sure to remove plugins that use older IDs from your project before you add the updated plugins with the new IDs.
 
 ##**Git sourced plugins will not install**
 
@@ -54,28 +54,28 @@ Git sourced plugins will not install properly if you have not installed the [Git
 
 Cordova 5.1.1 has a bug that can cause plugins installed from a Git repo to fail with the error "Error: EXDEV, cross-device link not permitted" if the project is on a different drive than your temp folder.
 
-See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-xml) for information on adding plugins that are not present in the config designer. You can add them from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when installing or you can instead download a copy, unzip it, and add the plugin from the filesystem.
+See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#plugin-xml) for information about how to add plugins that are not present in the config designer. You can add them from either the Cordova plugin repository or npm. If you must add a Git version of the plugin, either move your project to the same drive as your temp folder when you install, or you can instead download a copy, unzip it, and add the plugin from the filesystem.
 
 ##**TypeError: Request path contains unescaped characters**
 
-When building or installing a plugin, you may encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordovaproxy) for additional details.
+When building or installing a plugin, you might encounter this error if you are using a proxy with certain versions of Node.js and Cordova after a "npm http GET". This is a Cordova issue and the simplest workaround is to downgrade [Node.js 0.10.29](http://nodejs.org/dist/v0.10.29/). This will be resolved in a future version of Cordova. See [tips and workarounds](../tips-and-workarounds/general/tips-and-workarounds-general-readme.md#cordovaproxy) for additional details.
 
 ##**Errors from npm related to permission problems**
 
-If you installed Visual Studio or Node.js running as an administrator, you can run into problems where npm attempts to install npm packages under "C:\Program Files (x86)\node.js". You will typically see errors in the Output Window similar to this one: "npm ERR! error rolling back error : EPERM, unlink 'C:\Program Files (x86)\nodejs\vs-tac-cli.cmd'". To resolve this issue, you can re-install Node.js or reconfigure npm using these commands from the command prompt and restarting Visual Studio:
+If you installed Visual Studio or Node.js as an administrator, you can run into problems where npm attempts to install npm packages under "C:\Program Files (x86)\node.js". You will typically see errors in the Output Window similar to this one: "npm ERR! error rolling back error : EPERM, unlink 'C:\Program Files (x86)\nodejs\vs-tac-cli.cmd'". To resolve this issue, you can re-install Node.js or reconfigure npm using these commands from the command prompt and restarting Visual Studio:
 
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 npm config set prefix %APPDATA%\npm
 npm config set cache %APPDATA%\npm-cache
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ##**Frequent ECONRESET errors from npm when using VPN or proxy**
 
-Node.js can experience intermittent issues using SSL to connect to the npm repository with certain versions of Node.js and npm when connected to VPN or when a proxy is configured. You can resolve this issue by configuring npm to connect to the registry using straight HTTP instead using this command from the command prompt:
+Node.js can experience intermittent issues when using SSL to connect to the npm repository and with certain versions of Node.js and npm when connected to VPN, or when a proxy is configured. You can resolve this issue by configuring npm to connect to the registry using straight HTTP instead using this command from the command prompt:
 
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 npm config set registry http://registry.npmjs.org
-~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 ##**FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - process out of memory**
 
