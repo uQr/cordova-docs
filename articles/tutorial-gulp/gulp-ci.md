@@ -183,7 +183,7 @@ You should then set an environment variable called **CORDOVA_CACHE** that points
 See the [Team Foundation Services 2015](./tutorial-team-build/tfs2015.md) tutorial for a specific example.
 
 ##Adding Other Dependencies
-Adding additional dependencies is simple from Visual Studio. VS will also **automaticlly** install any package added to the "devDependencies" list in package.json when you save the file.
+Adding additional dependencies is simple from Visual Studio. VS will also **automatically** install any package added to the "devDependencies" list in package.json when you save the file.
 
 You can also install any additional dependencies and update package.json using the “--save” flag when calling "npm install" from the command line. For example, this command will add the [uglify Gulp plugin](http://go.microsoft.com/fwlink/?LinkID=533793) as a dependency:
 

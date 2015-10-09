@@ -74,7 +74,13 @@ From the **Develop** menu item, select your device and the app's main page.
 
 When the tools open, select **Timelines** and then choose the **Record** button. All activity will be recorded. This includes network requests, layout, rendering, JavaScript CPU usage and events that are raised. We can see here that my ```createHtml``` function ended up taking **165ms** itself and triggered a **225ms** style recalculation and a **132ms** layout.
 
+The following image shows the Layout and Rendering profiler in the Safari tools.
+
 ![layout and rendering profiler](media/measure-performance/layout-rendering-profiler.png)
+
+The following image shows the JavaScript execution profiler in the Safari tools.
+
+![layout and rendering profiler](media/measure-performance/execution-profiler.png)
 
 To read more about Safari's Web Inspector tools, visit [https://developer.apple.com/safari/tools/](https://developer.apple.com/safari/tools/).
 
@@ -86,11 +92,15 @@ To profile your device by using Chrome's dev tools, navigate to *chrome://inspec
 
 On the **Timeline** tab of the tools, choose the record icon in the upper left to start profiling UI activity. When you're done performing your activity, choose the record icon again to stop recording.
 
+The following image shows the timeline tool in Chrome. This tool shows a 600ms style recalculation, 400ms layout, and a 300ms paint.
+
 ![Chrome timeline tool](media/measure-performance/chrome-timeline-tool.png)
 
 Chrome has their CPU profiler separate, so you'll need to switch to the **Profiles** tab and select **Collect JavaScript CPU Profile**, then click **Start**.
 
 ![start profiling](media/measure-performance/start-profiling.png)
+
+The following image shows the CPU profile of our app. You can see that the createHMTL function took 360ms, of which 49ms was spent in the funciton itself. 309ms was spent setting ```innerHtml```.
 
 ![cpu profile](media/measure-performance/cpu-profile.png)
 
@@ -104,9 +114,13 @@ You can use Visual Studio developer tools to profile your Windows Phone app.  St
 
 To access Visual Studio’s profiling tools you can then go to **Debug** -> **Start Diagnostic Tools Without Debugging**.  This will bring up the Diagnostics Hub where you can pick the tools that you want to run. We found the CPU Usage and HTML UI Responsiveness tools very useful for diagnosing rendering issues in our tests.
 
+The following image shows the Diagnostic Hub in Visual Studio.
+
 ![diagnostic hub](media/measure-performance/diagnostic-hub.png)
 
 Once you check the tools you want to use, click **Start** and it will start your diagnostic session and run the profilers you’ve selected.  Once you stop your session, you will get a report with the summary of your profiling session.
+
+The following image shows a sample report that was created from the diagnostic tool for CPU usage and HTML UI responsiveness.
 
 ![diagnostic tool in VS for CPU usage and HTML UI responsiveness](media/measure-performance/diagnostics-vs.png)
 

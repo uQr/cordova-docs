@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Add packages to your Cordova project with the Nuget Package Manager"
+<properties pageTitle="Add packages to your Cordova project with the Nuget Package Manager"
   description="This is an article on nuget tutorial"
   services=""
   documentationCenter=""
@@ -40,4 +40,4 @@ To copy the resources over to the `www` folder, we could simpy write a hook in o
 
     > Note that the file locations used may change, depending on the NuGet package and your project structure. You may have to modify the source accordingly.
 
-    After defining the destination, we simply use the `shelljs` module to perform the actual copy into a `www/lib` folder. Now you may refer to the JavaScript files in their new location in your `www/index.html` file!
+    After defining the destination, we simply use the `shelljs` module to perform the actual copy into a `www/lib` folder. Now you may refer to the JavaScript files in their new location in your `www/index.html` file.
