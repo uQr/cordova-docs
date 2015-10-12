@@ -17,24 +17,24 @@
 Cordova apps are web apps that run "inside" of native apps by using native "web view" UI components. There are therefore three major domains where performance can be affected in a Cordova app:
 
 - The web code, in JS, CSS, and HTML
-- The native code, in Objective-C/Swift, Java, or WinJS (Cordova plugin code)
-- The bridge between the native and web code (Cordova runtime code)
+- The native code, in Objective-C/Swift, Java, or WinJS (Cordova plugin code).
+- The bridge between the native and web code (Cordova runtime code).
 
 ## Optimizing web code, in JS, CSS, and HTML
 
-There are *very many* things that can be optimized in a web app. The Internet contains a wealth of information on the topic. Optimizations highly relevant to Cordova apps are given below, but afterward we have a list of links for more in-depth reading.
+There are *very many* things that can be optimized in a web app. The Internet contains a wealth of information on the topic. The optimizations that are highly relevant to Cordova apps appear below, but afterward we have a list of links for more in-depth reading.
 
 ### Removing the 300ms Touch Delay
 
-There is a 300ms delay on some mobile browser platforms between a touch on the screen and its corresponding touch event being fired. For more responsive UI, this delay can be sidestepped. The `fastclick` library (available on [GitHub][fastclick]) conveniently implements this optimization.
+There is a 300ms delay on some mobile browser platforms between a touch on the screen and its corresponding touch event being raised. For more responsive UI, this delay can be sidestepped. The `fastclick` library (available on [GitHub][fastclick]) conveniently implements this optimization.
 
 ### Layout Updates: Fewer is Better
 
-HTML rendering engines recalculate a document layout when CSS rules or DOM element dimensions are changed. These recalculations are expensive, and minimising them improves performance. Editing HTML elements outside of the DOM (e.g. creating new `<div>`s using jQuery) does not cause layout recalculations. Therefore editing HTML in JavaScript and then inserting the edited HTML into the DOM results in fewer layout recalculations and leads to improved performance.
+HTML rendering engines recalculate a document layout when CSS rules or DOM element dimensions are changed. These recalculations are expensive, and minimizing them improves performance. Editing HTML elements outside of the DOM (e.g. creating new `<div>`s using jQuery) does not cause layout recalculations. Therefore editing HTML in JavaScript and then inserting the edited HTML into the DOM results in fewer layout recalculations and leads to improved performance.
 
 ### Images > CSS Gradients
 
-CSS Gradients take longer than static images to render on most HTML rendering engines. Using image gradient backgrounds in place of CSS gradients reduces frame render time.
+CSS gradients take longer to render than static images on most HTML rendering engines. Using image gradient backgrounds in place of CSS gradients reduces frame render time.
 
 ### Transitions > Setting Properties
 
@@ -44,7 +44,7 @@ The Mozilla Developer Network guide on CSS transitions can be found [here][mdn_t
 
 ### CSS Animation Loop > Custom Animation Loop
 
-Browser JavaScript APIs expose a function called `requestAnimationFrame`. This allows a callback to be attached to the *rendering engine's frame-rendering loop*, which is already optimized and timed appropriately for rendering. Using it (instead of a custom event loop) to perform any per-frame changes is more performant because the browser's internal rendering code is already heavily optimized.
+Browser JavaScript APIs expose a function called `requestAnimationFrame`. This allows a callback to be attached to the *rendering engine's frame-rendering loop*, which is already optimized and timed appropriately for rendering. Using it (instead of a custom event loop) to perform any per-frame changes performs better because the browser's internal rendering code is already heavily optimized.
 
 ### External Links
 
