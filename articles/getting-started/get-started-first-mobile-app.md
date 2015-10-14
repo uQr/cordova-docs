@@ -18,11 +18,11 @@
 
 You can use Visual Studio Tools for Apache Cordova to build apps that run on iOS, Android, and Windows devices and share nearly 100% of your code ([learn more](https://www.visualstudio.com/explore/cordova-vs)).
 
-In this guide, we'll help you install these tools, and give you a tour of what you can do with it. Along the way, you'll build a basic app that looks like this.
+In this guide, we'll give you a tour of what you can do with these tools. Along the way, you'll build a basic app that looks like this.
 
 ![Weather app](media/get-started-first-mobile-app/weather-app-overview.png)
 
-It's not much, but when you're done, this process won't seem so mysterious. In fact, it's fun and relatively simple. Where you take things from there is up to you and your imagination. 
+It's not much, but when you're done, this process won't seem so mysterious. In fact, it's fun and relatively simple. Where you take things from there is up to you and your imagination.
 
 Before we begin, make sure that you have the tools installed. See [install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md).
 
@@ -163,7 +163,7 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
           }
   </style>
   ```
-1. Open the **index.html** file and remove this line.
+1. In the **index.html** file and remove this line.
 
     ```html
         <p>Hello, your application is ready!</p>
