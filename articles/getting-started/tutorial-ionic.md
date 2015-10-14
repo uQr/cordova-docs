@@ -181,7 +181,7 @@ In some of the Ionic starter app templates, you may also need to remove the Type
 
 > **Note** If you are using TypeScript, you need to get updated d.ts files or an updated version of the template to support the routing module.
 
-### WWHost runtime error? <a name="win10tips"></a>
+### WWAHost runtime error? <a name="win10tips"></a>
 
 When debugging on a Windows 8.1 dev machine, you may get a WWAHost runtime error when navigating between pages in Ionic apps. You can work around this by:
 
@@ -195,7 +195,7 @@ Also, when you are using the AngularJS routing module (Ionic starter templates o
 
 If you see this dialog box, you have likely run into this issue.
 
-![unhandled exception](media/tutorial-ionic/ionic-error-partial-pages.png)
+![partial pages don't load](media/tutorial-ionic/ionic-error-partial-pages.png)
 
 Typically, you include the code fix in app.js or wherever you are calling your module configuration code:
 
