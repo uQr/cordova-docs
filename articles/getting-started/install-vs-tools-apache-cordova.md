@@ -191,7 +191,7 @@ Sometimes a Mac is externally visible under one hostname, but internally assigns
 
     <table>
 
-   <tbody>
+     <tbody>
        <tr>
            <th><strong>Field</strong></th>
            <th><strong>Value</strong></th>
@@ -224,12 +224,12 @@ Sometimes a Mac is externally visible under one hostname, but internally assigns
            You can use the security PIN for only one client. If you want to pair another client with the remotebuild server on your Mac, see [Generate a new security PIN](configure-vs-tools-apache-cordova.md#IosPin).
            <p></td>
        </tr>
-   </tbody>
-   </table>
+     </tbody>
+    </table>
 
-   Your fields will look something like this:
+    Your fields will look something like this:
 
-   ![Configuring the remote agent in Visual Studio](media/install-vs-tools-apache-cordova/IC795521.png)
+    ![Configuring the remote agent in Visual Studio](media/install-vs-tools-apache-cordova/IC795521.png)
 
 8. Choose the **OK** button.
 
