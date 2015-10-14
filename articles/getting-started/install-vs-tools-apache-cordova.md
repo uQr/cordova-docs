@@ -114,7 +114,7 @@ If you want to build a version of your app for iOS devices, you'll need a Mac to
 
 * The Xcode command-line tools.
 
-   To install these, open a Terminal app on your Mac, and type this command: ```xcode-select –install```.
+    To install these, open a Terminal app on your Mac, and type this command: ```xcode-select –install```.
 
 * [Node.js](http://nodejs.org/).
 
@@ -189,7 +189,7 @@ Sometimes a Mac is externally visible under one hostname, but internally assigns
 
 4. Set the values of each field. The following table describes each field.
 
-   <table>
+    <table>
 
    <tbody>
        <tr>
@@ -229,7 +229,7 @@ Sometimes a Mac is externally visible under one hostname, but internally assigns
 
    Your fields will look something like this:
 
-    ![Configuring the remote agent in Visual Studio](media/install-vs-tools-apache-cordova/IC795521.png)
+   ![Configuring the remote agent in Visual Studio](media/install-vs-tools-apache-cordova/IC795521.png)
 
 8. Choose the **OK** button.
 
