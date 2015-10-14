@@ -5,54 +5,55 @@
   authors="bursteg" />
 
 # Visual Studio Tools for Apache Cordova
-This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).**
+This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).** The official site for Visual Studio 2015 documentation is hosted on **[taco.visualstudio.com](http://taco.visualstudio.com)**, and any content changes in the current repository will be updated there as well.
 
-**Note that, with the exception of known issues, this documentation does not apply to Visual Studio 2013 CTPs.**
+Microsoft's partnership with the Apache Cordova open-source project means that we aren't in it alone. We are a part of the larger Cordova community, and that commitment to the community comes through the products we build and the documentation we upkeep. We invite you to be part of our [community](http://taco.visualstudio.com). Try building your [first cross-platform mobile app](http://taco.visualstudio.com/en-us/docs/get-started-first-mobile-app/) in Visual Studio, give back to the next set of new users in [StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova), [contribute to our documentation](http://taco.visualstudio.com/en-us/docs/cordova-docs-contributing/), and share the Cordova glory! 
+
+**Note that, with the exception of known issues, this documentation does not apply to Visual Studio 2013 CTPs. Please custom install [Visual Studio 2015](https://www.visualstudio.com/cordova-vs), and check the Tools for Apache Cordova extension.**
 
 <a name="tutorials"></a>
 ## Tutorials
-1. [Using Apache Cordova 5](tutorial-cordova-5/tutorial-cordova-5-readme.md)
-	1. [An Introduction to Cordova 5 Security](./tutorial-cordova-5/cordova-5-security.md)
-1. [Using Gulp with your Cordova projects](tutorial-gulp/tutorial-gulp-readme.md)
-	1. [Using Gulp to Build Cordova Projects](./tutorial-gulp/gulp-ci.md)
-	1. [Invoking Gulp Tasks During a Cordova Build and the VS Task Runner Explorer](./tutorial-gulp/gulp-task-runner-explorer.md)
-	1. [Compiling TypeScript with Gulp](./tutorial-gulp/gulp-typescript.md)
-1. [Getting Started Building Cordova Apps in a Team / Continuous Integration (CI) Environment](tutorial-team-build/tutorial-team-build-readme.md)
-	1. [Getting Started with Cordova & TFS 2015 or Visual Studio Online](./tutorial-team-build/tfs2015.md)
-	1. [Getting Started with Cordova & TFS 2013](./tutorial-team-build/tfs2013.md)
-	1. [Getting Started with Cordova & Jenkins CI](./tutorial-team-build/jenkins.md)
-	1. [General CI Guidence, Information, and Troubleshooting](./tutorial-team-build/general.md)
-1. [Package & Publish your Cordova Applications](tutorial-package-publish/tutorial-package-publish-readme.md)
-1. [Using TypeScript with your Cordova projects](./getting-started/tutorial-typescript.md)
-1. [Using the Bower package manager with your Cordova projects](./getting-started/tutorial-using-bower.md)
-1. [Using the NuGet package manager with your Cordova projects](./getting-started/tutorial-nuget.md)
-1. [Build and Simulate iOS in the Cloud](http://go.microsoft.com/fwlink/?LinkID=618476) (MSDN)
-1. [Build a Cordova app for iOS using Parallels](http://go.microsoft.com/fwlink/?LinkID=618477) (MSDN)
-1. [Run the Android Emulator on OSX when using Windows in Parallels](http://go.microsoft.com/fwlink/?LinkID=618478) (MSDN)
-1. [Convert a Cordova Project to a PhoneGap Project](http://go.microsoft.com/fwlink/?LinkID=618479) (MSDN)
+1. [Using Apache Cordova 5](/articles/tutorial-cordova-5/tutorial-cordova-5-readme.md)
+	1. [An Introduction to Cordova 5 Security](/articles/tutorial-cordova-5/cordova-5-security.md)
+1. [Using Gulp with your Cordova projects](/articles/tutorial-gulp/tutorial-gulp-readme.md)
+	1. [Using Gulp to Build Cordova Projects](/articles/tutorial-gulp/gulp-ci.md)
+	1. [Invoking Gulp Tasks During a Cordova Build and the VS Task Runner Explorer](/articles/tutorial-gulp/gulp-task-runner-explorer.md)
+	1. [Compiling TypeScript with Gulp](/articles/tutorial-gulp/gulp-typescript.md)
+1. [Getting Started Building Cordova Apps in a Team / Continuous Integration (CI) Environment](/articles/tutorial-team-build/tutorial-team-build-readme.md)
+	1. [Getting Started with Cordova & TFS 2015 or Visual Studio Online](/articles/tutorial-team-build/tfs2015.md)
+	1. [Getting Started with Cordova & TFS 2013](/articles/tutorial-team-build/tfs2013.md)
+	1. [Getting Started with Cordova & Jenkins CI](/articles/tutorial-team-build/jenkins.md)
+	1. [General CI Guidence, Information, and Troubleshooting](/articles/tutorial-team-build/general.md)
+1. [Package & Publish your Cordova Applications](/articles/tutorial-package-publish/tutorial-package-publish-readme.md)
+1. [Using TypeScript with your Cordova projects](/articles/getting-started/tutorial-typescript.md)
+1. [Using the Bower package manager with your Cordova projects](/articles/getting-started/tutorial-using-bower.md)
+1. [Using the NuGet package manager with your Cordova projects](/articles/getting-started/tutorial-nuget.md)
+1. [Build and Simulate iOS in the Cloud](/articles/getting-started/build_ios_cloud.md)
+1. [Build a Cordova app for iOS using Parallels](/articles/getting-started/build_ios_parallels.md)
+1. [Run the Android Emulator on OSX when using Windows in Parallels](/articles/debug-and-test/run-android-emulator-on-osx-using-parallels.md)
+1. [Convert a Cordova Project to a PhoneGap Project](/articles/develop-apps/convert-cordova-phonegap.md)
 
 <a name="tips"></a>
 ## Tips & Workarounds
-1. [General](./tips-and-workarounds/general/tips-and-workarounds-general-readme.md)
-1. [Android](./tips-and-workarounds/android/tips-and-workarounds-android-readme.md)
-1. [iOS and OSX](./tips-and-workarounds/ios/tips-and-workarounds-ios-readme.md)
-1. [Performance](./tips-and-workarounds/performance/tips-and-workarounds-performance-readme.md)
-
+1. [General](/articles/tips-and-workarounds/general/tips-and-workarounds-general-readme.md)
+1. [Android](/articles/tips-and-workarounds/android/tips-and-workarounds-android-readme.md)
+1. [iOS and OSX](/articles/tips-and-workarounds/ios/tips-and-workarounds-ios-readme.md)
+1. [Performance](/articles/tips-and-workarounds/performance/tips-and-workarounds-performance-readme.md)
 
 <a name="knownissues"></a>
 ## Known Issues
-1. [General](known-issues/known-issues-general.md)
-1. [Debugger](./known-issues/known-issues-debugger.md)
+1. [General](/articles/known-issues/known-issues-general.md)
+1. [Debugger](/articles/known-issues/known-issues-debugger.md)
 1. Apache Cordova & Ripple
-	1. [Apache Cordova & Ripple General](./known-issues/known-issues-ripple-cordova.md)
-	1. [Apache Cordova 5.x.x](./known-issues/known-issues-cordova5.md)
+	1. [Apache Cordova & Ripple General](/articles/known-issues/known-issues-ripple-cordova.md)
+	1. [Apache Cordova 5.x.x](/articles/known-issues/known-issues-cordova5.md)
 1. Platform Specific
-	1. [Android](./known-issues/known-issues-android.md)
-	1. [iOS](./known-issues/known-issues-ios.md)
-	1. [Windows, Windows Phone 8.1](./known-issues/known-issues-windows.md)
+	1. [Android](/articles/known-issues/known-issues-android.md)
+	1. [iOS](/articles/known-issues/known-issues-ios.md)
+	1. [Windows, Windows Phone 8.1](/articles/known-issues/known-issues-windows.md)
 1. Visual Studio Release Specific
-	1. [Visual Studio 2015](./known-issues/known-issues-vs2015.md)
-	1. [CTP 3.1 / Visual Studio 2013](./known-issues/known-issues-vs2013.md)
+	1. [Visual Studio 2015](/articles/known-issues/known-issues-vs2015.md)
+	1. [CTP 3.1 / Visual Studio 2013](/articles/known-issues/known-issues-vs2013.md)
 
 ## Help us improve our documentation
 Help us improve out docuementaiton by sending us a pull-request or opening a [GitHub Issue](https://github.com/Microsoft/cordova-docs/issues/new)
