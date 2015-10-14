@@ -16,21 +16,21 @@
 # Get started with Ionic apps in Visual Studio
 [Ionic](http://www.ionicframework.com) is a popular front-end JavaScript framework for developing cross-platform mobile apps using Cordova. You can use Visual Studio 2015 and the Ionic CLI to easily create and debug cross-platform apps.
 
->**Note**: For a video walkthrough that shows similar steps, see the [Video tutorial] (http://go.microsoft.com/fwlink/p/?LinkID=534728).
+>**Note**: For a video walkthrough that shows similar steps, see the [Video tutorial](http://go.microsoft.com/fwlink/p/?LinkID=534728).
 
 ## Set up your machine for Ionic with VS <a name="getStarted"></a>
 
 To follow these steps, you must:
 
-1. [Install Visual Studio 2015] (http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
+1. [Install Visual Studio 2015](http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
 
 2. Make sure your Visual Studio setup is correct by creating and running the default Blank App template.
 
     * In Visual Studio, choose **File**, **New**, **Project**, **JavaScript**, **Apache Cordova Apps**, **Blank App** and name the new project "blank".
 
-    * Choose **Windows** > **Local Machine** and press F5 to run the app (make sure the app loads correctly). If any issues occur, see [Configure the Tools] (configure-vs-tools-apache-cordova.md).  
+    * Choose **Windows**, **Local Machine** and press F5 to run the app (make sure the app loads correctly). If any issues occur, see [Configure the Tools] (configure-vs-tools-apache-cordova.md).  
 
-3. [Install the Ionic CLI] (http://ionicframework.com/docs/cli/install.html).
+3. [Install the Ionic CLI](http://ionicframework.com/docs/cli/install.html).
 
     ```
     npm install -g ionic
@@ -97,34 +97,33 @@ For each of the Ionic starter app templates that you installed and want to run, 
 
   >**Note**: If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282(v=vs.140).aspx).
 
-4. In some of the Ionic starter app templates, you may need to replace this line in app.js:
-
-    ```
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-    ```
-
-    with this line, to prevent a runtime error:
-
-    ```
-    if (window.cordova && window.cordova.plugins &&
-      window.cordova.plugins.Keyboard) {
-    ```
-
-5. In some of the Ionic starter app templates, you may also need to remove the TypeScript file, angular-ui-router.d.ts, for the angular-ui-router module, or you may see this error.
-
-    ![TypeScript error](media/tutorial-ionic/ionic-typescript-errors.png)
-
-    > **Note** If you are using TypeScript, you need to get updated d.ts files or an updated version of the template to support the routing module.
-
 ## Get your app running on iOS <a name="configiOS"></a>
 
-  You can run initially on the Ripple Emulator after selecting iOS as a debug target, but for detailed info on setting up the remotebuild agent for iOS, see [this topic] (install-vs-tools-apache-cordova.md#ios).
+  You can run initially on the Ripple Emulator after selecting iOS as a debug target, but for detailed info on setting up the remotebuild agent for iOS, see [this topic](install-vs-tools-apache-cordova.md#ios).
 
-  The Ionic starter app should run correctly on iOS when the remotebuild agent is running on a Mac, and when VS is configured to connect to it. (The complete steps are outside the scope here.)
+  The Ionic starter app should run correctly on iOS when the remotebuild agent is running on a Mac, and when Visual Studio is configured to connect to it. (The complete steps are outside the scope here.)
 
-## Get your app running on Windows <a name="configWindows"></a>
+## Get your app running on Windows 10
 
-1. Open the folder for the Blank App project and copy the merges folder (and its contents) to your Ionic project. Copy the folder under the top level folder (e.g., under ionicMySideMenu folder). When you complete the next few steps, you will resolve errors loading partial pages by using the winstore-jscompat.js shim.
+To target Windows 10 in the app, you need to:
+
+1. Use the Visual Studio install program to install the **Universal Windows App Development Tools** (optional software).
+
+2. In the Platforms tab of the configuration designer, enter 5.1.1 as the Cordova version.
+
+3. Choose **Build Solution** from the **Build** menu.
+
+4. In the configuration designer, choose Windows, and in the **Windows Target Version**, choose  **Windows 10.0**, and save changes.
+
+5. Choose a Windows 10 deployment target, such as **Mobile Emulator 10.0.xxxxx.0 WVGA 4 inch 1GB**.
+
+6. Press F5 to run your app.
+
+## Get your app running on Windows 8 or 8.1 <a name="configWindows"></a>
+
+1. Open the folder for the Blank App project created in Visual Studio and copy the merges folder (and its contents) to your Ionic project. Copy the folder under the top level folder (for example, under ionicMySideMenu folder).
+
+  When you complete the next few steps, you will resolve errors loading partial pages by using the winstore-jscompat.js shim.
 
 2. In the Ionic project, create a **scripts** folder under www, and copy platformOverrides.js from the Blank App project's `www\scripts` folder to the new scripts folder.
 
@@ -136,7 +135,7 @@ For each of the Ionic starter app templates that you installed and want to run, 
     <script src="scripts/platformOverrides.js></script>
     ```
 
-    >**Note**: You can use the js folder instead of scripts, but the folder and path will need to be updated in several other files.
+    >**Note**: If you use the js folder instead of scripts, the folder and path will need to be updated in several other files.
 
 4. Select **Windows** or **Windows Phone (Universal)** as a debug target (Solution Platforms list).
 
@@ -148,22 +147,78 @@ For each of the Ionic starter app templates that you installed and want to run, 
 
     > **Note**: If you see the TypeScript error or the Keyboard plugin error, see the previous steps for Android to resolve.
 
-## Having issues trying to run on Windows? <a name="win10tips"></a>
+## Errors in the Ionic starter apps?
+
+A few errors are fairly common in the starter templates when debugging in Visual Studio.
+
+### Keyboard plugin not found?
+
+In some of the Ionic starter app templates, you may get an error on this line of code.
+
+```
+if (window.cordova && window.cordova.plugins.Keyboard) {
+  ...
+}
+```
+
+To fix, open the Plugins tab of the configuation designer, and choose Custom, and then Git repository.
+
+Add the following git URL and rebuld.
+
+```
+https://github.com/driftyco/ionic-plugins-keyboard.git
+```
+
+You can add plugins in the configuration designer so that Visual Studio can recognize the plugin and add the reference to config.xml.
+
+> **Note**: Some APIs used in the templates for this plugin are iOS only, like `hideKeyboardAccessoryBar`.
+
+### TypeScript errors?
+
+In some of the Ionic starter app templates, you may also need to remove the TypeScript file, angular-ui-router.d.ts, for the angular-ui-router module, or you may see this error.
+
+![TypeScript error](media/tutorial-ionic/ionic-typescript-errors.png)
+
+> **Note** If you are using TypeScript, you need to get updated d.ts files or an updated version of the template to support the routing module.
+
+### WWHost runtime error? <a name="win10tips"></a>
 
 When debugging on a Windows 8.1 dev machine, you may get a WWAHost runtime error when navigating between pages in Ionic apps. You can work around this by:
 
-    * Closing DOM Explorer before navigating pages, or
+* Closing DOM Explorer before navigating pages, or
 
-    * Upgrading to Windows 10 on your dev machine (issue is fixed in Win10).
+* Upgrading to Windows 10 on your dev machine (issue is fixed in Win10).
 
-To target Windows 10 in the app, you need to:
+### Partial pages don't load?
 
-1. Use VS install program to install the **Universal Windows App Development Tools** (optional software).
+Also, when you are using the AngularJS routing module (Ionic starter templates often use this module), you may need to include a call to `aHrefSanitizationWhitelist`.
 
-2. In the configuration designer, select Cordova 5.1.1 and, in the Windows tab, choose **Windows 10**.
+If you see this dialog box, you have likely run into this issue.
 
-However, if you target Windows 10 in the app, note that you may get errors loading partial pages in Ionic apps, such as this unhandled exception.
+![unhandled exception](media/tutorial-ionic/ionic-error-partial-pages.png)
+
+Typically, you include the code fix in app.js or wherever you are calling your module configuration code:
+
+```
+$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|ghttps?|ms-appx|ms-appx-web|x-wmapp0):/);
+
+$compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|ms-appx|ms-appx-web|x-wmapp0):|data:image\//);
+```
+If you use the preceding code, then update the following line of code with a reference to the $compileProvider.
+
+This line:
+
+```
+.config(function ($stateProvider, $urlRouterProvider) {
+  ```
+needs to be changed to this:
+
+```
+.config(function ($compileProvider, $stateProvider, $urlRouterProvider) {
+  ```
+
+### Unhandled exception running on Windows 8.1?
+
+If you see the following unhandled exception when targeting Win/WinPhone 8.1, follow the [earlier steps](#configWindows) to call platformOverrides.js to fix this issue.
 
 ![unhandled exception](media/tutorial-ionic/ionic-unhandled-exception.png)
-
-If you see this error when targeting Win/WinPhone 8.1, follow the earlier steps to call platformOverrides.js to fix this issue. When targeting Windows 10, this fix currently requires another update to the compatibility shim or a platform bug fix.
