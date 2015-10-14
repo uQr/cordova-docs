@@ -22,32 +22,13 @@ In this guide, we'll help you install these tools, and give you a tour of what y
 
 ![Weather app](media/get-started-first-mobile-app/weather-app-overview.png)
 
-It's not much, but when you're done, this process won't seem so mysterious. In fact, it's fun and relatively simple. Where you take things from there is up to you and your imagination. So let's get started!
+It's not much, but when you're done, this process won't seem so mysterious. In fact, it's fun and relatively simple. Where you take things from there is up to you and your imagination. 
 
-## <a id="install"></a>First, install Visual Studio Tools for Apache Cordova
+Before we begin, make sure that you have the tools installed. See [install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md).
 
-Choose the Apache Cordova feature when you install Visual Studio. You can always add the feature later on.
+If you're ready to go, let's start.
 
-1.	In the Visual Studio installer, choose the **Custom** option, and then select the **HTML/JavaScript (Apache Cordova) Update 2** feature.
-
-    ![Installing Visual Studio Tools for Apache Cordova](media/get-started-first-mobile-app/install-tools.png)
-
-    After you’ve installed Visual Studio, [create a project](#get-started).
-
-### Choose the Apache Cordova feature after you install Visual Studio
-If you've already installed Visual Studio, just modify it to include the tools.
-
-1.	Open **Control Panel** -> **Programs and Features**, choose the **Visual Studio 2015** item, and then choose the **Change** button.
-
-    ![Modify Visual Studio Setup](media/get-started-first-mobile-app/modify-setup-2.png)
-
-2.	In the setup wizard for Visual Studio, choose the **Modify** button.
-
-3. In the list of optional features to install, select the **HTML/JavaScript (Apache Cordova) Update 2** checkbox, choose the **Next** button, and then choose the **Update** button.
-
-    ![Choose Apache Corodova components](media/get-started-first-mobile-app/modify-setup.png)
-
-## <a id="get-started"></a>Create a project
+## <a id="get-started"></a>First, Create a project
 
 1.	In Visual Studio, create a new **Blank App** project and name it *WeatherApp*.
 
