@@ -7,6 +7,8 @@
 # Visual Studio Tools for Apache Cordova
 This repository contains a set of documents and tutorials for the **Visual Studio 2015** release of **[Tools for Apache Cordova](http://aka.ms/cordova).** The official site for Visual Studio 2015 documentation is hosted on **[taco.visualstudio.com](http://taco.visualstudio.com)**, and any content changes in the current repository will be updated there as well.
 
+Microsoft's partnership with the Apache Cordova open-source project means that we aren't in it alone. We are a part of the larger Cordova community, and that commitment to the community comes through the products we build and the documentation we upkeep. We invite you to be part of our [community](http://taco.visualstudio.com). Try building your [first cross-platform mobile app](http://taco.visualstudio.com/en-us/docs/get-started-first-mobile-app/) in Visual Studio, give back to the next set of new users in [StackOverflow](http://stackoverflow.com/questions/tagged/visual-studio-cordova), [contribute to our documentation](http://taco.visualstudio.com/en-us/docs/cordova-docs-contributing/), and share the Cordova glory! 
+
 **Note that, with the exception of known issues, this documentation does not apply to Visual Studio 2013 CTPs.**
 
 <a name="tutorials"></a>
