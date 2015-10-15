@@ -60,6 +60,7 @@ To follow these steps, you must:
     ionic start ionicMyTabs tabs
     ionic start ionicMySlide slide
     ```
+>**Note**: If you are trying to use a Visual Studio 2013 Ionic project in Visual Studio 2015 (recommended), see this info on [migrating projects](migrate-to-vs2015.md) to Visual Studio 2015.
 
 ## Modify the project to work with VS <a name="configTemplates"></a>
 
@@ -169,9 +170,9 @@ Add the following git URL and rebuld.
 https://github.com/driftyco/ionic-plugins-keyboard.git
 ```
 
-You can add plugins in the configuration designer so that Visual Studio can recognize the plugin and add the reference to config.xml.
+If you add the plugins using the configuration designer, Visual Studio can recognize the plugin and add the plugin reference to config.xml.
 
-> **Note**: Some APIs used in the templates for this plugin are iOS only, like `hideKeyboardAccessoryBar`.
+> **Note**: Some APIs used in the templates for the Keyboard plugin are iOS only, like `hideKeyboardAccessoryBar`.
 
 ### TypeScript errors?
 
@@ -191,7 +192,7 @@ When debugging on a Windows 8.1 dev machine, you may get a WWAHost runtime error
 
 ### Partial pages don't load?
 
-Also, when you are using the AngularJS routing module (Ionic starter templates often use this module), you may need to include a call to `aHrefSanitizationWhitelist`.
+When you are using the AngularJS routing module (Ionic starter templates often use this module), you may need to include a call to `aHrefSanitizationWhitelist`.
 
 If you see this dialog box, you have likely run into this issue.
 
@@ -204,14 +205,13 @@ $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|ghttps?
 
 $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|ms-appx|ms-appx-web|x-wmapp0):|data:image\//);
 ```
-If you use the preceding code, then update the following line of code with a reference to the $compileProvider.
-
-This line:
+If you use the preceding code, then add a reference to $compileProvider in the following line of code.
 
 ```
 .config(function ($stateProvider, $urlRouterProvider) {
   ```
-needs to be changed to this:
+
+so that it looks like this:
 
 ```
 .config(function ($compileProvider, $stateProvider, $urlRouterProvider) {
