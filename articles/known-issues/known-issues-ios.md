@@ -27,7 +27,7 @@ Install this plugin to resolve ITMS-90474, ITMS-90475 in Cordova 5.3.3 and below
 
 To resolve ITMS-90339 with Cordova 5.3.3 and below you will need to do the following: 
 
-1.	Grab the build.xcconfig from the 3.9.x branch of the cordova-ios repo and place this under res/native/ios/cordova
+1.	Grab the build.xcconfig from [the 3.9.x branch of the cordova-ios repo](https://raw.githubusercontent.com/apache/cordova-ios/3.9.x/bin/templates/scripts/cordova/build.xcconfig) and place this under res/native/ios/cordova
 2.	Now remove this line:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~
