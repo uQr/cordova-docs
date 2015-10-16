@@ -16,6 +16,26 @@
 This article covers known issues related to Visual Studio Tools for Apache Cordova 2015 when building or deploying to iOS devices or simulators.
 
 ----------
+##**ITMS-90474, ITMS-90475, and/or ITMS-90339 errors when submitting to the Apple App Store:** 
+When attempting to submit a Cordova app to the App Store created using Xcode 7 with Cordova 5.3.3 and below, you may encounter three errors: ITMS-90474, ITMS-90475, and ITMS-90339. These errors have to do with changes in store acceptance criteria by Apple.  There are two steps to resolve them.
+
+For ITMS-90474 and ITMS-90475, a Cordova community member has published a "cordova-plugin-ipad-multitasking" plugin with a fix.
+
+http://npmjs.com/package/cordova-plugin-ipad-multitasking
+
+Install this plugin to resolve ITMS-90474, ITMS-90475 in Cordova 5.3.3 and below. Future versions of Cordova will solve this problem.
+
+To resolve ITMS-90339 with Cordova 5.3.3 and below you will need to do the following: 
+
+1.	Grab the build.xcconfig from the 3.9.x branch of the cordova-ios repo and place this under res/native/ios/cordova
+2.	Now remove this line:
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+CODE_SIGN_RESOURCE_RULES_PATH = $(SDKROOT)/ResourceRules.plist
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note that you will want to remove this custom build.xcconfig file if you upgrade to the version with the full patch that is forthcoming.  This change will cause problems on future versions of Cordova (specifically cordova-ios 4.0.0 and up).
+
 ##**Building for iOS hangs when Node.js v4.0 is installed:**
 There is a [known compatibility issue](https://issues.apache.org/jira/browse/CB-9297) with Node.js v4 in Cordova v5.3.1 and earlier. If you have installed Node.js v4 on your build Mac, and then installed Cordova and the remotebuild agent, iOS builds can fail in the following situations:
 * The <name> element in config.xml has been changed (for example, you’re changing the name of your app).
@@ -48,7 +68,7 @@ Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug whe
 3. **Do a Clean build or Rebuild**
 4. Second F5 = success
 
-##**vs-ms-remote reports a 404 error when using VS 2015 RTM or later**
+##**404 error when using vs-mda-remote with VS 2015 RTM or later**
 
 VS 2015 RTM and later versions a new "remotebuild" agent instead of vs-mda-remote. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
 
