@@ -11,7 +11,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="09/10/2015"
+   ms.date="10/19/2015"
    ms.author="normesta"/>
 
 # Get started with Visual Studio Tools for Apache Cordova
@@ -256,7 +256,7 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 
     ![Scripts Folder](media/get-started-first-mobile-app/scripts.png)
 
-2. In the shortcut menu of the **scripts** folder, choose **Add** -> **New JavaScript file**.
+2. Right-click the **scripts** folder, and then choose **Add** -> **New JavaScript file**.
 
 3. Name the file *weather.js*, and then choose the **Add** button.
 
@@ -555,11 +555,11 @@ This is where the **merges** folder becomes useful. We touched on that folder ea
 
 1. In **Solution Explorer**, expand the **www** folder, and then the **scripts** folder.
 
-3. In the shortcut menu of the **weather.js** file, choose **Copy**.
+3. Right-click the **weather.js** file, and choose **Copy**.
 
 1. In **Solution Explorer**, expand the **android** sub-folder in your **merges** folder.
 
-2. In the shortcut menu of the **scripts** folder, choose **paste**.
+2. Right-click the **scripts** folder, and then choose **paste**.
 
     You now have a copy of the **weather.js** in the **android** folder.
 
@@ -587,7 +587,7 @@ In some cases, you'll have to tweak the layout of your pages so that they appear
 
 1. Return to the **android** sub-folder in your **merges** folder.
 
-2. In the shortcut menu of the **css** folder, choose **Add** -> **New CSS file**.
+2. Right-click the **css** folder, and then choose **Add** -> **New CSS file**.
 
 3. Name the file *index.css*, and then choose the **Add** button.
 
