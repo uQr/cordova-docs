@@ -24,7 +24,7 @@ To follow these steps, you must:
 
 1. [Install Visual Studio 2015](http://go.microsoft.com/fwlink/?LinkID=533794).
 
-  When you install Visual Studio, make sure you include the optional components, **HTML/JavaScript (Apache Cordova)** under Cross-Platform Mobile Development.
+    When you install Visual Studio, make sure you include the optional components, **HTML/JavaScript (Apache Cordova)** under Cross-Platform Mobile Development.
 
 2. Make sure your Visual Studio setup is correct by creating and running the default Blank App template.
 
