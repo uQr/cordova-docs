@@ -68,17 +68,18 @@ To follow these steps, you must:
 
 For each of the Ionic starter app templates that you installed and want to run, do this:
 
-1. In Windows, open the folder where you created the Blank App project (which you named "blank" in the previous steps).
-2. Copy blank.jsproj and taco.json from this folder to the Ionic starter template folder (for example, ionicMySideMenu).
+1. In Visual Studio, choose **File**, **New**, **Project From Existing Code**.
+2. In the wizard, choose **Apache Cordova** as the project type that you'd like to create, and then choose **Next**.
 
-    ![Modify the project](media/tutorial-ionic/ionic-folder-structure.png)
+    ![Create a project from existing code](media/tutorial-ionic/ionic-create-wizard.png)
 
-    >**Note**: You may want to rename blank.jsproj to ionicMySideMenu.jsproj (or to the name of your starter template project).
+3. For the **Project file location**, browse to the root folder of the Ionic project and select it.
 
-3. In the Ionic starter template folder, open the .jsproj file. It will open in Visual Studio 2015.
-  Wait for Bower/NPM updates to the project to finish, if necessary.
+    ![Select the source project](media/tutorial-ionic/ionic-create-specify-root.png)
 
-4. Save the project to create a Visual Studio solution File (.sln).
+4. Type a name for your new project and select **Finish**.
+
+    Visual Studio creates the new project. Wait for Bower/NPM updates to the project to finish, if necessary.
 
 ## Get your app running on Android <a name="configAndroid"></a>
 
@@ -108,11 +109,11 @@ For each of the Ionic starter app templates that you installed and want to run, 
 
 ## Get your app running on Windows 10
 
-To target Windows 10 in the app, you need to:
+To target Windows 10 in your app, you need to:
 
 1. Use the Visual Studio install program to install the **Universal Windows App Development Tools** (optional software).
 
-2. In the Platforms tab of the configuration designer, enter 5.1.1 as the Cordova version.
+2. In the Platforms tab of the configuration designer, enter 5.3.1 (or 5.1.1) as the Cordova version.
 
 3. Choose **Build Solution** from the **Build** menu.
 
@@ -142,7 +143,7 @@ To target Windows 10 in the app, you need to:
 
 4. Select **Windows** or **Windows Phone (Universal)** as a debug target (Solution Platforms list).
 
-  * For Windows, choose **Local Machine** as the deployment target.
+  * For Windows, choose **Local Machine** as the deployment target (if you are running on Windows 8.1).
 
   * For Windows Phone 8.1, choose one of the Emulator 8.1 options.
 
@@ -196,7 +197,7 @@ When debugging on a Windows 8.1 dev machine, you may get a WWAHost runtime error
 
 When you are using the AngularJS routing module (Ionic starter templates often use this module), you may need to include a call to `aHrefSanitizationWhitelist`.
 
-If you see this dialog box, you have likely run into this issue.
+If you see the dialog box shown here, you have likely run into this issue.
 
 ![partial pages don't load](media/tutorial-ionic/ionic-error-partial-pages.png)
 
@@ -219,8 +220,10 @@ so that it looks like this:
 .config(function ($compileProvider, $stateProvider, $urlRouterProvider) {
   ```
 
-### Unhandled exception running on Windows 8.1?
+### Unhandled exception running on Windows?
 
 If you see the following unhandled exception when targeting Win/WinPhone 8.1, follow the [earlier steps](#configWindows) to call platformOverrides.js to fix this issue.
 
 ![unhandled exception](media/tutorial-ionic/ionic-unhandled-exception.png)
+
+If you see the same error when targeting Windows 10, make sure you set **Windows 10.0** as the target in the Windows tab of the configuation designer.
