@@ -22,7 +22,9 @@
 
 To follow these steps, you must:
 
-1. [Install Visual Studio 2015](http://go.microsoft.com/fwlink/?LinkID=533794) with Visual Studio Tools for Apache Cordova.
+1. [Install Visual Studio 2015](http://go.microsoft.com/fwlink/?LinkID=533794).
+
+  When you install Visual Studio, make sure you include the optional components, **HTML/JavaScript (Apache Cordova)** under Cross-Platform Mobile Development.
 
 2. Make sure your Visual Studio setup is correct by creating and running the default Blank App template.
 
@@ -51,7 +53,7 @@ To follow these steps, you must:
     ionic start ionicMySideMenu sidemenu
     ```
 
-  Ionic creates the project in your current folder.
+    Ionic creates the project in your current folder.
 
 4. Use the same command to install more templates, such as:
 
@@ -86,7 +88,7 @@ For each of the Ionic starter app templates that you installed and want to run, 
     ionic platform add Android
     ```
 
-  Or, you can add the platform by building in VS (choose **Build** > **Build Solution**).
+    Or, you can add the platform by building in VS (choose **Build** > **Build Solution**).
 
 2. Choose **Android** as a debug target (Solution Platforms list), and to get the app running choose a target such as Ripple (Chrome required) or the **VS Emulator 5" KitKat (4.4)** (Hyper-V required).
 
@@ -148,7 +150,7 @@ To target Windows 10 in the app, you need to:
 
     > **Note**: If you see the TypeScript error or the Keyboard plugin error, see the previous steps for Android to resolve.
 
-## Errors in the Ionic starter apps?
+## Common issues and workarounds
 
 A few errors are fairly common in the starter templates when debugging in Visual Studio.
 
