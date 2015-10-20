@@ -98,28 +98,6 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
               </tr>
               <tr>
-                <td>
-                  <p>
-                    <br>
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-              </tr>
-              <tr>
                 <td rowspan="8">
                   <p>
                     <strong>
@@ -195,29 +173,6 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>No</p>
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <p>
-                    <br>
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-              </tr>
-              <tr>
                 <td rowspan="5">
                   <p>
                     <strong>Code</strong>
@@ -298,29 +253,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
               </tr>
               <tr>
-                <td>
-                  <p>
-                    <br>
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td rowspan="5">
+                <td rowspan="6">
                   <p>
                     <strong>
                       <span>
@@ -336,7 +269,15 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>Build machines must have Apache Cordova installed; an OSX machine can also be a build server for iOS. See <a href="https://github.com/Microsoft/cordova-docs/blob/master/tutorial-team-build/TFS2015.md">Using Tools for Apache Cordova Apps with Visual Studio Online and Team Foundation Services 2015</a> (Github) or <a href="http://go.microsoft.com/fwlink/?LinkID=533770" target="_blank">Using Tools for Apache Cordova with Team Foundation Services 2013</a> (GitHub).</p>
+                  <p>Build machines must have Apache Cordova installed; an OSX machine can also be a build server for iOS. 
+                  <ol>
+                    <li>
+                      TFS 2015 - See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>
+                    </li>
+                    <li>
+                      TFS 2013 - See <a href="../tutorial-team-build/TFS2013.md">Using Tools for Apache Cordova with TFS 2013</a>
+                    </li>
+                  </ol>
                 </td>
               </tr>
               <tr>
@@ -347,7 +288,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>See <a href="https://github.com/Microsoft/cordova-docs/blob/master/tutorial-team-build/TFS2015.md">Using Tools for Apache Cordova Apps with Visual Studio Online and Team Foundation Services 2015</a> (Github) for instructions.</p>
+                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a> for instructions.</p>
                 </td>
               </tr>
               <tr>
@@ -358,7 +299,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>See <a href="https://github.com/Microsoft/cordova-docs/blob/master/tutorial-team-build/TFS2015.md">Using Tools for Apache Cordova Apps with Visual Studio Online and Team Foundation Services 2015</a> (Github). Also see <a href="http://listofsoftwareontfshostedbuildserver.azurewebsites.net/">http://listofsoftwareontfshostedbuildserver.azurewebsites.net/</a> for the list of software installed on the hosted controller.</p>
+                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>. Also see <a href="http://listofsoftwareontfshostedbuildserver.azurewebsites.net/">Software on the Hosted Build Server</a> for the list of software installed on the hosted controller.</p>
                 </td>
               </tr>
               <tr>
@@ -369,7 +310,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=613703" target="_blank">Using Tools for Apache Cordova with the Jenkins CI System</a> (GitHub), <a href="http://go.microsoft.com/fwlink/?LinkID=533742" target="_blank">Using Gulp to Build Cordova Projects</a> (GitHub), or <a href="https://github.com/Microsoft/cordova-docs/tree/master/tutorial-team-build">Building Cordova Apps in a Team/Continuous Integration Environment</a> (GitHub) for instructions.</p>
+                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=613703" target="_blank">Using Tools for Apache Cordova with the Jenkins CI System</a> for instructions.</p>
                 </td>
               </tr>
               <tr>
@@ -381,7 +322,6 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                 </td>
                 <td>
                   <p>
-
                   </p>
                 </td>
               </tr>
@@ -393,29 +333,15 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>See <a href="https://github.com/Microsoft/cordova-docs/blob/master/tutorial-team-build/TFS2015.md">Using Tools for Apache Cordova Apps with Visual Studio Online and Team Foundation Services 2015</a> (GitHub), <a href="http://go.microsoft.com/fwlink/?LinkID=533770" target="_blank">Using Tools for Apache Cordova with Team Foundation Services 2013</a> (GitHub), <a href="http://go.microsoft.com/fwlink/?LinkID=613703" target="_blank">Using Tools for Apache Cordova with the Jenkins CI System</a> (GitHub), or <a href="https://github.com/Microsoft/cordova-docs/tree/master/tutorial-team-build">Building Cordova Apps in a Team/Continuous Integration Environment</a> (GitHub) for instructions.</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
                   <p>
-                    <br>
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
+                  <ol>
+                    <li>
+                      TFS 2015 / VSO - Select "Continous Integration" under the "Triggers" tab of our Build Definition. See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>.
+                    </li>
+                    <li>
+                      TFS 2013 - See [Specify Build Triggers and Reasons](http://go.microsoft.com/fwlink/?LinkID=691211) in TFS 2013 documentation.
+                    </li>
+                  </ol>
                 </td>
               </tr>
               <tr>
@@ -519,28 +445,6 @@ Android emulators only</p>
                 </td>
               </tr>
               <tr>
-                <td>
-                  <p>
-                    <br>
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-              </tr>
-              <tr>
                 <td rowspan="4">
                   <p>
                     <strong>Diagnose</strong>
@@ -598,28 +502,7 @@ Android emulators only</p>
                   <p>On Windows, Cordova apps run as native Windows apps so all tools are available. These tools are not available when running the app on other platforms.</p>
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <p>
-                    <br>
-                  </p>
-                </td>
-                <td>
-                  <p>
 
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-              </tr>
               <tr>
                 <td rowspan="3">
                   <p>
@@ -663,29 +546,7 @@ Android emulators only</p>
                   <p>n/a</p>
                 </td>
                 <td>
-                  <p>Store submissions always involve manual processes that are unique to each marketplace. See <a href="https://github.com/Microsoft/cordova-docs/tree/master/tutorial-package-publish">Package and Publish your Cordova Applications</a> (GitHub).</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <br>
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
-                </td>
-                <td>
-                  <p>
-
-                  </p>
+                  <p>Store submissions always involve manual processes that are unique to each marketplace. See <a href="../package-and-publish/package-app-built-with-visual-studio.md">Package and Publish your Cordova Applications</a></p>
                 </td>
               </tr>
               <tr>

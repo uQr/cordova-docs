@@ -2,11 +2,9 @@
   description="Invoke a Gulp task in a Cordova build"
   services=""
   documentationCenter=""
-  authors="Chuxel" />
+  authors="clantz" />
 
 #<a name="invoke"></a>Invoke a Gulp task in a Cordova build
-> **Important:** This tutorial applies to Visual Studio 2015 and does not apply to Visual Studio 2013 CTPs.
-
 [Gulp](http://go.microsoft.com/fwlink/?LinkID=533803) is an increasingly popular JavaScript based task runner with a large number of [useful plugins](http://go.microsoft.com/fwlink/?LinkID=533790) designed to automate common tasks for everything from compilation, to packaging, deployment, or simply copying files around. Both Gulp and the [Apache Cordova Command Line interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) are Node.js based which makes the two highly complementary technologies.
 
 You may find it useful to start a Gulp task from Visual Studio every time you build your project particularly when using a Gulp to minify your JavaScript code or compile languages like [TypeScript](http://go.microsoft.com/fwlink/?LinkID=533748), [LESS](http://go.microsoft.com/fwlink/?LinkID=533791), or [SASS](http://go.microsoft.com/fwlink/?LinkID=533792). Fortunately, this is quite easy to do thanks to the "Task Runner Explorer."
