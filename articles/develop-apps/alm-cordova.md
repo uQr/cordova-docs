@@ -269,7 +269,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>Build machines must have Apache Cordova installed; an OSX machine can also be a build server for iOS. 
+                  <p>Android, Windows, WP8, can be built on a Windows build server while a Mac can be used as a build server for iOS. 
                   <ol>
                     <li>
                       TFS 2015 - See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>
@@ -339,7 +339,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                       TFS 2015 / VSO - Select "Continous Integration" under the "Triggers" tab of our Build Definition. See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>.
                     </li>
                     <li>
-                      TFS 2013 - See [Specify Build Triggers and Reasons](http://go.microsoft.com/fwlink/?LinkID=691211) in TFS 2013 documentation.
+                      TFS 2013 - See <a href="http://go.microsoft.com/fwlink/?LinkID=691211">Specify Build Triggers and Reasons</a> in TFS 2013 documentation.
                     </li>
                   </ol>
                 </td>
@@ -384,8 +384,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Test Manager (record and playback tests)</p>
                 </td>
                 <td>
-                  <p>Windows devices and
-Android emulators only</p>
+                  <p>Windows devices and Android emulators only</p>
                 </td>
                 <td>
                   <p>
