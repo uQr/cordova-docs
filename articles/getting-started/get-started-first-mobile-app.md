@@ -22,6 +22,8 @@ In this guide, we'll give you a tour of what you can do with these tools. Along 
 
 ![Weather app](media/get-started-first-mobile-app/weather-app-overview.png)
 
+You can find the complete sample [here](https://github.com/Microsoft/cordova-samples/tree/master/weather-app).
+
 It's not much, but when you're done, this process won't seem so mysterious. In fact, it's fun and relatively simple. Where you take things from there is up to you and your imagination.
 
 Before we begin, make sure that you have the tools installed. See [install Visual Studio Tools for Apache Cordova](install-vs-tools-apache-cordova.md).
@@ -30,13 +32,11 @@ If you're ready to go, let's start.
 
 ## <a id="get-started"></a>First, Create a project
 
-1.	In Visual Studio, create a new **Blank App** project and name it *WeatherApp*.
-
-    You can find this template under **JavaScript**->**Apache Cordova Apps** in the **New Project** dialog box.
+1.	In Visual Studio, create a new **Blank App** project and name it *WeatherApp* (*You can find it under **JavaScript**->**Apache Cordova Apps** in the **New Project** dialog box*).
 
     ![Project template locations](media/get-started-first-mobile-app/blank-project-template.png)
 
-    > **Note:** If you like TypeScript, there's a template for that under **TypeScript**->**Apache Cordova Apps**. Later, I'll point you to some guidance for using it.
+    > **Note:** If you like TypeScript, there's a template for that under **TypeScript**->**Apache Cordova Apps**.
 
     After you create the project, your solution should resemble the following:
 
@@ -46,6 +46,8 @@ If you're ready to go, let's start.
 
 Most of the files in the root of the project are metadata files, but pay special attention to the **config.xml** file. It contains the settings of your app and we’ll open it later on.
 
+![root files](media/get-started-first-mobile-app/root-files.png)
+
 The **www** folder is where you’ll add HTML, JavaScript, style sheets, and any images you want to use.
 
 ![www folder](media/get-started-first-mobile-app/www.png)
@@ -54,27 +56,35 @@ It already contains some files, so you can run this app right out of the box if 
 
 The *platformOverrides.js* file is blank. We’ll revisit that file in a moment.
 
-The **merges** folder is where you add HTML, JavaScript, and style sheet files that apply to specific platforms. You’ll find some in there already. The following image shows the contents of the **android** sub-folder of the **merges** folder.
+Put platform-specific files into the **merges** and **res** folders. Let's look at each one.
+
+The **merges** folder is where you add HTML, JavaScript, and style sheet files that apply to specific platforms.  
 
 ![merges folder](media/get-started-first-mobile-app/merges.png)
 
-Notice the file named *platformOverrides.js*. It's no coincidence that it shares the same name as a file in the **www** folder. When you build your app for Android, this file replaces the *platformOverrides.js* file in the **www** folder.
+You’ll find some in there already. For example, notice the file named *platformOverrides.js*. It's no coincidence that it shares name of a file in the **www** folder.
 
-Use this pattern to add other platform-specific code, styles, or layout. In fact, we’ll do exactly that later on.
+![root files](media/get-started-first-mobile-app/platform-overrides.png)
+
+When you build your app for Android, this file replaces the *platformOverrides.js* file in the **www** folder.
+
+Match the name of any file in the **www** folder to add other platform-specific code, styles, or layout. In fact, we’ll do exactly that later on.
 
 The **res** folder is where you add icons, splash screens, signing certificates and any other platform-specific files.
 
 ![res folder](media/get-started-first-mobile-app/res-folder.png)
 
-But before we get bogged down on all of these details, let’s run the app now.
+But before we get bogged down on all of these details, let’s run the project now.
 
-## <a id="run"></a>Run your app
+## <a id="run"></a>Run your project
 
 1. On the Standard toolbar, choose the **Ripple – Nexus (Galaxy)** button.
 
     ![Ripple Emulator](media/get-started-first-mobile-app/ripple-start.png)
 
-    Your app opens in Apache Ripple.
+    Your app opens in Apache Ripple and it looks like this because we haven't added any code yet.
+
+    ![Ripple Emulator](media/get-started-first-mobile-app/blank-app.png)
 
     Apache Ripple is a free mobile simulator. If you haven’t used it before, try a few things while you have it open. For example, change the device orientation or the platform and see how your app appears. Apache Ripple is probably the easiest way to see the effect of your changes as you develop.
 
@@ -84,11 +94,17 @@ But before we get bogged down on all of these details, let’s run the app now.
 
     You can also run your app in Android, iOS, and Windows device emulators. An emulator gives you a bit more of a realistic device experience.
 
-3. Find the platform list on the Standard toolbar. Then, choose a platform and an emulator.
+    To see them all, choose any platform from the platform list on the Standard toolbar.
+
+    ![Platform](media/get-started-first-mobile-app/platform-selector.png)
+
+    Then, choose an emulator.
 
     ![Emulators](media/get-started-first-mobile-app/emulators.png)
 
-    Run your app in other emulators if you want, but don't use any of the iOS emulators yet. That's a little more advanced. At the end of this article, I'll point you to some guidance for doing that.
+    Run your app in any of these emulators if you want, but don't use any of the iOS emulators yet because you need a Mac to use them, and setting up the connection between Visual Studio and the Mac is a little advanced for this guide.
+
+    At the end of this article, I'll point you to some guidance for doing that.
 
 ## <a id="settings"></a>Find app settings
 
@@ -104,21 +120,27 @@ These options and many more are captured in the **config.xml** file of your proj
 
 2. Choose any tab on this designer to view a group of settings.
 
-    For example, choose the **Plugins** to tab to add or remove *plugins*. You can use *plugins* to  access a device capability such as the camera on a phone. We'll discuss plug-ins a bit later.
+    For example, choose the **Plugins** to tab to add or remove *plugins*. You can use *plugins* to access a device capability such as the camera on a phone.
 
-    When you're done exploring, close the designer and we'll build a basic app to get an idea of how things flow.
+    You'll find some the more commonly used plug-ins in the **Core** page.
+
+    ![Configuration Designer](media/get-started-first-mobile-app/core-plugins.png)
+
+    You can find hundreds of other plugins in the [Cordova plugins registry](http://cordova.apache.org/plugins/).  To add them, you'll have to edit the config.xml file directly. It's not difficult, and at the end of this article, I'll point you to some guidance for doing that.
+
+    Use the **Custom** page to add plugins that don't appear in the [Cordova plugins registry](http://cordova.apache.org/plugins/). These could be plugins that you or a colleague create for some specific purpose and then save to your local drive or to a GitHub repository.
+
+    ![Configuration Designer](media/get-started-first-mobile-app/custom-plugins.png)
+
+    Now let's build a basic app to get an idea of how things flow.
 
 ## <a id="build-something"></a>Start Small: Build a basic app
 
 Apps can be as complicated or as simple as you want them to be. The goal of this section is to build a very basic single page app that shows the weather conditions of any area in the United States.
 
-You can find the complete sample [here](https://github.com/Microsoft/cordova-samples/tree/master/weather-app).
-
 ### Add a package
 
 First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project. If you're not familiar with JQuery, it's a just a JavaScript library that makes certain tasks easier such as changing the properties of a control or handling it's events, and that's exactly what we'll use it for.
-
-> **Tip**: There is more than one way to add packages like this one to your project. After you've got a little experience, check out Bower. Bower is a bit advanced for this discussion, but when you're ready to explore more advanced features, we've created a topic that helps you use it.
 
 1. Choose **Tools** -> **NuGet Package Manager** -> **Manage NuGet Packages for Solution**, and add the **jQuery** NuGet package to your solution.
 
@@ -132,10 +154,9 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
 
     Now they're in the correct location.
 
-3. Add these script references to the ```<body>``` tag of your [index.html](#tour-project) file:
+3. Add this script reference to the ```<body>``` tag of your [index.html](#tour-project) file:
 
 ```html
-  <script src="scripts/index.js"></script>
   <script src="scripts/jquery-2.1.4.min.js"></script>
 ```
 
@@ -306,15 +327,15 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 		<script src="scripts/weather.js"></script>
 	```
 
-    When you're done, your script reference should look like the following.
+    When you're done, your script reference should look something like the following.
 
 	```html   
 		<body>
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/weather.js"></script>
 		<script src="cordova.js"></script>
 		<script src="scripts/platformOverrides.js"></script>
 		<script src="scripts/index.js"></script>
-		<script src="scripts/jquery-2.1.4.min.js"></script>
-		<script src="scripts/weather.js"></script>
 	```
 
 ## Run your app in an Emulator
@@ -331,7 +352,7 @@ Let's run the app, but this time let's use an emulator.
 
     ![Weather App](media/get-started-first-mobile-app/weather-app-overview.png)
 
-    What's great here is that this app is completely cross platform. If you have a little extra time, run this app in a Windows emulator. You can use an iOS emulator, but that's a little more advanced. At the end of this article, I'll point you to some guidance for doing that.
+    What's great here is that this app is completely cross platform. If you have a little extra time, run this app in a Windows Phone emulator.
 
 ## <a id="find-fix"></a>Find and fix problems
 
@@ -339,23 +360,23 @@ A big benefit of Visual Studio is its powerful debugger. If you're already famil
 
 ### Breakpoints and conditional breakpoints
 
-Run your app. This time, try a Windows emulator.
+Run your app. This time, try a Windows Phone emulator.
 
-1. In the platforms list, choose **Windows Phone (Universal)**.
-
-    ![Windows Emulators](media/get-started-first-mobile-app/windows-target.png)
-
-2. In the list of Windows emulators, choose the first one to run your app.
-
-    ![Windows Emulator](media/get-started-first-mobile-app/windows-emulator.png)
-
-2. After your app starts, open the **weather.js** file, and set a *breakpoint* by clicking the margin next to this line:
+1. Open the **weather.js** file, and set a *breakpoint* by clicking the margin next to this line:
 
 	```javascript        
 	  $('#description').text(weather.description);
 	```
 
-3. In the running app, type a valid United States zip code into the edit box, and then press the **Get Weather** button.
+2. In the platforms list, choose **Windows Phone (Universal)**.
+
+    ![Windows Phone Emulators](media/get-started-first-mobile-app/windows-target.png)
+
+3. In the list of Windows Phone emulators, choose the first one to run your app.
+
+    ![Windows Phone Emulator](media/get-started-first-mobile-app/windows-emulator.png)
+
+4. In the running app, type a valid United States zip code into the edit box, and then press the **Get Weather** button.
 
     Execution stops at your breakpoint.  Hover over objects to explore their values.
 
@@ -363,11 +384,11 @@ Run your app. This time, try a Windows emulator.
 
     Set *conditional breakpoints* if you only want to explore objects only when an object has a specific value. Let's try that.
 
-4. Right-click the breakpoint and choose **Conditions**.
+5. Right-click the breakpoint and choose **Conditions**.
 
     ![Conditional Breakpoint](media/get-started-first-mobile-app/breakpoint.png)
 
-5. Select the **Conditions** checkbox, choose **Condition Expression**, **is true**, and **weather.description=="Yahoo! Weather for Redmond WA"**.
+6. Select the **Conditions** checkbox, choose **Condition Expression**, **is true**, and **weather.description=="Yahoo! Weather for Redmond WA"**.
 
     ![Conditional Expression](media/get-started-first-mobile-app/breakpoint-condition.png)
 
@@ -619,7 +640,7 @@ Here are a few ideas about what you can explore next on your journey to build mo
 
 **Explore the plug-in registry**
 
-see [Search Cordova Plugins](http://plugins.cordova.io/npm/index.html).
+see [Search Cordova Plugins](http://cordova.apache.org/plugins/).
 
 > **Tip:** If find a plugin that doesn't appear in the **Plugins** tab of configuration designer, you can still use it. [Learn more](./develop-apps/manage-plugins.md##AddOther).
 
