@@ -37,7 +37,7 @@ CODE_SIGN_RESOURCE_RULES_PATH = $(SDKROOT)/ResourceRules.plist
 Note that you will want to remove this custom build.xcconfig file if you upgrade to the version with the full patch that is forthcoming.  This change will cause problems on future versions of Cordova (specifically cordova-ios 4.0.0 and up).
 
 ##**"You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE)" error in Output Window when building with Xcode 7 and certain Cordova plugins** 
-This is a [minor incompatiblity](https://issues.apache.org/jira/browse/CB-9721) with Cordova 5.3.3 below and Xcode 7.  Workaround:
+This is a [minor incompatibility](https://issues.apache.org/jira/browse/CB-9721) with Cordova 5.3.3 below and Xcode 7.  Workaround:
 
 1. Grab the build.xcconfig from [the 3.9.x branch of the cordova-ios repo](https://raw.githubusercontent.com/apache/cordova-ios/3.9.x/bin/templates/scripts/cordova/build.xcconfig) and place this under res/native/ios/cordova
 2. Add…
@@ -49,7 +49,7 @@ This is a [minor incompatiblity](https://issues.apache.org/jira/browse/CB-9721) 
 Note that you will want to remove this custom build.xcconfig file if you upgrade to the version with the full patch that is forthcoming.
 
 ##**"Include of non-modular header inside framework module" error in Output Window when building with Xcode 7 and certain Cordova plugins**
-This is a [minor incompatiblity](https://issues.apache.org/jira/browse/CB-9719) with Cordova 5.3.3 below and Xcode 7.  Workaround:
+This is a [minor incompatibility](https://issues.apache.org/jira/browse/CB-9719) with Cordova 5.3.3 below and Xcode 7.  Workaround:
 
 1. Grab the build.xcconfig from [the 3.9.x branch of the cordova-ios repo](https://raw.githubusercontent.com/apache/cordova-ios/3.9.x/bin/templates/scripts/cordova/build.xcconfig) and place this under res/native/ios/cordova
 2. Add…
