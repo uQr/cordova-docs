@@ -16,4 +16,4 @@
 
 # Video Walkthrough: Interoperate with third-party tools
 
-> **NOTE:** This article is depreciated. The new article can be found [here](/articles/video/interoperability.md).
+> **NOTE:** This article is deprecated. The new article can be found [here](/articles/video/interoperability.md).
