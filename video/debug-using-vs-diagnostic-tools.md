@@ -15,4 +15,4 @@
    ms.author="mikejo"/>
 # Video walkthrough: Debug using Visual Studio diagnostic tools for Cordova
 
-> **NOTE:** This article is depreciated. The new article can be found [here](/articles/video/debug-using-vs-diagnostic-tools.md).
+> **NOTE:** This article is deprecated. The new article can be found [here](/articles/video/debug-using-vs-diagnostic-tools.md).
