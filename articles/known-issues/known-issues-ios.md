@@ -36,16 +36,42 @@ CODE_SIGN_RESOURCE_RULES_PATH = $(SDKROOT)/ResourceRules.plist
 
 Note that you will want to remove this custom build.xcconfig file if you upgrade to the version with the full patch that is forthcoming.  This change will cause problems on future versions of Cordova (specifically cordova-ios 4.0.0 and up).
 
-##**Building for iOS hangs when Node.js v4.0 is installed**
+##**"You must rebuild it with bitcode enabled (Xcode setting ENABLE_BITCODE)" error in Output Window when building with Xcode 7 and certain Cordova plugins** 
+This is a [minor incompatibility](https://issues.apache.org/jira/browse/CB-9721) with Cordova 5.3.3 below and Xcode 7.  Workaround:
+
+1. Grab the build.xcconfig from [the 3.9.x branch of the cordova-ios repo](https://raw.githubusercontent.com/apache/cordova-ios/3.9.x/bin/templates/scripts/cordova/build.xcconfig) and place this under res/native/ios/cordova
+2. Add…
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+  ENABLE_BITCODE=NO
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note that you will want to remove this custom build.xcconfig file if you upgrade to the version with the full patch that is forthcoming.
+
+##**"Include of non-modular header inside framework module" error in Output Window when building with Xcode 7 and certain Cordova plugins**
+This is a [minor incompatibility](https://issues.apache.org/jira/browse/CB-9719) with Cordova 5.3.3 below and Xcode 7.  Workaround:
+
+1. Grab the build.xcconfig from [the 3.9.x branch of the cordova-ios repo](https://raw.githubusercontent.com/apache/cordova-ios/3.9.x/bin/templates/scripts/cordova/build.xcconfig) and place this under res/native/ios/cordova
+2. Add…
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+  CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
+  ~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note that you will want to remove this custom build.xcconfig file if you upgrade to the version with the full patch that is forthcoming.
+
+##**Building for iOS hangs when Node.js v4.0+ is installed with Cordova < 5.3.3**
 There is a [known compatibility issue](https://issues.apache.org/jira/browse/CB-9297) with Node.js v4 in Cordova v5.3.1 and earlier. If you have installed Node.js v4 on your build Mac, and then installed Cordova and the remotebuild agent, iOS builds can fail in the following situations:
 * The <name> element in config.xml has been changed (for example, you’re changing the name of your app).
 * A <deployment-target> element is defined in config.xml (set when using the Deployment Target dropdown in the Config file UI in Visual Studio).
 * A <target-device> element is defined in config.xml (set when using the Target iOS Version field in the Config file UI in Visual Studio).
 
-A fix is being investigated, but it will require a new version of the Cordova CLI to be released, with support added for Node.JS v4. In the meantime, we recommend that you do not use Node.js v4 on Macs running remotebuild.
+We recommend that you do not use Node.js v4 on Macs running remotebuild unless you upgrade your projects to Cordova 5.3.3 or later.
 
 ##**Incremental builds with remotebuild@1.0.1 and Visual Studio 2015 RTM is broken**
-Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug where incremental changes made to any files under the /www folder do not get updated/built on iOS.
+*Note: This was resolved in VS 2015 Tools for Apache Cordova Update 1 - We reccomend updating to the latest update rather than following this workaround.*
+
+VS 2015 RTM (no Tools for Apache Cordova updates) and remotebuild agent version 1.0.1 has a bug where incremental changes made to any files under the /www folder do not get updated/built on iOS.
 
 *Observation:*
 
@@ -73,10 +99,12 @@ Current version of VS 2015 RTM and remotebuild agent version 1.0.1 has a bug whe
 VS 2015 RTM and later versions a new "remotebuild" agent instead of vs-mda-remote. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
 
 ##**iOS Simulator does not work when using the remotebuild agent and VS 2015 RTM**
+*Note: This has been resolved in the latest version of remotebuild. Install the latest version to avoid this problem.*
 
 You need to install version 3.1.1 of the ios-sim node module. Run "npm install -g ios-sim@3.1.1" from the Terminal app in OSX to install. See [remotebuild installation instructions](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
 
 ##**iPhone 4S Simulator appears when selecting iPad or other device when using the remotebuild agent and VS 2015 RTM**
+*Note: This has been resolved in the latest version of remotebuild. Install the latest version to avoid this problem.*
 
 You need to install version 3.1.1 of the ios-sim node module. Run "npm install -g ios-sim@3.1.1" from the Terminal app in OSX to install. See [remotebuild installation instructions ](http://go.microsoft.com/fwlink/?LinkID=533745) for details.
 
