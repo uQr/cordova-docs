@@ -18,7 +18,9 @@
 
 **Chain Android SDK v23 into VS TACO feed**
 
-The newest version of Android SDK is automatically included with s VS TACo install.
+The newest version of Android SDK is automatically included with a VS TACo install.
+
+---------------------------
 
 **Plugin Installation Log**
 
