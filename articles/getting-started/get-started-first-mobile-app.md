@@ -76,7 +76,7 @@ The **res** folder is where you add icons, splash screens, signing certificates 
 
 But before we get bogged down on all of these details, let’s run the project now.
 
-## <a id="run"></a>Run your project
+## <a id="run"></a>Run your app
 
 1. On the Standard toolbar, choose the **Ripple – Nexus (Galaxy)** button.
 
@@ -156,9 +156,9 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
 
 3. Add this script reference to the ```<body>``` tag of your [index.html](#tour-project) file:
 
-```html
+   ```html
   <script src="scripts/jquery-2.1.4.min.js"></script>
-```
+   ```
 
 ### Design a page
 
@@ -166,7 +166,7 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
 
 1. Open the **index.html** file and add this style to the ```<head>``` of the page.
 
-  ```
+    ```
   <style type="text/css">
       body {
           font: 1em Sans-Serif;
@@ -183,7 +183,7 @@ First, we'll add the [JQuery](https://jquery.com/) NuGet package to your project
               text-align: right;
           }
   </style>
-  ```
+    ```
 1. In the **index.html** file and remove this line.
 
     ```html
@@ -296,8 +296,6 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 		      if (results.query.count > 0) {
 		          var weather = results.query.results.channel;
 
-		          console.log(weather);
-
 		          $('#description').text(weather.description);
 
 		          var wind = weather.wind;
@@ -384,15 +382,17 @@ Run your app. This time, try a Windows Phone emulator.
 
     Set *conditional breakpoints* if you only want to explore objects only when an object has a specific value. Let's try that.
 
-5. Right-click the breakpoint and choose **Conditions**.
+5. Press the **F5** key to continue execution.
+
+6. Right-click the breakpoint and choose **Conditions**.
 
     ![Conditional Breakpoint](media/get-started-first-mobile-app/breakpoint.png)
 
-6. Select the **Conditions** checkbox, choose **Condition Expression**, **is true**, and **weather.description=="Yahoo! Weather for Redmond WA"**.
+7. Select the **Conditions** checkbox, choose **Condition Expression**, **is true**, and **weather.description=="Yahoo! Weather for Redmond WA"**.
 
     ![Conditional Expression](media/get-started-first-mobile-app/breakpoint-condition.png)
 
-6. In the running app, type the zip code **98052** into the edit box, and then press the **Get Weather** button.
+8. In the running app, type the zip code **98052** into the edit box, and then press the **Get Weather** button.
 
     Execution stops at your breakpoint, but only because you retrieved the weather for Redmond, WA. If you use any other zip code, execution won't stop.
 
@@ -402,7 +402,7 @@ Run your app. This time, try a Windows Phone emulator.
 
 You can also change values on the fly while your app is running.
 
-7. With execution stopped at the breakpoint, hover over the ``description`` property, highlight the value of that property, change it to any string you want, and then press the ENTER key.
+7. With execution stopped at the breakpoint, hover over the ``description`` property of the ```weather``` object, highlight the value of that property in between the quotation marks, change it to any string you want, and then press the ENTER key.
 
     ![Edit and Continue](media/get-started-first-mobile-app/edit-continue.png)
 
