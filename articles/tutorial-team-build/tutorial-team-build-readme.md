@@ -8,7 +8,7 @@
 With the release of Visual Studio 2015, you now have a number of options for how you can integrate Cordova apps with your favorite team / continuous integration (CI) server thanks to the fact that projects created in Visual Studio are standard [Apache Cordova Command Line Interface](http://go.microsoft.com/fwlink/?LinkID=533773) (CLI) projects.
 
 ##Visual Studio Online and TFS 2015 Quick Start
-Visual Studio Online and TFS 2015 can take advantage of a pre-built Cordova tasks that add additional features to streamline setup like managaging certificates for iOS! Simple install the [VSO Cordova Extension](http://go.microsoft.com/fwlink/?LinkID=691188) and add a Cordova Build task to your build definition. See [Getting Started with Cordova & TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=691186) for details.
+Visual Studio Online and TFS 2015 can take advantage of a pre-built Cordova tasks that add additional features to streamline setup like managaging certificates for iOS! Simply install the [VSO Cordova Extension](http://go.microsoft.com/fwlink/?LinkID=691188) and add a Cordova Build task to your build definition. See [Getting Started with Cordova & TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=691186) for details.
 
 ##Gulp Build Quick Start
 In this tutorial, we will cover how you can get your project running in nearly any CI system quickly using the [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) and Gulp. Note that the method described here can be used with Visual Studio Online, TFS 2015, Jenkins, and others but will **not** work with TFS 2013. See [Tutorials on Specific CI Systems](#ci) for details.
