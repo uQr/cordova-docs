@@ -22,7 +22,7 @@ See the ["Using Gulp to Build Cordova Projects" tutorial](gulp-ci.md) for the ba
         "devDependencies": {
             "gulp": "latest",
             "gulp-typescript": "latest"
-            "taco-team-build": "http://aka.ms/tacoteambuild-rel"
+            "taco-team-build": "latest"
     	}
     }
 ```

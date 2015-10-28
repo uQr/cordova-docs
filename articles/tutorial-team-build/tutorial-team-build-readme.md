@@ -22,19 +22,19 @@ To get going quickly, follow these steps:
     * **iOS** requires Xcode (from the Mac app store) and [Node.js](http://go.microsoft.com/fwlink/?LinkID=396867)
     * See the [General CI tutorial](./general.md#depends) or [Install Dependencies Manually](https://msdn.microsoft.com/en-us/library/dn771551.aspx) in MSDN for some information on what to install for a given platform.
 
-2. **Update package.json in your project:** Add these lines to a package.json file in your project. Use [this version](https://github.com/Chuxel/taco-team-build/blob/master/samples/gulp/package.json) if you do not yet have a package.json file in the root of your project.
+2. **Update package.json in your project:** Add these lines to a package.json file in your project. Use [this version](http://go.microsoft.com/fwlink/?LinkID=691923) if you do not yet have a package.json file in the root of your project.
 
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
     {
       "devDependencies": {
         "gulp": "latest",
         "gulp-typescript": "latest",
-        "taco-team-build": "http://aka.ms/tacoteambuild-rel"
+        "taco-team-build": "latest"
       }
     }
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. **Add a gulpfile to your project:** Add [this Gulp file](https://github.com/Chuxel/taco-team-build/blob/master/samples/gulp/gulpfile.js) to the root of your project
+3. **Add a gulpfile to your project:** Add [this Gulp file](http://go.microsoft.com/fwlink/?LinkID=691922) to the root of your project
 
 	![gulpfile.js in project](media/tutorial-team-build-readme/quick-1.png)
 

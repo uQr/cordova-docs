@@ -9,7 +9,7 @@
 
 Because it can run on Windows or OSX, Gulp can be extremely useful as a unified cross-platform build language for automating and testing your builds in a team / continuous integration (CI) environment such as Team Foundation Services 2015 or Visual Studio Online. You might also prefer to use a Gulp-based workflow rather than using the Cordova CLI itself.
 
-For specifics on using Gulp with TFS 2015, see the  [abridged tutorial on specifics building Cordova apps using Gulp and TFS 2015 or Visual Studio Online](./tutorial-team-build/tfs2015.md). Be aware that [TFS 2013 requires a different approach](./tutorial-team-build/tfs2013.md) because MSBuild must be the primary build language.
+For specifics on using Gulp with TFS 2015, see the  [abridged tutorial on specifics building Cordova apps using Gulp and TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=691186). Be aware that [TFS 2013 requires a different approach](./tutorial-team-build/tfs2013.md) because MSBuild must be the primary build language.
 
 ##Using cordova-lib from Gulp
 The Cordova CLI internally uses a node module called cordova-lib that encapsulates all of the CLI's core functionality in a series of JavaScript APIs. This module is also released as an npm package at the same time the Cordova CLI is released. It is therefore relatively straight forward to use cordova-lib directly from a Gulp script.
@@ -81,7 +81,7 @@ Otherwise you can follow these steps:
     {
         "devDependencies": {
 	        "gulp": "latest",
-	        "taco-team-build": "http://aka.ms/tacoteambuild-rel"
+	        "taco-team-build": "latest"
         }
     }
 ```
