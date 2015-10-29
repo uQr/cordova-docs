@@ -30,7 +30,7 @@ Before we begin, make sure that you have the tools installed. See [install Visua
 
 If you're ready to go, let's start.
 
-## <a id="get-started"></a>First, Create a project
+## <a id="get-started"></a>First, create a project
 
 1.	In Visual Studio, create a new **Blank App** project and name it *WeatherApp* (*You can find it under **JavaScript**->**Apache Cordova Apps** in the **New Project** dialog box*).
 
@@ -342,7 +342,7 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:
     https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     ```
-  
+
     Add ```https://query.yahooapis.com``` just after ```https://ssl.gstatic.com``` in that line. When you're done, your CSP will look like this:
 
     ```html
@@ -432,7 +432,7 @@ You can also change values on the fly while your app is running.
 
     That was just a small sampling of things you can do with the Visual Studio debugger. At the end of this topic, I'll point you to a guide that gives you many more examples.
 
-### Use the Javascript Console
+### Use the JavaScript Console
 
 While the JavaScript Console is not specific to Visual Studio, it's a handy way to find and fix problems. This console appears when you start your app.
 
