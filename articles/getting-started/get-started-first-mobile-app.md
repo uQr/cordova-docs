@@ -335,19 +335,22 @@ Now we'll add the *getWeather* function that we're using to handle button's ``cl
 		<script src="scripts/platformOverrides.js"></script>
 		<script src="scripts/index.js"></script>
 	```
+
 6. Add ```https://query.yahooapis.com``` to the page's Content Security Policy (CSP). The CSP is just a line of HTML that is located inside of the ```<head>``` of the page. It looks like this:
 
-  ```html
+    ```html
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:
     https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-  ```
-  Add ```https://query.yahooapis.com``` just after ```https://ssl.gstatic.com``` in that line. When you're done, your CSP will look like this:
+    ```
+  
+    Add ```https://query.yahooapis.com``` just after ```https://ssl.gstatic.com``` in that line. When you're done, your CSP will look like this:
 
-  ```html
+    ```html
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:
     https://ssl.gstatic.com https://query.yahooapis.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-  ```
-  By adding ```https://query.yahooapis.com``` to your CSP, you're giving this page permission to get content from the Yahoo weather service.
+    ```
+
+    By adding ```https://query.yahooapis.com``` to your CSP, you're giving this page permission to get content from the Yahoo weather service.
 
 ## Run your app in an Emulator
 
