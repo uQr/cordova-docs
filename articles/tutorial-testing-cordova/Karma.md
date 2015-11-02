@@ -15,7 +15,7 @@
 #Test Apache Cordova apps with Karma and Jasmine
 ===================
 
-In this article, you will learn how to use the [Karma test runner](http://karma-runner.github.io/0.13/index.html) with the [Jasmine test framework](http://jasmine.github.io/) in Visual Studio 2015. To help with this, we are going to look at a simple Apache Cordova project. Download the file here: [Calculator.zip](karma_files/Calculator.zip?raw=true)
+In this article, you will learn how to use the [Karma test runner](http://karma-runner.github.io/0.13/index.html) with the [Jasmine test framework](http://jasmine.github.io/) in Visual Studio 2015. To help with this, we are going to look at a simple Apache Cordova project. Download the file here: [Calculator.zip](https://github.com/Microsoft/cordova-docs/blob/master/articles/tutorial-testing-cordova/karma_files/Calculator.zip?raw=true)
 
 Once you’ve downloaded and opened this project in Visual Studio, the folder structure of this project should look very similar to that of a new Apache Cordova project template. The difference is that there are some additional files that we’ve added, and these files are highlighted below:  
 
@@ -128,4 +128,4 @@ In this article, you learned how to use Karma on Visual Studio. You first downlo
 If you would like to use the Visual Studio Test Explorer to test out your JavaScript code, try out Chutzpah <link to Chutzpah>!
 
 
-A competed version of this project is provided for your use. Upon opening the solution file, please wait for all Node dependencies to automatically install. Once this is done, click on View | Other Windows | Task Runner Explorer, and you should see the gulp tasks ready to run. Download the completed version of this project : [Calculator_Final.zip](karma_files/Calculator_Final.zip?raw=true)
+A competed version of this project is provided for your use. Upon opening the solution file, please wait for all Node dependencies to automatically install. Once this is done, click on View | Other Windows | Task Runner Explorer, and you should see the gulp tasks ready to run. Download the completed version of this project : [Calculator_Final.zip](https://github.com/Microsoft/cordova-docs/blob/master/articles/tutorial-testing-cordova/karma_files/Calculator_Final.zip?raw=true)
