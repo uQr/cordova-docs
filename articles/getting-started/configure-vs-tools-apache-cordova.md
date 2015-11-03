@@ -114,26 +114,25 @@ If you need to set this environment variable manually, see [Override system envi
 
            If you need to set this environment variable manually, see [Override system environment variables](#env-var).
 
-          >**Tip:**
-          If you install the Android SDK to its default location on Windows, it gets installed to C:\Program Files (x86)\Android\android-sdk.
+          >**Tip:** If you install the Android SDK to its default location on Windows, it gets installed to C:\Program Files (x86)\Android\android-sdk.
 
-         * If you want to use the Google Android Emulator to emulate a 5.1.x device:
+       * If you want to use the Google Android Emulator to emulate a 5.1.x device:
 
-            * ARM EABI v7a System Image
+          * ARM EABI v7a System Image
 
-            * Intel x86 Atom System Image
+          * Intel x86 Atom System Image
 
-            * Google APIs (x86 System Image)
+          * Google APIs (x86 System Image)
 
-            * Google APIs (ARM System Image)
+          * Google APIs (ARM System Image)
 
-            * Apple iTunes ([x86](http://go.microsoft.com/fwlink/?LinkID=397715), [x64](http://go.microsoft.com/fwlink/?LinkID=397313))
+          * Apple iTunes ([x86](http://go.microsoft.com/fwlink/?LinkID=397715), [x64](http://go.microsoft.com/fwlink/?LinkID=397313))
 
-            * WebSocket4Net (required if you’re developing your app on Windows 7)
+          * WebSocket4Net (required if you’re developing your app on Windows 7)
 
-              1. Download WebSocket4Net(0.9).Binaries.zip from [CodePlex](http://go.microsoft.com/fwlink/?LinkID=403031).
-              2. Unzip the binaries and then unblock net45\Release\WebSocket4Net.dll. To unblock the DLL, open the file Properties for the DLL and choose Unblock in the General tab (at the bottom of the dialog box).
-              3. After you unblock the DLL, copy net45\Release\WebSocket4Net.dll into the %ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\WebClient\Diagnostics\ToolWindows folder on your computer.
+            1. Download WebSocket4Net(0.9).Binaries.zip from [CodePlex](http://go.microsoft.com/fwlink/?LinkID=403031).
+            2. Unzip the binaries and then unblock net45\Release\WebSocket4Net.dll. To unblock the DLL, open the file Properties for the DLL and choose Unblock in the General tab (at the bottom of the dialog box).
+            3. After you unblock the DLL, copy net45\Release\WebSocket4Net.dll into the %ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\WebClient\Diagnostics\ToolWindows folder on your computer.
 
 ##<a name="env-var"></a>Override system environment variables
 
