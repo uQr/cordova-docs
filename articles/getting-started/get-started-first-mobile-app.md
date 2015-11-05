@@ -14,7 +14,7 @@
    ms.date="10/19/2015"
    ms.author="normesta"/>
 
-# Get started with VS Tools for Apache Cordova
+# Get started with Visual Studio Tools for Apache Cordova
 
 You can use Visual Studio Tools for Apache Cordova to build apps that run on iOS, Android, and Windows devices and share nearly 100% of your code ([learn more](https://www.visualstudio.com/explore/cordova-vs)).
 
