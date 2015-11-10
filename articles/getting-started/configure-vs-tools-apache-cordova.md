@@ -165,7 +165,7 @@ Visual Studio uses these environment variables when building and running your ap
     * To reset an environment variable to its default value, clear its check box or choose **Reset to Default**.
 
 3. Choose **OK** to save your changes and close the dialog box.
-![Environment variables, warning message](media/configure-vs-tools-apache-cordova/IC752249.png)
+![Environment variables, warning message](media/configure-vs-tools-apache-cordova/options-dialog.png)
 
 ##<a name="IosPin"></a>Generate a new security PIN
 
