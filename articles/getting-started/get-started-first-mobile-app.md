@@ -11,7 +11,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="10/19/2015"
+   ms.date="11/10/2015"
    ms.author="normesta"/>
 
 # Get started with Visual Studio Tools for Apache Cordova
@@ -629,15 +629,17 @@ In some cases, you'll have to tweak the layout of your pages so that they appear
 
 1. Return to the **android** sub-folder in your **merges** folder.
 
-2. Right-click the **css** folder, and then choose **Add** -> **New CSS file**.
+2. Right-click the **android** folder, choose **Add** -> **New Folder**, and name the folder **css**.
 
-3. Name the file *index.css*, and then choose the **Add** button.
+3. Right-click the **css** folder, and then choose **Add** -> **New CSS file**.
+
+4. Name the file *index.css*, and then choose the **Add** button.
 
     You now have a file named **index.css** in both the **android** folder and the **www** folder.
 
     ![Platform-Specific style sheet File](media/get-started-first-mobile-app/android-css-file.png)
 
-4. Replace the contents of the new **index.css** file with the following.
+5. Replace the contents of the new **index.css** file with the following.
 
 	```css
 		body {
@@ -646,7 +648,7 @@ In some cases, you'll have to tweak the layout of your pages so that they appear
 		  color:white;
 		}
 	```
-5. Run your app in the Apache Ripple Simulator.
+6. Run your app in the Apache Ripple Simulator.
 
     The app has a blue background and white foreground because the **index.css** file in the **android** folder replaces the **index.css** file in the **www** folder for the Android version of your app.
 
