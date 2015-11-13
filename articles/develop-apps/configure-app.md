@@ -16,7 +16,7 @@
 
 # Add platform-specific content to your Cordova project
 
-Add platform-specific images, functions, styles, and configuration files.  
+Tailor your app to specific platforms by add adding platform-specific images, functions, styles, and configuration files.  
 
 ## <a id="VisualAssets"></a>Add platform-specific visual assets
 
@@ -313,15 +313,15 @@ The following table provides specific information for each platform.
     <tbody>
         <tr>
             <td>Android</td>
-            <td style="text-align:left">Place the custom <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">AndroidManifest.xml</a> file in the res/native/android folder to configure settings such as custom intents. Use the generated version of the file in the platforms/android folder after building a Debug configuration of the project for Android.</td>
+            <td style="text-align:left">Place the custom <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">AndroidManifest.xml</a> file in the res/native/android folder to configure settings such as custom intents. <br><br>Use the generated version of the file in the platforms/android folder after building a Debug configuration of the project for Android.></td>
         </tr>
         <tr>
             <td>iOS</td>
-            <td style="text-align:left">Place a custom <a href="http://go.microsoft.com/fwlink/?LinkID=532829">build-debug.xcconfig</a> or <a href="http://go.microsoft.com/fwlink/?LinkID=532830">build-release.xcconfig</a> file in res/native/ios/cordova to override signing identities and other <a href="http://go.microsoft.com/fwlink/?LinkID=532831">build settings</a> for these configurations. Place a custom <a href="http://go.microsoft.com/fwlink/?LinkID=532832">Info.plist</a> file in the res/native/ios/config.xml display name folder to override settings like splashscreens or icons. The Info.plist filename must be renamed as follows: config.xml display name-Info.plist to update <a href="http://go.microsoft.com/fwlink/?LinkID=532834">iOS framework keys</a>. You can find a sample version of these and other files in the <a href="http://go.microsoft.com/fwlink/?LinkID=532835">cordova-ios</a> GitHub repository, or when using the remote agent under the ~/remote-builds/build number/cordovaApp folder on your Mac.</td>
+            <td style="text-align:left">Place a custom <a href="http://go.microsoft.com/fwlink/?LinkID=532829">build-debug.xcconfig</a> or <a href="http://go.microsoft.com/fwlink/?LinkID=532830">build-release.xcconfig</a> file in res/native/ios/cordova to override signing identities and other <a href="http://go.microsoft.com/fwlink/?LinkID=532831">build settings</a> for these configurations. <br><br>Place a custom <a href="http://go.microsoft.com/fwlink/?LinkID=532832">Info.plist</a> file in the res/native/ios/config.xml display name folder to override settings like splashscreens or icons. <br>The Info.plist filename must be renamed as follows: config.xml display name-Info.plist to update <a href="http://go.microsoft.com/fwlink/?LinkID=532834">iOS framework keys</a>. You can find a sample version of these and other files in the <a href="http://go.microsoft.com/fwlink/?LinkID=532835">cordova-ios</a> GitHub repository, or when using the remote agent under the ~/remote-builds/build number/cordovaApp folder on your Mac.</td>
         </tr>
         <tr>
             <td>Windows</td>
-            <td style="text-align:left">Place the custom package.windows80.appxmanifest (Windows 8.0), package.windows.appxmanifest (Windows 8.1), or package.phone.appxmanifestfile (Windows Phone 8.1) in the res/native/windows folder to override various configuration settings. Use the generated version of the file in the platforms/windows folder after building a Debug configuration of the project for Windows or Windows Phone (Universal).</td>
+            <td style="text-align:left">Place the custom package.windows80.appxmanifest (Windows 8.0), package.windows.appxmanifest (Windows 8.1), or package.phone.appxmanifestfile (Windows Phone 8.1) in the res/native/windows folder to override various configuration settings. <br><br>Use the generated version of the file in the platforms/windows folder after building a Debug configuration of the project for Windows or Windows Phone (Universal).</td>
         </tr>
         <tr>
             <td>Windows Phone 8</td>
