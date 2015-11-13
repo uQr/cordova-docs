@@ -16,7 +16,7 @@
 
 # Add platform-specific content to your Cordova project
 
-Tailor your app to specific platforms by add adding platform-specific images, functions, styles, and configuration files.  
+Tailor your app to specific platforms with images, functions, styles, and configuration files.  
 
 ## <a id="VisualAssets"></a>Add platform-specific visual assets
 
