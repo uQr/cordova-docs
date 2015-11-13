@@ -22,7 +22,7 @@ First, review the app guidelines for each store, and then publish your app.
 
 Before you attempt to publish your app to an app store, have a look at what sorts of criteria each store uses to evaluate your app. You might find something that you have to change in your app before it will be accepted by the store. The sections below contain links to articles that can help you increase the likelihood that your app gets accepted.
 
-## Google Play (Android)
+### Google Play (Android)
 
 [Launch Checklist](http://developer.android.com/distribute/tools/launch-checklist.html)
 
@@ -32,7 +32,7 @@ Google provides an extensive and detailed checklist for getting your app ready f
 
 This topic lists an extensive array of tests your app should pass before submission to Google Play.
 
-## The Apple App Store (iOS)
+### The Apple App Store (iOS)
 
 [Common App Rejections](https://developer.apple.com/app-store/review/rejections/)
 
@@ -54,7 +54,7 @@ This topic lists an extensive array of tests your app should pass before submiss
 
 [Create an Apache Cordova App – Build a UI](../getting-started/create-first-app-using-vs-tools-apache-cordova.md#BuildUI)
 
-## The Windows Phone Store
+### The Windows Phone Store
 
 [Windows and Windows Phone Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)
 
