@@ -14,7 +14,7 @@ For specifics on using Gulp with TFS 2015, see the  [abridged tutorial on specif
 ##Using cordova-lib from Gulp
 The Cordova CLI internally uses a node module called cordova-lib that encapsulates all of the CLI's core functionality in a series of JavaScript APIs. This module is also released as an npm package at the same time the Cordova CLI is released. It is therefore relatively straight forward to use cordova-lib directly from a Gulp script.
 
-For example, this is a sample **gulpfile.js** that you can place in the root of your Cordova project that will build a release version of the Android platform:
+For example, this is a sample **gulpfile.js** that you can place in the root of your Cordova project that will build a release version of the Android platform when using **Cordova < 5.4.0**:
 
 ```typescript
 var gulp = require("gulp"),
@@ -27,6 +27,22 @@ gulp.task("default", function (callback) {
     }, callback);
 });
 ```
+
+The syntax is slightly different when using **Cordova 5.4.0+**:
+```typescript
+var gulp = require("gulp"),
+    cordova = require("cordova-lib").cordova;
+
+gulp.task("default", function (callback) {
+	cordova.build({
+    	"platforms": ["android"],
+    	"options": {
+    		argv:["--release","--gradleArg=--no-daemon"]
+    	}
+    }, callback);
+});
+```
+
 
 Note that cordova-lib functions **are asynchronous** and so you need to include the Gulp callback function passed into your task as an argument to your last API call. Note that "--gradleArg=--no-daemon" above should be added in for build automation scenarios since Cordova starts up a daemon process by default that can cause your build to appear to hang.
 
