@@ -14,9 +14,9 @@
 
 # Package your Cordova app so that you can publish it
 
-Choose Create a package for each platform you want your app to target. Then you can publish it to each of the stores.
+Create a package for each platform that you want to target. Then you can publish each package to a store.
 
-## <a id="General"></a>Configure your general app package settings (applies to all platforms)
+## <a id="General"></a>First, configure the general settings of your app package
 
 Provide details such as the package ID and version number of your app by using the *configuration designer*. To open it, double-click the **config.xml** file.
 
