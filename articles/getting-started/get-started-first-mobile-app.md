@@ -11,7 +11,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="na"
-   ms.date="10/19/2015"
+   ms.date="11/10/2015"
    ms.author="normesta"/>
 
 # Get started with Visual Studio Tools for Apache Cordova
@@ -513,7 +513,7 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 
 4. Replace the ``getLocation`` function with this complete function.
 
-	```javascript
+	 ```javascript
 		function getLocation() {
 
 		    navigator.geolocation.getCurrentPosition(onSuccess, onError, { enableHighAccuracy: true });
@@ -521,7 +521,11 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 		      $('#description').text("Determining your current location ...");
 		      $('#get-weather').prop("disabled", true);
 		   }
+    ```
 
+5. Replace the ```onSuccess``` callback function with this complete function
+
+    ```javascript
 		   var onSuccess = function (position) {
 
 		   var latitude = position.coords.latitude;
@@ -554,7 +558,7 @@ Most likely you'll want your app to do more than just show web pages on a mobile
 		    console.log('code: ' + error.code + '\n' +
 		      'message: ' + error.message + '\n');
 		   }
-	```
+    ```
 
 5. Open the **index.js** file, and add the following code to the ``onDeviceReady`` function.
 
@@ -593,23 +597,23 @@ This is where the **merges** folder becomes useful. We touched on that folder ea
 
 1. In **Solution Explorer**, expand the **www** folder, and then the **scripts** folder.
 
-3. Right-click the **weather.js** file, and choose **Copy**.
+2. Right-click the **weather.js** file, and choose **Copy**.
 
-1. In **Solution Explorer**, expand the **android** sub-folder in your **merges** folder.
+3. In **Solution Explorer**, expand the **android** sub-folder in your **merges** folder.
 
-2. Right-click the **scripts** folder, and then choose **paste**.
+4. Right-click the **scripts** folder, and then choose **paste**.
 
     You now have a copy of the **weather.js** in the **android** folder.
 
     ![Platform-Specific Javascript File](media/get-started-first-mobile-app/android-js-file.png)
 
-4. In the **weather.js** file, add the following code to the ``geolocation`` method.
+5. In the **weather.js** file, add the following code to the ``getLocation`` method.
 
 	```javascript
 		$('#app-title').text("Android Weather App");
 	```
 
-5. Run your app in the Apache Ripple Simulator.
+6. Run your app in the Apache Ripple Simulator.
 
     The app now has the title **Android Weather App** because the **index.js** file in the **android** folder replaces the **index.js** file in the **www** folder for the Android version of your app.
 
@@ -625,15 +629,17 @@ In some cases, you'll have to tweak the layout of your pages so that they appear
 
 1. Return to the **android** sub-folder in your **merges** folder.
 
-2. Right-click the **css** folder, and then choose **Add** -> **New CSS file**.
+2. Right-click the **android** folder, choose **Add** -> **New Folder**, and name the folder **css**.
 
-3. Name the file *index.css*, and then choose the **Add** button.
+3. Right-click the **css** folder, and then choose **Add** -> **New CSS file**.
+
+4. Name the file *index.css*, and then choose the **Add** button.
 
     You now have a file named **index.css** in both the **android** folder and the **www** folder.
 
     ![Platform-Specific style sheet File](media/get-started-first-mobile-app/android-css-file.png)
 
-4. Replace the contents of the new **index.css** file with the following.
+5. Replace the contents of the new **index.css** file with the following.
 
 	```css
 		body {
@@ -642,7 +648,7 @@ In some cases, you'll have to tweak the layout of your pages so that they appear
 		  color:white;
 		}
 	```
-5. Run your app in the Apache Ripple Simulator.
+6. Run your app in the Apache Ripple Simulator.
 
     The app has a blue background and white foreground because the **index.css** file in the **android** folder replaces the **index.css** file in the **www** folder for the Android version of your app.
 
@@ -663,7 +669,7 @@ see [Search Cordova Plugins](http://cordova.apache.org/plugins/).
 
 **Try using Bower to add a package to your project**
 
-see [Add packages by using Bower](./develop-apps/tutorial-using-bower,md).
+see [Add packages by using Bower](tutorial-using-bower.md).
 
 **Learn about other great ways to leverage the Visual Studio debugger**
 
