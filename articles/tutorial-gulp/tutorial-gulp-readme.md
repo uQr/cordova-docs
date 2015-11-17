@@ -205,15 +205,15 @@ Alternatively, you can follow these steps:
 
 3. Add this script to that file. It's all you need to build and package your app by using this module.
 
-   ```javascript
-   var gulp = require("gulp"),
-   cordovaBuild = require("taco-team-build");
+    ```javascript
+    var gulp = require("gulp"),
+    cordovaBuild = require("taco-team-build");
 
-   gulp.task("default", function () {
+    gulp.task("default", function () {
        return cordovaBuild.buildProject("android", ["--release", "--gradleArg=--no-daemon"])
            .then(function() { return cordovaBuild.packageProject("android"); });
-   });
-   ```
+    });
+    ```
 
    This script does the following things.
 
@@ -233,7 +233,8 @@ Alternatively, you can follow these steps:
 
    7. Packages the project.
 
-    Each method returns a *promise* so that you can chain the steps or run them concurrently.
+     Each method returns a *promise* so that you can chain the steps or run them concurrently.
+
 
 3. Use the Visual Studio Task Runner Explorer to run your task. Alternatively, run the same command line operations that were described previously:
 
@@ -400,7 +401,7 @@ npm install --save-dev gulp-uglify
 
 Before you use Gulp in a team build / CI environment, you'll need to set up your build server with all of the necessary native dependencies for the platforms you intend to build.
 
-See the “Installing Dependencies” section of the [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build/tutorial-team-build-readme.md) tutorial.
+See the “Installing Dependencies” section of the [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build/General.md) tutorial.
 
 While each build server is slightly different in terms of how you configure tasks, all you'll have to do is configure build server to run the these two commands:
 
