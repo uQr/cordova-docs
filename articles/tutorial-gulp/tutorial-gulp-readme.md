@@ -401,7 +401,7 @@ npm install --save-dev gulp-uglify
 
 Before you use Gulp in a team build / CI environment, you'll need to set up your build server with all of the necessary native dependencies for the platforms you intend to build.
 
-See the “Installing Dependencies” section of the [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build/General.md) tutorial.
+See the “Installing Dependencies” section of the [Building Cordova Apps in a Team / Continuous Integration Environment](./tutorial-team-build/general.md) tutorial.
 
 While each build server is slightly different in terms of how you configure tasks, all you'll have to do is configure build server to run the these two commands:
 
