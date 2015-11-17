@@ -19,75 +19,76 @@ makes this easy. It's a convenient way to run Gulp tasks right from Visual Studi
 First, let's install Gulp globally so that it's convenient to use from the command line as well as from Visual studio.
 
 1. Open a **Command Prompt**, and type this command:
-
-   ```
-   npm install -g gulp
-   ```
+ 
+    ```
+    npm install -g gulp
+    ```
 
 2. Create a [package.json](http://go.microsoft.com/fwlink/?LinkID=533781) file inside of your project (if you don't have one already).
 
-   This will be the location that you'll use to reference Gulp or any [Gulp plugins](http://go.microsoft.com/fwlink/?LinkID=533790) that you want to use.
+    This will be the location that you'll use to reference Gulp or any [Gulp plugins](http://go.microsoft.com/fwlink/?LinkID=533790) that you want to use.
 
-   ```json
-   {
-     "devDependencies": {
-    	"gulp": "latest"
-      }
-   }
-   ```
+    ```json
+    {
+      "devDependencies": {
+     	"gulp": "latest"
+       }
+    }
+    ```
 
 3. Update this file with any other dependencies that you want to add.
 
-   You do this manually in Visual Studio, or use the npm ```--save-dev``` flag from a Command Prompt. For example, the following command will install the [uglify Gulp plugin](http://go.microsoft.com/fwlink/?LinkID=533793), and add that plugin as a dependency:
+    You do this manually in Visual Studio, or use the npm ```--save-dev``` flag from a Command Prompt. For example, the following command will install the [uglify Gulp plugin](http://go.microsoft.com/fwlink/?LinkID=533793), and add that plugin as a dependency:
 
-   ```
-   npm install --save-dev gulp-uglify
-   ```
+    ```
+     npm install --save-dev gulp-uglify
+     ```
 
 3. Install package dependencies. You can do this in Visual Studio, and thanks to Visual Studio's command line interoperability, you can also update the package.json file outside of VS, and then use the Command Prompt to install dependencies. Let's look at each approach.
 
-   **Install dependencies by using Visual Studio:**
+    **Install dependencies by using Visual Studio:**
 
-   In **Solution Explorer**, right-click the **Dependencies** node, and then select **Restore Packages**.
+    In **Solution Explorer**, right-click the **Dependencies** node, and then select **Restore Packages**.
 
-   ![Restore Packages](media/tutorial-gulp-readme/gulp-4.png)
+    ![Restore Packages](media/tutorial-gulp-readme/gulp-4.png)
 
-   **Install dependencies by using the Command Prompt:**
+   
+    **Install dependencies by using the Command Prompt:**
 
-   In a Command Prompt, type the following:
+    In a **Command Prompt**, type the following:
 
-   ```
-   npm install
-   ```
+    ```
+     npm install
+     ```
 
-   This command is what the Task Runner Explorer execute under the covers when you select **Restore Packages** in Visual Studio.  
+    This command is what the Task Runner Explorer execute under the covers when you select **Restore Packages** in Visual Studio.  
 
-   > **Note**: In general, you should not add the generated **node_modules** folder into source control. For that reason, the **node_modules** file doesn't even appear in the Visual Studio **Solution Explorer**.
+    > **Note**: In general, you should not add the generated **node_modules** folder into source control. For that reason, the **node_modules** file doesn't even appear in the Visual Studio **Solution Explorer**.
 
 4. Create a file named **gulpfile.js**, and add that file to the root of your project. Then, add a task to it.
 
-   For example, here is a basic Gulp task.
+    For example, here is a basic Gulp task.
 
-   ```javascript
-   var gulp = require("gulp");
-   gulp.task("before-build", function() {
-	   // Add anything you want to do before the build here
-   });
-   ```
+    ```javascript
+    var gulp = require("gulp");
+    gulp.task("before-build", function() {
+	    // Add anything you want to do before the build here
+    });
+    ```
 
 5. In Visual Studio, choose **View**->**Other Windows**->**Task Runner Explorer** to open the Task Runner Explorer.
 
-   ![View Menu](media/tutorial-gulp-readme/gulp-1.png)
+    ![View Menu](media/tutorial-gulp-readme/gulp-1.png)
 
 6. Choose the **Refresh** button. Then, you'll see the Task Runner Explorer with the before-build task that we created.
 
-   ![Before Build Task](media/tutorial-gulp-readme/gulp-2.png)
+    ![Before Build Task](media/tutorial-gulp-readme/gulp-2.png)
 
 7. Attach this to the ```Before Build``` event, right-click, and then select **Bindings**->**Before Build**.
 
-   ![Before Build Task Binding](media/tutorial-gulp-readme/gulp-3.png)
+    ![Before Build Task Binding](media/tutorial-gulp-readme/gulp-3.png)
 
-   The next time that you run a build, this task runs too. You can also run tasks without binding them to an event by selecting **Run** from the same context menu.
+    The next time that you run a build, this task runs too. You can also run tasks without binding them to an event by selecting **Run** from the same context menu.
 
 ### Use bindings in command-line or CI builds
 
