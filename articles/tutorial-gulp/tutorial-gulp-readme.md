@@ -233,7 +233,7 @@ Alternatively, you can follow these steps:
 
    7. Packages the project.
 
-   Each method returns a *promise* so that you can chain the steps or run them concurrently.
+    Each method returns a *promise* so that you can chain the steps or run them concurrently.
 
 3. Use the Visual Studio Task Runner Explorer to run your task. Alternatively, run the same command line operations that were described previously:
 
@@ -297,28 +297,28 @@ If you're using TypeScript in your Cordova app project, you'll want to compile i
 
 2. If you already have a **package.json** file, open a **Command Prompt**, change directories to your project folder, and then type the following command:
 
-   ```
-    npm install --save-dev gulp-typescript
-   ```
+    ```
+     npm install --save-dev gulp-typescript
+    ```
 
-   This installs the **gulp-typescript** plugin and updates the **package.json** file. For example:
+    This installs the **gulp-typescript** plugin and updates the **package.json** file. For example:
 
-   ```json
-   {
+    ```json
+    {
         "devDependencies": {
             "gulp": "latest",
             "gulp-typescript": "latest"
             "taco-team-build": "http://aka.ms/tacoteambuild-rel"
      }
-   }
-   ```
+    }
+    ```
 
-   You can also manually edit the **package.json** file from Visual Studio and then install the dependency by right-clicking on the **Dependency** node in the **Solution Explorer** and then selecting **Restore Packages**.
+    You can also manually edit the **package.json** file from Visual Studio and then install the dependency by right-clicking on the **Dependency** node in the **Solution Explorer** and then selecting **Restore Packages**.
 
     ![Restore Packages](media/tutorial-gulp-readme/gulp-4.png)
 
 2.  Add the following task to the **gulpfile.js** file:
-
+ 
     ```javascript
       var ts = require("gulp-typescript");
 
@@ -334,8 +334,8 @@ If you're using TypeScript in your Cordova app project, you'll want to compile i
                 target: "es5"
     		}))
     		.pipe(gulp.dest("www/scripts"));
-    });
-     ```    
+      });
+      ```    
 
     You could also use a **tsconfig.json** file (like the default VS template) and add the following code instead:
 
