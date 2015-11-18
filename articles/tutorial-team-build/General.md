@@ -17,10 +17,10 @@ With the release of Visual Studio 2015, you now have a number of options for how
 
 For abridged informaiton on specific build systems, you may find this sample [taco-team-build node module](http://go.microsoft.com/fwlink/?LinkID=533736) useful along with the following tutorials:
 
-*  [Getting Started with Cordova & TFS 2015 or Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=691186)
-*  [Getting Started with Cordova & TFS 2013](./tfs2013.md)
-*  [Getting Started with Cordova & Jenkins CI](./jenkins.md)
-*  [Getting Started with Cordova & Automating Builds with Gulp](../tutorial-gulp/gulp-ci.md)
+*  [Build Apache Cordova apps with Visual Studio Team Services or Team Foundation Services 2015](http://go.microsoft.com/fwlink/?LinkID=691186)
+*  [Use the Visual Studio Tools for Apache Cordova with Team Foundation Services 2013](./tfs2013.md)
+*  [Use the Visual Studio Tools for Apache Cordova with the Jenkins CI system](./jenkins.md)
+*  [Build a Cordova project by using Gulp](../tutorial-gulp/gulp-ci.md)
 
 Read these articles to get up and running quickly!
 
@@ -85,7 +85,7 @@ Unlike Visual Studio, it's important to note that the base Cordova CLI does not 
 ##Installing Dependencies
 Cordova builds require that a number of dependencies be properly installed and configured on the system. However, exactly which dependencies are required varies based on the Cordova "platform" (Android, iOS, Windows 8.0/8.1 and Phone 8.1, Windows Phone 8.0) you want to build.
 
-Installing Visual Studio 2015 with the Tools for Apache Cordova option will automatically install these dependencies but you will still need to configure some of the environment variables by hand for Android. See [Team Foundation Services 2015 and Visual Studio Online](http://go.microsoft.com/fwlink/?LinkID=691186) for a summary of these variables.
+Installing Visual Studio 2015 with the Tools for Apache Cordova option will automatically install these dependencies but you will still need to configure some of the environment variables by hand for Android. See [Team Foundation Services 2015 and Visual Studio Team Services](http://go.microsoft.com/fwlink/?LinkID=691186) for a summary of these variables.
 
 Otherwise you can manually install only those dependencies that are needed for building the platforms you are interested in.
 

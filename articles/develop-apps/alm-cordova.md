@@ -18,7 +18,7 @@
 
 Developing apps for modern platforms involves many more activities than just writing code. DevOps (development + operations) recognizes a variety of activities across an app’s complete lifecycle. These include agile planning and tracking work, designing and implementing code, managing a source code repository, running builds, managing continuous integrations and deployments, testing (including unit tests and UI tests), running various forms of diagnostics in both development and production environments, and monitoring app performance and user behaviors in real time through telemetry and analytics.
 
-Visual Studio, Visual Studio Online, and Team Foundation Server provide a variety of DevOps capabilities (also referred to as application lifecycle management or ALM), a number of which are applicable to Cordova apps. Tools that are designed for .NET languages like C#, however, do not apply to JavaScript code. Other tools require tight integration with build and runtime environments. Because Cordova apps on Windows run as native apps, you’re able to use a variety of Visual Studio’s diagnostic tools such as performance profilers that are not available on non-Windows platforms.
+Visual Studio, Visual Studio Team Services, and Team Foundation Server provide a variety of DevOps capabilities (also referred to as application lifecycle management or ALM), a number of which are applicable to Cordova apps. Tools that are designed for .NET languages like C#, however, do not apply to JavaScript code. Other tools require tight integration with build and runtime environments. Because Cordova apps on Windows run as native apps, you’re able to use a variety of Visual Studio’s diagnostic tools such as performance profilers that are not available on non-Windows platforms.
 
 The table below identifies which Visual Studio ALM features you can expect to work well with an Apache Cordova project, and which ones have limitations. Refer to the linked documentation for details on the features themselves.
 
@@ -51,9 +51,9 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>
                     <strong>
                       <span>
-                        <a href="https://msdn.microsoft.com/en-us/library/dd286619.aspx">Track work using Visual Studio Online or Team Foundation Server</a>
+                        <a href="https://msdn.microsoft.com/en-us/library/dd286619.aspx">Track work using Visual Studio Team Services or Team Foundation Server</a>
                       </span>
-                    </strong> (using TFS or Visual Studio Online, including Team Explorer Everywhere)</p>
+                    </strong> (using TFS or Visual Studio Team Services, including Team Explorer Everywhere)</p>
                 </td>
                 <td>
                   <p>Manage backlogs and sprints</p>
@@ -272,7 +272,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>Android, Windows, WP8, can be built on a Windows build server while a Mac can be used as a build server for iOS. 
                   <ol>
                     <li>
-                      TFS 2015 - See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>
+                      TFS 2015 - See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VS Team Services and TFS 2015</a>
                     </li>
                     <li>
                       TFS 2013 - See <a href="../tutorial-team-build/TFS2013.md">Using Tools for Apache Cordova with TFS 2013</a>
@@ -282,24 +282,24 @@ The table below identifies which Visual Studio ALM features you can expect to wo
               </tr>
               <tr>
                 <td>
-                  <p>On-premises build server linked to Visual Studio Online</p>
+                  <p>On-premises build server linked to Visual Studio Team Services</p>
                 </td>
                 <td>
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a> for instructions.</p>
+                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VS Team Services and TFS 2015</a> for instructions.</p>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <p>Hosted controller service of Visual Studio Online</p>
+                  <p>Hosted controller service of Visual Studio Team Services</p>
                 </td>
                 <td>
                   <p>Yes</p>
                 </td>
                 <td>
-                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>. Also see <a href="http://listofsoftwareontfshostedbuildserver.azurewebsites.net/">Software on the Hosted Build Server</a> for the list of software installed on the hosted controller.</p>
+                  <p>See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VS Team Services and TFS 2015</a>. Also see <a href="http://listofsoftwareontfshostedbuildserver.azurewebsites.net/">Software on the Hosted Build Server</a> for the list of software installed on the hosted controller.</p>
                 </td>
               </tr>
               <tr>
@@ -336,7 +336,7 @@ The table below identifies which Visual Studio ALM features you can expect to wo
                   <p>
                   <ol>
                     <li>
-                      TFS 2015 / VSO - Select "Continous Integration" under the "Triggers" tab of our Build Definition. See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VSO and TFS 2015</a>.
+                      TFS 2015 / VS Team Services - Select "Continous Integration" under the "Triggers" tab of our Build Definition. See <a href="http://go.microsoft.com/fwlink/?LinkID=691186">Using Tools for Apache Cordova Apps with VS Team Services and TFS 2015</a>.
                     </li>
                     <li>
                       TFS 2013 - See <a href="http://go.microsoft.com/fwlink/?LinkID=691211">Specify Build Triggers and Reasons</a> in TFS 2013 documentation.
