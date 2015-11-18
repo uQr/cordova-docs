@@ -320,7 +320,7 @@ If you're using TypeScript in your Cordova app project, you'll want to compile i
    {
         "devDependencies": {
             "gulp": "latest",
-            "gulp-typescript": "latest"
+            "gulp-typescript": "latest",
             "taco-team-build": "latest"
      }
    }
@@ -413,7 +413,7 @@ npm install --save-dev gulp-uglify
 
 Before you use Gulp in a team build / CI environment, you'll need to set up your build server with all of the necessary native dependencies for the platforms you intend to build.
 
-See the “Installing Dependencies” section of the [Comperhensive CI tutorial](./tutorial-team-build/general.md) tutorial.
+See the “Installing Dependencies” section of the [Comperhensive CI tutorial](./tutorial-team-build/general.md).
 
 While each build server is slightly different in terms of how you configure tasks, all you'll have to do is configure build server to run the these two commands:
 
