@@ -170,7 +170,7 @@ A signed package lets users trust that your app was created by a source known to
 
 8. Choose **Generate**. Once you refresh your browser, you can download the developer certificate by choosing **Download**.
 
-   The certificate will download into your **downloads** folder & double-clicking this will install this file into Keychain.  This is what the Development Certificate looks like in Keychain Access.
+    The certificate will download into your **downloads** folder & double-clicking this will install this file into Keychain.  This is what the Development Certificate looks like in Keychain Access.
 
     ![ios: Using CSR](media/tutorial-package-publish-readme/ios-disCertLoc.png)
 
@@ -192,7 +192,7 @@ In order for you to generate a certificate you must request a certificate using 
 
 4. Choose **Continue**, save the file to your hard drive and choose **Done**.
 
-   Now you can go back to the distribution certificate section still active in your browser [step 7, above] and choose **Choose File**.
+    Now you can go back to the distribution certificate section still active in your browser [step 7, above] and choose **Choose File**.
 
     ![ios: Using CSR](media/tutorial-package-publish-readme/ios-usecsr.png)
 
