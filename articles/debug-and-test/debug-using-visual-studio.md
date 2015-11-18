@@ -23,7 +23,7 @@ This article matches the steps of the Cordova [Video tutorial](http://go.microso
 
 ### Use the diagnostic tools
 
-To use diagnostic tools, you must:
+To use Visual Studio to debug your Cordova apps, you must:
 
 1.  [Install Visual Studio 2015](http://go.microsoft.com/fwlink/p/?LinkId=397606) with Visual Studio Tools for Apache Cordova.
 
