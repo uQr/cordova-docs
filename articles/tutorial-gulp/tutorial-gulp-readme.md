@@ -424,4 +424,4 @@ npm install
 
 Then, set an environment variable named **CORDOVA_CACHE** so that it points to the location on your build server that you want to use to cache multiple versions of cordova-lib and Cordova platforms.
 
-See the [Jenkins](./tutorial-team-build/Jenkins.md) tutorial for a specific example.
+See the [Jenkins](./tutorial-team-build/jenkins.md) tutorial for a specific example.
