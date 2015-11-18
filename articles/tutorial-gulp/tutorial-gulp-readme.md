@@ -328,7 +328,7 @@ If you're using TypeScript in your Cordova app project, you'll want to compile i
 
     You can also manually edit the **package.json** file from Visual Studio and then install the dependency by right-clicking on the **Dependency** node in the **Solution Explorer** and then selecting **Restore Packages**.
 
-   ![Restore Packages](media/tutorial-gulp-readme/gulp-4.png)
+    ![Restore Packages](media/tutorial-gulp-readme/gulp-4.png)
 
 2.  Add the following task to the **gulpfile.js** file:
 
@@ -424,4 +424,4 @@ npm install
 
 Then, set an environment variable named **CORDOVA_CACHE** so that it points to the location on your build server that you want to use to cache multiple versions of cordova-lib and Cordova platforms.
 
-See the [Jenkins](./tutorial-team-build/Jenkins.md) tutorial for a specific example.
+See the [Jenkins](./tutorial-team-build/jenkins.md) tutorial for a specific example.
