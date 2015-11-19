@@ -52,7 +52,7 @@ To sign your app, create a *keystore*. A keystore is a binary file that contains
 
     ```
     keytool -genkey -v -keystore c:\my-release-key.keystore -alias johnS
-    -keyalg RSA -keysize 2048 -validity 10000**
+    -keyalg RSA -keysize 2048 -validity 10000
     ```
 
     You'll be asked to provide a password for the keystore and private key, and to provide the *Distinguished Name* fields for your key.  the following series of responses gives you an idea of the kinds of information you'll provide for each prompt.
@@ -219,7 +219,7 @@ In order for you to generate a certificate you must request a certificate using 
     ![ios: Distribution profile, Choosing certificates](media/tutorial-package-publish-readme/ios-proCertChoice.png)
 
 7. Name the profile and choose “Generate” and download the provisioning profile.
- 
+
     ![ios: Distribution profile, Naming the profile](media/tutorial-package-publish-readme/ios-proNaming.png)
 
 8. Double-click that file to install it and then add it to the **Code signing section of *Build Settings* for Xcode**.
@@ -237,7 +237,7 @@ In order for you to generate a certificate you must request a certificate using 
     > **Note:** While creating the developer provisioning profile [after step 6], you will have to select the devices you wish to include in this provisioning profile. To install an app signed with this profile on a device, the device must be included.
 
     ![ios: Developer profile, Choosing devices](media/tutorial-package-publish-readme/ios-proDev.png)
- 
+
     Once you have installed the distribution certificates and the matching provisioning profiles in XCode’s build settings on the remotebuild agent, you are now ready to build a release package for iOS from VS.
 
     > **Note**: A signing identity is valid if the provisioning profile identifier matches the package ID specified in the Visual Studio configuration designer. For example, a provisioning profile of `com.msft.multidevice.*` matches a package ID of <span class="code">com.msft.multidevice.someName</span>. In many cases, you can use a wildcard provisioning profile that matches all package IDs, in which case validity isn’t a concern.
