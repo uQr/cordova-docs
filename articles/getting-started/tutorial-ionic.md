@@ -58,9 +58,8 @@ To follow these steps, you must:
 4. Use the same command to install more templates, such as:
 
     ```
-    ionic start ionicMyView view
     ionic start ionicMyTabs tabs
-    ionic start ionicMySlide slide
+    ionic start ionicMySlide blank
     ```
 >**Note**: If you are trying to use a Visual Studio 2013 Ionic project in Visual Studio 2015 (recommended), see this info on [migrating projects](migrate-to-vs2015.md) to Visual Studio 2015.
 
@@ -86,7 +85,7 @@ For each of the Ionic starter app templates that you installed and want to run, 
 1. If you want to use the Ionic CLI to add the Android platform, use this command in the command line:
 
     ```
-    ionic platform add Android
+    ionic platform add android
     ```
 
     Or, you can add the platform by building in VS (choose **Build** > **Build Solution**).
