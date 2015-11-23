@@ -58,9 +58,8 @@ To follow these steps, you must:
 4. Use the same command to install more templates, such as:
 
     ```
-    ionic start ionicMyView view
     ionic start ionicMyTabs tabs
-    ionic start ionicMySlide slide
+    ionic start ionicMySlide blank
     ```
 >**Note**: If you are trying to use a Visual Studio 2013 Ionic project in Visual Studio 2015 (recommended), see this info on [migrating projects](migrate-to-vs2015.md) to Visual Studio 2015.
 
@@ -86,7 +85,7 @@ For each of the Ionic starter app templates that you installed and want to run, 
 1. If you want to use the Ionic CLI to add the Android platform, use this command in the command line:
 
     ```
-    ionic platform add Android
+    ionic platform add android
     ```
 
     Or, you can add the platform by building in VS (choose **Build** > **Build Solution**).
@@ -99,7 +98,7 @@ For each of the Ionic starter app templates that you installed and want to run, 
 
     ![App running in the emulator](media/tutorial-ionic/ionic-sidemenu.png)
 
-  >**Note**: If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282(v=vs.140).aspx).
+  >**Note**: If you have previously run the VS Emulator for Android and you have errors, try deleting the emulator VM instance in Hyper-V Manager. Otherwise, if you have errors see [Troubleshooting] (https://msdn.microsoft.com/en-us/library/mt228282).
 
 ## Get your app running on iOS <a name="configiOS"></a>
 
@@ -127,7 +126,7 @@ To target Windows 10 in your app, you need to:
 
 1. Open the folder for the Blank App project created in Visual Studio and copy the merges folder (and its contents) to your Ionic project. Copy the folder under the top level folder (for example, under ionicMySideMenu folder).
 
-  When you complete the next few steps, you will resolve errors loading partial pages by using the winstore-jscompat.js shim.
+    When you complete the next few steps, you will resolve errors loading partial pages by using the winstore-jscompat.js shim.
 
 2. In the Ionic project, create a **scripts** folder under www, and copy platformOverrides.js from the Blank App project's `www\scripts` folder to the new scripts folder.
 
