@@ -52,19 +52,19 @@ We added support for iOS 6s simulator, and improved the incremental build featur
 
 ##Bugs Solved
  
- ###Deploy to Ripple should error if VS is running as admin
+###Deploy to Ripple should error if VS is running as admin
  
- ###Dev14_RTM feed does not set correct Android SDK 23 regkey
- Expanding support for Android SDK 23
+###Dev14_RTM feed does not set correct Android SDK 23 regkey
+Expanding support for Android SDK 23
  
- ###System JAVA_HOME not respected by Visual Studio
- There are some scenarios where a custom Java SDK is needed, like using a x64 version of it. Now the JAVA_HOME variable is used by VS.
+###System JAVA_HOME not respected by Visual Studio
+There are some scenarios where a custom Java SDK is needed, like using a x64 version of it. Now the JAVA_HOME variable is used by VS.
  
- ###Plugins install errors cause inconsistencies in Plugins window
+###Plugins install errors cause inconsistencies in Plugins window
  
- ###MySQL breaks cordova
+###MySQL breaks cordova
  
- ###Better error messages for iOS remotebuilds 
+###Better error messages for iOS remotebuilds 
  
 
 ##Known Issues
